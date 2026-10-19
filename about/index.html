@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Huffalytics: How the NFL Engine, Projections and Kalshi Prop Plans Work</title>
+<meta name="description" content="How Huffalytics builds its NFL numbers: opponent-adjusted EPA ratings, game projections, single-game parlay plans graded against Kalshi at three cushions, streaming models and the data behind them.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="keywords" content="NFL stats, NFL projections, NFL week 6 2026, Kalshi NFL, Kalshi player props, NFL player props, NFL team rankings, EPA per play, NFL betting model, NFL streaming picks, fantasy football projections">
+<meta name="author" content="Huffalytics">
+<link rel="canonical" href="https://huffalytics.com/about/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:site_name" content="Huffalytics">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="About Huffalytics: the NFL engine behind the numbers">
+<meta property="og:description" content="EPA ratings, game projections, Kalshi-priced prop plans graded every week, streaming models, and the data sources.">
+<meta property="og:url" content="https://huffalytics.com/about/">
+<meta property="og:image" content="https://huffalytics.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Huffalytics: game scripts, projections, graded">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Huffalytics: the NFL engine behind the numbers">
+<meta name="twitter:description" content="EPA ratings, game projections, Kalshi-priced prop plans graded every week, streaming models, and the data sources.">
+<meta name="twitter:image" content="https://huffalytics.com/og.png">
+<link rel="preconnect" href="https://a.espncdn.com" crossorigin>
+<link rel="dns-prefetch" href="https://a.espncdn.com">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://huffalytics.com/#website","url":"https://huffalytics.com/","name":"Huffalytics","description":"NFL stats, game projections, team EPA rankings and graded player prop plans priced against Kalshi.","inLanguage":"en-US","publisher":{"@id":"https://huffalytics.com/#org"}},{"@type":"Organization","@id":"https://huffalytics.com/#org","name":"Huffalytics","url":"https://huffalytics.com/","logo":{"@type":"ImageObject","url":"https://huffalytics.com/icons/icon-512.png","width":512,"height":512}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Huffalytics","item":"https://huffalytics.com/"},{"@type":"ListItem","position":2,"name":"About","item":"https://huffalytics.com/about/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"About Huffalytics","url":"https://huffalytics.com/about/","description":"How Huffalytics builds its NFL projections, team rankings and Kalshi-priced player prop plans.","isPartOf":{"@id":"https://huffalytics.com/#website"}}</script>
+<link rel="icon" href="/icons/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/icons/favicon-64.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/icons/site.webmanifest">
+<meta name="apple-mobile-web-app-title" content="Huffalytics">
+<meta name="theme-color" content="#070709">
+<script>try{var t=localStorage.getItem("hfa-theme");document.documentElement.dataset.theme=(t==="light")?"light":"dark";}catch(e){document.documentElement.dataset.theme="dark";}</script>
+<style>
+  /* Huffalytics — the house design system ported for a page with no
+     theme behind it. Dark is the brand (gloss black, red code rain,
+     red for emphasis, white for the rest — the X banner); light is the
+     opt-in. Tokens on :root, the light set under data-theme="light",
+     phone tables stack into cards. */
+  :root {
+    --hfa-bg: #050507; --hfa-card: rgba(12, 12, 16, 0.80); --hfa-body: #f2f3f5; --hfa-muted: #9aa0a9;
+    --hfa-accent: #ff1f2f; --hfa-accent-soft: rgba(255, 31, 47, 0.16); --hfa-good: #2fd4a4; --hfa-bad: #ffb020; --hfa-warn: #ffb020;
+    --hfa-hairline: 1px solid rgba(255, 255, 255, 0.09); --hfa-tint: rgba(255, 255, 255, 0.04);
+    --hfa-radius: 14px; --hfa-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 18px 40px -24px rgba(0, 0, 0, 0.9);
+    --hfa-rain: 1;
+    color-scheme: dark;
+  }
+  :root[data-theme="light"] {
+    --hfa-bg: #f3f4f8; --hfa-card: #ffffff; --hfa-body: #1f242c; --hfa-muted: #6c7a86;
+    --hfa-accent: #c8102e; --hfa-accent-soft: rgba(200, 16, 46, 0.12); --hfa-good: #0a9f78; --hfa-bad: #d98a00; --hfa-warn: #d98a00;
+    --hfa-hairline: 1px solid rgba(128, 128, 128, 0.16); --hfa-tint: rgba(128, 128, 128, 0.08);
+    --hfa-shadow: 0 1px 2px rgba(20, 24, 34, 0.05), 0 10px 28px -16px rgba(20, 24, 34, 0.25);
+    --hfa-rain: 0;
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--hfa-bg); color: var(--hfa-body); font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif; font-variant-numeric: tabular-nums; min-height: 100vh; }
+  /* The gloss: a cold sheen at the top of the black, a red bloom low. */
+  :root:not([data-theme="light"]) body { background: radial-gradient(1200px 420px at 50% -120px, rgba(255, 255, 255, 0.07), transparent 70%), radial-gradient(900px 500px at 85% 110%, rgba(255, 31, 47, 0.10), transparent 70%), linear-gradient(180deg, #0a0a0d 0%, #050507 40%, #070709 100%); }
+  a { color: inherit; }
+  b, strong { color: var(--hfa-accent); }
+  .hfa { width: 100%; margin: 0; padding: 0 16px 3rem; position: relative; z-index: 1; }
+
+  /* Code rain behind everything (dark only; drawn by the script). */
+  #hfa-rain { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: var(--hfa-rain); transition: opacity 0.3s; }
+
+  /* Top bar */
+  .hfa-top { display: flex; align-items: center; gap: 0.75rem; padding: 0.9rem 0; }
+  .hfa-brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; white-space: nowrap; line-height: 1; }
+  .hfa-brand .logo { width: 34px; height: 34px; object-fit: contain; filter: drop-shadow(0 2px 6px rgba(255, 31, 47, 0.35)); }
+  .hfa-brand .words { display: flex; flex-direction: column; }
+  .hfa-brand .mark { font-weight: 900; font-size: 1.35rem; letter-spacing: -0.03em; text-transform: uppercase; color: #fff; }
+  :root[data-theme="light"] .hfa-brand .mark { color: var(--hfa-body); }
+  .hfa-brand .mark i { font-style: normal; color: var(--hfa-accent); }
+  .hfa-brand .tag { margin-top: 0.3rem; font: 600 0.58rem/1 ui-monospace, "SF Mono", Menlo, Consolas, monospace; letter-spacing: 0.14em; color: var(--hfa-muted); }
+  .hfa-nav { display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: rgba(128, 128, 128, 0.14); margin-left: auto; flex: 0 0 auto; }
+  .hfa-wk + .hfa-nav { margin-left: 0; }
+  .hfa-nav a { border-radius: 999px; padding: 0.3rem 0.9rem; font-size: 0.8rem; font-weight: 600; color: var(--hfa-muted); text-decoration: none; white-space: nowrap; }
+  .hfa-nav a.active { background: var(--hfa-accent); color: #fff; box-shadow: 0 1px 6px rgba(255, 31, 47, 0.35); }
+  .hfa-theme { border: 0; background: transparent; color: var(--hfa-muted); font-size: 1.1rem; cursor: pointer; padding: 0.2rem 0.4rem; }
+
+  /* Week counter: ‹ WK 6 › with the full list behind the number */
+  .hfa-wk { display: inline-flex; align-items: center; gap: 2px; margin-left: auto; padding: 3px; border-radius: 999px; background: rgba(128, 128, 128, 0.14); }
+  .hfa-wk .arrow { display: inline-grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 999px; color: var(--hfa-body); text-decoration: none; font-size: 1.1rem; line-height: 1; }
+  .hfa-wk .arrow:hover { background: rgba(128, 128, 128, 0.2); }
+  .hfa-wk .arrow.off { color: var(--hfa-muted); opacity: 0.4; }
+  .hfa-wk .pick { position: relative; display: inline-flex; align-items: baseline; gap: 0.3rem; padding: 0.2rem 0.6rem; border-radius: 999px; background: var(--hfa-accent); color: #fff; cursor: pointer; font-size: 0.8rem; }
+  .hfa-wk .pick .lbl { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; opacity: 0.85; }
+  .hfa-wk .pick b { color: #fff; font-weight: 800; font-size: 0.95rem; }
+  .hfa-wk .pick i { font-style: normal; font-size: 0.56rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; }
+  .hfa-wk .pick select { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+  .hfa-nav { margin-left: 0; }
+
+  /* Section pills (jump links) */
+  .hfa-jump { display: flex; gap: 0.35rem; flex-wrap: wrap; margin: 0 0 1rem; }
+  .hfa-jump a { border-radius: 999px; padding: 0.25rem 0.75rem; font-size: 0.74rem; font-weight: 600; color: var(--hfa-muted); background: rgba(128, 128, 128, 0.12); text-decoration: none; }
+
+  /* Cards */
+  .hfa-card { background: var(--hfa-card); border: var(--hfa-hairline); border-radius: var(--hfa-radius); box-shadow: var(--hfa-shadow); margin-bottom: 1rem; overflow: hidden; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+  .hfa-head { padding: 0.9rem 1.1rem 0.6rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.75rem; }
+  .hfa-head h2 { margin: 0; font-size: 1.05rem; font-weight: 700; }
+  .hfa-head .sub { font-size: 0.78rem; color: var(--hfa-muted); }
+  .hfa-eyebrow { flex: 0 0 100%; font-size: 0.64rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-accent); }
+  .hfa-body { padding: 0.6rem 1.1rem 1rem; }
+  .hfa-hero { position: relative; }
+  .hfa-hero::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(520px 160px at 8% -30%, rgba(255, 31, 47, 0.22), transparent 70%), radial-gradient(420px 140px at 94% -40%, rgba(255, 255, 255, 0.07), transparent 70%); }
+  .hfa-hero::after { content: ""; position: absolute; left: 1.1rem; right: 1.1rem; top: 0; height: 2px; background: linear-gradient(90deg, var(--hfa-accent), transparent 70%); }
+  .hfa-hero .hfa-head { padding-top: 1.2rem; }
+  .hfa .lede { flex: 0 0 100%; margin: 0.25rem 0 0; font-size: 0.86rem; color: var(--hfa-muted); line-height: 1.5; max-width: 72rem; }
+  .hfa .prose { font-size: 0.92rem; line-height: 1.65; max-width: 48rem; }
+  .hfa .prose h2 { font-size: 1.1rem; margin: 1.4rem 0 0.4rem; }
+  .hfa .prose h3 { font-size: 0.95rem; margin: 1rem 0 0.3rem; color: var(--hfa-accent); }
+  .hfa .prose p { margin: 0 0 0.7rem; color: var(--hfa-body); }
+  .hfa .prose ul { padding-left: 1.2rem; margin: 0 0 0.7rem; }
+  .hfa .prose li { margin-bottom: 0.3rem; }
+  .hfa-hero h1 { margin: 0; font-size: 1.6rem; font-weight: 900; letter-spacing: -0.02em; text-transform: uppercase; }
+  .hfa-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); border-top: var(--hfa-hairline); }
+  .hfa-kpi { padding: 0.8rem 1.1rem; border-left: var(--hfa-hairline); }
+  .hfa-kpi:first-child { border-left: 0; }
+  .hfa-label { font-size: 0.66rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-muted); }
+  .hfa-kpi-value { font-size: 1.6rem; font-weight: 800; line-height: 1.2; color: var(--hfa-accent); letter-spacing: -0.01em; }
+  .hfa-kpi-sub { font-size: 0.78rem; color: var(--hfa-muted); }
+  .hfa-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .hfa-grid > * { min-width: 0; }
+  .hfa-grid > .hfa-card { margin-bottom: 0; }
+
+  /* The board: slate left, leaders in a column on the right at full width */
+  .hfa-board { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; margin-bottom: 1rem; align-items: stretch; }
+  .hfa-board > .hfa-card { margin-bottom: 0; min-width: 0; }
+  /* The leaders card fills the slate's height: the table grows, the pager pins to the bottom. */
+  .hfa-board > #leaders { display: flex; flex-direction: column; }
+  .hfa-board > #leaders > .pane { display: none; flex: 1 1 auto; flex-direction: column; }
+  .hfa-board > #leaders > .pane.active { display: flex; }
+  .hfa-board > #leaders > .pane > .scroll { flex: 1 1 auto; }
+  .hfa-board > #leaders > .pane > .pager { margin-top: auto; }
+  @media (min-width: 1200px) { .hfa-board { grid-template-columns: minmax(0, 1fr) 24rem; } }
+
+  /* Tables */
+  .hfa table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+  .hfa th { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--hfa-muted); text-align: left; padding: 0.5rem 0.7rem; border-bottom: var(--hfa-hairline); white-space: nowrap; }
+  .hfa td { padding: 0.5rem 0.7rem; border-top: 1px solid rgba(128, 128, 128, 0.1); vertical-align: middle; }
+  .hfa .num { text-align: right; }
+  .hfa tr.day > td { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); background: var(--hfa-accent-soft); padding: 0.35rem 0.7rem; }
+  .hfa tr.final > td { background: var(--hfa-tint); }
+  .hfa .match { display: inline-flex; align-items: baseline; gap: 0.4rem; font-weight: 600; white-space: nowrap; }
+  .hfa .match .at { color: var(--hfa-muted); font-weight: 500; font-size: 0.8rem; }
+  .hfa .match .fav, .hfa .match .win { font-weight: 800; color: var(--hfa-accent); }
+  .hfa .match .loss { color: var(--hfa-muted); font-weight: 500; }
+  .hfa .match img { width: 20px; height: 20px; vertical-align: -5px; margin-right: 2px; }
+  .hfa .sub { font-size: 0.72rem; color: var(--hfa-muted); }
+  .hfa td .sub, .hfa .nw { white-space: nowrap; }
+  .hfa .flat { color: var(--hfa-muted); }
+  .hfa .chip { display: inline-block; font-size: 0.64rem; font-weight: 700; letter-spacing: 0.04em; padding: 0.12rem 0.45rem; border-radius: 6px; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); vertical-align: middle; }
+  .hfa .badge { display: inline-block; border-radius: 999px; font-weight: 600; font-size: 0.7rem; padding: 0.3em 0.7em; white-space: nowrap; }
+  .hfa .badge.good { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .hfa .badge.bad { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .hfa .badge.warn { background: rgba(255, 255, 255, 0.10); color: var(--hfa-body); }
+  .hfa .badge.acc { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .hfa .badge.mute { background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); }
+  .hfa .text-success, .hfa .up { color: var(--hfa-good); }
+  .hfa .text-danger, .hfa .down { color: var(--hfa-bad); }
+  .hfa .proj { font-weight: 700; color: var(--hfa-accent); }
+  .hfa .empty { color: var(--hfa-muted); padding: 1.25rem 1.1rem; font-size: 0.86rem; }
+
+  /* Market trends */
+  .hfa .trend + .trend { margin-top: 0.8rem; padding-top: 0.8rem; border-top: var(--hfa-hairline); }
+  .hfa .trend-rec { font-size: 1.1rem; font-weight: 700; line-height: 1.2; color: var(--hfa-accent); }
+  .hfa .splitbar { display: flex; height: 6px; border-radius: 3px; overflow: hidden; background: rgba(128, 128, 128, 0.2); margin-top: 0.4rem; }
+  .hfa .splitbar > i { background: var(--hfa-accent); }
+  .hfa .splitbar > b { background: rgba(128, 128, 128, 0.35); flex: 1; }
+
+  /* Rankings */
+  .hfa .tabs { display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: rgba(128, 128, 128, 0.14); margin: 0 1.1rem 0.6rem; }
+  .hfa .tabs button { border: 0; border-radius: 999px; padding: 0.3rem 0.9rem; font-size: 0.8rem; font-weight: 600; color: var(--hfa-muted); background: transparent; cursor: pointer; }
+  .hfa .tabs button.active { background: var(--hfa-accent); color: #fff; }
+  .hfa .pane { display: none; }
+  .hfa .pane.active { display: block; }
+  .hfa .scroll { overflow-x: auto; }
+  .hfa .rank th.sort { cursor: pointer; }
+  .hfa .rank th.sort.on { color: var(--hfa-accent); }
+  .hfa .rank td.team { font-weight: 700; white-space: nowrap; }
+  .hfa .rank td.team img { width: 20px; height: 20px; vertical-align: -5px; margin-right: 4px; }
+  .hfa .rank .ord { font-size: 0.66rem; color: var(--hfa-muted); margin-left: 0.25rem; }
+  .hfa .rank .delta { font-size: 0.66rem; margin-left: 0.25rem; }
+  .hfa .rank td:first-child, .hfa .rank th:first-child { position: sticky; left: 0; background: #0d0d11; z-index: 1; }
+  .hfa .rank td.team, .hfa .rank th.team { position: sticky; left: 2.4rem; background: #0d0d11; z-index: 1; box-shadow: inset -1px 0 0 rgba(128, 128, 128, 0.2); }
+  :root[data-theme="light"] .hfa .rank td:first-child, :root[data-theme="light"] .hfa .rank th:first-child, :root[data-theme="light"] .hfa .rank td.team, :root[data-theme="light"] .hfa .rank th.team { background: #fff; }
+
+  /* Board bits */
+  .hfa .kpi-rows { display: flex; flex-direction: column; gap: 0.12rem; margin-top: 0.35rem; font-size: 0.8rem; }
+  .hfa .kpi-rows > div { display: flex; justify-content: space-between; align-items: baseline; gap: 0.6rem; border-top: 1px solid rgba(128, 128, 128, 0.12); padding-top: 0.12rem; }
+  .hfa .kpi-rows span { color: var(--hfa-muted); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .hfa .kpi-rows b { color: var(--hfa-body); font-weight: 700; white-space: nowrap; }
+  .hfa .kpi-rows b small { color: var(--hfa-muted); font-weight: 500; font-size: 0.7rem; }
+  .hfa .kpi-list { display: flex; flex-direction: column; gap: 0.15rem; font-size: 0.82rem; }
+  .hfa .kpi-list > div { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .hfa-kpi:has(.kpi-list) { grid-column: span 2; }
+  .hfa .kpi-list span { color: var(--hfa-muted); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; display: inline-block; width: 2.4rem; }
+  .hfa .kpi-list b { font-weight: 700; }
+  .hfa .lvl { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; padding: 0.55rem 1.1rem; border-top: var(--hfa-hairline); font-size: 0.78rem; }
+  .hfa .lvl .pill { border: 1px solid rgba(128, 128, 128, 0.25); background: transparent; color: var(--hfa-muted); border-radius: 999px; padding: 0.25rem 0.7rem; font-size: 0.74rem; font-weight: 600; cursor: pointer; }
+  .hfa .lvl .pill.active { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .hfa .lvl .pill b { color: inherit; }
+  .hfa .lvl .pill small { opacity: 0.8; font-weight: 500; }
+  .hfa .lvl .note { color: var(--hfa-muted); margin-left: auto; font-size: 0.72rem; }
+  .hfa .slate-head { justify-content: space-between; align-items: flex-start; }
+  .hfa .slate-head h2.big { font-size: 1.5rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; }
+  .hfa .slate-head .hfa-eyebrow { flex: none; }
+  .hfa .legend { position: relative; }
+  .hfa .legend summary { list-style: none; cursor: pointer; border-radius: 999px; padding: 0.3rem 0.8rem; font-size: 0.76rem; font-weight: 600; color: var(--hfa-muted); background: rgba(128, 128, 128, 0.14); white-space: nowrap; }
+  .hfa .legend summary::-webkit-details-marker { display: none; }
+  .hfa .legend[open] summary { background: var(--hfa-accent); color: #fff; }
+  .hfa .legend-body { position: absolute; right: 0; top: calc(100% + 0.4rem); z-index: 20; width: min(34rem, calc(100vw - 2rem)); background: var(--hfa-card); border: var(--hfa-hairline); border-radius: 12px; box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.9); padding: 0.6rem 0.9rem; font-size: 0.78rem; line-height: 1.45; color: var(--hfa-muted); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+  .hfa .legend-body > div + div { margin-top: 0.45rem; padding-top: 0.45rem; border-top: var(--hfa-hairline); }
+  .hfa .legend-body b { color: var(--hfa-accent); margin-right: 0.3rem; }
+  .hfa .legend-body b + b { margin-left: 0.2rem; }
+  .hfa .slate th.sort { cursor: pointer; } .hfa .slate th.sort.on { color: var(--hfa-accent); }
+  .hfa .slate > tbody > tr > td:first-child { box-shadow: inset 3px 0 0 var(--hfa-accent); }
+  /* The why row under a game */
+  .hfa tr.has-why { cursor: pointer; }
+  .hfa tr.has-why:hover > td { background: var(--hfa-tint); }
+  .hfa .twirl { display: inline-block; color: var(--hfa-muted); font-size: 0.8rem; margin-right: 0.35rem; transition: transform 0.15s; }
+  .hfa tr.open .twirl { transform: rotate(90deg); color: var(--hfa-accent); }
+  .hfa tr.why-row > td { padding: 0; border-top: 0; box-shadow: none !important; background: rgba(255, 31, 47, 0.03); }
+  .hfa .why { padding: 0.9rem 1.1rem 1rem 1.4rem; border-top: 1px dashed rgba(128, 128, 128, 0.2); border-bottom: var(--hfa-hairline); }
+  .hfa .why-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 1.25rem; }
+  .hfa .why-col { min-width: 0; }
+  .hfa .why .hfa-label { margin-bottom: 0.4rem; }
+  .hfa .why .hfa-label .flat { text-transform: none; letter-spacing: 0; font-weight: 500; margin-left: 0.3rem; }
+  .hfa .why table { font-size: 0.82rem; }
+  .hfa .why th { padding: 0.25rem 0.5rem; }
+  .hfa .why td { padding: 0.4rem 0.5rem; vertical-align: top; }
+  .hfa .why td.name { font-weight: 700; white-space: nowrap; }
+  .hfa .why td.name img { width: 18px; height: 18px; vertical-align: -4px; margin-right: 3px; }
+  .hfa .why .tiny { font-size: 0.68rem; font-weight: 400; white-space: normal; line-height: 1.35; }
+  .hfa .why .rank { display: inline-block; min-width: 1.9rem; text-align: center; border-radius: 6px; padding: 0.05rem 0.3rem; font-size: 0.66rem; font-weight: 700; background: var(--hfa-accent-soft); color: var(--hfa-accent); margin-left: 0.2rem; }
+  .hfa .why .steps { display: flex; flex-direction: column; }
+  .hfa .why .step { display: grid; grid-template-columns: 7rem 1fr; gap: 0 0.6rem; align-items: baseline; padding: 0.35rem 0; border-top: 1px solid rgba(128, 128, 128, 0.12); font-size: 0.82rem; }
+  .hfa .why .step > span { color: var(--hfa-muted); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .hfa .why .step > b { font-size: 0.95rem; }
+  .hfa .why .step > small { grid-column: 2; color: var(--hfa-muted); font-size: 0.7rem; line-height: 1.35; }
+  .hfa .why .step.total > b { color: var(--hfa-accent); font-size: 1.05rem; }
+  .hfa .why-inj td.name { white-space: normal; }
+  @media (max-width: 1100px) { .hfa .why-grid { grid-template-columns: 1fr; } }
+  .hfa .ou { display: inline-block; margin-left: 0.3rem; border-radius: 6px; padding: 0.08rem 0.4rem; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+  .hfa .ou.over { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .hfa .ou.under { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .hfa .ou.push { background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); }
+  .hfa .slate .qbnote { display: block; font-size: 0.68rem; color: var(--hfa-bad); margin-top: 0.15rem; }
+  .hfa .rec { font-weight: 700; }
+  .hfa .rec.held { color: var(--hfa-good); } .hfa .rec.partly { color: var(--hfa-warn); } .hfa .rec.broke { color: var(--hfa-bad); }
+  .hfa .grade { display: inline-block; min-width: 2.2rem; text-align: center; border-radius: 6px; padding: 0.1rem 0.4rem; font-weight: 800; font-size: 0.74rem; background: rgba(128, 128, 128, 0.16); }
+  .hfa .grade.g-A { color: var(--hfa-good); } .hfa .grade.g-B { color: var(--hfa-good); } .hfa .grade.g-C { color: var(--hfa-warn); } .hfa .grade.g-D, .hfa .grade.g-F { color: var(--hfa-bad); }
+  .hfa .bar { height: 3px; border-radius: 2px; background: rgba(128, 128, 128, 0.2); margin-top: 3px; }
+  .hfa .bar > i { display: block; height: 100%; border-radius: 2px; background: var(--hfa-accent); }
+  .hfa .rk { display: inline-block; min-width: 1.4rem; text-align: center; border-radius: 6px; font-size: 0.72rem; font-weight: 700; color: var(--hfa-muted); }
+  .hfa .rk.top { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .hfa td.name { font-weight: 600; white-space: nowrap; }
+  .hfa td.name img, .hfa td.tm img { width: 18px; height: 18px; vertical-align: -4px; margin-right: 3px; }
+  .hfa .nm-short { display: none; }
+  .hfa .inj { display: inline-block; margin-left: 0.3rem; font-size: 0.6rem; font-weight: 700; padding: 0.08rem 0.35rem; border-radius: 4px; background: rgba(255, 176, 32, 0.18); color: var(--hfa-warn); vertical-align: middle; }
+  .hfa .inj.out { background: rgba(255, 31, 47, 0.18); color: var(--hfa-accent); }
+  .hfa .act { font-size: 0.7rem; margin-left: 0.2rem; }
+  .hfa .act.over { color: var(--hfa-good); } .hfa .act.under { color: var(--hfa-bad); }
+  .hfa .hit { color: var(--hfa-good); font-weight: 700; margin-left: 0.15rem; }
+  .hfa .caret { border: 0; background: transparent; color: var(--hfa-muted); cursor: pointer; padding: 0 0.3rem 0 0; font-size: 0.8rem; }
+  .hfa .caret.open { transform: rotate(90deg); display: inline-block; }
+  .hfa tr.mate { display: none; }
+  .hfa tr.mate.show { display: table-row; }
+  .hfa tr.mate td { background: var(--hfa-tint); }
+  .hfa .pager { display: flex; gap: 0.3rem; flex-wrap: wrap; padding: 0.5rem 1.1rem 0.8rem; }
+  .hfa .pager button { border: 1px solid rgba(128, 128, 128, 0.25); background: transparent; color: var(--hfa-muted); border-radius: 8px; padding: 0.2rem 0.6rem; font-size: 0.74rem; font-weight: 600; cursor: pointer; }
+  .hfa .pager button.active { background: var(--hfa-accent); color: #fff; border-color: var(--hfa-accent); }
+  .hfa .blurb { padding: 0.2rem 1.1rem 0.6rem; font-size: 0.76rem; color: var(--hfa-muted); line-height: 1.45; }
+  .hfa .blurb b { font-weight: 700; }
+  .hfa .ranktab td:first-child, .hfa .ranktab th:first-child { position: sticky; left: 0; background: #0d0d11; z-index: 1; }
+  .hfa .ranktab td.name, .hfa .ranktab th.name { position: sticky; left: 2.2rem; background: #0d0d11; z-index: 1; box-shadow: inset -1px 0 0 rgba(128, 128, 128, 0.2); }
+  :root[data-theme="light"] .hfa .ranktab td:first-child, :root[data-theme="light"] .hfa .ranktab th:first-child, :root[data-theme="light"] .hfa .ranktab td.name, :root[data-theme="light"] .hfa .ranktab th.name { background: #fff; }
+  .hfa .ranktab th.sort { cursor: pointer; } .hfa .ranktab th.sort.on { color: var(--hfa-accent); }
+  .hfa .stream-badge { display: inline-block; margin-left: 0.3rem; font-size: 0.6rem; font-weight: 700; padding: 0.08rem 0.35rem; border-radius: 4px; background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); vertical-align: middle; }
+  .hfa .starter-badge { display: inline-block; margin-left: 0.3rem; font-size: 0.6rem; font-weight: 700; padding: 0.08rem 0.35rem; border-radius: 4px; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); vertical-align: middle; }
+  .hfa .dev { font-size: 0.66rem; color: var(--hfa-muted); margin-left: 0.15rem; }
+
+  .hfa-foot { color: var(--hfa-muted); font-size: 0.76rem; padding: 1rem 0.25rem; line-height: 1.6; }
+  .hfa-foot a { color: var(--hfa-muted); }
+
+  @media (max-width: 760px) {
+    .hfa-grid { grid-template-columns: 1fr; }
+    .hfa-top { gap: 0.4rem; position: relative; padding-right: 2.2rem; flex-wrap: wrap; }
+    .hfa-wk { margin-left: auto; }
+    .hfa-nav { flex: 0 0 100%; justify-content: center; margin: 0; }
+    .hfa-theme { position: absolute; right: 0; top: 50%; transform: translateY(-50%); }
+    .hfa-nav a { padding: 0.3rem 0.7rem; }
+    .hfa-brand .mark { font-size: 1.1rem; }
+    .hfa-brand .logo { width: 28px; height: 28px; }
+    .hfa-brand { gap: 0.45rem; }
+    .hfa-brand .tag { display: none; }
+    .hfa-kpis { grid-template-columns: repeat(2, 1fr); }
+    .hfa-kpi:has(.kpi-list) { grid-column: span 2; border-left: 0; }
+    .hfa-kpi:nth-child(odd) { border-left: 0; }
+    /* Stacked game tables: one card per row. Cells become labeled
+       chips (data-l); .c-lead leads the top line, .c-end sits right. */
+    .hfa table.stack, .hfa table.stack > tbody { display: block; width: 100%; }
+    .hfa table.stack > thead { display: none; }
+    .hfa table.stack > tbody > tr { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 0.3rem 0.45rem; padding: 0.65rem 0.9rem 0.7rem; border-bottom: var(--hfa-hairline); }
+    .hfa table.stack > tbody > tr.day { padding: 0.35rem 0.9rem; }
+    .hfa table.stack > tbody > tr.day > td { background: transparent; padding: 0; }
+    .hfa table.stack > tbody > tr > td, .hfa table.stack > tbody > tr > td.nw { order: 5; display: inline-flex; align-items: baseline; gap: 0.3rem; padding: 0.2rem 0.5rem; border: 0; border-radius: 8px; background: rgba(128, 128, 128, 0.12); font-size: 0.76rem; line-height: 1.3; text-align: left; white-space: normal; }
+    .hfa table.stack > tbody > tr > td[data-l]::before { content: attr(data-l); font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--hfa-muted); }
+    .hfa table.stack > tbody > tr > td.c-lead, .hfa table.stack > tbody > tr > td.c-end, .hfa table.stack > tbody > tr > td.c-plain { display: block; padding: 0; background: transparent; font-size: inherit; }
+    .hfa table.stack > tbody > tr > td.c-lead { order: 0; flex: 1 1 0; }
+    .hfa table.stack > tbody > tr > td.c-end { order: 1; text-align: right; font-size: 0.78rem; color: var(--hfa-muted); }
+    .hfa table.stack > tbody > tr::after { content: ""; order: 3; flex: 0 0 100%; height: 0; }
+    .hfa table.stack > tbody > tr > td.c-plain { order: 5; }
+    .hfa table.stack > tbody > tr > td.c-plain:has(> .flat:only-child) { display: none; }
+    .hfa table.stack > tbody > tr > td.c-plain .badge + .badge { margin-left: 0.2rem; }
+    .hfa table.stack .match { flex-wrap: wrap; font-size: 0.95rem; }
+    .hfa table.stack > tbody > tr.why-row { display: block; padding: 0; box-shadow: none; }
+    .hfa table.stack > tbody > tr.why-row[hidden] { display: none; }
+    .hfa table.stack > tbody > tr.why-row > td { display: block; padding: 0; background: transparent; }
+    .hfa .why { padding: 0.7rem 0.9rem 0.9rem; }
+    .hfa .why td.name { white-space: normal; }
+    .hfa .slate > tbody > tr > td:first-child { box-shadow: none; }
+    .hfa table.stack > tbody > tr { box-shadow: inset 3px 0 0 var(--hfa-accent); }
+    .hfa .legend-body { position: fixed; left: 1rem; right: 1rem; top: auto; width: auto; max-height: 70vh; overflow: auto; }
+    .hfa .nm-full { display: none; } .hfa .nm-short { display: inline; }
+    .hfa .lvl .note { flex: 0 0 100%; margin-left: 0; }
+    .hfa .kpi-list span { width: 2.2rem; }
+    .hfa-card { border-left: 0; border-right: 0; border-radius: 0; }
+    .hfa { padding: 0; }
+    .hfa-top, .hfa-foot { padding-left: 16px; padding-right: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) { #hfa-rain { opacity: calc(var(--hfa-rain) * 0.5); } }
+</style>
+
+</head>
+<body>
+<canvas id="hfa-rain" aria-hidden="true"></canvas>
+<div class="hfa">
+  <div class="hfa-top">
+    <a class="hfa-brand" href="/" aria-label="Huffalytics home"><img class="logo" src="/icons/icon-192.png" width="34" height="34" alt="Huffalytics logo"><span class="words"><span class="mark"><i>Huff</i>alytics</span><span class="tag">GAME SCRIPTS // PROJECTIONS // GRADED</span></span></a>
+    
+    <div class="hfa-wk" aria-label="Week">
+      <a class="arrow" href="/w/5/" title="Week 5">&#8249;</a>
+      <label class="pick"><span class="lbl">WK</span><b>6</b><i>live</i><select id="hfa-wk"><option value="/w/1/">Week 1</option><option value="/w/2/">Week 2</option><option value="/w/3/">Week 3</option><option value="/w/4/">Week 4</option><option value="/w/5/">Week 5</option><option value="/" selected>Week 6 · in play</option><option value="/w/7/">Week 7 · next</option></select></label>
+      <a class="arrow" href="/w/7/" title="Week 7">&#8250;</a>
+    </div>
+    
+    <nav class="hfa-nav" aria-label="Pages">
+      <a href="/" class="">This week</a>
+      <a href="/rankings/" class="">Rankings</a>
+      <a href="/about/" class="active">About</a>
+    </nav>
+    <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
+  </div>
+  <main>
+<div class="hfa-card hfa-hero">
+  <div class="hfa-head"><div class="hfa-eyebrow">About</div><h1>How Huffalytics works</h1>
+  <p class="lede">Huffalytics is an NFL statistics and projection engine. It turns play-by-play data into team ratings, game projections and player prop plans, then grades every call against the box score and the prices on Kalshi. The site is rebuilt from the engine after each data sync, one page per week of the season.</p></div>
+</div>
+<div class="hfa-card"><div class="hfa-body prose">
+  <h2>Team ratings and rankings</h2>
+  <p>Every team carries an offense rating and a defense rating in expected points added (EPA) per play, adjusted for the opponents faced. Each rating blends a preseason projection with the season's plays, weighted by how many plays have been run, so an early-season number leans on the prior and a late-season number on the games. Net rating is offense minus defense allowed. The <a href="/rankings/">team rankings</a> show the same inputs for all 32 teams entering each week: EPA per play, success rate, explosive plays, pressure and sacks, third downs and the red zone, with week-over-week change.</p>
+
+  <h2>The model margin</h2>
+  <p>The engine's own number for a game is the model margin: one straight line fit on every completed game with a closing line since 2006 turns the gap between the two teams' net ratings into points, plus a home-field constant. Beside it sits the market's line and the difference between the two. An adjusted margin folds in the injury report, but only the terms a backtest found worth pricing: a starting quarterback out or questionable, and a skill player's share of his offense lost or in doubt. Click any game on the <a href="/">week page</a> to see the ratings with their league ranks, the arithmetic, and the injuries that moved the number.</p>
+
+  <h2>Game projections and fantasy leaders</h2>
+  <p>For each game the engine projects a box score: team points anchored on the market total and spread, then passing, rushing and receiving lines for every player from his share of the offense, the opponent's defense, forecast wind and the injury report. The projected leaders rank those lines as PPR fantasy points by position, and once the week is played the actual sits beside each projection.</p>
+
+  <h2>Single-game parlay plans and Kalshi</h2>
+  <p>Before kickoff the engine writes a single-game parlay plan for each game: a set of player prop calls, each an over or an under on a line, with the reasoning behind it. From the 2026 season the market those calls are read against is <strong>Kalshi</strong>, the regulated prediction exchange, which lists NFL player markets as ladders of rungs such as 55+ receiving yards or fewer than 250 passing yards.</p>
+  <p>Every call is graded off the box score at three cushions down that ladder:</p>
+  <ul>
+    <li><strong>Normal</strong> is the line the plan called.</li>
+    <li><strong>Edge</strong> is the listed Kalshi rung nearest halfway between the plan's line and the ladder's last rung on the easy side.</li>
+    <li><strong>Edge+</strong> is that last rung: the lowest N+ on an over, the highest &lt;N on an under.</li>
+  </ul>
+  <p>The week page shows the plans' overs and unders separately with the record at each cushion, so the hit rate of a stack of easier rungs can be read against the line the plan actually called. Every price is Kalshi's last pregame ask for the call's side.</p>
+
+  <h2>Streaming picks</h2>
+  <p>Kickers and defenses are ranked by walk-forward models fit on 2013 through 2025: implied team points carry most of a kicker's week, and a low opponent implied total plus being the favorite carries most of a defense's. Quarterback, running back, receiver and tight end streamers outside the starter line are ranked by the game projection engine. The top five in each tab are the week's stream picks, and once played a pick is a hit when it finishes in the top ten.</p>
+
+  <h2>Data</h2>
+  <p>Scores, schedules, closing lines, rosters, injury reports and play-by-play come from the open nflverse project. Live injury designations and depth charts come from Sleeper. Market prices are Kalshi's public API. Weather is a forecast feed read in the hours before kickoff. The engine, the projections, the plans and every grade are Huffalytics' own, and the numbers are published as JSON beside every page.</p>
+
+  <h2>Not advice</h2>
+  <p>Huffalytics publishes statistics and the engine's graded record. Nothing on the site is a recommendation to bet, and past hit rates do not promise future ones.</p>
+</div></div>
+</main>
+  <footer class="hfa-foot">
+    <p><strong>Huffalytics</strong> publishes NFL stats, game projections, team EPA rankings and graded player prop plans priced against Kalshi, rebuilt every week from play-by-play data. <a href="/about/">How the engine works</a>.</p>
+    <p>Data as of Mon Oct 19, 4:55 PM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/data/week.json">week.json</a> · <a href="/data/rankings.json">rankings.json</a> · <a href="/sitemap.xml">sitemap</a></p>
+  </footer>
+</div>
+<script>
+(function(){
+  var wk=document.getElementById("hfa-wk"); if(wk) wk.addEventListener("change",function(){ location.href=wk.value; });
+  var b=document.getElementById("hfa-theme");
+  b.addEventListener("click",function(){
+    var r=document.documentElement, next=r.dataset.theme==="light"?"dark":"light";
+    r.dataset.theme=next; try{localStorage.setItem("hfa-theme",next);}catch(e){}
+  });
+  // Code rain: columns of red glyphs falling behind the page, the way
+  // the brand banner has them. Drawn only while the dark theme shows;
+  // paused when the tab is hidden; slower under reduced motion.
+  var c=document.getElementById("hfa-rain"), ctx=c.getContext("2d"), cols=[], W=0, H=0, size=14, last=0;
+  var glyphs="0123456789ABCDEFGHJKLMNPQRSTUVWXYZ▲▼→↑%+×·";
+  var slow=matchMedia("(prefers-reduced-motion: reduce)").matches, step=slow?140:70;
+  function fit(){ W=c.width=innerWidth; H=c.height=innerHeight; var n=Math.ceil(W/(size*1.25)); cols=[]; for(var i=0;i<n;i++) cols.push({y:Math.random()*-H/size, v:0.35+Math.random()*0.9, hot:Math.random()<0.18}); ctx.fillStyle="#050507"; ctx.fillRect(0,0,W,H); }
+  function frame(t){
+    requestAnimationFrame(frame);
+    if(document.hidden||document.documentElement.dataset.theme==="light"||t-last<step) return; last=t;
+    ctx.fillStyle="rgba(5,5,7,0.16)"; ctx.fillRect(0,0,W,H);
+    ctx.font="600 "+size+"px ui-monospace, Menlo, Consolas, monospace";
+    for(var i=0;i<cols.length;i++){
+      var k=cols[i], x=i*size*1.25, y=k.y*size;
+      ctx.fillStyle=k.hot?"rgba(255,80,90,0.95)":"rgba(225,25,40,0.7)";
+      ctx.fillText(glyphs[Math.random()*glyphs.length|0], x, y);
+      if(Math.random()<0.12){ ctx.fillStyle="rgba(255,255,255,0.35)"; ctx.fillText(glyphs[Math.random()*glyphs.length|0], x, y-size*3); }
+      k.y+=k.v; if(y>H+size*4 && Math.random()<0.03){ k.y=Math.random()*-30; k.v=0.35+Math.random()*0.9; k.hot=Math.random()<0.18; }
+    }
+  }
+  fit(); addEventListener("resize",fit); requestAnimationFrame(frame);
+})();
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "&lt;!-- Cloudflare Web Analytics --&gt;&lt;script type=&#x27;module&#x27; src=&#x27;https://static.cloudflareinsights.com/beacon.min.js&#x27; data-cf-beacon=&#x27;{&quot;token&quot;: &quot;9d3af5da7c084e6a8dc16630753930c3&quot;}&#x27;&gt;&lt;/script&gt;&lt;!-- End Cloudflare Web Analytics --&gt;"}'></script>
+</body>
+</html>
