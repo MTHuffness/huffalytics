@@ -101,6 +101,11 @@
   .hfa-grid > * { min-width: 0; }
   .hfa-grid > .hfa-card { margin-bottom: 0; }
 
+  /* The board: slate left, leaders in a column on the right at full width */
+  .hfa-board { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; margin-bottom: 1rem; align-items: start; }
+  .hfa-board > .hfa-card { margin-bottom: 0; min-width: 0; }
+  @media (min-width: 1200px) { .hfa-board { grid-template-columns: minmax(0, 1fr) 24rem; } }
+
   /* Tables */
   .hfa table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
   .hfa th { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--hfa-muted); text-align: left; padding: 0.5rem 0.7rem; border-bottom: var(--hfa-hairline); white-space: nowrap; }
@@ -323,6 +328,7 @@
 
   <div class="hfa-jump"><a href="#slate">Slate</a><a href="#leaders">Leaders</a><a href="#outlook">Player outlook</a><a href="#streaming">Streaming</a><a href="/rankings/">Rankings</a></div>
 
+  <div class="hfa-board">
   <div class="hfa-card" id="slate">
     <div class="hfa-head slate-head">
       <div><div class="hfa-eyebrow">Week 6</div><h2 class="big">The slate</h2></div>
@@ -673,7 +679,6 @@
     </div>
   </div>
 
-  <div class="hfa-grid">
     <div class="hfa-card" id="leaders" data-tabs>
       <div class="hfa-head"><div class="hfa-eyebrow">Context</div><h2>Projected leaders</h2><span class="sub">Expected PPR points from the projected box scores; DEF = fewest projected points allowed. The actual sits in parentheses: green beat the projection, red fell short (defenses the other way round).</span></div>
       <div class="tabs"><button type="button" data-pane="ldr-qb" class="active">QB</button><button type="button" data-pane="ldr-rb" class="">RB</button><button type="button" data-pane="ldr-wr" class="">WR</button><button type="button" data-pane="ldr-te" class="">TE</button><button type="button" data-pane="ldr-def" class="">DEF</button></div>
@@ -993,6 +998,7 @@
       </div>
       
     </div>
+  </div>
 
     <div class="hfa-card" id="outlook" data-tabs>
       <div class="hfa-head"><div class="hfa-eyebrow">Players</div><h2>Player outlook</h2><span class="sub">The player's offense (pass side for QB, WR and TE, run side for RB) blended with how soft the defenses left on their slate are. 50 is league average; high = strong offense with an easy road. Team data 2026 weeks 1–5, schedule = remaining weeks 6–18. Each team shows its lead player; the arrow opens the rest. <span class="text-success">Green</span>/<span class="text-danger">amber</span> = top/bottom 10 teams on team columns; top/bottom 25 players on RB and WR stats, 10 on QB and TE. Click a column to rank by it.</span></div>
@@ -1591,7 +1597,6 @@
       </div>
       
     </div>
-  </div>
 
   <div class="hfa-card" id="streaming" data-tabs>
     <div class="hfa-head"><div class="hfa-eyebrow">Streaming</div><h2>Streaming, week 6</h2><span class="sub">Kickers and defenses ranked by the walk-forward models; QB, RB, WR and TE streamers (outside the starter line by season-to-date PPR) ranked by the game projection engine. Top 5 in each tab are the week's stream picks; once played, a pick is a hit when it finishes top 10.</span></div>

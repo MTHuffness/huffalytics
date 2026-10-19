@@ -101,6 +101,11 @@
   .hfa-grid > * { min-width: 0; }
   .hfa-grid > .hfa-card { margin-bottom: 0; }
 
+  /* The board: slate left, leaders in a column on the right at full width */
+  .hfa-board { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; margin-bottom: 1rem; align-items: start; }
+  .hfa-board > .hfa-card { margin-bottom: 0; min-width: 0; }
+  @media (min-width: 1200px) { .hfa-board { grid-template-columns: minmax(0, 1fr) 24rem; } }
+
   /* Tables */
   .hfa table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
   .hfa th { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--hfa-muted); text-align: left; padding: 0.5rem 0.7rem; border-bottom: var(--hfa-hairline); white-space: nowrap; }
