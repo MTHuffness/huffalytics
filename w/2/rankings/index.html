@@ -102,8 +102,14 @@
   .hfa-grid > .hfa-card { margin-bottom: 0; }
 
   /* The board: slate left, leaders in a column on the right at full width */
-  .hfa-board { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; margin-bottom: 1rem; align-items: start; }
+  .hfa-board { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; margin-bottom: 1rem; align-items: stretch; }
   .hfa-board > .hfa-card { margin-bottom: 0; min-width: 0; }
+  /* The leaders card fills the slate's height: the table grows, the pager pins to the bottom. */
+  .hfa-board > #leaders { display: flex; flex-direction: column; }
+  .hfa-board > #leaders > .pane { display: none; flex: 1 1 auto; flex-direction: column; }
+  .hfa-board > #leaders > .pane.active { display: flex; }
+  .hfa-board > #leaders > .pane > .scroll { flex: 1 1 auto; }
+  .hfa-board > #leaders > .pane > .pager { margin-top: auto; }
   @media (min-width: 1200px) { .hfa-board { grid-template-columns: minmax(0, 1fr) 24rem; } }
 
   /* Tables */
