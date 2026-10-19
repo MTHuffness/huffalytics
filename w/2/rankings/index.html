@@ -98,9 +98,11 @@
   .hfa-wk .pick select { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
   .hfa-nav { margin-left: 0; }
 
-  /* Section pills (jump links) */
+  /* Section pills: jump links on desktop, the app bar on the phone */
   .hfa-jump { display: flex; gap: 0.35rem; flex-wrap: wrap; margin: 0 0 1rem; }
-  .hfa-jump a { border-radius: 999px; padding: 0.25rem 0.75rem; font-size: 0.74rem; font-weight: 600; color: var(--hfa-muted); background: rgba(128, 128, 128, 0.12); text-decoration: none; }
+  .hfa-jump a { border-radius: 999px; padding: 0.25rem 0.75rem; font-size: 0.74rem; font-weight: 600; color: var(--hfa-muted); background: rgba(128, 128, 128, 0.12); text-decoration: none; white-space: nowrap; }
+  .hfa-jump a.active { background: var(--hfa-accent); color: #fff; }
+  .sheet-close { display: none; }
 
   /* Cards */
   .hfa-card { background: var(--hfa-card); border: var(--hfa-hairline); border-radius: var(--hfa-radius); box-shadow: var(--hfa-shadow); margin-bottom: 1rem; overflow: hidden; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
@@ -317,6 +319,34 @@
 
   @media (max-width: 760px) {
     .hfa-grid { grid-template-columns: 1fr; }
+    /* App mode: the page pills fold into the section bar, which sticks
+       under the brand; one section shows at a time. */
+    .hfa-nav { display: none; }
+    .hfa-top { padding-right: 2.2rem; }
+    .hfa-jump { position: sticky; top: 0; z-index: 40; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 0.3rem; margin: 0; padding: 0.55rem 16px 0.55rem; background: rgba(5, 5, 7, 0.86); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: var(--hfa-hairline); -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 2rem), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 2rem), transparent); }
+    :root[data-theme="light"] .hfa-jump { background: rgba(243, 244, 248, 0.9); }
+    .hfa-jump::-webkit-scrollbar { display: none; }
+    .hfa-jump a { flex: 0 0 auto; padding: 0.4rem 0.95rem; font-size: 0.82rem; }
+    .hfa-jump a:last-child { margin-right: 2rem; }
+    body.is-app .hfa-sec, body.is-app .hfa-board > #leaders:not(.is-active) { display: none; }
+    body.is-app .hfa-sec.is-active { display: block; }
+    body.is-app .hfa-board > #leaders.is-active { display: flex; }
+    /* backdrop-filter would make a card the containing block of its fixed sheets: off on the phone */
+    .hfa-card { backdrop-filter: none; -webkit-backdrop-filter: none; }
+    .hfa-jump { margin-bottom: 0; }
+    body:not(.is-app) .hfa-jump { margin-bottom: 1rem; }
+    body.is-app .hfa-board { display: block; margin-bottom: 0; }
+    body.is-app .hfa-board > .hfa-card, body.is-app .hfa-sec { margin-bottom: 0; border-bottom: 0; }
+    body.is-app main > .hfa-sec, body.is-app .hfa-board > .hfa-sec { border-top: 0; }
+    body.is-app .hfa-hero::after { display: none; }
+    body.is-app .hfa-foot { padding-top: 1.5rem; }
+    /* Sheets: the legend and the calls open from the bottom with a dimmed page behind */
+    details.legend[open]::before, details.calls[open]::before { content: ""; position: fixed; inset: 0; z-index: 45; background: rgba(0, 0, 0, 0.6); }
+    .hfa .legend-body, .hfa .calls-pop { position: fixed; left: 0; right: 0; bottom: 0; top: auto; width: auto; max-height: 80vh; overflow: auto; z-index: 50; border-radius: 18px 18px 0 0; padding: 1rem 1rem 1.5rem; box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.6); border-bottom: 0; }
+    .hfa .legend-body::before, .hfa .calls-pop::before { content: ""; display: block; width: 2.4rem; height: 4px; border-radius: 2px; background: rgba(128, 128, 128, 0.4); margin: -0.3rem auto 0.8rem; }
+    .sheet-close { display: grid; place-items: center; position: absolute; top: 0.6rem; right: 0.7rem; width: 2rem; height: 2rem; border: 0; border-radius: 999px; background: rgba(128, 128, 128, 0.18); color: var(--hfa-body); font-size: 1.2rem; line-height: 1; cursor: pointer; }
+    .hfa details.legend { position: static; }
+    .hfa .calls-head { padding-right: 2.4rem; }
     .hfa-top { gap: 0.4rem; position: relative; padding-right: 2.2rem; flex-wrap: wrap; }
     .hfa-wk { margin-left: auto; }
     .hfa-nav { flex: 0 0 100%; justify-content: center; margin: 0; }
@@ -353,9 +383,7 @@
     .hfa .why td.name { white-space: normal; }
     .hfa .slate > tbody > tr > td:first-child { box-shadow: none; }
     .hfa table.stack > tbody > tr { box-shadow: inset 3px 0 0 var(--hfa-accent); }
-    .hfa .legend-body { position: fixed; left: 1rem; right: 1rem; top: auto; width: auto; max-height: 70vh; overflow: auto; }
     .hfa details.calls { position: static; }
-    .hfa .calls-pop { position: fixed; left: 0.6rem; right: 0.6rem; top: 4.5rem; width: auto; }
     .hfa .nm-full { display: none; } .hfa .nm-short { display: inline; }
     .hfa .lvl .note { flex: 0 0 100%; margin-left: 0; }
     .hfa .kpi-list span { width: 2.2rem; }
@@ -396,6 +424,7 @@
       <span class="sub">2026 week 1. Every number is opponent-blind and knowable before the week kicked off. Click a column to rank by it; <span class="text-success">green</span> = top 10, <span class="text-danger">amber</span> = bottom 10 in that category. #N is the team's rank in the column; ▲▼ is the change vs the full 2025 season (green improved).</span>
     </div>
   </div>
+  <nav class="hfa-jump" aria-label="Sections"><a href="/w/2/#hero">Week</a><a href="/w/2/#slate">Slate</a><a href="/w/2/#leaders">Leaders</a><a href="/w/2/#outlook">Outlook</a><a href="/w/2/#streaming">Streaming</a><a href="/w/2/rankings/" class="active">Rankings</a><a href="/about/">About</a></nav>
   <div class="hfa-card">
     <div class="hfa-head"><div class="hfa-eyebrow">All 32 teams</div><h2>Offense and defense efficiency entering week 2</h2></div>
     <div class="tabs" role="tablist">
@@ -888,6 +917,25 @@
 </div>
 <script>
 (function(){
+  // App mode (phone): one section at a time, picked from the sticky bar.
+  var app=matchMedia("(max-width: 760px)"), jump=document.querySelector(".hfa-jump"), secs=document.querySelectorAll(".hfa-sec");
+  function pick(key, push){
+    if(!secs.length) return;
+    var found=false; secs.forEach(function(sc){ var on=sc.dataset.sec===key; sc.classList.toggle("is-active",on); if(on) found=true; });
+    if(!found){ secs.forEach(function(sc){ sc.classList.toggle("is-active", sc.dataset.sec==="slate"); }); key="slate"; }
+    if(jump) jump.querySelectorAll("a[data-sec]").forEach(function(a){ a.classList.toggle("active",a.dataset.sec===key); var on=a.dataset.sec===key; if(on&&a.scrollIntoView) a.scrollIntoView({block:"nearest",inline:"center"}); });
+    try{ sessionStorage.setItem("hfa-sec",key); }catch(e){}
+    if(push) history.replaceState(null,"","#"+key);
+    window.scrollTo(0,0);
+  }
+  function mode(){
+    document.body.classList.toggle("is-app",app.matches);
+    if(app.matches&&secs.length){ var h=location.hash.replace("#",""), saved=null; try{saved=sessionStorage.getItem("hfa-sec");}catch(e){} pick(h||saved||"slate",false); }
+    else { secs.forEach(function(sc){sc.classList.remove("is-active");}); if(jump) jump.querySelectorAll("a[data-sec]").forEach(function(a){a.classList.remove("active");}); }
+  }
+  if(jump) jump.querySelectorAll("a[data-sec]").forEach(function(a){ a.addEventListener("click",function(e){ if(app.matches){ e.preventDefault(); pick(a.dataset.sec,true); } }); });
+  window.addEventListener("hashchange",function(){ if(app.matches) pick(location.hash.replace("#",""),false); });
+  app.addEventListener?app.addEventListener("change",mode):app.addListener(mode); mode();
   var wk=document.getElementById("hfa-wk"); if(wk) wk.addEventListener("change",function(){ location.href=wk.value; });
   var b=document.getElementById("hfa-theme");
   b.addEventListener("click",function(){
