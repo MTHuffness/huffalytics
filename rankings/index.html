@@ -62,6 +62,21 @@
   .hfa-nav a.active { background: var(--hfa-accent); color: #fff; box-shadow: 0 1px 6px rgba(255, 31, 47, 0.35); }
   .hfa-theme { border: 0; background: transparent; color: var(--hfa-muted); font-size: 1.1rem; cursor: pointer; padding: 0.2rem 0.4rem; }
 
+  /* Week strip */
+  .hfa-weeks { display: flex; align-items: center; gap: 0.3rem; padding: 0 0 0.9rem; overflow-x: auto; scrollbar-width: none; }
+  .hfa-weeks::-webkit-scrollbar { display: none; }
+  .hfa-weeks-label { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.1em; color: var(--hfa-muted); margin-right: 0.3rem; }
+  .hfa-weeks a { flex: 0 0 auto; min-width: 2.1rem; text-align: center; border-radius: 8px; padding: 0.28rem 0.55rem; font-size: 0.8rem; font-weight: 700; color: var(--hfa-muted); text-decoration: none; background: rgba(128, 128, 128, 0.12); border: 1px solid transparent; }
+  .hfa-weeks a.live { border-color: var(--hfa-accent-soft); color: var(--hfa-body); }
+  .hfa-weeks a.next { color: var(--hfa-body); }
+  .hfa-weeks a.next::after { content: " next"; font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--hfa-muted); }
+  .hfa-weeks a.active { background: var(--hfa-accent); color: #fff; border-color: var(--hfa-accent); }
+  .hfa-weeks a.active.next::after { color: rgba(255, 255, 255, 0.8); }
+
+  /* Section pills (jump links) */
+  .hfa-jump { display: flex; gap: 0.35rem; flex-wrap: wrap; margin: 0 0 1rem; }
+  .hfa-jump a { border-radius: 999px; padding: 0.25rem 0.75rem; font-size: 0.74rem; font-weight: 600; color: var(--hfa-muted); background: rgba(128, 128, 128, 0.12); text-decoration: none; }
+
   /* Cards */
   .hfa-card { background: var(--hfa-card); border: var(--hfa-hairline); border-radius: var(--hfa-radius); box-shadow: var(--hfa-shadow); margin-bottom: 1rem; overflow: hidden; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
   .hfa-head { padding: 0.9rem 1.1rem 0.6rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.75rem; }
@@ -74,7 +89,7 @@
   .hfa-hero::after { content: ""; position: absolute; left: 1.1rem; right: 1.1rem; top: 0; height: 2px; background: linear-gradient(90deg, var(--hfa-accent), transparent 70%); }
   .hfa-hero .hfa-head { padding-top: 1.2rem; }
   .hfa-hero h1 { margin: 0; font-size: 1.6rem; font-weight: 900; letter-spacing: -0.02em; text-transform: uppercase; }
-  .hfa-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); border-top: var(--hfa-hairline); }
+  .hfa-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); border-top: var(--hfa-hairline); }
   .hfa-kpi { padding: 0.8rem 1.1rem; border-left: var(--hfa-hairline); }
   .hfa-kpi:first-child { border-left: 0; }
   .hfa-label { font-size: 0.66rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-muted); }
@@ -135,12 +150,62 @@
   .hfa .rank td.team, .hfa .rank th.team { position: sticky; left: 2.4rem; background: #0d0d11; z-index: 1; box-shadow: inset -1px 0 0 rgba(128, 128, 128, 0.2); }
   :root[data-theme="light"] .hfa .rank td:first-child, :root[data-theme="light"] .hfa .rank th:first-child, :root[data-theme="light"] .hfa .rank td.team, :root[data-theme="light"] .hfa .rank th.team { background: #fff; }
 
+  /* Board bits */
+  .hfa .kpi-list { display: flex; flex-direction: column; gap: 0.15rem; font-size: 0.82rem; }
+  .hfa .kpi-list > div { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .hfa .kpi-list span { color: var(--hfa-muted); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; display: inline-block; width: 2.4rem; }
+  .hfa .kpi-list b { font-weight: 700; }
+  .hfa .lvl { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; padding: 0.55rem 1.1rem; border-top: var(--hfa-hairline); font-size: 0.78rem; }
+  .hfa .lvl .pill { border: 1px solid rgba(128, 128, 128, 0.25); background: transparent; color: var(--hfa-muted); border-radius: 999px; padding: 0.25rem 0.7rem; font-size: 0.74rem; font-weight: 600; cursor: pointer; }
+  .hfa .lvl .pill.active { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .hfa .lvl .pill b { color: inherit; }
+  .hfa .lvl .pill small { opacity: 0.8; font-weight: 500; }
+  .hfa .lvl .note { color: var(--hfa-muted); margin-left: auto; font-size: 0.72rem; }
+  .hfa .slate tr.leg > td:first-child { box-shadow: inset 3px 0 0 var(--hfa-accent); }
+  .hfa .slate tr.dim > td { opacity: 0.6; }
+  .hfa .slate .qbnote { display: block; font-size: 0.68rem; color: var(--hfa-bad); margin-top: 0.15rem; }
+  .hfa .rec { font-weight: 700; }
+  .hfa .rec.held { color: var(--hfa-good); } .hfa .rec.partly { color: var(--hfa-warn); } .hfa .rec.broke { color: var(--hfa-bad); }
+  .hfa .grade { display: inline-block; min-width: 2.2rem; text-align: center; border-radius: 6px; padding: 0.1rem 0.4rem; font-weight: 800; font-size: 0.74rem; background: rgba(128, 128, 128, 0.16); }
+  .hfa .grade.g-A { color: var(--hfa-good); } .hfa .grade.g-B { color: var(--hfa-good); } .hfa .grade.g-C { color: var(--hfa-warn); } .hfa .grade.g-D, .hfa .grade.g-F { color: var(--hfa-bad); }
+  .hfa .bar { height: 3px; border-radius: 2px; background: rgba(128, 128, 128, 0.2); margin-top: 3px; }
+  .hfa .bar > i { display: block; height: 100%; border-radius: 2px; background: var(--hfa-accent); }
+  .hfa .rk { display: inline-block; min-width: 1.4rem; text-align: center; border-radius: 6px; font-size: 0.72rem; font-weight: 700; color: var(--hfa-muted); }
+  .hfa .rk.top { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .hfa td.name { font-weight: 600; white-space: nowrap; }
+  .hfa td.name img, .hfa td.tm img { width: 18px; height: 18px; vertical-align: -4px; margin-right: 3px; }
+  .hfa .nm-short { display: none; }
+  .hfa .inj { display: inline-block; margin-left: 0.3rem; font-size: 0.6rem; font-weight: 700; padding: 0.08rem 0.35rem; border-radius: 4px; background: rgba(255, 176, 32, 0.18); color: var(--hfa-warn); vertical-align: middle; }
+  .hfa .inj.out { background: rgba(255, 31, 47, 0.18); color: var(--hfa-accent); }
+  .hfa .act { font-size: 0.7rem; margin-left: 0.2rem; }
+  .hfa .act.over { color: var(--hfa-good); } .hfa .act.under { color: var(--hfa-bad); }
+  .hfa .hit { color: var(--hfa-good); font-weight: 700; margin-left: 0.15rem; }
+  .hfa .caret { border: 0; background: transparent; color: var(--hfa-muted); cursor: pointer; padding: 0 0.3rem 0 0; font-size: 0.8rem; }
+  .hfa .caret.open { transform: rotate(90deg); display: inline-block; }
+  .hfa tr.mate { display: none; }
+  .hfa tr.mate.show { display: table-row; }
+  .hfa tr.mate td { background: var(--hfa-tint); }
+  .hfa .pager { display: flex; gap: 0.3rem; flex-wrap: wrap; padding: 0.5rem 1.1rem 0.8rem; }
+  .hfa .pager button { border: 1px solid rgba(128, 128, 128, 0.25); background: transparent; color: var(--hfa-muted); border-radius: 8px; padding: 0.2rem 0.6rem; font-size: 0.74rem; font-weight: 600; cursor: pointer; }
+  .hfa .pager button.active { background: var(--hfa-accent); color: #fff; border-color: var(--hfa-accent); }
+  .hfa .blurb { padding: 0.2rem 1.1rem 0.6rem; font-size: 0.76rem; color: var(--hfa-muted); line-height: 1.45; }
+  .hfa .blurb b { font-weight: 700; }
+  .hfa .ranktab td:first-child, .hfa .ranktab th:first-child { position: sticky; left: 0; background: #0d0d11; z-index: 1; }
+  .hfa .ranktab td.name, .hfa .ranktab th.name { position: sticky; left: 2.2rem; background: #0d0d11; z-index: 1; box-shadow: inset -1px 0 0 rgba(128, 128, 128, 0.2); }
+  :root[data-theme="light"] .hfa .ranktab td:first-child, :root[data-theme="light"] .hfa .ranktab th:first-child, :root[data-theme="light"] .hfa .ranktab td.name, :root[data-theme="light"] .hfa .ranktab th.name { background: #fff; }
+  .hfa .ranktab th.sort { cursor: pointer; } .hfa .ranktab th.sort.on { color: var(--hfa-accent); }
+  .hfa .stream-badge { display: inline-block; margin-left: 0.3rem; font-size: 0.6rem; font-weight: 700; padding: 0.08rem 0.35rem; border-radius: 4px; background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); vertical-align: middle; }
+  .hfa .starter-badge { display: inline-block; margin-left: 0.3rem; font-size: 0.6rem; font-weight: 700; padding: 0.08rem 0.35rem; border-radius: 4px; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); vertical-align: middle; }
+  .hfa .dev { font-size: 0.66rem; color: var(--hfa-muted); margin-left: 0.15rem; }
+
   .hfa-foot { color: var(--hfa-muted); font-size: 0.76rem; padding: 1rem 0.25rem; line-height: 1.6; }
   .hfa-foot a { color: var(--hfa-muted); }
 
   @media (max-width: 760px) {
     .hfa-grid { grid-template-columns: 1fr; }
-    .hfa-top { gap: 0.5rem; }
+    .hfa-top { gap: 0.5rem; position: relative; padding-right: 2.2rem; }
+    .hfa-theme { position: absolute; right: 0; top: 50%; transform: translateY(-50%); }
+    .hfa-nav a { padding: 0.3rem 0.7rem; }
     .hfa-brand .mark { font-size: 1.1rem; }
     .hfa-brand .logo { width: 28px; height: 28px; }
     .hfa-brand { gap: 0.45rem; }
@@ -164,6 +229,9 @@
     .hfa table.stack > tbody > tr > td.c-plain:has(> .flat:only-child) { display: none; }
     .hfa table.stack > tbody > tr > td.c-plain .badge + .badge { margin-left: 0.2rem; }
     .hfa table.stack .match { flex-wrap: wrap; font-size: 0.95rem; }
+    .hfa .nm-full { display: none; } .hfa .nm-short { display: inline; }
+    .hfa .lvl .note { flex: 0 0 100%; margin-left: 0; }
+    .hfa .kpi-list span { width: 2.2rem; }
     .hfa-card { border-left: 0; border-right: 0; border-radius: 0; }
     .hfa { padding: 0; }
     .hfa-top, .hfa-foot { padding-left: 16px; padding-right: 16px; }
@@ -183,6 +251,12 @@
     </nav>
     <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
   </div>
+  
+  <div class="hfa-weeks" aria-label="Week">
+    <span class="hfa-weeks-label">2026</span>
+    <a href="/w/1/rankings/" class="" title="Week 1">1</a><a href="/w/2/rankings/" class="" title="Week 2">2</a><a href="/w/3/rankings/" class="" title="Week 3">3</a><a href="/w/4/rankings/" class="" title="Week 4">4</a><a href="/w/5/rankings/" class="" title="Week 5">5</a><a href="/rankings/" class="active live" title="Week 6 · in play">6</a><a href="/w/7/rankings/" class=" next" title="Week 7 · next up">7</a>
+  </div>
+  
   
 
   <div class="hfa-card hfa-hero">

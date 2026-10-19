@@ -1,0 +1,7568 @@
+{
+ "as_of": "2026-10-19T14:33:06.655890-06:00",
+ "season": 2026,
+ "week": 4,
+ "basis": "2026 weeks 1–3",
+ "prev_basis": "entering week 3",
+ "tabs": [
+  {
+   "key": "off",
+   "label": "Offense",
+   "columns": [
+    {
+     "label": "EPA/play",
+     "best": "high",
+     "title": "Overall offensive efficiency — EPA per play, garbage time excluded. The default ranking."
+    },
+    {
+     "label": "Succ%",
+     "best": "high",
+     "title": "Success rate — share of plays with positive EPA."
+    },
+    {
+     "label": "O-Line",
+     "best": "high",
+     "title": "Offensive line index — pass protection (sack + pressure rate taken, inverted) blended with run blocking (yards before contact). 50 = league average, +10 per standard deviation."
+    },
+    {
+     "label": "Pass EPA",
+     "best": "high",
+     "title": "EPA per pass play."
+    },
+    {
+     "label": "Comp%",
+     "best": "high",
+     "title": "Team completion percentage."
+    },
+    {
+     "label": "Pass Rtg",
+     "best": "high",
+     "title": "NFL passer rating from team passing totals (closest stand-in for QBR the data carries)."
+    },
+    {
+     "label": "Pass Y/G",
+     "best": "high",
+     "title": "Passing yards per game."
+    },
+    {
+     "label": "Sack%",
+     "best": "low",
+     "title": "Sacks taken per dropback — lower is better protection."
+    },
+    {
+     "label": "Rush EPA",
+     "best": "high",
+     "title": "EPA per rush."
+    },
+    {
+     "label": "Rush Y/G",
+     "best": "high",
+     "title": "Rushing yards per game."
+    },
+    {
+     "label": "YBC/Att",
+     "best": "high",
+     "title": "Rushing yards before contact per carry (PFR charting, 2018+) — the run-blocking half of line play."
+    },
+    {
+     "label": "Yds/Rec",
+     "best": "high",
+     "title": "Receiving yards per catch — depth/YAC of the receiving game."
+    },
+    {
+     "label": "Expl%",
+     "best": "high",
+     "title": "Explosive play rate (big gains per play)."
+    },
+    {
+     "label": "3rd%",
+     "best": "high",
+     "title": "Third-down conversion rate."
+    },
+    {
+     "label": "RZ TD%",
+     "best": "high",
+     "title": "Red-zone touchdown rate — trips inside the 20 that ended in a touchdown (garbage time excluded). Finishing: the engine's touchdown split reads it."
+    },
+    {
+     "label": "RZ EPA",
+     "best": "high",
+     "title": "EPA per play on snaps inside the opponent's 20."
+    },
+    {
+     "label": "Field EPA",
+     "best": "high",
+     "title": "EPA per play on every other snap — moving the ball between the 20s. High here with a low RZ TD% is yards without touchdowns."
+    },
+    {
+     "label": "Pts/G",
+     "best": "high",
+     "title": "Points scored per game."
+    },
+    {
+     "label": "Giv/G",
+     "best": "low",
+     "title": "Giveaways per game — interceptions thrown plus fumbles lost."
+    },
+    {
+     "label": "Flags/G",
+     "best": "low",
+     "title": "Accepted penalties per game committed by the offense (special teams flags on its possessions included, garbage time excluded)."
+    },
+    {
+     "label": "Pre-snap/G",
+     "best": "low",
+     "title": "Pre-snap flags per game — false starts, delay of game, formation, shift, motion, too many men. Barely persists within a season — a tendency at most."
+    },
+    {
+     "label": "DPI Yds/G",
+     "best": "high",
+     "title": "Defensive pass interference yards drawn per game — free yards that never show as passing yards."
+    }
+   ],
+   "rows": [
+    {
+     "team": "SF",
+     "name": "San Francisco 49ers",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.423,
+       "rank": 1,
+       "change": "0.061"
+      },
+      {
+       "value": 0.6161,
+       "rank": 1,
+       "change": "0.7"
+      },
+      {
+       "value": 70.7143,
+       "rank": 1,
+       "change": "3.2"
+      },
+      {
+       "value": 0.6705,
+       "rank": 1,
+       "change": "0.153"
+      },
+      {
+       "value": 0.7229,
+       "rank": 2,
+       "change": "8.1"
+      },
+      {
+       "value": 133.0572,
+       "rank": 1,
+       "change": "7.5"
+      },
+      {
+       "value": 263.0,
+       "rank": 9,
+       "change": "17.0"
+      },
+      {
+       "value": 0.0,
+       "rank": 1,
+       "change": null
+      },
+      {
+       "value": 0.0545,
+       "rank": 3,
+       "change": "0.064"
+      },
+      {
+       "value": 136.3333,
+       "rank": 6,
+       "change": "1.8"
+      },
+      {
+       "value": 3.3875,
+       "rank": 2,
+       "change": "0.12"
+      },
+      {
+       "value": 13.15,
+       "rank": 3,
+       "change": "2.2"
+      },
+      {
+       "value": 0.1339,
+       "rank": 2,
+       "change": "5.6"
+      },
+      {
+       "value": 0.6471,
+       "rank": 1,
+       "change": "8.0"
+      },
+      {
+       "value": 0.8333,
+       "rank": 2,
+       "change": "3.3"
+      },
+      {
+       "value": 0.4044,
+       "rank": 4,
+       "change": "0.005"
+      },
+      {
+       "value": 0.4273,
+       "rank": 1,
+       "change": "0.075"
+      },
+      {
+       "value": 32.6667,
+       "rank": 2,
+       "change": "1.7"
+      },
+      {
+       "value": 0.3333,
+       "rank": 1,
+       "change": "0.17"
+      },
+      {
+       "value": 1.3333,
+       "rank": 1,
+       "change": "1.3"
+      },
+      {
+       "value": 0.6667,
+       "rank": 1,
+       "change": "0.7"
+      },
+      {
+       "value": 1.6667,
+       "rank": 21,
+       "change": "1.7"
+      }
+     ]
+    },
+    {
+     "team": "BUF",
+     "name": "Buffalo Bills",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.2028,
+       "rank": 2,
+       "change": "0.187"
+      },
+      {
+       "value": 0.4903,
+       "rank": 7,
+       "change": "2.0"
+      },
+      {
+       "value": 51.491,
+       "rank": 13,
+       "change": "5.3"
+      },
+      {
+       "value": 0.3529,
+       "rank": 3,
+       "change": "0.290"
+      },
+      {
+       "value": 0.6512,
+       "rank": 16,
+       "change": "1.6"
+      },
+      {
+       "value": 104.1182,
+       "rank": 11,
+       "change": "21.7"
+      },
+      {
+       "value": 262.0,
+       "rank": 10,
+       "change": "29.0"
+      },
+      {
+       "value": 0.093,
+       "rank": 30,
+       "change": "2.0"
+      },
+      {
+       "value": -0.0164,
+       "rank": 7,
+       "change": "0.021"
+      },
+      {
+       "value": 155.0,
+       "rank": 4,
+       "change": "10.5"
+      },
+      {
+       "value": 3.6556,
+       "rank": 1,
+       "change": "0.27"
+      },
+      {
+       "value": 14.0357,
+       "rank": 2,
+       "change": "0.5"
+      },
+      {
+       "value": 0.1419,
+       "rank": 1,
+       "change": "0.7"
+      },
+      {
+       "value": 0.5714,
+       "rank": 3,
+       "change": "7.6"
+      },
+      {
+       "value": 0.625,
+       "rank": 13,
+       "change": "12.5"
+      },
+      {
+       "value": -0.0165,
+       "rank": 17,
+       "change": "0.164"
+      },
+      {
+       "value": 0.2353,
+       "rank": 3,
+       "change": "0.222"
+      },
+      {
+       "value": 33.6667,
+       "rank": 1,
+       "change": "4.8"
+      },
+      {
+       "value": 1.6667,
+       "rank": 25,
+       "change": "1.67"
+      },
+      {
+       "value": 3.6667,
+       "rank": 12,
+       "change": "1.2"
+      },
+      {
+       "value": 1.0,
+       "rank": 6,
+       "change": "0.5"
+      },
+      {
+       "value": 15.3333,
+       "rank": 7,
+       "change": "7.7"
+      }
+     ]
+    },
+    {
+     "team": "CIN",
+     "name": "Cincinnati Bengals",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.2028,
+       "rank": 3,
+       "change": "0.036"
+      },
+      {
+       "value": 0.4797,
+       "rank": 8,
+       "change": "4.0"
+      },
+      {
+       "value": 50.8599,
+       "rank": 14,
+       "change": "3.2"
+      },
+      {
+       "value": 0.2993,
+       "rank": 6,
+       "change": "0.032"
+      },
+      {
+       "value": 0.7087,
+       "rank": 3,
+       "change": "2.7"
+      },
+      {
+       "value": 106.5736,
+       "rank": 10,
+       "change": "9.7"
+      },
+      {
+       "value": 247.6667,
+       "rank": 13,
+       "change": "17.2"
+      },
+      {
+       "value": 0.05,
+       "rank": 11,
+       "change": "1.7"
+      },
+      {
+       "value": -0.0112,
+       "rank": 6,
+       "change": "0.026"
+      },
+      {
+       "value": 91.3333,
+       "rank": 27,
+       "change": "4.2"
+      },
+      {
+       "value": 2.5735,
+       "rank": 14,
+       "change": "0.25"
+      },
+      {
+       "value": 10.1781,
+       "rank": 23,
+       "change": "0.1"
+      },
+      {
+       "value": 0.1149,
+       "rank": 3,
+       "change": "0.6"
+      },
+      {
+       "value": 0.5152,
+       "rank": 4,
+       "change": "3.5"
+      },
+      {
+       "value": 0.6667,
+       "rank": 7,
+       "change": "8.3"
+      },
+      {
+       "value": 0.7725,
+       "rank": 1,
+       "change": "0.137"
+      },
+      {
+       "value": 0.1432,
+       "rank": 8,
+       "change": "0.068"
+      },
+      {
+       "value": 26.6667,
+       "rank": 12,
+       "change": "0.2"
+      },
+      {
+       "value": 0.3333,
+       "rank": 1,
+       "change": "0.33"
+      },
+      {
+       "value": 4.0,
+       "rank": 15,
+       "change": null
+      },
+      {
+       "value": 3.0,
+       "rank": 30,
+       "change": "0.5"
+      },
+      {
+       "value": 0.0,
+       "rank": 23,
+       "change": null
+      }
+     ]
+    },
+    {
+     "team": "BAL",
+     "name": "Baltimore Ravens",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.2009,
+       "rank": 4,
+       "change": "0.004"
+      },
+      {
+       "value": 0.5338,
+       "rank": 2,
+       "change": "2.6"
+      },
+      {
+       "value": 59.5479,
+       "rank": 2,
+       "change": "5.2"
+      },
+      {
+       "value": 0.4126,
+       "rank": 2,
+       "change": "0.108"
+      },
+      {
+       "value": 0.6974,
+       "rank": 7,
+       "change": "1.9"
+      },
+      {
+       "value": 113.1031,
+       "rank": 4,
+       "change": "8.4"
+      },
+      {
+       "value": 248.3333,
+       "rank": 12,
+       "change": "31.2"
+      },
+      {
+       "value": 0.0411,
+       "rank": 7,
+       "change": "1.8"
+      },
+      {
+       "value": -0.0621,
+       "rank": 13,
+       "change": "0.087"
+      },
+      {
+       "value": 167.3333,
+       "rank": 3,
+       "change": "12.3"
+      },
+      {
+       "value": 2.7526,
+       "rank": 9,
+       "change": "0.29"
+      },
+      {
+       "value": 14.0566,
+       "rank": 1,
+       "change": "0.7"
+      },
+      {
+       "value": 0.1014,
+       "rank": 5,
+       "change": "4.2"
+      },
+      {
+       "value": 0.36,
+       "rank": 21,
+       "change": "6.9"
+      },
+      {
+       "value": 0.6364,
+       "rank": 12,
+       "change": "3.6"
+      },
+      {
+       "value": -0.0968,
+       "rank": 22,
+       "change": "0.138"
+      },
+      {
+       "value": 0.2931,
+       "rank": 2,
+       "change": "0.015"
+      },
+      {
+       "value": 30.6667,
+       "rank": 4,
+       "change": "1.7"
+      },
+      {
+       "value": 0.3333,
+       "rank": 1,
+       "change": "0.17"
+      },
+      {
+       "value": 5.0,
+       "rank": 28,
+       "change": "0.5"
+      },
+      {
+       "value": 2.6667,
+       "rank": 22,
+       "change": "0.7"
+      },
+      {
+       "value": 24.3333,
+       "rank": 4,
+       "change": "24.3"
+      }
+     ]
+    },
+    {
+     "team": "DAL",
+     "name": "Dallas Cowboys",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.1928,
+       "rank": 5,
+       "change": "0.068"
+      },
+      {
+       "value": 0.503,
+       "rank": 5,
+       "change": "2.8"
+      },
+      {
+       "value": 56.6379,
+       "rank": 6,
+       "change": "3.6"
+      },
+      {
+       "value": 0.3265,
+       "rank": 4,
+       "change": "0.113"
+      },
+      {
+       "value": 0.6952,
+       "rank": 8,
+       "change": "4.3"
+      },
+      {
+       "value": 107.2421,
+       "rank": 8,
+       "change": "9.8"
+      },
+      {
+       "value": 243.3333,
+       "rank": 14,
+       "change": "16.3"
+      },
+      {
+       "value": 0.0283,
+       "rank": 3,
+       "change": "0.4"
+      },
+      {
+       "value": -0.0842,
+       "rank": 17,
+       "change": "0.069"
+      },
+      {
+       "value": 94.3333,
+       "rank": 23,
+       "change": "26.8"
+      },
+      {
+       "value": 2.7536,
+       "rank": 8,
+       "change": "0.68"
+      },
+      {
+       "value": 10.0,
+       "rank": 27,
+       "change": "0.5"
+      },
+      {
+       "value": 0.0473,
+       "rank": 31,
+       "change": "1.6"
+      },
+      {
+       "value": 0.4571,
+       "rank": 7,
+       "change": "6.7"
+      },
+      {
+       "value": 0.6923,
+       "rank": 6,
+       "change": "16.5"
+      },
+      {
+       "value": 0.2296,
+       "rank": 8,
+       "change": "0.170"
+      },
+      {
+       "value": 0.1822,
+       "rank": 5,
+       "change": "0.039"
+      },
+      {
+       "value": 29.3333,
+       "rank": 7,
+       "change": "0.8"
+      },
+      {
+       "value": 0.6667,
+       "rank": 10,
+       "change": "0.17"
+      },
+      {
+       "value": 2.6667,
+       "rank": 6,
+       "change": "0.3"
+      },
+      {
+       "value": 0.6667,
+       "rank": 1,
+       "change": "0.2"
+      },
+      {
+       "value": 29.6667,
+       "rank": 2,
+       "change": "4.8"
+      }
+     ]
+    },
+    {
+     "team": "KC",
+     "name": "Kansas City Chiefs",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.1587,
+       "rank": 6,
+       "change": "0.002"
+      },
+      {
+       "value": 0.5,
+       "rank": 6,
+       "change": "1.9"
+      },
+      {
+       "value": 57.5567,
+       "rank": 3,
+       "change": "0.4"
+      },
+      {
+       "value": 0.1784,
+       "rank": 9,
+       "change": "0.059"
+      },
+      {
+       "value": 0.6837,
+       "rank": 11,
+       "change": "4.9"
+      },
+      {
+       "value": 108.8861,
+       "rank": 6,
+       "change": "5.1"
+      },
+      {
+       "value": 270.6667,
+       "rank": 6,
+       "change": "12.3"
+      },
+      {
+       "value": 0.0303,
+       "rank": 5,
+       "change": "0.9"
+      },
+      {
+       "value": 0.1294,
+       "rank": 1,
+       "change": "0.098"
+      },
+      {
+       "value": 153.3333,
+       "rank": 5,
+       "change": "32.7"
+      },
+      {
+       "value": 2.0109,
+       "rank": 24,
+       "change": "0.04"
+      },
+      {
+       "value": 12.1194,
+       "rank": 9,
+       "change": "0.1"
+      },
+      {
+       "value": 0.0988,
+       "rank": 7,
+       "change": "0.6"
+      },
+      {
+       "value": 0.4062,
+       "rank": 14,
+       "change": "3.4"
+      },
+      {
+       "value": 0.5833,
+       "rank": 19,
+       "change": "4.2"
+      },
+      {
+       "value": -0.0288,
+       "rank": 20,
+       "change": "0.101"
+      },
+      {
+       "value": 0.2137,
+       "rank": 4,
+       "change": "0.031"
+      },
+      {
+       "value": 29.3333,
+       "rank": 7,
+       "change": "2.7"
+      },
+      {
+       "value": 0.6667,
+       "rank": 10,
+       "change": "0.17"
+      },
+      {
+       "value": 2.6667,
+       "rank": 6,
+       "change": "0.3"
+      },
+      {
+       "value": 0.6667,
+       "rank": 1,
+       "change": "0.3"
+      },
+      {
+       "value": 0.0,
+       "rank": 23,
+       "change": null
+      }
+     ]
+    },
+    {
+     "team": "JAX",
+     "name": "Jacksonville Jaguars",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.1393,
+       "rank": 7,
+       "change": "0.043"
+      },
+      {
+       "value": 0.5041,
+       "rank": 4,
+       "change": "1.1"
+      },
+      {
+       "value": 43.109,
+       "rank": 26,
+       "change": "1.0"
+      },
+      {
+       "value": 0.1654,
+       "rank": 11,
+       "change": "0.051"
+      },
+      {
+       "value": 0.6667,
+       "rank": 13,
+       "change": "0.6"
+      },
+      {
+       "value": 107.8447,
+       "rank": 7,
+       "change": "2.7"
+      },
+      {
+       "value": 205.3333,
+       "rank": 23,
+       "change": "11.7"
+      },
+      {
+       "value": 0.0435,
+       "rank": 9,
+       "change": "0.5"
+      },
+      {
+       "value": 0.0984,
+       "rank": 2,
+       "change": "0.031"
+      },
+      {
+       "value": 119.3333,
+       "rank": 10,
+       "change": "8.8"
+      },
+      {
+       "value": 1.6628,
+       "rank": 31,
+       "change": "0.25"
+      },
+      {
+       "value": 11.4074,
+       "rank": 12,
+       "change": "1.0"
+      },
+      {
+       "value": 0.0732,
+       "rank": 21,
+       "change": "1.8"
+      },
+      {
+       "value": 0.5833,
+       "rank": 2,
+       "change": "8.3"
+      },
+      {
+       "value": 0.8333,
+       "rank": 2,
+       "change": "16.7"
+      },
+      {
+       "value": 0.5627,
+       "rank": 3,
+       "change": "0.399"
+      },
+      {
+       "value": 0.0619,
+       "rank": 10,
+       "change": "0.026"
+      },
+      {
+       "value": 27.3333,
+       "rank": 10,
+       "change": "3.8"
+      },
+      {
+       "value": 0.6667,
+       "rank": 10,
+       "change": "0.17"
+      },
+      {
+       "value": 2.0,
+       "rank": 2,
+       "change": null
+      },
+      {
+       "value": 0.6667,
+       "rank": 1,
+       "change": "0.3"
+      },
+      {
+       "value": 0.0,
+       "rank": 23,
+       "change": null
+      }
+     ]
+    },
+    {
+     "team": "LV",
+     "name": "Las Vegas Raiders",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.1266,
+       "rank": 8,
+       "change": "0.060"
+      },
+      {
+       "value": 0.4497,
+       "rank": 13,
+       "change": "1.0"
+      },
+      {
+       "value": 44.7187,
+       "rank": 25,
+       "change": "0.6"
+      },
+      {
+       "value": 0.3166,
+       "rank": 5,
+       "change": "0.076"
+      },
+      {
+       "value": 0.6739,
+       "rank": 12,
+       "change": "0.4"
+      },
+      {
+       "value": 107.2011,
+       "rank": 9,
+       "change": "6.7"
+      },
+      {
+       "value": 220.3333,
+       "rank": 17,
+       "change": "13.8"
+      },
+      {
+       "value": 0.043,
+       "rank": 8,
+       "change": "0.8"
+      },
+      {
+       "value": -0.1357,
+       "rank": 22,
+       "change": "0.003"
+      },
+      {
+       "value": 100.0,
+       "rank": 19,
+       "change": "6.5"
+      },
+      {
+       "value": 1.4946,
+       "rank": 32,
+       "change": "0.16"
+      },
+      {
+       "value": 10.6613,
+       "rank": 19,
+       "change": "0.3"
+      },
+      {
+       "value": 0.071,
+       "rank": 24,
+       "change": "1.3"
+      },
+      {
+       "value": 0.4286,
+       "rank": 9,
+       "change": "4.8"
+      },
+      {
+       "value": 0.6154,
+       "rank": 16,
+       "change": "9.9"
+      },
+      {
+       "value": 0.0606,
+       "rank": 15,
+       "change": "0.036"
+      },
+      {
+       "value": 0.1477,
+       "rank": 6,
+       "change": "0.089"
+      },
+      {
+       "value": 29.3333,
+       "rank": 7,
+       "change": "2.8"
+      },
+      {
+       "value": 0.6667,
+       "rank": 10,
+       "change": "0.33"
+      },
+      {
+       "value": 2.3333,
+       "rank": 4,
+       "change": "0.2"
+      },
+      {
+       "value": 1.3333,
+       "rank": 10,
+       "change": "0.2"
+      },
+      {
+       "value": 2.3333,
+       "rank": 20,
+       "change": "2.3"
+      }
+     ]
+    },
+    {
+     "team": "DET",
+     "name": "Detroit Lions",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.0746,
+       "rank": 9,
+       "change": "0.093"
+      },
+      {
+       "value": 0.5338,
+       "rank": 2,
+       "change": "5.1"
+      },
+      {
+       "value": 50.3046,
+       "rank": 17,
+       "change": "3.0"
+      },
+      {
+       "value": 0.1585,
+       "rank": 13,
+       "change": "0.142"
+      },
+      {
+       "value": 0.7064,
+       "rank": 5,
+       "change": "3.1"
+      },
+      {
+       "value": 116.0742,
+       "rank": 3,
+       "change": "2.9"
+      },
+      {
+       "value": 267.3333,
+       "rank": 7,
+       "change": "0.8"
+      },
+      {
+       "value": 0.0633,
+       "rank": 20,
+       "change": "0.6"
+      },
+      {
+       "value": -0.024,
+       "rank": 8,
+       "change": "0.031"
+      },
+      {
+       "value": 120.6667,
+       "rank": 9,
+       "change": "5.2"
+      },
+      {
+       "value": 3.0361,
+       "rank": 4,
+       "change": "0.02"
+      },
+      {
+       "value": 10.4156,
+       "rank": 21,
+       "change": "0.2"
+      },
+      {
+       "value": 0.0946,
+       "rank": 8,
+       "change": "1.1"
+      },
+      {
+       "value": 0.3913,
+       "rank": 16,
+       "change": "8.4"
+      },
+      {
+       "value": 0.8182,
+       "rank": 4,
+       "change": "1.5"
+      },
+      {
+       "value": 0.3948,
+       "rank": 5,
+       "change": "0.035"
+      },
+      {
+       "value": -0.036,
+       "rank": 21,
+       "change": "0.139"
+      },
+      {
+       "value": 31.0,
+       "rank": 3,
+       "change": null
+      },
+      {
+       "value": 0.3333,
+       "rank": 1,
+       "change": "0.17"
+      },
+      {
+       "value": 2.0,
+       "rank": 2,
+       "change": "0.5"
+      },
+      {
+       "value": 1.0,
+       "rank": 6,
+       "change": null
+      },
+      {
+       "value": 0.0,
+       "rank": 23,
+       "change": null
+      }
+     ]
+    },
+    {
+     "team": "LA",
+     "name": "Los Angeles Rams",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.067,
+       "rank": 10,
+       "change": "0.086"
+      },
+      {
+       "value": 0.44,
+       "rank": 14,
+       "change": "4.5"
+      },
+      {
+       "value": 48.9642,
+       "rank": 19,
+       "change": "3.7"
+      },
+      {
+       "value": 0.1336,
+       "rank": 14,
+       "change": "0.186"
+      },
+      {
+       "value": 0.6053,
+       "rank": 23,
+       "change": "5.6"
+      },
+      {
+       "value": 87.7924,
+       "rank": 18,
+       "change": "12.8"
+      },
+      {
+       "value": 295.0,
+       "rank": 3,
+       "change": "47.5"
+      },
+      {
+       "value": 0.0543,
+       "rank": 13,
+       "change": "2.5"
+      },
+      {
+       "value": -0.0585,
+       "rank": 12,
+       "change": "0.001"
+      },
+      {
+       "value": 133.6667,
+       "rank": 7,
+       "change": "8.8"
+      },
+      {
+       "value": 3.2875,
+       "rank": 3,
+       "change": "0.02"
+      },
+      {
+       "value": 12.8261,
+       "rank": 6,
+       "change": "0.1"
+      },
+      {
+       "value": 0.1133,
+       "rank": 4,
+       "change": "3.8"
+      },
+      {
+       "value": 0.4194,
+       "rank": 12,
+       "change": "0.3"
+      },
+      {
+       "value": 0.375,
+       "rank": 29,
+       "change": "29.2"
+      },
+      {
+       "value": -0.2944,
+       "rank": 30,
+       "change": "0.182"
+      },
+      {
+       "value": 0.1359,
+       "rank": 9,
+       "change": "0.064"
+      },
+      {
+       "value": 20.3333,
+       "rank": 20,
+       "change": "2.8"
+      },
+      {
+       "value": 1.0,
+       "rank": 18,
+       "change": "0.50"
+      },
+      {
+       "value": 3.6667,
+       "rank": 12,
+       "change": "1.7"
+      },
+      {
+       "value": 1.3333,
+       "rank": 10,
+       "change": "0.8"
+      },
+      {
+       "value": 4.3333,
+       "rank": 18,
+       "change": "4.3"
+      }
+     ]
+    },
+    {
+     "team": "CHI",
+     "name": "Chicago Bears",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.0589,
+       "rank": 11,
+       "change": "0.004"
+      },
+      {
+       "value": 0.427,
+       "rank": 19,
+       "change": "1.2"
+      },
+      {
+       "value": 53.5847,
+       "rank": 10,
+       "change": "2.1"
+      },
+      {
+       "value": 0.2123,
+       "rank": 8,
+       "change": "0.005"
+      },
+      {
+       "value": 0.6633,
+       "rank": 14,
+       "change": "2.3"
+      },
+      {
+       "value": 96.8112,
+       "rank": 15,
+       "change": "7.4"
+      },
+      {
+       "value": 236.0,
+       "rank": 15,
+       "change": "5.5"
+      },
+      {
+       "value": 0.0561,
+       "rank": 16,
+       "change": "2.6"
+      },
+      {
+       "value": -0.1819,
+       "rank": 25,
+       "change": "0.036"
+      },
+      {
+       "value": 184.3333,
+       "rank": 1,
+       "change": "28.2"
+      },
+      {
+       "value": 2.8571,
+       "rank": 6,
+       "change": "0.47"
+      },
+      {
+       "value": 10.8923,
+       "rank": 17,
+       "change": "0.4"
+      },
+      {
+       "value": 0.0865,
+       "rank": 11,
+       "change": "1.4"
+      },
+      {
+       "value": 0.3684,
+       "rank": 20,
+       "change": "3.9"
+      },
+      {
+       "value": 0.4444,
+       "rank": 26,
+       "change": "5.6"
+      },
+      {
+       "value": -0.22,
+       "rank": 25,
+       "change": "0.021"
+      },
+      {
+       "value": 0.1433,
+       "rank": 7,
+       "change": "0.008"
+      },
+      {
+       "value": 29.6667,
+       "rank": 5,
+       "change": "1.3"
+      },
+      {
+       "value": 1.0,
+       "rank": 18,
+       "change": "0.50"
+      },
+      {
+       "value": 4.3333,
+       "rank": 18,
+       "change": "1.7"
+      },
+      {
+       "value": 2.0,
+       "rank": 17,
+       "change": "0.5"
+      },
+      {
+       "value": 0.0,
+       "rank": 23,
+       "change": null
+      }
+     ]
+    },
+    {
+     "team": "NYJ",
+     "name": "New York Jets",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.0351,
+       "rank": 12,
+       "change": "0.009"
+      },
+      {
+       "value": 0.4581,
+       "rank": 12,
+       "change": "0.2"
+      },
+      {
+       "value": 46.6864,
+       "rank": 23,
+       "change": "4.0"
+      },
+      {
+       "value": 0.1707,
+       "rank": 10,
+       "change": "0.048"
+      },
+      {
+       "value": 0.7549,
+       "rank": 1,
+       "change": "4.7"
+      },
+      {
+       "value": 110.049,
+       "rank": 5,
+       "change": "14.2"
+      },
+      {
+       "value": 261.0,
+       "rank": 11,
+       "change": "30.0"
+      },
+      {
+       "value": 0.0727,
+       "rank": 25,
+       "change": "1.7"
+      },
+      {
+       "value": -0.2086,
+       "rank": 26,
+       "change": "0.010"
+      },
+      {
+       "value": 92.3333,
+       "rank": 26,
+       "change": "17.2"
+      },
+      {
+       "value": 1.8471,
+       "rank": 28,
+       "change": "0.06"
+      },
+      {
+       "value": 10.1688,
+       "rank": 24,
+       "change": "0.1"
+      },
+      {
+       "value": 0.0782,
+       "rank": 15,
+       "change": "0.6"
+      },
+      {
+       "value": 0.3784,
+       "rank": 18,
+       "change": "0.8"
+      },
+      {
+       "value": 0.625,
+       "rank": 13,
+       "change": "4.2"
+      },
+      {
+       "value": 0.0679,
+       "rank": 14,
+       "change": "0.370"
+      },
+      {
+       "value": 0.031,
+       "rank": 12,
+       "change": "0.041"
+      },
+      {
+       "value": 21.3333,
+       "rank": 17,
+       "change": "1.3"
+      },
+      {
+       "value": 0.3333,
+       "rank": 1,
+       "change": "0.33"
+      },
+      {
+       "value": 5.0,
+       "rank": 28,
+       "change": "1.0"
+      },
+      {
+       "value": 2.6667,
+       "rank": 22,
+       "change": "0.8"
+      },
+      {
+       "value": 14.6667,
+       "rank": 8,
+       "change": "7.3"
+      }
+     ]
+    },
+    {
+     "team": "SEA",
+     "name": "Seattle Seahawks",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.0287,
+       "rank": 13,
+       "change": "0.036"
+      },
+      {
+       "value": 0.4583,
+       "rank": 11,
+       "change": "3.3"
+      },
+      {
+       "value": 53.3172,
+       "rank": 11,
+       "change": "2.1"
+      },
+      {
+       "value": 0.2906,
+       "rank": 7,
+       "change": "0.123"
+      },
+      {
+       "value": 0.7083,
+       "rank": 4,
+       "change": "1.2"
+      },
+      {
+       "value": 116.1458,
+       "rank": 2,
+       "change": "8.9"
+      },
+      {
+       "value": 276.0,
+       "rank": 5,
+       "change": "58.5"
+      },
+      {
+       "value": 0.0303,
+       "rank": 5,
+       "change": "2.7"
+      },
+      {
+       "value": -0.397,
+       "rank": 31,
+       "change": "0.060"
+      },
+      {
+       "value": 101.0,
+       "rank": 18,
+       "change": "28.5"
+      },
+      {
+       "value": 2.2875,
+       "rank": 19,
+       "change": "0.37"
+      },
+      {
+       "value": 12.1765,
+       "rank": 8,
+       "change": "0.1"
+      },
+      {
+       "value": 0.0893,
+       "rank": 10,
+       "change": "1.0"
+      },
+      {
+       "value": 0.3,
+       "rank": 28,
+       "change": "1.4"
+      },
+      {
+       "value": 0.5455,
+       "rank": 21,
+       "change": "21.2"
+      },
+      {
+       "value": -0.0621,
+       "rank": 21,
+       "change": "0.158"
+      },
+      {
+       "value": 0.0517,
+       "rank": 11,
+       "change": "0.088"
+      },
+      {
+       "value": 25.0,
+       "rank": 13,
+       "change": "3.0"
+      },
+      {
+       "value": 1.3333,
+       "rank": 23,
+       "change": "0.83"
+      },
+      {
+       "value": 4.3333,
+       "rank": 18,
+       "change": "0.3"
+      },
+      {
+       "value": 4.3333,
+       "rank": 32,
+       "change": "0.3"
+      },
+      {
+       "value": 6.0,
+       "rank": 15,
+       "change": "2.0"
+      }
+     ]
+    },
+    {
+     "team": "CAR",
+     "name": "Carolina Panthers",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.025,
+       "rank": 14,
+       "change": "0.101"
+      },
+      {
+       "value": 0.4099,
+       "rank": 23,
+       "change": "3.2"
+      },
+      {
+       "value": 54.583,
+       "rank": 8,
+       "change": "3.0"
+      },
+      {
+       "value": 0.0818,
+       "rank": 18,
+       "change": "0.136"
+      },
+      {
+       "value": 0.5902,
+       "rank": 28,
+       "change": "3.1"
+      },
+      {
+       "value": 95.6284,
+       "rank": 16,
+       "change": "16.1"
+      },
+      {
+       "value": 313.0,
+       "rank": 1,
+       "change": "11.0"
+      },
+      {
+       "value": 0.0642,
+       "rank": 21,
+       "change": "0.4"
+      },
+      {
+       "value": -0.1128,
+       "rank": 19,
+       "change": null
+      },
+      {
+       "value": 97.0,
+       "rank": 21,
+       "change": "0.5"
+      },
+      {
+       "value": 3.0299,
+       "rank": 5,
+       "change": "0.27"
+      },
+      {
+       "value": 13.0417,
+       "rank": 4,
+       "change": "1.0"
+      },
+      {
+       "value": 0.0994,
+       "rank": 6,
+       "change": "0.5"
+      },
+      {
+       "value": 0.3226,
+       "rank": 24,
+       "change": "5.2"
+      },
+      {
+       "value": 0.6667,
+       "rank": 7,
+       "change": "4.8"
+      },
+      {
+       "value": 0.0814,
+       "rank": 13,
+       "change": "0.034"
+      },
+      {
+       "value": 0.0116,
+       "rank": 13,
+       "change": "0.118"
+      },
+      {
+       "value": 29.6667,
+       "rank": 5,
+       "change": "5.8"
+      },
+      {
+       "value": 1.0,
+       "rank": 18,
+       "change": null
+      },
+      {
+       "value": 5.0,
+       "rank": 28,
+       "change": "1.0"
+      },
+      {
+       "value": 2.6667,
+       "rank": 22,
+       "change": "0.3"
+      },
+      {
+       "value": 0.0,
+       "rank": 23,
+       "change": null
+      }
+     ]
+    },
+    {
+     "team": "ARI",
+     "name": "Arizona Cardinals",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.0183,
+       "rank": 15,
+       "change": "0.008"
+      },
+      {
+       "value": 0.4389,
+       "rank": 15,
+       "change": "0.9"
+      },
+      {
+       "value": 54.8346,
+       "rank": 7,
+       "change": "1.9"
+      },
+      {
+       "value": 0.0884,
+       "rank": 17,
+       "change": "0.001"
+      },
+      {
+       "value": 0.7009,
+       "rank": 6,
+       "change": "2.4"
+      },
+      {
+       "value": 91.542,
+       "rank": 17,
+       "change": "5.4"
+      },
+      {
+       "value": 217.3333,
+       "rank": 18,
+       "change": "31.3"
+      },
+      {
+       "value": 0.0278,
+       "rank": 2,
+       "change": "0.2"
+      },
+      {
+       "value": -0.1117,
+       "rank": 18,
+       "change": "0.015"
+      },
+      {
+       "value": 93.0,
+       "rank": 25,
+       "change": null
+      },
+      {
+       "value": 2.1795,
+       "rank": 22,
+       "change": "0.08"
+      },
+      {
+       "value": 7.9512,
+       "rank": 32,
+       "change": "0.5"
+      },
+      {
+       "value": 0.0222,
+       "rank": 32,
+       "change": "1.3"
+      },
+      {
+       "value": 0.425,
+       "rank": 10,
+       "change": "5.0"
+      },
+      {
+       "value": 0.5455,
+       "rank": 21,
+       "change": "4.5"
+      },
+      {
+       "value": 0.0948,
+       "rank": 12,
+       "change": "0.128"
+      },
+      {
+       "value": -0.0001,
+       "rank": 15,
+       "change": "0.020"
+      },
+      {
+       "value": 21.0,
+       "rank": 18,
+       "change": "4.5"
+      },
+      {
+       "value": 0.3333,
+       "rank": 1,
+       "change": "0.17"
+      },
+      {
+       "value": 4.3333,
+       "rank": 18,
+       "change": "0.8"
+      },
+      {
+       "value": 2.3333,
+       "rank": 19,
+       "change": "0.3"
+      },
+      {
+       "value": 21.3333,
+       "rank": 5,
+       "change": "1.2"
+      }
+     ]
+    },
+    {
+     "team": "WAS",
+     "name": "Washington Commanders",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.0095,
+       "rank": 16,
+       "change": "0.018"
+      },
+      {
+       "value": 0.3958,
+       "rank": 26,
+       "change": "3.6"
+      },
+      {
+       "value": 57.1986,
+       "rank": 4,
+       "change": "8.9"
+      },
+      {
+       "value": 0.0992,
+       "rank": 15,
+       "change": "0.037"
+      },
+      {
+       "value": 0.6,
+       "rank": 25,
+       "change": "0.6"
+      },
+      {
+       "value": 98.5,
+       "rank": 14,
+       "change": "5.2"
+      },
+      {
+       "value": 184.6667,
+       "rank": 28,
+       "change": "0.8"
+      },
+      {
+       "value": 0.0286,
+       "rank": 4,
+       "change": "1.4"
+      },
+      {
+       "value": -0.1215,
+       "rank": 21,
+       "change": "0.094"
+      },
+      {
+       "value": 132.0,
+       "rank": 8,
+       "change": "25.0"
+      },
+      {
+       "value": 2.7396,
+       "rank": 10,
+       "change": "0.54"
+      },
+      {
+       "value": 9.2333,
+       "rank": 30,
+       "change": "0.2"
+      },
+      {
+       "value": 0.0521,
+       "rank": 30,
+       "change": "0.4"
+      },
+      {
+       "value": 0.3415,
+       "rank": 23,
+       "change": "6.6"
+      },
+      {
+       "value": 0.6667,
+       "rank": 7,
+       "change": null
+      },
+      {
+       "value": 0.1242,
+       "rank": 11,
+       "change": "0.052"
+      },
+      {
+       "value": -0.0134,
+       "rank": 17,
+       "change": "0.029"
+      },
+      {
+       "value": 25.0,
+       "rank": 13,
+       "change": "4.0"
+      },
+      {
+       "value": 0.3333,
+       "rank": 1,
+       "change": "0.17"
+      },
+      {
+       "value": 4.3333,
+       "rank": 18,
+       "change": "0.2"
+      },
+      {
+       "value": 2.6667,
+       "rank": 22,
+       "change": "0.7"
+      },
+      {
+       "value": 4.6667,
+       "rank": 17,
+       "change": "4.7"
+      }
+     ]
+    },
+    {
+     "team": "NO",
+     "name": "New Orleans Saints",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.0001,
+       "rank": 17,
+       "change": "0.041"
+      },
+      {
+       "value": 0.4663,
+       "rank": 10,
+       "change": "3.6"
+      },
+      {
+       "value": 50.5791,
+       "rank": 16,
+       "change": "1.3"
+      },
+      {
+       "value": 0.0269,
+       "rank": 21,
+       "change": "0.075"
+      },
+      {
+       "value": 0.6894,
+       "rank": 9,
+       "change": "0.1"
+      },
+      {
+       "value": 99.2109,
+       "rank": 13,
+       "change": "3.5"
+      },
+      {
+       "value": 305.6667,
+       "rank": 2,
+       "change": "25.3"
+      },
+      {
+       "value": 0.0606,
+       "rank": 19,
+       "change": "0.7"
+      },
+      {
+       "value": -0.0544,
+       "rank": 11,
+       "change": "0.043"
+      },
+      {
+       "value": 101.3333,
+       "rank": 16,
+       "change": "23.3"
+      },
+      {
+       "value": 2.3125,
+       "rank": 18,
+       "change": "0.74"
+      },
+      {
+       "value": 10.0769,
+       "rank": 26,
+       "change": "0.6"
+      },
+      {
+       "value": 0.0769,
+       "rank": 16,
+       "change": "1.1"
+      },
+      {
+       "value": 0.5,
+       "rank": 5,
+       "change": "4.8"
+      },
+      {
+       "value": 0.75,
+       "rank": 5,
+       "change": "3.6"
+      },
+      {
+       "value": 0.1535,
+       "rank": 9,
+       "change": "0.103"
+      },
+      {
+       "value": -0.027,
+       "rank": 19,
+       "change": "0.039"
+      },
+      {
+       "value": 27.0,
+       "rank": 11,
+       "change": null
+      },
+      {
+       "value": 2.0,
+       "rank": 29,
+       "change": "1.00"
+      },
+      {
+       "value": 3.3333,
+       "rank": 10,
+       "change": "0.2"
+      },
+      {
+       "value": 2.6667,
+       "rank": 22,
+       "change": "0.2"
+      },
+      {
+       "value": 7.0,
+       "rank": 13,
+       "change": "3.5"
+      }
+     ]
+    },
+    {
+     "team": "NYG",
+     "name": "New York Giants",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.0175,
+       "rank": 18,
+       "change": "0.079"
+      },
+      {
+       "value": 0.4337,
+       "rank": 16,
+       "change": "3.2"
+      },
+      {
+       "value": 40.3932,
+       "rank": 30,
+       "change": "3.2"
+      },
+      {
+       "value": 0.094,
+       "rank": 16,
+       "change": "0.121"
+      },
+      {
+       "value": 0.6145,
+       "rank": 21,
+       "change": "0.8"
+      },
+      {
+       "value": 84.3624,
+       "rank": 21,
+       "change": "2.5"
+      },
+      {
+       "value": 159.6667,
+       "rank": 31,
+       "change": "20.8"
+      },
+      {
+       "value": 0.0769,
+       "rank": 26,
+       "change": "1.9"
+      },
+      {
+       "value": -0.1212,
+       "rank": 20,
+       "change": "0.020"
+      },
+      {
+       "value": 118.3333,
+       "rank": 11,
+       "change": "9.8"
+      },
+      {
+       "value": 1.989,
+       "rank": 25,
+       "change": "0.23"
+      },
+      {
+       "value": 9.3922,
+       "rank": 29,
+       "change": "0.4"
+      },
+      {
+       "value": 0.0542,
+       "rank": 29,
+       "change": "0.6"
+      },
+      {
+       "value": 0.4118,
+       "rank": 13,
+       "change": "8.8"
+      },
+      {
+       "value": 0.5,
+       "rank": 24,
+       "change": "16.7"
+      },
+      {
+       "value": -0.0233,
+       "rank": 18,
+       "change": "0.246"
+      },
+      {
+       "value": -0.0164,
+       "rank": 18,
+       "change": "0.046"
+      },
+      {
+       "value": 15.3333,
+       "rank": 28,
+       "change": "1.7"
+      },
+      {
+       "value": 0.6667,
+       "rank": 10,
+       "change": "0.33"
+      },
+      {
+       "value": 4.6667,
+       "rank": 25,
+       "change": "1.2"
+      },
+      {
+       "value": 2.6667,
+       "rank": 22,
+       "change": "0.2"
+      },
+      {
+       "value": 1.6667,
+       "rank": 21,
+       "change": "0.8"
+      }
+     ]
+    },
+    {
+     "team": "CLE",
+     "name": "Cleveland Browns",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.0185,
+       "rank": 19,
+       "change": "0.068"
+      },
+      {
+       "value": 0.4094,
+       "rank": 24,
+       "change": "2.8"
+      },
+      {
+       "value": 47.5099,
+       "rank": 22,
+       "change": null
+      },
+      {
+       "value": 0.1636,
+       "rank": 12,
+       "change": "0.006"
+      },
+      {
+       "value": 0.6867,
+       "rank": 10,
+       "change": "8.2"
+      },
+      {
+       "value": 103.8404,
+       "rank": 12,
+       "change": "9.1"
+      },
+      {
+       "value": 195.6667,
+       "rank": 27,
+       "change": "25.8"
+      },
+      {
+       "value": 0.0519,
+       "rank": 12,
+       "change": "0.1"
+      },
+      {
+       "value": -0.3619,
+       "rank": 30,
+       "change": "0.152"
+      },
+      {
+       "value": 87.6667,
+       "rank": 29,
+       "change": "22.2"
+      },
+      {
+       "value": 1.9067,
+       "rank": 27,
+       "change": "0.40"
+      },
+      {
+       "value": 10.2982,
+       "rank": 22,
+       "change": "0.8"
+      },
+      {
+       "value": 0.0551,
+       "rank": 28,
+       "change": "2.4"
+      },
+      {
+       "value": 0.3571,
+       "rank": 22,
+       "change": null
+      },
+      {
+       "value": 0.6,
+       "rank": 17,
+       "change": "26.7"
+      },
+      {
+       "value": 0.2804,
+       "rank": 6,
+       "change": "0.406"
+      },
+      {
+       "value": -0.0526,
+       "rank": 24,
+       "change": "0.030"
+      },
+      {
+       "value": 18.0,
+       "rank": 24,
+       "change": "1.5"
+      },
+      {
+       "value": 0.3333,
+       "rank": 1,
+       "change": "0.17"
+      },
+      {
+       "value": 4.3333,
+       "rank": 18,
+       "change": "1.8"
+      },
+      {
+       "value": 2.3333,
+       "rank": 19,
+       "change": "1.8"
+      },
+      {
+       "value": 5.6667,
+       "rank": 16,
+       "change": "5.7"
+      }
+     ]
+    },
+    {
+     "team": "DEN",
+     "name": "Denver Broncos",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.0319,
+       "rank": 20,
+       "change": "0.025"
+      },
+      {
+       "value": 0.4136,
+       "rank": 22,
+       "change": "1.9"
+      },
+      {
+       "value": 50.6763,
+       "rank": 15,
+       "change": "0.3"
+      },
+      {
+       "value": 0.0001,
+       "rank": 23,
+       "change": "0.001"
+      },
+      {
+       "value": 0.6022,
+       "rank": 24,
+       "change": "5.9"
+      },
+      {
+       "value": 80.2643,
+       "rank": 26,
+       "change": "3.7"
+      },
+      {
+       "value": 201.6667,
+       "rank": 26,
+       "change": "7.8"
+      },
+      {
+       "value": 0.0543,
+       "rank": 13,
+       "change": "1.6"
+      },
+      {
+       "value": -0.0833,
+       "rank": 16,
+       "change": "0.067"
+      },
+      {
+       "value": 81.0,
+       "rank": 31,
+       "change": "1.5"
+      },
+      {
+       "value": 1.9706,
+       "rank": 26,
+       "change": "0.31"
+      },
+      {
+       "value": 10.8036,
+       "rank": 18,
+       "change": "0.1"
+      },
+      {
+       "value": 0.0802,
+       "rank": 14,
+       "change": "1.3"
+      },
+      {
+       "value": 0.3714,
+       "rank": 19,
+       "change": "7.1"
+      },
+      {
+       "value": 0.6667,
+       "rank": 7,
+       "change": "16.7"
+      },
+      {
+       "value": 0.0446,
+       "rank": 16,
+       "change": "0.441"
+      },
+      {
+       "value": -0.0514,
+       "rank": 23,
+       "change": "0.062"
+      },
+      {
+       "value": 20.0,
+       "rank": 21,
+       "change": "5.0"
+      },
+      {
+       "value": 1.3333,
+       "rank": 23,
+       "change": "0.17"
+      },
+      {
+       "value": 4.3333,
+       "rank": 18,
+       "change": "0.2"
+      },
+      {
+       "value": 2.6667,
+       "rank": 22,
+       "change": "0.2"
+      },
+      {
+       "value": 7.3333,
+       "rank": 12,
+       "change": "5.8"
+      }
+     ]
+    },
+    {
+     "team": "PHI",
+     "name": "Philadelphia Eagles",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.0364,
+       "rank": 21,
+       "change": "0.072"
+      },
+      {
+       "value": 0.3815,
+       "rank": 28,
+       "change": "0.9"
+      },
+      {
+       "value": 49.0715,
+       "rank": 18,
+       "change": "4.4"
+      },
+      {
+       "value": -0.0319,
+       "rank": 26,
+       "change": "0.187"
+      },
+      {
+       "value": 0.6364,
+       "rank": 18,
+       "change": "0.9"
+      },
+      {
+       "value": 84.4697,
+       "rank": 20,
+       "change": "16.2"
+      },
+      {
+       "value": 206.6667,
+       "rank": 22,
+       "change": "26.8"
+      },
+      {
+       "value": 0.07,
+       "rank": 23,
+       "change": "1.0"
+      },
+      {
+       "value": -0.0432,
+       "rank": 10,
+       "change": "0.099"
+      },
+      {
+       "value": 110.6667,
+       "rank": 13,
+       "change": "1.8"
+      },
+      {
+       "value": 2.4605,
+       "rank": 15,
+       "change": "0.58"
+      },
+      {
+       "value": 11.0714,
+       "rank": 15,
+       "change": "0.6"
+      },
+      {
+       "value": 0.0751,
+       "rank": 18,
+       "change": "0.5"
+      },
+      {
+       "value": 0.475,
+       "rank": 6,
+       "change": "5.6"
+      },
+      {
+       "value": 0.6667,
+       "rank": 7,
+       "change": "4.8"
+      },
+      {
+       "value": -0.2664,
+       "rank": 27,
+       "change": "0.010"
+      },
+      {
+       "value": 0.0099,
+       "rank": 14,
+       "change": "0.079"
+      },
+      {
+       "value": 18.3333,
+       "rank": 23,
+       "change": "5.7"
+      },
+      {
+       "value": 1.6667,
+       "rank": 25,
+       "change": "0.67"
+      },
+      {
+       "value": 4.0,
+       "rank": 15,
+       "change": null
+      },
+      {
+       "value": 1.3333,
+       "rank": 10,
+       "change": "0.3"
+      },
+      {
+       "value": 7.0,
+       "rank": 13,
+       "change": "7.0"
+      }
+     ]
+    },
+    {
+     "team": "IND",
+     "name": "Indianapolis Colts",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.0392,
+       "rank": 22,
+       "change": "0.059"
+      },
+      {
+       "value": 0.4313,
+       "rank": 18,
+       "change": "1.8"
+      },
+      {
+       "value": 45.6199,
+       "rank": 24,
+       "change": "9.4"
+      },
+      {
+       "value": -0.0802,
+       "rank": 27,
+       "change": "0.041"
+      },
+      {
+       "value": 0.6633,
+       "rank": 14,
+       "change": "0.2"
+      },
+      {
+       "value": 80.7823,
+       "rank": 25,
+       "change": "1.0"
+      },
+      {
+       "value": 203.6667,
+       "rank": 25,
+       "change": "15.7"
+      },
+      {
+       "value": 0.0562,
+       "rank": 17,
+       "change": "3.5"
+      },
+      {
+       "value": 0.0148,
+       "rank": 5,
+       "change": "0.082"
+      },
+      {
+       "value": 103.3333,
+       "rank": 15,
+       "change": "7.2"
+      },
+      {
+       "value": 1.7229,
+       "rank": 30,
+       "change": "0.45"
+      },
+      {
+       "value": 9.4,
+       "rank": 28,
+       "change": "0.2"
+      },
+      {
+       "value": 0.0813,
+       "rank": 13,
+       "change": "0.9"
+      },
+      {
+       "value": 0.4242,
+       "rank": 11,
+       "change": "3.5"
+      },
+      {
+       "value": 0.5714,
+       "rank": 20,
+       "change": "17.9"
+      },
+      {
+       "value": 0.2671,
+       "rank": 7,
+       "change": "0.165"
+      },
+      {
+       "value": -0.0907,
+       "rank": 26,
+       "change": "0.040"
+      },
+      {
+       "value": 24.0,
+       "rank": 15,
+       "change": "2.5"
+      },
+      {
+       "value": 2.0,
+       "rank": 29,
+       "change": "0.50"
+      },
+      {
+       "value": 2.6667,
+       "rank": 6,
+       "change": "0.3"
+      },
+      {
+       "value": 1.6667,
+       "rank": 14,
+       "change": "0.3"
+      },
+      {
+       "value": 16.3333,
+       "rank": 6,
+       "change": "8.2"
+      }
+     ]
+    },
+    {
+     "team": "MIA",
+     "name": "Miami Dolphins",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.0564,
+       "rank": 23,
+       "change": "0.004"
+      },
+      {
+       "value": 0.3643,
+       "rank": 29,
+       "change": "5.5"
+      },
+      {
+       "value": 53.6168,
+       "rank": 9,
+       "change": "14.9"
+      },
+      {
+       "value": 0.0567,
+       "rank": 19,
+       "change": "0.081"
+      },
+      {
+       "value": 0.5698,
+       "rank": 30,
+       "change": "1.0"
+      },
+      {
+       "value": 74.1279,
+       "rank": 28,
+       "change": "9.4"
+      },
+      {
+       "value": 209.0,
+       "rank": 20,
+       "change": "0.5"
+      },
+      {
+       "value": 0.0658,
+       "rank": 22,
+       "change": "5.9"
+      },
+      {
+       "value": -0.2116,
+       "rank": 27,
+       "change": "0.106"
+      },
+      {
+       "value": 98.3333,
+       "rank": 20,
+       "change": "10.3"
+      },
+      {
+       "value": 2.8333,
+       "rank": 7,
+       "change": "0.34"
+      },
+      {
+       "value": 12.7959,
+       "rank": 7,
+       "change": "1.6"
+      },
+      {
+       "value": 0.0714,
+       "rank": 23,
+       "change": "0.4"
+      },
+      {
+       "value": 0.4516,
+       "rank": 8,
+       "change": "7.7"
+      },
+      {
+       "value": 0.3333,
+       "rank": 30,
+       "change": "8.3"
+      },
+      {
+       "value": -0.1402,
+       "rank": 23,
+       "change": "0.035"
+      },
+      {
+       "value": -0.0382,
+       "rank": 22,
+       "change": "0.014"
+      },
+      {
+       "value": 12.0,
+       "rank": 31,
+       "change": "1.0"
+      },
+      {
+       "value": 0.6667,
+       "rank": 10,
+       "change": "0.17"
+      },
+      {
+       "value": 4.6667,
+       "rank": 25,
+       "change": "0.7"
+      },
+      {
+       "value": 2.3333,
+       "rank": 19,
+       "change": "0.2"
+      },
+      {
+       "value": 0.0,
+       "rank": 23,
+       "change": null
+      }
+     ]
+    },
+    {
+     "team": "HOU",
+     "name": "Houston Texans",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.0605,
+       "rank": 24,
+       "change": "0.008"
+      },
+      {
+       "value": 0.433,
+       "rank": 17,
+       "change": "0.3"
+      },
+      {
+       "value": 48.3545,
+       "rank": 20,
+       "change": "4.7"
+      },
+      {
+       "value": 0.0315,
+       "rank": 20,
+       "change": "0.008"
+      },
+      {
+       "value": 0.595,
+       "rank": 26,
+       "change": "0.1"
+      },
+      {
+       "value": 87.2762,
+       "rank": 19,
+       "change": "0.7"
+      },
+      {
+       "value": 264.6667,
+       "rank": 8,
+       "change": "48.8"
+      },
+      {
+       "value": 0.0603,
+       "rank": 18,
+       "change": "1.3"
+      },
+      {
+       "value": -0.2348,
+       "rank": 28,
+       "change": "0.004"
+      },
+      {
+       "value": 84.6667,
+       "rank": 30,
+       "change": "7.3"
+      },
+      {
+       "value": 2.3239,
+       "rank": 17,
+       "change": "0.16"
+      },
+      {
+       "value": 11.0278,
+       "rank": 16,
+       "change": "0.2"
+      },
+      {
+       "value": 0.0722,
+       "rank": 22,
+       "change": "1.4"
+      },
+      {
+       "value": 0.3171,
+       "rank": 25,
+       "change": "1.7"
+      },
+      {
+       "value": 0.5455,
+       "rank": 21,
+       "change": "4.5"
+      },
+      {
+       "value": -0.2747,
+       "rank": 28,
+       "change": "0.215"
+      },
+      {
+       "value": -0.0288,
+       "rank": 20,
+       "change": "0.037"
+      },
+      {
+       "value": 18.0,
+       "rank": 24,
+       "change": "0.5"
+      },
+      {
+       "value": 0.6667,
+       "rank": 10,
+       "change": "0.33"
+      },
+      {
+       "value": 4.6667,
+       "rank": 25,
+       "change": "1.3"
+      },
+      {
+       "value": 2.0,
+       "rank": 17,
+       "change": "0.5"
+      },
+      {
+       "value": 9.3333,
+       "rank": 11,
+       "change": "1.2"
+      }
+     ]
+    },
+    {
+     "team": "NE",
+     "name": "New England Patriots",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.0785,
+       "rank": 25,
+       "change": "0.045"
+      },
+      {
+       "value": 0.4258,
+       "rank": 20,
+       "change": "2.6"
+      },
+      {
+       "value": 41.6327,
+       "rank": 29,
+       "change": "3.9"
+      },
+      {
+       "value": -0.0261,
+       "rank": 25,
+       "change": "0.092"
+      },
+      {
+       "value": 0.6395,
+       "rank": 17,
+       "change": "3.3"
+      },
+      {
+       "value": 60.7558,
+       "rank": 31,
+       "change": "2.4"
+      },
+      {
+       "value": 210.3333,
+       "rank": 19,
+       "change": "17.3"
+      },
+      {
+       "value": 0.0909,
+       "rank": 29,
+       "change": null
+      },
+      {
+       "value": -0.1616,
+       "rank": 24,
+       "change": "0.034"
+      },
+      {
+       "value": 109.3333,
+       "rank": 14,
+       "change": "13.2"
+      },
+      {
+       "value": 2.0235,
+       "rank": 23,
+       "change": "0.16"
+      },
+      {
+       "value": 11.4727,
+       "rank": 11,
+       "change": "1.0"
+      },
+      {
+       "value": 0.0645,
+       "rank": 25,
+       "change": "0.6"
+      },
+      {
+       "value": 0.3056,
+       "rank": 27,
+       "change": "2.8"
+      },
+      {
+       "value": 0.1667,
+       "rank": 32,
+       "change": "16.7"
+      },
+      {
+       "value": -0.8816,
+       "rank": 32,
+       "change": "0.105"
+      },
+      {
+       "value": -0.0111,
+       "rank": 16,
+       "change": "0.012"
+      },
+      {
+       "value": 12.0,
+       "rank": 31,
+       "change": "3.0"
+      },
+      {
+       "value": 2.3333,
+       "rank": 32,
+       "change": "0.17"
+      },
+      {
+       "value": 4.0,
+       "rank": 15,
+       "change": null
+      },
+      {
+       "value": 1.6667,
+       "rank": 14,
+       "change": "0.3"
+      },
+      {
+       "value": 11.3333,
+       "rank": 10,
+       "change": "5.7"
+      }
+     ]
+    },
+    {
+     "team": "TEN",
+     "name": "Tennessee Titans",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.1097,
+       "rank": 26,
+       "change": "0.024"
+      },
+      {
+       "value": 0.4041,
+       "rank": 25,
+       "change": "0.3"
+      },
+      {
+       "value": 56.8689,
+       "rank": 5,
+       "change": "6.1"
+      },
+      {
+       "value": -0.163,
+       "rank": 30,
+       "change": "0.008"
+      },
+      {
+       "value": 0.625,
+       "rank": 19,
+       "change": "1.0"
+      },
+      {
+       "value": 80.8712,
+       "rank": 24,
+       "change": "4.8"
+      },
+      {
+       "value": 168.0,
+       "rank": 30,
+       "change": "6.5"
+      },
+      {
+       "value": 0.0476,
+       "rank": 10,
+       "change": "3.6"
+      },
+      {
+       "value": -0.0266,
+       "rank": 9,
+       "change": "0.036"
+      },
+      {
+       "value": 90.3333,
+       "rank": 28,
+       "change": "4.7"
+      },
+      {
+       "value": 2.625,
+       "rank": 11,
+       "change": "0.10"
+      },
+      {
+       "value": 9.1636,
+       "rank": 31,
+       "change": "0.9"
+      },
+      {
+       "value": 0.0753,
+       "rank": 17,
+       "change": "1.8"
+      },
+      {
+       "value": 0.4,
+       "rank": 15,
+       "change": "0.9"
+      },
+      {
+       "value": 0.4286,
+       "rank": 27,
+       "change": "7.1"
+      },
+      {
+       "value": -0.2617,
+       "rank": 26,
+       "change": "0.341"
+      },
+      {
+       "value": -0.0798,
+       "rank": 25,
+       "change": "0.038"
+      },
+      {
+       "value": 12.3333,
+       "rank": 30,
+       "change": "2.7"
+      },
+      {
+       "value": 0.3333,
+       "rank": 1,
+       "change": "0.33"
+      },
+      {
+       "value": 2.3333,
+       "rank": 4,
+       "change": "0.2"
+      },
+      {
+       "value": 0.6667,
+       "rank": 1,
+       "change": "0.3"
+      },
+      {
+       "value": 0.0,
+       "rank": 23,
+       "change": null
+      }
+     ]
+    },
+    {
+     "team": "MIN",
+     "name": "Minnesota Vikings",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.1145,
+       "rank": 27,
+       "change": "0.098"
+      },
+      {
+       "value": 0.3171,
+       "rank": 32,
+       "change": "5.0"
+      },
+      {
+       "value": 42.8116,
+       "rank": 27,
+       "change": "0.2"
+      },
+      {
+       "value": -0.0901,
+       "rank": 28,
+       "change": "0.164"
+      },
+      {
+       "value": 0.5616,
+       "rank": 31,
+       "change": "2.9"
+      },
+      {
+       "value": 82.1062,
+       "rank": 23,
+       "change": "10.3"
+      },
+      {
+       "value": 154.0,
+       "rank": 32,
+       "change": "7.0"
+      },
+      {
+       "value": 0.1047,
+       "rank": 31,
+       "change": "0.9"
+      },
+      {
+       "value": -0.1465,
+       "rank": 23,
+       "change": "0.030"
+      },
+      {
+       "value": 101.3333,
+       "rank": 16,
+       "change": "11.7"
+      },
+      {
+       "value": 2.2471,
+       "rank": 20,
+       "change": "0.09"
+      },
+      {
+       "value": 11.2683,
+       "rank": 14,
+       "change": null
+      },
+      {
+       "value": 0.061,
+       "rank": 26,
+       "change": "0.6"
+      },
+      {
+       "value": 0.2553,
+       "rank": 31,
+       "change": "9.0"
+      },
+      {
+       "value": 0.6,
+       "rank": 17,
+       "change": null
+      },
+      {
+       "value": 0.1379,
+       "rank": 10,
+       "change": null
+      },
+      {
+       "value": -0.1344,
+       "rank": 29,
+       "change": "0.099"
+      },
+      {
+       "value": 23.6667,
+       "rank": 16,
+       "change": "0.3"
+      },
+      {
+       "value": 0.6667,
+       "rank": 10,
+       "change": "0.17"
+      },
+      {
+       "value": 3.0,
+       "rank": 9,
+       "change": "1.5"
+      },
+      {
+       "value": 1.6667,
+       "rank": 14,
+       "change": "0.2"
+      },
+      {
+       "value": 0.0,
+       "rank": 23,
+       "change": null
+      }
+     ]
+    },
+    {
+     "team": "PIT",
+     "name": "Pittsburgh Steelers",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.1247,
+       "rank": 28,
+       "change": "0.161"
+      },
+      {
+       "value": 0.3943,
+       "rank": 27,
+       "change": "4.9"
+      },
+      {
+       "value": 47.7527,
+       "rank": 21,
+       "change": "0.6"
+      },
+      {
+       "value": -0.1506,
+       "rank": 29,
+       "change": "0.179"
+      },
+      {
+       "value": 0.5739,
+       "rank": 29,
+       "change": "0.6"
+      },
+      {
+       "value": 79.6196,
+       "rank": 27,
+       "change": "9.2"
+      },
+      {
+       "value": 233.3333,
+       "rank": 16,
+       "change": "29.3"
+      },
+      {
+       "value": 0.0545,
+       "rank": 15,
+       "change": null
+      },
+      {
+       "value": -0.068,
+       "rank": 15,
+       "change": "0.115"
+      },
+      {
+       "value": 95.6667,
+       "rank": 22,
+       "change": "21.2"
+      },
+      {
+       "value": 2.2239,
+       "rank": 21,
+       "change": "0.56"
+      },
+      {
+       "value": 10.6061,
+       "rank": 20,
+       "change": "1.9"
+      },
+      {
+       "value": 0.0743,
+       "rank": 20,
+       "change": "3.1"
+      },
+      {
+       "value": 0.3077,
+       "rank": 26,
+       "change": "11.5"
+      },
+      {
+       "value": 0.4,
+       "rank": 28,
+       "change": "10.0"
+      },
+      {
+       "value": -0.1946,
+       "rank": 24,
+       "change": "0.192"
+      },
+      {
+       "value": -0.1176,
+       "rank": 28,
+       "change": "0.183"
+      },
+      {
+       "value": 17.6667,
+       "rank": 26,
+       "change": "6.2"
+      },
+      {
+       "value": 1.0,
+       "rank": 18,
+       "change": null
+      },
+      {
+       "value": 3.3333,
+       "rank": 10,
+       "change": "0.8"
+      },
+      {
+       "value": 1.0,
+       "rank": 6,
+       "change": null
+      },
+      {
+       "value": 14.0,
+       "rank": 9,
+       "change": "7.0"
+      }
+     ]
+    },
+    {
+     "team": "GB",
+     "name": "Green Bay Packers",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.1341,
+       "rank": 29,
+       "change": "0.024"
+      },
+      {
+       "value": 0.3585,
+       "rank": 30,
+       "change": "1.4"
+      },
+      {
+       "value": 37.402,
+       "rank": 32,
+       "change": "1.3"
+      },
+      {
+       "value": 0.0231,
+       "rank": 22,
+       "change": "0.005"
+      },
+      {
+       "value": 0.5242,
+       "rank": 32,
+       "change": "0.3"
+      },
+      {
+       "value": 83.5349,
+       "rank": 22,
+       "change": "6.1"
+      },
+      {
+       "value": 281.3333,
+       "rank": 4,
+       "change": "15.3"
+      },
+      {
+       "value": 0.0707,
+       "rank": 24,
+       "change": "1.9"
+      },
+      {
+       "value": -0.4484,
+       "rank": 32,
+       "change": "0.026"
+      },
+      {
+       "value": 48.6667,
+       "rank": 32,
+       "change": "15.8"
+      },
+      {
+       "value": 1.75,
+       "rank": 29,
+       "change": "0.17"
+      },
+      {
+       "value": 12.9846,
+       "rank": 5,
+       "change": "1.4"
+      },
+      {
+       "value": 0.0818,
+       "rank": 12,
+       "change": "1.3"
+      },
+      {
+       "value": 0.2,
+       "rank": 32,
+       "change": "5.0"
+      },
+      {
+       "value": 0.5,
+       "rank": 24,
+       "change": null
+      },
+      {
+       "value": -0.2928,
+       "rank": 29,
+       "change": "0.050"
+      },
+      {
+       "value": -0.1072,
+       "rank": 27,
+       "change": "0.037"
+      },
+      {
+       "value": 18.6667,
+       "rank": 22,
+       "change": "2.3"
+      },
+      {
+       "value": 1.0,
+       "rank": 18,
+       "change": "0.50"
+      },
+      {
+       "value": 5.0,
+       "rank": 28,
+       "change": "1.0"
+      },
+      {
+       "value": 2.6667,
+       "rank": 22,
+       "change": "0.3"
+      },
+      {
+       "value": 31.6667,
+       "rank": 1,
+       "change": "1.2"
+      }
+     ]
+    },
+    {
+     "team": "LAC",
+     "name": "Los Angeles Chargers",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.1371,
+       "rank": 30,
+       "change": "0.017"
+      },
+      {
+       "value": 0.4253,
+       "rank": 21,
+       "change": "2.9"
+      },
+      {
+       "value": 41.6433,
+       "rank": 28,
+       "change": "1.1"
+      },
+      {
+       "value": -0.0091,
+       "rank": 24,
+       "change": "0.114"
+      },
+      {
+       "value": 0.5909,
+       "rank": 27,
+       "change": "0.2"
+      },
+      {
+       "value": 73.4375,
+       "rank": 29,
+       "change": "1.8"
+      },
+      {
+       "value": 209.0,
+       "rank": 20,
+       "change": "8.5"
+      },
+      {
+       "value": 0.0795,
+       "rank": 28,
+       "change": "1.0"
+      },
+      {
+       "value": -0.3021,
+       "rank": 29,
+       "change": "0.180"
+      },
+      {
+       "value": 113.0,
+       "rank": 12,
+       "change": "9.0"
+      },
+      {
+       "value": 2.3827,
+       "rank": 16,
+       "change": "0.06"
+      },
+      {
+       "value": 12.0577,
+       "rank": 10,
+       "change": "0.5"
+      },
+      {
+       "value": 0.0747,
+       "rank": 19,
+       "change": "1.2"
+      },
+      {
+       "value": 0.3824,
+       "rank": 17,
+       "change": "3.2"
+      },
+      {
+       "value": 0.625,
+       "rank": 13,
+       "change": "17.5"
+      },
+      {
+       "value": -0.0285,
+       "rank": 19,
+       "change": "0.086"
+      },
+      {
+       "value": -0.1588,
+       "rank": 30,
+       "change": "0.029"
+      },
+      {
+       "value": 14.6667,
+       "rank": 29,
+       "change": "0.7"
+      },
+      {
+       "value": 1.6667,
+       "rank": 25,
+       "change": "0.33"
+      },
+      {
+       "value": 5.6667,
+       "rank": 32,
+       "change": "0.3"
+      },
+      {
+       "value": 3.6667,
+       "rank": 31,
+       "change": "0.3"
+      },
+      {
+       "value": 26.0,
+       "rank": 3,
+       "change": "13.0"
+      }
+     ]
+    },
+    {
+     "team": "ATL",
+     "name": "Atlanta Falcons",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.1521,
+       "rank": 31,
+       "change": "0.228"
+      },
+      {
+       "value": 0.4759,
+       "rank": 9,
+       "change": "10.0"
+      },
+      {
+       "value": 52.5866,
+       "rank": 12,
+       "change": "6.2"
+      },
+      {
+       "value": -0.3371,
+       "rank": 31,
+       "change": "0.236"
+      },
+      {
+       "value": 0.6076,
+       "rank": 22,
+       "change": "5.2"
+      },
+      {
+       "value": 58.2015,
+       "rank": 32,
+       "change": "20.0"
+      },
+      {
+       "value": 181.3333,
+       "rank": 29,
+       "change": "37.3"
+      },
+      {
+       "value": 0.0769,
+       "rank": 26,
+       "change": "3.9"
+      },
+      {
+       "value": 0.0205,
+       "rank": 4,
+       "change": "0.212"
+      },
+      {
+       "value": 173.0,
+       "rank": 2,
+       "change": "34.5"
+      },
+      {
+       "value": 2.5962,
+       "rank": 12,
+       "change": "0.10"
+      },
+      {
+       "value": 11.3333,
+       "rank": 13,
+       "change": "1.7"
+      },
+      {
+       "value": 0.0897,
+       "rank": 9,
+       "change": "1.4"
+      },
+      {
+       "value": 0.2963,
+       "rank": 29,
+       "change": "8.6"
+      },
+      {
+       "value": 1.0,
+       "rank": 1,
+       "change": null
+      },
+      {
+       "value": 0.6535,
+       "rank": 2,
+       "change": null
+      },
+      {
+       "value": -0.2054,
+       "rank": 31,
+       "change": "0.175"
+      },
+      {
+       "value": 17.0,
+       "rank": 27,
+       "change": "9.0"
+      },
+      {
+       "value": 1.6667,
+       "rank": 25,
+       "change": "0.33"
+      },
+      {
+       "value": 3.6667,
+       "rank": 12,
+       "change": "0.8"
+      },
+      {
+       "value": 1.0,
+       "rank": 6,
+       "change": "0.5"
+      },
+      {
+       "value": 0.0,
+       "rank": 23,
+       "change": null
+      }
+     ]
+    },
+    {
+     "team": "TB",
+     "name": "Tampa Bay Buccaneers",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.288,
+       "rank": 32,
+       "change": "0.012"
+      },
+      {
+       "value": 0.3371,
+       "rank": 31,
+       "change": "5.4"
+      },
+      {
+       "value": 39.3725,
+       "rank": 31,
+       "change": "9.4"
+      },
+      {
+       "value": -0.3964,
+       "rank": 32,
+       "change": "0.065"
+      },
+      {
+       "value": 0.6162,
+       "rank": 20,
+       "change": "9.4"
+      },
+      {
+       "value": 73.4217,
+       "rank": 30,
+       "change": "13.2"
+      },
+      {
+       "value": 205.0,
+       "rank": 24,
+       "change": "6.0"
+      },
+      {
+       "value": 0.1193,
+       "rank": 32,
+       "change": "1.5"
+      },
+      {
+       "value": -0.0637,
+       "rank": 14,
+       "change": "0.139"
+      },
+      {
+       "value": 94.3333,
+       "rank": 23,
+       "change": "18.7"
+      },
+      {
+       "value": 2.5758,
+       "rank": 13,
+       "change": "0.49"
+      },
+      {
+       "value": 10.082,
+       "rank": 25,
+       "change": "1.0"
+      },
+      {
+       "value": 0.0571,
+       "rank": 27,
+       "change": "0.6"
+      },
+      {
+       "value": 0.2727,
+       "rank": 30,
+       "change": "11.2"
+      },
+      {
+       "value": 0.3,
+       "rank": 31,
+       "change": "7.5"
+      },
+      {
+       "value": -0.4829,
+       "rank": 31,
+       "change": "0.097"
+      },
+      {
+       "value": -0.2509,
+       "rank": 32,
+       "change": "0.003"
+      },
+      {
+       "value": 20.6667,
+       "rank": 19,
+       "change": "2.3"
+      },
+      {
+       "value": 2.0,
+       "rank": 29,
+       "change": "0.50"
+      },
+      {
+       "value": 4.3333,
+       "rank": 18,
+       "change": "0.8"
+      },
+      {
+       "value": 1.3333,
+       "rank": 10,
+       "change": "0.7"
+      },
+      {
+       "value": 4.0,
+       "rank": 19,
+       "change": "2.0"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "def",
+   "label": "Defense",
+   "columns": [
+    {
+     "label": "EPA/play",
+     "best": "low",
+     "title": "Overall defensive efficiency — EPA per play allowed, garbage time excluded. Lower is better; the default ranking."
+    },
+    {
+     "label": "Succ%",
+     "best": "low",
+     "title": "Success rate allowed — share of opponent plays with positive EPA."
+    },
+    {
+     "label": "Pass EPA",
+     "best": "low",
+     "title": "EPA per pass play allowed."
+    },
+    {
+     "label": "Comp%",
+     "best": "low",
+     "title": "Completion percentage allowed."
+    },
+    {
+     "label": "Pass Rtg",
+     "best": "low",
+     "title": "Passer rating allowed to opposing quarterbacks."
+    },
+    {
+     "label": "Pass Y/G",
+     "best": "low",
+     "title": "Passing yards allowed per game."
+    },
+    {
+     "label": "Sack%",
+     "best": "high",
+     "title": "Sacks made per opponent dropback — the pass rush."
+    },
+    {
+     "label": "Press%",
+     "best": "high",
+     "title": "Pressure rate (sack or QB hit) per opponent dropback."
+    },
+    {
+     "label": "Rush EPA",
+     "best": "low",
+     "title": "EPA per rush allowed."
+    },
+    {
+     "label": "Rush Y/G",
+     "best": "low",
+     "title": "Rushing yards allowed per game."
+    },
+    {
+     "label": "YBC/Att",
+     "best": "low",
+     "title": "Yards before contact allowed per carry — how quickly the front seven meets the runner."
+    },
+    {
+     "label": "Expl%",
+     "best": "low",
+     "title": "Explosive play rate allowed."
+    },
+    {
+     "label": "3rd Stop%",
+     "best": "high",
+     "title": "Third-down stop rate — opponent conversions prevented."
+    },
+    {
+     "label": "RZ TD%",
+     "best": "low",
+     "title": "Red-zone touchdown rate allowed — opponent trips inside the 20 that ended in a touchdown. Lower = holds them to field goals."
+    },
+    {
+     "label": "RZ EPA",
+     "best": "low",
+     "title": "EPA per play allowed on snaps inside its own 20."
+    },
+    {
+     "label": "Field EPA",
+     "best": "low",
+     "title": "EPA per play allowed on every other snap. High here with a low RZ TD% allowed is bend-don't-break."
+    },
+    {
+     "label": "PA/G",
+     "best": "low",
+     "title": "Points allowed per game."
+    },
+    {
+     "label": "Take/G",
+     "best": "high",
+     "title": "Takeaways per game — interceptions plus fumble recoveries."
+    },
+    {
+     "label": "Flags/G",
+     "best": "low",
+     "title": "Accepted penalties per game committed by the defense — free first downs for the other offense."
+    },
+    {
+     "label": "Pre-snap/G",
+     "best": "low",
+     "title": "Pre-snap flags per game — offside, neutral zone, encroachment, too many men. The one penalty rate that persists at all, and only faintly."
+    },
+    {
+     "label": "DPI Yds/G",
+     "best": "low",
+     "title": "Defensive pass interference yards committed per game."
+    }
+   ],
+   "rows": [
+    {
+     "team": "MIN",
+     "name": "Minnesota Vikings",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.2042,
+       "rank": 1,
+       "change": "0.052"
+      },
+      {
+       "value": 0.3077,
+       "rank": 1,
+       "change": "3.1"
+      },
+      {
+       "value": -0.1178,
+       "rank": 2,
+       "change": "0.103"
+      },
+      {
+       "value": 0.5088,
+       "rank": 1,
+       "change": "2.4"
+      },
+      {
+       "value": 67.7266,
+       "rank": 1,
+       "change": "7.9"
+      },
+      {
+       "value": 265.3333,
+       "rank": 26,
+       "change": "24.2"
+      },
+      {
+       "value": 0.1102,
+       "rank": 1,
+       "change": "1.8"
+      },
+      {
+       "value": 0.2712,
+       "rank": 1,
+       "change": "1.8"
+      },
+      {
+       "value": -0.3586,
+       "rank": 2,
+       "change": "0.006"
+      },
+      {
+       "value": 85.6667,
+       "rank": 4,
+       "change": "14.3"
+      },
+      {
+       "value": 2.1918,
+       "rank": 12,
+       "change": "0.27"
+      },
+      {
+       "value": 0.0872,
+       "rank": 22,
+       "change": "2.1"
+      },
+      {
+       "value": 0.7955,
+       "rank": 1,
+       "change": "6.5"
+      },
+      {
+       "value": 0.125,
+       "rank": 1,
+       "change": "4.2"
+      },
+      {
+       "value": -0.7407,
+       "rank": 2,
+       "change": "0.028"
+      },
+      {
+       "value": -0.118,
+       "rank": 3,
+       "change": "0.074"
+      },
+      {
+       "value": 13.6667,
+       "rank": 2,
+       "change": "1.2"
+      },
+      {
+       "value": 1.6667,
+       "rank": 3,
+       "change": "0.33"
+      },
+      {
+       "value": 2.0,
+       "rank": 11,
+       "change": "0.5"
+      },
+      {
+       "value": 0.6667,
+       "rank": 19,
+       "change": "0.3"
+      },
+      {
+       "value": 0.0,
+       "rank": 1,
+       "change": null
+      }
+     ]
+    },
+    {
+     "team": "LV",
+     "name": "Las Vegas Raiders",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.1398,
+       "rank": 2,
+       "change": "0.042"
+      },
+      {
+       "value": 0.4368,
+       "rank": 16,
+       "change": "6.8"
+      },
+      {
+       "value": -0.0177,
+       "rank": 10,
+       "change": "0.092"
+      },
+      {
+       "value": 0.6146,
+       "rank": 8,
+       "change": "5.9"
+      },
+      {
+       "value": 82.2483,
+       "rank": 8,
+       "change": "19.1"
+      },
+      {
+       "value": 222.3333,
+       "rank": 15,
+       "change": "16.3"
+      },
+      {
+       "value": 0.0825,
+       "rank": 5,
+       "change": "2.9"
+      },
+      {
+       "value": 0.2371,
+       "rank": 2,
+       "change": "4.1"
+      },
+      {
+       "value": -0.3048,
+       "rank": 5,
+       "change": "0.183"
+      },
+      {
+       "value": 116.3333,
+       "rank": 19,
+       "change": "15.8"
+      },
+      {
+       "value": 3.0385,
+       "rank": 28,
+       "change": "0.36"
+      },
+      {
+       "value": 0.069,
+       "rank": 8,
+       "change": "0.9"
+      },
+      {
+       "value": 0.5556,
+       "rank": 28,
+       "change": "11.1"
+      },
+      {
+       "value": 0.7778,
+       "rank": 30,
+       "change": "2.8"
+      },
+      {
+       "value": 0.1451,
+       "rank": 24,
+       "change": "0.168"
+      },
+      {
+       "value": -0.1854,
+       "rank": 1,
+       "change": "0.044"
+      },
+      {
+       "value": 18.0,
+       "rank": 8,
+       "change": "4.5"
+      },
+      {
+       "value": 2.3333,
+       "rank": 1,
+       "change": "0.83"
+      },
+      {
+       "value": 1.6667,
+       "rank": 7,
+       "change": "0.2"
+      },
+      {
+       "value": 1.0,
+       "rank": 25,
+       "change": null
+      },
+      {
+       "value": 2.0,
+       "rank": 10,
+       "change": "1.0"
+      }
+     ]
+    },
+    {
+     "team": "CIN",
+     "name": "Cincinnati Bengals",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.1152,
+       "rank": 3,
+       "change": "0.170"
+      },
+      {
+       "value": 0.4303,
+       "rank": 12,
+       "change": "3.4"
+      },
+      {
+       "value": -0.1079,
+       "rank": 3,
+       "change": "0.171"
+      },
+      {
+       "value": 0.6102,
+       "rank": 7,
+       "change": "2.1"
+      },
+      {
+       "value": 88.2768,
+       "rank": 11,
+       "change": "5.4"
+      },
+      {
+       "value": 287.0,
+       "rank": 29,
+       "change": "2.5"
+      },
+      {
+       "value": 0.066,
+       "rank": 11,
+       "change": "0.5"
+      },
+      {
+       "value": 0.1698,
+       "rank": 11,
+       "change": "2.7"
+      },
+      {
+       "value": -0.1317,
+       "rank": 11,
+       "change": "0.171"
+      },
+      {
+       "value": 95.6667,
+       "rank": 9,
+       "change": "21.2"
+      },
+      {
+       "value": 2.8525,
+       "rank": 27,
+       "change": "0.27"
+      },
+      {
+       "value": 0.0848,
+       "rank": 19,
+       "change": "2.8"
+      },
+      {
+       "value": 0.6364,
+       "rank": 11,
+       "change": "11.4"
+      },
+      {
+       "value": 0.3,
+       "rank": 3,
+       "change": "1.4"
+      },
+      {
+       "value": -0.7649,
+       "rank": 1,
+       "change": "0.325"
+      },
+      {
+       "value": -0.0046,
+       "rank": 16,
+       "change": "0.159"
+      },
+      {
+       "value": 21.0,
+       "rank": 13,
+       "change": "4.5"
+      },
+      {
+       "value": 1.6667,
+       "rank": 3,
+       "change": "0.33"
+      },
+      {
+       "value": 3.0,
+       "rank": 21,
+       "change": "0.5"
+      },
+      {
+       "value": 1.0,
+       "rank": 25,
+       "change": "0.5"
+      },
+      {
+       "value": 4.0,
+       "rank": 14,
+       "change": "2.0"
+      }
+     ]
+    },
+    {
+     "team": "SEA",
+     "name": "Seattle Seahawks",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.1005,
+       "rank": 4,
+       "change": "0.044"
+      },
+      {
+       "value": 0.3607,
+       "rank": 2,
+       "change": "1.9"
+      },
+      {
+       "value": 0.0639,
+       "rank": 16,
+       "change": "0.055"
+      },
+      {
+       "value": 0.6413,
+       "rank": 14,
+       "change": "1.4"
+      },
+      {
+       "value": 76.1775,
+       "rank": 5,
+       "change": "17.2"
+      },
+      {
+       "value": 152.0,
+       "rank": 1,
+       "change": "15.5"
+      },
+      {
+       "value": 0.0571,
+       "rank": 17,
+       "change": null
+      },
+      {
+       "value": 0.2,
+       "rank": 4,
+       "change": "2.9"
+      },
+      {
+       "value": -0.3658,
+       "rank": 1,
+       "change": "0.060"
+      },
+      {
+       "value": 87.0,
+       "rank": 6,
+       "change": "2.5"
+      },
+      {
+       "value": 1.9375,
+       "rank": 6,
+       "change": "0.19"
+      },
+      {
+       "value": 0.0219,
+       "rank": 1,
+       "change": "1.3"
+      },
+      {
+       "value": 0.7442,
+       "rank": 3,
+       "change": "2.0"
+      },
+      {
+       "value": 0.6667,
+       "rank": 21,
+       "change": null
+      },
+      {
+       "value": 0.1703,
+       "rank": 25,
+       "change": "0.138"
+      },
+      {
+       "value": -0.1229,
+       "rank": 2,
+       "change": "0.033"
+      },
+      {
+       "value": 16.6667,
+       "rank": 3,
+       "change": "8.2"
+      },
+      {
+       "value": 1.3333,
+       "rank": 7,
+       "change": "0.67"
+      },
+      {
+       "value": 2.6667,
+       "rank": 20,
+       "change": "0.2"
+      },
+      {
+       "value": 0.0,
+       "rank": 1,
+       "change": null
+      },
+      {
+       "value": 23.0,
+       "rank": 28,
+       "change": "4.5"
+      }
+     ]
+    },
+    {
+     "team": "CHI",
+     "name": "Chicago Bears",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.0831,
+       "rank": 5,
+       "change": "0.072"
+      },
+      {
+       "value": 0.4028,
+       "rank": 8,
+       "change": "0.3"
+      },
+      {
+       "value": -0.1437,
+       "rank": 1,
+       "change": "0.200"
+      },
+      {
+       "value": 0.5952,
+       "rank": 5,
+       "change": "0.9"
+      },
+      {
+       "value": 81.2996,
+       "rank": 7,
+       "change": "15.9"
+      },
+      {
+       "value": 219.0,
+       "rank": 13,
+       "change": "33.0"
+      },
+      {
+       "value": 0.0759,
+       "rank": 8,
+       "change": "1.7"
+      },
+      {
+       "value": 0.1139,
+       "rank": 26,
+       "change": "1.6"
+      },
+      {
+       "value": 0.0018,
+       "rank": 28,
+       "change": "0.102"
+      },
+      {
+       "value": 117.0,
+       "rank": 21,
+       "change": "5.0"
+      },
+      {
+       "value": 3.6812,
+       "rank": 32,
+       "change": "0.20"
+      },
+      {
+       "value": 0.0903,
+       "rank": 24,
+       "change": null
+      },
+      {
+       "value": 0.75,
+       "rank": 2,
+       "change": null
+      },
+      {
+       "value": 0.6667,
+       "rank": 21,
+       "change": "8.3"
+      },
+      {
+       "value": 0.0112,
+       "rank": 16,
+       "change": "0.215"
+      },
+      {
+       "value": -0.1001,
+       "rank": 4,
+       "change": "0.057"
+      },
+      {
+       "value": 17.6667,
+       "rank": 7,
+       "change": "5.3"
+      },
+      {
+       "value": 1.6667,
+       "rank": 3,
+       "change": "0.67"
+      },
+      {
+       "value": 3.0,
+       "rank": 21,
+       "change": "0.5"
+      },
+      {
+       "value": 0.6667,
+       "rank": 19,
+       "change": "0.3"
+      },
+      {
+       "value": 7.0,
+       "rank": 19,
+       "change": "7.0"
+      }
+     ]
+    },
+    {
+     "team": "ATL",
+     "name": "Atlanta Falcons",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.077,
+       "rank": 6,
+       "change": "0.003"
+      },
+      {
+       "value": 0.375,
+       "rank": 3,
+       "change": "0.9"
+      },
+      {
+       "value": -0.0069,
+       "rank": 11,
+       "change": "0.008"
+      },
+      {
+       "value": 0.5769,
+       "rank": 4,
+       "change": "3.3"
+      },
+      {
+       "value": 88.6218,
+       "rank": 12,
+       "change": "9.1"
+      },
+      {
+       "value": 273.3333,
+       "rank": 27,
+       "change": "19.3"
+      },
+      {
+       "value": 0.0481,
+       "rank": 22,
+       "change": "0.7"
+      },
+      {
+       "value": 0.1635,
+       "rank": 12,
+       "change": "2.5"
+      },
+      {
+       "value": -0.3036,
+       "rank": 6,
+       "change": "0.015"
+      },
+      {
+       "value": 47.6667,
+       "rank": 1,
+       "change": "15.3"
+      },
+      {
+       "value": 1.6154,
+       "rank": 1,
+       "change": "0.13"
+      },
+      {
+       "value": 0.0694,
+       "rank": 9,
+       "change": "1.0"
+      },
+      {
+       "value": 0.697,
+       "rank": 5,
+       "change": "0.1"
+      },
+      {
+       "value": 0.5,
+       "rank": 9,
+       "change": null
+      },
+      {
+       "value": -0.1291,
+       "rank": 6,
+       "change": "0.092"
+      },
+      {
+       "value": -0.0644,
+       "rank": 8,
+       "change": "0.027"
+      },
+      {
+       "value": 22.6667,
+       "rank": 15,
+       "change": "4.3"
+      },
+      {
+       "value": 0.3333,
+       "rank": 27,
+       "change": "0.17"
+      },
+      {
+       "value": 2.3333,
+       "rank": 14,
+       "change": "0.2"
+      },
+      {
+       "value": 0.0,
+       "rank": 1,
+       "change": null
+      },
+      {
+       "value": 23.6667,
+       "rank": 30,
+       "change": "5.2"
+      }
+     ]
+    },
+    {
+     "team": "JAX",
+     "name": "Jacksonville Jaguars",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.0721,
+       "rank": 7,
+       "change": "0.084"
+      },
+      {
+       "value": 0.4245,
+       "rank": 11,
+       "change": "4.4"
+      },
+      {
+       "value": -0.0378,
+       "rank": 7,
+       "change": "0.166"
+      },
+      {
+       "value": 0.6667,
+       "rank": 19,
+       "change": "5.0"
+      },
+      {
+       "value": 82.3413,
+       "rank": 9,
+       "change": "15.1"
+      },
+      {
+       "value": 246.0,
+       "rank": 22,
+       "change": "0.5"
+      },
+      {
+       "value": 0.0351,
+       "rank": 27,
+       "change": "3.5"
+      },
+      {
+       "value": 0.1579,
+       "rank": 13,
+       "change": "1.5"
+      },
+      {
+       "value": -0.1205,
+       "rank": 13,
+       "change": "0.028"
+      },
+      {
+       "value": 91.3333,
+       "rank": 8,
+       "change": "4.2"
+      },
+      {
+       "value": 2.3421,
+       "rank": 17,
+       "change": "0.36"
+      },
+      {
+       "value": 0.0943,
+       "rank": 25,
+       "change": "3.1"
+      },
+      {
+       "value": 0.7,
+       "rank": 4,
+       "change": "6.4"
+      },
+      {
+       "value": 0.2857,
+       "rank": 2,
+       "change": "21.4"
+      },
+      {
+       "value": -0.6973,
+       "rank": 3,
+       "change": "0.165"
+      },
+      {
+       "value": 0.0557,
+       "rank": 23,
+       "change": "0.069"
+      },
+      {
+       "value": 12.0,
+       "rank": 1,
+       "change": "3.0"
+      },
+      {
+       "value": 1.3333,
+       "rank": 7,
+       "change": "0.33"
+      },
+      {
+       "value": 1.3333,
+       "rank": 4,
+       "change": "0.8"
+      },
+      {
+       "value": 0.3333,
+       "rank": 8,
+       "change": "0.3"
+      },
+      {
+       "value": 1.0,
+       "rank": 8,
+       "change": "0.5"
+      }
+     ]
+    },
+    {
+     "team": "CLE",
+     "name": "Cleveland Browns",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.06,
+       "rank": 8,
+       "change": "0.028"
+      },
+      {
+       "value": 0.4013,
+       "rank": 7,
+       "change": "2.6"
+      },
+      {
+       "value": -0.0724,
+       "rank": 4,
+       "change": "0.008"
+      },
+      {
+       "value": 0.619,
+       "rank": 9,
+       "change": "6.5"
+      },
+      {
+       "value": 93.2738,
+       "rank": 18,
+       "change": "19.0"
+      },
+      {
+       "value": 239.3333,
+       "rank": 20,
+       "change": "25.8"
+      },
+      {
+       "value": 0.06,
+       "rank": 14,
+       "change": null
+      },
+      {
+       "value": 0.15,
+       "rank": 18,
+       "change": "1.0"
+      },
+      {
+       "value": -0.0341,
+       "rank": 23,
+       "change": "0.065"
+      },
+      {
+       "value": 120.3333,
+       "rank": 23,
+       "change": "11.2"
+      },
+      {
+       "value": 2.2625,
+       "rank": 13,
+       "change": "0.10"
+      },
+      {
+       "value": 0.0955,
+       "rank": 26,
+       "change": "0.2"
+      },
+      {
+       "value": 0.6286,
+       "rank": 12,
+       "change": "7.9"
+      },
+      {
+       "value": 0.4286,
+       "rank": 6,
+       "change": "2.9"
+      },
+      {
+       "value": -0.1271,
+       "rank": 7,
+       "change": "0.010"
+      },
+      {
+       "value": -0.0496,
+       "rank": 10,
+       "change": "0.043"
+      },
+      {
+       "value": 23.6667,
+       "rank": 18,
+       "change": "2.8"
+      },
+      {
+       "value": 0.6667,
+       "rank": 19,
+       "change": "0.17"
+      },
+      {
+       "value": 2.3333,
+       "rank": 14,
+       "change": "0.8"
+      },
+      {
+       "value": 0.6667,
+       "rank": 19,
+       "change": "0.3"
+      },
+      {
+       "value": 0.0,
+       "rank": 1,
+       "change": null
+      }
+     ]
+    },
+    {
+     "team": "NE",
+     "name": "New England Patriots",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.0384,
+       "rank": 9,
+       "change": "0.113"
+      },
+      {
+       "value": 0.4189,
+       "rank": 10,
+       "change": "4.6"
+      },
+      {
+       "value": -0.0259,
+       "rank": 9,
+       "change": "0.125"
+      },
+      {
+       "value": 0.6344,
+       "rank": 12,
+       "change": "0.9"
+      },
+      {
+       "value": 85.8199,
+       "rank": 10,
+       "change": "7.8"
+      },
+      {
+       "value": 189.6667,
+       "rank": 6,
+       "change": "3.8"
+      },
+      {
+       "value": 0.0581,
+       "rank": 15,
+       "change": "1.1"
+      },
+      {
+       "value": 0.186,
+       "rank": 7,
+       "change": "0.4"
+      },
+      {
+       "value": -0.0578,
+       "rank": 20,
+       "change": "0.093"
+      },
+      {
+       "value": 108.3333,
+       "rank": 17,
+       "change": "14.3"
+      },
+      {
+       "value": 2.4267,
+       "rank": 20,
+       "change": "0.20"
+      },
+      {
+       "value": 0.0541,
+       "rank": 3,
+       "change": "0.5"
+      },
+      {
+       "value": 0.6765,
+       "rank": 7,
+       "change": "15.7"
+      },
+      {
+       "value": 0.6,
+       "rank": 15,
+       "change": "60.0"
+      },
+      {
+       "value": 0.3853,
+       "rank": 29,
+       "change": "0.734"
+      },
+      {
+       "value": -0.0971,
+       "rank": 5,
+       "change": "0.040"
+      },
+      {
+       "value": 17.0,
+       "rank": 6,
+       "change": "9.0"
+      },
+      {
+       "value": 0.6667,
+       "rank": 19,
+       "change": "0.17"
+      },
+      {
+       "value": 3.0,
+       "rank": 21,
+       "change": "0.5"
+      },
+      {
+       "value": 1.6667,
+       "rank": 32,
+       "change": "0.7"
+      },
+      {
+       "value": 1.6667,
+       "rank": 9,
+       "change": "0.8"
+      }
+     ]
+    },
+    {
+     "team": "NYJ",
+     "name": "New York Jets",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.0368,
+       "rank": 10,
+       "change": "0.163"
+      },
+      {
+       "value": 0.4516,
+       "rank": 20,
+       "change": "10.4"
+      },
+      {
+       "value": 0.0536,
+       "rank": 15,
+       "change": "0.158"
+      },
+      {
+       "value": 0.6452,
+       "rank": 15,
+       "change": "7.1"
+      },
+      {
+       "value": 98.5887,
+       "rank": 23,
+       "change": "12.8"
+      },
+      {
+       "value": 184.6667,
+       "rank": 4,
+       "change": "42.2"
+      },
+      {
+       "value": 0.0761,
+       "rank": 7,
+       "change": "1.3"
+      },
+      {
+       "value": 0.1413,
+       "rank": 21,
+       "change": "0.2"
+      },
+      {
+       "value": -0.2013,
+       "rank": 8,
+       "change": "0.204"
+      },
+      {
+       "value": 87.3333,
+       "rank": 7,
+       "change": "21.8"
+      },
+      {
+       "value": 2.7419,
+       "rank": 23,
+       "change": "0.24"
+      },
+      {
+       "value": 0.0581,
+       "rank": 4,
+       "change": "1.5"
+      },
+      {
+       "value": 0.6897,
+       "rank": 6,
+       "change": "10.0"
+      },
+      {
+       "value": 0.75,
+       "rank": 28,
+       "change": "8.3"
+      },
+      {
+       "value": 0.2595,
+       "rank": 28,
+       "change": "0.139"
+      },
+      {
+       "value": -0.0965,
+       "rank": 6,
+       "change": "0.142"
+      },
+      {
+       "value": 20.3333,
+       "rank": 12,
+       "change": "5.3"
+      },
+      {
+       "value": 0.3333,
+       "rank": 27,
+       "change": "0.17"
+      },
+      {
+       "value": 3.0,
+       "rank": 21,
+       "change": "1.0"
+      },
+      {
+       "value": 0.3333,
+       "rank": 8,
+       "change": "0.2"
+      },
+      {
+       "value": 20.3333,
+       "rank": 27,
+       "change": "10.2"
+      }
+     ]
+    },
+    {
+     "team": "PIT",
+     "name": "Pittsburgh Steelers",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.0242,
+       "rank": 11,
+       "change": "0.159"
+      },
+      {
+       "value": 0.4717,
+       "rank": 24,
+       "change": "4.0"
+      },
+      {
+       "value": -0.0484,
+       "rank": 6,
+       "change": "0.300"
+      },
+      {
+       "value": 0.6667,
+       "rank": 19,
+       "change": "7.6"
+      },
+      {
+       "value": 91.2294,
+       "rank": 15,
+       "change": "27.5"
+      },
+      {
+       "value": 211.0,
+       "rank": 10,
+       "change": "35.5"
+      },
+      {
+       "value": 0.0889,
+       "rank": 3,
+       "change": "5.1"
+      },
+      {
+       "value": 0.1778,
+       "rank": 8,
+       "change": "2.2"
+      },
+      {
+       "value": 0.0117,
+       "rank": 30,
+       "change": "0.008"
+      },
+      {
+       "value": 113.0,
+       "rank": 18,
+       "change": "15.0"
+      },
+      {
+       "value": 2.2727,
+       "rank": 14,
+       "change": "0.31"
+      },
+      {
+       "value": 0.1195,
+       "rank": 31,
+       "change": "0.8"
+      },
+      {
+       "value": 0.6571,
+       "rank": 9,
+       "change": "7.0"
+      },
+      {
+       "value": 0.3333,
+       "rank": 4,
+       "change": "33.3"
+      },
+      {
+       "value": -0.0472,
+       "rank": 11,
+       "change": "0.638"
+      },
+      {
+       "value": -0.0231,
+       "rank": 14,
+       "change": "0.145"
+      },
+      {
+       "value": 20.0,
+       "rank": 11,
+       "change": "3.5"
+      },
+      {
+       "value": 1.6667,
+       "rank": 3,
+       "change": "0.33"
+      },
+      {
+       "value": 2.0,
+       "rank": 11,
+       "change": "1.0"
+      },
+      {
+       "value": 0.3333,
+       "rank": 8,
+       "change": "0.2"
+      },
+      {
+       "value": 0.0,
+       "rank": 1,
+       "change": null
+      }
+     ]
+    },
+    {
+     "team": "BUF",
+     "name": "Buffalo Bills",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.016,
+       "rank": 12,
+       "change": "0.061"
+      },
+      {
+       "value": 0.4777,
+       "rank": 26,
+       "change": "0.1"
+      },
+      {
+       "value": -0.0288,
+       "rank": 8,
+       "change": "0.113"
+      },
+      {
+       "value": 0.6545,
+       "rank": 16,
+       "change": "3.0"
+      },
+      {
+       "value": 105.3788,
+       "rank": 26,
+       "change": "13.0"
+      },
+      {
+       "value": 275.6667,
+       "rank": 28,
+       "change": "24.8"
+      },
+      {
+       "value": 0.0854,
+       "rank": 4,
+       "change": "1.5"
+      },
+      {
+       "value": 0.2317,
+       "rank": 3,
+       "change": "0.8"
+      },
+      {
+       "value": 0.002,
+       "rank": 29,
+       "change": "0.015"
+      },
+      {
+       "value": 107.0,
+       "rank": 16,
+       "change": "12.0"
+      },
+      {
+       "value": 2.425,
+       "rank": 19,
+       "change": "0.04"
+      },
+      {
+       "value": 0.0892,
+       "rank": 23,
+       "change": "0.4"
+      },
+      {
+       "value": 0.6176,
+       "rank": 14,
+       "change": "3.2"
+      },
+      {
+       "value": 0.7,
+       "rank": 24,
+       "change": "15.7"
+      },
+      {
+       "value": 0.1982,
+       "rank": 26,
+       "change": "0.279"
+      },
+      {
+       "value": -0.0666,
+       "rank": 7,
+       "change": "0.023"
+      },
+      {
+       "value": 26.0,
+       "rank": 21,
+       "change": "5.0"
+      },
+      {
+       "value": 1.0,
+       "rank": 11,
+       "change": null
+      },
+      {
+       "value": 3.3333,
+       "rank": 28,
+       "change": "0.3"
+      },
+      {
+       "value": 0.3333,
+       "rank": 8,
+       "change": "0.3"
+      },
+      {
+       "value": 7.0,
+       "rank": 19,
+       "change": "3.5"
+      }
+     ]
+    },
+    {
+     "team": "KC",
+     "name": "Kansas City Chiefs",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.0156,
+       "rank": 13,
+       "change": "0.022"
+      },
+      {
+       "value": 0.3895,
+       "rank": 4,
+       "change": "5.4"
+      },
+      {
+       "value": 0.0302,
+       "rank": 14,
+       "change": "0.070"
+      },
+      {
+       "value": 0.6211,
+       "rank": 10,
+       "change": "4.0"
+      },
+      {
+       "value": 71.864,
+       "rank": 2,
+       "change": "6.6"
+      },
+      {
+       "value": 183.6667,
+       "rank": 3,
+       "change": "13.2"
+      },
+      {
+       "value": 0.0421,
+       "rank": 26,
+       "change": "2.6"
+      },
+      {
+       "value": 0.1053,
+       "rank": 28,
+       "change": "4.7"
+      },
+      {
+       "value": -0.0839,
+       "rank": 15,
+       "change": "0.159"
+      },
+      {
+       "value": 99.6667,
+       "rank": 10,
+       "change": "9.7"
+      },
+      {
+       "value": 2.359,
+       "rank": 18,
+       "change": "0.66"
+      },
+      {
+       "value": 0.0698,
+       "rank": 10,
+       "change": "0.4"
+      },
+      {
+       "value": 0.6053,
+       "rank": 15,
+       "change": "9.0"
+      },
+      {
+       "value": 0.5714,
+       "rank": 12,
+       "change": "2.9"
+      },
+      {
+       "value": 0.129,
+       "rank": 20,
+       "change": "0.084"
+      },
+      {
+       "value": -0.0368,
+       "rank": 12,
+       "change": "0.010"
+      },
+      {
+       "value": 16.6667,
+       "rank": 3,
+       "change": "3.3"
+      },
+      {
+       "value": 1.3333,
+       "rank": 7,
+       "change": "0.17"
+      },
+      {
+       "value": 3.6667,
+       "rank": 30,
+       "change": "0.2"
+      },
+      {
+       "value": 1.3333,
+       "rank": 31,
+       "change": "0.2"
+      },
+      {
+       "value": 16.3333,
+       "rank": 26,
+       "change": "8.2"
+      }
+     ]
+    },
+    {
+     "team": "TB",
+     "name": "Tampa Bay Buccaneers",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.0138,
+       "rank": 14,
+       "change": "0.164"
+      },
+      {
+       "value": 0.3961,
+       "rank": 6,
+       "change": "9.9"
+      },
+      {
+       "value": 0.1192,
+       "rank": 18,
+       "change": "0.256"
+      },
+      {
+       "value": 0.6809,
+       "rank": 27,
+       "change": "7.3"
+      },
+      {
+       "value": 93.3954,
+       "rank": 19,
+       "change": "12.0"
+      },
+      {
+       "value": 220.0,
+       "rank": 14,
+       "change": "26.0"
+      },
+      {
+       "value": 0.0515,
+       "rank": 20,
+       "change": "2.0"
+      },
+      {
+       "value": 0.1134,
+       "rank": 27,
+       "change": "0.4"
+      },
+      {
+       "value": -0.2747,
+       "rank": 7,
+       "change": "0.026"
+      },
+      {
+       "value": 76.0,
+       "rank": 2,
+       "change": "1.0"
+      },
+      {
+       "value": 1.863,
+       "rank": 3,
+       "change": "0.28"
+      },
+      {
+       "value": 0.0714,
+       "rank": 11,
+       "change": "0.1"
+      },
+      {
+       "value": 0.6667,
+       "rank": 8,
+       "change": "19.0"
+      },
+      {
+       "value": 0.5,
+       "rank": 9,
+       "change": null
+      },
+      {
+       "value": 0.3914,
+       "rank": 30,
+       "change": null
+      },
+      {
+       "value": -0.0543,
+       "rank": 9,
+       "change": "0.164"
+      },
+      {
+       "value": 26.3333,
+       "rank": 23,
+       "change": "1.7"
+      },
+      {
+       "value": 0.3333,
+       "rank": 27,
+       "change": "0.33"
+      },
+      {
+       "value": 2.3333,
+       "rank": 14,
+       "change": "0.2"
+      },
+      {
+       "value": 0.6667,
+       "rank": 19,
+       "change": "0.2"
+      },
+      {
+       "value": 0.0,
+       "rank": 1,
+       "change": null
+      }
+     ]
+    },
+    {
+     "team": "LA",
+     "name": "Los Angeles Rams",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.0055,
+       "rank": 15,
+       "change": "0.007"
+      },
+      {
+       "value": 0.4383,
+       "rank": 17,
+       "change": "3.6"
+      },
+      {
+       "value": 0.0076,
+       "rank": 12,
+       "change": "0.004"
+      },
+      {
+       "value": 0.56,
+       "rank": 3,
+       "change": "3.1"
+      },
+      {
+       "value": 74.6667,
+       "rank": 4,
+       "change": "0.4"
+      },
+      {
+       "value": 174.0,
+       "rank": 2,
+       "change": "6.0"
+      },
+      {
+       "value": 0.0225,
+       "rank": 30,
+       "change": "0.4"
+      },
+      {
+       "value": 0.1236,
+       "rank": 22,
+       "change": "2.5"
+      },
+      {
+       "value": -0.024,
+       "rank": 25,
+       "change": "0.021"
+      },
+      {
+       "value": 101.3333,
+       "rank": 11,
+       "change": "11.7"
+      },
+      {
+       "value": 2.4737,
+       "rank": 22,
+       "change": "0.51"
+      },
+      {
+       "value": 0.0617,
+       "rank": 6,
+       "change": null
+      },
+      {
+       "value": 0.5714,
+       "rank": 20,
+       "change": "2.9"
+      },
+      {
+       "value": 0.625,
+       "rank": 18,
+       "change": "22.5"
+      },
+      {
+       "value": 0.1333,
+       "rank": 22,
+       "change": "0.370"
+      },
+      {
+       "value": -0.0397,
+       "rank": 11,
+       "change": "0.068"
+      },
+      {
+       "value": 21.0,
+       "rank": 13,
+       "change": "4.5"
+      },
+      {
+       "value": 1.0,
+       "rank": 11,
+       "change": null
+      },
+      {
+       "value": 3.0,
+       "rank": 21,
+       "change": "1.5"
+      },
+      {
+       "value": 1.0,
+       "rank": 25,
+       "change": "0.5"
+      },
+      {
+       "value": 8.0,
+       "rank": 22,
+       "change": "5.5"
+      }
+     ]
+    },
+    {
+     "team": "SF",
+     "name": "San Francisco 49ers",
+     "games": 3,
+     "cells": [
+      {
+       "value": -0.0011,
+       "rank": 16,
+       "change": "0.030"
+      },
+      {
+       "value": 0.4672,
+       "rank": 23,
+       "change": "1.2"
+      },
+      {
+       "value": 0.015,
+       "rank": 13,
+       "change": "0.102"
+      },
+      {
+       "value": 0.6699,
+       "rank": 23,
+       "change": "6.2"
+      },
+      {
+       "value": 89.6642,
+       "rank": 14,
+       "change": "8.7"
+      },
+      {
+       "value": 215.0,
+       "rank": 11,
+       "change": "32.5"
+      },
+      {
+       "value": 0.0429,
+       "rank": 24,
+       "change": "2.6"
+      },
+      {
+       "value": 0.1714,
+       "rank": 10,
+       "change": "13.9"
+      },
+      {
+       "value": -0.0212,
+       "rank": 26,
+       "change": "0.035"
+      },
+      {
+       "value": 105.6667,
+       "rank": 15,
+       "change": "6.3"
+      },
+      {
+       "value": 2.3412,
+       "rank": 16,
+       "change": "0.14"
+      },
+      {
+       "value": 0.0365,
+       "rank": 2,
+       "change": "3.4"
+      },
+      {
+       "value": 0.5625,
+       "rank": 22,
+       "change": "6.2"
+      },
+      {
+       "value": 0.4444,
+       "rank": 8,
+       "change": "19.4"
+      },
+      {
+       "value": -0.0577,
+       "rank": 10,
+       "change": "0.244"
+      },
+      {
+       "value": 0.0191,
+       "rank": 18,
+       "change": "0.055"
+      },
+      {
+       "value": 16.6667,
+       "rank": 3,
+       "change": "6.7"
+      },
+      {
+       "value": 0.3333,
+       "rank": 27,
+       "change": "0.17"
+      },
+      {
+       "value": 1.0,
+       "rank": 2,
+       "change": "0.5"
+      },
+      {
+       "value": 0.0,
+       "rank": 1,
+       "change": null
+      },
+      {
+       "value": 6.3333,
+       "rank": 17,
+       "change": "6.3"
+      }
+     ]
+    },
+    {
+     "team": "DEN",
+     "name": "Denver Broncos",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.011,
+       "rank": 17,
+       "change": "0.009"
+      },
+      {
+       "value": 0.4145,
+       "rank": 9,
+       "change": "0.8"
+      },
+      {
+       "value": -0.0548,
+       "rank": 5,
+       "change": "0.073"
+      },
+      {
+       "value": 0.5586,
+       "rank": 2,
+       "change": "1.3"
+      },
+      {
+       "value": 74.268,
+       "rank": 3,
+       "change": "0.2"
+      },
+      {
+       "value": 254.3333,
+       "rank": 24,
+       "change": "67.8"
+      },
+      {
+       "value": 0.0609,
+       "rank": 13,
+       "change": "0.8"
+      },
+      {
+       "value": 0.2,
+       "rank": 4,
+       "change": "4.2"
+      },
+      {
+       "value": 0.1292,
+       "rank": 32,
+       "change": "0.093"
+      },
+      {
+       "value": 143.6667,
+       "rank": 30,
+       "change": "13.8"
+      },
+      {
+       "value": 2.0353,
+       "rank": 8,
+       "change": "0.49"
+      },
+      {
+       "value": 0.0829,
+       "rank": 18,
+       "change": null
+      },
+      {
+       "value": 0.5581,
+       "rank": 26,
+       "change": "1.6"
+      },
+      {
+       "value": 0.4,
+       "rank": 5,
+       "change": "20.0"
+      },
+      {
+       "value": -0.1709,
+       "rank": 5,
+       "change": "0.237"
+      },
+      {
+       "value": 0.0432,
+       "rank": 22,
+       "change": "0.031"
+      },
+      {
+       "value": 23.3333,
+       "rank": 17,
+       "change": "1.3"
+      },
+      {
+       "value": 1.3333,
+       "rank": 7,
+       "change": "0.33"
+      },
+      {
+       "value": 2.3333,
+       "rank": 14,
+       "change": "0.7"
+      },
+      {
+       "value": 1.0,
+       "rank": 25,
+       "change": "0.5"
+      },
+      {
+       "value": 4.3333,
+       "rank": 15,
+       "change": "4.3"
+      }
+     ]
+    },
+    {
+     "team": "LAC",
+     "name": "Los Angeles Chargers",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.0144,
+       "rank": 18,
+       "change": "0.048"
+      },
+      {
+       "value": 0.4439,
+       "rank": 18,
+       "change": "0.7"
+      },
+      {
+       "value": 0.1246,
+       "rank": 20,
+       "change": "0.128"
+      },
+      {
+       "value": 0.6739,
+       "rank": 25,
+       "change": "2.3"
+      },
+      {
+       "value": 92.3913,
+       "rank": 17,
+       "change": "15.1"
+      },
+      {
+       "value": 244.6667,
+       "rank": 21,
+       "change": "20.3"
+      },
+      {
+       "value": 0.0686,
+       "rank": 10,
+       "change": "2.6"
+      },
+      {
+       "value": 0.1961,
+       "rank": 6,
+       "change": "0.1"
+      },
+      {
+       "value": -0.1364,
+       "rank": 10,
+       "change": "0.080"
+      },
+      {
+       "value": 116.3333,
+       "rank": 19,
+       "change": "29.8"
+      },
+      {
+       "value": 2.1146,
+       "rank": 10,
+       "change": "0.56"
+      },
+      {
+       "value": 0.0856,
+       "rank": 21,
+       "change": "2.2"
+      },
+      {
+       "value": 0.5833,
+       "rank": 17,
+       "change": "1.7"
+      },
+      {
+       "value": 0.5833,
+       "rank": 13,
+       "change": "8.3"
+      },
+      {
+       "value": -0.0906,
+       "rank": 8,
+       "change": "0.099"
+      },
+      {
+       "value": 0.0377,
+       "rank": 19,
+       "change": "0.084"
+      },
+      {
+       "value": 25.3333,
+       "rank": 20,
+       "change": "0.7"
+      },
+      {
+       "value": 2.0,
+       "rank": 2,
+       "change": "1.50"
+      },
+      {
+       "value": 1.0,
+       "rank": 2,
+       "change": null
+      },
+      {
+       "value": 0.0,
+       "rank": 1,
+       "change": null
+      },
+      {
+       "value": 8.0,
+       "rank": 22,
+       "change": "4.0"
+      }
+     ]
+    },
+    {
+     "team": "BAL",
+     "name": "Baltimore Ravens",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.0242,
+       "rank": 19,
+       "change": "0.065"
+      },
+      {
+       "value": 0.4356,
+       "rank": 15,
+       "change": "2.4"
+      },
+      {
+       "value": 0.0734,
+       "rank": 17,
+       "change": "0.076"
+      },
+      {
+       "value": 0.6762,
+       "rank": 26,
+       "change": "3.2"
+      },
+      {
+       "value": 91.5278,
+       "rank": 16,
+       "change": "0.2"
+      },
+      {
+       "value": 231.3333,
+       "rank": 19,
+       "change": "22.3"
+      },
+      {
+       "value": 0.0505,
+       "rank": 21,
+       "change": "2.4"
+      },
+      {
+       "value": 0.1414,
+       "rank": 19,
+       "change": "1.2"
+      },
+      {
+       "value": -0.0625,
+       "rank": 19,
+       "change": "0.044"
+      },
+      {
+       "value": 105.0,
+       "rank": 14,
+       "change": "21.5"
+      },
+      {
+       "value": 2.4286,
+       "rank": 21,
+       "change": "0.77"
+      },
+      {
+       "value": 0.0736,
+       "rank": 14,
+       "change": "0.4"
+      },
+      {
+       "value": 0.5588,
+       "rank": 24,
+       "change": "5.9"
+      },
+      {
+       "value": 0.6,
+       "rank": 15,
+       "change": "15.0"
+      },
+      {
+       "value": 0.1068,
+       "rank": 19,
+       "change": "0.123"
+      },
+      {
+       "value": 0.0063,
+       "rank": 17,
+       "change": "0.088"
+      },
+      {
+       "value": 26.0,
+       "rank": 21,
+       "change": "2.5"
+      },
+      {
+       "value": 1.0,
+       "rank": 11,
+       "change": null
+      },
+      {
+       "value": 2.0,
+       "rank": 11,
+       "change": "0.5"
+      },
+      {
+       "value": 0.3333,
+       "rank": 8,
+       "change": "0.2"
+      },
+      {
+       "value": 6.6667,
+       "rank": 18,
+       "change": "6.7"
+      }
+     ]
+    },
+    {
+     "team": "TEN",
+     "name": "Tennessee Titans",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.031,
+       "rank": 20,
+       "change": "0.087"
+      },
+      {
+       "value": 0.4346,
+       "rank": 13,
+       "change": "2.6"
+      },
+      {
+       "value": 0.1408,
+       "rank": 21,
+       "change": "0.111"
+      },
+      {
+       "value": 0.7108,
+       "rank": 30,
+       "change": "2.7"
+      },
+      {
+       "value": 89.2821,
+       "rank": 13,
+       "change": "4.3"
+      },
+      {
+       "value": 199.0,
+       "rank": 8,
+       "change": "40.5"
+      },
+      {
+       "value": 0.0652,
+       "rank": 12,
+       "change": "2.0"
+      },
+      {
+       "value": 0.1522,
+       "rank": 17,
+       "change": "1.6"
+      },
+      {
+       "value": -0.0799,
+       "rank": 16,
+       "change": "0.042"
+      },
+      {
+       "value": 126.3333,
+       "rank": 24,
+       "change": "5.8"
+      },
+      {
+       "value": 2.0769,
+       "rank": 9,
+       "change": "0.15"
+      },
+      {
+       "value": 0.0733,
+       "rank": 12,
+       "change": "0.5"
+      },
+      {
+       "value": 0.575,
+       "rank": 19,
+       "change": "7.5"
+      },
+      {
+       "value": 0.5556,
+       "rank": 11,
+       "change": "15.9"
+      },
+      {
+       "value": -0.3211,
+       "rank": 4,
+       "change": "0.079"
+      },
+      {
+       "value": 0.0915,
+       "rank": 25,
+       "change": "0.089"
+      },
+      {
+       "value": 19.6667,
+       "rank": 10,
+       "change": "3.8"
+      },
+      {
+       "value": 0.6667,
+       "rank": 19,
+       "change": "0.33"
+      },
+      {
+       "value": 3.3333,
+       "rank": 28,
+       "change": "0.8"
+      },
+      {
+       "value": 1.0,
+       "rank": 25,
+       "change": "0.5"
+      },
+      {
+       "value": 3.3333,
+       "rank": 13,
+       "change": "1.7"
+      }
+     ]
+    },
+    {
+     "team": "GB",
+     "name": "Green Bay Packers",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.0479,
+       "rank": 21,
+       "change": "0.083"
+      },
+      {
+       "value": 0.4615,
+       "rank": 22,
+       "change": "7.7"
+      },
+      {
+       "value": 0.1239,
+       "rank": 19,
+       "change": "0.003"
+      },
+      {
+       "value": 0.6667,
+       "rank": 19,
+       "change": "2.1"
+      },
+      {
+       "value": 97.1759,
+       "rank": 21,
+       "change": "1.6"
+      },
+      {
+       "value": 218.0,
+       "rank": 12,
+       "change": "19.0"
+      },
+      {
+       "value": 0.0707,
+       "rank": 9,
+       "change": "2.0"
+      },
+      {
+       "value": 0.1414,
+       "rank": 19,
+       "change": "2.7"
+      },
+      {
+       "value": -0.0558,
+       "rank": 21,
+       "change": "0.247"
+      },
+      {
+       "value": 138.6667,
+       "rank": 28,
+       "change": "51.7"
+      },
+      {
+       "value": 1.9608,
+       "rank": 7,
+       "change": "0.53"
+      },
+      {
+       "value": 0.0604,
+       "rank": 5,
+       "change": "2.2"
+      },
+      {
+       "value": 0.5581,
+       "rank": 26,
+       "change": "1.3"
+      },
+      {
+       "value": 0.8,
+       "rank": 31,
+       "change": "8.6"
+      },
+      {
+       "value": 0.4556,
+       "rank": 32,
+       "change": "0.094"
+      },
+      {
+       "value": -0.0263,
+       "rank": 13,
+       "change": "0.077"
+      },
+      {
+       "value": 30.3333,
+       "rank": 29,
+       "change": "2.3"
+      },
+      {
+       "value": 0.6667,
+       "rank": 19,
+       "change": "0.17"
+      },
+      {
+       "value": 5.3333,
+       "rank": 32,
+       "change": "1.7"
+      },
+      {
+       "value": 1.0,
+       "rank": 25,
+       "change": "0.5"
+      },
+      {
+       "value": 11.3333,
+       "rank": 24,
+       "change": "5.7"
+      }
+     ]
+    },
+    {
+     "team": "CAR",
+     "name": "Carolina Panthers",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.0495,
+       "rank": 22,
+       "change": "0.001"
+      },
+      {
+       "value": 0.4444,
+       "rank": 19,
+       "change": "4.4"
+      },
+      {
+       "value": 0.1631,
+       "rank": 23,
+       "change": "0.005"
+      },
+      {
+       "value": 0.6087,
+       "rank": 6,
+       "change": "3.1"
+      },
+      {
+       "value": 78.9855,
+       "rank": 6,
+       "change": "4.9"
+      },
+      {
+       "value": 186.0,
+       "rank": 5,
+       "change": "21.0"
+      },
+      {
+       "value": 0.0575,
+       "rank": 16,
+       "change": "0.4"
+      },
+      {
+       "value": 0.1149,
+       "rank": 24,
+       "change": "3.3"
+      },
+      {
+       "value": -0.1315,
+       "rank": 12,
+       "change": "0.025"
+      },
+      {
+       "value": 193.3333,
+       "rank": 32,
+       "change": "30.7"
+      },
+      {
+       "value": 3.3069,
+       "rank": 31,
+       "change": "0.34"
+      },
+      {
+       "value": 0.085,
+       "rank": 20,
+       "change": "0.4"
+      },
+      {
+       "value": 0.5938,
+       "rank": 16,
+       "change": "3.8"
+      },
+      {
+       "value": 1.0,
+       "rank": 32,
+       "change": null
+      },
+      {
+       "value": 0.4346,
+       "rank": 31,
+       "change": "0.104"
+      },
+      {
+       "value": -0.0084,
+       "rank": 15,
+       "change": "0.010"
+      },
+      {
+       "value": 27.6667,
+       "rank": 26,
+       "change": "3.3"
+      },
+      {
+       "value": 1.0,
+       "rank": 11,
+       "change": "0.50"
+      },
+      {
+       "value": 1.6667,
+       "rank": 7,
+       "change": "1.2"
+      },
+      {
+       "value": 0.3333,
+       "rank": 8,
+       "change": "0.3"
+      },
+      {
+       "value": 5.6667,
+       "rank": 16,
+       "change": "5.7"
+      }
+     ]
+    },
+    {
+     "team": "HOU",
+     "name": "Houston Texans",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.056,
+       "rank": 23,
+       "change": "0.117"
+      },
+      {
+       "value": 0.3908,
+       "rank": 5,
+       "change": "1.2"
+      },
+      {
+       "value": 0.1851,
+       "rank": 26,
+       "change": "0.193"
+      },
+      {
+       "value": 0.6667,
+       "rank": 19,
+       "change": null
+      },
+      {
+       "value": 104.3403,
+       "rank": 25,
+       "change": "13.1"
+      },
+      {
+       "value": 258.6667,
+       "rank": 25,
+       "change": "11.8"
+      },
+      {
+       "value": 0.0962,
+       "rank": 2,
+       "change": "0.1"
+      },
+      {
+       "value": 0.1731,
+       "rank": 9,
+       "change": "0.2"
+      },
+      {
+       "value": -0.1554,
+       "rank": 9,
+       "change": "0.053"
+      },
+      {
+       "value": 86.6667,
+       "rank": 5,
+       "change": "1.2"
+      },
+      {
+       "value": 1.88,
+       "rank": 4,
+       "change": "0.64"
+      },
+      {
+       "value": 0.1092,
+       "rank": 29,
+       "change": "2.7"
+      },
+      {
+       "value": 0.5833,
+       "rank": 17,
+       "change": "3.6"
+      },
+      {
+       "value": 0.4286,
+       "rank": 6,
+       "change": "7.1"
+      },
+      {
+       "value": -0.0126,
+       "rank": 13,
+       "change": "0.065"
+      },
+      {
+       "value": 0.0649,
+       "rank": 24,
+       "change": "0.135"
+      },
+      {
+       "value": 25.0,
+       "rank": 19,
+       "change": "3.0"
+      },
+      {
+       "value": 1.0,
+       "rank": 11,
+       "change": "1.00"
+      },
+      {
+       "value": 0.6667,
+       "rank": 1,
+       "change": "0.3"
+      },
+      {
+       "value": 0.0,
+       "rank": 1,
+       "change": null
+      },
+      {
+       "value": 15.3333,
+       "rank": 25,
+       "change": "7.7"
+      }
+     ]
+    },
+    {
+     "team": "PHI",
+     "name": "Philadelphia Eagles",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.0566,
+       "rank": 24,
+       "change": "0.004"
+      },
+      {
+       "value": 0.435,
+       "rank": 14,
+       "change": "0.9"
+      },
+      {
+       "value": 0.1523,
+       "rank": 22,
+       "change": "0.039"
+      },
+      {
+       "value": 0.625,
+       "rank": 11,
+       "change": "5.1"
+      },
+      {
+       "value": 97.4432,
+       "rank": 22,
+       "change": "8.4"
+      },
+      {
+       "value": 198.0,
+       "rank": 7,
+       "change": "24.5"
+      },
+      {
+       "value": 0.0312,
+       "rank": 28,
+       "change": "1.7"
+      },
+      {
+       "value": 0.0833,
+       "rank": 31,
+       "change": "0.3"
+      },
+      {
+       "value": -0.0706,
+       "rank": 17,
+       "change": "0.071"
+      },
+      {
+       "value": 127.3333,
+       "rank": 25,
+       "change": "0.3"
+      },
+      {
+       "value": 2.1875,
+       "rank": 11,
+       "change": "0.16"
+      },
+      {
+       "value": 0.0734,
+       "rank": 13,
+       "change": "0.9"
+      },
+      {
+       "value": 0.641,
+       "rank": 10,
+       "change": "3.4"
+      },
+      {
+       "value": 0.6,
+       "rank": 15,
+       "change": "11.4"
+      },
+      {
+       "value": 0.1016,
+       "rank": 18,
+       "change": "0.186"
+      },
+      {
+       "value": 0.0417,
+       "rank": 21,
+       "change": "0.052"
+      },
+      {
+       "value": 23.0,
+       "rank": 16,
+       "change": "2.0"
+      },
+      {
+       "value": 0.0,
+       "rank": 31,
+       "change": null
+      },
+      {
+       "value": 1.6667,
+       "rank": 7,
+       "change": "1.2"
+      },
+      {
+       "value": 0.3333,
+       "rank": 8,
+       "change": "0.3"
+      },
+      {
+       "value": 0.0,
+       "rank": 1,
+       "change": null
+      }
+     ]
+    },
+    {
+     "team": "WAS",
+     "name": "Washington Commanders",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.0753,
+       "rank": 25,
+       "change": "0.070"
+      },
+      {
+       "value": 0.4724,
+       "rank": 25,
+       "change": "2.4"
+      },
+      {
+       "value": 0.2415,
+       "rank": 28,
+       "change": "0.065"
+      },
+      {
+       "value": 0.7059,
+       "rank": 29,
+       "change": "0.8"
+      },
+      {
+       "value": 124.4281,
+       "rank": 32,
+       "change": "12.6"
+      },
+      {
+       "value": 291.6667,
+       "rank": 31,
+       "change": "50.7"
+      },
+      {
+       "value": 0.0455,
+       "rank": 23,
+       "change": "3.4"
+      },
+      {
+       "value": 0.1545,
+       "rank": 15,
+       "change": "2.0"
+      },
+      {
+       "value": -0.3229,
+       "rank": 4,
+       "change": "0.132"
+      },
+      {
+       "value": 82.0,
+       "rank": 3,
+       "change": "19.0"
+      },
+      {
+       "value": 1.8281,
+       "rank": 2,
+       "change": "0.32"
+      },
+      {
+       "value": 0.0798,
+       "rank": 17,
+       "change": "0.4"
+      },
+      {
+       "value": 0.5625,
+       "rank": 22,
+       "change": "4.1"
+      },
+      {
+       "value": 0.75,
+       "rank": 28,
+       "change": "3.6"
+      },
+      {
+       "value": 0.2298,
+       "rank": 27,
+       "change": "0.027"
+      },
+      {
+       "value": 0.039,
+       "rank": 20,
+       "change": "0.081"
+      },
+      {
+       "value": 30.6667,
+       "rank": 31,
+       "change": "0.2"
+      },
+      {
+       "value": 1.0,
+       "rank": 11,
+       "change": "1.00"
+      },
+      {
+       "value": 2.3333,
+       "rank": 14,
+       "change": "1.3"
+      },
+      {
+       "value": 0.3333,
+       "rank": 8,
+       "change": "0.2"
+      },
+      {
+       "value": 0.6667,
+       "rank": 7,
+       "change": "0.7"
+      }
+     ]
+    },
+    {
+     "team": "NO",
+     "name": "New Orleans Saints",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.1045,
+       "rank": 26,
+       "change": "0.061"
+      },
+      {
+       "value": 0.5185,
+       "rank": 31,
+       "change": "2.5"
+      },
+      {
+       "value": 0.1821,
+       "rank": 25,
+       "change": "0.133"
+      },
+      {
+       "value": 0.6699,
+       "rank": 23,
+       "change": "0.2"
+      },
+      {
+       "value": 101.1529,
+       "rank": 24,
+       "change": "8.5"
+      },
+      {
+       "value": 229.6667,
+       "rank": 17,
+       "change": "9.2"
+      },
+      {
+       "value": 0.0556,
+       "rank": 18,
+       "change": null
+      },
+      {
+       "value": 0.1574,
+       "rank": 14,
+       "change": "0.9"
+      },
+      {
+       "value": -0.0134,
+       "rank": 27,
+       "change": "0.048"
+      },
+      {
+       "value": 128.6667,
+       "rank": 27,
+       "change": "7.8"
+      },
+      {
+       "value": 2.8171,
+       "rank": 26,
+       "change": "0.46"
+      },
+      {
+       "value": 0.0741,
+       "rank": 15,
+       "change": "1.3"
+      },
+      {
+       "value": 0.5588,
+       "rank": 24,
+       "change": "4.1"
+      },
+      {
+       "value": 0.5833,
+       "rank": 13,
+       "change": "8.3"
+      },
+      {
+       "value": 0.0829,
+       "rank": 17,
+       "change": "0.051"
+      },
+      {
+       "value": 0.1109,
+       "rank": 26,
+       "change": "0.089"
+      },
+      {
+       "value": 27.6667,
+       "rank": 26,
+       "change": "3.7"
+      },
+      {
+       "value": 0.6667,
+       "rank": 19,
+       "change": "0.33"
+      },
+      {
+       "value": 3.0,
+       "rank": 21,
+       "change": "1.0"
+      },
+      {
+       "value": 0.3333,
+       "rank": 8,
+       "change": "0.2"
+      },
+      {
+       "value": 2.3333,
+       "rank": 11,
+       "change": "2.3"
+      }
+     ]
+    },
+    {
+     "team": "DET",
+     "name": "Detroit Lions",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.1128,
+       "rank": 27,
+       "change": "0.048"
+      },
+      {
+       "value": 0.4878,
+       "rank": 29,
+       "change": "1.2"
+      },
+      {
+       "value": 0.1697,
+       "rank": 24,
+       "change": "0.047"
+      },
+      {
+       "value": 0.6935,
+       "rank": 28,
+       "change": "6.1"
+      },
+      {
+       "value": 110.2487,
+       "rank": 27,
+       "change": "10.6"
+      },
+      {
+       "value": 326.3333,
+       "rank": 32,
+       "change": "2.7"
+      },
+      {
+       "value": 0.0811,
+       "rank": 6,
+       "change": "1.3"
+      },
+      {
+       "value": 0.1532,
+       "rank": 16,
+       "change": "1.1"
+      },
+      {
+       "value": -0.0248,
+       "rank": 24,
+       "change": "0.062"
+      },
+      {
+       "value": 117.3333,
+       "rank": 22,
+       "change": "29.7"
+      },
+      {
+       "value": 3.2125,
+       "rank": 30,
+       "change": "0.36"
+      },
+      {
+       "value": 0.1098,
+       "rank": 30,
+       "change": "0.8"
+      },
+      {
+       "value": 0.4706,
+       "rank": 31,
+       "change": "5.4"
+      },
+      {
+       "value": 0.7143,
+       "rank": 26,
+       "change": "8.6"
+      },
+      {
+       "value": -0.0082,
+       "rank": 14,
+       "change": "0.575"
+      },
+      {
+       "value": 0.1241,
+       "rank": 27,
+       "change": "0.001"
+      },
+      {
+       "value": 31.6667,
+       "rank": 32,
+       "change": "3.8"
+      },
+      {
+       "value": 1.0,
+       "rank": 11,
+       "change": null
+      },
+      {
+       "value": 1.6667,
+       "rank": 7,
+       "change": "0.8"
+      },
+      {
+       "value": 0.0,
+       "rank": 1,
+       "change": null
+      },
+      {
+       "value": 7.0,
+       "rank": 19,
+       "change": "3.5"
+      }
+     ]
+    },
+    {
+     "team": "NYG",
+     "name": "New York Giants",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.1199,
+       "rank": 28,
+       "change": "0.195"
+      },
+      {
+       "value": 0.4539,
+       "rank": 21,
+       "change": "4.0"
+      },
+      {
+       "value": 0.2251,
+       "rank": 27,
+       "change": "0.282"
+      },
+      {
+       "value": 0.6634,
+       "rank": 18,
+       "change": "1.4"
+      },
+      {
+       "value": 96.2665,
+       "rank": 20,
+       "change": "12.4"
+      },
+      {
+       "value": 227.6667,
+       "rank": 16,
+       "change": "23.3"
+      },
+      {
+       "value": 0.0118,
+       "rank": 31,
+       "change": "0.9"
+      },
+      {
+       "value": 0.0824,
+       "rank": 32,
+       "change": "2.0"
+      },
+      {
+       "value": -0.0904,
+       "rank": 14,
+       "change": "0.001"
+      },
+      {
+       "value": 104.3333,
+       "rank": 12,
+       "change": "11.7"
+      },
+      {
+       "value": 2.7761,
+       "rank": 25,
+       "change": "0.16"
+      },
+      {
+       "value": 0.0638,
+       "rank": 7,
+       "change": "1.0"
+      },
+      {
+       "value": 0.5333,
+       "rank": 29,
+       "change": "6.3"
+      },
+      {
+       "value": 0.7143,
+       "rank": 26,
+       "change": "28.6"
+      },
+      {
+       "value": -0.0022,
+       "rank": 15,
+       "change": "0.566"
+      },
+      {
+       "value": 0.1437,
+       "rank": 28,
+       "change": "0.124"
+      },
+      {
+       "value": 18.3333,
+       "rank": 9,
+       "change": "5.7"
+      },
+      {
+       "value": 0.6667,
+       "rank": 19,
+       "change": "0.17"
+      },
+      {
+       "value": 2.3333,
+       "rank": 14,
+       "change": "0.3"
+      },
+      {
+       "value": 0.3333,
+       "rank": 8,
+       "change": "0.3"
+      },
+      {
+       "value": 23.0,
+       "rank": 28,
+       "change": "11.5"
+      }
+     ]
+    },
+    {
+     "team": "IND",
+     "name": "Indianapolis Colts",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.1415,
+       "rank": 29,
+       "change": "0.113"
+      },
+      {
+       "value": 0.4845,
+       "rank": 27,
+       "change": "3.0"
+      },
+      {
+       "value": 0.2682,
+       "rank": 29,
+       "change": "0.128"
+      },
+      {
+       "value": 0.6566,
+       "rank": 17,
+       "change": "2.4"
+      },
+      {
+       "value": 110.3746,
+       "rank": 28,
+       "change": "7.8"
+      },
+      {
+       "value": 291.0,
+       "rank": 30,
+       "change": "62.0"
+      },
+      {
+       "value": 0.0521,
+       "rank": 19,
+       "change": "2.1"
+      },
+      {
+       "value": 0.1146,
+       "rank": 25,
+       "change": "3.8"
+      },
+      {
+       "value": -0.0662,
+       "rank": 18,
+       "change": "0.084"
+      },
+      {
+       "value": 141.3333,
+       "rank": 29,
+       "change": "35.7"
+      },
+      {
+       "value": 2.2989,
+       "rank": 15,
+       "change": "0.11"
+      },
+      {
+       "value": 0.0745,
+       "rank": 16,
+       "change": "1.9"
+      },
+      {
+       "value": 0.6207,
+       "rank": 13,
+       "change": "1.0"
+      },
+      {
+       "value": 0.6364,
+       "rank": 20,
+       "change": "1.1"
+      },
+      {
+       "value": -0.0281,
+       "rank": 12,
+       "change": "0.067"
+      },
+      {
+       "value": 0.1853,
+       "rank": 29,
+       "change": "0.176"
+      },
+      {
+       "value": 30.3333,
+       "rank": 29,
+       "change": "6.7"
+      },
+      {
+       "value": 0.0,
+       "rank": 31,
+       "change": null
+      },
+      {
+       "value": 1.3333,
+       "rank": 4,
+       "change": "1.3"
+      },
+      {
+       "value": 0.6667,
+       "rank": 19,
+       "change": "0.7"
+      },
+      {
+       "value": 2.3333,
+       "rank": 11,
+       "change": "2.3"
+      }
+     ]
+    },
+    {
+     "team": "ARI",
+     "name": "Arizona Cardinals",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.1546,
+       "rank": 30,
+       "change": "0.140"
+      },
+      {
+       "value": 0.4853,
+       "rank": 28,
+       "change": "4.0"
+      },
+      {
+       "value": 0.5016,
+       "rank": 32,
+       "change": "0.179"
+      },
+      {
+       "value": 0.6375,
+       "rank": 13,
+       "change": "4.2"
+      },
+      {
+       "value": 121.9271,
+       "rank": 31,
+       "change": "11.0"
+      },
+      {
+       "value": 247.0,
+       "rank": 23,
+       "change": "25.0"
+      },
+      {
+       "value": 0.0423,
+       "rank": 25,
+       "change": "1.3"
+      },
+      {
+       "value": 0.0986,
+       "rank": 30,
+       "change": "1.3"
+      },
+      {
+       "value": -0.3262,
+       "rank": 3,
+       "change": "0.091"
+      },
+      {
+       "value": 127.6667,
+       "rank": 26,
+       "change": "6.2"
+      },
+      {
+       "value": 2.75,
+       "rank": 24,
+       "change": "0.36"
+      },
+      {
+       "value": 0.125,
+       "rank": 32,
+       "change": "4.6"
+      },
+      {
+       "value": 0.5714,
+       "rank": 20,
+       "change": "2.9"
+      },
+      {
+       "value": 0.625,
+       "rank": 18,
+       "change": "5.4"
+      },
+      {
+       "value": -0.07,
+       "rank": 9,
+       "change": "0.098"
+      },
+      {
+       "value": 0.2182,
+       "rank": 31,
+       "change": "0.143"
+      },
+      {
+       "value": 27.0,
+       "rank": 24,
+       "change": "4.5"
+      },
+      {
+       "value": 1.0,
+       "rank": 11,
+       "change": "0.50"
+      },
+      {
+       "value": 3.0,
+       "rank": 21,
+       "change": null
+      },
+      {
+       "value": 0.3333,
+       "rank": 8,
+       "change": "0.2"
+      },
+      {
+       "value": 31.0,
+       "rank": 32,
+       "change": "13.0"
+      }
+     ]
+    },
+    {
+     "team": "DAL",
+     "name": "Dallas Cowboys",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.1855,
+       "rank": 31,
+       "change": "0.006"
+      },
+      {
+       "value": 0.511,
+       "rank": 30,
+       "change": "0.6"
+      },
+      {
+       "value": 0.3896,
+       "rank": 30,
+       "change": "0.096"
+      },
+      {
+       "value": 0.7262,
+       "rank": 31,
+       "change": "0.7"
+      },
+      {
+       "value": 121.2798,
+       "rank": 30,
+       "change": "4.8"
+      },
+      {
+       "value": 207.6667,
+       "rank": 9,
+       "change": "10.8"
+      },
+      {
+       "value": 0.0233,
+       "rank": 29,
+       "change": "0.8"
+      },
+      {
+       "value": 0.1163,
+       "rank": 23,
+       "change": "2.4"
+      },
+      {
+       "value": -0.0423,
+       "rank": 22,
+       "change": "0.066"
+      },
+      {
+       "value": 179.6667,
+       "rank": 31,
+       "change": "6.2"
+      },
+      {
+       "value": 3.1589,
+       "rank": 29,
+       "change": "0.03"
+      },
+      {
+       "value": 0.0989,
+       "rank": 28,
+       "change": "3.1"
+      },
+      {
+       "value": 0.4688,
+       "rank": 32,
+       "change": "13.5"
+      },
+      {
+       "value": 0.6923,
+       "rank": 23,
+       "change": "2.2"
+      },
+      {
+       "value": 0.131,
+       "rank": 21,
+       "change": "0.096"
+      },
+      {
+       "value": 0.2013,
+       "rank": 30,
+       "change": "0.033"
+      },
+      {
+       "value": 27.3333,
+       "rank": 25,
+       "change": "3.3"
+      },
+      {
+       "value": 0.6667,
+       "rank": 19,
+       "change": "0.33"
+      },
+      {
+       "value": 3.6667,
+       "rank": 30,
+       "change": "0.7"
+      },
+      {
+       "value": 0.6667,
+       "rank": 19,
+       "change": "0.3"
+      },
+      {
+       "value": 24.3333,
+       "rank": 31,
+       "change": "24.3"
+      }
+     ]
+    },
+    {
+     "team": "MIA",
+     "name": "Miami Dolphins",
+     "games": 3,
+     "cells": [
+      {
+       "value": 0.2606,
+       "rank": 32,
+       "change": "0.066"
+      },
+      {
+       "value": 0.5526,
+       "rank": 32,
+       "change": "0.3"
+      },
+      {
+       "value": 0.4703,
+       "rank": 31,
+       "change": "0.063"
+      },
+      {
+       "value": 0.8026,
+       "rank": 32,
+       "change": "1.4"
+      },
+      {
+       "value": 118.9145,
+       "rank": 29,
+       "change": "0.4"
+      },
+      {
+       "value": 231.0,
+       "rank": 18,
+       "change": "7.5"
+      },
+      {
+       "value": 0.0,
+       "rank": 32,
+       "change": null
+      },
+      {
+       "value": 0.1017,
+       "rank": 29,
+       "change": "0.6"
+      },
+      {
+       "value": 0.0192,
+       "rank": 31,
+       "change": "0.083"
+      },
+      {
+       "value": 104.3333,
+       "rank": 12,
+       "change": "8.2"
+      },
+      {
+       "value": 1.9213,
+       "rank": 5,
+       "change": "0.08"
+      },
+      {
+       "value": 0.0965,
+       "rank": 27,
+       "change": "1.2"
+      },
+      {
+       "value": 0.5294,
+       "rank": 30,
+       "change": "12.9"
+      },
+      {
+       "value": 0.7,
+       "rank": 24,
+       "change": "13.3"
+      },
+      {
+       "value": 0.1365,
+       "rank": 23,
+       "change": "0.269"
+      },
+      {
+       "value": 0.309,
+       "rank": 32,
+       "change": "0.009"
+      },
+      {
+       "value": 28.6667,
+       "rank": 28,
+       "change": "2.3"
+      },
+      {
+       "value": 0.6667,
+       "rank": 19,
+       "change": "0.17"
+      },
+      {
+       "value": 1.3333,
+       "rank": 4,
+       "change": "0.3"
+      },
+      {
+       "value": 0.0,
+       "rank": 1,
+       "change": null
+      },
+      {
+       "value": 0.0,
+       "rank": 1,
+       "change": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
