@@ -95,7 +95,7 @@
   .hfa-kpi { padding: 0.8rem 1.1rem; border-left: var(--hfa-hairline); }
   .hfa-kpi:first-child { border-left: 0; }
   .hfa-label { font-size: 0.66rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-muted); }
-  .hfa-kpi-value { font-size: 1.35rem; font-weight: 700; line-height: 1.3; color: var(--hfa-accent); }
+  .hfa-kpi-value { font-size: 1.6rem; font-weight: 800; line-height: 1.2; color: var(--hfa-accent); letter-spacing: -0.01em; }
   .hfa-kpi-sub { font-size: 0.78rem; color: var(--hfa-muted); }
   .hfa-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
   .hfa-grid > * { min-width: 0; }
@@ -153,6 +153,11 @@
   :root[data-theme="light"] .hfa .rank td:first-child, :root[data-theme="light"] .hfa .rank th:first-child, :root[data-theme="light"] .hfa .rank td.team, :root[data-theme="light"] .hfa .rank th.team { background: #fff; }
 
   /* Board bits */
+  .hfa .kpi-rows { display: flex; flex-direction: column; gap: 0.12rem; margin-top: 0.35rem; font-size: 0.8rem; }
+  .hfa .kpi-rows > div { display: flex; justify-content: space-between; align-items: baseline; gap: 0.6rem; border-top: 1px solid rgba(128, 128, 128, 0.12); padding-top: 0.12rem; }
+  .hfa .kpi-rows span { color: var(--hfa-muted); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .hfa .kpi-rows b { color: var(--hfa-body); font-weight: 700; white-space: nowrap; }
+  .hfa .kpi-rows b small { color: var(--hfa-muted); font-weight: 500; font-size: 0.7rem; }
   .hfa .kpi-list { display: flex; flex-direction: column; gap: 0.15rem; font-size: 0.82rem; }
   .hfa .kpi-list > div { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .hfa-kpi:has(.kpi-list) { grid-column: span 2; }
