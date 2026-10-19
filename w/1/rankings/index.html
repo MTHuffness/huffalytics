@@ -249,6 +249,30 @@
   .hfa .why .step.total > b { color: var(--hfa-accent); font-size: 1.05rem; }
   .hfa .why-inj td.name { white-space: normal; }
   @media (max-width: 1100px) { .hfa .why-grid { grid-template-columns: 1fr; } }
+  /* The calls popover under an Overs / Unders cell */
+  .hfa details.calls { position: relative; display: inline-block; }
+  .hfa details.calls > summary { list-style: none; cursor: pointer; white-space: nowrap; }
+  .hfa details.calls > summary::-webkit-details-marker { display: none; }
+  .hfa details.calls > summary .twirl { margin: 0 0 0 0.2rem; font-size: 0.65rem; }
+  .hfa details.calls[open] > summary .twirl { transform: none; color: var(--hfa-accent); }
+  .hfa .calls-pop { position: absolute; right: 0; top: calc(100% + 0.35rem); z-index: 30; width: min(36rem, calc(100vw - 2rem)); text-align: left; background: var(--hfa-card); border: var(--hfa-hairline); border-radius: 12px; box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.9); padding: 0.6rem 0.8rem; font-size: 0.8rem; white-space: normal; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); max-height: 70vh; overflow: auto; }
+  .hfa .calls-head { padding-bottom: 0.4rem; border-bottom: var(--hfa-hairline); margin-bottom: 0.2rem; }
+  .hfa .call { padding: 0.45rem 0; border-bottom: 1px solid rgba(128, 128, 128, 0.12); }
+  .hfa .call:last-child { border-bottom: 0; }
+  .hfa .call-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.6rem; }
+  .hfa .call .who { font-weight: 700; }
+  .hfa .call .bet { font-weight: 600; color: var(--hfa-accent); }
+  .hfa .call .actual { margin-left: auto; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+  .hfa .call .actual.hit { color: var(--hfa-good); } .hfa .call .actual.miss { color: var(--hfa-bad); } .hfa .call .actual.void { color: var(--hfa-muted); }
+  .hfa .call .why-line { color: var(--hfa-muted); font-size: 0.72rem; line-height: 1.4; margin-top: 0.1rem; }
+  .hfa .rungs { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.35rem; }
+  .hfa .rung { display: inline-flex; align-items: baseline; gap: 0.3rem; border-radius: 6px; padding: 0.15rem 0.5rem; font-size: 0.72rem; font-weight: 700; background: rgba(128, 128, 128, 0.14); color: var(--hfa-body); }
+  .hfa .rung i { font-style: normal; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--hfa-muted); }
+  .hfa .rung small { font-weight: 500; color: var(--hfa-muted); }
+  .hfa .rung.same { opacity: 0.6; }
+  .hfa .rung.hit { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); } .hfa .rung.hit i { color: var(--hfa-good); opacity: 0.8; }
+  .hfa .rung.miss { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); } .hfa .rung.miss i { color: var(--hfa-bad); opacity: 0.8; }
+  .hfa .rung.void { background: rgba(128, 128, 128, 0.1); color: var(--hfa-muted); }
   .hfa .ou { display: inline-block; margin-left: 0.3rem; border-radius: 6px; padding: 0.08rem 0.4rem; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
   .hfa .ou.over { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
   .hfa .ou.under { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
@@ -269,7 +293,7 @@
   .hfa .inj.out { background: rgba(255, 31, 47, 0.18); color: var(--hfa-accent); }
   .hfa .act { font-size: 0.7rem; margin-left: 0.2rem; }
   .hfa .act.over { color: var(--hfa-good); } .hfa .act.under { color: var(--hfa-bad); }
-  .hfa .hit { color: var(--hfa-good); font-weight: 700; margin-left: 0.15rem; }
+  .hfa span.hit { color: var(--hfa-good); font-weight: 700; margin-left: 0.15rem; }
   .hfa .caret { border: 0; background: transparent; color: var(--hfa-muted); cursor: pointer; padding: 0 0.3rem 0 0; font-size: 0.8rem; }
   .hfa .caret.open { transform: rotate(90deg); display: inline-block; }
   .hfa tr.mate { display: none; }
@@ -330,6 +354,8 @@
     .hfa .slate > tbody > tr > td:first-child { box-shadow: none; }
     .hfa table.stack > tbody > tr { box-shadow: inset 3px 0 0 var(--hfa-accent); }
     .hfa .legend-body { position: fixed; left: 1rem; right: 1rem; top: auto; width: auto; max-height: 70vh; overflow: auto; }
+    .hfa details.calls { position: static; }
+    .hfa .calls-pop { position: fixed; left: 0.6rem; right: 0.6rem; top: 4.5rem; width: auto; }
     .hfa .nm-full { display: none; } .hfa .nm-short { display: inline; }
     .hfa .lvl .note { flex: 0 0 100%; margin-left: 0; }
     .hfa .kpi-list span { width: 2.2rem; }
