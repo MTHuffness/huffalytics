@@ -192,7 +192,33 @@
   .hfa .legend-body b { color: var(--hfa-accent); margin-right: 0.3rem; }
   .hfa .legend-body b + b { margin-left: 0.2rem; }
   .hfa .slate th.sort { cursor: pointer; } .hfa .slate th.sort.on { color: var(--hfa-accent); }
-  .hfa .slate tr > td:first-child { box-shadow: inset 3px 0 0 var(--hfa-accent); }
+  .hfa .slate > tbody > tr > td:first-child { box-shadow: inset 3px 0 0 var(--hfa-accent); }
+  /* The why row under a game */
+  .hfa tr.has-why { cursor: pointer; }
+  .hfa tr.has-why:hover > td { background: var(--hfa-tint); }
+  .hfa .twirl { display: inline-block; color: var(--hfa-muted); font-size: 0.8rem; margin-right: 0.35rem; transition: transform 0.15s; }
+  .hfa tr.open .twirl { transform: rotate(90deg); color: var(--hfa-accent); }
+  .hfa tr.why-row > td { padding: 0; border-top: 0; box-shadow: none !important; background: rgba(255, 31, 47, 0.03); }
+  .hfa .why { padding: 0.9rem 1.1rem 1rem 1.4rem; border-top: 1px dashed rgba(128, 128, 128, 0.2); border-bottom: var(--hfa-hairline); }
+  .hfa .why-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 1.25rem; }
+  .hfa .why-col { min-width: 0; }
+  .hfa .why .hfa-label { margin-bottom: 0.4rem; }
+  .hfa .why .hfa-label .flat { text-transform: none; letter-spacing: 0; font-weight: 500; margin-left: 0.3rem; }
+  .hfa .why table { font-size: 0.82rem; }
+  .hfa .why th { padding: 0.25rem 0.5rem; }
+  .hfa .why td { padding: 0.4rem 0.5rem; vertical-align: top; }
+  .hfa .why td.name { font-weight: 700; white-space: nowrap; }
+  .hfa .why td.name img { width: 18px; height: 18px; vertical-align: -4px; margin-right: 3px; }
+  .hfa .why .tiny { font-size: 0.68rem; font-weight: 400; white-space: normal; line-height: 1.35; }
+  .hfa .why .rank { display: inline-block; min-width: 1.9rem; text-align: center; border-radius: 6px; padding: 0.05rem 0.3rem; font-size: 0.66rem; font-weight: 700; background: var(--hfa-accent-soft); color: var(--hfa-accent); margin-left: 0.2rem; }
+  .hfa .why .steps { display: flex; flex-direction: column; }
+  .hfa .why .step { display: grid; grid-template-columns: 7rem 1fr; gap: 0 0.6rem; align-items: baseline; padding: 0.35rem 0; border-top: 1px solid rgba(128, 128, 128, 0.12); font-size: 0.82rem; }
+  .hfa .why .step > span { color: var(--hfa-muted); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .hfa .why .step > b { font-size: 0.95rem; }
+  .hfa .why .step > small { grid-column: 2; color: var(--hfa-muted); font-size: 0.7rem; line-height: 1.35; }
+  .hfa .why .step.total > b { color: var(--hfa-accent); font-size: 1.05rem; }
+  .hfa .why-inj td.name { white-space: normal; }
+  @media (max-width: 1100px) { .hfa .why-grid { grid-template-columns: 1fr; } }
   .hfa .ou { display: inline-block; margin-left: 0.3rem; border-radius: 6px; padding: 0.08rem 0.4rem; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
   .hfa .ou.over { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
   .hfa .ou.under { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
@@ -266,7 +292,12 @@
     .hfa table.stack > tbody > tr > td.c-plain:has(> .flat:only-child) { display: none; }
     .hfa table.stack > tbody > tr > td.c-plain .badge + .badge { margin-left: 0.2rem; }
     .hfa table.stack .match { flex-wrap: wrap; font-size: 0.95rem; }
-    .hfa .slate tr > td:first-child { box-shadow: none; }
+    .hfa table.stack > tbody > tr.why-row { display: block; padding: 0; box-shadow: none; }
+    .hfa table.stack > tbody > tr.why-row[hidden] { display: none; }
+    .hfa table.stack > tbody > tr.why-row > td { display: block; padding: 0; background: transparent; }
+    .hfa .why { padding: 0.7rem 0.9rem 0.9rem; }
+    .hfa .why td.name { white-space: normal; }
+    .hfa .slate > tbody > tr > td:first-child { box-shadow: none; }
     .hfa table.stack > tbody > tr { box-shadow: inset 3px 0 0 var(--hfa-accent); }
     .hfa .legend-body { position: fixed; left: 1rem; right: 1rem; top: auto; width: auto; max-height: 70vh; overflow: auto; }
     .hfa .nm-full { display: none; } .hfa .nm-short { display: inline; }

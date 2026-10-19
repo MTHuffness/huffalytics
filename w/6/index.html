@@ -192,7 +192,33 @@
   .hfa .legend-body b { color: var(--hfa-accent); margin-right: 0.3rem; }
   .hfa .legend-body b + b { margin-left: 0.2rem; }
   .hfa .slate th.sort { cursor: pointer; } .hfa .slate th.sort.on { color: var(--hfa-accent); }
-  .hfa .slate tr > td:first-child { box-shadow: inset 3px 0 0 var(--hfa-accent); }
+  .hfa .slate > tbody > tr > td:first-child { box-shadow: inset 3px 0 0 var(--hfa-accent); }
+  /* The why row under a game */
+  .hfa tr.has-why { cursor: pointer; }
+  .hfa tr.has-why:hover > td { background: var(--hfa-tint); }
+  .hfa .twirl { display: inline-block; color: var(--hfa-muted); font-size: 0.8rem; margin-right: 0.35rem; transition: transform 0.15s; }
+  .hfa tr.open .twirl { transform: rotate(90deg); color: var(--hfa-accent); }
+  .hfa tr.why-row > td { padding: 0; border-top: 0; box-shadow: none !important; background: rgba(255, 31, 47, 0.03); }
+  .hfa .why { padding: 0.9rem 1.1rem 1rem 1.4rem; border-top: 1px dashed rgba(128, 128, 128, 0.2); border-bottom: var(--hfa-hairline); }
+  .hfa .why-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 1.25rem; }
+  .hfa .why-col { min-width: 0; }
+  .hfa .why .hfa-label { margin-bottom: 0.4rem; }
+  .hfa .why .hfa-label .flat { text-transform: none; letter-spacing: 0; font-weight: 500; margin-left: 0.3rem; }
+  .hfa .why table { font-size: 0.82rem; }
+  .hfa .why th { padding: 0.25rem 0.5rem; }
+  .hfa .why td { padding: 0.4rem 0.5rem; vertical-align: top; }
+  .hfa .why td.name { font-weight: 700; white-space: nowrap; }
+  .hfa .why td.name img { width: 18px; height: 18px; vertical-align: -4px; margin-right: 3px; }
+  .hfa .why .tiny { font-size: 0.68rem; font-weight: 400; white-space: normal; line-height: 1.35; }
+  .hfa .why .rank { display: inline-block; min-width: 1.9rem; text-align: center; border-radius: 6px; padding: 0.05rem 0.3rem; font-size: 0.66rem; font-weight: 700; background: var(--hfa-accent-soft); color: var(--hfa-accent); margin-left: 0.2rem; }
+  .hfa .why .steps { display: flex; flex-direction: column; }
+  .hfa .why .step { display: grid; grid-template-columns: 7rem 1fr; gap: 0 0.6rem; align-items: baseline; padding: 0.35rem 0; border-top: 1px solid rgba(128, 128, 128, 0.12); font-size: 0.82rem; }
+  .hfa .why .step > span { color: var(--hfa-muted); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .hfa .why .step > b { font-size: 0.95rem; }
+  .hfa .why .step > small { grid-column: 2; color: var(--hfa-muted); font-size: 0.7rem; line-height: 1.35; }
+  .hfa .why .step.total > b { color: var(--hfa-accent); font-size: 1.05rem; }
+  .hfa .why-inj td.name { white-space: normal; }
+  @media (max-width: 1100px) { .hfa .why-grid { grid-template-columns: 1fr; } }
   .hfa .ou { display: inline-block; margin-left: 0.3rem; border-radius: 6px; padding: 0.08rem 0.4rem; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
   .hfa .ou.over { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
   .hfa .ou.under { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
@@ -266,7 +292,12 @@
     .hfa table.stack > tbody > tr > td.c-plain:has(> .flat:only-child) { display: none; }
     .hfa table.stack > tbody > tr > td.c-plain .badge + .badge { margin-left: 0.2rem; }
     .hfa table.stack .match { flex-wrap: wrap; font-size: 0.95rem; }
-    .hfa .slate tr > td:first-child { box-shadow: none; }
+    .hfa table.stack > tbody > tr.why-row { display: block; padding: 0; box-shadow: none; }
+    .hfa table.stack > tbody > tr.why-row[hidden] { display: none; }
+    .hfa table.stack > tbody > tr.why-row > td { display: block; padding: 0; background: transparent; }
+    .hfa .why { padding: 0.7rem 0.9rem 0.9rem; }
+    .hfa .why td.name { white-space: normal; }
+    .hfa .slate > tbody > tr > td:first-child { box-shadow: none; }
     .hfa table.stack > tbody > tr { box-shadow: inset 3px 0 0 var(--hfa-accent); }
     .hfa .legend-body { position: fixed; left: 1rem; right: 1rem; top: auto; width: auto; max-height: 70vh; overflow: auto; }
     .hfa .nm-full { display: none; } .hfa .nm-short { display: inline; }
@@ -386,8 +417,8 @@
       </tr></thead>
       <tbody>
       
-      <tr>
-        <td class="c-lead" data-val="LA vs ARI"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" alt="" loading="lazy"><span class="fav">LA</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy"><span>ARI</span></span></td>
+      <tr class="has-why" data-why="why-1" title="Why this margin">
+        <td class="c-lead" data-val="LA vs ARI"><span class="twirl">&#9656;</span><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" alt="" loading="lazy"><span class="fav">LA</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy"><span>ARI</span></span></td>
         <td class="c-end nw" data-val="2026-10-18T16:05:00-04:00" title="Sun Oct 18, 2:05 PM Denver">2:05pm</td>
         <td class="num nw" data-l="line" data-val="-12.5"><b>-12.5</b></td>
         <td class="num nw" data-l="o/u" data-val="51.5">51.5 <span class="ou under">34 under</span></td>
@@ -406,9 +437,76 @@
         
         
       </tr>
+      <tr class="why-row" id="why-1" hidden><td colspan="14">
+<div class="why">
+  <div class="why-grid">
+    <div class="why-col">
+      <div class="hfa-label">Ratings entering the week <span class="flat">EPA per play, rank of 32</span></div>
+      <table class="why-teams">
+        <thead><tr><th></th><th class="num">Offense</th><th class="num">Defense</th><th class="num">Net</th></tr></thead>
+        <tbody>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" alt="" loading="lazy">LA <span class="flat">fav</span><div class="flat tiny">5 games &middot; 51% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-success">+0.095</span> <span class="rank">#4</span><div class="flat tiny">to date +0.110 &middot; preseason +0.080</div></td>
+          <td class="num"><span class="text-success">-0.007</span> <span class="rank">#11</span><div class="flat tiny">to date +0.002 &middot; preseason -0.015</div></td>
+          <td class="num"><b>+0.102</b> <span class="rank">#2</span></td>
+        </tr>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy">ARI<div class="flat tiny">5 games &middot; 48% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-danger">-0.029</span> <span class="rank">#22</span><div class="flat tiny">to date -0.065 &middot; preseason +0.005</div></td>
+          <td class="num"><span class="text-danger">+0.055</span> <span class="rank">#26</span><div class="flat tiny">to date +0.091 &middot; preseason +0.027</div></td>
+          <td class="num"><b>-0.084</b> <span class="rank">#28</span></td>
+        </tr>
+        
+        </tbody>
+      </table>
+      <div class="flat tiny">Each rating blends the preseason projection with this season's plays, weighted by plays. Offense reads high = good; defense is EPA allowed, low = good. Net is offense minus defense.</div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">From the ratings to the margin <span class="flat">LA's side</span></div>
+      <div class="steps">
+        <div class="step"><span>Rating gap</span><b>+0.186</b><small>LA is the better team by net rating</small></div>
+        <div class="step"><span>Worth in points</span><b>+8.6</b><small>+46.2 points per EPA/play of gap, fit on 4,755 games 2006–2026</small></div>
+        <div class="step"><span>Home field</span><b>+1.91</b><small>LA is at home</small></div>
+        <div class="step total"><span>Model</span><b>LA by +10.5</b><small>market LA by +12.5</small></div>
+        <div class="step"><span>Edge vs market</span><b class="down">-2.0</b><small>the engine likes LA, but less than the line does</small></div>
+      </div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">Injuries that move the margin <span class="flat">38 reports read</span></div>
       
-      <tr>
-        <td class="c-lead" data-val="SF vs WAS"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sf.png" alt="" loading="lazy"><span class="fav">SF</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png" alt="" loading="lazy"><span>WAS</span></span></td>
+      <table class="why-inj">
+        <tbody>
+        
+        <tr><td class="name">Jeremiyah Love <span class="flat">ARI RB</span><div class="flat tiny">Out, ankle &middot; a new absence carrying 15% of the offense</div></td><td class="num"><b class="up">+0.99</b></td></tr>
+        
+        <tr><td class="name">James Conner <span class="flat">ARI RB</span><div class="flat tiny">IR, foot &middot; questionable, carries 16% of the offense</div></td><td class="num"><b class="up">+0.45</b></td></tr>
+        
+        <tr><td class="name">Trey Benson <span class="flat">ARI RB</span><div class="flat tiny">IR, knee &middot; questionable, carries 13% of the offense</div></td><td class="num"><b class="up">+0.36</b></td></tr>
+        
+        <tr><td class="name">Tutu Atwell <span class="flat">LA WR</span><div class="flat tiny">Out, coach&#x27;s decision &middot; a new absence carrying 5% of the offense</div></td><td class="num"><b class="down">-0.34</b></td></tr>
+        
+        <tr><td class="name">Terrance Ferguson <span class="flat">LA TE</span><div class="flat tiny">IR, ankle &middot; questionable, carries 7% of the offense</div></td><td class="num"><b class="down">-0.19</b></td></tr>
+        
+        <tr><td class="name">Hunter Long <span class="flat">ARI TE</span><div class="flat tiny">IR, knee &middot; questionable, carries 2% of the offense</div></td><td class="num"><b class="up">+0.07</b></td></tr>
+        
+        <tr><td class="name">Tip Reiman <span class="flat">ARI TE</span><div class="flat tiny">PUP, ankle &middot; questionable, carries 2% of the offense</div></td><td class="num"><b class="up">+0.06</b></td></tr>
+        
+        </tbody>
+      </table>
+      
+      <div class="steps">
+        <div class="step total"><span>Adjusted</span><b>LA by +11.9</b><small>injuries +1.36 &middot; edge vs market <span class="down">-0.6</span></small></div>
+      </div>
+    </div>
+  </div>
+</div>
+</td></tr>
+      
+      <tr class="has-why" data-why="why-2" title="Why this margin">
+        <td class="c-lead" data-val="SF vs WAS"><span class="twirl">&#9656;</span><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sf.png" alt="" loading="lazy"><span class="fav">SF</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png" alt="" loading="lazy"><span>WAS</span></span></td>
         <td class="c-end nw" data-val="2026-10-19T20:15:00-04:00" title="Mon Oct 19, 6:15 PM Denver">MNF</td>
         <td class="num nw" data-l="line" data-val="-7.5"><b>-7.5</b></td>
         <td class="num nw" data-l="o/u" data-val="51.5">51.5</td>
@@ -427,9 +525,82 @@
         
         
       </tr>
+      <tr class="why-row" id="why-2" hidden><td colspan="14">
+<div class="why">
+  <div class="why-grid">
+    <div class="why-col">
+      <div class="hfa-label">Ratings entering the week <span class="flat">EPA per play, rank of 32</span></div>
+      <table class="why-teams">
+        <thead><tr><th></th><th class="num">Offense</th><th class="num">Defense</th><th class="num">Net</th></tr></thead>
+        <tbody>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sf.png" alt="" loading="lazy">SF <span class="flat">fav</span><div class="flat tiny">5 games &middot; 44% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-success">+0.118</span> <span class="rank">#2</span><div class="flat tiny">to date +0.194 &middot; preseason +0.060</div></td>
+          <td class="num"><span class="text-success">-0.029</span> <span class="rank">#5</span><div class="flat tiny">to date -0.086 &middot; preseason +0.019</div></td>
+          <td class="num"><b>+0.147</b> <span class="rank">#1</span></td>
+        </tr>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png" alt="" loading="lazy">WAS<div class="flat tiny">5 games &middot; 50% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-success">+0.005</span> <span class="rank">#16</span><div class="flat tiny">to date -0.002 &middot; preseason +0.012</div></td>
+          <td class="num"><span class="text-danger">+0.035</span> <span class="rank">#23</span><div class="flat tiny">to date +0.038 &middot; preseason +0.031</div></td>
+          <td class="num"><b>-0.029</b> <span class="rank">#21</span></td>
+        </tr>
+        
+        </tbody>
+      </table>
+      <div class="flat tiny">Each rating blends the preseason projection with this season's plays, weighted by plays. Offense reads high = good; defense is EPA allowed, low = good. Net is offense minus defense.</div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">From the ratings to the margin <span class="flat">SF's side</span></div>
+      <div class="steps">
+        <div class="step"><span>Rating gap</span><b>+0.177</b><small>SF is the better team by net rating</small></div>
+        <div class="step"><span>Worth in points</span><b>+8.2</b><small>+46.2 points per EPA/play of gap, fit on 4,755 games 2006–2026</small></div>
+        <div class="step"><span>Home field</span><b>+1.91</b><small>SF is at home</small></div>
+        <div class="step total"><span>Model</span><b>SF by +10.1</b><small>market SF by +7.5</small></div>
+        <div class="step"><span>Edge vs market</span><b class="up">+2.6</b><small>the engine likes SF more than the line does</small></div>
+      </div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">Injuries that move the margin <span class="flat">53 reports read</span></div>
       
-      <tr>
-        <td class="c-lead" data-val="KC vs LAC"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy"><span class="fav">KC</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" alt="" loading="lazy"><span>LAC</span></span></td>
+      <table class="why-inj">
+        <tbody>
+        
+        <tr><td class="name">Jacory Croskey-Merritt <span class="flat">WAS RB</span><div class="flat tiny">Out, groin &middot; a new absence carrying 17% of the offense</div></td><td class="num"><b class="up">+1.12</b></td></tr>
+        
+        <tr><td class="name">Deebo Samuel Sr. <span class="flat">SF WR</span><div class="flat tiny">Out, hamstring &middot; a new absence carrying 14% of the offense</div></td><td class="num"><b class="down">-0.92</b></td></tr>
+        
+        <tr><td class="name">Stefon Diggs <span class="flat">WAS WR</span><div class="flat tiny">Questionable, hamstring &middot; questionable, carries 23% of the offense</div></td><td class="num"><b class="up">+0.66</b></td></tr>
+        
+        <tr><td class="name">Mike Evans <span class="flat">SF WR</span><div class="flat tiny">Questionable, ribs &middot; questionable, carries 18% of the offense</div></td><td class="num"><b class="down">-0.51</b></td></tr>
+        
+        <tr><td class="name">Jake Tonges <span class="flat">SF TE</span><div class="flat tiny">IR, knee &middot; questionable, carries 13% of the offense</div></td><td class="num"><b class="down">-0.35</b></td></tr>
+        
+        <tr><td class="name">Ricky Pearsall <span class="flat">SF WR</span><div class="flat tiny">IR, knee - pcl &middot; questionable, carries 12% of the offense</div></td><td class="num"><b class="down">-0.34</b></td></tr>
+        
+        <tr><td class="name">Demarcus Robinson <span class="flat">SF WR</span><div class="flat tiny">IR, ankle &middot; questionable, carries 8% of the offense</div></td><td class="num"><b class="down">-0.22</b></td></tr>
+        
+        <tr><td class="name">Christian Kirk <span class="flat">SF WR</span><div class="flat tiny">Questionable, calf &middot; questionable, carries 6% of the offense</div></td><td class="num"><b class="down">-0.17</b></td></tr>
+        
+        <tr><td class="name">Jeremy McNichols <span class="flat">WAS RB</span><div class="flat tiny">Questionable, quadricep &middot; questionable, carries 6% of the offense</div></td><td class="num"><b class="up">+0.16</b></td></tr>
+        
+        <tr><td class="name">Jaylin Lane <span class="flat">WAS WR</span><div class="flat tiny">IR, ankle &middot; questionable, carries 2% of the offense</div></td><td class="num"><b class="up">+0.06</b></td></tr>
+        
+        </tbody>
+      </table>
+      
+      <div class="steps">
+        <div class="step total"><span>Adjusted</span><b>SF by +9.6</b><small>injuries -0.52 &middot; edge vs market <span class="up">+2.1</span></small></div>
+      </div>
+    </div>
+  </div>
+</div>
+</td></tr>
+      
+      <tr class="has-why" data-why="why-3" title="Why this margin">
+        <td class="c-lead" data-val="KC vs LAC"><span class="twirl">&#9656;</span><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy"><span class="fav">KC</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" alt="" loading="lazy"><span>LAC</span></span></td>
         <td class="c-end nw" data-val="2026-10-18T16:25:00-04:00" title="Sun Oct 18, 2:25 PM Denver">2:25pm</td>
         <td class="num nw" data-l="line" data-val="-7.5"><b>-7.5</b></td>
         <td class="num nw" data-l="o/u" data-val="41.5">41.5 <span class="ou under">28 under</span></td>
@@ -448,9 +619,78 @@
         
         
       </tr>
+      <tr class="why-row" id="why-3" hidden><td colspan="14">
+<div class="why">
+  <div class="why-grid">
+    <div class="why-col">
+      <div class="hfa-label">Ratings entering the week <span class="flat">EPA per play, rank of 32</span></div>
+      <table class="why-teams">
+        <thead><tr><th></th><th class="num">Offense</th><th class="num">Defense</th><th class="num">Net</th></tr></thead>
+        <tbody>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy">KC <span class="flat">fav</span><div class="flat tiny">4 games &middot; 44% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-success">+0.077</span> <span class="rank">#7</span><div class="flat tiny">to date +0.155 &middot; preseason +0.017</div></td>
+          <td class="num"><span class="text-success">-0.001</span> <span class="rank">#15</span><div class="flat tiny">to date -0.012 &middot; preseason +0.008</div></td>
+          <td class="num"><b>+0.078</b> <span class="rank">#7</span></td>
+        </tr>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" alt="" loading="lazy">LAC<div class="flat tiny">5 games &middot; 47% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-danger">-0.120</span> <span class="rank">#32</span><div class="flat tiny">to date -0.266 &middot; preseason +0.012</div></td>
+          <td class="num"><span class="text-success">-0.029</span> <span class="rank">#6</span><div class="flat tiny">to date -0.058 &middot; preseason -0.002</div></td>
+          <td class="num"><b>-0.090</b> <span class="rank">#29</span></td>
+        </tr>
+        
+        </tbody>
+      </table>
+      <div class="flat tiny">Each rating blends the preseason projection with this season's plays, weighted by plays. Offense reads high = good; defense is EPA allowed, low = good. Net is offense minus defense.</div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">From the ratings to the margin <span class="flat">KC's side</span></div>
+      <div class="steps">
+        <div class="step"><span>Rating gap</span><b>+0.169</b><small>KC is the better team by net rating</small></div>
+        <div class="step"><span>Worth in points</span><b>+7.8</b><small>+46.2 points per EPA/play of gap, fit on 4,755 games 2006–2026</small></div>
+        <div class="step"><span>Home field</span><b>+1.91</b><small>KC is at home</small></div>
+        <div class="step total"><span>Model</span><b>KC by +9.7</b><small>market KC by +7.5</small></div>
+        <div class="step"><span>Edge vs market</span><b class="up">+2.2</b><small>the engine likes KC more than the line does</small></div>
+      </div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">Injuries that move the margin <span class="flat">39 reports read</span></div>
       
-      <tr>
-        <td class="c-lead" data-val="NE vs NYJ"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy"><span class="fav">NE</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy"><span>NYJ</span></span></td>
+      <table class="why-inj">
+        <tbody>
+        
+        <tr><td class="name">Rashee Rice <span class="flat">KC WR</span><div class="flat tiny">Out, hamstring &middot; a new absence carrying 19% of the offense</div></td><td class="num"><b class="down">-1.25</b></td></tr>
+        
+        <tr><td class="name">Ladd McConkey <span class="flat">LAC WR</span><div class="flat tiny">Out, foot &middot; a new absence carrying 14% of the offense</div></td><td class="num"><b class="up">+0.93</b></td></tr>
+        
+        <tr><td class="name">Tre Harris <span class="flat">LAC WR</span><div class="flat tiny">Out, hamstring &middot; a new absence carrying 12% of the offense</div></td><td class="num"><b class="up">+0.82</b></td></tr>
+        
+        <tr><td class="name">David Njoku <span class="flat">LAC TE</span><div class="flat tiny">IR, lower leg &middot; questionable, carries 12% of the offense</div></td><td class="num"><b class="up">+0.34</b></td></tr>
+        
+        <tr><td class="name">Tyquan Thornton <span class="flat">KC WR</span><div class="flat tiny">IR, ankle &middot; questionable, carries 9% of the offense</div></td><td class="num"><b class="down">-0.24</b></td></tr>
+        
+        <tr><td class="name">Brenen Thompson <span class="flat">LAC WR</span><div class="flat tiny">Questionable, quadricep &middot; questionable, carries 4% of the offense</div></td><td class="num"><b class="up">+0.12</b></td></tr>
+        
+        <tr><td class="name">KeAndre Lambert-Smith <span class="flat">LAC WR</span><div class="flat tiny">Questionable, hamstring &middot; questionable, carries 4% of the offense</div></td><td class="num"><b class="up">+0.10</b></td></tr>
+        
+        <tr><td class="name">Alec Ingold <span class="flat">LAC FB</span><div class="flat tiny">IR, shoulder &middot; questionable, carries 3% of the offense</div></td><td class="num"><b class="up">+0.08</b></td></tr>
+        
+        </tbody>
+      </table>
+      
+      <div class="steps">
+        <div class="step total"><span>Adjusted</span><b>KC by +10.6</b><small>injuries +0.90 &middot; edge vs market <span class="up">+3.1</span></small></div>
+      </div>
+    </div>
+  </div>
+</div>
+</td></tr>
+      
+      <tr class="has-why" data-why="why-4" title="Why this margin">
+        <td class="c-lead" data-val="NE vs NYJ"><span class="twirl">&#9656;</span><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy"><span class="fav">NE</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy"><span>NYJ</span></span></td>
         <td class="c-end nw" data-val="2026-10-18T13:00:00-04:00" title="Sun Oct 18, 11:00 AM Denver">11:00am</td>
         <td class="num nw" data-l="line" data-val="-7.5"><b>-7.5</b></td>
         <td class="num nw" data-l="o/u" data-val="43.5">43.5 <span class="ou over">45 over</span></td>
@@ -469,9 +709,76 @@
         
         
       </tr>
+      <tr class="why-row" id="why-4" hidden><td colspan="14">
+<div class="why">
+  <div class="why-grid">
+    <div class="why-col">
+      <div class="hfa-label">Ratings entering the week <span class="flat">EPA per play, rank of 32</span></div>
+      <table class="why-teams">
+        <thead><tr><th></th><th class="num">Offense</th><th class="num">Defense</th><th class="num">Net</th></tr></thead>
+        <tbody>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy">NE <span class="flat">fav</span><div class="flat tiny">5 games &middot; 47% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-success">+0.055</span> <span class="rank">#10</span><div class="flat tiny">to date +0.056 &middot; preseason +0.053</div></td>
+          <td class="num"><span class="text-danger">+0.013</span> <span class="rank">#20</span><div class="flat tiny">to date +0.009 &middot; preseason +0.015</div></td>
+          <td class="num"><b>+0.042</b> <span class="rank">#10</span></td>
+        </tr>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy">NYJ<div class="flat tiny">5 games &middot; 48% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-danger">-0.054</span> <span class="rank">#27</span><div class="flat tiny">to date -0.056 &middot; preseason -0.051</div></td>
+          <td class="num"><span class="text-success">-0.022</span> <span class="rank">#9</span><div class="flat tiny">to date -0.063 &middot; preseason +0.018</div></td>
+          <td class="num"><b>-0.032</b> <span class="rank">#22</span></td>
+        </tr>
+        
+        </tbody>
+      </table>
+      <div class="flat tiny">Each rating blends the preseason projection with this season's plays, weighted by plays. Offense reads high = good; defense is EPA allowed, low = good. Net is offense minus defense.</div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">From the ratings to the margin <span class="flat">NE's side</span></div>
+      <div class="steps">
+        <div class="step"><span>Rating gap</span><b>+0.074</b><small>NE is the better team by net rating</small></div>
+        <div class="step"><span>Worth in points</span><b>+3.4</b><small>+46.2 points per EPA/play of gap, fit on 4,755 games 2006–2026</small></div>
+        <div class="step"><span>Home field</span><b>+1.91</b><small>NE is at home</small></div>
+        <div class="step total"><span>Model</span><b>NE by +5.3</b><small>market NE by +7.5</small></div>
+        <div class="step"><span>Edge vs market</span><b class="down">-2.2</b><small>the engine likes NE, but less than the line does</small></div>
+      </div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">Injuries that move the margin <span class="flat">44 reports read</span></div>
       
-      <tr>
-        <td class="c-lead" data-val="IND vs TEN"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" alt="" loading="lazy"><span class="fav">IND</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" alt="" loading="lazy"><span>TEN</span></span></td>
+      <table class="why-inj">
+        <tbody>
+        
+        <tr><td class="name">Romeo Doubs <span class="flat">NE WR</span><div class="flat tiny">Out, shoulder &middot; a new absence carrying 15% of the offense</div></td><td class="num"><b class="down">-1.00</b></td></tr>
+        
+        <tr><td class="name">A.J. Brown <span class="flat">NE WR</span><div class="flat tiny">Questionable, ankle &middot; questionable, carries 25% of the offense</div></td><td class="num"><b class="down">-0.70</b></td></tr>
+        
+        <tr><td class="name">TreVeyon Henderson <span class="flat">NE RB</span><div class="flat tiny">Questionable, ankle &middot; questionable, carries 15% of the offense</div></td><td class="num"><b class="down">-0.43</b></td></tr>
+        
+        <tr><td class="name">Mack Hollins <span class="flat">NE WR</span><div class="flat tiny">IR, calf &middot; questionable, carries 12% of the offense</div></td><td class="num"><b class="down">-0.35</b></td></tr>
+        
+        <tr><td class="name">Kenyon Sadiq <span class="flat">NYJ TE</span><div class="flat tiny">Questionable, concussion &middot; questionable, carries 12% of the offense</div></td><td class="num"><b class="up">+0.35</b></td></tr>
+        
+        <tr><td class="name">Omar Cooper Jr. <span class="flat">NYJ WR</span><div class="flat tiny">Questionable, ankle &middot; questionable, carries 6% of the offense</div></td><td class="num"><b class="up">+0.18</b></td></tr>
+        
+        <tr><td class="name">Julian Hill <span class="flat">NE TE</span><div class="flat tiny">IR, knee &middot; questionable, carries 5% of the offense</div></td><td class="num"><b class="down">-0.13</b></td></tr>
+        
+        </tbody>
+      </table>
+      
+      <div class="steps">
+        <div class="step total"><span>Adjusted</span><b>NE by +3.2</b><small>injuries -2.09 &middot; edge vs market <span class="down">-4.3</span></small></div>
+      </div>
+    </div>
+  </div>
+</div>
+</td></tr>
+      
+      <tr class="has-why" data-why="why-5" title="Why this margin">
+        <td class="c-lead" data-val="IND vs TEN"><span class="twirl">&#9656;</span><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" alt="" loading="lazy"><span class="fav">IND</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" alt="" loading="lazy"><span>TEN</span></span></td>
         <td class="c-end nw" data-val="2026-10-18T13:00:00-04:00" title="Sun Oct 18, 11:00 AM Denver">11:00am</td>
         <td class="num nw" data-l="line" data-val="-6.5"><b>-6.5</b></td>
         <td class="num nw" data-l="o/u" data-val="43.5">43.5 <span class="ou over">46 over</span></td>
@@ -490,9 +797,74 @@
         
         
       </tr>
+      <tr class="why-row" id="why-5" hidden><td colspan="14">
+<div class="why">
+  <div class="why-grid">
+    <div class="why-col">
+      <div class="hfa-label">Ratings entering the week <span class="flat">EPA per play, rank of 32</span></div>
+      <table class="why-teams">
+        <thead><tr><th></th><th class="num">Offense</th><th class="num">Defense</th><th class="num">Net</th></tr></thead>
+        <tbody>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" alt="" loading="lazy">IND <span class="flat">fav</span><div class="flat tiny">5 games &middot; 48% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-success">+0.012</span> <span class="rank">#14</span><div class="flat tiny">to date -0.015 &middot; preseason +0.038</div></td>
+          <td class="num"><span class="text-danger">+0.060</span> <span class="rank">#28</span><div class="flat tiny">to date +0.106 &middot; preseason +0.020</div></td>
+          <td class="num"><b>-0.048</b> <span class="rank">#25</span></td>
+        </tr>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" alt="" loading="lazy">TEN<div class="flat tiny">5 games &middot; 40% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-danger">-0.098</span> <span class="rank">#31</span><div class="flat tiny">to date -0.184 &middot; preseason -0.041</div></td>
+          <td class="num"><span class="text-danger">+0.055</span> <span class="rank">#27</span><div class="flat tiny">to date +0.090 &middot; preseason +0.025</div></td>
+          <td class="num"><b>-0.153</b> <span class="rank">#32</span></td>
+        </tr>
+        
+        </tbody>
+      </table>
+      <div class="flat tiny">Each rating blends the preseason projection with this season's plays, weighted by plays. Offense reads high = good; defense is EPA allowed, low = good. Net is offense minus defense.</div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">From the ratings to the margin <span class="flat">IND's side</span></div>
+      <div class="steps">
+        <div class="step"><span>Rating gap</span><b>+0.105</b><small>IND is the better team by net rating</small></div>
+        <div class="step"><span>Worth in points</span><b>+4.9</b><small>+46.2 points per EPA/play of gap, fit on 4,755 games 2006–2026</small></div>
+        <div class="step"><span>Home field</span><b>+1.91</b><small>IND is at home</small></div>
+        <div class="step total"><span>Model</span><b>IND by +6.8</b><small>market IND by +6.5</small></div>
+        <div class="step"><span>Edge vs market</span><b class="up">+0.3</b><small>the engine likes IND more than the line does</small></div>
+      </div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">Injuries that move the margin <span class="flat">37 reports read</span></div>
       
-      <tr>
-        <td class="c-lead" data-val="BUF @ LV"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png" alt="" loading="lazy"><span class="fav">BUF</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" alt="" loading="lazy"><span>LV</span></span></td>
+      <table class="why-inj">
+        <tbody>
+        
+        <tr><td class="name">Tyler Warren <span class="flat">IND TE</span><div class="flat tiny">Out, groin &middot; a new absence carrying 18% of the offense</div></td><td class="num"><b class="down">-1.24</b></td></tr>
+        
+        <tr><td class="name">Alec Pierce <span class="flat">IND WR</span><div class="flat tiny">IR, heel &middot; questionable, carries 20% of the offense</div></td><td class="num"><b class="down">-0.55</b></td></tr>
+        
+        <tr><td class="name">Tyjae Spears <span class="flat">TEN RB</span><div class="flat tiny">Questionable, knee &middot; questionable, carries 15% of the offense</div></td><td class="num"><b class="up">+0.41</b></td></tr>
+        
+        <tr><td class="name">Ashton Dulin <span class="flat">IND WR</span><div class="flat tiny">Out, hamstring &middot; a new absence carrying 3% of the offense</div></td><td class="num"><b class="down">-0.19</b></td></tr>
+        
+        <tr><td class="name">Kylen Granson <span class="flat">TEN TE</span><div class="flat tiny">Out, coach&#x27;s decision &middot; a new absence carrying 2% of the offense</div></td><td class="num"><b class="up">+0.14</b></td></tr>
+        
+        <tr><td class="name">Nicholas Singleton <span class="flat">TEN RB</span><div class="flat tiny">Out, coach&#x27;s decision &middot; a new absence carrying 1% of the offense</div></td><td class="num"><b class="up">+0.08</b></td></tr>
+        
+        </tbody>
+      </table>
+      
+      <div class="steps">
+        <div class="step total"><span>Adjusted</span><b>IND by +5.4</b><small>injuries -1.34 &middot; edge vs market <span class="down">-1.1</span></small></div>
+      </div>
+    </div>
+  </div>
+</div>
+</td></tr>
+      
+      <tr class="has-why" data-why="why-6" title="Why this margin">
+        <td class="c-lead" data-val="BUF @ LV"><span class="twirl">&#9656;</span><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png" alt="" loading="lazy"><span class="fav">BUF</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" alt="" loading="lazy"><span>LV</span></span></td>
         <td class="c-end nw" data-val="2026-10-18T16:25:00-04:00" title="Sun Oct 18, 2:25 PM Denver">2:25pm</td>
         <td class="num nw" data-l="line" data-val="-5.5"><b>-5.5</b></td>
         <td class="num nw" data-l="o/u" data-val="53.5">53.5 <span class="ou over">63 over</span></td>
@@ -511,9 +883,72 @@
         
         
       </tr>
+      <tr class="why-row" id="why-6" hidden><td colspan="14">
+<div class="why">
+  <div class="why-grid">
+    <div class="why-col">
+      <div class="hfa-label">Ratings entering the week <span class="flat">EPA per play, rank of 32</span></div>
+      <table class="why-teams">
+        <thead><tr><th></th><th class="num">Offense</th><th class="num">Defense</th><th class="num">Net</th></tr></thead>
+        <tbody>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png" alt="" loading="lazy">BUF <span class="flat">fav</span><div class="flat tiny">5 games &middot; 48% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-success">+0.124</span> <span class="rank">#1</span><div class="flat tiny">to date +0.200 &middot; preseason +0.055</div></td>
+          <td class="num"><span class="text-danger">+0.066</span> <span class="rank">#30</span><div class="flat tiny">to date +0.109 &middot; preseason +0.021</div></td>
+          <td class="num"><b>+0.059</b> <span class="rank">#8</span></td>
+        </tr>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" alt="" loading="lazy">LV<div class="flat tiny">5 games &middot; 48% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-success">+0.005</span> <span class="rank">#17</span><div class="flat tiny">to date +0.079 &middot; preseason -0.063</div></td>
+          <td class="num"><span class="text-success">-0.005</span> <span class="rank">#13</span><div class="flat tiny">to date -0.007 &middot; preseason -0.003</div></td>
+          <td class="num"><b>+0.010</b> <span class="rank">#15</span></td>
+        </tr>
+        
+        </tbody>
+      </table>
+      <div class="flat tiny">Each rating blends the preseason projection with this season's plays, weighted by plays. Offense reads high = good; defense is EPA allowed, low = good. Net is offense minus defense.</div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">From the ratings to the margin <span class="flat">BUF's side</span></div>
+      <div class="steps">
+        <div class="step"><span>Rating gap</span><b>+0.049</b><small>BUF is the better team by net rating</small></div>
+        <div class="step"><span>Worth in points</span><b>+2.3</b><small>+46.2 points per EPA/play of gap, fit on 4,755 games 2006–2026</small></div>
+        <div class="step"><span>Home field</span><b>&minus;1.91</b><small>LV is at home</small></div>
+        <div class="step total"><span>Model</span><b>BUF by +0.3</b><small>market BUF by +5.5</small></div>
+        <div class="step"><span>Edge vs market</span><b class="down">-5.2</b><small>the engine likes BUF, but less than the line does</small></div>
+      </div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">Injuries that move the margin <span class="flat">32 reports read</span></div>
       
-      <tr>
-        <td class="c-lead" data-val="CAR @ PHI"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500-dark/car.png" alt="" loading="lazy"><span class="fav">CAR</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" alt="" loading="lazy"><span>PHI</span></span><span class="qbnote">&#9888; QB PHI: Jalen Hurts Out</span></td>
+      <table class="why-inj">
+        <tbody>
+        
+        <tr><td class="name">DJ Moore <span class="flat">BUF WR</span><div class="flat tiny">Out, shoulder &middot; a new absence carrying 16% of the offense</div></td><td class="num"><b class="down">-1.06</b></td></tr>
+        
+        <tr><td class="name">Dalton Kincaid <span class="flat">BUF TE</span><div class="flat tiny">Questionable, ribs &middot; questionable, carries 12% of the offense</div></td><td class="num"><b class="down">-0.34</b></td></tr>
+        
+        <tr><td class="name">Tyrell Shavers <span class="flat">BUF WR</span><div class="flat tiny">PUP, knee - acl &middot; questionable, carries 8% of the offense</div></td><td class="num"><b class="down">-0.22</b></td></tr>
+        
+        <tr><td class="name">Jack Bech <span class="flat">LV WR</span><div class="flat tiny">IR, forearm &middot; questionable, carries 7% of the offense</div></td><td class="num"><b class="up">+0.21</b></td></tr>
+        
+        <tr><td class="name">Josh Palmer <span class="flat">BUF WR</span><div class="flat tiny">Questionable, shoulder &middot; questionable, carries 6% of the offense</div></td><td class="num"><b class="down">-0.18</b></td></tr>
+        
+        </tbody>
+      </table>
+      
+      <div class="steps">
+        <div class="step total"><span>Adjusted</span><b>BUF by -1.2</b><small>injuries -1.59 &middot; edge vs market <span class="down">-6.7</span> &middot; <span class="text-danger">flips the engine's side</span></small></div>
+      </div>
+    </div>
+  </div>
+</div>
+</td></tr>
+      
+      <tr class="has-why" data-why="why-7" title="Why this margin">
+        <td class="c-lead" data-val="CAR @ PHI"><span class="twirl">&#9656;</span><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500-dark/car.png" alt="" loading="lazy"><span class="fav">CAR</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" alt="" loading="lazy"><span>PHI</span></span><span class="qbnote">&#9888; QB PHI: Jalen Hurts Out</span></td>
         <td class="c-end nw" data-val="2026-10-18T13:00:00-04:00" title="Sun Oct 18, 11:00 AM Denver">11:00am</td>
         <td class="num nw" data-l="line" data-val="-3.0"><b>-3</b></td>
         <td class="num nw" data-l="o/u" data-val="39.5">39.5 <span class="ou under">39 under</span></td>
@@ -532,9 +967,80 @@
         
         
       </tr>
+      <tr class="why-row" id="why-7" hidden><td colspan="14">
+<div class="why">
+  <div class="why-grid">
+    <div class="why-col">
+      <div class="hfa-label">Ratings entering the week <span class="flat">EPA per play, rank of 32</span></div>
+      <table class="why-teams">
+        <thead><tr><th></th><th class="num">Offense</th><th class="num">Defense</th><th class="num">Net</th></tr></thead>
+        <tbody>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500-dark/car.png" alt="" loading="lazy">CAR <span class="flat">fav</span><div class="flat tiny">4 games &middot; 44% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-success">+0.042</span> <span class="rank">#11</span><div class="flat tiny">to date +0.116 &middot; preseason -0.015</div></td>
+          <td class="num"><span class="text-danger">+0.041</span> <span class="rank">#24</span><div class="flat tiny">to date +0.094 &middot; preseason +0.001</div></td>
+          <td class="num"><b>+0.001</b> <span class="rank">#18</span></td>
+        </tr>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" alt="" loading="lazy">PHI<div class="flat tiny">5 games &middot; 50% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-danger">-0.044</span> <span class="rank">#24</span><div class="flat tiny">to date -0.095 &middot; preseason +0.006</div></td>
+          <td class="num"><span class="text-danger">+0.011</span> <span class="rank">#19</span><div class="flat tiny">to date +0.034 &middot; preseason -0.014</div></td>
+          <td class="num"><b>-0.056</b> <span class="rank">#26</span></td>
+        </tr>
+        
+        </tbody>
+      </table>
+      <div class="flat tiny">Each rating blends the preseason projection with this season's plays, weighted by plays. Offense reads high = good; defense is EPA allowed, low = good. Net is offense minus defense.</div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">From the ratings to the margin <span class="flat">CAR's side</span></div>
+      <div class="steps">
+        <div class="step"><span>Rating gap</span><b>+0.057</b><small>CAR is the better team by net rating</small></div>
+        <div class="step"><span>Worth in points</span><b>+2.6</b><small>+46.2 points per EPA/play of gap, fit on 4,755 games 2006–2026</small></div>
+        <div class="step"><span>Home field</span><b>&minus;1.91</b><small>PHI is at home</small></div>
+        <div class="step total"><span>Model</span><b>CAR by +0.7</b><small>market CAR by +3.0</small></div>
+        <div class="step"><span>Edge vs market</span><b class="down">-2.3</b><small>the engine likes CAR, but less than the line does</small></div>
+      </div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">Injuries that move the margin <span class="flat">48 reports read</span></div>
       
-      <tr>
-        <td class="c-lead" data-val="BAL @ CLE"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy"><span class="fav">BAL</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" alt="" loading="lazy"><span>CLE</span></span></td>
+      <table class="why-inj">
+        <tbody>
+        
+        <tr><td class="name">Jalen Hurts <span class="flat">PHI QB</span><div class="flat tiny">Out, calf &middot; the starting QB is out</div></td><td class="num"><b class="up">+4.26</b></td></tr>
+        
+        <tr><td class="name">Saquon Barkley <span class="flat">PHI RB</span><div class="flat tiny">Out, hamstring &middot; a new absence carrying 20% of the offense</div></td><td class="num"><b class="up">+1.32</b></td></tr>
+        
+        <tr><td class="name">Will Shipley <span class="flat">PHI RB</span><div class="flat tiny">Out, foot &middot; a new absence carrying 6% of the offense</div></td><td class="num"><b class="up">+0.38</b></td></tr>
+        
+        <tr><td class="name">Dontayvion Wicks <span class="flat">PHI WR</span><div class="flat tiny">Questionable, hamstring &middot; questionable, carries 13% of the offense</div></td><td class="num"><b class="up">+0.36</b></td></tr>
+        
+        <tr><td class="name">Tank Bigsby <span class="flat">PHI RB</span><div class="flat tiny">IR, abdomen &middot; questionable, carries 12% of the offense</div></td><td class="num"><b class="up">+0.33</b></td></tr>
+        
+        <tr><td class="name">Makai Lemon <span class="flat">PHI WR</span><div class="flat tiny">Questionable, undisclosed &middot; questionable, carries 9% of the offense</div></td><td class="num"><b class="up">+0.26</b></td></tr>
+        
+        <tr><td class="name">Jonathon Brooks <span class="flat">CAR RB</span><div class="flat tiny">IR, abdomen &middot; questionable, carries 6% of the offense</div></td><td class="num"><b class="down">-0.16</b></td></tr>
+        
+        <tr><td class="name">AJ Dillon <span class="flat">CAR RB</span><div class="flat tiny">Out, ankle &middot; a new absence carrying 2% of the offense</div></td><td class="num"><b class="down">-0.13</b></td></tr>
+        
+        <tr><td class="name">Xavier Legette <span class="flat">CAR WR</span><div class="flat tiny">IR, knee &middot; questionable, carries 4% of the offense</div></td><td class="num"><b class="down">-0.12</b></td></tr>
+        
+        </tbody>
+      </table>
+      
+      <div class="steps">
+        <div class="step total"><span>Adjusted</span><b>CAR by +7.2</b><small>injuries +6.49 &middot; edge vs market <span class="up">+4.2</span></small></div>
+      </div>
+    </div>
+  </div>
+</div>
+</td></tr>
+      
+      <tr class="has-why" data-why="why-8" title="Why this margin">
+        <td class="c-lead" data-val="BAL @ CLE"><span class="twirl">&#9656;</span><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy"><span class="fav">BAL</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" alt="" loading="lazy"><span>CLE</span></span></td>
         <td class="c-end nw" data-val="2026-10-18T13:00:00-04:00" title="Sun Oct 18, 11:00 AM Denver">11:00am</td>
         <td class="num nw" data-l="line" data-val="-3.0"><b>-3</b></td>
         <td class="num nw" data-l="o/u" data-val="39.5">39.5 <span class="ou under">23 under</span></td>
@@ -553,9 +1059,74 @@
         
         
       </tr>
+      <tr class="why-row" id="why-8" hidden><td colspan="14">
+<div class="why">
+  <div class="why-grid">
+    <div class="why-col">
+      <div class="hfa-label">Ratings entering the week <span class="flat">EPA per play, rank of 32</span></div>
+      <table class="why-teams">
+        <thead><tr><th></th><th class="num">Offense</th><th class="num">Defense</th><th class="num">Net</th></tr></thead>
+        <tbody>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy">BAL <span class="flat">fav</span><div class="flat tiny">5 games &middot; 45% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-success">+0.093</span> <span class="rank">#5</span><div class="flat tiny">to date +0.181 &middot; preseason +0.022</div></td>
+          <td class="num"><span class="text-danger">+0.006</span> <span class="rank">#18</span><div class="flat tiny">to date -0.010 &middot; preseason +0.019</div></td>
+          <td class="num"><b>+0.087</b> <span class="rank">#4</span></td>
+        </tr>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" alt="" loading="lazy">CLE<div class="flat tiny">5 games &middot; 46% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-danger">-0.063</span> <span class="rank">#29</span><div class="flat tiny">to date -0.048 &middot; preseason -0.077</div></td>
+          <td class="num"><span class="text-success">-0.026</span> <span class="rank">#7</span><div class="flat tiny">to date -0.044 &middot; preseason -0.008</div></td>
+          <td class="num"><b>-0.038</b> <span class="rank">#24</span></td>
+        </tr>
+        
+        </tbody>
+      </table>
+      <div class="flat tiny">Each rating blends the preseason projection with this season's plays, weighted by plays. Offense reads high = good; defense is EPA allowed, low = good. Net is offense minus defense.</div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">From the ratings to the margin <span class="flat">BAL's side</span></div>
+      <div class="steps">
+        <div class="step"><span>Rating gap</span><b>+0.125</b><small>BAL is the better team by net rating</small></div>
+        <div class="step"><span>Worth in points</span><b>+5.8</b><small>+46.2 points per EPA/play of gap, fit on 4,755 games 2006–2026</small></div>
+        <div class="step"><span>Home field</span><b>&minus;1.91</b><small>CLE is at home</small></div>
+        <div class="step total"><span>Model</span><b>BAL by +3.9</b><small>market BAL by +3.0</small></div>
+        <div class="step"><span>Edge vs market</span><b class="up">+0.9</b><small>the engine likes BAL more than the line does</small></div>
+      </div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">Injuries that move the margin <span class="flat">42 reports read</span></div>
       
-      <tr>
-        <td class="c-lead" data-val="PIT @ TB"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/pit.png" alt="" loading="lazy"><span class="fav">PIT</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/tb.png" alt="" loading="lazy"><span>TB</span></span></td>
+      <table class="why-inj">
+        <tbody>
+        
+        <tr><td class="name">Quinshon Judkins <span class="flat">CLE RB</span><div class="flat tiny">Out, ankle &middot; a new absence carrying 18% of the offense</div></td><td class="num"><b class="up">+1.21</b></td></tr>
+        
+        <tr><td class="name">Rashod Bateman <span class="flat">BAL WR</span><div class="flat tiny">Out, shoulder &middot; a new absence carrying 8% of the offense</div></td><td class="num"><b class="down">-0.57</b></td></tr>
+        
+        <tr><td class="name">Matthew Hibner <span class="flat">BAL TE</span><div class="flat tiny">Out, hand &middot; a new absence carrying 8% of the offense</div></td><td class="num"><b class="down">-0.54</b></td></tr>
+        
+        <tr><td class="name">Raheim Sanders <span class="flat">CLE RB</span><div class="flat tiny">IR, hip &middot; questionable, carries 8% of the offense</div></td><td class="num"><b class="up">+0.23</b></td></tr>
+        
+        <tr><td class="name">Elijah Sarratt <span class="flat">BAL WR</span><div class="flat tiny">Out, coach&#x27;s decision &middot; a new absence carrying 3% of the offense</div></td><td class="num"><b class="down">-0.21</b></td></tr>
+        
+        <tr><td class="name">Ja&#x27;Kobi Lane <span class="flat">BAL WR</span><div class="flat tiny">Questionable, wrist &middot; questionable, carries 3% of the offense</div></td><td class="num"><b class="down">-0.08</b></td></tr>
+        
+        </tbody>
+      </table>
+      
+      <div class="steps">
+        <div class="step total"><span>Adjusted</span><b>BAL by +3.9</b><small>injuries +0.02 &middot; edge vs market <span class="up">+0.9</span></small></div>
+      </div>
+    </div>
+  </div>
+</div>
+</td></tr>
+      
+      <tr class="has-why" data-why="why-9" title="Why this margin">
+        <td class="c-lead" data-val="PIT @ TB"><span class="twirl">&#9656;</span><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/pit.png" alt="" loading="lazy"><span class="fav">PIT</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/tb.png" alt="" loading="lazy"><span>TB</span></span></td>
         <td class="c-end nw" data-val="2026-10-18T13:00:00-04:00" title="Sun Oct 18, 11:00 AM Denver">11:00am</td>
         <td class="num nw" data-l="line" data-val="-2.5"><b>-2.5</b></td>
         <td class="num nw" data-l="o/u" data-val="38.5">38.5 <span class="ou over">45 over</span></td>
@@ -574,9 +1145,76 @@
         
         
       </tr>
+      <tr class="why-row" id="why-9" hidden><td colspan="14">
+<div class="why">
+  <div class="why-grid">
+    <div class="why-col">
+      <div class="hfa-label">Ratings entering the week <span class="flat">EPA per play, rank of 32</span></div>
+      <table class="why-teams">
+        <thead><tr><th></th><th class="num">Offense</th><th class="num">Defense</th><th class="num">Net</th></tr></thead>
+        <tbody>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/pit.png" alt="" loading="lazy">PIT <span class="flat">fav</span><div class="flat tiny">5 games &middot; 50% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-success">+0.008</span> <span class="rank">#15</span><div class="flat tiny">to date -0.002 &middot; preseason +0.019</div></td>
+          <td class="num"><span class="text-danger">+0.017</span> <span class="rank">#21</span><div class="flat tiny">to date +0.034 &middot; preseason +0.000</div></td>
+          <td class="num"><b>-0.008</b> <span class="rank">#19</span></td>
+        </tr>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/tb.png" alt="" loading="lazy">TB<div class="flat tiny">5 games &middot; 50% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-danger">-0.054</span> <span class="rank">#28</span><div class="flat tiny">to date -0.132 &middot; preseason +0.023</div></td>
+          <td class="num"><span class="text-danger">+0.004</span> <span class="rank">#17</span><div class="flat tiny">to date -0.012 &middot; preseason +0.019</div></td>
+          <td class="num"><b>-0.058</b> <span class="rank">#27</span></td>
+        </tr>
+        
+        </tbody>
+      </table>
+      <div class="flat tiny">Each rating blends the preseason projection with this season's plays, weighted by plays. Offense reads high = good; defense is EPA allowed, low = good. Net is offense minus defense.</div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">From the ratings to the margin <span class="flat">PIT's side</span></div>
+      <div class="steps">
+        <div class="step"><span>Rating gap</span><b>+0.050</b><small>PIT is the better team by net rating</small></div>
+        <div class="step"><span>Worth in points</span><b>+2.3</b><small>+46.2 points per EPA/play of gap, fit on 4,755 games 2006–2026</small></div>
+        <div class="step"><span>Home field</span><b>&minus;1.91</b><small>TB is at home</small></div>
+        <div class="step total"><span>Model</span><b>PIT by +0.4</b><small>market PIT by +2.5</small></div>
+        <div class="step"><span>Edge vs market</span><b class="down">-2.1</b><small>the engine likes PIT, but less than the line does</small></div>
+      </div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">Injuries that move the margin <span class="flat">31 reports read</span></div>
       
-      <tr>
-        <td class="c-lead" data-val="JAX vs HOU"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png" alt="" loading="lazy"><span class="fav">JAX</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/hou.png" alt="" loading="lazy"><span>HOU</span></span></td>
+      <table class="why-inj">
+        <tbody>
+        
+        <tr><td class="name">Roman Wilson <span class="flat">PIT WR</span><div class="flat tiny">Out, finger &middot; a new absence carrying 9% of the offense</div></td><td class="num"><b class="down">-0.58</b></td></tr>
+        
+        <tr><td class="name">Sean Tucker <span class="flat">TB RB</span><div class="flat tiny">Out, quadricep &middot; a new absence carrying 7% of the offense</div></td><td class="num"><b class="up">+0.45</b></td></tr>
+        
+        <tr><td class="name">Pat Freiermuth <span class="flat">PIT TE</span><div class="flat tiny">Questionable, calf &middot; questionable, carries 15% of the offense</div></td><td class="num"><b class="down">-0.43</b></td></tr>
+        
+        <tr><td class="name">Rico Dowdle <span class="flat">PIT RB</span><div class="flat tiny">Questionable, toe &middot; questionable, carries 12% of the offense</div></td><td class="num"><b class="down">-0.33</b></td></tr>
+        
+        <tr><td class="name">Jalen McMillan <span class="flat">TB WR</span><div class="flat tiny">IR, knee - pcl &middot; questionable, carries 10% of the offense</div></td><td class="num"><b class="up">+0.29</b></td></tr>
+        
+        <tr><td class="name">Michael Pittman <span class="flat">PIT WR</span><div class="flat tiny">IR, foot &middot; questionable, carries 9% of the offense</div></td><td class="num"><b class="down">-0.27</b></td></tr>
+        
+        <tr><td class="name">Ben Skowronek <span class="flat">PIT WR</span><div class="flat tiny">Out, calf &middot; a new absence carrying 3% of the offense</div></td><td class="num"><b class="down">-0.18</b></td></tr>
+        
+        </tbody>
+      </table>
+      
+      <div class="steps">
+        <div class="step total"><span>Adjusted</span><b>PIT by -0.6</b><small>injuries -1.04 &middot; edge vs market <span class="down">-3.1</span> &middot; <span class="text-danger">flips the engine's side</span></small></div>
+      </div>
+    </div>
+  </div>
+</div>
+</td></tr>
+      
+      <tr class="has-why" data-why="why-10" title="Why this margin">
+        <td class="c-lead" data-val="JAX vs HOU"><span class="twirl">&#9656;</span><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png" alt="" loading="lazy"><span class="fav">JAX</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/hou.png" alt="" loading="lazy"><span>HOU</span></span></td>
         <td class="c-end nw" data-val="2026-10-18T09:30:00-04:00" title="Sun Oct 18, 7:30 AM Denver">7:30am</td>
         <td class="num nw" data-l="line" data-val="-2.5"><b>-2.5</b></td>
         <td class="num nw" data-l="o/u" data-val="42.5">42.5 <span class="ou over">65 over</span></td>
@@ -595,9 +1233,66 @@
         
         
       </tr>
+      <tr class="why-row" id="why-10" hidden><td colspan="14">
+<div class="why">
+  <div class="why-grid">
+    <div class="why-col">
+      <div class="hfa-label">Ratings entering the week <span class="flat">EPA per play, rank of 32</span></div>
+      <table class="why-teams">
+        <thead><tr><th></th><th class="num">Offense</th><th class="num">Defense</th><th class="num">Net</th></tr></thead>
+        <tbody>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png" alt="" loading="lazy">JAX <span class="flat">fav</span><div class="flat tiny">5 games &middot; 46% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-success">+0.062</span> <span class="rank">#9</span><div class="flat tiny">to date +0.097 &middot; preseason +0.033</div></td>
+          <td class="num"><span class="text-success">-0.025</span> <span class="rank">#8</span><div class="flat tiny">to date -0.054 &middot; preseason -0.001</div></td>
+          <td class="num"><b>+0.087</b> <span class="rank">#5</span></td>
+        </tr>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/hou.png" alt="" loading="lazy">HOU<div class="flat tiny">5 games &middot; 50% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-danger">-0.001</span> <span class="rank">#18</span><div class="flat tiny">to date +0.008 &middot; preseason -0.009</div></td>
+          <td class="num"><span class="text-success">-0.002</span> <span class="rank">#14</span><div class="flat tiny">to date +0.037 &middot; preseason -0.039</div></td>
+          <td class="num"><b>+0.001</b> <span class="rank">#17</span></td>
+        </tr>
+        
+        </tbody>
+      </table>
+      <div class="flat tiny">Each rating blends the preseason projection with this season's plays, weighted by plays. Offense reads high = good; defense is EPA allowed, low = good. Net is offense minus defense.</div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">From the ratings to the margin <span class="flat">JAX's side</span></div>
+      <div class="steps">
+        <div class="step"><span>Rating gap</span><b>+0.086</b><small>JAX is the better team by net rating</small></div>
+        <div class="step"><span>Worth in points</span><b>+4.0</b><small>+46.2 points per EPA/play of gap, fit on 4,755 games 2006–2026</small></div>
+        <div class="step"><span>Home field</span><b>+1.91</b><small>JAX is at home</small></div>
+        <div class="step total"><span>Model</span><b>JAX by +5.9</b><small>market JAX by +2.5</small></div>
+        <div class="step"><span>Edge vs market</span><b class="up">+3.4</b><small>the engine likes JAX more than the line does</small></div>
+      </div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">Injuries that move the margin <span class="flat">36 reports read</span></div>
       
-      <tr>
-        <td class="c-lead" data-val="SEA @ DEN"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy"><span class="fav">SEA</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy"><span>DEN</span></span></td>
+      <table class="why-inj">
+        <tbody>
+        
+        <tr><td class="name">David Montgomery <span class="flat">HOU RB</span><div class="flat tiny">Out, groin &middot; a new absence carrying 11% of the offense</div></td><td class="num"><b class="up">+0.71</b></td></tr>
+        
+        <tr><td class="name">Jayden Higgins <span class="flat">HOU WR</span><div class="flat tiny">IR, knee - acl &middot; questionable, carries 13% of the offense</div></td><td class="num"><b class="up">+0.36</b></td></tr>
+        
+        </tbody>
+      </table>
+      
+      <div class="steps">
+        <div class="step total"><span>Adjusted</span><b>JAX by +7.0</b><small>injuries +1.11 &middot; edge vs market <span class="up">+4.5</span></small></div>
+      </div>
+    </div>
+  </div>
+</div>
+</td></tr>
+      
+      <tr class="has-why" data-why="why-11" title="Why this margin">
+        <td class="c-lead" data-val="SEA @ DEN"><span class="twirl">&#9656;</span><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy"><span class="fav">SEA</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy"><span>DEN</span></span></td>
         <td class="c-end nw" data-val="2026-10-15T20:15:00-04:00" title="Thu Oct 15, 6:15 PM Denver">TNF</td>
         <td class="num nw" data-l="line" data-val="-2.5"><b>-2.5</b></td>
         <td class="num nw" data-l="o/u" data-val="40.5">40.5 <span class="ou under">31 under</span></td>
@@ -616,9 +1311,74 @@
         
         
       </tr>
+      <tr class="why-row" id="why-11" hidden><td colspan="14">
+<div class="why">
+  <div class="why-grid">
+    <div class="why-col">
+      <div class="hfa-label">Ratings entering the week <span class="flat">EPA per play, rank of 32</span></div>
+      <table class="why-teams">
+        <thead><tr><th></th><th class="num">Offense</th><th class="num">Defense</th><th class="num">Net</th></tr></thead>
+        <tbody>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy">SEA <span class="flat">fav</span><div class="flat tiny">5 games &middot; 47% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-danger">-0.033</span> <span class="rank">#23</span><div class="flat tiny">to date -0.110 &middot; preseason +0.033</div></td>
+          <td class="num"><span class="text-success">-0.114</span> <span class="rank">#2</span><div class="flat tiny">to date -0.192 &middot; preseason -0.043</div></td>
+          <td class="num"><b>+0.081</b> <span class="rank">#6</span></td>
+        </tr>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy">DEN<div class="flat tiny">5 games &middot; 48% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-danger">-0.013</span> <span class="rank">#21</span><div class="flat tiny">to date -0.045 &middot; preseason +0.016</div></td>
+          <td class="num"><span class="text-success">-0.044</span> <span class="rank">#3</span><div class="flat tiny">to date -0.046 &middot; preseason -0.043</div></td>
+          <td class="num"><b>+0.031</b> <span class="rank">#12</span></td>
+        </tr>
+        
+        </tbody>
+      </table>
+      <div class="flat tiny">Each rating blends the preseason projection with this season's plays, weighted by plays. Offense reads high = good; defense is EPA allowed, low = good. Net is offense minus defense.</div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">From the ratings to the margin <span class="flat">SEA's side</span></div>
+      <div class="steps">
+        <div class="step"><span>Rating gap</span><b>+0.050</b><small>SEA is the better team by net rating</small></div>
+        <div class="step"><span>Worth in points</span><b>+2.3</b><small>+46.2 points per EPA/play of gap, fit on 4,755 games 2006–2026</small></div>
+        <div class="step"><span>Home field</span><b>&minus;1.91</b><small>DEN is at home</small></div>
+        <div class="step total"><span>Model</span><b>SEA by +0.4</b><small>market SEA by +2.5</small></div>
+        <div class="step"><span>Edge vs market</span><b class="down">-2.1</b><small>the engine likes SEA, but less than the line does</small></div>
+      </div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">Injuries that move the margin <span class="flat">30 reports read</span></div>
       
-      <tr>
-        <td class="c-lead" data-val="DAL @ GB"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="" loading="lazy"><span class="fav">DAL</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy"><span>GB</span></span></td>
+      <table class="why-inj">
+        <tbody>
+        
+        <tr><td class="name">Jaylen Waddle <span class="flat">DEN WR</span><div class="flat tiny">Questionable, shoulder &middot; questionable, carries 15% of the offense</div></td><td class="num"><b class="up">+0.41</b></td></tr>
+        
+        <tr><td class="name">Pat Bryant <span class="flat">DEN WR</span><div class="flat tiny">IR, ankle &middot; questionable, carries 14% of the offense</div></td><td class="num"><b class="up">+0.39</b></td></tr>
+        
+        <tr><td class="name">Jonah Coleman <span class="flat">DEN RB</span><div class="flat tiny">IR, ankle &middot; questionable, carries 13% of the offense</div></td><td class="num"><b class="up">+0.37</b></td></tr>
+        
+        <tr><td class="name">Elijah Arroyo <span class="flat">SEA TE</span><div class="flat tiny">Doubtful, shoulder &middot; a new absence carrying 3% of the offense</div></td><td class="num"><b class="down">-0.20</b></td></tr>
+        
+        <tr><td class="name">Jadarian Price <span class="flat">SEA RB</span><div class="flat tiny">IR, chest &middot; questionable, carries 7% of the offense</div></td><td class="num"><b class="down">-0.19</b></td></tr>
+        
+        <tr><td class="name">Tyler Badie <span class="flat">DEN RB</span><div class="flat tiny">Questionable, thumb &middot; questionable, carries 5% of the offense</div></td><td class="num"><b class="up">+0.14</b></td></tr>
+        
+        </tbody>
+      </table>
+      
+      <div class="steps">
+        <div class="step total"><span>Adjusted</span><b>SEA by +1.3</b><small>injuries +0.89 &middot; edge vs market <span class="down">-1.2</span></small></div>
+      </div>
+    </div>
+  </div>
+</div>
+</td></tr>
+      
+      <tr class="has-why" data-why="why-12" title="Why this margin">
+        <td class="c-lead" data-val="DAL @ GB"><span class="twirl">&#9656;</span><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="" loading="lazy"><span class="fav">DAL</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy"><span>GB</span></span></td>
         <td class="c-end nw" data-val="2026-10-18T20:20:00-04:00" title="Sun Oct 18, 6:20 PM Denver">SNF</td>
         <td class="num nw" data-l="line" data-val="-1.5"><b>-1.5</b></td>
         <td class="num nw" data-l="o/u" data-val="53.5">53.5 <span class="ou under">36 under</span></td>
@@ -637,9 +1397,76 @@
         
         
       </tr>
+      <tr class="why-row" id="why-12" hidden><td colspan="14">
+<div class="why">
+  <div class="why-grid">
+    <div class="why-col">
+      <div class="hfa-label">Ratings entering the week <span class="flat">EPA per play, rank of 32</span></div>
+      <table class="why-teams">
+        <thead><tr><th></th><th class="num">Offense</th><th class="num">Defense</th><th class="num">Net</th></tr></thead>
+        <tbody>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="" loading="lazy">DAL <span class="flat">fav</span><div class="flat tiny">5 games &middot; 50% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-success">+0.101</span> <span class="rank">#3</span><div class="flat tiny">to date +0.152 &middot; preseason +0.049</div></td>
+          <td class="num"><span class="text-danger">+0.122</span> <span class="rank">#32</span><div class="flat tiny">to date +0.193 &middot; preseason +0.053</div></td>
+          <td class="num"><b>-0.021</b> <span class="rank">#20</span></td>
+        </tr>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy">GB<div class="flat tiny">5 games &middot; 46% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-success">+0.015</span> <span class="rank">#13</span><div class="flat tiny">to date -0.041 &middot; preseason +0.063</div></td>
+          <td class="num"><span class="text-danger">+0.001</span> <span class="rank">#16</span><div class="flat tiny">to date -0.003 &middot; preseason +0.005</div></td>
+          <td class="num"><b>+0.013</b> <span class="rank">#14</span></td>
+        </tr>
+        
+        </tbody>
+      </table>
+      <div class="flat tiny">Each rating blends the preseason projection with this season's plays, weighted by plays. Offense reads high = good; defense is EPA allowed, low = good. Net is offense minus defense.</div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">From the ratings to the margin <span class="flat">DAL's side</span></div>
+      <div class="steps">
+        <div class="step"><span>Rating gap</span><b>-0.035</b><small>GB is the better team by net rating</small></div>
+        <div class="step"><span>Worth in points</span><b>-1.6</b><small>+46.2 points per EPA/play of gap, fit on 4,755 games 2006–2026</small></div>
+        <div class="step"><span>Home field</span><b>&minus;1.91</b><small>GB is at home</small></div>
+        <div class="step total"><span>Model</span><b>DAL by -3.5</b><small>market DAL by +1.5</small></div>
+        <div class="step"><span>Edge vs market</span><b class="down">-5.0</b><small>the engine actually likes GB</small></div>
+      </div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">Injuries that move the margin <span class="flat">41 reports read</span></div>
       
-      <tr>
-        <td class="c-lead" data-val="NO @ NYG"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/no.png" alt="" loading="lazy"><span class="fav">NO</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png" alt="" loading="lazy"><span>NYG</span></span></td>
+      <table class="why-inj">
+        <tbody>
+        
+        <tr><td class="name">KaVontae Turpin <span class="flat">DAL WR</span><div class="flat tiny">Out, ribs &middot; a new absence carrying 6% of the offense</div></td><td class="num"><b class="down">-0.38</b></td></tr>
+        
+        <tr><td class="name">Jayden Reed <span class="flat">GB WR</span><div class="flat tiny">IR, neck &middot; questionable, carries 11% of the offense</div></td><td class="num"><b class="up">+0.31</b></td></tr>
+        
+        <tr><td class="name">Luke Musgrave <span class="flat">GB TE</span><div class="flat tiny">PUP, undisclosed &middot; questionable, carries 7% of the offense</div></td><td class="num"><b class="up">+0.19</b></td></tr>
+        
+        <tr><td class="name">Malik Davis <span class="flat">DAL RB</span><div class="flat tiny">IR, hip &middot; questionable, carries 6% of the offense</div></td><td class="num"><b class="down">-0.18</b></td></tr>
+        
+        <tr><td class="name">Skyy Moore <span class="flat">GB WR</span><div class="flat tiny">Out, ankle &middot; a new absence carrying 3% of the offense</div></td><td class="num"><b class="up">+0.18</b></td></tr>
+        
+        <tr><td class="name">Chris Brooks <span class="flat">GB RB</span><div class="flat tiny">IR, ankle &middot; questionable, carries 4% of the offense</div></td><td class="num"><b class="up">+0.12</b></td></tr>
+        
+        <tr><td class="name">Savion Williams <span class="flat">GB WR</span><div class="flat tiny">Questionable, ankle &middot; questionable, carries 3% of the offense</div></td><td class="num"><b class="up">+0.08</b></td></tr>
+        
+        </tbody>
+      </table>
+      
+      <div class="steps">
+        <div class="step total"><span>Adjusted</span><b>DAL by -3.2</b><small>injuries +0.32 &middot; edge vs market <span class="down">-4.7</span></small></div>
+      </div>
+    </div>
+  </div>
+</div>
+</td></tr>
+      
+      <tr class="has-why" data-why="why-13" title="Why this margin">
+        <td class="c-lead" data-val="NO @ NYG"><span class="twirl">&#9656;</span><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/no.png" alt="" loading="lazy"><span class="fav">NO</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png" alt="" loading="lazy"><span>NYG</span></span></td>
         <td class="c-end nw" data-val="2026-10-18T13:00:00-04:00" title="Sun Oct 18, 11:00 AM Denver">11:00am</td>
         <td class="num nw" data-l="line" data-val="-1.5"><b>-1.5</b></td>
         <td class="num nw" data-l="o/u" data-val="46.5">46.5 <span class="ou over">61 over</span></td>
@@ -658,9 +1485,84 @@
         
         
       </tr>
+      <tr class="why-row" id="why-13" hidden><td colspan="14">
+<div class="why">
+  <div class="why-grid">
+    <div class="why-col">
+      <div class="hfa-label">Ratings entering the week <span class="flat">EPA per play, rank of 32</span></div>
+      <table class="why-teams">
+        <thead><tr><th></th><th class="num">Offense</th><th class="num">Defense</th><th class="num">Net</th></tr></thead>
+        <tbody>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/no.png" alt="" loading="lazy">NO <span class="flat">fav</span><div class="flat tiny">5 games &middot; 49% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-danger">-0.051</span> <span class="rank">#25</span><div class="flat tiny">to date -0.075 &middot; preseason -0.028</div></td>
+          <td class="num"><span class="text-danger">+0.042</span> <span class="rank">#25</span><div class="flat tiny">to date +0.090 &middot; preseason -0.006</div></td>
+          <td class="num"><b>-0.093</b> <span class="rank">#30</span></td>
+        </tr>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png" alt="" loading="lazy">NYG<div class="flat tiny">5 games &middot; 51% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-danger">-0.004</span> <span class="rank">#19</span><div class="flat tiny">to date -0.014 &middot; preseason +0.005</div></td>
+          <td class="num"><span class="text-danger">+0.033</span> <span class="rank">#22</span><div class="flat tiny">to date +0.034 &middot; preseason +0.031</div></td>
+          <td class="num"><b>-0.037</b> <span class="rank">#23</span></td>
+        </tr>
+        
+        </tbody>
+      </table>
+      <div class="flat tiny">Each rating blends the preseason projection with this season's plays, weighted by plays. Offense reads high = good; defense is EPA allowed, low = good. Net is offense minus defense.</div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">From the ratings to the margin <span class="flat">NO's side</span></div>
+      <div class="steps">
+        <div class="step"><span>Rating gap</span><b>-0.056</b><small>NYG is the better team by net rating</small></div>
+        <div class="step"><span>Worth in points</span><b>-2.6</b><small>+46.2 points per EPA/play of gap, fit on 4,755 games 2006–2026</small></div>
+        <div class="step"><span>Home field</span><b>&minus;1.91</b><small>NYG is at home</small></div>
+        <div class="step total"><span>Model</span><b>NO by -4.5</b><small>market NO by +1.5</small></div>
+        <div class="step"><span>Edge vs market</span><b class="down">-6.0</b><small>the engine actually likes NYG</small></div>
+      </div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">Injuries that move the margin <span class="flat">47 reports read</span></div>
       
-      <tr>
-        <td class="c-lead" data-val="CHI @ ATL"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy"><span class="fav">CHI</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" alt="" loading="lazy"><span>ATL</span></span></td>
+      <table class="why-inj">
+        <tbody>
+        
+        <tr><td class="name">Chris Olave <span class="flat">NO WR</span><div class="flat tiny">Questionable, illness &middot; questionable, carries 30% of the offense</div></td><td class="num"><b class="down">-0.85</b></td></tr>
+        
+        <tr><td class="name">Theo Johnson <span class="flat">NYG TE</span><div class="flat tiny">Out, neck &middot; a new absence carrying 9% of the offense</div></td><td class="num"><b class="up">+0.58</b></td></tr>
+        
+        <tr><td class="name">Travis Etienne <span class="flat">NO RB</span><div class="flat tiny">IR, hamstring &middot; questionable, carries 19% of the offense</div></td><td class="num"><b class="down">-0.54</b></td></tr>
+        
+        <tr><td class="name">Alvin Kamara <span class="flat">NO RB</span><div class="flat tiny">Questionable, back &middot; questionable, carries 10% of the offense</div></td><td class="num"><b class="down">-0.29</b></td></tr>
+        
+        <tr><td class="name">Gunner Olszewski <span class="flat">NYG WR</span><div class="flat tiny">IR, achilles &middot; questionable, carries 7% of the offense</div></td><td class="num"><b class="up">+0.20</b></td></tr>
+        
+        <tr><td class="name">Darnell Mooney <span class="flat">NYG WR</span><div class="flat tiny">Questionable, neck &middot; questionable, carries 7% of the offense</div></td><td class="num"><b class="up">+0.20</b></td></tr>
+        
+        <tr><td class="name">Calvin Austin <span class="flat">NYG WR</span><div class="flat tiny">IR, knee &middot; questionable, carries 7% of the offense</div></td><td class="num"><b class="up">+0.19</b></td></tr>
+        
+        <tr><td class="name">Moliki Matavao <span class="flat">NO TE</span><div class="flat tiny">IR, knee &middot; questionable, carries 4% of the offense</div></td><td class="num"><b class="down">-0.11</b></td></tr>
+        
+        <tr><td class="name">Ty Chandler <span class="flat">NO RB</span><div class="flat tiny">IR, knee &middot; questionable, carries 4% of the offense</div></td><td class="num"><b class="down">-0.11</b></td></tr>
+        
+        <tr><td class="name">Mason Tipton <span class="flat">NO WR</span><div class="flat tiny">PUP, groin &middot; questionable, carries 3% of the offense</div></td><td class="num"><b class="down">-0.10</b></td></tr>
+        
+        <tr><td class="name">Braxton Berrios <span class="flat">NYG WR</span><div class="flat tiny">IR, foot &middot; questionable, carries 2% of the offense</div></td><td class="num"><b class="up">+0.06</b></td></tr>
+        
+        </tbody>
+      </table>
+      
+      <div class="steps">
+        <div class="step total"><span>Adjusted</span><b>NO by -5.3</b><small>injuries -0.78 &middot; edge vs market <span class="down">-6.8</span></small></div>
+      </div>
+    </div>
+  </div>
+</div>
+</td></tr>
+      
+      <tr class="has-why" data-why="why-14" title="Why this margin">
+        <td class="c-lead" data-val="CHI @ ATL"><span class="twirl">&#9656;</span><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy"><span class="fav">CHI</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" alt="" loading="lazy"><span>ATL</span></span></td>
         <td class="c-end nw" data-val="2026-10-18T13:00:00-04:00" title="Sun Oct 18, 11:00 AM Denver">11:00am</td>
         <td class="num nw" data-l="line" data-val="-1.5"><b>-1.5</b></td>
         <td class="num nw" data-l="o/u" data-val="51.5">51.5 <span class="ou over">54 over</span></td>
@@ -679,6 +1581,63 @@
         
         
       </tr>
+      <tr class="why-row" id="why-14" hidden><td colspan="14">
+<div class="why">
+  <div class="why-grid">
+    <div class="why-col">
+      <div class="hfa-label">Ratings entering the week <span class="flat">EPA per play, rank of 32</span></div>
+      <table class="why-teams">
+        <thead><tr><th></th><th class="num">Offense</th><th class="num">Defense</th><th class="num">Net</th></tr></thead>
+        <tbody>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy">CHI <span class="flat">fav</span><div class="flat tiny">5 games &middot; 49% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-success">+0.035</span> <span class="rank">#12</span><div class="flat tiny">to date +0.031 &middot; preseason +0.039</div></td>
+          <td class="num"><span class="text-success">-0.006</span> <span class="rank">#12</span><div class="flat tiny">to date -0.057 &middot; preseason +0.031</div></td>
+          <td class="num"><b>+0.041</b> <span class="rank">#11</span></td>
+        </tr>
+        
+        <tr>
+          <td class="name"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" alt="" loading="lazy">ATL<div class="flat tiny">5 games &middot; 46% of the offense rating is this season</div></td>
+          <td class="num"><span class="text-danger">-0.004</span> <span class="rank">#20</span><div class="flat tiny">to date -0.030 &middot; preseason +0.017</div></td>
+          <td class="num"><span class="text-success">-0.034</span> <span class="rank">#4</span><div class="flat tiny">to date -0.071 &middot; preseason -0.001</div></td>
+          <td class="num"><b>+0.029</b> <span class="rank">#13</span></td>
+        </tr>
+        
+        </tbody>
+      </table>
+      <div class="flat tiny">Each rating blends the preseason projection with this season's plays, weighted by plays. Offense reads high = good; defense is EPA allowed, low = good. Net is offense minus defense.</div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">From the ratings to the margin <span class="flat">CHI's side</span></div>
+      <div class="steps">
+        <div class="step"><span>Rating gap</span><b>+0.012</b><small>CHI is the better team by net rating</small></div>
+        <div class="step"><span>Worth in points</span><b>+0.6</b><small>+46.2 points per EPA/play of gap, fit on 4,755 games 2006–2026</small></div>
+        <div class="step"><span>Home field</span><b>&minus;1.91</b><small>ATL is at home</small></div>
+        <div class="step total"><span>Model</span><b>CHI by -1.4</b><small>market CHI by +1.5</small></div>
+        <div class="step"><span>Edge vs market</span><b class="down">-2.9</b><small>the engine actually likes ATL</small></div>
+      </div>
+    </div>
+    <div class="why-col">
+      <div class="hfa-label">Injuries that move the margin <span class="flat">38 reports read</span></div>
+      
+      <table class="why-inj">
+        <tbody>
+        
+        <tr><td class="name">Kyle Monangai <span class="flat">CHI RB</span><div class="flat tiny">Out, thumb &middot; a new absence carrying 15% of the offense</div></td><td class="num"><b class="down">-1.03</b></td></tr>
+        
+        <tr><td class="name">Brittain Brown <span class="flat">CHI RB</span><div class="flat tiny">IR, undisclosed &middot; questionable, carries 7% of the offense</div></td><td class="num"><b class="down">-0.19</b></td></tr>
+        
+        </tbody>
+      </table>
+      
+      <div class="steps">
+        <div class="step total"><span>Adjusted</span><b>CHI by -2.5</b><small>injuries -1.17 &middot; edge vs market <span class="down">-4.0</span></small></div>
+      </div>
+    </div>
+  </div>
+</div>
+</td></tr>
       
       </tbody>
     </table>
@@ -2009,7 +2968,7 @@
   });
   // Column sort on ranked tables (data-val cells); grouped tables flatten when sorted.
   document.querySelectorAll("table.ranktab, table.sortable").forEach(function(t){
-    var body=t.tBodies[0], rows=Array.prototype.slice.call(body.rows), cur=null, flip=false, ranked=t.classList.contains("ranktab");
+    var body=t.tBodies[0], rows=Array.prototype.slice.call(body.rows).filter(function(r){return !r.classList.contains("why-row");}), cur=null, flip=false, ranked=t.classList.contains("ranktab");
     t.querySelectorAll("th.sort").forEach(function(th){ th.addEventListener("click",function(){
       var idx=+th.dataset.idx, high=th.dataset.best==="high", str=th.dataset.type==="str";
       if(cur===th){flip=!flip;} else {cur=th; flip=false;}
@@ -2018,7 +2977,7 @@
         var va=a.cells[idx]&&a.cells[idx].dataset.val, vb=b.cells[idx]&&b.cells[idx].dataset.val;
         if(!va&&!vb) return 0; if(!va) return 1; if(!vb) return -1;
         var d=str?(va<vb?-1:va>vb?1:0):parseFloat(va)-parseFloat(vb); if(!high) d=-d; return flip?d:-d;
-      }).forEach(function(r,i){ r.classList.remove("mate"); if(ranked) r.cells[0].textContent=i+1; body.appendChild(r); });
+      }).forEach(function(r,i){ r.classList.remove("mate"); if(ranked) r.cells[0].textContent=i+1; var why=r.dataset.why&&document.getElementById(r.dataset.why); body.appendChild(r); if(why) body.appendChild(why); });
       t.querySelectorAll(".caret").forEach(function(c){c.remove();});
       var pane=t.closest("[data-paged]"); if(pane&&pane._paged) pane._paged.reset();
     });});
@@ -2027,6 +2986,11 @@
   document.querySelectorAll(".caret").forEach(function(c){ c.addEventListener("click",function(){
     var open=c.classList.toggle("open"), tbl=c.closest("table");
     tbl.querySelectorAll("tr.mate[data-team='"+c.dataset.team+"']").forEach(function(r){r.classList.toggle("show",open);});
+  });});
+  // A game row opens its "why" row.
+  document.querySelectorAll("tr[data-why]").forEach(function(r){ r.addEventListener("click",function(e){
+    if(e.target.closest("a")) return;
+    var w=document.getElementById(r.dataset.why); if(!w) return; w.hidden=!w.hidden; r.classList.toggle("open",!w.hidden);
   });});
   // Plan cushion pills swap the Overs / Unders records.
   var lvl=document.getElementById("lvl");
