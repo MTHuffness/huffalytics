@@ -58,20 +58,22 @@
   .hfa-brand .mark i { font-style: normal; color: var(--hfa-accent); }
   .hfa-brand .tag { margin-top: 0.3rem; font: 600 0.58rem/1 ui-monospace, "SF Mono", Menlo, Consolas, monospace; letter-spacing: 0.14em; color: var(--hfa-muted); }
   .hfa-nav { display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: rgba(128, 128, 128, 0.14); margin-left: auto; flex: 0 0 auto; }
+  .hfa-wk + .hfa-nav { margin-left: 0; }
   .hfa-nav a { border-radius: 999px; padding: 0.3rem 0.9rem; font-size: 0.8rem; font-weight: 600; color: var(--hfa-muted); text-decoration: none; white-space: nowrap; }
   .hfa-nav a.active { background: var(--hfa-accent); color: #fff; box-shadow: 0 1px 6px rgba(255, 31, 47, 0.35); }
   .hfa-theme { border: 0; background: transparent; color: var(--hfa-muted); font-size: 1.1rem; cursor: pointer; padding: 0.2rem 0.4rem; }
 
-  /* Week strip */
-  .hfa-weeks { display: flex; align-items: center; gap: 0.3rem; padding: 0 0 0.9rem; overflow-x: auto; scrollbar-width: none; }
-  .hfa-weeks::-webkit-scrollbar { display: none; }
-  .hfa-weeks-label { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.1em; color: var(--hfa-muted); margin-right: 0.3rem; }
-  .hfa-weeks a { flex: 0 0 auto; min-width: 2.1rem; text-align: center; border-radius: 8px; padding: 0.28rem 0.55rem; font-size: 0.8rem; font-weight: 700; color: var(--hfa-muted); text-decoration: none; background: rgba(128, 128, 128, 0.12); border: 1px solid transparent; }
-  .hfa-weeks a.live { border-color: var(--hfa-accent-soft); color: var(--hfa-body); }
-  .hfa-weeks a.next { color: var(--hfa-body); }
-  .hfa-weeks a.next::after { content: " next"; font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--hfa-muted); }
-  .hfa-weeks a.active { background: var(--hfa-accent); color: #fff; border-color: var(--hfa-accent); }
-  .hfa-weeks a.active.next::after { color: rgba(255, 255, 255, 0.8); }
+  /* Week counter: ‹ WK 6 › with the full list behind the number */
+  .hfa-wk { display: inline-flex; align-items: center; gap: 2px; margin-left: auto; padding: 3px; border-radius: 999px; background: rgba(128, 128, 128, 0.14); }
+  .hfa-wk .arrow { display: inline-grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 999px; color: var(--hfa-body); text-decoration: none; font-size: 1.1rem; line-height: 1; }
+  .hfa-wk .arrow:hover { background: rgba(128, 128, 128, 0.2); }
+  .hfa-wk .arrow.off { color: var(--hfa-muted); opacity: 0.4; }
+  .hfa-wk .pick { position: relative; display: inline-flex; align-items: baseline; gap: 0.3rem; padding: 0.2rem 0.6rem; border-radius: 999px; background: var(--hfa-accent); color: #fff; cursor: pointer; font-size: 0.8rem; }
+  .hfa-wk .pick .lbl { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; opacity: 0.85; }
+  .hfa-wk .pick b { color: #fff; font-weight: 800; font-size: 0.95rem; }
+  .hfa-wk .pick i { font-style: normal; font-size: 0.56rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; }
+  .hfa-wk .pick select { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+  .hfa-nav { margin-left: 0; }
 
   /* Section pills (jump links) */
   .hfa-jump { display: flex; gap: 0.35rem; flex-wrap: wrap; margin: 0 0 1rem; }
@@ -153,6 +155,7 @@
   /* Board bits */
   .hfa .kpi-list { display: flex; flex-direction: column; gap: 0.15rem; font-size: 0.82rem; }
   .hfa .kpi-list > div { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .hfa-kpi:has(.kpi-list) { grid-column: span 2; }
   .hfa .kpi-list span { color: var(--hfa-muted); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; display: inline-block; width: 2.4rem; }
   .hfa .kpi-list b { font-weight: 700; }
   .hfa .lvl { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; padding: 0.55rem 1.1rem; border-top: var(--hfa-hairline); font-size: 0.78rem; }
@@ -203,7 +206,9 @@
 
   @media (max-width: 760px) {
     .hfa-grid { grid-template-columns: 1fr; }
-    .hfa-top { gap: 0.5rem; position: relative; padding-right: 2.2rem; }
+    .hfa-top { gap: 0.4rem; position: relative; padding-right: 2.2rem; flex-wrap: wrap; }
+    .hfa-wk { margin-left: auto; }
+    .hfa-nav { flex: 0 0 100%; justify-content: center; margin: 0; }
     .hfa-theme { position: absolute; right: 0; top: 50%; transform: translateY(-50%); }
     .hfa-nav a { padding: 0.3rem 0.7rem; }
     .hfa-brand .mark { font-size: 1.1rem; }
@@ -211,6 +216,7 @@
     .hfa-brand { gap: 0.45rem; }
     .hfa-brand .tag { display: none; }
     .hfa-kpis { grid-template-columns: repeat(2, 1fr); }
+    .hfa-kpi:has(.kpi-list) { grid-column: span 2; border-left: 0; }
     .hfa-kpi:nth-child(odd) { border-left: 0; }
     /* Stacked game tables: one card per row. Cells become labeled
        chips (data-l); .c-lead leads the top line, .c-end sits right. */
@@ -245,18 +251,19 @@
 <div class="hfa">
   <div class="hfa-top">
     <a class="hfa-brand" href="/"><img class="logo" src="/icons/icon-192.png" width="34" height="34" alt=""><span class="words"><span class="mark"><i>Huff</i>alytics</span><span class="tag">GAME SCRIPTS // PROJECTIONS // GRADED</span></span></a>
+    
+    <div class="hfa-wk" aria-label="Week">
+      <a class="arrow" href="/w/3/" title="Week 3">&#8249;</a>
+      <label class="pick"><span class="lbl">WK</span><b>4</b><select id="hfa-wk"><option value="/w/1/">Week 1</option><option value="/w/2/">Week 2</option><option value="/w/3/">Week 3</option><option value="/w/4/" selected>Week 4</option><option value="/w/5/">Week 5</option><option value="/">Week 6 · in play</option><option value="/w/7/">Week 7 · next</option></select></label>
+      <a class="arrow" href="/w/5/" title="Week 5">&#8250;</a>
+    </div>
+    
     <nav class="hfa-nav">
       <a href="/w/4/" class="active">This week</a>
       <a href="/w/4/rankings/" class="">Rankings</a>
     </nav>
     <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
   </div>
-  
-  <div class="hfa-weeks" aria-label="Week">
-    <span class="hfa-weeks-label">2026</span>
-    <a href="/w/1/" class="" title="Week 1">1</a><a href="/w/2/" class="" title="Week 2">2</a><a href="/w/3/" class="" title="Week 3">3</a><a href="/w/4/" class="active" title="Week 4">4</a><a href="/w/5/" class="" title="Week 5">5</a><a href="/" class=" live" title="Week 6 · in play">6</a><a href="/w/7/" class=" next" title="Week 7 · next up">7</a>
-  </div>
-  
   
 
   <div class="hfa-card hfa-hero">
@@ -1958,6 +1965,7 @@
 </div>
 <script>
 (function(){
+  var wk=document.getElementById("hfa-wk"); if(wk) wk.addEventListener("change",function(){ location.href=wk.value; });
   var b=document.getElementById("hfa-theme");
   b.addEventListener("click",function(){
     var r=document.documentElement, next=r.dataset.theme==="light"?"dark":"light";
