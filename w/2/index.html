@@ -169,8 +169,23 @@
   .hfa .lvl .pill b { color: inherit; }
   .hfa .lvl .pill small { opacity: 0.8; font-weight: 500; }
   .hfa .lvl .note { color: var(--hfa-muted); margin-left: auto; font-size: 0.72rem; }
-  .hfa .slate tr.leg > td:first-child { box-shadow: inset 3px 0 0 var(--hfa-accent); }
-  .hfa .slate tr.dim > td { opacity: 0.6; }
+  .hfa .slate-head { justify-content: space-between; align-items: flex-start; }
+  .hfa .slate-head h2.big { font-size: 1.5rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; }
+  .hfa .slate-head .hfa-eyebrow { flex: none; }
+  .hfa .legend { position: relative; }
+  .hfa .legend summary { list-style: none; cursor: pointer; border-radius: 999px; padding: 0.3rem 0.8rem; font-size: 0.76rem; font-weight: 600; color: var(--hfa-muted); background: rgba(128, 128, 128, 0.14); white-space: nowrap; }
+  .hfa .legend summary::-webkit-details-marker { display: none; }
+  .hfa .legend[open] summary { background: var(--hfa-accent); color: #fff; }
+  .hfa .legend-body { position: absolute; right: 0; top: calc(100% + 0.4rem); z-index: 20; width: min(34rem, calc(100vw - 2rem)); background: var(--hfa-card); border: var(--hfa-hairline); border-radius: 12px; box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.9); padding: 0.6rem 0.9rem; font-size: 0.78rem; line-height: 1.45; color: var(--hfa-muted); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+  .hfa .legend-body > div + div { margin-top: 0.45rem; padding-top: 0.45rem; border-top: var(--hfa-hairline); }
+  .hfa .legend-body b { color: var(--hfa-accent); margin-right: 0.3rem; }
+  .hfa .legend-body b + b { margin-left: 0.2rem; }
+  .hfa .slate th.sort { cursor: pointer; } .hfa .slate th.sort.on { color: var(--hfa-accent); }
+  .hfa .slate tr > td:first-child { box-shadow: inset 3px 0 0 var(--hfa-accent); }
+  .hfa .ou { display: inline-block; margin-left: 0.3rem; border-radius: 6px; padding: 0.08rem 0.4rem; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+  .hfa .ou.over { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .hfa .ou.under { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .hfa .ou.push { background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); }
   .hfa .slate .qbnote { display: block; font-size: 0.68rem; color: var(--hfa-bad); margin-top: 0.15rem; }
   .hfa .rec { font-weight: 700; }
   .hfa .rec.held { color: var(--hfa-good); } .hfa .rec.partly { color: var(--hfa-warn); } .hfa .rec.broke { color: var(--hfa-bad); }
@@ -240,6 +255,9 @@
     .hfa table.stack > tbody > tr > td.c-plain:has(> .flat:only-child) { display: none; }
     .hfa table.stack > tbody > tr > td.c-plain .badge + .badge { margin-left: 0.2rem; }
     .hfa table.stack .match { flex-wrap: wrap; font-size: 0.95rem; }
+    .hfa .slate tr > td:first-child { box-shadow: none; }
+    .hfa table.stack > tbody > tr { box-shadow: inset 3px 0 0 var(--hfa-accent); }
+    .hfa .legend-body { position: fixed; left: 1rem; right: 1rem; top: auto; width: auto; max-height: 70vh; overflow: auto; }
     .hfa .nm-full { display: none; } .hfa .nm-short { display: inline; }
     .hfa .lvl .note { flex: 0 0 100%; margin-left: 0; }
     .hfa .kpi-list span { width: 2.2rem; }
@@ -292,252 +310,246 @@
   <div class="hfa-jump"><a href="#slate">Slate</a><a href="#leaders">Leaders</a><a href="#outlook">Player outlook</a><a href="#streaming">Streaming</a><a href="/w/2/rankings/">Rankings</a></div>
 
   <div class="hfa-card" id="slate">
-    <div class="hfa-head">
-      <div class="hfa-eyebrow">The slate</div>
-      <h2>Favorites at the market line</h2>
-      <span class="sub">Every game with a line, favorite first. The model margin is the engine's own number from its efficiency ratings; Adj folds in the priced injury reports; Proj is the projected score. Plans are the pre-game single-game parlay plans: their over and under calls, graded off the box score once the game is played.</span>
+    <div class="hfa-head slate-head">
+      <div><div class="hfa-eyebrow">Week 2</div><h2 class="big">The slate</h2></div>
+      <details class="legend">
+        <summary title="What the columns mean">&#9432; Legend</summary>
+        <div class="legend-body">
+          <div><b>Line &middot; O/U</b> The closing spread from the favorite's side and the market total. Once played, the total shows the points and whether it went over or under. Shown for context: the engine prices player props, not sides.</div>
+          <div><b>Model</b> The engine's own margin for the favorite, from its opponent-adjusted efficiency ratings entering the week. Green = the engine likes the favorite more than the line does; amber = it actually likes the dog.</div>
+          <div><b>Adj</b> The model margin with the priced injury reports folded in. &#8623; marks a game where the injuries flip the engine's side.</div>
+          <div><b>Proj &middot; Score</b> The projected score and the final, favorite first.</div>
+          <div><b>Overs &middot; Unders</b> The pre-game single-game parlay plan's player calls, split by side: hits&ndash;misses once the box score is in, call counts before. A void is a player who did not play.</div>
+          <div><b>Plan cushion</b> Every call is read at three rungs of the player's Kalshi ladder. <b>Normal</b> is the line the plan called. <b>Edge</b> is the listed rung nearest halfway between that line and the ladder's last rung on the easy side. <b>Edge+</b> is that last rung: the lowest N+ on an over, the highest &lt;N on an under. The pills swap the Overs and Unders columns between them; the record beside each pill is the week's total at that cushion.</div>
+          <div><b>Report</b> The post-game report's projection grade, shown once reports are written.</div>
+          <div><b>Sorting</b> Click any column header to rank by it; click again to flip.</div>
+        </div>
+      </details>
     </div>
     
     
     <div class="scroll">
-    <table class="stack slate">
+    <table class="stack slate sortable">
       <thead><tr>
-        <th>Game <span class="sub">(favorite first)</span></th>
-        <th>Verdict</th>
-        <th>Kickoff</th>
-        <th class="num" title="The closing spread from the favorite's side">Line</th>
-        <th class="num" title="The market total; the points and the side it landed on once played">O/U</th>
-        <th class="num" title="The engine's margin for the favorite from its efficiency ratings entering the week">Model</th>
-        <th class="num" title="The model margin with the priced injury reports folded in">Adj</th>
-        <th class="num" title="Projected score, favorite first">Proj</th>
-        <th class="num" title="Final score, favorite first">Score</th>
+        <th class="sort" data-idx="0" data-type="str" data-best="low">Game <span class="sub">(favorite first)</span></th>
+        <th class="sort" data-idx="1" data-type="str" data-best="low">Kickoff</th>
+        <th class="num sort" data-idx="2" data-best="low" title="The closing spread from the favorite's side">Line</th>
+        <th class="num sort" data-idx="3" data-best="high" title="The market total; the points and the side it landed on once played">O/U</th>
+        <th class="num sort" data-idx="4" data-best="high" title="The engine's margin for the favorite from its efficiency ratings entering the week">Model</th>
+        <th class="num sort" data-idx="5" data-best="high" title="The model margin with the priced injury reports folded in">Adj</th>
+        <th class="num sort" data-idx="6" data-best="high" title="Projected score, favorite first">Proj</th>
+        <th class="num sort" data-idx="7" data-best="high" title="Final score, favorite first">Score</th>
         
-        <th class="num" title="The post-game report's projection grade">Report</th>
+        <th class="num sort" data-idx="8" data-best="high" title="The post-game report's projection grade">Report</th>
       </tr></thead>
       <tbody>
       
-      <tr class="leg final">
-        <td class="c-lead"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sf.png" alt="" loading="lazy"><span class="fav">SF</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy"><span>MIA</span></span></td>
-        <td class="c-end"><span class="badge acc">slate leg</span></td>
-        <td class="nw" data-l="kickoff" title="Sun Sep 20, 2:25 PM Denver">2:25pm</td>
-        <td class="num nw" data-l="line"><b>-12.5</b></td>
-        <td class="num nw" data-l="o/u">44.5 <span class="sub">48 &middot; over</span></td>
-        <td class="num nw" data-l="model"><span class="">+9.4</span></td>
-        <td class="num nw" data-l="adj" title="model +9.4 -0.30 injuries (11 reports)"><span class="">+9.1</span></td>
-        <td class="num nw" data-l="proj">28–16</td>
-        <td class="num nw" data-l="score"><b>35–13</b></td>
+      <tr class="final">
+        <td class="c-lead" data-val="SF vs MIA"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sf.png" alt="" loading="lazy"><span class="fav">SF</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy"><span>MIA</span></span></td>
+        <td class="c-end nw" data-val="2026-09-20T16:25:00-04:00" title="Sun Sep 20, 2:25 PM Denver">2:25pm</td>
+        <td class="num nw" data-l="line" data-val="-12.5"><b>-12.5</b></td>
+        <td class="num nw" data-l="o/u" data-val="44.5">44.5 <span class="ou over">48 over</span></td>
+        <td class="num nw" data-l="model" data-val="9.41"><span class="">+9.4</span></td>
+        <td class="num nw" data-l="adj" data-val="9.1" title="model +9.4 -0.30 injuries (11 reports)"><span class="">+9.1</span></td>
+        <td class="num nw" data-l="proj" data-val="12.5">28–16</td>
+        <td class="num nw" data-l="score" data-val="22"><b>35–13</b></td>
         
-        <td class="num nw" data-l="report"><span class="grade g-C">C <small>55</small></span></td>
+        <td class="num nw" data-l="report" data-val="55"><span class="grade g-C">C <small>55</small></span></td>
       </tr>
       
-      <tr class="leg final">
-        <td class="c-lead"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/tb.png" alt="" loading="lazy"><span class="fav">TB</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" alt="" loading="lazy"><span>CLE</span></span></td>
-        <td class="c-end"><span class="badge acc">slate leg</span></td>
-        <td class="nw" data-l="kickoff" title="Sun Sep 20, 11:00 AM Denver">11:00am</td>
-        <td class="num nw" data-l="line"><b>-8.5</b></td>
-        <td class="num nw" data-l="o/u">41.5 <span class="sub">42 &middot; over</span></td>
-        <td class="num nw" data-l="model"><span class="">+3.4</span></td>
-        <td class="num nw" data-l="adj" title="model +3.4 -0.33 injuries (8 reports)"><span class="">+3.1</span></td>
-        <td class="num nw" data-l="proj">25–16</td>
-        <td class="num nw" data-l="score"><b>19–23</b></td>
+      <tr class="final">
+        <td class="c-lead" data-val="TB vs CLE"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/tb.png" alt="" loading="lazy"><span class="fav">TB</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" alt="" loading="lazy"><span>CLE</span></span></td>
+        <td class="c-end nw" data-val="2026-09-20T13:00:00-04:00" title="Sun Sep 20, 11:00 AM Denver">11:00am</td>
+        <td class="num nw" data-l="line" data-val="-8.5"><b>-8.5</b></td>
+        <td class="num nw" data-l="o/u" data-val="41.5">41.5 <span class="ou over">42 over</span></td>
+        <td class="num nw" data-l="model" data-val="3.43"><span class="">+3.4</span></td>
+        <td class="num nw" data-l="adj" data-val="3.1" title="model +3.4 -0.33 injuries (8 reports)"><span class="">+3.1</span></td>
+        <td class="num nw" data-l="proj" data-val="8.5">25–16</td>
+        <td class="num nw" data-l="score" data-val="-4"><b>19–23</b></td>
         
-        <td class="num nw" data-l="report"><span class="grade g-C">C <small>64</small></span></td>
+        <td class="num nw" data-l="report" data-val="64"><span class="grade g-C">C <small>64</small></span></td>
       </tr>
       
-      <tr class="leg final">
-        <td class="c-lead"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy"><span class="fav">BAL</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/no.png" alt="" loading="lazy"><span>NO</span></span></td>
-        <td class="c-end"><span class="badge acc">slate leg</span></td>
-        <td class="nw" data-l="kickoff" title="Sun Sep 20, 11:00 AM Denver">11:00am</td>
-        <td class="num nw" data-l="line"><b>-8.5</b></td>
-        <td class="num nw" data-l="o/u">45.5 <span class="sub">41 &middot; under</span></td>
-        <td class="num nw" data-l="model"><span class="">+6.5</span></td>
-        <td class="num nw" data-l="adj" title="model +6.5 -0.89 injuries (16 reports)"><span class="">+5.6</span></td>
-        <td class="num nw" data-l="proj">27–18</td>
-        <td class="num nw" data-l="score"><b>17–24</b></td>
+      <tr class="final">
+        <td class="c-lead" data-val="BAL vs NO"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy"><span class="fav">BAL</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/no.png" alt="" loading="lazy"><span>NO</span></span></td>
+        <td class="c-end nw" data-val="2026-09-20T13:00:00-04:00" title="Sun Sep 20, 11:00 AM Denver">11:00am</td>
+        <td class="num nw" data-l="line" data-val="-8.5"><b>-8.5</b></td>
+        <td class="num nw" data-l="o/u" data-val="45.5">45.5 <span class="ou under">41 under</span></td>
+        <td class="num nw" data-l="model" data-val="6.45"><span class="">+6.5</span></td>
+        <td class="num nw" data-l="adj" data-val="5.56" title="model +6.5 -0.89 injuries (16 reports)"><span class="">+5.6</span></td>
+        <td class="num nw" data-l="proj" data-val="8.5">27–18</td>
+        <td class="num nw" data-l="score" data-val="-7"><b>17–24</b></td>
         
-        <td class="num nw" data-l="report"><span class="grade g-B">B <small>76</small></span></td>
+        <td class="num nw" data-l="report" data-val="76"><span class="grade g-B">B <small>76</small></span></td>
       </tr>
       
-      <tr class="leg final">
-        <td class="c-lead"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" alt="" loading="lazy"><span class="fav">PHI</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" alt="" loading="lazy"><span>TEN</span></span></td>
-        <td class="c-end"><span class="badge acc">slate leg</span></td>
-        <td class="nw" data-l="kickoff" title="Sun Sep 20, 11:00 AM Denver">11:00am</td>
-        <td class="num nw" data-l="line"><b>-7</b></td>
-        <td class="num nw" data-l="o/u">39.5 <span class="sub">44 &middot; over</span></td>
-        <td class="num nw" data-l="model"><span class="">+4.0</span></td>
-        <td class="num nw" data-l="adj" title="model +4.0 +0.00 injuries (7 reports)"><span class="">+4.0</span></td>
-        <td class="num nw" data-l="proj">23–16</td>
-        <td class="num nw" data-l="score"><b>24–20</b></td>
+      <tr class="final">
+        <td class="c-lead" data-val="PHI @ TEN"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" alt="" loading="lazy"><span class="fav">PHI</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" alt="" loading="lazy"><span>TEN</span></span></td>
+        <td class="c-end nw" data-val="2026-09-20T13:00:00-04:00" title="Sun Sep 20, 11:00 AM Denver">11:00am</td>
+        <td class="num nw" data-l="line" data-val="-7.0"><b>-7</b></td>
+        <td class="num nw" data-l="o/u" data-val="39.5">39.5 <span class="ou over">44 over</span></td>
+        <td class="num nw" data-l="model" data-val="4.01"><span class="">+4.0</span></td>
+        <td class="num nw" data-l="adj" data-val="4.01" title="model +4.0 +0.00 injuries (7 reports)"><span class="">+4.0</span></td>
+        <td class="num nw" data-l="proj" data-val="7.0">23–16</td>
+        <td class="num nw" data-l="score" data-val="4"><b>24–20</b></td>
         
-        <td class="num nw" data-l="report"><span class="grade g-C">C <small>62</small></span></td>
+        <td class="num nw" data-l="report" data-val="62"><span class="grade g-C">C <small>62</small></span></td>
       </tr>
       
-      <tr class="leg final">
-        <td class="c-lead"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" alt="" loading="lazy"><span class="fav">LA</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png" alt="" loading="lazy"><span>NYG</span></span></td>
-        <td class="c-end"><span class="badge acc">slate leg</span></td>
-        <td class="nw" data-l="kickoff" title="Mon Sep 21, 6:15 PM Denver">MNF</td>
-        <td class="num nw" data-l="line"><b>-6.5</b></td>
-        <td class="num nw" data-l="o/u">47.5 <span class="sub">34 &middot; under</span></td>
-        <td class="num nw" data-l="model"><span class="">+3.1</span></td>
-        <td class="num nw" data-l="adj" title="model +3.1 -0.93 injuries (7 reports)"><span class="">+2.2</span></td>
-        <td class="num nw" data-l="proj">27–20</td>
-        <td class="num nw" data-l="score"><b>28–6</b></td>
+      <tr class="final">
+        <td class="c-lead" data-val="LA vs NYG"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" alt="" loading="lazy"><span class="fav">LA</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png" alt="" loading="lazy"><span>NYG</span></span></td>
+        <td class="c-end nw" data-val="2026-09-21T20:15:00-04:00" title="Mon Sep 21, 6:15 PM Denver">MNF</td>
+        <td class="num nw" data-l="line" data-val="-6.5"><b>-6.5</b></td>
+        <td class="num nw" data-l="o/u" data-val="47.5">47.5 <span class="ou under">34 under</span></td>
+        <td class="num nw" data-l="model" data-val="3.11"><span class="">+3.1</span></td>
+        <td class="num nw" data-l="adj" data-val="2.18" title="model +3.1 -0.93 injuries (7 reports)"><span class="">+2.2</span></td>
+        <td class="num nw" data-l="proj" data-val="6.5">27–20</td>
+        <td class="num nw" data-l="score" data-val="22"><b>28–6</b></td>
         
-        <td class="num nw" data-l="report"><span class="grade g-D">D <small>46</small></span></td>
+        <td class="num nw" data-l="report" data-val="46"><span class="grade g-D">D <small>46</small></span></td>
       </tr>
       
-      <tr class="dim final">
-        <td class="c-lead"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" alt="" loading="lazy"><span class="fav">LAC</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" alt="" loading="lazy"><span>LV</span></span></td>
-        <td class="c-end"><span class="badge mute">below cutoff</span></td>
-        <td class="nw" data-l="kickoff" title="Sun Sep 20, 2:05 PM Denver">2:05pm</td>
-        <td class="num nw" data-l="line"><b>-6.5</b></td>
-        <td class="num nw" data-l="o/u">43.5 <span class="sub">40 &middot; under</span></td>
-        <td class="num nw" data-l="model"><span class="">+0.8</span></td>
-        <td class="num nw" data-l="adj" title="model +0.8 -0.45 injuries (9 reports)"><span class="">+0.3</span></td>
-        <td class="num nw" data-l="proj">25–18</td>
-        <td class="num nw" data-l="score"><b>14–26</b></td>
+      <tr class="final">
+        <td class="c-lead" data-val="LAC vs LV"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" alt="" loading="lazy"><span class="fav">LAC</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" alt="" loading="lazy"><span>LV</span></span></td>
+        <td class="c-end nw" data-val="2026-09-20T16:05:00-04:00" title="Sun Sep 20, 2:05 PM Denver">2:05pm</td>
+        <td class="num nw" data-l="line" data-val="-6.5"><b>-6.5</b></td>
+        <td class="num nw" data-l="o/u" data-val="43.5">43.5 <span class="ou under">40 under</span></td>
+        <td class="num nw" data-l="model" data-val="0.8"><span class="">+0.8</span></td>
+        <td class="num nw" data-l="adj" data-val="0.34" title="model +0.8 -0.45 injuries (9 reports)"><span class="">+0.3</span></td>
+        <td class="num nw" data-l="proj" data-val="6.5">25–18</td>
+        <td class="num nw" data-l="score" data-val="-12"><b>14–26</b></td>
         
-        <td class="num nw" data-l="report"><span class="grade g-C">C <small>66</small></span></td>
+        <td class="num nw" data-l="report" data-val="66"><span class="grade g-C">C <small>66</small></span></td>
       </tr>
       
-      <tr class="dim final">
-        <td class="c-lead"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy"><span class="fav">KC</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" alt="" loading="lazy"><span>IND</span></span></td>
-        <td class="c-end"><span class="badge mute">below cutoff</span></td>
-        <td class="nw" data-l="kickoff" title="Sun Sep 20, 6:20 PM Denver">SNF</td>
-        <td class="num nw" data-l="line"><b>-6</b></td>
-        <td class="num nw" data-l="o/u">46.5 <span class="sub">63 &middot; over</span></td>
-        <td class="num nw" data-l="model"><span class="text-success">+7.2</span></td>
-        <td class="num nw" data-l="adj" title="model +7.2 +0.17 injuries (11 reports)"><span class="text-success">+7.4</span></td>
-        <td class="num nw" data-l="proj">26–20</td>
-        <td class="num nw" data-l="score"><b>33–30</b></td>
+      <tr class="final">
+        <td class="c-lead" data-val="KC vs IND"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy"><span class="fav">KC</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" alt="" loading="lazy"><span>IND</span></span></td>
+        <td class="c-end nw" data-val="2026-09-20T20:20:00-04:00" title="Sun Sep 20, 6:20 PM Denver">SNF</td>
+        <td class="num nw" data-l="line" data-val="-6.0"><b>-6</b></td>
+        <td class="num nw" data-l="o/u" data-val="46.5">46.5 <span class="ou over">63 over</span></td>
+        <td class="num nw" data-l="model" data-val="7.19"><span class="text-success">+7.2</span></td>
+        <td class="num nw" data-l="adj" data-val="7.37" title="model +7.2 +0.17 injuries (11 reports)"><span class="text-success">+7.4</span></td>
+        <td class="num nw" data-l="proj" data-val="6.0">26–20</td>
+        <td class="num nw" data-l="score" data-val="3"><b>33–30</b></td>
         
-        <td class="num nw" data-l="report"><span class="grade g-C">C <small>63</small></span></td>
+        <td class="num nw" data-l="report" data-val="63"><span class="grade g-C">C <small>63</small></span></td>
       </tr>
       
-      <tr class="dim final">
-        <td class="c-lead"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png" alt="" loading="lazy"><span class="fav">BUF</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy"><span>DET</span></span></td>
-        <td class="c-end"><span class="badge mute">below cutoff</span></td>
-        <td class="nw" data-l="kickoff" title="Thu Sep 17, 6:15 PM Denver">TNF</td>
-        <td class="num nw" data-l="line"><b>-5.5</b></td>
-        <td class="num nw" data-l="o/u">54.5 <span class="sub">72 &middot; over</span></td>
-        <td class="num nw" data-l="model"><span class="">+3.7</span></td>
-        <td class="num nw" data-l="adj" title="model +3.7 -0.37 injuries (6 reports)"><span class="">+3.3</span></td>
-        <td class="num nw" data-l="proj">30–24</td>
-        <td class="num nw" data-l="score"><b>41–31</b></td>
+      <tr class="final">
+        <td class="c-lead" data-val="BUF vs DET"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png" alt="" loading="lazy"><span class="fav">BUF</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy"><span>DET</span></span></td>
+        <td class="c-end nw" data-val="2026-09-17T20:15:00-04:00" title="Thu Sep 17, 6:15 PM Denver">TNF</td>
+        <td class="num nw" data-l="line" data-val="-5.5"><b>-5.5</b></td>
+        <td class="num nw" data-l="o/u" data-val="54.5">54.5 <span class="ou over">72 over</span></td>
+        <td class="num nw" data-l="model" data-val="3.67"><span class="">+3.7</span></td>
+        <td class="num nw" data-l="adj" data-val="3.3" title="model +3.7 -0.37 injuries (6 reports)"><span class="">+3.3</span></td>
+        <td class="num nw" data-l="proj" data-val="5.5">30–24</td>
+        <td class="num nw" data-l="score" data-val="10"><b>41–31</b></td>
         
-        <td class="num nw" data-l="report"><span class="grade g-D">D <small>48</small></span></td>
+        <td class="num nw" data-l="report" data-val="48"><span class="grade g-D">D <small>48</small></span></td>
       </tr>
       
-      <tr class="dim final">
-        <td class="c-lead"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy"><span class="fav">NE</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/pit.png" alt="" loading="lazy"><span>PIT</span></span></td>
-        <td class="c-end"><span class="badge mute">below cutoff</span></td>
-        <td class="nw" data-l="kickoff" title="Sun Sep 20, 11:00 AM Denver">11:00am</td>
-        <td class="num nw" data-l="line"><b>-4.5</b></td>
-        <td class="num nw" data-l="o/u">41.5 <span class="sub">23 &middot; under</span></td>
-        <td class="num nw" data-l="model"><span class="">+0.9</span></td>
-        <td class="num nw" data-l="adj" title="model +0.9 +0.32 injuries (9 reports)"><span class="">+1.2</span></td>
-        <td class="num nw" data-l="proj">23–18</td>
-        <td class="num nw" data-l="score"><b>20–3</b></td>
+      <tr class="final">
+        <td class="c-lead" data-val="NE vs PIT"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy"><span class="fav">NE</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/pit.png" alt="" loading="lazy"><span>PIT</span></span></td>
+        <td class="c-end nw" data-val="2026-09-20T13:00:00-04:00" title="Sun Sep 20, 11:00 AM Denver">11:00am</td>
+        <td class="num nw" data-l="line" data-val="-4.5"><b>-4.5</b></td>
+        <td class="num nw" data-l="o/u" data-val="41.5">41.5 <span class="ou under">23 under</span></td>
+        <td class="num nw" data-l="model" data-val="0.9"><span class="">+0.9</span></td>
+        <td class="num nw" data-l="adj" data-val="1.22" title="model +0.9 +0.32 injuries (9 reports)"><span class="">+1.2</span></td>
+        <td class="num nw" data-l="proj" data-val="4.5">23–18</td>
+        <td class="num nw" data-l="score" data-val="17"><b>20–3</b></td>
         
-        <td class="num nw" data-l="report"><span class="grade g-B">B <small>70</small></span></td>
+        <td class="num nw" data-l="report" data-val="70"><span class="grade g-B">B <small>70</small></span></td>
       </tr>
       
-      <tr class="dim final">
-        <td class="c-lead"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy"><span class="fav">CHI</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/min.png" alt="" loading="lazy"><span>MIN</span></span></td>
-        <td class="c-end"><span class="badge mute">below cutoff</span></td>
-        <td class="nw" data-l="kickoff" title="Sun Sep 20, 11:00 AM Denver">11:00am</td>
-        <td class="num nw" data-l="line"><b>-4.5</b></td>
-        <td class="num nw" data-l="o/u">46.5 <span class="sub">12 &middot; under</span></td>
-        <td class="num nw" data-l="model"><span class="">+2.8</span></td>
-        <td class="num nw" data-l="adj" title="model +2.8 +1.40 injuries (5 reports)"><span class="">+4.2</span></td>
-        <td class="num nw" data-l="proj">26–21</td>
-        <td class="num nw" data-l="score"><b>3–9</b></td>
+      <tr class="final">
+        <td class="c-lead" data-val="CHI vs MIN"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy"><span class="fav">CHI</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/min.png" alt="" loading="lazy"><span>MIN</span></span></td>
+        <td class="c-end nw" data-val="2026-09-20T13:00:00-04:00" title="Sun Sep 20, 11:00 AM Denver">11:00am</td>
+        <td class="num nw" data-l="line" data-val="-4.5"><b>-4.5</b></td>
+        <td class="num nw" data-l="o/u" data-val="46.5">46.5 <span class="ou under">12 under</span></td>
+        <td class="num nw" data-l="model" data-val="2.77"><span class="">+2.8</span></td>
+        <td class="num nw" data-l="adj" data-val="4.17" title="model +2.8 +1.40 injuries (5 reports)"><span class="">+4.2</span></td>
+        <td class="num nw" data-l="proj" data-val="4.5">26–21</td>
+        <td class="num nw" data-l="score" data-val="-6"><b>3–9</b></td>
         
-        <td class="num nw" data-l="report"><span class="grade g-D">D <small>50</small></span></td>
+        <td class="num nw" data-l="report" data-val="50"><span class="grade g-D">D <small>50</small></span></td>
       </tr>
       
-      <tr class="dim final">
-        <td class="c-lead"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="" loading="lazy"><span class="fav">DAL</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png" alt="" loading="lazy"><span>WAS</span></span></td>
-        <td class="c-end"><span class="badge mute">below cutoff</span></td>
-        <td class="nw" data-l="kickoff" title="Sun Sep 20, 2:25 PM Denver">2:25pm</td>
-        <td class="num nw" data-l="line"><b>-3.5</b></td>
-        <td class="num nw" data-l="o/u">51.5 <span class="sub">57 &middot; over</span></td>
-        <td class="num nw" data-l="model"><span class="">+0.9</span></td>
-        <td class="num nw" data-l="adj" title="model +0.9 +0.88 injuries (7 reports)"><span class="">+1.7</span></td>
-        <td class="num nw" data-l="proj">28–24</td>
-        <td class="num nw" data-l="score"><b>37–20</b></td>
+      <tr class="final">
+        <td class="c-lead" data-val="DAL vs WAS"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="" loading="lazy"><span class="fav">DAL</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png" alt="" loading="lazy"><span>WAS</span></span></td>
+        <td class="c-end nw" data-val="2026-09-20T16:25:00-04:00" title="Sun Sep 20, 2:25 PM Denver">2:25pm</td>
+        <td class="num nw" data-l="line" data-val="-3.5"><b>-3.5</b></td>
+        <td class="num nw" data-l="o/u" data-val="51.5">51.5 <span class="ou over">57 over</span></td>
+        <td class="num nw" data-l="model" data-val="0.86"><span class="">+0.9</span></td>
+        <td class="num nw" data-l="adj" data-val="1.74" title="model +0.9 +0.88 injuries (7 reports)"><span class="">+1.7</span></td>
+        <td class="num nw" data-l="proj" data-val="3.5">28–24</td>
+        <td class="num nw" data-l="score" data-val="17"><b>37–20</b></td>
         
-        <td class="num nw" data-l="report"><span class="grade g-D">D <small>55</small></span></td>
+        <td class="num nw" data-l="report" data-val="55"><span class="grade g-D">D <small>55</small></span></td>
       </tr>
       
-      <tr class="dim final">
-        <td class="c-lead"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy"><span class="fav">SEA</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy"><span>ARI</span></span></td>
-        <td class="c-end"><span class="badge mute">below cutoff</span></td>
-        <td class="nw" data-l="kickoff" title="Sun Sep 20, 2:25 PM Denver">2:25pm</td>
-        <td class="num nw" data-l="line"><b>-3.5</b></td>
-        <td class="num nw" data-l="o/u">40.5 <span class="sub">38 &middot; under</span></td>
-        <td class="num nw" data-l="model"><span class="">+1.0</span></td>
-        <td class="num nw" data-l="adj" title="model +1.0 +0.00 injuries (14 reports)"><span class="">+1.0</span></td>
-        <td class="num nw" data-l="proj">22–18</td>
-        <td class="num nw" data-l="score"><b>31–7</b></td>
+      <tr class="final">
+        <td class="c-lead" data-val="SEA @ ARI"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy"><span class="fav">SEA</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy"><span>ARI</span></span></td>
+        <td class="c-end nw" data-val="2026-09-20T16:25:00-04:00" title="Sun Sep 20, 2:25 PM Denver">2:25pm</td>
+        <td class="num nw" data-l="line" data-val="-3.5"><b>-3.5</b></td>
+        <td class="num nw" data-l="o/u" data-val="40.5">40.5 <span class="ou under">38 under</span></td>
+        <td class="num nw" data-l="model" data-val="1.01"><span class="">+1.0</span></td>
+        <td class="num nw" data-l="adj" data-val="1.01" title="model +1.0 +0.00 injuries (14 reports)"><span class="">+1.0</span></td>
+        <td class="num nw" data-l="proj" data-val="3.5">22–18</td>
+        <td class="num nw" data-l="score" data-val="24"><b>31–7</b></td>
         
-        <td class="num nw" data-l="report"><span class="grade g-C">C <small>62</small></span></td>
+        <td class="num nw" data-l="report" data-val="62"><span class="grade g-C">C <small>62</small></span></td>
       </tr>
       
-      <tr class=" final">
-        <td class="c-lead"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy"><span class="fav">GB</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy"><span>NYJ</span></span></td>
-        <td class="c-end"><span class="badge warn">model disagrees</span></td>
-        <td class="nw" data-l="kickoff" title="Sun Sep 20, 11:00 AM Denver">11:00am</td>
-        <td class="num nw" data-l="line"><b>-3.5</b></td>
-        <td class="num nw" data-l="o/u">44.5 <span class="sub">37 &middot; under</span></td>
-        <td class="num nw" data-l="model"><span class="text-danger">-1.3</span></td>
-        <td class="num nw" data-l="adj" title="model -1.3 +0.68 injuries (11 reports)"><span class="text-danger">-0.7</span></td>
-        <td class="num nw" data-l="proj">24–20</td>
-        <td class="num nw" data-l="score"><b>20–17</b></td>
+      <tr class="final">
+        <td class="c-lead" data-val="GB @ NYJ"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy"><span class="fav">GB</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy"><span>NYJ</span></span></td>
+        <td class="c-end nw" data-val="2026-09-20T13:00:00-04:00" title="Sun Sep 20, 11:00 AM Denver">11:00am</td>
+        <td class="num nw" data-l="line" data-val="-3.5"><b>-3.5</b></td>
+        <td class="num nw" data-l="o/u" data-val="44.5">44.5 <span class="ou under">37 under</span></td>
+        <td class="num nw" data-l="model" data-val="-1.34"><span class="text-danger">-1.3</span></td>
+        <td class="num nw" data-l="adj" data-val="-0.66" title="model -1.3 +0.68 injuries (11 reports)"><span class="text-danger">-0.7</span></td>
+        <td class="num nw" data-l="proj" data-val="3.5">24–20</td>
+        <td class="num nw" data-l="score" data-val="3"><b>20–17</b></td>
         
-        <td class="num nw" data-l="report"><span class="grade g-C">C <small>59</small></span></td>
+        <td class="num nw" data-l="report" data-val="59"><span class="grade g-C">C <small>59</small></span></td>
       </tr>
       
-      <tr class="dim final">
-        <td class="c-lead"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/hou.png" alt="" loading="lazy"><span class="fav">HOU</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy"><span>CIN</span></span><span class="qbnote">&#9888; QB CIN: Joe Burrow Questionable</span></td>
-        <td class="c-end"><span class="badge mute">tight spread</span></td>
-        <td class="nw" data-l="kickoff" title="Sun Sep 20, 11:00 AM Denver">11:00am</td>
-        <td class="num nw" data-l="line"><b>-3</b></td>
-        <td class="num nw" data-l="o/u">45.5 <span class="sub">26 &middot; under</span></td>
-        <td class="num nw" data-l="model"><span class="text-danger">-1.9</span></td>
-        <td class="num nw" data-l="adj" title="model -1.9 -1.70 injuries (8 reports)"><span class="text-danger">-3.6</span></td>
-        <td class="num nw" data-l="proj">24–21</td>
-        <td class="num nw" data-l="score"><b>6–20</b></td>
+      <tr class="final">
+        <td class="c-lead" data-val="HOU vs CIN"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/hou.png" alt="" loading="lazy"><span class="fav">HOU</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy"><span>CIN</span></span><span class="qbnote">&#9888; QB CIN: Joe Burrow Questionable</span></td>
+        <td class="c-end nw" data-val="2026-09-20T13:00:00-04:00" title="Sun Sep 20, 11:00 AM Denver">11:00am</td>
+        <td class="num nw" data-l="line" data-val="-3.0"><b>-3</b></td>
+        <td class="num nw" data-l="o/u" data-val="45.5">45.5 <span class="ou under">26 under</span></td>
+        <td class="num nw" data-l="model" data-val="-1.91"><span class="text-danger">-1.9</span></td>
+        <td class="num nw" data-l="adj" data-val="-3.61" title="model -1.9 -1.70 injuries (8 reports)"><span class="text-danger">-3.6</span></td>
+        <td class="num nw" data-l="proj" data-val="3.0">24–21</td>
+        <td class="num nw" data-l="score" data-val="-14"><b>6–20</b></td>
         
-        <td class="num nw" data-l="report"><span class="grade g-D">D <small>53</small></span></td>
+        <td class="num nw" data-l="report" data-val="53"><span class="grade g-D">D <small>53</small></span></td>
       </tr>
       
-      <tr class="dim final">
-        <td class="c-lead"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy"><span class="fav">DEN</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png" alt="" loading="lazy"><span>JAX</span></span></td>
-        <td class="c-end"><span class="badge mute">tight spread</span></td>
-        <td class="nw" data-l="kickoff" title="Sun Sep 20, 2:05 PM Denver">2:05pm</td>
-        <td class="num nw" data-l="line"><b>-2.5</b></td>
-        <td class="num nw" data-l="o/u">45.5 <span class="sub">33 &middot; under</span></td>
-        <td class="num nw" data-l="model"><span class="text-danger">-2.1</span></td>
-        <td class="num nw" data-l="adj" title="model -2.1 -0.99 injuries (6 reports)"><span class="text-danger">-3.1</span></td>
-        <td class="num nw" data-l="proj">24–22</td>
-        <td class="num nw" data-l="score"><b>20–13</b></td>
+      <tr class="final">
+        <td class="c-lead" data-val="DEN vs JAX"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy"><span class="fav">DEN</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png" alt="" loading="lazy"><span>JAX</span></span></td>
+        <td class="c-end nw" data-val="2026-09-20T16:05:00-04:00" title="Sun Sep 20, 2:05 PM Denver">2:05pm</td>
+        <td class="num nw" data-l="line" data-val="-2.5"><b>-2.5</b></td>
+        <td class="num nw" data-l="o/u" data-val="45.5">45.5 <span class="ou under">33 under</span></td>
+        <td class="num nw" data-l="model" data-val="-2.1"><span class="text-danger">-2.1</span></td>
+        <td class="num nw" data-l="adj" data-val="-3.09" title="model -2.1 -0.99 injuries (6 reports)"><span class="text-danger">-3.1</span></td>
+        <td class="num nw" data-l="proj" data-val="2.5">24–22</td>
+        <td class="num nw" data-l="score" data-val="7"><b>20–13</b></td>
         
-        <td class="num nw" data-l="report"><span class="grade g-C">C <small>63</small></span></td>
+        <td class="num nw" data-l="report" data-val="63"><span class="grade g-C">C <small>63</small></span></td>
       </tr>
       
-      <tr class="dim final">
-        <td class="c-lead"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500-dark/car.png" alt="" loading="lazy"><span class="fav">CAR</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" alt="" loading="lazy"><span>ATL</span></span></td>
-        <td class="c-end"><span class="badge mute">tight spread</span></td>
-        <td class="nw" data-l="kickoff" title="Sun Sep 20, 11:00 AM Denver">11:00am</td>
-        <td class="num nw" data-l="line"><b>-2.5</b></td>
-        <td class="num nw" data-l="o/u">43.5 <span class="sub">37 &middot; under</span></td>
-        <td class="num nw" data-l="model"><span class="text-danger">-4.6</span></td>
-        <td class="num nw" data-l="adj" title="model -4.6 +0.00 injuries (10 reports)"><span class="text-danger">-4.6</span></td>
-        <td class="num nw" data-l="proj">23–20</td>
-        <td class="num nw" data-l="score"><b>34–3</b></td>
+      <tr class="final">
+        <td class="c-lead" data-val="CAR @ ATL"><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500-dark/car.png" alt="" loading="lazy"><span class="fav">CAR</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" alt="" loading="lazy"><span>ATL</span></span></td>
+        <td class="c-end nw" data-val="2026-09-20T13:00:00-04:00" title="Sun Sep 20, 11:00 AM Denver">11:00am</td>
+        <td class="num nw" data-l="line" data-val="-2.5"><b>-2.5</b></td>
+        <td class="num nw" data-l="o/u" data-val="43.5">43.5 <span class="ou under">37 under</span></td>
+        <td class="num nw" data-l="model" data-val="-4.59"><span class="text-danger">-4.6</span></td>
+        <td class="num nw" data-l="adj" data-val="-4.59" title="model -4.6 +0.00 injuries (10 reports)"><span class="text-danger">-4.6</span></td>
+        <td class="num nw" data-l="proj" data-val="2.5">23–20</td>
+        <td class="num nw" data-l="score" data-val="31"><b>34–3</b></td>
         
-        <td class="num nw" data-l="report"><span class="grade g-C">C <small>66</small></span></td>
+        <td class="num nw" data-l="report" data-val="66"><span class="grade g-C">C <small>66</small></span></td>
       </tr>
       
       </tbody>
@@ -1796,17 +1808,17 @@
     pane._paged={show:show, reset:function(){cur=1; show();}}; show();
   });
   // Column sort on ranked tables (data-val cells); grouped tables flatten when sorted.
-  document.querySelectorAll("table.ranktab").forEach(function(t){
-    var body=t.tBodies[0], rows=Array.prototype.slice.call(body.rows), cur=null, flip=false;
+  document.querySelectorAll("table.ranktab, table.sortable").forEach(function(t){
+    var body=t.tBodies[0], rows=Array.prototype.slice.call(body.rows), cur=null, flip=false, ranked=t.classList.contains("ranktab");
     t.querySelectorAll("th.sort").forEach(function(th){ th.addEventListener("click",function(){
-      var idx=+th.dataset.idx, high=th.dataset.best==="high";
+      var idx=+th.dataset.idx, high=th.dataset.best==="high", str=th.dataset.type==="str";
       if(cur===th){flip=!flip;} else {cur=th; flip=false;}
       t.querySelectorAll("th.sort").forEach(function(x){x.classList.toggle("on",x===th);});
       rows.slice().sort(function(a,b){
         var va=a.cells[idx]&&a.cells[idx].dataset.val, vb=b.cells[idx]&&b.cells[idx].dataset.val;
         if(!va&&!vb) return 0; if(!va) return 1; if(!vb) return -1;
-        var d=parseFloat(va)-parseFloat(vb); if(!high) d=-d; return flip?d:-d;
-      }).forEach(function(r,i){ r.classList.remove("mate"); r.cells[0].textContent=i+1; body.appendChild(r); });
+        var d=str?(va<vb?-1:va>vb?1:0):parseFloat(va)-parseFloat(vb); if(!high) d=-d; return flip?d:-d;
+      }).forEach(function(r,i){ r.classList.remove("mate"); if(ranked) r.cells[0].textContent=i+1; body.appendChild(r); });
       t.querySelectorAll(".caret").forEach(function(c){c.remove();});
       var pane=t.closest("[data-paged]"); if(pane&&pane._paged) pane._paged.reset();
     });});
@@ -1821,6 +1833,7 @@
   if(lvl){ lvl.querySelectorAll(".pill").forEach(function(b){ b.addEventListener("click",function(){
     lvl.querySelectorAll(".pill").forEach(function(x){x.classList.toggle("active",x===b);});
     var k=b.dataset.level; document.querySelectorAll(".rec").forEach(function(r){ var v=r.getAttribute("data-rec-"+k); if(v) r.textContent=v; });
+    document.querySelectorAll(".plan-cell").forEach(function(c){ var v=c.getAttribute("data-sort-"+k); if(v!==null) c.dataset.val=v; });
   });});}
 })();
 </script>
