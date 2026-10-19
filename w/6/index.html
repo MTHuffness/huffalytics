@@ -122,6 +122,18 @@
   .hfa .prose p { margin: 0 0 0.7rem; color: var(--hfa-body); }
   .hfa .prose ul { padding-left: 1.2rem; margin: 0 0 0.7rem; }
   .hfa .prose li { margin-bottom: 0.3rem; }
+  .hfa .about-toc { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0 0 1rem; }
+  .hfa .about-toc a { border-radius: 999px; padding: 0.25rem 0.75rem; font-size: 0.74rem; font-weight: 600; color: var(--hfa-muted); background: rgba(128, 128, 128, 0.12); text-decoration: none; white-space: nowrap; }
+  .hfa .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .hfa .about-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .hfa .about-grid > .hfa-card { margin-bottom: 0; min-width: 0; }
+  .hfa .about-grid .hfa-head { padding-bottom: 0; }
+  .hfa .about-grid h2 { font-size: 1.15rem; }
+  .hfa .about-grid .prose { max-width: none; }
+  .hfa .contact-mail { font-size: 1.25rem; font-weight: 800; }
+  .hfa .contact-mail a { color: var(--hfa-accent); text-decoration: none; }
+  .hfa .hfa-kpi-value a { color: inherit; text-decoration: none; }
+  @media (max-width: 1100px) { .hfa .about-grid-3 { grid-template-columns: 1fr; } }
   .hfa-hero h1 { margin: 0; font-size: 1.6rem; font-weight: 900; letter-spacing: -0.02em; text-transform: uppercase; }
   .hfa-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); border-top: var(--hfa-hairline); }
   .hfa-kpi { padding: 0.8rem 1.1rem; border-left: var(--hfa-hairline); }
@@ -325,6 +337,8 @@
 
   @media (max-width: 760px) {
     .hfa-grid { grid-template-columns: 1fr; }
+    .hfa .about-grid { grid-template-columns: 1fr; gap: 0; }
+    .hfa .about-toc { display: none; }
     /* App mode: the page pills fold into the section bar, which sticks
        under the brand; one section shows at a time. */
     .hfa-nav { display: none; }
@@ -3097,7 +3111,7 @@
 </main>
   <footer class="hfa-foot">
     <p><strong>Huffalytics</strong> publishes NFL stats, game projections, team EPA rankings and graded player prop plans priced against Kalshi, rebuilt every week from play-by-play data. <a href="/about/">How the engine works</a>.</p>
-    <p>Data as of Mon Oct 19, 4:55 PM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/data/week.json">week.json</a> · <a href="/data/rankings.json">rankings.json</a> · <a href="/sitemap.xml">sitemap</a></p>
+    <p>Data as of Mon Oct 19, 4:55 PM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/data/week.json">week.json</a> · <a href="/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
   </footer>
 </div>
 <script>
