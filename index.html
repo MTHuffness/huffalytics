@@ -1,5 +1,1058 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Huffalytics</title>
-<style>body{font-family:system-ui,sans-serif;background:#0f1218;color:#e6e8ee;display:grid;place-items:center;min-height:100vh;margin:0}p{color:#98a6ad}</style>
-</head><body><div><h1>Huffalytics</h1><p>NFL numbers are on the way. First publish pending.</p></div></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Huffalytics — NFL 2026 week 6</title>
+<meta name="description" content="NFL numbers from the Huffalytics bets engine: this week's slate with projected scores, last week's finals against the closing lines, the engine's graded record and team rankings.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23727cf5'/%3E%3Ctext x='16' y='22' font-size='17' font-weight='700' font-family='sans-serif' text-anchor='middle' fill='white'%3EH%3C/text%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("hfa-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+<style>
+  /* Huffalytics — the house design system (Powerball .pbd / NFL .nflb)
+     ported for a page with no theme behind it: tokens on :root, dark
+     by system preference or data-theme, phone tables stack into cards. */
+  :root {
+    --hfa-bg: #f3f4f8; --hfa-card: #ffffff; --hfa-body: #313a46; --hfa-muted: #6c7a86;
+    --hfa-accent: #727cf5; --hfa-good: #0a9f78; --hfa-bad: #e0435f; --hfa-warn: #d99a00;
+    --hfa-hairline: 1px solid rgba(128, 128, 128, 0.16); --hfa-tint: rgba(128, 128, 128, 0.08);
+    --hfa-radius: 16px; --hfa-shadow: 0 1px 2px rgba(20, 24, 34, 0.05), 0 10px 28px -16px rgba(20, 24, 34, 0.25);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --hfa-bg: #0f1218; --hfa-card: #171b24; --hfa-body: #e6e8ee; --hfa-muted: #98a6ad; --hfa-good: #2fd4a4; --hfa-bad: #fa5c7c; --hfa-warn: #ffbc00; --hfa-hairline: 1px solid rgba(255, 255, 255, 0.09); --hfa-tint: rgba(255, 255, 255, 0.05); }
+  }
+  :root[data-theme="dark"] { --hfa-bg: #0f1218; --hfa-card: #171b24; --hfa-body: #e6e8ee; --hfa-muted: #98a6ad; --hfa-good: #2fd4a4; --hfa-bad: #fa5c7c; --hfa-warn: #ffbc00; --hfa-hairline: 1px solid rgba(255, 255, 255, 0.09); --hfa-tint: rgba(255, 255, 255, 0.05); }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--hfa-bg); color: var(--hfa-body); font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif; font-variant-numeric: tabular-nums; }
+  a { color: inherit; }
+  .hfa { max-width: 1180px; margin: 0 auto; padding: 0 16px 3rem; }
+
+  /* Top bar */
+  .hfa-top { display: flex; align-items: center; gap: 0.75rem; padding: 0.9rem 0; }
+  .hfa-brand { white-space: nowrap; }
+  .hfa-nav { flex: 0 0 auto; }
+  .hfa-brand { display: flex; align-items: baseline; gap: 0.5rem; text-decoration: none; font-weight: 800; letter-spacing: -0.02em; font-size: 1.15rem; }
+  .hfa-brand small { font-weight: 600; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--hfa-accent); }
+  .hfa-nav { display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: rgba(128, 128, 128, 0.12); margin-left: auto; }
+  .hfa-nav a { border-radius: 999px; padding: 0.3rem 0.9rem; font-size: 0.8rem; font-weight: 600; color: var(--hfa-muted); text-decoration: none; white-space: nowrap; }
+  .hfa-nav a.active { background: var(--hfa-accent); color: #fff; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16); }
+  .hfa-theme { border: 0; background: transparent; color: var(--hfa-muted); font-size: 1.1rem; cursor: pointer; padding: 0.2rem 0.4rem; }
+
+  /* Cards */
+  .hfa-card { background: var(--hfa-card); border: var(--hfa-hairline); border-radius: var(--hfa-radius); box-shadow: var(--hfa-shadow); margin-bottom: 1rem; overflow: hidden; }
+  .hfa-head { padding: 0.9rem 1.1rem 0.6rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.75rem; }
+  .hfa-head h2 { margin: 0; font-size: 1.05rem; font-weight: 700; }
+  .hfa-head .sub { font-size: 0.78rem; color: var(--hfa-muted); }
+  .hfa-eyebrow { flex: 0 0 100%; font-size: 0.64rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); }
+  .hfa-body { padding: 0.6rem 1.1rem 1rem; }
+  .hfa-hero { position: relative; }
+  .hfa-hero::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(440px 150px at 10% -25%, rgba(114, 124, 245, 0.16), transparent 70%), radial-gradient(380px 140px at 92% -30%, rgba(22, 163, 74, 0.13), transparent 70%); }
+  .hfa-hero .hfa-head { padding-top: 1.2rem; }
+  .hfa-hero h1 { margin: 0; font-size: 1.5rem; letter-spacing: -0.01em; }
+  .hfa-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); border-top: var(--hfa-hairline); }
+  .hfa-kpi { padding: 0.8rem 1.1rem; border-left: var(--hfa-hairline); }
+  .hfa-kpi:first-child { border-left: 0; }
+  .hfa-label { font-size: 0.66rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--hfa-muted); }
+  .hfa-kpi-value { font-size: 1.3rem; font-weight: 600; line-height: 1.3; }
+  .hfa-kpi-sub { font-size: 0.78rem; color: var(--hfa-muted); }
+  .hfa-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .hfa-grid > * { min-width: 0; }
+  .hfa-grid > .hfa-card { margin-bottom: 0; }
+  .hfa-grid { margin-bottom: 1rem; }
+
+  /* Tables */
+  .hfa table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+  .hfa th { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--hfa-muted); text-align: left; padding: 0.5rem 0.7rem; border-bottom: var(--hfa-hairline); white-space: nowrap; }
+  .hfa td { padding: 0.5rem 0.7rem; border-top: 1px solid rgba(128, 128, 128, 0.08); vertical-align: middle; }
+  .hfa .num { text-align: right; }
+  .hfa tr.day > td { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-accent); background: rgba(114, 124, 245, 0.06); padding: 0.35rem 0.7rem; }
+  .hfa tr.final > td { background: var(--hfa-tint); }
+  .hfa .match { display: inline-flex; align-items: baseline; gap: 0.4rem; font-weight: 600; white-space: nowrap; }
+  .hfa .match .at { color: var(--hfa-muted); font-weight: 500; font-size: 0.8rem; }
+  .hfa .match .fav, .hfa .match .win { font-weight: 800; }
+  .hfa .match .loss { color: var(--hfa-muted); font-weight: 500; }
+  .hfa .match img { width: 20px; height: 20px; vertical-align: -5px; margin-right: 2px; }
+  .hfa .sub { font-size: 0.72rem; color: var(--hfa-muted); }
+  .hfa td .sub, .hfa .nw { white-space: nowrap; }
+  .hfa .flat { color: var(--hfa-muted); }
+  .hfa .chip { display: inline-block; font-size: 0.64rem; font-weight: 700; letter-spacing: 0.04em; padding: 0.12rem 0.45rem; border-radius: 6px; background: rgba(128, 128, 128, 0.14); color: var(--hfa-muted); vertical-align: middle; }
+  .hfa .badge { display: inline-block; border-radius: 999px; font-weight: 600; font-size: 0.7rem; padding: 0.3em 0.7em; white-space: nowrap; }
+  .hfa .badge.good { background: rgba(10, 207, 151, 0.16); color: var(--hfa-good); }
+  .hfa .badge.bad { background: rgba(250, 92, 124, 0.14); color: var(--hfa-bad); }
+  .hfa .badge.warn { background: rgba(255, 188, 0, 0.18); color: var(--hfa-warn); }
+  .hfa .badge.acc { background: rgba(114, 124, 245, 0.16); color: var(--hfa-accent); }
+  .hfa .badge.mute { background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); }
+  .hfa .text-success, .hfa .up { color: var(--hfa-good); }
+  .hfa .text-danger, .hfa .down { color: var(--hfa-bad); }
+  .hfa .proj { font-weight: 600; }
+  .hfa .empty { color: var(--hfa-muted); padding: 1.25rem 1.1rem; font-size: 0.86rem; }
+
+  /* Market trends */
+  .hfa .trend + .trend { margin-top: 0.8rem; padding-top: 0.8rem; border-top: var(--hfa-hairline); }
+  .hfa .trend-rec { font-size: 1.1rem; font-weight: 700; line-height: 1.2; }
+  .hfa .splitbar { display: flex; height: 6px; border-radius: 3px; overflow: hidden; background: rgba(128, 128, 128, 0.16); margin-top: 0.4rem; }
+  .hfa .splitbar > i { background: var(--hfa-accent); }
+  .hfa .splitbar > b { background: rgba(128, 128, 128, 0.35); flex: 1; }
+
+  /* Rankings */
+  .hfa .tabs { display: inline-flex; gap: 2px; padding: 3px; border-radius: 999px; background: rgba(128, 128, 128, 0.12); margin: 0 1.1rem 0.6rem; }
+  .hfa .tabs button { border: 0; border-radius: 999px; padding: 0.3rem 0.9rem; font-size: 0.8rem; font-weight: 600; color: var(--hfa-muted); background: transparent; cursor: pointer; }
+  .hfa .tabs button.active { background: var(--hfa-accent); color: #fff; }
+  .hfa .pane { display: none; }
+  .hfa .pane.active { display: block; }
+  .hfa .scroll { overflow-x: auto; }
+  .hfa .rank th.sort { cursor: pointer; }
+  .hfa .rank th.sort.on { color: var(--hfa-accent); }
+  .hfa .rank td.team { font-weight: 600; white-space: nowrap; }
+  .hfa .rank td.team img { width: 20px; height: 20px; vertical-align: -5px; margin-right: 4px; }
+  .hfa .rank .ord { font-size: 0.66rem; color: var(--hfa-muted); margin-left: 0.25rem; }
+  .hfa .rank .delta { font-size: 0.66rem; margin-left: 0.25rem; }
+  .hfa .rank td:first-child, .hfa .rank th:first-child { position: sticky; left: 0; background: var(--hfa-card); z-index: 1; }
+  .hfa .rank td.team, .hfa .rank th.team { position: sticky; left: 2.4rem; background: var(--hfa-card); z-index: 1; box-shadow: inset -1px 0 0 rgba(128, 128, 128, 0.18); }
+
+  .hfa-foot { color: var(--hfa-muted); font-size: 0.76rem; padding: 1rem 0.25rem; line-height: 1.6; }
+  .hfa-foot a { color: var(--hfa-muted); }
+
+  @media (max-width: 760px) {
+    .hfa-grid { grid-template-columns: 1fr; }
+    .hfa-top { gap: 0.5rem; }
+    .hfa-brand { font-size: 1rem; }
+    .hfa-kpis { grid-template-columns: repeat(2, 1fr); }
+    .hfa-kpi:nth-child(odd) { border-left: 0; }
+    /* Stacked game tables: one card per row. Cells become labeled
+       chips (data-l); .c-lead leads the top line, .c-end sits right. */
+    .hfa table.stack, .hfa table.stack > tbody { display: block; width: 100%; }
+    .hfa table.stack > thead { display: none; }
+    .hfa table.stack > tbody > tr { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 0.3rem 0.45rem; padding: 0.65rem 0.9rem 0.7rem; border-bottom: var(--hfa-hairline); }
+    .hfa table.stack > tbody > tr.day { padding: 0.35rem 0.9rem; }
+    .hfa table.stack > tbody > tr.day > td { background: transparent; padding: 0; }
+    .hfa table.stack > tbody > tr > td, .hfa table.stack > tbody > tr > td.nw { order: 5; display: inline-flex; align-items: baseline; gap: 0.3rem; padding: 0.2rem 0.5rem; border: 0; border-radius: 8px; background: rgba(128, 128, 128, 0.09); font-size: 0.76rem; line-height: 1.3; text-align: left; white-space: normal; }
+    .hfa table.stack > tbody > tr > td[data-l]::before { content: attr(data-l); font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--hfa-muted); }
+    .hfa table.stack > tbody > tr > td.c-lead, .hfa table.stack > tbody > tr > td.c-end, .hfa table.stack > tbody > tr > td.c-plain { display: block; padding: 0; background: transparent; font-size: inherit; }
+    .hfa table.stack > tbody > tr > td.c-lead { order: 0; flex: 1 1 0; }
+    .hfa table.stack > tbody > tr > td.c-end { order: 1; text-align: right; font-size: 0.78rem; color: var(--hfa-muted); }
+    .hfa table.stack > tbody > tr::after { content: ""; order: 3; flex: 0 0 100%; height: 0; }
+    .hfa table.stack > tbody > tr > td.c-plain { order: 5; }
+    .hfa table.stack > tbody > tr > td.c-plain:has(> .flat:only-child) { display: none; }
+    .hfa table.stack > tbody > tr > td.c-plain .badge + .badge { margin-left: 0.2rem; }
+    .hfa table.stack .match { flex-wrap: wrap; font-size: 0.95rem; }
+    .hfa-card:has(> .scroll), .hfa-card { border-left: 0; border-right: 0; border-radius: 0; box-shadow: none; }
+    .hfa { padding: 0; }
+    .hfa-top, .hfa-foot { padding-left: 16px; padding-right: 16px; }
+  }
+</style>
+
+</head>
+<body>
+<div class="hfa">
+  <div class="hfa-top">
+    <a class="hfa-brand" href="/">Huffalytics <small>NFL</small></a>
+    <nav class="hfa-nav">
+      <a href="/" class="active">This week</a>
+      <a href="/rankings/" class="">Rankings</a>
+    </nav>
+    <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
+  </div>
+  
+
+  <div class="hfa-card hfa-hero">
+    <div class="hfa-head">
+      <div class="hfa-eyebrow">NFL &middot; 2026 season</div>
+      <h1>Week 6</h1>
+      <span class="sub">13 of 14 games final &middot; next kickoff WAS @ SF, Monday, Oct 19 6:15 PM Denver <span id="hfa-next" data-ts="1792455300"></span></span>
+    </div>
+    <div class="hfa-kpis">
+      
+      <div class="hfa-kpi"><div class="hfa-label">Engine vs Kalshi</div><div class="hfa-kpi-value">34.9% hit</div><div class="hfa-kpi-sub">engine said 33.9%, Kalshi 35.4% &middot; 6056 legs</div></div>
+      
+      
+      <div class="hfa-kpi"><div class="hfa-label">Graded legs, 2026</div><div class="hfa-kpi-value">13437 / 37332</div><div class="hfa-kpi-sub">36.0% hit vs 35.7% claimed &middot; 6 weeks</div></div>
+      
+      
+      <div class="hfa-kpi"><div class="hfa-label">Average total, 2026</div><div class="hfa-kpi-value">46.2</div><div class="hfa-kpi-sub">closing line 45.0 &middot; 64 games</div></div>
+      
+      <div class="hfa-kpi"><div class="hfa-label">Data as of</div><div class="hfa-kpi-value" style="font-size: 1rem">Mon Oct 19, 2:33 PM</div><div class="hfa-kpi-sub">Denver time</div></div>
+    </div>
+  </div>
+
+  <div class="hfa-card">
+    <div class="hfa-head">
+      <div class="hfa-eyebrow">Slate</div>
+      <h2>Week 6</h2>
+      <span class="sub">Closing line (nflverse), market total, the implied score, and the engine's own line from its efficiency ratings entering the week, with whether it agrees with the market on the favorite. Finals show the score and who covered.</span>
+    </div>
+    <div class="scroll">
+    <table class="stack">
+      <thead><tr><th>Kickoff</th><th>Matchup</th><th class="num">Line</th><th class="num">Total</th><th class="num">Implied</th><th class="num">Engine</th><th>Result</th></tr></thead>
+      <tbody>
+        
+        
+          <tr class="day"><td colspan="7">Thursday, Oct 15</td></tr>
+          
+<tr class="final">
+  <td class="c-end nw">6:15 PM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy">SEA 14</span>
+      <span class="at">@</span>
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy">DEN 17</span>
+    </span>
+    <span class="chip">OT</span>
+    
+  </td>
+  <td class="num nw" data-l="line"><b>SEA −2.5</b></td>
+  <td class="num" data-l="total">40.5</td>
+  
+  <td class="num" data-l="implied">21.5 <span class="flat">&ndash;</span> 19.0</td>
+  <td class="num nw" data-l="engine" title="The engine's own line from its efficiency ratings entering the week; the edge is how far it sits from the closing line, from the favorite's side"><span class="proj">SEA −0.4</span> <span class="sub up" title="Agrees with the market on the favorite">✓</span></td>
+  
+  <td class="c-plain">
+    
+      <span class="badge warn" title="The underdog covered">DEN covered</span>
+      <span class="badge bad">Under</span>
+    
+  </td>
+</tr>
+
+        
+          <tr class="day"><td colspan="7">Sunday, Oct 18</td></tr>
+          
+<tr class="final">
+  <td class="c-end nw">7:30 AM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/hou.png" alt="" loading="lazy">HOU 34</span>
+      <span class="at">@</span>
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png" alt="" loading="lazy">JAX 31</span>
+    </span>
+    
+    <span class="chip" title="Division game">DIV</span>
+  </td>
+  <td class="num nw" data-l="line"><b>JAX −2.5</b></td>
+  <td class="num" data-l="total">42.5</td>
+  
+  <td class="num" data-l="implied">20.0 <span class="flat">&ndash;</span> 22.5</td>
+  <td class="num nw" data-l="engine" title="The engine's own line from its efficiency ratings entering the week; the edge is how far it sits from the closing line, from the favorite's side"><span class="proj">JAX −5.9</span> <span class="sub up" title="Agrees with the market on the favorite">✓</span></td>
+  
+  <td class="c-plain">
+    
+      <span class="badge warn" title="The underdog covered">HOU covered</span>
+      <span class="badge good">Over</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">11:00 AM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy">CHI 31</span>
+      <span class="at">@</span>
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" alt="" loading="lazy">ATL 23</span>
+    </span>
+    
+    
+  </td>
+  <td class="num nw" data-l="line"><b>CHI −1.5</b></td>
+  <td class="num" data-l="total">51.5</td>
+  
+  <td class="num" data-l="implied">26.5 <span class="flat">&ndash;</span> 25.0</td>
+  <td class="num nw" data-l="engine" title="The engine's own line from its efficiency ratings entering the week; the edge is how far it sits from the closing line, from the favorite's side"><span class="proj">ATL −1.4</span> <span class="sub down" title="Leans the other way from the market">✗</span></td>
+  
+  <td class="c-plain">
+    
+      <span class="badge acc" title="The favorite covered">CHI covered</span>
+      <span class="badge good">Over</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">11:00 AM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy">BAL 10</span>
+      <span class="at">@</span>
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" alt="" loading="lazy">CLE 13</span>
+    </span>
+    
+    <span class="chip" title="Division game">DIV</span>
+  </td>
+  <td class="num nw" data-l="line"><b>BAL −3</b></td>
+  <td class="num" data-l="total">39.5</td>
+  
+  <td class="num" data-l="implied">21.3 <span class="flat">&ndash;</span> 18.3</td>
+  <td class="num nw" data-l="engine" title="The engine's own line from its efficiency ratings entering the week; the edge is how far it sits from the closing line, from the favorite's side"><span class="proj">BAL −3.9</span> <span class="sub up" title="Agrees with the market on the favorite">✓</span></td>
+  
+  <td class="c-plain">
+    
+      <span class="badge warn" title="The underdog covered">CLE covered</span>
+      <span class="badge bad">Under</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">11:00 AM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" alt="" loading="lazy">TEN 26</span>
+      <span class="at">@</span>
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" alt="" loading="lazy">IND 20</span>
+    </span>
+    
+    <span class="chip" title="Division game">DIV</span>
+  </td>
+  <td class="num nw" data-l="line"><b>IND −6.5</b></td>
+  <td class="num" data-l="total">43.5</td>
+  
+  <td class="num" data-l="implied">18.5 <span class="flat">&ndash;</span> 25.0</td>
+  <td class="num nw" data-l="engine" title="The engine's own line from its efficiency ratings entering the week; the edge is how far it sits from the closing line, from the favorite's side"><span class="proj">IND −6.8</span> <span class="sub up" title="Agrees with the market on the favorite">✓</span></td>
+  
+  <td class="c-plain">
+    
+      <span class="badge warn" title="The underdog covered">TEN covered</span>
+      <span class="badge good">Over</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">11:00 AM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy">NYJ 19</span>
+      <span class="at">@</span>
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy">NE 26</span>
+    </span>
+    
+    <span class="chip" title="Division game">DIV</span>
+  </td>
+  <td class="num nw" data-l="line"><b>NE −7.5</b></td>
+  <td class="num" data-l="total">43.5</td>
+  
+  <td class="num" data-l="implied">18.0 <span class="flat">&ndash;</span> 25.5</td>
+  <td class="num nw" data-l="engine" title="The engine's own line from its efficiency ratings entering the week; the edge is how far it sits from the closing line, from the favorite's side"><span class="proj">NE −5.3</span> <span class="sub up" title="Agrees with the market on the favorite">✓</span></td>
+  
+  <td class="c-plain">
+    
+      <span class="badge warn" title="The underdog covered">NYJ covered</span>
+      <span class="badge good">Over</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">11:00 AM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/no.png" alt="" loading="lazy">NO 34</span>
+      <span class="at">@</span>
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png" alt="" loading="lazy">NYG 27</span>
+    </span>
+    
+    
+  </td>
+  <td class="num nw" data-l="line"><b>NO −1.5</b></td>
+  <td class="num" data-l="total">46.5</td>
+  
+  <td class="num" data-l="implied">24.0 <span class="flat">&ndash;</span> 22.5</td>
+  <td class="num nw" data-l="engine" title="The engine's own line from its efficiency ratings entering the week; the edge is how far it sits from the closing line, from the favorite's side"><span class="proj">NYG −4.5</span> <span class="sub down" title="Leans the other way from the market">✗</span></td>
+  
+  <td class="c-plain">
+    
+      <span class="badge acc" title="The favorite covered">NO covered</span>
+      <span class="badge good">Over</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">11:00 AM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500-dark/car.png" alt="" loading="lazy">CAR 25</span>
+      <span class="at">@</span>
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" alt="" loading="lazy">PHI 14</span>
+    </span>
+    
+    
+  </td>
+  <td class="num nw" data-l="line"><b>CAR −3</b></td>
+  <td class="num" data-l="total">39.5</td>
+  
+  <td class="num" data-l="implied">21.3 <span class="flat">&ndash;</span> 18.3</td>
+  <td class="num nw" data-l="engine" title="The engine's own line from its efficiency ratings entering the week; the edge is how far it sits from the closing line, from the favorite's side"><span class="proj">CAR −0.7</span> <span class="sub up" title="Agrees with the market on the favorite">✓</span></td>
+  
+  <td class="c-plain">
+    
+      <span class="badge acc" title="The favorite covered">CAR covered</span>
+      <span class="badge bad">Under</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">11:00 AM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/pit.png" alt="" loading="lazy">PIT 26</span>
+      <span class="at">@</span>
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/tb.png" alt="" loading="lazy">TB 19</span>
+    </span>
+    <span class="chip">OT</span>
+    
+  </td>
+  <td class="num nw" data-l="line"><b>PIT −2.5</b></td>
+  <td class="num" data-l="total">38.5</td>
+  
+  <td class="num" data-l="implied">20.5 <span class="flat">&ndash;</span> 18.0</td>
+  <td class="num nw" data-l="engine" title="The engine's own line from its efficiency ratings entering the week; the edge is how far it sits from the closing line, from the favorite's side"><span class="proj">PIT −0.4</span> <span class="sub up" title="Agrees with the market on the favorite">✓</span></td>
+  
+  <td class="c-plain">
+    
+      <span class="badge acc" title="The favorite covered">PIT covered</span>
+      <span class="badge good">Over</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">2:05 PM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy">ARI 18</span>
+      <span class="at">@</span>
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" alt="" loading="lazy">LA 16</span>
+    </span>
+    
+    <span class="chip" title="Division game">DIV</span>
+  </td>
+  <td class="num nw" data-l="line"><b>LA −12.5</b></td>
+  <td class="num" data-l="total">51.5</td>
+  
+  <td class="num" data-l="implied">19.5 <span class="flat">&ndash;</span> 32.0</td>
+  <td class="num nw" data-l="engine" title="The engine's own line from its efficiency ratings entering the week; the edge is how far it sits from the closing line, from the favorite's side"><span class="proj">LA −10.5</span> <span class="sub up" title="Agrees with the market on the favorite">✓</span></td>
+  
+  <td class="c-plain">
+    
+      <span class="badge warn" title="The underdog covered">ARI covered</span>
+      <span class="badge bad">Under</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">2:25 PM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" alt="" loading="lazy">LAC 6</span>
+      <span class="at">@</span>
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy">KC 22</span>
+    </span>
+    
+    <span class="chip" title="Division game">DIV</span>
+  </td>
+  <td class="num nw" data-l="line"><b>KC −7.5</b></td>
+  <td class="num" data-l="total">41.5</td>
+  
+  <td class="num" data-l="implied">17.0 <span class="flat">&ndash;</span> 24.5</td>
+  <td class="num nw" data-l="engine" title="The engine's own line from its efficiency ratings entering the week; the edge is how far it sits from the closing line, from the favorite's side"><span class="proj">KC −9.7</span> <span class="sub up" title="Agrees with the market on the favorite">✓</span></td>
+  
+  <td class="c-plain">
+    
+      <span class="badge acc" title="The favorite covered">KC covered</span>
+      <span class="badge bad">Under</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">2:25 PM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png" alt="" loading="lazy">BUF 33</span>
+      <span class="at">@</span>
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" alt="" loading="lazy">LV 30</span>
+    </span>
+    
+    
+  </td>
+  <td class="num nw" data-l="line"><b>BUF −5.5</b></td>
+  <td class="num" data-l="total">53.5</td>
+  
+  <td class="num" data-l="implied">29.5 <span class="flat">&ndash;</span> 24.0</td>
+  <td class="num nw" data-l="engine" title="The engine's own line from its efficiency ratings entering the week; the edge is how far it sits from the closing line, from the favorite's side"><span class="proj">BUF −0.3</span> <span class="sub up" title="Agrees with the market on the favorite">✓</span></td>
+  
+  <td class="c-plain">
+    
+      <span class="badge warn" title="The underdog covered">LV covered</span>
+      <span class="badge good">Over</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">6:20 PM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="" loading="lazy">DAL 13</span>
+      <span class="at">@</span>
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy">GB 23</span>
+    </span>
+    
+    
+  </td>
+  <td class="num nw" data-l="line"><b>DAL −1.5</b></td>
+  <td class="num" data-l="total">53.5</td>
+  
+  <td class="num" data-l="implied">27.5 <span class="flat">&ndash;</span> 26.0</td>
+  <td class="num nw" data-l="engine" title="The engine's own line from its efficiency ratings entering the week; the edge is how far it sits from the closing line, from the favorite's side"><span class="proj">GB −3.5</span> <span class="sub down" title="Leans the other way from the market">✗</span></td>
+  
+  <td class="c-plain">
+    
+      <span class="badge warn" title="The underdog covered">GB covered</span>
+      <span class="badge bad">Under</span>
+    
+  </td>
+</tr>
+
+        
+          <tr class="day"><td colspan="7">Monday, Oct 19</td></tr>
+          
+<tr class="">
+  <td class="c-end nw">6:15 PM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class=""><img src="https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png" alt="" loading="lazy">WAS</span>
+      <span class="at">@</span>
+      <span class="fav"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sf.png" alt="" loading="lazy">SF</span>
+    </span>
+    
+    
+  </td>
+  <td class="num nw" data-l="line"><b>SF −7.5</b></td>
+  <td class="num" data-l="total">51.5</td>
+  
+  <td class="num" data-l="implied">22.0 <span class="flat">&ndash;</span> 29.5</td>
+  <td class="num nw" data-l="engine" title="The engine's own line from its efficiency ratings entering the week; the edge is how far it sits from the closing line, from the favorite's side"><span class="proj">SF −10.1</span> <span class="sub up" title="Agrees with the market on the favorite">✓</span></td>
+  
+  <td class="c-plain">
+    <span class="flat">&mdash;</span>
+  </td>
+</tr>
+
+        
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="hfa-grid">
+    <div class="hfa-card">
+      <div class="hfa-head">
+        <div class="hfa-eyebrow">Last week</div>
+        <h2>Week 5 finals</h2>
+        <span class="sub">Against the closing line and total.</span>
+      </div>
+      
+      <div class="scroll">
+      <table class="stack">
+        <thead><tr><th>Kickoff</th><th>Final</th><th class="num">Line</th><th class="num">Total</th><th>Result</th></tr></thead>
+        <tbody>
+<tr class="final">
+  <td class="c-end nw">Thu 6:15 PM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/tb.png" alt="" loading="lazy">TB 24</span>
+      <span class="at">@</span>
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="" loading="lazy">DAL 16</span>
+    </span>
+    
+    
+  </td>
+  <td class="num nw" data-l="line"><b>DAL −9.5</b></td>
+  <td class="num" data-l="total">49.5</td>
+  
+  <td class="c-plain">
+    
+      <span class="badge warn" title="The underdog covered">TB covered</span>
+      <span class="badge bad">Under</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">Sun 7:30 AM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" alt="" loading="lazy">PHI 17</span>
+      <span class="at">@</span>
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png" alt="" loading="lazy">JAX 19</span>
+    </span>
+    
+    
+  </td>
+  <td class="num nw" data-l="line"><b>JAX −7.5</b></td>
+  <td class="num" data-l="total">41.5</td>
+  
+  <td class="c-plain">
+    
+      <span class="badge warn" title="The underdog covered">PHI covered</span>
+      <span class="badge bad">Under</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">Sun 11:00 AM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy">CIN 31</span>
+      <span class="at">@</span>
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy">MIA 24</span>
+    </span>
+    
+    
+  </td>
+  <td class="num nw" data-l="line"><b>CIN −7</b></td>
+  <td class="num" data-l="total">44.5</td>
+  
+  <td class="c-plain">
+    
+      <span class="badge mute">ATS push</span>
+      
+      <span class="badge good">Over</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">Sun 11:00 AM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" alt="" loading="lazy">LV 17</span>
+      <span class="at">@</span>
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy">NE 45</span>
+    </span>
+    
+    
+  </td>
+  <td class="num nw" data-l="line"><b>NE −3.5</b></td>
+  <td class="num" data-l="total">45.5</td>
+  
+  <td class="c-plain">
+    
+      <span class="badge acc" title="The favorite covered">NE covered</span>
+      <span class="badge good">Over</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">Sun 11:00 AM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/min.png" alt="" loading="lazy">MIN 23</span>
+      <span class="at">@</span>
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/no.png" alt="" loading="lazy">NO 13</span>
+    </span>
+    
+    
+  </td>
+  <td class="num nw" data-l="line"><b>MIN −2.5</b></td>
+  <td class="num" data-l="total">41.5</td>
+  
+  <td class="c-plain">
+    
+      <span class="badge acc" title="The favorite covered">MIN covered</span>
+      <span class="badge bad">Under</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">Sun 11:00 AM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" alt="" loading="lazy">CLE 12</span>
+      <span class="at">@</span>
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy">NYJ 17</span>
+    </span>
+    
+    
+  </td>
+  <td class="num nw" data-l="line"><b>NYJ −2.5</b></td>
+  <td class="num" data-l="total">38.5</td>
+  
+  <td class="c-plain">
+    
+      <span class="badge acc" title="The favorite covered">NYJ covered</span>
+      <span class="badge bad">Under</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">Sun 11:00 AM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" alt="" loading="lazy">IND 22</span>
+      <span class="at">@</span>
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/pit.png" alt="" loading="lazy">PIT 34</span>
+    </span>
+    
+    
+  </td>
+  <td class="num nw" data-l="line"><b>PIT −3</b></td>
+  <td class="num" data-l="total">41.5</td>
+  
+  <td class="c-plain">
+    
+      <span class="badge acc" title="The favorite covered">PIT covered</span>
+      <span class="badge good">Over</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">Sun 11:00 AM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/hou.png" alt="" loading="lazy">HOU 26</span>
+      <span class="at">@</span>
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" alt="" loading="lazy">TEN 3</span>
+    </span>
+    
+    
+  </td>
+  <td class="num nw" data-l="line"><b>HOU −6.5</b></td>
+  <td class="num" data-l="total">37.5</td>
+  
+  <td class="c-plain">
+    
+      <span class="badge acc" title="The favorite covered">HOU covered</span>
+      <span class="badge bad">Under</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">Sun 11:00 AM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class=""><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png" alt="" loading="lazy">NYG 27</span>
+      <span class="at">@</span>
+      <span class=""><img src="https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png" alt="" loading="lazy">WAS 27</span>
+    </span>
+    <span class="chip">OT</span>
+    
+  </td>
+  <td class="num nw" data-l="line"><b>WAS −3.5</b></td>
+  <td class="num" data-l="total">41.5</td>
+  
+  <td class="c-plain">
+    
+      <span class="badge warn" title="The underdog covered">NYG covered</span>
+      <span class="badge good">Over</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">Sun 11:00 AM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy">CHI 7</span>
+      <span class="at">@</span>
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy">GB 31</span>
+    </span>
+    
+    
+  </td>
+  <td class="num nw" data-l="line"><b>CHI −1.5</b></td>
+  <td class="num" data-l="total">46.5</td>
+  
+  <td class="c-plain">
+    
+      <span class="badge warn" title="The underdog covered">GB covered</span>
+      <span class="badge bad">Under</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">Sun 2:05 PM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy">DEN 23</span>
+      <span class="at">@</span>
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" alt="" loading="lazy">LAC 17</span>
+    </span>
+    
+    
+  </td>
+  <td class="num nw" data-l="line"><b>DEN −3.5</b></td>
+  <td class="num" data-l="total">42.5</td>
+  
+  <td class="c-plain">
+    
+      <span class="badge acc" title="The favorite covered">DEN covered</span>
+      <span class="badge bad">Under</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">Sun 2:25 PM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy">DET 45</span>
+      <span class="at">@</span>
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy">ARI 21</span>
+    </span>
+    
+    
+  </td>
+  <td class="num nw" data-l="line"><b>DET −5.5</b></td>
+  <td class="num" data-l="total">55.5</td>
+  
+  <td class="c-plain">
+    
+      <span class="badge acc" title="The favorite covered">DET covered</span>
+      <span class="badge good">Over</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">Sun 2:25 PM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sf.png" alt="" loading="lazy">SF 32</span>
+      <span class="at">@</span>
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy">SEA 29</span>
+    </span>
+    
+    
+  </td>
+  <td class="num nw" data-l="line"><b>SEA −3</b></td>
+  <td class="num" data-l="total">46.5</td>
+  
+  <td class="c-plain">
+    
+      <span class="badge warn" title="The underdog covered">SF covered</span>
+      <span class="badge good">Over</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">Sun 6:20 PM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy">BAL 30</span>
+      <span class="at">@</span>
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" alt="" loading="lazy">ATL 23</span>
+    </span>
+    <span class="chip">OT</span>
+    
+  </td>
+  <td class="num nw" data-l="line"><b>ATL −3.5</b></td>
+  <td class="num" data-l="total">44.5</td>
+  
+  <td class="c-plain">
+    
+      <span class="badge warn" title="The underdog covered">BAL covered</span>
+      <span class="badge good">Over</span>
+    
+  </td>
+</tr>
+
+<tr class="final">
+  <td class="c-end nw">Mon 6:15 PM</td>
+  <td class="c-lead">
+    <span class="match">
+      <span class="win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png" alt="" loading="lazy">BUF 37</span>
+      <span class="at">@</span>
+      <span class="loss"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" alt="" loading="lazy">LA 34</span>
+    </span>
+    <span class="chip">OT</span>
+    
+  </td>
+  <td class="num nw" data-l="line"><b>LA −3.5</b></td>
+  <td class="num" data-l="total">55.5</td>
+  
+  <td class="c-plain">
+    
+      <span class="badge warn" title="The underdog covered">BUF covered</span>
+      <span class="badge good">Over</span>
+    
+  </td>
+</tr>
+</tbody>
+      </table>
+      </div>
+      
+    </div>
+
+    <div>
+      
+      <div class="hfa-card">
+        <div class="hfa-head">
+          <div class="hfa-eyebrow">Engine vs the market</div>
+          <h2>Scored against Kalshi</h2>
+          <span class="sub">Every graded leg Kalshi priced at kickoff, 2026 week 5 on. Each side's claimed chance against the hit rate; Brier is lower-is-better.</span>
+        </div>
+        <div class="scroll">
+        <table>
+          <thead><tr><th>Market</th><th class="num">Legs</th><th class="num">Hit</th><th class="num">Engine</th><th class="num">Kalshi</th><th class="num">Brier E / K</th></tr></thead>
+          <tbody>
+            
+            <tr><td>Rush yds</td><td class="num">756</td><td class="num">30.6%</td><td class="num">35.3%</td><td class="num">37.2%</td><td class="num"><span class="">0.165</span> / <span class="up">0.158</span></td></tr>
+            
+            <tr><td>Rec yds</td><td class="num">1895</td><td class="num">32.2%</td><td class="num">30.4%</td><td class="num">31.2%</td><td class="num"><span class="">0.172</span> / <span class="up">0.159</span></td></tr>
+            
+            <tr><td>Rush+rec yds</td><td class="num">192</td><td class="num">22.9%</td><td class="num">26.4%</td><td class="num">28.4%</td><td class="num"><span class="">0.163</span> / <span class="up">0.150</span></td></tr>
+            
+            <tr><td>Receptions</td><td class="num">1519</td><td class="num">36.3%</td><td class="num">34.0%</td><td class="num">35.6%</td><td class="num"><span class="">0.152</span> / <span class="up">0.146</span></td></tr>
+            
+            <tr><td>Pass yds</td><td class="num">490</td><td class="num">42.9%</td><td class="num">39.9%</td><td class="num">41.5%</td><td class="num"><span class="">0.166</span> / <span class="up">0.151</span></td></tr>
+            
+            <tr><td>Pass TDs</td><td class="num">223</td><td class="num">35.9%</td><td class="num">35.7%</td><td class="num">36.3%</td><td class="num"><span class="">0.140</span> / <span class="up">0.139</span></td></tr>
+            
+            <tr><td>Pass att</td><td class="num">168</td><td class="num">54.8%</td><td class="num">45.3%</td><td class="num">50.0%</td><td class="num"><span class="">0.209</span> / <span class="up">0.204</span></td></tr>
+            
+            <tr><td>Completions</td><td class="num">168</td><td class="num">53.0%</td><td class="num">46.8%</td><td class="num">51.0%</td><td class="num"><span class="">0.176</span> / <span class="up">0.169</span></td></tr>
+            
+            <tr><td>INTs</td><td class="num">168</td><td class="num">21.4%</td><td class="num">24.0%</td><td class="num">23.8%</td><td class="num"><span class="">0.133</span> / <span class="up">0.131</span></td></tr>
+            
+            <tr><td>Carries</td><td class="num">207</td><td class="num">44.9%</td><td class="num">46.4%</td><td class="num">48.3%</td><td class="num"><span class="">0.217</span> / <span class="up">0.213</span></td></tr>
+            
+            <tr><td>Anytime TD</td><td class="num">270</td><td class="num">28.9%</td><td class="num">28.7%</td><td class="num">29.5%</td><td class="num"><span class="">0.189</span> / <span class="up">0.183</span></td></tr>
+            
+            <tr><td><b>All markets</b></td><td class="num"><b>6056</b></td><td class="num"><b>34.9%</b></td><td class="num">33.9%</td><td class="num">35.4%</td><td class="num"><span class="">0.167</span> / <span class="up">0.158</span></td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      
+
+      
+      <div class="hfa-card">
+        <div class="hfa-head">
+          <div class="hfa-eyebrow">Engine record</div>
+          <h2>2026 graded legs</h2>
+          <span class="sub">Hit rate against the chance the engine claimed, by bet type. Over 6 weeks; all seasons since 2016 below.</span>
+        </div>
+        <div class="scroll">
+        <table>
+          <thead><tr><th>Bet type</th><th class="num">Legs</th><th class="num">Hit</th><th class="num">Claimed</th><th class="num">Diff</th></tr></thead>
+          <tbody>
+            
+            <tr><td>Rush yds</td><td class="num">4900</td><td class="num">35.6%</td><td class="num">38.7%</td><td class="num"><span class="down">-3.1</span></td></tr>
+            
+            <tr><td>Rec yds</td><td class="num">13000</td><td class="num">33.9%</td><td class="num">34.2%</td><td class="num"><span class="down">-0.3</span></td></tr>
+            
+            <tr><td>Rush+rec yds</td><td class="num">3144</td><td class="num">34.2%</td><td class="num">35.9%</td><td class="num"><span class="down">-1.7</span></td></tr>
+            
+            <tr><td>Receptions</td><td class="num">5427</td><td class="num">37.0%</td><td class="num">37.0%</td><td class="num"><span class="down">0.0</span></td></tr>
+            
+            <tr><td>Pass yds</td><td class="num">5025</td><td class="num">39.5%</td><td class="num">35.9%</td><td class="num"><span class="up">3.5</span></td></tr>
+            
+            <tr><td>Pass TDs</td><td class="num">609</td><td class="num">45.0%</td><td class="num">42.3%</td><td class="num"><span class="up">2.7</span></td></tr>
+            
+            <tr><td>Pass att</td><td class="num">1223</td><td class="num">40.3%</td><td class="num">34.2%</td><td class="num"><span class="up">6.1</span></td></tr>
+            
+            <tr><td>Completions</td><td class="num">1038</td><td class="num">38.1%</td><td class="num">33.1%</td><td class="num"><span class="up">5.0</span></td></tr>
+            
+            <tr><td>INTs</td><td class="num">424</td><td class="num">28.5%</td><td class="num">29.8%</td><td class="num"><span class="down">-1.3</span></td></tr>
+            
+            <tr><td>Carries</td><td class="num">1467</td><td class="num">39.9%</td><td class="num">37.6%</td><td class="num"><span class="up">2.2</span></td></tr>
+            
+            <tr><td>Anytime TD</td><td class="num">891</td><td class="num">29.4%</td><td class="num">27.9%</td><td class="num"><span class="up">1.5</span></td></tr>
+            
+            <tr><td>Moneyline</td><td class="num">184</td><td class="num">49.5%</td><td class="num">50.0%</td><td class="num"><span class="down">-0.5</span></td></tr>
+            
+            <tr><td><b>All bet types</b></td><td class="num"><b>37332</b></td><td class="num"><b>36.0%</b></td><td class="num">35.7%</td><td class="num"><span class="up">0.3</span></td></tr>
+            <tr><td class="flat">All seasons</td><td class="num flat">267554</td><td class="num flat">38.5%</td><td class="num flat">37.3%</td><td class="num flat">1.2</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      
+
+      
+      <div class="hfa-card">
+        <div class="hfa-head">
+          <div class="hfa-eyebrow">Market trends</div>
+          <h2>How the closing lines held up, 2026</h2>
+          <span class="sub">64 finals through week 4 (the books' weeks; from week 5 the engine is read against Kalshi) &middot; 2025 beside each.</span>
+        </div>
+        <div class="hfa-body">
+          
+          <div class="trend">
+            <div class="hfa-label">Favorites ATS</div>
+            <div class="trend-rec">27–32–5 <span class="sub">45.8% fav &middot; 2025: 48.6%</span></div>
+            <div class="splitbar"><i style="width: 46%"></i><b></b></div>
+          </div>
+          
+          <div class="trend">
+            <div class="hfa-label">Home teams ATS</div>
+            <div class="trend-rec">30–29–5 <span class="sub">50.8% home &middot; 2025: 50.7%</span></div>
+            <div class="splitbar"><i style="width: 51%"></i><b></b></div>
+          </div>
+          
+          <div class="trend">
+            <div class="hfa-label">Overs</div>
+            <div class="trend-rec">32–32 <span class="sub">50.0% over &middot; 2025: 51.9%</span></div>
+            <div class="splitbar"><i style="width: 50%"></i><b></b></div>
+          </div>
+          
+          <div class="trend">
+            <div class="hfa-label">Favorites outright</div>
+            <div class="trend-rec">41–23 <span class="sub">64.1% fav &middot; 2025: 65.8%</span></div>
+            <div class="splitbar"><i style="width: 64%"></i><b></b></div>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <div class="hfa-foot">
+    Data as of Mon Oct 19, 2:33 PM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine.
+    Nothing here is betting advice. <a href="/data/week.json">week.json</a> · <a href="/data/rankings.json">rankings.json</a>
+  </div>
+</div>
+<script>
+(function(){
+  var b=document.getElementById("hfa-theme");
+  b.addEventListener("click",function(){
+    var r=document.documentElement, dark=matchMedia("(prefers-color-scheme: dark)").matches;
+    var cur=r.dataset.theme||(dark?"dark":"light"), next=cur==="dark"?"light":"dark";
+    r.dataset.theme=next; try{localStorage.setItem("hfa-theme",next);}catch(e){}
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var el=document.getElementById("hfa-next"); if(!el) return;
+  var ts=parseInt(el.dataset.ts,10)*1000;
+  function tick(){
+    var s=Math.floor((ts-Date.now())/1000);
+    if(s<=0){ el.textContent="(under way)"; return; }
+    var d=Math.floor(s/86400), h=Math.floor(s%86400/3600), m=Math.floor(s%3600/60);
+    el.textContent="(in "+(d?d+"d "+h+"h":h?h+"h "+m+"m":m+"m")+")";
+  }
+  tick(); setInterval(tick,30000);
+})();
+</script>
+
+
+</body>
+</html>
