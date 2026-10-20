@@ -683,11 +683,13 @@
     .gm-lbl .stat-pop .sheet-close { display: grid; }
     .gm-lbl .stat-pop b { padding-right: 2.4rem; }
     .gm-fields { padding: 0.3rem 16px 0.5rem; }
-    /* The field keeps its width on a phone and scrolls sideways: at 358px the names pile up */
-    .gm-fwrap { overflow-x: auto; scrollbar-width: none; }
-    .gm-fwrap::-webkit-scrollbar { display: none; }
-    .gm-field { min-width: 560px; }
-    .gm-fhead { flex-wrap: nowrap; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    /* The field fills a phone's width: smaller dots and names on a taller pitch, no sideways scroll */
+    .gm-field { aspect-ratio: 5 / 4.4; }
+    .gm-fp .dot { width: 22px; height: 22px; font-size: 0.5rem; border-width: 1.5px; }
+    .gm-fp .dot em { width: 11px; height: 11px; font-size: 0.45rem; top: -4px; right: -5px; }
+    .gm-fp .nm { font-size: 0.46rem; margin-top: 1px; }
+    .gm-fp .nm small { display: none; }
+    .gm-fhead { flex-wrap: wrap; } .gm-fhead .sub { margin-left: 0; flex: 0 0 100%; }
     .gm-ircols { grid-template-columns: 1fr; }
     .gm-irbody { padding-left: 16px; padding-right: 16px; }
   }
@@ -793,8 +795,17 @@
     .pl-tl > .pl-score, .pl-tl > .tl-legend, .pl-tl > .tl-table { grid-column: 1; }
     .pl-tl > .pl-score { margin: 0 auto 0.4rem; }
     .pl-tl > .tl-legend { justify-content: center; }
-    .pl-tl > .tl-table { width: 100%; min-width: 0; }
-    .pl-tile { min-width: 4.4rem; padding: 0.3rem 0.5rem; }
+    .hfa .pl-tl > .tl-table { width: 100%; min-width: 0; }
+    .pl-tl { min-width: 0; }
+    .pl-card { overflow: hidden; }
+    .pl-score { max-width: 100%; }
+    .hfa .pl-score th, .hfa .pl-score td { min-width: 2rem; padding: 0.1rem 0.35rem; }
+    .pl-tiles { flex-wrap: nowrap; gap: 0.3rem; width: 100%; }
+    .pl-tile { flex: 1 1 0; min-width: 0; padding: 0.3rem 0.2rem; }
+    .pl-tile b { font-size: 0.88rem; }
+    .pl-tile span { font-size: 0.48rem; letter-spacing: 0.02em; max-width: none; line-height: 1.2; }
+    .pl-tile span em { font-size: 0.48rem; }
+    .pl-head { gap: 0.5rem; }
     .hfa .pl-log td.wk, .hfa .pl-log th:first-child { position: sticky; left: 0; background: #0d0d11; z-index: 1; }
     :root[data-theme="light"] .hfa .pl-log td.wk, :root[data-theme="light"] .hfa .pl-log th:first-child { background: #fff; }
   }
