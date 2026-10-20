@@ -272,8 +272,14 @@
   /* The why row under a game */
   .hfa tr.has-why { cursor: pointer; }
   .hfa tr.has-why:hover > td { background: var(--hfa-tint); }
-  .hfa .twirl { display: inline-block; color: var(--hfa-muted); font-size: 0.8rem; margin-right: 0.35rem; transition: transform 0.15s; }
-  .hfa tr.open .twirl { transform: rotate(90deg); color: var(--hfa-accent); }
+  .hfa .twirl { display: inline-flex; align-items: center; justify-content: center; width: 1.35rem; height: 1.35rem; border-radius: 50%; background: var(--hfa-accent); color: #fff; margin-right: 0.45rem; vertical-align: -0.3rem; flex: none; box-shadow: 0 0 0 2px rgba(255, 31, 47, 0.22), 0 4px 10px -4px rgba(255, 31, 47, 0.8); transition: transform 0.15s, box-shadow 0.15s; }
+  .hfa .twirl svg { display: block; }
+  .hfa tr.has-why:hover .twirl { box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.35), 0 4px 12px -4px rgba(255, 31, 47, 0.9); }
+  .hfa tr.open .twirl { transform: rotate(180deg); background: #fff; color: var(--hfa-accent); }
+  .hfa .head-tools { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; justify-content: flex-end; }
+  .hfa .why-key { display: inline-flex; align-items: center; gap: 0.1rem; font-size: 0.74rem; font-weight: 600; color: var(--hfa-muted); white-space: nowrap; }
+  .hfa .why-key .twirl { margin-right: 0.3rem; }
+  .hfa .legend-body b .twirl { margin-right: 0; vertical-align: -0.35rem; }
   .hfa tr.why-row > td { padding: 0; border-top: 0; box-shadow: none !important; background: rgba(255, 31, 47, 0.03); }
   .hfa .why { padding: 0.9rem 1.1rem 1rem 1.4rem; border-top: 1px dashed rgba(128, 128, 128, 0.2); border-bottom: var(--hfa-hairline); }
   .hfa .why-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 1.25rem; }
@@ -369,6 +375,8 @@
        under the brand; one section shows at a time. */
     .hfa-nav { display: none; }
     .hfa-top { padding-right: 2.2rem; }
+    .hfa .head-tools { width: 100%; justify-content: space-between; }
+    .hfa .why-key { white-space: normal; }
     .lane-game { grid-template-columns: minmax(0, 1fr); gap: 0.7rem; padding: 0.75rem 16px 0.9rem; }
     .lane-grid { gap: 0.35rem; }
     .lane { padding: 0.45rem 0.5rem 0.5rem; border-radius: 8px; }
