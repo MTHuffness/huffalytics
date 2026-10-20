@@ -270,8 +270,9 @@
   .hfa .slate th.sort { cursor: pointer; } .hfa .slate th.sort.on { color: var(--hfa-accent); }
   .hfa .slate > tbody > tr > td:first-child { box-shadow: inset 3px 0 0 var(--hfa-accent); }
   /* The why row under a game */
-  .hfa tr.has-why { cursor: pointer; }
-  .hfa tr.has-why:hover > td { background: var(--hfa-tint); }
+  .hfa tr.has-why, .hfa tr.has-page { cursor: pointer; }
+  .hfa tr.has-why:hover > td, .hfa tr.has-page:hover > td { background: var(--hfa-tint); }
+  .hfa button.twirl { border: 0; padding: 0; cursor: pointer; font: inherit; }
   .hfa .twirl { display: inline-flex; align-items: center; justify-content: center; width: 1.35rem; height: 1.35rem; border-radius: 50%; background: var(--hfa-accent); color: #fff; margin-right: 0.45rem; vertical-align: -0.3rem; flex: none; box-shadow: 0 0 0 2px rgba(255, 31, 47, 0.22), 0 4px 10px -4px rgba(255, 31, 47, 0.8); transition: transform 0.15s, box-shadow 0.15s; }
   .hfa .twirl svg { display: block; }
   .hfa tr.has-why:hover .twirl { box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.35), 0 4px 12px -4px rgba(255, 31, 47, 0.9); }
@@ -1127,11 +1128,11 @@
     <div class="hfa-head slate-head">
       <div><div class="hfa-eyebrow">Week 8 games, lines and plan calls</div><h2 class="big">The slate</h2></div>
       <div class="head-tools">
-        <span class="why-key" title="Tap a game row to open it"><span class="twirl" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span>tap a game for the EPA behind its margin, or an Overs / Unders record for its calls</span></span>
+        <span class="why-key" title="The red circle opens the margin; the row itself opens the game page"><span class="twirl" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span>the red circle opens the EPA behind a margin or an Overs / Unders record; tap anywhere else on a game to open its page</span></span>
         <details class="legend">
         <summary title="What the columns mean">&#9432; Legend</summary>
         <div class="legend-body"><button type="button" class="sheet-close" aria-label="Close">&times;</button>
-          <div><b><span class="twirl" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></b> The dropdown: a red circle marks something that opens on a tap or click. On a game it shows the EPA comparison behind the model margin, the home-field step, the injuries that moved it and the adjusted margin. On an Overs or Unders record it lists the plan's calls on that side with the Normal / Edge / Edge+ rungs and, once played, what happened.</div>
+          <div><b><span class="twirl" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></b> The dropdown: a red circle marks something that opens on a tap or click. On a game it shows the EPA comparison behind the model margin, the home-field step, the injuries that moved it and the adjusted margin. Tapping the game row anywhere else opens the game page: the projection, each offense against its defense, the starters, the injuries, the plan and the report. On an Overs or Unders record it lists the plan's calls on that side with the Normal / Edge / Edge+ rungs and, once played, what happened.</div>
           <div><b>Line &middot; O/U</b> The closing spread from the favorite's side and the market total. Once played, the total shows the points and whether it went over or under. Shown for context: the engine prices player props, not sides.</div>
           <div><b>Model</b> The engine's own margin for the favorite, from its opponent-adjusted efficiency ratings entering the week. Green = the engine likes the favorite more than the line does; amber = it actually likes the dog.</div>
           <div><b>Adj</b> The model margin with the priced injury reports folded in. &#8623; marks a game where the injuries flip the engine's side.</div>
@@ -1162,8 +1163,8 @@
       </tr></thead>
       <tbody>
       
-      <tr class="has-why" data-why="why-1" title="Why this margin">
-        <td class="c-lead" data-val="CIN vs TEN"><span class="twirl" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a class="match gm-link" href="/nfl/w/8/g/2026_08_TEN_CIN/" title="The game page: projection, matchups, starters and injuries"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="CIN logo" loading="lazy"><span class="fav">CIN</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" alt="TEN logo" loading="lazy"><span>TEN</span><span class="go" aria-hidden="true">&#8250;</span></a></td>
+      <tr class="has-why has-page" data-why="why-1" data-page="/nfl/w/8/g/2026_08_TEN_CIN/" title="Open the game page">
+        <td class="c-lead" data-val="CIN vs TEN"><button type="button" class="twirl" title="The EPA behind this margin" aria-label="Why this margin"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="CIN logo" loading="lazy"><span class="fav">CIN</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" alt="TEN logo" loading="lazy"><span>TEN</span></span></td>
         <td class="c-end nw" data-val="2026-11-01T13:00:00-05:00" title="Sun Nov 1, 11:00 AM Denver">11:00am</td>
         <td class="num nw" data-l="line" data-val="-10.5"><b>-10.5</b></td>
         <td class="num nw" data-l="o/u" data-val="45.5">45.5</td>
@@ -1224,8 +1225,8 @@
 </div>
 </td></tr>
       
-      <tr class="has-why" data-why="why-2" title="Why this margin">
-        <td class="c-lead" data-val="NE @ MIA"><span class="twirl" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a class="match gm-link" href="/nfl/w/8/g/2026_08_NE_MIA/" title="The game page: projection, matchups, starters and injuries"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="NE logo" loading="lazy"><span class="fav">NE</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="MIA logo" loading="lazy"><span>MIA</span><span class="go" aria-hidden="true">&#8250;</span></a></td>
+      <tr class="has-why has-page" data-why="why-2" data-page="/nfl/w/8/g/2026_08_NE_MIA/" title="Open the game page">
+        <td class="c-lead" data-val="NE @ MIA"><button type="button" class="twirl" title="The EPA behind this margin" aria-label="Why this margin"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="NE logo" loading="lazy"><span class="fav">NE</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="MIA logo" loading="lazy"><span>MIA</span></span></td>
         <td class="c-end nw" data-val="2026-11-01T16:25:00-05:00" title="Sun Nov 1, 2:25 PM Denver">2:25pm</td>
         <td class="num nw" data-l="line" data-val="-8.5"><b>-8.5</b></td>
         <td class="num nw" data-l="o/u" data-val="43.5">43.5</td>
@@ -1286,8 +1287,8 @@
 </div>
 </td></tr>
       
-      <tr class="has-why" data-why="why-3" title="Why this margin">
-        <td class="c-lead" data-val="LA vs LAC"><span class="twirl" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a class="match gm-link" href="/nfl/w/8/g/2026_08_LAC_LA/" title="The game page: projection, matchups, starters and injuries"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" alt="LA logo" loading="lazy"><span class="fav">LA</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" alt="LAC logo" loading="lazy"><span>LAC</span><span class="go" aria-hidden="true">&#8250;</span></a></td>
+      <tr class="has-why has-page" data-why="why-3" data-page="/nfl/w/8/g/2026_08_LAC_LA/" title="Open the game page">
+        <td class="c-lead" data-val="LA vs LAC"><button type="button" class="twirl" title="The EPA behind this margin" aria-label="Why this margin"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" alt="LA logo" loading="lazy"><span class="fav">LA</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" alt="LAC logo" loading="lazy"><span>LAC</span></span></td>
         <td class="c-end nw" data-val="2026-11-01T16:05:00-05:00" title="Sun Nov 1, 2:05 PM Denver">2:05pm</td>
         <td class="num nw" data-l="line" data-val="-7.5"><b>-7.5</b></td>
         <td class="num nw" data-l="o/u" data-val="45.5">45.5</td>
@@ -1348,8 +1349,8 @@
 </div>
 </td></tr>
       
-      <tr class="has-why" data-why="why-4" title="Why this margin">
-        <td class="c-lead" data-val="JAX vs IND"><span class="twirl" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a class="match gm-link" href="/nfl/w/8/g/2026_08_IND_JAX/" title="The game page: projection, matchups, starters and injuries"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png" alt="JAX logo" loading="lazy"><span class="fav">JAX</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" alt="IND logo" loading="lazy"><span>IND</span><span class="go" aria-hidden="true">&#8250;</span></a></td>
+      <tr class="has-why has-page" data-why="why-4" data-page="/nfl/w/8/g/2026_08_IND_JAX/" title="Open the game page">
+        <td class="c-lead" data-val="JAX vs IND"><button type="button" class="twirl" title="The EPA behind this margin" aria-label="Why this margin"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png" alt="JAX logo" loading="lazy"><span class="fav">JAX</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" alt="IND logo" loading="lazy"><span>IND</span></span></td>
         <td class="c-end nw" data-val="2026-11-01T13:00:00-05:00" title="Sun Nov 1, 11:00 AM Denver">11:00am</td>
         <td class="num nw" data-l="line" data-val="-7.5"><b>-7.5</b></td>
         <td class="num nw" data-l="o/u" data-val="47.5">47.5</td>
@@ -1410,8 +1411,8 @@
 </div>
 </td></tr>
       
-      <tr class="has-why" data-why="why-5" title="Why this margin">
-        <td class="c-lead" data-val="DAL vs ARI"><span class="twirl" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a class="match gm-link" href="/nfl/w/8/g/2026_08_ARI_DAL/" title="The game page: projection, matchups, starters and injuries"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="DAL logo" loading="lazy"><span class="fav">DAL</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="ARI logo" loading="lazy"><span>ARI</span><span class="go" aria-hidden="true">&#8250;</span></a></td>
+      <tr class="has-why has-page" data-why="why-5" data-page="/nfl/w/8/g/2026_08_ARI_DAL/" title="Open the game page">
+        <td class="c-lead" data-val="DAL vs ARI"><button type="button" class="twirl" title="The EPA behind this margin" aria-label="Why this margin"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="DAL logo" loading="lazy"><span class="fav">DAL</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="ARI logo" loading="lazy"><span>ARI</span></span></td>
         <td class="c-end nw" data-val="2026-11-01T13:00:00-05:00" title="Sun Nov 1, 11:00 AM Denver">11:00am</td>
         <td class="num nw" data-l="line" data-val="-6.5"><b>-6.5</b></td>
         <td class="num nw" data-l="o/u" data-val="51.5">51.5</td>
@@ -1472,8 +1473,8 @@
 </div>
 </td></tr>
       
-      <tr class="has-why" data-why="why-6" title="Why this margin">
-        <td class="c-lead" data-val="PIT vs CLE"><span class="twirl" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a class="match gm-link" href="/nfl/w/8/g/2026_08_CLE_PIT/" title="The game page: projection, matchups, starters and injuries"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/pit.png" alt="PIT logo" loading="lazy"><span class="fav">PIT</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" alt="CLE logo" loading="lazy"><span>CLE</span><span class="go" aria-hidden="true">&#8250;</span></a></td>
+      <tr class="has-why has-page" data-why="why-6" data-page="/nfl/w/8/g/2026_08_CLE_PIT/" title="Open the game page">
+        <td class="c-lead" data-val="PIT vs CLE"><button type="button" class="twirl" title="The EPA behind this margin" aria-label="Why this margin"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/pit.png" alt="PIT logo" loading="lazy"><span class="fav">PIT</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" alt="CLE logo" loading="lazy"><span>CLE</span></span></td>
         <td class="c-end nw" data-val="2026-11-01T13:00:00-05:00" title="Sun Nov 1, 11:00 AM Denver">11:00am</td>
         <td class="num nw" data-l="line" data-val="-4.5"><b>-4.5</b></td>
         <td class="num nw" data-l="o/u" data-val="39.5">39.5</td>
@@ -1534,8 +1535,8 @@
 </div>
 </td></tr>
       
-      <tr class="has-why" data-why="why-7" title="Why this margin">
-        <td class="c-lead" data-val="WAS vs PHI"><span class="twirl" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a class="match gm-link" href="/nfl/w/8/g/2026_08_PHI_WAS/" title="The game page: projection, matchups, starters and injuries"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png" alt="WAS logo" loading="lazy"><span class="fav">WAS</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" alt="PHI logo" loading="lazy"><span>PHI</span><span class="go" aria-hidden="true">&#8250;</span></a></td>
+      <tr class="has-why has-page" data-why="why-7" data-page="/nfl/w/8/g/2026_08_PHI_WAS/" title="Open the game page">
+        <td class="c-lead" data-val="WAS vs PHI"><button type="button" class="twirl" title="The EPA behind this margin" aria-label="Why this margin"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png" alt="WAS logo" loading="lazy"><span class="fav">WAS</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" alt="PHI logo" loading="lazy"><span>PHI</span></span></td>
         <td class="c-end nw" data-val="2026-11-01T20:20:00-05:00" title="Sun Nov 1, 6:20 PM Denver">SNF</td>
         <td class="num nw" data-l="line" data-val="-3.5"><b>-3.5</b></td>
         <td class="num nw" data-l="o/u" data-val="40.5">40.5</td>
@@ -1596,8 +1597,8 @@
 </div>
 </td></tr>
       
-      <tr class="has-why" data-why="why-8" title="Why this margin">
-        <td class="c-lead" data-val="BUF vs BAL"><span class="twirl" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a class="match gm-link" href="/nfl/w/8/g/2026_08_BAL_BUF/" title="The game page: projection, matchups, starters and injuries"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png" alt="BUF logo" loading="lazy"><span class="fav">BUF</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="BAL logo" loading="lazy"><span>BAL</span><span class="go" aria-hidden="true">&#8250;</span></a></td>
+      <tr class="has-why has-page" data-why="why-8" data-page="/nfl/w/8/g/2026_08_BAL_BUF/" title="Open the game page">
+        <td class="c-lead" data-val="BUF vs BAL"><button type="button" class="twirl" title="The EPA behind this margin" aria-label="Why this margin"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png" alt="BUF logo" loading="lazy"><span class="fav">BUF</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="BAL logo" loading="lazy"><span>BAL</span></span></td>
         <td class="c-end nw" data-val="2026-11-01T13:00:00-05:00" title="Sun Nov 1, 11:00 AM Denver">11:00am</td>
         <td class="num nw" data-l="line" data-val="-2.5"><b>-2.5</b></td>
         <td class="num nw" data-l="o/u" data-val="53.5">53.5</td>
@@ -1658,8 +1659,8 @@
 </div>
 </td></tr>
       
-      <tr class="has-why" data-why="why-9" title="Why this margin">
-        <td class="c-lead" data-val="KC @ DEN"><span class="twirl" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a class="match gm-link" href="/nfl/w/8/g/2026_08_KC_DEN/" title="The game page: projection, matchups, starters and injuries"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="KC logo" loading="lazy"><span class="fav">KC</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="DEN logo" loading="lazy"><span>DEN</span><span class="go" aria-hidden="true">&#8250;</span></a></td>
+      <tr class="has-why has-page" data-why="why-9" data-page="/nfl/w/8/g/2026_08_KC_DEN/" title="Open the game page">
+        <td class="c-lead" data-val="KC @ DEN"><button type="button" class="twirl" title="The EPA behind this margin" aria-label="Why this margin"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="KC logo" loading="lazy"><span class="fav">KC</span><span class="at">@</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="DEN logo" loading="lazy"><span>DEN</span></span></td>
         <td class="c-end nw" data-val="2026-11-01T16:25:00-05:00" title="Sun Nov 1, 2:25 PM Denver">2:25pm</td>
         <td class="num nw" data-l="line" data-val="-1.5"><b>-1.5</b></td>
         <td class="num nw" data-l="o/u" data-val="42.5">42.5</td>
@@ -1720,8 +1721,8 @@
 </div>
 </td></tr>
       
-      <tr class="has-why" data-why="why-10" title="Why this margin">
-        <td class="c-lead" data-val="TB vs ATL"><span class="twirl" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a class="match gm-link" href="/nfl/w/8/g/2026_08_ATL_TB/" title="The game page: projection, matchups, starters and injuries"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/tb.png" alt="TB logo" loading="lazy"><span class="fav">TB</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" alt="ATL logo" loading="lazy"><span>ATL</span><span class="go" aria-hidden="true">&#8250;</span></a></td>
+      <tr class="has-why has-page" data-why="why-10" data-page="/nfl/w/8/g/2026_08_ATL_TB/" title="Open the game page">
+        <td class="c-lead" data-val="TB vs ATL"><button type="button" class="twirl" title="The EPA behind this margin" aria-label="Why this margin"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/tb.png" alt="TB logo" loading="lazy"><span class="fav">TB</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" alt="ATL logo" loading="lazy"><span>ATL</span></span></td>
         <td class="c-end nw" data-val="2026-11-01T13:00:00-05:00" title="Sun Nov 1, 11:00 AM Denver">11:00am</td>
         <td class="num nw" data-l="line" data-val="-1.5"><b>-1.5</b></td>
         <td class="num nw" data-l="o/u" data-val="44.5">44.5</td>
@@ -1782,8 +1783,8 @@
 </div>
 </td></tr>
       
-      <tr class="has-why" data-why="why-11" title="Why this margin">
-        <td class="c-lead" data-val="NYJ vs LV"><span class="twirl" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><a class="match gm-link" href="/nfl/w/8/g/2026_08_LV_NYJ/" title="The game page: projection, matchups, starters and injuries"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="NYJ logo" loading="lazy"><span class="fav">NYJ</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" alt="LV logo" loading="lazy"><span>LV</span><span class="go" aria-hidden="true">&#8250;</span></a></td>
+      <tr class="has-why has-page" data-why="why-11" data-page="/nfl/w/8/g/2026_08_LV_NYJ/" title="Open the game page">
+        <td class="c-lead" data-val="NYJ vs LV"><button type="button" class="twirl" title="The EPA behind this margin" aria-label="Why this margin"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="match"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="NYJ logo" loading="lazy"><span class="fav">NYJ</span><span class="at">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" alt="LV logo" loading="lazy"><span>LV</span></span></td>
         <td class="c-end nw" data-val="2026-11-01T13:00:00-05:00" title="Sun Nov 1, 11:00 AM Denver">11:00am</td>
         <td class="num nw" data-l="line" data-val="-1.5"><b>-1.5</b></td>
         <td class="num nw" data-l="o/u" data-val="43.5">43.5</td>
@@ -3209,9 +3210,12 @@
     tbl.querySelectorAll("tr.mate[data-team='"+c.dataset.team+"']").forEach(function(r){r.classList.toggle("show",open);});
   });});
   // A game row opens its "why" row.
-  document.querySelectorAll("tr[data-why]").forEach(function(r){ r.addEventListener("click",function(e){
-    if(e.target.closest("a, details.calls")) return;
-    var w=document.getElementById(r.dataset.why); if(!w) return; w.hidden=!w.hidden; r.classList.toggle("open",!w.hidden);
+  document.querySelectorAll("tr[data-why], tr[data-page]").forEach(function(r){ r.addEventListener("click",function(e){
+    if(e.target.closest("a, details.calls, .calls-pop")) return;
+    if(e.target.closest(".twirl")&&r.dataset.why){
+      var w=document.getElementById(r.dataset.why); if(!w) return; w.hidden=!w.hidden; r.classList.toggle("open",!w.hidden); return;
+    }
+    if(r.dataset.page){ if(window.getSelection&&String(window.getSelection())) return; location.href=r.dataset.page; }
   });});
   // One calls popover at a time; a click elsewhere closes it.
   document.querySelectorAll("details.calls").forEach(function(d){ d.addEventListener("toggle",function(){

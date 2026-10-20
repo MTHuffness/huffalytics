@@ -270,8 +270,9 @@
   .hfa .slate th.sort { cursor: pointer; } .hfa .slate th.sort.on { color: var(--hfa-accent); }
   .hfa .slate > tbody > tr > td:first-child { box-shadow: inset 3px 0 0 var(--hfa-accent); }
   /* The why row under a game */
-  .hfa tr.has-why { cursor: pointer; }
-  .hfa tr.has-why:hover > td { background: var(--hfa-tint); }
+  .hfa tr.has-why, .hfa tr.has-page { cursor: pointer; }
+  .hfa tr.has-why:hover > td, .hfa tr.has-page:hover > td { background: var(--hfa-tint); }
+  .hfa button.twirl { border: 0; padding: 0; cursor: pointer; font: inherit; }
   .hfa .twirl { display: inline-flex; align-items: center; justify-content: center; width: 1.35rem; height: 1.35rem; border-radius: 50%; background: var(--hfa-accent); color: #fff; margin-right: 0.45rem; vertical-align: -0.3rem; flex: none; box-shadow: 0 0 0 2px rgba(255, 31, 47, 0.22), 0 4px 10px -4px rgba(255, 31, 47, 0.8); transition: transform 0.15s, box-shadow 0.15s; }
   .hfa .twirl svg { display: block; }
   .hfa tr.has-why:hover .twirl { box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.35), 0 4px 12px -4px rgba(255, 31, 47, 0.9); }
