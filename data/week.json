@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-20T10:05:18.361663-06:00",
+ "as_of": "2026-10-20T10:28:21.352984-06:00",
  "season": 2026,
  "week": 7,
  "slate": {
@@ -268,6 +268,33 @@
    "plan": null
   },
   {
+   "game_id": "2026_07_CIN_BAL",
+   "fav": "BAL",
+   "opp": "CIN",
+   "sep": "vs",
+   "status": "tight spread",
+   "is_leg": false,
+   "gameday": "2026-10-25",
+   "kickoff": {
+    "label": "11:00am",
+    "title": "Sun Oct 25, 11:00 AM Denver",
+    "sort": "2026-10-25T13:00:00-04:00"
+   },
+   "line": "-3",
+   "total": "51.5",
+   "total_score": null,
+   "total_result": null,
+   "model_margin": "+1.3",
+   "adj_margin": "+1.0",
+   "proj_score": "27–24",
+   "score": null,
+   "played": false,
+   "hit": null,
+   "qb_notes": [],
+   "grade": null,
+   "plan": null
+  },
+  {
    "game_id": "2026_07_SF_ATL",
    "fav": "SF",
    "opp": "ATL",
@@ -341,33 +368,6 @@
    "model_margin": "+0.5",
    "adj_margin": "-0.2",
    "proj_score": "22–20",
-   "score": null,
-   "played": false,
-   "hit": null,
-   "qb_notes": [],
-   "grade": null,
-   "plan": null
-  },
-  {
-   "game_id": "2026_07_CIN_BAL",
-   "fav": "BAL",
-   "opp": "CIN",
-   "sep": "vs",
-   "status": "tight spread",
-   "is_leg": false,
-   "gameday": "2026-10-25",
-   "kickoff": {
-    "label": "11:00am",
-    "title": "Sun Oct 25, 11:00 AM Denver",
-    "sort": "2026-10-25T13:00:00-04:00"
-   },
-   "line": "-2.5",
-   "total": "51.5",
-   "total_score": null,
-   "total_result": null,
-   "model_margin": "+1.3",
-   "adj_margin": "+1.0",
-   "proj_score": "27–24",
    "score": null,
    "played": false,
    "hit": null,
@@ -452,8 +452,8 @@
     "team": "CIN",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
     "game_id": "2026_07_CIN_BAL",
-    "proj": "17.9",
-    "bar": "83",
+    "proj": "17.8",
+    "bar": "82",
     "act": null,
     "cls": null,
     "inj": null
@@ -504,7 +504,7 @@
     "team": "BAL",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
     "game_id": "2026_07_CIN_BAL",
-    "proj": "16.9",
+    "proj": "17.0",
     "bar": "78",
     "act": null,
     "cls": null,
@@ -681,11 +681,11 @@
    },
    {
     "rank": 22,
-    "pid": "00-0029604",
-    "name": "Kirk Cousins",
-    "team": "LV",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lv.png",
-    "game_id": "2026_07_LA_LV",
+    "pid": "00-0031503",
+    "name": "Jameis Winston",
+    "team": "NYG",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
+    "game_id": "2026_07_NYG_HOU",
     "proj": "14.0",
     "bar": "65",
     "act": null,
@@ -694,13 +694,13 @@
    },
    {
     "rank": 23,
-    "pid": "00-0031503",
-    "name": "Jameis Winston",
-    "team": "NYG",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
-    "game_id": "2026_07_NYG_HOU",
-    "proj": "13.8",
-    "bar": "64",
+    "pid": "00-0029604",
+    "name": "Kirk Cousins",
+    "team": "LV",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lv.png",
+    "game_id": "2026_07_LA_LV",
+    "proj": "14.0",
+    "bar": "65",
     "act": null,
     "cls": null,
     "inj": null
@@ -861,8 +861,8 @@
     "team": "ATL",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
     "game_id": "2026_07_SF_ATL",
-    "proj": "20.8",
-    "bar": "77",
+    "proj": "21.1",
+    "bar": "78",
     "act": null,
     "cls": null,
     "inj": null
@@ -951,19 +951,6 @@
    },
    {
     "rank": 12,
-    "pid": "00-0032764",
-    "name": "Derrick Henry",
-    "team": "BAL",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-    "game_id": "2026_07_CIN_BAL",
-    "proj": "16.7",
-    "bar": "61",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 13,
     "pid": "00-0036555",
     "name": "Chuba Hubbard",
     "team": "CAR",
@@ -976,7 +963,7 @@
     "inj": null
    },
    {
-    "rank": 14,
+    "rank": 13,
     "pid": "00-0040122",
     "name": "Ashton Jeanty",
     "team": "LV",
@@ -984,6 +971,19 @@
     "game_id": "2026_07_LA_LV",
     "proj": "16.5",
     "bar": "61",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 14,
+    "pid": "00-0032764",
+    "name": "Derrick Henry",
+    "team": "BAL",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+    "game_id": "2026_07_CIN_BAL",
+    "proj": "16.4",
+    "bar": "60",
     "act": null,
     "cls": null,
     "inj": null
@@ -1021,7 +1021,7 @@
     "team": "CIN",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
     "game_id": "2026_07_CIN_BAL",
-    "proj": "15.0",
+    "proj": "14.9",
     "bar": "55",
     "act": null,
     "cls": null,
@@ -1094,6 +1094,19 @@
    },
    {
     "rank": 23,
+    "pid": "00-0040715",
+    "name": "Cam Skattebo",
+    "team": "NYG",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
+    "game_id": "2026_07_NYG_HOU",
+    "proj": "10.9",
+    "bar": "40",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 24,
     "pid": "00-0036875",
     "name": "Rhamondre Stevenson",
     "team": "NE",
@@ -1106,7 +1119,7 @@
     "inj": null
    },
    {
-    "rank": 24,
+    "rank": 25,
     "pid": "00-0039738",
     "name": "Blake Corum",
     "team": "LA",
@@ -1119,7 +1132,7 @@
     "inj": null
    },
    {
-    "rank": 25,
+    "rank": 26,
     "pid": "00-0040198",
     "name": "Ollie Gordon II",
     "team": "MIA",
@@ -1134,19 +1147,6 @@
      "cls": "text-bg-warning",
      "title": "Questionable · Undisclosed · via Sleeper · as of Wed 10/14 9:25 PM"
     }
-   },
-   {
-    "rank": 26,
-    "pid": "00-0040715",
-    "name": "Cam Skattebo",
-    "team": "NYG",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
-    "game_id": "2026_07_NYG_HOU",
-    "proj": "9.4",
-    "bar": "34",
-    "act": null,
-    "cls": null,
-    "inj": null
    },
    {
     "rank": 27,
@@ -1245,19 +1245,6 @@
    },
    {
     "rank": 34,
-    "pid": "00-0034975",
-    "name": "Justice Hill",
-    "team": "BAL",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-    "game_id": "2026_07_CIN_BAL",
-    "proj": "6.6",
-    "bar": "24",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 35,
     "pid": "00-0036139",
     "name": "Rico Dowdle",
     "team": "PIT",
@@ -1265,6 +1252,19 @@
     "game_id": "2026_07_PIT_NO",
     "proj": "6.5",
     "bar": "24",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 35,
+    "pid": "00-0034975",
+    "name": "Justice Hill",
+    "team": "BAL",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+    "game_id": "2026_07_CIN_BAL",
+    "proj": "6.3",
+    "bar": "23",
     "act": null,
     "cls": null,
     "inj": null
@@ -1453,20 +1453,16 @@
    },
    {
     "rank": 50,
-    "pid": "00-0037085",
-    "name": "Tyler Badie",
-    "team": "DEN",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/den.png",
-    "game_id": "2026_07_DEN_ARI",
+    "pid": "00-0039384",
+    "name": "Tyrone Tracy Jr.",
+    "team": "NYG",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
+    "game_id": "2026_07_NYG_HOU",
     "proj": "3.0",
     "bar": "11",
     "act": null,
     "cls": null,
-    "inj": {
-     "label": "Q",
-     "cls": "text-bg-warning",
-     "title": "Questionable · Thumb · via Sleeper · as of Thu 10/15 7:35 PM"
-    }
+    "inj": null
    }
   ],
   "WR": [
@@ -1498,19 +1494,6 @@
    },
    {
     "rank": 3,
-    "pid": "00-0039064",
-    "name": "Zay Flowers",
-    "team": "BAL",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-    "game_id": "2026_07_CIN_BAL",
-    "proj": "19.4",
-    "bar": "89",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 4,
     "pid": "00-0039880",
     "name": "Malik Washington",
     "team": "MIA",
@@ -1518,6 +1501,19 @@
     "game_id": "2026_07_MIA_NYJ",
     "proj": "19.3",
     "bar": "89",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 4,
+    "pid": "00-0039064",
+    "name": "Zay Flowers",
+    "team": "BAL",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+    "game_id": "2026_07_CIN_BAL",
+    "proj": "17.9",
+    "bar": "82",
     "act": null,
     "cls": null,
     "inj": null
@@ -1581,8 +1577,8 @@
     "team": "NYG",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
     "game_id": "2026_07_NYG_HOU",
-    "proj": "15.9",
-    "bar": "73",
+    "proj": "16.0",
+    "bar": "74",
     "act": null,
     "cls": null,
     "inj": null
@@ -2186,11 +2182,11 @@
    },
    {
     "rank": 55,
-    "pid": "00-0032464",
-    "name": "Kalif Raymond",
-    "team": "CHI",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
-    "game_id": "2026_07_NE_CHI",
+    "pid": "00-0041042",
+    "name": "Malachi Fields",
+    "team": "NYG",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
+    "game_id": "2026_07_NYG_HOU",
     "proj": "6.9",
     "bar": "32",
     "act": null,
@@ -2199,11 +2195,11 @@
    },
    {
     "rank": 56,
-    "pid": "00-0041042",
-    "name": "Malachi Fields",
-    "team": "NYG",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
-    "game_id": "2026_07_NYG_HOU",
+    "pid": "00-0032464",
+    "name": "Kalif Raymond",
+    "team": "CHI",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
+    "game_id": "2026_07_NE_CHI",
     "proj": "6.9",
     "bar": "32",
     "act": null,
@@ -2264,6 +2260,23 @@
    },
    {
     "rank": 61,
+    "pid": "00-0036309",
+    "name": "Darnell Mooney",
+    "team": "NYG",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
+    "game_id": "2026_07_NYG_HOU",
+    "proj": "5.9",
+    "bar": "27",
+    "act": null,
+    "cls": null,
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Neck · via Sleeper · as of Sun 10/18 11:50 PM"
+    }
+   },
+   {
+    "rank": 62,
     "pid": "00-0041525",
     "name": "Chris Bell",
     "team": "MIA",
@@ -2276,7 +2289,7 @@
     "inj": null
    },
    {
-    "rank": 62,
+    "rank": 63,
     "pid": "00-0038608",
     "name": "Kayshon Boutte",
     "team": "HOU",
@@ -2289,7 +2302,7 @@
     "inj": null
    },
    {
-    "rank": 63,
+    "rank": 64,
     "pid": "00-0040024",
     "name": "Darius Cooper",
     "team": "PHI",
@@ -2300,23 +2313,6 @@
     "act": null,
     "cls": null,
     "inj": null
-   },
-   {
-    "rank": 64,
-    "pid": "00-0036309",
-    "name": "Darnell Mooney",
-    "team": "NYG",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
-    "game_id": "2026_07_NYG_HOU",
-    "proj": "5.8",
-    "bar": "27",
-    "act": null,
-    "cls": null,
-    "inj": {
-     "label": "Q",
-     "cls": "text-bg-warning",
-     "title": "Questionable · Neck · via Sleeper · as of Sun 10/18 11:50 PM"
-    }
    },
    {
     "rank": 65,
@@ -2338,8 +2334,8 @@
     "team": "CIN",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
     "game_id": "2026_07_CIN_BAL",
-    "proj": "5.8",
-    "bar": "27",
+    "proj": "5.7",
+    "bar": "26",
     "act": null,
     "cls": null,
     "inj": null
@@ -2411,6 +2407,19 @@
    },
    {
     "rank": 72,
+    "pid": "00-0032398",
+    "name": "Chris Moore",
+    "team": "BAL",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+    "game_id": "2026_07_CIN_BAL",
+    "proj": "4.7",
+    "bar": "22",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 73,
     "pid": "00-0035676",
     "name": "A.J. Brown",
     "team": "NE",
@@ -2427,7 +2436,7 @@
     }
    },
    {
-    "rank": 73,
+    "rank": 74,
     "pid": "00-0040590",
     "name": "Konata Mumpfield",
     "team": "LA",
@@ -2440,7 +2449,7 @@
     "inj": null
    },
    {
-    "rank": 74,
+    "rank": 75,
     "pid": "00-0040170",
     "name": "Elic Ayomanor",
     "team": "TEN",
@@ -2453,7 +2462,7 @@
     "inj": null
    },
    {
-    "rank": 75,
+    "rank": 76,
     "pid": "00-0037614",
     "name": "John Metchie III",
     "team": "CAR",
@@ -2466,7 +2475,7 @@
     "inj": null
    },
    {
-    "rank": 76,
+    "rank": 77,
     "pid": "00-0038840",
     "name": "Brycen Tremayne",
     "team": "CAR",
@@ -2479,7 +2488,7 @@
     "inj": null
    },
    {
-    "rank": 77,
+    "rank": 78,
     "pid": "00-0038976",
     "name": "Marvin Mims Jr.",
     "team": "DEN",
@@ -2487,19 +2496,6 @@
     "game_id": "2026_07_DEN_ARI",
     "proj": "4.1",
     "bar": "19",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 78,
-    "pid": "00-0040870",
-    "name": "Ja'Kobi Lane",
-    "team": "BAL",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-    "game_id": "2026_07_CIN_BAL",
-    "proj": "3.8",
-    "bar": "18",
     "act": null,
     "cls": null,
     "inj": null
@@ -2545,6 +2541,19 @@
    },
    {
     "rank": 82,
+    "pid": "00-0040870",
+    "name": "Ja'Kobi Lane",
+    "team": "BAL",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+    "game_id": "2026_07_CIN_BAL",
+    "proj": "3.5",
+    "bar": "16",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 83,
     "pid": "00-0035891",
     "name": "Cody White",
     "team": "LV",
@@ -2557,7 +2566,7 @@
     "inj": null
    },
    {
-    "rank": 83,
+    "rank": 84,
     "pid": "00-0040009",
     "name": "Savion Williams",
     "team": "GB",
@@ -2570,7 +2579,7 @@
     "inj": null
    },
    {
-    "rank": 84,
+    "rank": 85,
     "pid": "00-0040154",
     "name": "Tai Felton",
     "team": "MIN",
@@ -2583,7 +2592,7 @@
     "inj": null
    },
    {
-    "rank": 85,
+    "rank": 86,
     "pid": "00-0039868",
     "name": "Troy Franklin",
     "team": "DEN",
@@ -2596,7 +2605,7 @@
     "inj": null
    },
    {
-    "rank": 86,
+    "rank": 87,
     "pid": "00-0037291",
     "name": "Jalen Nailor",
     "team": "LV",
@@ -2604,19 +2613,6 @@
     "game_id": "2026_07_LA_LV",
     "proj": "3.2",
     "bar": "15",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 87,
-    "pid": "00-0039792",
-    "name": "Devontez Walker",
-    "team": "BAL",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-    "game_id": "2026_07_CIN_BAL",
-    "proj": "3.1",
-    "bar": "14",
     "act": null,
     "cls": null,
     "inj": null
@@ -2662,6 +2658,19 @@
    },
    {
     "rank": 91,
+    "pid": "00-0039792",
+    "name": "Devontez Walker",
+    "team": "BAL",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+    "game_id": "2026_07_CIN_BAL",
+    "proj": "2.9",
+    "bar": "13",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 92,
     "pid": "00-0041044",
     "name": "Zachariah Branch",
     "team": "ATL",
@@ -2674,7 +2683,7 @@
     "inj": null
    },
    {
-    "rank": 92,
+    "rank": 93,
     "pid": "00-0040506",
     "name": "Myles Price",
     "team": "MIN",
@@ -2687,7 +2696,7 @@
     "inj": null
    },
    {
-    "rank": 93,
+    "rank": 94,
     "pid": "00-0033375",
     "name": "Tim Patrick",
     "team": "NYJ",
@@ -2700,7 +2709,7 @@
     "inj": null
    },
    {
-    "rank": 94,
+    "rank": 95,
     "pid": "00-0041051",
     "name": "Zavion Thomas",
     "team": "CHI",
@@ -2713,7 +2722,7 @@
     "inj": null
    },
    {
-    "rank": 95,
+    "rank": 96,
     "pid": "00-0031236",
     "name": "Brandin Cooks",
     "team": "SF",
@@ -2726,7 +2735,7 @@
     "inj": null
    },
    {
-    "rank": 96,
+    "rank": 97,
     "pid": "00-0040705",
     "name": "Chimere Dike",
     "team": "TEN",
@@ -2739,7 +2748,7 @@
     "inj": null
    },
    {
-    "rank": 97,
+    "rank": 98,
     "pid": "00-0040648",
     "name": "Tory Horton",
     "team": "SEA",
@@ -2752,7 +2761,7 @@
     "inj": null
    },
    {
-    "rank": 98,
+    "rank": 99,
     "pid": "00-0039849",
     "name": "Marvin Harrison Jr.",
     "team": "HOU",
@@ -2765,26 +2774,13 @@
     "inj": null
    },
    {
-    "rank": 99,
+    "rank": 100,
     "pid": "00-0037666",
     "name": "Jalen Tolbert",
     "team": "MIA",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
     "game_id": "2026_07_MIA_NYJ",
     "proj": "2.2",
-    "bar": "10",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 100,
-    "pid": "00-0040890",
-    "name": "Cyrus Allen",
-    "team": "KC",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
-    "game_id": "2026_07_KC_SEA",
-    "proj": "2.1",
     "bar": "10",
     "act": null,
     "cls": null,
@@ -2825,8 +2821,8 @@
     "team": "NYG",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
     "game_id": "2026_07_NYG_HOU",
-    "proj": "12.7",
-    "bar": "66",
+    "proj": "12.8",
+    "bar": "67",
     "act": null,
     "cls": null,
     "inj": null
@@ -2924,19 +2920,6 @@
    },
    {
     "rank": 11,
-    "pid": "00-0034753",
-    "name": "Mark Andrews",
-    "team": "BAL",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-    "game_id": "2026_07_CIN_BAL",
-    "proj": "8.3",
-    "bar": "43",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 12,
     "pid": "00-0033881",
     "name": "Evan Engram",
     "team": "DEN",
@@ -2949,7 +2932,7 @@
     "inj": null
    },
    {
-    "rank": 13,
+    "rank": 12,
     "pid": "00-0036894",
     "name": "Pat Freiermuth",
     "team": "PIT",
@@ -2962,7 +2945,7 @@
     "inj": null
    },
    {
-    "rank": 14,
+    "rank": 13,
     "pid": "00-0038129",
     "name": "Cade Otton",
     "team": "TB",
@@ -2975,12 +2958,25 @@
     "inj": null
    },
    {
-    "rank": 15,
+    "rank": 14,
     "pid": "00-0039066",
     "name": "Michael Mayer",
     "team": "LV",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lv.png",
     "game_id": "2026_07_LA_LV",
+    "proj": "7.6",
+    "bar": "40",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 15,
+    "pid": "00-0034753",
+    "name": "Mark Andrews",
+    "team": "BAL",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+    "game_id": "2026_07_CIN_BAL",
     "proj": "7.6",
     "bar": "40",
     "act": null,
@@ -3265,21 +3261,21 @@
    },
    {
     "rank": 20,
-    "name": "PHI",
+    "name": "BAL",
     "team": "",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
-    "game_id": "2026_07_DAL_PHI",
-    "proj": "24.5",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+    "game_id": "2026_07_CIN_BAL",
+    "proj": "24.2",
     "bar": null,
     "act": null,
     "cls": null
    },
    {
     "rank": 21,
-    "name": "BAL",
+    "name": "PHI",
     "team": "",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-    "game_id": "2026_07_CIN_BAL",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
+    "game_id": "2026_07_DAL_PHI",
     "proj": "24.5",
     "bar": null,
     "act": null,
@@ -3346,7 +3342,7 @@
     "team": "",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
     "game_id": "2026_07_CIN_BAL",
-    "proj": "27.0",
+    "proj": "27.2",
     "bar": null,
     "act": null,
     "cls": null
@@ -5181,6 +5177,204 @@
     ]
    },
    {
+    "game_id": "2026_07_CIN_BAL",
+    "played": false,
+    "home": "BAL",
+    "away": "CIN",
+    "sides": [
+     {
+      "team": "CIN",
+      "name": "Cincinnati Bengals",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+      "opp": "BAL",
+      "opp_name": "Baltimore Ravens",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+      "games": 5,
+      "carries": 104,
+      "favorite_lane": "middle",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 35,
+         "share": 0.3365,
+         "ypc": 3.5143,
+         "succ": 0.4286,
+         "epa": -0.1407,
+         "rank": 29,
+         "sr_rank": 11,
+         "cls": "text-danger",
+         "bar": 54
+        },
+        "def": {
+         "carries": 61,
+         "share": 0.4453,
+         "ypc": 4.8033,
+         "succ": 0.3934,
+         "epa": -0.0594,
+         "rank": 22,
+         "sr_rank": 14,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": null
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 41,
+         "share": 0.3942,
+         "ypc": 3.9024,
+         "succ": 0.4146,
+         "epa": 0.0029,
+         "rank": 10,
+         "sr_rank": 15,
+         "cls": "text-success",
+         "bar": 63
+        },
+        "def": {
+         "carries": 22,
+         "share": 0.1606,
+         "ypc": 2.9545,
+         "succ": 0.4545,
+         "epa": 0.2333,
+         "rank": 7,
+         "sr_rank": 23,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": null
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 28,
+         "share": 0.2692,
+         "ypc": 3.5714,
+         "succ": 0.3929,
+         "epa": -0.1065,
+         "rank": 23,
+         "sr_rank": 12,
+         "cls": "text-danger",
+         "bar": 43
+        },
+        "def": {
+         "carries": 54,
+         "share": 0.3942,
+         "ypc": 2.7778,
+         "succ": 0.3519,
+         "epa": -0.1612,
+         "rank": 1,
+         "sr_rank": 14,
+         "cls": "text-success"
+        },
+        "tag": "wall",
+        "actual": null
+       }
+      ],
+      "actual_carries": null
+     },
+     {
+      "team": "BAL",
+      "name": "Baltimore Ravens",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+      "opp": "CIN",
+      "opp_name": "Cincinnati Bengals",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+      "games": 6,
+      "carries": 161,
+      "favorite_lane": "left",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 71,
+         "share": 0.441,
+         "ypc": 4.3099,
+         "succ": 0.4225,
+         "epa": -0.0863,
+         "rank": 16,
+         "sr_rank": 14,
+         "cls": "",
+         "bar": 71
+        },
+        "def": {
+         "carries": 42,
+         "share": 0.4038,
+         "ypc": 5.0,
+         "succ": 0.3571,
+         "epa": -0.0188,
+         "rank": 27,
+         "sr_rank": 9,
+         "cls": "text-danger"
+        },
+        "tag": "",
+        "actual": null
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 23,
+         "share": 0.1429,
+         "ypc": 5.7391,
+         "succ": 0.3913,
+         "epa": 0.0168,
+         "rank": 1,
+         "sr_rank": 19,
+         "cls": "text-success",
+         "bar": 23
+        },
+        "def": {
+         "carries": 27,
+         "share": 0.2596,
+         "ypc": 4.2593,
+         "succ": 0.4444,
+         "epa": 0.1005,
+         "rank": 29,
+         "sr_rank": 19,
+         "cls": "text-danger"
+        },
+        "tag": "soft",
+        "actual": null
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 67,
+         "share": 0.4161,
+         "ypc": 4.9254,
+         "succ": 0.4627,
+         "epa": 0.0636,
+         "rank": 4,
+         "sr_rank": 4,
+         "cls": "text-success",
+         "bar": 67
+        },
+        "def": {
+         "carries": 35,
+         "share": 0.3365,
+         "ypc": 4.2857,
+         "succ": 0.3429,
+         "epa": -0.1603,
+         "rank": 22,
+         "sr_rank": 9,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": null
+       }
+      ],
+      "actual_carries": null
+     }
+    ]
+   },
+   {
     "game_id": "2026_07_SF_ATL",
     "played": false,
     "home": "ATL",
@@ -5765,204 +5959,6 @@
          "rank": 2,
          "sr_rank": 1,
          "cls": "text-success"
-        },
-        "tag": "",
-        "actual": null
-       }
-      ],
-      "actual_carries": null
-     }
-    ]
-   },
-   {
-    "game_id": "2026_07_CIN_BAL",
-    "played": false,
-    "home": "BAL",
-    "away": "CIN",
-    "sides": [
-     {
-      "team": "CIN",
-      "name": "Cincinnati Bengals",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
-      "opp": "BAL",
-      "opp_name": "Baltimore Ravens",
-      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-      "games": 5,
-      "carries": 104,
-      "favorite_lane": "middle",
-      "lanes": [
-       {
-        "lane": "left",
-        "label": "Left",
-        "off": {
-         "carries": 35,
-         "share": 0.3365,
-         "ypc": 3.5143,
-         "succ": 0.4286,
-         "epa": -0.1407,
-         "rank": 29,
-         "sr_rank": 11,
-         "cls": "text-danger",
-         "bar": 54
-        },
-        "def": {
-         "carries": 61,
-         "share": 0.4453,
-         "ypc": 4.8033,
-         "succ": 0.3934,
-         "epa": -0.0594,
-         "rank": 22,
-         "sr_rank": 14,
-         "cls": ""
-        },
-        "tag": "",
-        "actual": null
-       },
-       {
-        "lane": "middle",
-        "label": "Middle",
-        "off": {
-         "carries": 41,
-         "share": 0.3942,
-         "ypc": 3.9024,
-         "succ": 0.4146,
-         "epa": 0.0029,
-         "rank": 10,
-         "sr_rank": 15,
-         "cls": "text-success",
-         "bar": 63
-        },
-        "def": {
-         "carries": 22,
-         "share": 0.1606,
-         "ypc": 2.9545,
-         "succ": 0.4545,
-         "epa": 0.2333,
-         "rank": 7,
-         "sr_rank": 23,
-         "cls": "text-success"
-        },
-        "tag": "",
-        "actual": null
-       },
-       {
-        "lane": "right",
-        "label": "Right",
-        "off": {
-         "carries": 28,
-         "share": 0.2692,
-         "ypc": 3.5714,
-         "succ": 0.3929,
-         "epa": -0.1065,
-         "rank": 23,
-         "sr_rank": 12,
-         "cls": "text-danger",
-         "bar": 43
-        },
-        "def": {
-         "carries": 54,
-         "share": 0.3942,
-         "ypc": 2.7778,
-         "succ": 0.3519,
-         "epa": -0.1612,
-         "rank": 1,
-         "sr_rank": 14,
-         "cls": "text-success"
-        },
-        "tag": "wall",
-        "actual": null
-       }
-      ],
-      "actual_carries": null
-     },
-     {
-      "team": "BAL",
-      "name": "Baltimore Ravens",
-      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-      "opp": "CIN",
-      "opp_name": "Cincinnati Bengals",
-      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
-      "games": 6,
-      "carries": 161,
-      "favorite_lane": "left",
-      "lanes": [
-       {
-        "lane": "left",
-        "label": "Left",
-        "off": {
-         "carries": 71,
-         "share": 0.441,
-         "ypc": 4.3099,
-         "succ": 0.4225,
-         "epa": -0.0863,
-         "rank": 16,
-         "sr_rank": 14,
-         "cls": "",
-         "bar": 71
-        },
-        "def": {
-         "carries": 42,
-         "share": 0.4038,
-         "ypc": 5.0,
-         "succ": 0.3571,
-         "epa": -0.0188,
-         "rank": 27,
-         "sr_rank": 9,
-         "cls": "text-danger"
-        },
-        "tag": "",
-        "actual": null
-       },
-       {
-        "lane": "middle",
-        "label": "Middle",
-        "off": {
-         "carries": 23,
-         "share": 0.1429,
-         "ypc": 5.7391,
-         "succ": 0.3913,
-         "epa": 0.0168,
-         "rank": 1,
-         "sr_rank": 19,
-         "cls": "text-success",
-         "bar": 23
-        },
-        "def": {
-         "carries": 27,
-         "share": 0.2596,
-         "ypc": 4.2593,
-         "succ": 0.4444,
-         "epa": 0.1005,
-         "rank": 29,
-         "sr_rank": 19,
-         "cls": "text-danger"
-        },
-        "tag": "soft",
-        "actual": null
-       },
-       {
-        "lane": "right",
-        "label": "Right",
-        "off": {
-         "carries": 67,
-         "share": 0.4161,
-         "ypc": 4.9254,
-         "succ": 0.4627,
-         "epa": 0.0636,
-         "rank": 4,
-         "sr_rank": 4,
-         "cls": "text-success",
-         "bar": 67
-        },
-        "def": {
-         "carries": 35,
-         "share": 0.3365,
-         "ypc": 4.2857,
-         "succ": 0.3429,
-         "epa": -0.1603,
-         "rank": 22,
-         "sr_rank": 9,
-         "cls": ""
         },
         "tag": "",
         "actual": null
