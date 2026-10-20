@@ -498,7 +498,7 @@
   .gm-chip b { color: var(--hfa-body); font-weight: 700; }
   .gm-chip.warn { border-color: rgba(255, 176, 32, 0.55); } .gm-chip.warn b { color: var(--hfa-warn); }
 
-  .gm-matchup { position: relative; }
+  .gm-matchup { position: relative; overflow: visible; }  /* a stat description may hang below the last row */
   .gm-matchup::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: linear-gradient(90deg, var(--gm-team), transparent 60%); pointer-events: none; }
   .gm-h2 { display: flex; align-items: center; flex-wrap: wrap; gap: 0.45rem; font-size: 1.25rem !important; }
   .gm-h2 img { width: 30px; height: 30px; object-fit: contain; }
@@ -572,6 +572,8 @@
   .gm-lbl details.stat > summary:hover, .gm-lbl details.stat[open] > summary { color: var(--hfa-accent); border-bottom-color: var(--hfa-accent); }
   .gm-lbl .stat-pop { position: absolute; left: 50%; top: calc(100% + 0.45rem); transform: translateX(-50%); z-index: 30; width: min(22rem, calc(100vw - 2rem)); text-align: left; background: var(--hfa-card); border: var(--hfa-hairline); border-radius: 12px; box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.9); padding: 0.65rem 0.85rem 0.6rem; font-size: 0.8rem; line-height: 1.45; font-weight: 400; white-space: normal; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
   .gm-lbl .stat-pop::before { content: ""; position: absolute; left: 50%; top: -6px; width: 10px; height: 10px; transform: translateX(-50%) rotate(45deg); background: var(--hfa-card); border-left: var(--hfa-hairline); border-top: var(--hfa-hairline); }
+  .gm-lbl details.stat.up .stat-pop { top: auto; bottom: calc(100% + 0.45rem); }
+  .gm-lbl details.stat.up .stat-pop::before { top: auto; bottom: -6px; transform: translateX(-50%) rotate(225deg); }
   .gm-lbl .stat-pop b { display: block; color: var(--hfa-accent); font-size: 0.86rem; margin-bottom: 0.2rem; }
   .gm-lbl .stat-pop p { margin: 0 0 0.4rem; color: var(--hfa-body); text-align: left; }
   .gm-lbl .stat-pop p.eng, .gm-lbl .stat-pop p.rk { color: var(--hfa-muted); font-size: 0.72rem; margin-bottom: 0.2rem; }
@@ -1412,7 +1414,13 @@
   });
   // Stat descriptions: one open at a time, a click elsewhere (or the X) closes it.
   document.querySelectorAll("details.stat").forEach(function(d){ d.addEventListener("toggle",function(){
-    if(d.open) document.querySelectorAll("details.stat[open]").forEach(function(o){ if(o!==d) o.open=false; });
+    if(!d.open){ d.classList.remove("up"); return; }
+    document.querySelectorAll("details.stat[open]").forEach(function(o){ if(o!==d) o.open=false; });
+    // Below the label unless that would run off the bottom of the window: then above it.
+    d.classList.remove("up");
+    if(matchMedia("(max-width: 760px)").matches) return;
+    var pop=d.querySelector(".stat-pop"); if(!pop) return;
+    if(pop.getBoundingClientRect().bottom>innerHeight-8) d.classList.add("up");
   });});
   document.addEventListener("click",function(e){ if(!e.target.closest("details.stat")) document.querySelectorAll("details.stat[open]").forEach(function(o){o.open=false;}); });
   document.querySelectorAll(".sheet-close").forEach(function(b){ b.addEventListener("click",function(e){ e.stopPropagation(); var d=b.closest("details"); if(d) d.open=false; }); });
