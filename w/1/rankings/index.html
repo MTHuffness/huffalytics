@@ -305,8 +305,10 @@
   .hfa details.calls { position: relative; display: inline-block; }
   .hfa details.calls > summary { list-style: none; cursor: pointer; white-space: nowrap; }
   .hfa details.calls > summary::-webkit-details-marker { display: none; }
-  .hfa details.calls > summary .twirl { margin: 0 0 0 0.2rem; font-size: 0.65rem; }
-  .hfa details.calls[open] > summary .twirl { transform: none; color: var(--hfa-accent); }
+  .hfa details.calls > summary .twirl { margin: 0 0 0 0.35rem; width: 1.15rem; height: 1.15rem; vertical-align: -0.25rem; }
+  .hfa details.calls > summary .twirl svg { width: 10px; height: 10px; }
+  .hfa details.calls > summary:hover .twirl { box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.35), 0 4px 12px -4px rgba(255, 31, 47, 0.9); }
+  .hfa details.calls[open] > summary .twirl { transform: rotate(180deg); background: #fff; color: var(--hfa-accent); }
   .hfa .calls-pop { position: absolute; right: 0; top: calc(100% + 0.35rem); z-index: 30; width: min(36rem, calc(100vw - 2rem)); text-align: left; background: var(--hfa-card); border: var(--hfa-hairline); border-radius: 12px; box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.9); padding: 0.6rem 0.8rem; font-size: 0.8rem; white-space: normal; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); max-height: 70vh; overflow: auto; }
   .hfa .calls-head { padding-bottom: 0.4rem; border-bottom: var(--hfa-hairline); margin-bottom: 0.2rem; }
   .hfa .call { padding: 0.45rem 0; border-bottom: 1px solid rgba(128, 128, 128, 0.12); }

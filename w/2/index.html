@@ -305,8 +305,10 @@
   .hfa details.calls { position: relative; display: inline-block; }
   .hfa details.calls > summary { list-style: none; cursor: pointer; white-space: nowrap; }
   .hfa details.calls > summary::-webkit-details-marker { display: none; }
-  .hfa details.calls > summary .twirl { margin: 0 0 0 0.2rem; font-size: 0.65rem; }
-  .hfa details.calls[open] > summary .twirl { transform: none; color: var(--hfa-accent); }
+  .hfa details.calls > summary .twirl { margin: 0 0 0 0.35rem; width: 1.15rem; height: 1.15rem; vertical-align: -0.25rem; }
+  .hfa details.calls > summary .twirl svg { width: 10px; height: 10px; }
+  .hfa details.calls > summary:hover .twirl { box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.35), 0 4px 12px -4px rgba(255, 31, 47, 0.9); }
+  .hfa details.calls[open] > summary .twirl { transform: rotate(180deg); background: #fff; color: var(--hfa-accent); }
   .hfa .calls-pop { position: absolute; right: 0; top: calc(100% + 0.35rem); z-index: 30; width: min(36rem, calc(100vw - 2rem)); text-align: left; background: var(--hfa-card); border: var(--hfa-hairline); border-radius: 12px; box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.9); padding: 0.6rem 0.8rem; font-size: 0.8rem; white-space: normal; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); max-height: 70vh; overflow: auto; }
   .hfa .calls-head { padding-bottom: 0.4rem; border-bottom: var(--hfa-hairline); margin-bottom: 0.2rem; }
   .hfa .call { padding: 0.45rem 0; border-bottom: 1px solid rgba(128, 128, 128, 0.12); }
@@ -514,11 +516,11 @@
     <div class="hfa-head slate-head">
       <div><div class="hfa-eyebrow">Week 2 games, lines and plan calls</div><h2 class="big">The slate</h2></div>
       <div class="head-tools">
-        <span class="why-key" title="Tap a game row to open it"><span class="twirl" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span>tap a game: the EPA behind its margin</span></span>
+        <span class="why-key" title="Tap a game row to open it"><span class="twirl" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span>tap a game for the EPA behind its margin, or an Overs / Unders record for its calls</span></span>
         <details class="legend">
         <summary title="What the columns mean">&#9432; Legend</summary>
         <div class="legend-body"><button type="button" class="sheet-close" aria-label="Close">&times;</button>
-          <div><b><span class="twirl" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></b> The dropdown: a game with the red circle opens on a tap or click to show the EPA comparison behind its model margin, the home-field step, the injuries that moved it and the adjusted margin.</div>
+          <div><b><span class="twirl" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></b> The dropdown: a red circle marks something that opens on a tap or click. On a game it shows the EPA comparison behind the model margin, the home-field step, the injuries that moved it and the adjusted margin. On an Overs or Unders record it lists the plan's calls on that side with the Normal / Edge / Edge+ rungs and, once played, what happened.</div>
           <div><b>Line &middot; O/U</b> The closing spread from the favorite's side and the market total. Once played, the total shows the points and whether it went over or under. Shown for context: the engine prices player props, not sides.</div>
           <div><b>Model</b> The engine's own margin for the favorite, from its opponent-adjusted efficiency ratings entering the week. Green = the engine likes the favorite more than the line does; amber = it actually likes the dog.</div>
           <div><b>Adj</b> The model margin with the priced injury reports folded in. &#8623; marks a game where the injuries flip the engine's side.</div>
