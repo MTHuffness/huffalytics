@@ -713,8 +713,16 @@
   .pl-tile span em { display: block; font-style: normal; font-weight: 600; text-transform: none; letter-spacing: 0; }
   .pl-tile.tough { border-color: rgba(255, 31, 47, 0.5); } .pl-tile.tough b { color: var(--hfa-accent); }
   .pl-tile.soft { border-color: rgba(47, 212, 164, 0.5); } .pl-tile.soft b { color: var(--hfa-good); }
-  .pl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
-  .pl-grid > .pl-card:first-child { grid-column: 1 / -1; }  /* the season log runs the width; timeline and defense share the row under it */
+  .pl-grid { display: grid; grid-template-columns: 1fr; gap: 0.8rem; }  /* log, then the defense card, then the timeline, each the full width */
+  /* The timeline lies sideways: the chart on the left, the score by quarter, legend and table beside it */
+  .pl-tl { display: grid; grid-template-columns: minmax(0, 380px) minmax(0, 1fr); gap: 0.2rem 1.4rem; align-items: start; }
+  .pl-tl[hidden] { display: none; }
+  .pl-tl > .tl-svg { grid-column: 1; grid-row: 1 / span 4; }
+  .pl-tl > .pl-score, .pl-tl > .tl-legend, .pl-tl > .tl-table { grid-column: 2; }
+  .pl-tl > .pl-score { margin: 0 0 0.3rem; }
+  .pl-tl > .tl-legend { justify-content: flex-start; }
+  .hfa .pl-tl > .tl-table { width: auto; min-width: 24rem; }
+  .pl-note { max-width: 60rem; }
   .pl-card { min-width: 0; padding: 0.6rem 0.75rem 0.7rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); }
   .pl-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--hfa-accent); margin-bottom: 0.45rem; }
   .pl-title > span, .pl-title .t > span { font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--hfa-muted); }
@@ -774,8 +782,13 @@
     .pl-sheet { padding: 0.8rem 16px 2rem; }
     .pl-head { padding-right: 2.2rem; }
     .pl-name { font-size: 1.1rem; }
-    .pl-grid { grid-template-columns: 1fr; gap: 0.6rem; }
-    .pl-grid > .pl-card:first-child { grid-column: auto; }
+    .pl-grid { gap: 0.6rem; }
+    .pl-tl { grid-template-columns: 1fr; }
+    .pl-tl > .tl-svg { grid-row: auto; grid-column: 1; }
+    .pl-tl > .pl-score, .pl-tl > .tl-legend, .pl-tl > .tl-table { grid-column: 1; }
+    .pl-tl > .pl-score { margin: 0 auto 0.4rem; }
+    .pl-tl > .tl-legend { justify-content: center; }
+    .pl-tl > .tl-table { width: 100%; min-width: 0; }
     .pl-tile { min-width: 4.4rem; padding: 0.3rem 0.5rem; }
     .hfa .pl-log td.wk, .hfa .pl-log th:first-child { position: sticky; left: 0; background: #0d0d11; z-index: 1; }
     :root[data-theme="light"] .hfa .pl-log td.wk, :root[data-theme="light"] .hfa .pl-log th:first-child { background: #fff; }
