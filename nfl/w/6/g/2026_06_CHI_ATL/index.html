@@ -746,6 +746,15 @@
   .hfa .pl-log tr.tot td { font-weight: 700; }
   .hfa .pl-log tr.avg td { color: var(--hfa-muted); border-top: 1px solid rgba(128, 128, 128, 0.12); }
   .hfa .pl-log td.who small { color: var(--hfa-muted); font-size: 0.66rem; }
+  .pl-more { border: 0; border-radius: 999px; padding: 0.05rem 0.5rem; margin-left: 0.3rem; font: inherit; font-size: 0.66rem; font-weight: 800; background: var(--hfa-accent-soft); color: var(--hfa-accent); cursor: pointer; vertical-align: 1px; }
+  .pl-more:hover, .pl-more.open { background: var(--hfa-accent); color: #fff; }
+  .hfa .pl-log tr.pl-group > td { white-space: normal; background: var(--hfa-tint); padding: 0.45rem 0.6rem; }
+  .pl-gp { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.6rem; font-size: 0.78rem; line-height: 1.4; padding: 0.2rem 0; }
+  .pl-gp + .pl-gp { border-top: 1px solid rgba(128, 128, 128, 0.12); }
+  .pl-gp b { color: var(--hfa-body); }
+  .pl-gp .line { font-weight: 600; }
+  .pl-gp em { font-style: normal; color: var(--hfa-muted); }
+  .pl-gp .badge { font-size: 0.56rem; padding: 0.1em 0.45em; }
   .pl-rank { display: inline-block; font-size: 0.6rem; font-weight: 800; padding: 0.05rem 0.35rem; border-radius: 5px; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); margin-left: 0.15rem; vertical-align: 1px; }
   .pl-rank.tough { background: rgba(255, 31, 47, 0.18); color: var(--hfa-accent); }
   .pl-rank.soft { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
@@ -2556,6 +2565,10 @@
       var s=box.querySelector('.pl-sheet[data-pid="'+pid+'"]');
       if(!s){ body.innerHTML='<div class="pl-loading">No sheet for this player yet.</div>'; return; }
       body.innerHTML=""; var node=s.cloneNode(true); body.appendChild(node);
+      node.querySelectorAll(".pl-more").forEach(function(b){ b.addEventListener("click",function(){
+        var row=b.closest("tr").nextElementSibling; if(!row||!row.classList.contains("pl-group")) return;
+        row.hidden=!row.hidden; b.setAttribute("aria-expanded",String(!row.hidden)); b.classList.toggle("open",!row.hidden);
+      }); });
       var pick=node.querySelector(".pl-pick");
       if(pick) pick.addEventListener("change",function(){ node.querySelectorAll(".pl-tl").forEach(function(t){ t.hidden=t.dataset.key!==pick.value; }); });
       modal.querySelector(".pl-dialog").scrollTop=0;
