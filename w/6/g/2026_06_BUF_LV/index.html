@@ -797,6 +797,126 @@
     .hfa .pl-log td.wk, .hfa .pl-log th:first-child { position: sticky; left: 0; background: #0d0d11; z-index: 1; }
     :root[data-theme="light"] .hfa .pl-log td.wk, :root[data-theme="light"] .hfa .pl-log th:first-child { background: #fff; }
   }
+
+  /* ---- The plan / report panel under the scoreboard ---- */
+  .gm-doc { position: relative; overflow: visible; }
+  .gm-doc::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; border-radius: 14px 14px 0 0; background: linear-gradient(90deg, var(--hfa-accent), transparent 70%); pointer-events: none; }
+  .gm-doc.st-both::before { background: linear-gradient(90deg, var(--hfa-good), var(--hfa-accent) 55%, transparent 90%); }
+  .gm-doc > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.9rem; padding: 1rem 1.1rem; }
+  .gm-doc > summary::-webkit-details-marker { display: none; }
+  .gm-doc-chev { display: inline-grid; place-items: center; flex: none; width: 2rem; height: 2rem; border-radius: 50%; background: var(--hfa-accent); color: #fff; box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.22), 0 6px 14px -6px rgba(255, 31, 47, 0.9); transition: transform 0.18s; }
+  .gm-doc[open] > summary .gm-doc-chev { transform: rotate(180deg); background: #fff; color: var(--hfa-accent); }
+  .gm-doc-main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+  .gm-doc-eyebrow { font-size: 0.64rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-accent); }
+  .gm-doc-lead { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; line-height: 1.3; color: var(--hfa-body); }
+  .gm-doc-chips { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0.3rem; flex: 0 1 auto; }
+  .gm-doc-open { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); margin-left: 0.3rem; }
+  .gm-doc[open] .gm-doc-open { display: none; }
+  .gm-doc-body { border-top: var(--hfa-hairline); padding: 0.7rem 1.1rem 1.2rem; }
+  .gm-doc-nav { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.9rem; }
+  .gm-doc-pills { display: flex; gap: 0.3rem; overflow-x: auto; scrollbar-width: none; flex: 1 1 auto; padding: 2px; }
+  .gm-doc-pills::-webkit-scrollbar { display: none; }
+  .gm-doc-pills button { flex: none; border: 1px solid rgba(128, 128, 128, 0.25); background: transparent; color: var(--hfa-muted); border-radius: 999px; padding: 0.3rem 0.85rem; font-size: 0.76rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
+  .gm-doc-pills button.active { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-arrow { flex: none; width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid rgba(128, 128, 128, 0.3); background: transparent; color: var(--hfa-body); font-size: 1.2rem; line-height: 1; cursor: pointer; }
+  .gm-doc-arrow:hover { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-pane { display: none; animation: gm-fade 0.18s ease-out; }
+  .gm-doc-pane.active { display: block; }
+  @keyframes gm-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  .gm-doc-hook { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1.2; color: var(--hfa-accent); margin-bottom: 0.4rem; }
+  .gm-doc-headline { font-size: 1rem; font-weight: 600; line-height: 1.45; margin: 0 0 0.7rem; }
+  .gm-doc-p { font-size: 0.9rem; line-height: 1.55; margin: 0 0 0.7rem; }
+  .gm-doc-note { font-size: 0.76rem; color: var(--hfa-muted); line-height: 1.45; margin: 0 0 0.6rem; }
+  .gm-doc-prose { font-size: 0.9rem; line-height: 1.6; max-width: 60rem; }
+  .gm-doc-prose h2 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 1rem 0 0.3rem; }
+  .gm-doc-prose h3 { font-size: 0.9rem; margin: 0.8rem 0 0.2rem; }
+  .gm-doc-prose p { margin: 0 0 0.6rem; }
+  .gm-doc-prose ul { padding-left: 1.2rem; }
+  .gm-doc-k { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 0.9rem 0 0.35rem; }
+  .gm-doc-box > .gm-doc-k:first-child, .gm-doc-col > .gm-doc-k:first-child { margin-top: 0; }
+  .gm-doc-verdicts { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.2rem 0 0.7rem; }
+  .gm-doc-verdicts.wrap .badge { white-space: normal; text-align: left; }
+  .gm-doc-verdicts .badge b { color: inherit; }
+  .gm-doc-vs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 0.4rem; }
+  .gm-doc-col { padding: 0.75rem 0.9rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); font-size: 0.9rem; line-height: 1.5; }
+  .gm-doc-col.plan { border-left: 3px solid var(--hfa-accent); }
+  .gm-doc-col.game { border-left: 3px solid var(--hfa-good); }
+  .gm-doc-col.game .gm-doc-k { color: var(--hfa-good); }
+  .gm-doc-col p, .gm-doc-box p { margin: 0 0 0.45rem; font-size: 0.88rem; line-height: 1.5; }
+  .gm-doc-col p:last-child, .gm-doc-box p:last-child { margin-bottom: 0; }
+  .gm-doc p.sub, .gm-doc .went { font-size: 0.8rem; color: var(--hfa-muted); line-height: 1.45; }
+  .gm-doc .went { margin-top: 0.2rem; }
+  .gm-doc-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .gm-doc-three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; }
+  .gm-doc-box { min-width: 0; padding: 0.7rem 0.85rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); }
+  .gm-doc-boxhead { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.4rem; font-size: 0.92rem; }
+  .gm-doc-boxhead b { color: var(--hfa-body); font-weight: 800; }
+  .gm-doc-ul { margin: 0; padding-left: 1.1rem; font-size: 0.86rem; line-height: 1.5; }
+  .gm-doc-ul li { margin-bottom: 0.3rem; }
+  .gm-doc-list { display: flex; flex-direction: column; gap: 0.45rem; }
+  .gm-doc-item { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.45; padding: 0.5rem 0.7rem; border-radius: 10px; background: var(--hfa-tint); border: var(--hfa-hairline); }
+  .gm-doc-item > div { min-width: 0; }
+  .gm-doc-item b { color: var(--hfa-body); }
+  .gm-doc-flag { flex: none; min-width: 5.2rem; text-align: center; border-radius: 6px; padding: 0.2rem 0.45rem; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); margin-top: 0.15rem; }
+  .gm-doc-flag.decisive, .gm-doc-flag.signal, .gm-doc-flag.yes, .gm-doc-flag.held { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-flag.contributed, .gm-doc-flag.mixed, .gm-doc-flag.partly { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .gm-doc-flag.minor, .gm-doc-flag.noise, .gm-doc-flag.no, .gm-doc-flag.broke { background: rgba(255, 31, 47, 0.16); color: var(--hfa-accent); }
+  .gm-doc-flag.defense { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .gm-doc-flag.offense { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-calls { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  .gm-call { min-width: 0; padding: 0.65rem 0.85rem 0.6rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); border-left: 3px solid var(--hfa-muted); }
+  .gm-call.over { border-left-color: var(--hfa-good); } .gm-call.under { border-left-color: var(--hfa-accent); }
+  .gm-call.hit { background: rgba(47, 212, 164, 0.06); } .gm-call.miss { background: rgba(255, 176, 32, 0.06); }
+  .gm-call-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.5rem; font-size: 0.92rem; }
+  .gm-call-side { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .gm-call.over .gm-call-side { color: var(--hfa-good); } .gm-call.under .gm-call-side { color: var(--hfa-accent); }
+  .gm-call .who { color: var(--hfa-body); font-weight: 800; }
+  .gm-call .bet { font-weight: 700; color: var(--hfa-accent); }
+  .gm-call .res { font-weight: 800; font-size: 0.8rem; margin-left: auto; }
+  .gm-call .res.hit { color: var(--hfa-good); } .gm-call .res.miss { color: var(--hfa-bad); } .gm-call .res.void { color: var(--hfa-muted); font-weight: 500; }
+  .gm-call-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem; margin: 0.35rem 0 0.2rem; }
+  .gm-call .prob { font-size: 0.7rem; font-weight: 700; color: var(--hfa-muted); border: 1px solid rgba(128, 128, 128, 0.3); border-radius: 999px; padding: 0.1rem 0.5rem; }
+  .gm-call .rungs { margin: 0.35rem 0 0.4rem; }
+  .gm-call .rung small { font-weight: 500; color: var(--hfa-muted); }
+  .gm-call p.why { font-size: 0.84rem; line-height: 1.45; margin: 0.3rem 0 0.2rem; color: var(--hfa-body); }
+  .gm-call p.ev { font-size: 0.74rem; line-height: 1.4; margin: 0 0 0.15rem; color: var(--hfa-muted); }
+  .gm-doc .legs { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.4rem; }
+  .gm-doc .leg { border-radius: 8px; padding: 0.2rem 0.5rem; font-size: 0.76rem; font-weight: 700; background: rgba(128, 128, 128, 0.14); }
+  .gm-doc .leg em { font-style: normal; font-weight: 500; color: var(--hfa-muted); }
+  .gm-doc .leg i { font-style: normal; font-weight: 800; }
+  .gm-doc .leg.hit { background: rgba(47, 212, 164, 0.16); } .gm-doc .leg.hit i { color: var(--hfa-good); }
+  .gm-doc .leg.miss { background: rgba(255, 176, 32, 0.16); } .gm-doc .leg.miss i { color: var(--hfa-bad); }
+  .gm-doc-gradehead { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+  .gm-grade { flex: none; display: flex; align-items: center; gap: 0.6rem; padding: 0.4rem 0.9rem 0.4rem 0.6rem; border-radius: 14px; border: 2px solid var(--hfa-muted); background: var(--hfa-tint); }
+  .gm-grade b { font-size: 2.6rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .gm-grade span { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); line-height: 1.3; }
+  .gm-grade.good { border-color: var(--hfa-good); } .gm-grade.good b { color: var(--hfa-good); }
+  .gm-grade.warn { border-color: var(--hfa-bad); } .gm-grade.warn b { color: var(--hfa-bad); }
+  .gm-grade.bad { border-color: var(--hfa-accent); } .gm-grade.bad b { color: var(--hfa-accent); }
+  .gm-doc-gradetext { flex: 1 1 20rem; min-width: 0; }
+  .gm-doc-gradetext .gm-doc-verdicts { margin-bottom: 0; }
+  .hfa .gm-doc-table { font-size: 0.8rem; }
+  .hfa .gm-doc-table th, .hfa .gm-doc-table td { padding: 0.25rem 0.4rem; }
+  .hfa .gm-doc-table b { color: var(--hfa-body); }
+  .hfa .gm-doc-table td.meter { width: 5rem; }
+  .hfa .gm-doc-table td.meter i { display: block; height: 4px; border-radius: 2px; background: var(--hfa-good); }
+  .hfa .gm-doc-table td.meter i.bad { background: var(--hfa-bad); }
+  .gm-doc-tl { position: relative; padding-left: 1rem; border-left: 2px solid rgba(128, 128, 128, 0.25); display: flex; flex-direction: column; gap: 0.7rem; }
+  .gm-doc-tp { position: relative; font-size: 0.88rem; line-height: 1.45; }
+  .gm-doc-tp::before { content: ""; position: absolute; left: -1.4rem; top: 0.45rem; width: 10px; height: 10px; border-radius: 50%; background: var(--hfa-accent); box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.25); }
+  .gm-doc-tp .clock { font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-accent); }
+  @media (max-width: 1100px) { .gm-doc-three { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 760px) {
+    .gm-doc > summary { padding: 0.85rem 16px; gap: 0.6rem; flex-wrap: wrap; }
+    .gm-doc-main { flex: 1 1 0; }
+    .gm-doc-lead { font-size: 0.98rem; }
+    .gm-doc-chips { justify-content: flex-start; flex: 0 0 100%; padding-left: 2.6rem; }
+    .gm-doc-body { padding: 0.6rem 16px 1rem; }
+    .gm-doc-hook { font-size: 1.2rem; }
+    .gm-doc-vs, .gm-doc-two, .gm-doc-three, .gm-doc-calls { grid-template-columns: 1fr; }
+    .gm-doc-arrow { display: none; }
+    .gm-doc-flag { min-width: 4.4rem; font-size: 0.56rem; }
+  }
   @media (prefers-reduced-motion: reduce) { #hfa-rain { opacity: calc(var(--hfa-rain) * 0.5); } }
 </style>
 
@@ -821,7 +941,7 @@
     <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
   </div>
   <main>
-<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#away" data-sec="away">BUF offense</a><a href="#home" data-sec="home">LV offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
+<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#doc-sec" data-sec="doc">Plan vs game</a><a href="#away" data-sec="away">BUF offense</a><a href="#home" data-sec="home">LV offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
 
 <div class="hfa-card hfa-hero hfa-sec gm-hero" id="hero" data-sec="hero" style="--gm-away: #00338D; --gm-home: #000000;">
   <div class="gm-hero-top">
@@ -848,6 +968,483 @@
     <span class="gm-chip final"><i>final</i> <b>BUF 33 &ndash; 30 LV</b></span>
     <span class="gm-chip " title="Natural grass. Passing is the same on grass and turf; rushing runs about 3.5% higher on turf (+3.7 yards a team) and a catch gains a tenth of a yard more after it. Points, the closing lines and the engine show no surface effect, so it is not an engine input."><i>field</i> <b>grass</b></span><span class="gm-chip " title="Played under a roof: the weather outside does not reach the field."><i>roof</i> <b>dome</b></span>
   </div>
+</div>
+
+<div class="hfa-sec" id="doc-sec" data-sec="doc">
+
+<details class="hfa-card gm-doc st-both" id="doc">
+  <summary class="gm-doc-bar">
+    <span class="gm-doc-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="gm-doc-main">
+      <span class="gm-doc-eyebrow">The plan against the game &middot; plan Sun Oct 18, 9:41 AM &middot; report Tue Oct 20, 11:41 AM</span>
+      <span class="gm-doc-lead">Cousins carves a Buffalo secondary that bends. Cook and Allen punch it in on the ground.</span>
+    </span>
+    <span class="gm-doc-chips">
+      <span class="badge warn">script partly held</span>
+      <span class="badge good">7 hit</span><span class="badge bad">4 missed</span>
+      <span class="badge warn" title="Projection grade: team volume and yardage, player lines, and the market calls the projection implied">projection C &middot; 67</span>
+      <span class="gm-doc-open">open</span>
+    </span>
+  </summary>
+  <div class="gm-doc-body">
+    <div class="gm-doc-nav">
+      <button type="button" class="gm-doc-arrow" data-dir="-1" aria-label="Previous section">&#8249;</button>
+      <div class="gm-doc-pills" role="tablist"></div>
+      <button type="button" class="gm-doc-arrow" data-dir="1" aria-label="Next section">&#8250;</button>
+    </div>
+
+    
+    
+    <section class="gm-doc-pane" data-title="Plan vs game">
+      <div class="gm-doc-verdicts">
+        <span class="badge warn" title="Whether the game went the way the plan's script described, for the reasons it gave">script partly held</span>
+        <span class="badge mute">followed the favorite&#x27;s path</span>
+        <span class="badge good" title="Both teams ran 125 plays; the league's figure for two teams was 121.5">pace: called average, played average</span>
+        <span class="badge bad" title="BUF passed on 55% of its plays; its season rate entering the game was 50%">BUF: called run, played pass</span><span class="badge good" title="LV passed on 67% of its plays; its season rate entering the game was 58%">LV: called pass, played pass</span>
+      </div>
+      <div class="gm-doc-vs">
+        <div class="gm-doc-col plan"><div class="gm-doc-k">The plan said</div><p>Buffalo should lead and finish drives with its legs; Las Vegas answers through the air, because Buffalo&#x27;s secondary gives up yards and touchdowns at the goal line.</p><p class="sub">Buffalo should control this between the 20s and convert field position into short rushing touchdowns against a Raiders defense that surrenders a score on four of five red-zone trips. Las Vegas will move it through the air underneath — Bowers, Mayer and Jeanty on checkdowns — because Buffalo&#x27;s coverage has conceded four-plus explosive passes every week and the most passing yardage in the league. The Raiders&#x27; run game is non-functional, so any deficit turns into a 38-plus attempt night for Cousins. Expect a scoreboard that stays live into the fourth without the game ever feeling close on a per-play basis.</p></div>
+        <div class="gm-doc-col game"><div class="gm-doc-k">What happened</div><p>Buffalo won 33-30 but failed to cover -5.5, and the 63 points blew through a 53.5 total: the Bills moved at 0.185 EPA/play yet turned five red-zone trips into three touchdowns and two Bass field goals, while Cousins threw for 313 on 41 attempts against a Buffalo secondary that gave up four 20-plus passes and 33 DPI yards.</p><p class="sub">The plan read the shape of this game well and the lean on one side exactly: Buffalo led most of the way, Las Vegas was chased into a 41-attempt night with its run game abandoned, Cousins threw two scores, and Jeanty&#x27;s carries dried up while his receiving work held. Where it went wrong was Buffalo&#x27;s own identity — it called a run lean and Buffalo passed at 0.547 against a 0.502 season rate, which took the Allen rushing over, the Allen pass-TD under and the Allen pass-yard under with it in one chain. The most interesting miss is mechanical, not scripted: the plan assumed Las Vegas pressure turns into Allen scrambles, and instead it turned into two sacks and one 2-yard scramble. The Bowers miss was the bounce (9 targets, 4 catches, -9.7 CPOE team-wide), not the read.</p><p class="sub"><b>The script:</b> Buffalo led for 2,069 of the game&#x27;s seconds and Las Vegas trailed on 60 of 66 snaps, exactly the favorite&#x27;s branch; the Raiders got to 41 attempts and 20 carries, Jeanty to 10 carries for 22, as the plan&#x27;s underdog mechanism described. But the favorite path specified Allen under 30 attempts with a quiet passing box score and touchdowns on the ground — he threw 33 for 255 with 2 passing TDs and 1 rushing yard, and `checks` has Buffalo&#x27;s lean as pass (0.547 vs 0.502 season), so the lean call failed. Pace held: 125 combined plays against 121.5 league, called average.</p></div>
+      </div>
+      
+      <div class="gm-doc-k">What the plan said would swing it</div>
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag decisive">decisive</span><div>Whether Buffalo ever leads — their run lean is a lead property, not a trait, as our Week 4 review showed.<div class="went"><b>Went:</b> Buffalo did lead — 2,069 seconds to LV&#x27;s 735 — and the lead did not produce the run lean the plan tied to it: Buffalo&#x27;s pass rate while leading was 0.545 on 22 plays, essentially its game average. Leading changed LV&#x27;s behavior, not Buffalo&#x27;s.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>DJ Moore and Josh Palmer both questionable; Moore practiced in a non-contact jersey Friday.<div class="went"><b>Went:</b> Moore did not play, Palmer played 25% of snaps for 2 targets. Coleman absorbed it — 85.3% snaps, 47.8% air-yard share, 6 targets for 59 and a touchdown — and Kincaid led the team in targets at 8.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Buffalo&#x27;s flags: 4.6 a game with 1.8 pre-snap, enough to stall drives inside the 20 and turn touchdowns into kicks.<div class="went"><b>Went:</b> Buffalo took 7 flags for 72 yards including the offensive holding at Q3 9:57 that erased an 18-yard Kincaid touchdown, turning seven into a 47-yard field goal. Two pre-snap flags, in line with the 1.8/game input.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag minor">minor</span><div>Las Vegas pressure (2nd in the league) against Allen — it produces scrambles as often as sacks.<div class="went"><b>Went:</b> LV pressured at 16.7% sack-or-hit with 6 QB hits and 2 sacks, but it produced one scramble for 2 yards. The pressure existed; the scramble conversion the plan hung on it did not.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag minor">minor</span><div>Blowout risk: Cousins was pulled late in the Week 5 loss, capping his counting stats.<div class="went"><b>Went:</b> No blowout — Buffalo&#x27;s largest lead was 10 and the game ended 33-30 — so Cousins played every snap and reached 41 attempts, the opposite of the capping risk.</div></div></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">Each offense: expected &middot; happened</div>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>BUF</b><span class="badge warn">partly</span></div><p><b>Expected:</b> Pass rate near 0.50, 28-32 Allen attempts, Cook in the 17-21 carry range if the Bills lead, Allen 7-10 carries including scrambles, and the touchdowns arriving on the ground rather than through the air.</p><p><b>Happened:</b> Carries (29) and Cook&#x27;s workload (22 for 95, 1 TD) landed in range, but pass rate came in at 0.554 not ~0.50, Allen threw 33 not 28-32 with two passing touchdowns, and he had 5 carries for 1 yard, not 7-10 including scrambles. Buffalo&#x27;s touchdowns were 2 through the air and 1 on the ground — the inverse of the expectation.</p></div><div class="gm-doc-box"><div class="gm-doc-boxhead"><b>LV</b><span class="badge good">held</span></div><p><b>Expected:</b> 34-40 Cousins attempts if the Raiders trail, Bowers at nine-plus targets as the alpha, Jeanty&#x27;s value in the passing game rather than on the ground, and the points arriving as touchdowns rather than kicks given Buffalo&#x27;s goal-line record.</p><p><b>Happened:</b> Cousins threw 41 times trailing, Bowers took 9 targets as projected, Jeanty&#x27;s value was receiving (4-36) not rushing (10-22), and LV drew 33 DPI yards from Buffalo&#x27;s coverage. The one part that broke: the points came as 2 TDs and 3 field goals, not as touchdowns — LV&#x27;s own red-zone EPA was -0.001.</p></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">For the next plan on these teams</div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="badge mute">BUF</span><div>Stop treating Buffalo&#x27;s low season pass rate (0.502) as a lead property. It led for 2,069 seconds and still passed at 0.545 while leading and 0.547 overall — its early-down pass rate (0.509) matched expected (0.516). Price Allen&#x27;s attempts near 32-34 regardless of script.</div></div><div class="gm-doc-item"><span class="badge mute">BUF</span><div>Do not convert opponent pressure rate into Allen rushing yards. Against 6 QB hits and a 33% blitz rate he produced 1 rush yard and one scramble; the short-yardage keeper went to Cook. Allen&#x27;s rushing floor needs a specific goal-line usage read, not a pressure proxy.</div></div><div class="gm-doc-item"><span class="badge mute">LV</span><div>The trailing-script passing thesis is sound and repeatable (41 attempts, 0.672 pass rate, Jeanty 10 carries), but route the volume to the second and third options: Tucker (97) and Mayer (95) beat Bowers (70) on the same number of looks. Bowers&#x27; yardage line needs a completion-rate haircut when Cousins&#x27; CPOE runs negative.</div></div><div class="gm-doc-item"><span class="badge mute">both</span><div>Don&#x27;t over-react to the red-zone splits here. Buffalo kicked twice on five trips partly because of one holding penalty that erased a touchdown, and Cousins&#x27; single interception is the least persistent thing in the file — neither should move the next projection much.</div></div></div>
+      
+    </section>
+    
+
+    
+    
+    <section class="gm-doc-pane" data-title="The script">
+      <div class="gm-doc-verdicts">
+        <span class="badge mute" title="Plays and tempo">average pace</span>
+        <span class="badge acc" title="Their pass rate is already 0.502, below league, and it drops further in front; favored in a dome, the ground game and Allen&#x27;s keepers are the scoring plan.">BUF run</span><span class="badge acc" title="Already 0.576 pass rate and a run game at 2.99 a carry with the worst before-contact blocking in the sample; trailing, that goes higher.">LV pass</span>
+        <span class="badge mute">medium confidence</span>
+      </div>
+      <p class="gm-doc-p">Buffalo should control this between the 20s and convert field position into short rushing touchdowns against a Raiders defense that surrenders a score on four of five red-zone trips. Las Vegas will move it through the air underneath — Bowers, Mayer and Jeanty on checkdowns — because Buffalo&#x27;s coverage has conceded four-plus explosive passes every week and the most passing yardage in the league. The Raiders&#x27; run game is non-functional, so any deficit turns into a 38-plus attempt night for Cousins. Expect a scoreboard that stays live into the fourth without the game ever feeling close on a per-play basis.</p>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-k">If the favorite wins</div><p>Buffalo scores early, Allen&#x27;s scrambles and Cook&#x27;s carries eat the middle quarters, and the Bills finish two or three short-yardage drives on the ground. Allen throws under 30 times and the Bills win 30-23 with a quiet passing box score.</p></div>
+        <div class="gm-doc-box"><div class="gm-doc-k">If the underdog wins</div><p>Las Vegas trades scores by finishing in the red zone against the league&#x27;s softest goal-line defense, Cousins clears 38 attempts feeding Bowers and the backs, and a Buffalo giveaway or a drive-extending flag keeps it one score — a 31-27 type where every Raiders passing number plays up.</p></div>
+      </div>
+      
+      <div class="gm-doc-prose"><h2>The read</h2>
+<p>Buffalo is the better team by a distance between the 20s (0.224 field EPA per play, 9.05 yards an attempt, 5.37 a carry) and is laid 5.5 in a dome. The way it scores is on the ground: every touchdown in Week 3 was a one- to three-yard run, Allen has a rushing score in all five games, and Cook has four rushing touchdowns in the last four weeks. Las Vegas gives up 5.21 yards a carry (31st) and 140.6 rushing yards a game (28th), and allows a touchdown on 80% of red-zone trips (30th). That is the Bills' half.</p>
+<p>Las Vegas is not a team that gets shut out of this. Buffalo's defense has allowed 295.8 passing yards a game (31st), four or five explosive passes every single week, and a touchdown on 83.3% of red-zone trips against it — the worst finishing-defense number on the board. Cousins has thrown three touchdowns in three of five starts; Bowers has gone 116, 86 and 110 receiving yards in three games since returning and practiced in full Thursday (FantasyPros, Thu).</p>
+<h2>Why</h2>
+<p>The mechanism that decides volume is possession. Las Vegas runs 64.6 plays a game and cannot run the ball at all (2.99 a carry, 1.40 before contact against a 2.54 league mark), so once it trails, Cousins is throwing — 52 attempts the last time that happened, against Kansas City. Buffalo's run lean, by contrast, is conditional: our Week 4 review of the New England loss found the Bills threw on 60.3% of snaps because they never led. Favored here, the lean returns, which caps Allen's attempts and hands Cook and Allen the short-yardage scores.</p>
+<p>The Raiders' counter-lever is pressure — second in the league at 22.8% — which pushes Allen out of the pocket. That raises his scramble yards more than it lowers them.</p>
+<h2>What would change it</h2>
+<p>DJ Moore and Josh Palmer are both questionable (Rotowire, Fri); Moore practiced in a non-contact jersey. If Buffalo falls behind, Allen's passing lines flip and Cook's carries evaporate — the exact break that cost us in Week 4. And if Buffalo blows it open, Cousins may not finish, as in Week 5.</p></div>
+    </section>
+    <section class="gm-doc-pane" data-title="Offenses">
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>BUF offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>The most efficient offense in this sample between the 20s: 0.224 field EPA per play, 9.05 yards per attempt, 5.37 a carry with 3.49 yards before contact against a 2.54 league mark. Five explosive passes or more in four of five weeks.</p>
+          <div class="gm-doc-k">How it scores</div><p>Chunk passing to set up short-yardage runs. Every Week 3 touchdown was a 1-, 1- or 3-yard run; Allen has a rushing score in all five games and Cook four in four weeks.</p>
+          <div class="gm-doc-k">What stops it</div><p>Pressure and their own flags. Four sacks and 32% pressure in Week 3 produced five turnovers; 13 flags and six pre-snap in Week 5; holding wiped a 43-yard touchdown in Week 3. And a script where they trail — Week 4 at 0.603 pass rate, Cook capped at 12 carries.</p>
+          <div class="gm-doc-k">This matchup</div><p>Las Vegas generates pressure at the second-highest rate in the league, which is the one thing that has derailed this offense. But the Raiders surrender 5.21 yards a carry (31st) and 140.6 rushing yards a game (28th) and allow a touchdown on 80% of red-zone trips (30th) — their rushing EPA rank rests on stuffs, not on yardage.</p>
+          <div class="gm-doc-k">Injuries</div><p>DJ Moore (shoulder) and Josh Palmer (shoulder) both questionable and both limited all week; Moore was in a non-contact jersey Friday (Rotowire, Fri). Coleman, Shakir and Bell handled nearly all receiver routes in Week 5 and would again. Ty Johnson is clear of the hamstring tag. On the Raiders&#x27; side, Hemingway is out (13% snaps) with Booker and Fatukasi absorbing interior snaps.</p>
+          <div class="gm-doc-k">Expect</div><p>Pass rate near 0.50, 28-32 Allen attempts, Cook in the 17-21 carry range if the Bills lead, Allen 7-10 carries including scrambles, and the touchdowns arriving on the ground rather than through the air.</p>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>LV offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>A short-area passing offense with no run game: 0.101 field EPA per play, 7.32 yards an attempt, and 2.99 yards a carry with 1.40 before contact against a 2.54 league baseline. Cousins has thrown multiple touchdowns in four of five.</p>
+          <div class="gm-doc-k">How it scores</div><p>Underneath volume to Bowers, Mayer and the back, plus one or two shots to Tucker. Short fields off takeaways have supplied the rest — the Week 3 win at New Orleans was built on three fourth-quarter giveaways.</p>
+          <div class="gm-doc-k">What stops it</div><p>Its own red zone (0.562 TD rate, 1-of-3 against Kansas City with five field goals) and any front that keeps it one-dimensional. Protection cracks: 9 QB hits at the Chargers, 3 sacks each at New Orleans and New England.</p>
+          <div class="gm-doc-k">This matchup</div><p>Buffalo has allowed 295.8 passing yards a game (31st), four or five explosive passes every week, and a touchdown on 83.3% of opponent red-zone trips — the worst finishing defense in the sample. Its pass rush is concentrated in Rousseau; outside him the heat is intermittent (14.3% pressure in Week 4). Buffalo does hold yards per carry down (3.92, 12th), which does nothing for a team that cannot run anyway.</p>
+          <div class="gm-doc-k">Injuries</div><p>Bowers full Thursday and Friday off the knee (FantasyPros, Thu); Jeanty full off the foot but visibly limited in Week 5 (10 carries, 53% snaps). Nailor cleared concussion protocol; Thornton not activated. Buffalo&#x27;s interior is thinned: Ed Oliver questionable after two DNPs (Rotowire, Fri), and slot corner Dee Alford questionable, which would put Hamlin inside against Bowers and the backs.</p>
+          <div class="gm-doc-k">Expect</div><p>34-40 Cousins attempts if the Raiders trail, Bowers at nine-plus targets as the alpha, Jeanty&#x27;s value in the passing game rather than on the ground, and the points arriving as touchdowns rather than kicks given Buffalo&#x27;s goal-line record.</p>
+        </div>
+        
+      </div>
+    </section>
+    <section class="gm-doc-pane" data-title="The calls">
+      <p class="gm-doc-note">Each call is one player, one market, one side of the line Kalshi quoted when the plan was written; graded off the box score, with the report's read of whether the reason given showed up. The rungs are the same call down the Kalshi ladder, Edge halfway to its last rung and Edge+ the last, at Kalshi's last pregame price.</p>
+      <div class="gm-doc-verdicts"><span class="badge mute">Normal <b class="up">7</b>&ndash;<b class="down">4</b></span><span class="badge mute">Edge <b class="up">10</b>&ndash;<b class="down">1</b></span><span class="badge mute">Edge+ <b class="up">10</b>&ndash;<b class="down">1</b></span></div>
+      <div class="gm-doc-calls">
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">James Cook</b><span class="flat">BUF</span>
+            <span class="bet">to score</span>
+            <span class="res hit">&#10003; 1</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on EPA allowed entering the week (#1 toughest)">D #15 EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 71%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 57%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal / Edge / Edge+</i> to score <small>57&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Cook scored from 3 yards at Q4 4:49 on a goal-line carry after his own 26-yard catch set it up — precisely the mechanism (Buffalo&#x27;s short-yardage scoring handed off into a soft LV goal line).</p>
+          <p class="why">Las Vegas concedes a touchdown on four of every five red-zone trips, and Buffalo&#x27;s scoring inside the 10 is handed off. Cook has found the end zone in four straight.</p>
+          <p class="ev">LV allows a 0.800 red-zone TD rate (30th); Cook 1, 1, 1, 2 rush TDs weeks 2-5 on 17-25 carries.</p>
+          <p class="ev">vs #15 EPA allowed; engine over-probability well clear of the market&#x27;s. Anytime-TD calls are 8-of-12 this season.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Ty Johnson</b><span class="flat">BUF</span>
+            <span class="bet">over 1.5 receptions</span>
+            <span class="res hit">&#10003; 2</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">low</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #20 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 67%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 58%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal / Edge / Edge+</i> over 1.5 receptions <small>61&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Johnson played 17.6% of snaps, saw 2 targets and caught both for 24 yards including the 14-yard 3rd-and-8 at Q1 12:49. Passing-down role exactly as described.</p>
+          <p class="why">He is the passing-down back and has caught everything thrown at him since returning, with Buffalo&#x27;s receiver room banged up. No injury designation after a full Friday.</p>
+          <p class="ev">4-4-50, 2-2-9, 4-4-72 in weeks 3-5 on 22-32% snaps; cleared the hamstring tag Friday (Rotowire, Fri).</p>
+          <p class="ev">vs #26 pass EPA allowed; engine above the line, market barely above — the role, not the yardage, is the call. Thin sample, three games.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Ashton Jeanty</b><span class="flat">LV</span>
+            <span class="bet">over 24.5 rec yds</span>
+            <span class="res hit">&#10003; 36</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #26 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 67%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 55%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> over 24.5 rec yds <small>53&cent;</small></span><span class="rung hit"><i>Edge / Edge+</i> 15+ rec yds <small>73&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 6 targets, 4 catches, 36 yards on 19 air yards with 34 YAC — checkdown volume from a trailing script, the stated mechanism.</p>
+          <p class="why">The receiving work is the live half of his usage, and the more Las Vegas trails the more checkdowns he gets. Buffalo&#x27;s linebackers have been beaten underneath all season.</p>
+          <p class="ev">6, 7, 3, 8, 6 targets; 45, 15, 37, 68, 50 rec yds; 68 of those came in the 52-attempt chase game at KC.</p>
+          <p class="ev">vs #26 pass EPA allowed; engine mean sits clearly above the line with the market near even — the gap is the trailing-script attempts.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Kirk Cousins</b><span class="flat">LV</span>
+            <span class="bet">over 1.5 pass TDs</span>
+            <span class="res hit">&#10003; 2</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #26 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 57%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 60%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> over 1.5 pass TDs <small>59&cent;</small></span><span class="rung hit"><i>Edge / Edge+</i> 1+ pass TDs <small>88&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Two touchdown passes, both to Tucker (11 yards at Q4 8:13, 44 at Q4 1:39), on a night of 41 attempts. The plan&#x27;s goal-line premise was partly fortunate — the 44-yarder was not a red-zone throw — but the volume and the soft Buffalo coverage were real.</p>
+          <p class="why">Buffalo is the league&#x27;s softest defense once an opponent reaches the goal line, giving up touchdowns on nearly every red-zone trip. Cousins has thrown multiple scores in four of five starts.</p>
+          <p class="ev">BUF allows an 0.833 red-zone TD rate per trip and 295.8 pass yds/gm; Cousins 3, 3, 3, 2, 1 pass TDs weeks 1-5.</p>
+          <p class="ev">vs #26 pass EPA allowed; engine 1.91, market at 0.595 over — this rests on the red-zone half of the split, not on yardage. Pass-TD calls are 8-of-13 this season.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Josh Allen</b><span class="flat">BUF</span>
+            <span class="bet">over 29.5 rush yds</span>
+            <span class="res miss">&#10007; 1</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #8 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 55%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 57%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> over 29.5 rush yds <small>57&cent;</small></span><span class="rung miss"><i>Edge</i> 20+ rush yds <small>75&cent;</small></span><span class="rung miss"><i>Edge+</i> 15+ rush yds <small>83&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Allen finished with 1 rush yard on 5 carries and a single 2-yard scramble. The pressure arrived (6 hits, 2 sacks) and converted to sacks, not scrambles; the short-yardage keepers went to Cook instead.</p>
+          <p class="why">Las Vegas pressures at the second-highest rate in the league, and pressure on Allen turns into scrambles, not just sacks. Short-yardage keepers add the rest.</p>
+          <p class="ev">121 rush yds in Week 5, 69 in Week 2 with 5 scrambles for 49; LV allows 5.21 yds/carry (31st) and 140.6 rush yds/gm (28th).</p>
+          <p class="ev">vs #8 rush EPA allowed — that rank is built on stuffing designed runs, not on scramble yardage, and the same front&#x27;s yards-per-carry and yards-per-game ranks are bottom-five. Engine above the line, market slightly above it too.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Brock Bowers</b><span class="flat">LV</span>
+            <span class="bet">over 79.5 rec yds</span>
+            <span class="res miss">&#10007; 70</span>
+            <span class="badge bad">missed · read partly held</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #26 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 29%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 52%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> over 79.5 rec yds <small>51&cent;</small></span><span class="rung hit"><i>Edge</i> 60+ rec yds <small>68&cent;</small></span><span class="rung hit"><i>Edge+</i> 40+ rec yds <small>86&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Role held — 9 targets, 98.5% snaps, 33.5% air-yard share — but he caught 4 and the line missed by 9.5 yards. Cousins was 23-of-41 with -9.7 CPOE; the volume thesis was right, the completions weren&#x27;t there.</p>
+          <p class="why">He is the whole target tree on a team that has to throw to score, and a trailing script adds attempts. Our model&#x27;s share still lags the 11-plus targets a game he has taken since returning.</p>
+          <p class="ev">34 targets in 3 games back — 116, 86 and 110 rec yds; 70-82% snaps; full practice Thursday and Friday (FantasyPros, Thu).</p>
+          <p class="ev">vs #26 pass EPA allowed and 31st in pass yds allowed; engine mean sits well below the line, the market near a coin flip — the engine&#x27;s share is the stale part.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Dalton Kincaid</b><span class="flat">BUF</span>
+            <span class="bet">under 49.5 rec yds</span>
+            <span class="res hit">&#10003; 38</span>
+            <span class="badge good">hit · read partly held</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #20 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 74%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 48%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 49.5 rec yds <small>49&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;90 rec yds <small>86&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;120 rec yds <small>96&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Hit at 38 yards, but not for the stated reason: Kincaid led Buffalo in targets with 8, ahead of Coleman and Shakir. He was capped by depth (15 air yards on 8 looks), not by role in the order.</p>
+          <p class="why">He has fallen to fourth in the target order behind Coleman, Shakir and the backs, and a run-leaning script keeps Buffalo&#x27;s attempts modest. The line is priced off September, not the current role.</p>
+          <p class="ev">2, 2, 3 targets in weeks 3-5 for 38, 7 and 7 yards; snap share 59-70% without the volume.</p>
+          <p class="ev">vs #26 pass EPA allowed — a soft matchup he is not being fed in; the model&#x27;s mean is far below the line while the market sits near even. The same read hit in Week 4.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Josh Allen</b><span class="flat">BUF</span>
+            <span class="bet">under 1.5 pass TDs</span>
+            <span class="res miss">&#10007; 2</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #20 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 60%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 46%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 1.5 pass TDs <small>45&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;3 pass TDs <small>76&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;4 pass TDs <small>93&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Allen threw two touchdowns (Shakir 9 yards Q2 7:17, Coleman 12 yards Q3 6:30) and Buffalo&#x27;s inside-the-10 scoring went through the air twice to once on the ground. The premise that Buffalo finishes with legs did not appear.</p>
+          <p class="why">Buffalo&#x27;s red-zone scoring runs through legs, not throws — Allen&#x27;s and Cook&#x27;s. Against a defense that will be chased into a lead script, the short-yardage carry is the call inside the 10.</p>
+          <p class="ev">0, 1, 1 pass TDs in weeks 3-5 while Allen ran for 2, 1 and 1 scores; all three Week 3 TDs were 1-3 yard runs.</p>
+          <p class="ev">vs #26 pass EPA allowed; the model&#x27;s mean is under the line while the market prices the over — the market is buying the matchup, not the way these points arrive.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Josh Allen</b><span class="flat">BUF</span>
+            <span class="bet">under 249.5 pass yds</span>
+            <span class="res miss">&#10007; 255</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">low</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #20 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 59%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 55%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 249.5 pass yds <small>54&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;325 pass yds <small>88&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;375 pass yds <small>98&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 255 yards on 33 attempts — Buffalo led and still threw above its season rate (0.547 vs 0.502). The conditional the call rested on (leading implies low attempts) was satisfied and the attempts came anyway.</p>
+          <p class="why">Favored in a dome with the ground game as the scoring plan, Buffalo&#x27;s attempts stay in the high 20s, and two of its top wideouts are banged up. Entirely conditional on the Bills leading.</p>
+          <p class="ev">26 and 19 attempts in the two games Buffalo ran first; 0.502 season pass rate; Moore and Palmer both questionable (Rotowire, Fri).</p>
+          <p class="ev">vs #26 pass EPA allowed — a matchup he could beat if forced to throw; model mean under the line, market also under. Same read broke in Week 4 when Buffalo never led, and that branch is still live.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Josh Allen</b><span class="flat">BUF</span>
+            <span class="bet">under 0.5 INTs</span>
+            <span class="res hit">&#10003; 0</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">low</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #20 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 45%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 55%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 0.5 INTs <small>56&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;2 INTs <small>87&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;3 INTs <small>97&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Zero interceptions on 33 attempts, and the volume stayed moderate at 36 dropbacks. Call and reasoning both fine, though a 0-INT game is substantially bounce.</p>
+          <p class="why">This is a volume call, not a safety one: favorites in control throw fewer times and bleed clock, and our model over-counts attempts for the side that leads.</p>
+          <p class="ev">Allen&#x27;s picks came in the two games with the most dropbacks (33 and 36 attempts); Buffalo projects near 30 here with a 0.502 pass rate.</p>
+          <p class="ev">vs #26 pass EPA allowed; LV generates takeaways at an above-league rate, which is the risk — the model&#x27;s mean is above the line while the market already leans under.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Ashton Jeanty</b><span class="flat">LV</span>
+            <span class="bet">under 54.5 rush yds</span>
+            <span class="res hit">&#10003; 22</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #28 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 43%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 50%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 54.5 rush yds <small>50&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;90 rush yds <small>82&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;130 rush yds <small>95&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 10 carries for 22 yards with 2 stuffs and -3.79 rushing EPA, exactly the mechanism: carries shrink as Las Vegas falls behind, behind the worst before-contact blocking in the sample.</p>
+          <p class="why">His carries shrink every week as Las Vegas falls behind, and the blocking in front of him is the worst in the sample. Buffalo gives up EPA on the ground but holds yards per carry down.</p>
+          <p class="ev">23, 21, 19, 15, 10 carries; 3.3 yds per carry on the season; LV at 1.40 yds before contact vs a 2.54 league mark; BUF 3.92 ypc allowed (12th).</p>
+          <p class="ev">vs #28 rush EPA allowed — soft by that metric, which is why this is the contrarian side; the model&#x27;s mean is above the line and the market sits even. The volume trend is the mechanism.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Same-script legs">
+      <p class="gm-doc-note">Legs the same script produces together: they move as one, which is what a same-game parlay pays for.</p>
+      <div class="gm-doc-three">
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Las Vegas chases</b></div>
+          <div class="legs"><span class="leg hit">Kirk Cousins <em>over 1.5 pass TDs</em> <i>&#10003;</i></span><span class="leg miss">Brock Bowers <em>over 79.5 rec yds</em> <i>&#10007;</i></span><span class="leg hit">Ashton Jeanty <em>over 24.5 rec yds</em> <i>&#10003;</i></span><span class="leg hit">Ashton Jeanty <em>under 54.5 rush yds</em> <i>&#10003;</i></span></div>
+          <p class="sub">One script produces all four: Buffalo leads, the Raiders&#x27; run game is abandoned, Cousins throws 38-plus, and the volume lands on Bowers and the back out of the backfield while Jeanty&#x27;s carries dry up — with the scores arriving as touchdowns against the league&#x27;s softest goal-line defense.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Buffalo scores on the ground</b></div>
+          <div class="legs"><span class="leg hit">James Cook <em>to score</em> <i>&#10003;</i></span><span class="leg miss">Josh Allen <em>over 29.5 rush yds</em> <i>&#10007;</i></span><span class="leg miss">Josh Allen <em>under 1.5 pass TDs</em> <i>&#10007;</i></span></div>
+          <p class="sub">If the Bills lead and finish drives with runs against a defense that concedes a touchdown on four of five red-zone trips, the carries and the scrambles go up and the passing touchdowns go down — the same lever moves all three.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Low-volume Buffalo passing</b></div>
+          <div class="legs"><span class="leg hit">Dalton Kincaid <em>under 49.5 rec yds</em> <i>&#10003;</i></span><span class="leg miss">Josh Allen <em>under 249.5 pass yds</em> <i>&#10007;</i></span></div>
+          <p class="sub">Both rest on the same branch — Buffalo in front, under 30 attempts — with the shrunken tree hitting the fourth option hardest.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    
+    
+
+    
+    <section class="gm-doc-pane" data-title="Projection grade">
+      <div class="gm-doc-gradehead">
+        <div class="gm-grade warn"><b>C</b><span>projection<br>grade &middot; 67</span></div>
+        <div class="gm-doc-gradetext">
+          
+          <div class="gm-doc-verdicts"><span class="badge mute">BUF 33 – LV 30</span><span class="badge mute">LV covered (BUF by 5.5)</span><span class="badge mute">Over 53.5 (63)</span><span class="badge mute">teams 71</span><span class="badge mute">player lines 32/47 in range</span><span class="badge mute">market calls 1/3</span></div>
+        </div>
+      </div>
+      
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>LV</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">24.0</td><td class="num"><b>30</b></td><td class="num flat">+6</td><td class="meter"><i style="width: 70%" class=""></i></td></tr><tr><td>Pass yds</td><td class="num flat">250.5</td><td class="num"><b>313.0</b></td><td class="num flat">+62.5</td><td class="meter"><i style="width: 58%" class=""></i></td></tr><tr><td>Rush yds</td><td class="num flat">100.4</td><td class="num"><b>65.0</b></td><td class="num flat">-35.4</td><td class="meter"><i style="width: 61%" class=""></i></td></tr><tr><td>Pass att</td><td class="num flat">34.8</td><td class="num"><b>41</b></td><td class="num flat">+6.2</td><td class="meter"><i style="width: 61%" class=""></i></td></tr><tr><td>Carries</td><td class="num flat">27.2</td><td class="num"><b>20</b></td><td class="num down">-7.2</td><td class="meter"><i style="width: 49%" class="bad"></i></td></tr>
+          </tbody></table>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>BUF</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">29.5</td><td class="num"><b>33</b></td><td class="num flat">+3.5</td><td class="meter"><i style="width: 82%" class=""></i></td></tr><tr><td>Pass yds</td><td class="num flat">237.2</td><td class="num"><b>255.0</b></td><td class="num flat">+17.8</td><td class="meter"><i style="width: 88%" class=""></i></td></tr><tr><td>Rush yds</td><td class="num flat">132.8</td><td class="num"><b>103.0</b></td><td class="num flat">-29.8</td><td class="meter"><i style="width: 67%" class=""></i></td></tr><tr><td>Pass att</td><td class="num flat">30.5</td><td class="num"><b>33</b></td><td class="num flat">+2.5</td><td class="meter"><i style="width: 84%" class=""></i></td></tr><tr><td>Carries</td><td class="num flat">27.6</td><td class="num"><b>29</b></td><td class="num flat">+1.4</td><td class="meter"><i style="width: 90%" class=""></i></td></tr>
+          </tbody></table>
+        </div>
+        
+      </div>
+      <div class="gm-doc-verdicts"><span class="badge good">Winner: BUF &#10003;</span><span class="badge bad">Spread: BUF -5.5 &#10007;</span><span class="badge bad">Total: Under 53.5 (proj 53.5) &#10007;</span></div>
+      
+      
+      <div class="gm-doc-k">Why the projection missed &middot; what it got right</div>
+      <p class="gm-doc-p">The grade is a C (0.666) because the team shapes were close but the market calls went 1-for-3: Buffalo won, the spread lost and the under lost by 9.5. Buffalo&#x27;s line was nearly exact — 33 vs 29.5 points, 255 vs 237 pass yards, 33 vs 30.5 attempts, 29 vs 27.6 carries — the only real miss being rush yards (103 vs 132.8), and that was Josh Allen&#x27;s rushing disappearing (1 yard on 5 carries, no scrambles beyond one for 2), not Cook&#x27;s (95 vs 91.9). Las Vegas is where the projection leaked: 41 attempts vs 34.8, 313 pass yards vs 250.5, 20 carries vs 27.2 (the one &#x27;big&#x27; flag), because the Raiders trailed for 60 of 66 snaps and the engine&#x27;s blended 0.577 pass rate never contemplated a 0.672 actual. The player book held better than the team book (32 of 47 lines, 0.794), with the misses clustered in one place: the Raiders&#x27; secondary receivers (Tucker 97, Mayer 95 on nine targets) soaking up the volume the model gave to Jeanty on the ground. Nothing in the grade is a modeling scandal; it&#x27;s a correct game shape with the scoring rate underestimated on both sides.</p>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>LV</b> &middot; Carries 20 vs 27.2 projected, rush yards 65 vs 100.4, with Jeanty at 10 carries for 22 (projected 16.9/67.5)<div class="went">Game script plus a run game that was already broken: LV trailed on 60 of 66 snaps, pass rate 0.672 vs a 0.576 season rate, and rush EPA was -0.285 with 2 stuffs on Jeanty&#x27;s 10 carries. The engine&#x27;s 2.99 YPC and 1.40 YBC inputs already said the ground game was dead; the volume projection didn&#x27;t follow through.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>LV</b> &middot; Pass yards 313 vs 250.5 and 41 attempts vs 34.8<div class="went">Volume shift from trailing, not efficiency — Cousins&#x27; CPOE was -9.7 and he completed just 23 of 41, but 4 explosives (26 to Tucker, 28 to Mayer, 29 to Bowers, 44 to Tucker) plus 33 DPI yards drawn carried the yardage.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>BUF</b> &middot; Rush yards 103 vs 132.8<div class="went">Entirely Allen: 5 carries, 1 yard, one scramble for 2. LV&#x27;s pressure (6 QB hits, 2 sacks, 33% blitz rate per charting) produced sacks rather than scrambles. Cook hit his number almost exactly.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>BUF</b> &middot; Points 33 vs 29.5 with 5 red-zone trips producing only 3 TDs<div class="went">Finishing, not movement: field EPA 0.205 on 51 plays vs red-zone EPA 0.114 and a 0.357 RZ success rate, plus a Kincaid TD wiped out by offensive holding at Q3 9:57. Four Bass field goals bridged the gap.</div></div></div></div>
+      <div class="gm-doc-verdicts wrap"><span class="badge good">&#10003; Buffalo&#x27;s passing volume and yardage (33 att / 255 yds vs 30.5 / 237.2) and carries (29 vs 27.6)</span><span class="badge good">&#10003; Cook&#x27;s rushing line nailed: 95 actual vs 91.9 projected, and his 22 carries landed inside the expected range</span><span class="badge good">&#10003; Jeanty&#x27;s receiving work (4 rec, 36 yds vs 3.9 / 37.6) — the live half of his usage, exactly as the engine had it</span><span class="badge good">&#10003; Shakir&#x27;s targets and receptions (6/4 vs 5.6/4.1)</span><span class="badge good">&#10003; The winner: BUF, in a game that was never led by more than 10</span><span class="badge good">&#10003; Both teams&#x27; play counts (65 and 66 vs 60.4 and 64.3) — pace landed average</span></div>
+      
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Turning points">
+      <div class="gm-doc-tl">
+        <div class="gm-doc-tp"><div class="clock">Q1 04:20</div><div class="what"><span class="badge mute">BUF</span> Allen deep right to Palmer for 37, ran OB at LV 31 (EPA +2.45)<div class="went">Buffalo&#x27;s only real deep completion (1/3 deep all day) and it flipped a 3-7 deficit into the field-goal drive that started the trade-score pattern. Palmer, questionable with a shoulder, had 2 targets and 47 air yards.</div></div></div><div class="gm-doc-tp"><div class="clock">Q2 00:19</div><div class="what"><span class="badge mute">LV</span> Cousins incomplete to Tucker, defensive holding on Igbinosun, 14 yards<div class="went">Free yards on a two-minute drive that ended in Gay&#x27;s 27-yarder at :04 to tie it 13-13 — part of LV&#x27;s 52 drawn penalty yards, 33 of them DPI, that never show in the passing box score.</div></div></div><div class="gm-doc-tp"><div class="clock">Q3 09:00</div><div class="what"><span class="badge mute">LV</span> Cousins intercepted by D.Williams at the LV 32, intended for Mayer (EPA -5.03)<div class="went">The single biggest EPA swing of the game and LV&#x27;s only turnover. Buffalo cashed it eight plays later with the Coleman touchdown; that&#x27;s the 10-point cushion the Raiders spent the rest of the game chasing.</div></div></div><div class="gm-doc-tp"><div class="clock">Q3 09:57</div><div class="what"><span class="badge mute">BUF</span> Allen 18-yard TD to Kincaid nullified by Buffalo offensive holding<div class="went">Drive ended in a 47-yard Bass field goal instead of seven. Buffalo&#x27;s own flags (7 for 72) turned a touchdown into three in a game decided by three.</div></div></div><div class="gm-doc-tp"><div class="clock">Q4 08:13</div><div class="what"><span class="badge mute">LV</span> Cousins 11-yard TD to Tucker on 3rd-and-8 (EPA +3.15, WPA +0.211)<div class="went">Capped a 9-play, 91-yard drive from the LV 9 and tied it 23-23 — the game&#x27;s largest win-probability swing and the moment the Raiders&#x27; underdog path was fully live.</div></div></div><div class="gm-doc-tp"><div class="clock">Q4 04:56</div><div class="what"><span class="badge mute">BUF</span> Allen short left to Cook for 26 to the LV 3 on 3rd-and-3 (EPA +2.69, WPA +0.148), Cook scores from 3 on the next snap<div class="went">Answered immediately out of a tie; a checkdown to the back with -8 air yards and 26 YAC — the mechanism Buffalo used all game (172 team YAC).</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="What decided it">
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Buffalo turned the only turnover of the game into a touchdown</b><div class="went">Cousins&#x27; Q3 9:00 INT at the LV 32 (-5.03 EPA) gave Buffalo a 32-yard field; eight plays later Coleman&#x27;s 12-yard score made it 23-13. Final margin 3.</div><div class="went"><b>Tell:</b> LV INT rate 0.022 and Buffalo&#x27;s defense generating 0.025 — a coin-flip event, but Buffalo&#x27;s season tags carry &#x27;turnovers&#x27; three times as its own failure, and it committed none here.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Both offenses stalled inside the 20 — seven field goals in a 63-point game</b><div class="went">BUF 5 trips / 3 TD / 2 FG, RZ EPA 0.114 on 14 plays; LV 5 trips / 2 TD / 3 FG, RZ EPA -0.001, RZ success 0.286. Field EPA was 0.205 (BUF) and 0.161 (LV).</div><div class="went"><b>Tell:</b> LV&#x27;s offensive RZ TD rate entering was 0.562 with -0.028 RZ EPA, and it had the &#x27;red zone stalls / yards without touchdowns&#x27; tag in Week 4. The engine&#x27;s own note warns these rates don&#x27;t persist, but the Raiders&#x27; pattern was two weeks old.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Las Vegas abandoned the run because it never led</b><div class="went">60 of 66 snaps trailing, pass rate 0.672 vs 0.576 season; 20 carries for 65 yards, rush EPA -0.285, Jeanty 10/22 with 2 stuffs.</div><div class="went"><b>Tell:</b> Season YPC 2.993 and YBC 1.401 (league 2.54) — the worst before-contact blocking in the dossier. Any deficit was always going to end the run.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Buffalo&#x27;s secondary leaked explosives and free penalty yards all night</b><div class="went">LV&#x27;s 4 explosive passes (26, 28, 29, 44) plus 52 drawn penalty yards including 33 DPI — Igbinosun 11-yard DPI (Q1 4:37), 14-yard defensive holding (Q2 :19), Alford 22-yard DPI (Q4 1:44) on the drive before the 44-yard Tucker touchdown.</div><div class="went"><b>Tell:</b> &#x27;explosive passing&#x27; allowed in four of five prior weeks; BUF defense DPI yards allowed 11.4/game vs 6.45 league.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>No pass rush on Cousins</b><div class="went">Zero sacks allowed on 41 dropbacks, 6 QB hits, pressure rate 0.146 — below the 0.159 league figure — despite Buffalo blitzing on 41.3% of LV snaps per charting.</div><div class="went"><b>Tell:</b> Buffalo&#x27;s &#x27;no pass rush&#x27; tag in Week 5; LV&#x27;s season sack rate allowed of 0.039 was the best in either engine input.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; BUF">
+      <div class="gm-doc-boxhead"><b>How BUF gets beaten</b><span class="flat">4-1 entering</span><span class="badge mute">high confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">red zone defense &times;4</span><span class="badge bad">explosive passing &times;4</span><span class="badge bad">penalties &times;3</span><span class="badge bad">turnovers &times;3</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Explosive passing against the secondary</b><div class="went">Allowed 4-5 explosive passes in every game Weeks 1-5 (4, 5, 5, 4, 5) and 4 more here, including 44 yards to Tucker at Q4 1:39 and 29 to Bowers at Q4 9:33.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Coverage penalties as free yardage</b><div class="went">11.4 DPI yards/game allowed entering, 27 DPI in Week 5 vs LA; here 33 DPI yards and 2 defensive holdings (Igbinosun twice, Hairston, Alford) kept two scoring drives alive.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>No pass rush without the blitz</b><div class="went">0 sacks and 14.6% pressure on 41 Cousins dropbacks despite a 41.3% blitz rate; Week 5 vs LA carried the &#x27;no pass rush&#x27; tag at 7.3% pressure allowed.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Its own flags and red-zone stalls</b><div class="went">7 flags for 72 yards including the Q3 9:57 holding that erased an 18-yard Kincaid TD; 3 TDs on 5 trips here, 1-of-3 in Week 1, 2-of-3 in Week 4. Season rate 4.6 flags/game vs 3.04 league.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Giveaways when pressured</b><div class="went">Turnovers tagged in Weeks 3, 4 and 5 (5, 2 and 2); zero here, which is the outlier, not the rule.</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> Buffalo&#x27;s defense is a field-tilt loser and a goal-line loser at once: opponents move the ball through the air for chunks (83.3% opponent RZ TD rate entering, 0.24 RZ EPA allowed), and Buffalo&#x27;s own offense gives points back through penalties, turnovers and stalled trips. It still wins because its field EPA (0.224 on offense) is elite.</p>
+      <p class="gm-doc-p"><b>This week:</b> Las Vegas tried exactly this and mostly executed: 8 deep attempts, 8.6 aDOT, four explosives and 33 free DPI yards, and it still couldn&#x27;t close because Cousins&#x27; CPOE was -9.7 (23-of-41) and the Raiders kicked three field goals from inside the 20.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> A quarterback who can hit the deep middle at better than a -9.7 CPOE clip, two-plus pass catchers who win vertically, and red-zone finishing above 0.60 TD/trip. Teams that can also force Buffalo into a trailing script — where its EPA was 0.461 here — are the ones that actually cash it.</p>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; LV">
+      <div class="gm-doc-boxhead"><b>How LV gets beaten</b><span class="flat">3-2 entering</span><span class="badge mute">medium confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">red zone defense &times;3</span><span class="badge bad">explosive passing &times;2</span><span class="badge bad">pre-snap penalties &times;2</span><span class="badge bad">run game &times;2</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Run defense yardage — opponents churn carries</b><div class="went">5.21 YPC and 3.90 YBC allowed entering; Cook went 22/95 with three 10-plus runs and the game-winning 3-yard TD at Q4 4:49. &#x27;run game&#x27; tagged in Weeks 4 and 5 (KC, NE).</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Goal-line defense</b><div class="went">80% opponent RZ TD rate entering, 0.378 RZ EPA allowed; &#x27;red zone defense&#x27; tagged three times (Weeks 3, 4, 5). Buffalo got 3 TDs on 5 trips and 2 more chip-shot FGs.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Its own run game is non-functional, so any deficit removes half the playbook</b><div class="went">2.993 YPC season, 1.401 YBC; here 20 carries, 65 yards, -0.285 rush EPA, Jeanty 10 for 22 with 2 stuffs, and pass rate 0.672 once trailing.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Red-zone stalls</b><div class="went">5 trips, 2 TDs, 3 FGs, RZ EPA -0.001; Week 4 vs KC 1-of-3 with -0.539 RZ EPA, Week 3 at NO 3-of-6. &#x27;yards without touchdowns&#x27; tagged in Week 4.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag both">both</span><div><b>Pre-snap penalties</b><div class="went">1.8 pre-snap flags/game entering, &#x27;pre-snap penalties&#x27; tagged Weeks 1 and 4; here two more (Heyward false start Q1 6:18, Linderbaum false start Q2 2:23 at the BUF 13) plus kick-coverage holding and a facemask on the Q4 4:21 punt that gifted Buffalo a short field.</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> Las Vegas is a one-dimensional passing offense whose score depends on red-zone luck, defended by a front that gets yards run at it and a goal-line unit that concedes. Fall behind by one score and the Raiders get into a throwing-only script that produces yards (313) without enough touchdowns.</p>
+      <p class="gm-doc-p"><b>This week:</b> Buffalo tried the blueprint and had the efficiency: a 5.37 YPC season rate against LV&#x27;s 5.21 allowed, 29 carries, three explosive runs, and an offense that ran 0.509 early-down pass rate — but even it only finished 3 of 5 inside the 20, and the pre-snap flags were Buffalo&#x27;s problem too.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> A rushing offense above league YPC that will stay with it, plus red-zone finishing — the Raiders give trips away, they don&#x27;t give points away automatically. A defense that can get a hand on an 8.6-aDOT passing game without blitzing (BUF blitzed 41% and got zero sacks) keeps the Raiders from answering.</p>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Player lines">
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Tre Tucker</b> <span class="flat">LV</span> &middot; 7 targets, 5-97-2 vs 4.9 / 42.1 / 0.3 projected<div class="went">108 air yards (31.5% share) on an 8.6-aDOT attack; the 26-yarder at Q1 8:50, the 11-yard TD at Q4 8:13 and the 44-yard TD at Q4 1:39. He, not Bowers, was the vertical target.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Michael Mayer</b> <span class="flat">LV</span> &middot; 9 targets, 7-95-0 vs 3.9 / 25.5 projected<div class="went">68 of 95 yards were YAC on a 35 air-yard day — checkdown volume created by 41 dropbacks in a trailing script, including the 28-yard 3rd-and-13 at Q3 2:56. Volume is script-dependent; the role (equal targets to Bowers) is the part to carry forward.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Brock Bowers</b> <span class="flat">LV</span> &middot; 9 targets, 4-70-0; missed over 79.5<div class="went">985 snap share and a 33.5% air-yard share, but only 4 of 9 caught in a -9.7 CPOE passing game. The role held; the completion rate didn&#x27;t.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Ashton Jeanty</b> <span class="flat">LV</span> &middot; 10 carries for 22 (2 stuffs), 6 targets, 4-36<div class="went">57.6% snap share and -3.79 rushing EPA behind the worst before-contact blocking in the dossier. His value is receiving while the Raiders trail; the carries only return if LV leads, which it did for 735 seconds all season context.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>James Cook</b> <span class="flat">BUF</span> &middot; 22 carries, 95 yards, 1 TD; 3 targets, 3-58<div class="went">66.2% snaps, three 10-plus runs, and 66 YAC on -8 air yards including the 26-yard 3rd-and-3 at Q4 4:56. Receiving yards (58 vs 5.7 projected) are the underpriced half of his line against defenses that drop into coverage.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Josh Allen</b> <span class="flat">BUF</span> &middot; 5 carries, 1 rush yard, 1 scramble for 2; 23/33, 255, 2 TD, 0 INT<div class="went">Faced 6 QB hits and a 33% blitz rate but took sacks (Q1 10:58 by Q.Walker, Q2 1:54 by K.Paye) instead of scrambling. The rushing floor vanished entirely in a game Buffalo led for 2,069 seconds.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Dalton Kincaid</b> <span class="flat">BUF</span> &middot; 8 targets, 7-38-0, -1.05 EPA<div class="went">Team-high targets at a 15 air-yard total — he&#x27;s a short-area volume play, not a yardage play, and his 18-yard TD at Q3 9:57 was erased by holding. Receptions over is the market, yards under is the market.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Keon Coleman</b> <span class="flat">BUF</span> &middot; 6 targets, 4-59-1 on 85.3% snaps, 88 air yards (47.8% share)<div class="went">With Moore out and Palmer at 25% snaps, Coleman was the downfield alpha in air-yard share. He drew the 13-yard DPI at Q3 7:25 as well.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Josh Palmer</b> <span class="flat">BUF</span> &middot; 2 targets, 1-37, 25% snap share<div class="went">Questionable (shoulder) and used as a situational vertical — 47 air yards on two looks. Boom-or-zero profile, not a projectable line.</div></div></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Traps">
+      <div class="gm-doc-three"><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>When a team&#x27;s run game is at 2.99 YPC with 1.40 yards before contact, don&#x27;t project its season carry volume into a game where it&#x27;s likely to trail — the carries evaporate below even the engine&#x27;s conservative blend. LV: projected 27.2 carries, actual 20.</b></p><p class="sub"><b>Trigger:</b> Underdog RB with YBC/carry under 2.0 and a team projected to trail; fade the carry/rush-yard over, buy the receiving yards.</p></div><div class="gm-doc-box"><span class="badge mute">Totals</span><p><b>A defense that gives up explosive passes every week but also gives up DPI is a totals over, not a side fade — the free yardage doesn&#x27;t show in passing props. BUF allowed 33 DPI yards on two scoring drives here.</b></p><p class="sub"><b>Trigger:</b> Defense with DPI yards allowed above ~10/game (league 6.45) plus 4+ explosive passes allowed per week; take the over, not the opposing receiver props.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>Mobile-QB rushing props are a pressure-type bet, not a pressure-rate bet. Allen faced 6 QB hits and a 33% blitz rate and finished with 5 carries for 1 yard and a single 2-yard scramble; the pressure produced two sacks instead.</b></p><p class="sub"><b>Trigger:</b> A QB rushing-yards over justified by &#x27;opponent pressure creates scrambles&#x27; — check the opponent&#x27;s sack rate vs hurry profile and whether the QB&#x27;s team expects to lead (Buffalo&#x27;s leading-state pass rate was 0.545, not run-heavy).</p></div><div class="gm-doc-box"><span class="badge mute">Totals</span><p><b>Two teams with poor red-zone finishing can still smash a total if both move the ball between the 20s. Combined field EPA was 0.205/0.161 and 7 field goals; the 63 points came from volume of trips, not conversion.</b></p><p class="sub"><b>Trigger:</b> Both offenses above 0.10 field EPA/play with sub-0.60 RZ TD rates and a number at or below 54 — the field goals add up faster than the stalls subtract.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>Target-tree misses on a trailing team land on the second and third options, not the alpha. Bowers got 9 targets but only 70 yards; Tucker (97) and Mayer (95) ate the surplus volume.</b></p><p class="sub"><b>Trigger:</b> A heavy-underdog passing script with a priced-up TE1 — take the mid-tier receiving overs rather than the alpha&#x27;s inflated number.</p></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="The story">
+      <div class="gm-doc-prose"><h2>The short version</h2>
+<p>Buffalo 33, Las Vegas 30, and both market calls that mattered lost: the Bills won outright but gave back the 5.5, and 63 points cleared a 53.5 total by nearly ten. The projection had the shape of this game almost right — Buffalo's entire team line is within a few points and a few attempts — and still graded a C, because the Raiders threw 41 times instead of 34.8, for 313 yards instead of 250.5, and the scoreboard ran hot on both ends. The thing that decided it was a single possession's worth of EPA: Cousins' third-quarter interception, Buffalo's immediate touchdown off it, and the three-point cushion that survived a 44-yard Tucker touchdown with 1:39 left.</p>
+<h2>How it unfolded</h2>
+<p>The first half was pure trade. Buffalo opened with a 30-yard, eight-play field-goal drive built on Allen's 14-yard third-and-8 throw to Ty Johnson (Q1 12:49, +2.77 EPA); Las Vegas answered with a 64-yard march keyed by a 26-yard Tucker catch on third-and-7 (Q1 8:50) and Jeanty's one-yard plunge. Buffalo's 90-yard touchdown drive in the second quarter — Coleman 21, Cook 23, Shakir nine for the score at 7:17 — was the game's longest sustained stretch of offense, and Las Vegas answered it with two field goals, the second built on a 14-yard defensive holding flag on Igbinosun at :19 that tied it 13-13 at the break.</p>
+<p>The third quarter is where the margin was made and then partly given back. Buffalo got a 47-yard Bass field goal only because its own holding penalty at 9:57 erased an 18-yard Kincaid touchdown. Then Cousins threw into traffic for Mayer at 9:00 and Dorian Williams picked it off at the LV 32 — a -5.03 EPA play — and Allen hit Coleman from 12 on third-and-8 to go up 23-13. Las Vegas answered with a 16-play, 75-yard, 7:50 possession that produced three points, which is the Raiders' season in one drive.</p>
+<p>The fourth was a sprint. A 91-yard LV drive from its own 9, capped by Tucker's 11-yard touchdown on third-and-8 (Q4 8:13, the game's biggest WPA swing at +0.211), tied it at 23. Buffalo needed 3:24 and seven plays to retake it, the decisive snap being Allen's third-and-3 checkdown to Cook for 26 to the LV 3. Bass's 38-yarder at 2:00 made it 33-23, and Tucker's 44-yard score — set up by a 22-yard DPI on Alford at 1:44 — made the final respectable without putting the ball back in Las Vegas's hands.</p>
+<h2>Why the game diverged from the projection</h2>
+<p>The divergence is almost entirely on the Raiders' side and almost entirely script. The engine blended LV to a 0.577 pass rate and 27.2 carries; the Raiders trailed on 60 of 66 snaps and finished at 0.672 and 20. That alone moves 60-plus passing yards and -35 rushing yards onto the board. The engine's own inputs — 2.99 YPC, 1.40 yards before contact, the worst in the file — already said this run game would be the first thing jettisoned; the volume projection just didn't act on it.</p>
+<p>The second divergence is finishing. Ten red-zone trips produced five touchdowns and five field goals, and the field-versus-red-zone split tells the story on both sides: Buffalo 0.205 EPA/play on 51 field snaps against 0.114 on 14 red-zone snaps, Las Vegas 0.161 against -0.001. That is a yards-without-touchdowns game for both teams, and it is what let a 63-point total coexist with a one-possession margin.</p>
+<p>On Buffalo's side the only real miss was Allen's legs: projected 35.6 rush yards, actual one. The Raiders' pressure was real — six QB hits, two sacks, a 41.3% blitz rate per charting — but it produced sacks rather than scrambles, and the short-yardage keeper never came.</p>
+<h2>The plan against the game</h2>
+<p>The plan's underdog mechanism was close to perfectly described and the favorite still won by it: Las Vegas chased, abandoned the run, reached 41 attempts, and Jeanty's carries withered to 10 for 22 while his receiving line landed within a yard and a half of projection. What broke was Buffalo's half. The plan read the Bills' 0.502 season pass rate as a lead property and expected a quiet passing box score with touchdowns on the ground; Buffalo led for 2,069 seconds and threw at 0.547 anyway, with an early-down pass rate (0.509) matching the expected rate exactly. That one error chained — Allen's rushing over, the pass-yards under and the pass-TD under all come off the same assumption. The Bowers miss is a different thing entirely: the role was exactly as described at nine targets and a 33.5% air-yard share, and he caught four, because Cousins completed 23 of 41 at -9.7 CPOE. That is the bounce, not the read.</p>
+<h2>Player by player</h2>
+<p>Cook was the model's best call and the game's most useful player: 22 carries for 95 with three ten-plus runs, plus 58 receiving yards on three targets at -8 air yards — 66 YAC — and the three-yard winner at 4:49. His receiving yardage (projected 5.7) is systematically underpriced against defenses that sit back. Coleman, with Moore out and Palmer at a 25% snap share, was the downfield alpha at 88 air yards and a 47.8% share. Kincaid led Buffalo in targets with eight but on 15 total air yards — receptions, not yards.</p>
+<p>On the other side, Bowers kept his role and lost his yardage; Tucker (7-5-97-2, 108 air yards) and Mayer (9-7-95, 68 YAC) took the surplus. Mayer's nine targets against a 3.9 projection is the kind of secondary-tree spike a trailing script manufactures every time.</p>
+<h2>The defenses</h2>
+<p>Buffalo blitzed on 41.3% of LV snaps and generated zero sacks and a 14.6% pressure rate — below league. That is now the second game in two weeks where the pass rush disappeared, and the coverage behind it gave up four explosive passes (26, 28, 29, 44) and 33 DPI yards, two of which kept scoring drives alive. Las Vegas held Buffalo to 3.55 yards a carry on 29 attempts, which is better than its season allowance, but conceded three touchdowns on five trips and never got off the field on the two drives that mattered — Buffalo was 2-for-2 on the third downs at Q4 6:48 and 4:56.</p>
+<h2>The blueprint</h2>
+<p>To beat Buffalo you throw at it: four-plus explosives a week in all five games now, plus coverage flags that donate yardage. Las Vegas had the design and the targets and still fell short because its quarterback was 23-of-41 and its red-zone EPA was zero. A future opponent needs both — the vertical threat and the finishing. To beat Las Vegas you run at it and finish: 5.21 YPC allowed entering, 80% opponent red-zone TD rate, and the 'run game' tag in each of the last two weeks. Buffalo had the rushing efficiency to cash that and did, barely, with three stalled trips of its own.</p>
+<h2>What the model should take from this</h2>
+<p>Three things. Buffalo's run lean is not a lead property — price Allen at 32-34 attempts regardless of script. A trailing team's carry projection should be dragged toward its efficiency, not its season volume, when before-contact blocking is this bad. And red-zone splits from one game are nearly worthless as signal: Buffalo kicked twice partly because a holding penalty erased a touchdown, and Cousins' lone interception is the least persistent number in the file.</p></div>
+    </section>
+    
+    
+  </div>
+</details>
+
 </div>
 
 
@@ -1849,6 +2446,15 @@
       if(pick) pick.addEventListener("change",function(){ node.querySelectorAll(".pl-tl").forEach(function(t){ t.hidden=t.dataset.key!==pick.value; }); });
       modal.querySelector(".pl-dialog").scrollTop=0;
     }).catch(function(){ body.innerHTML='<div class="pl-loading">The player sheets could not be loaded.</div>'; });
+  }
+  // The plan / report panel: pills and arrows walk its sections.
+  var doc=document.querySelector(".gm-doc");
+  if(doc){
+    var panes=[].slice.call(doc.querySelectorAll(".gm-doc-pane")), pills=doc.querySelector(".gm-doc-pills"), cur=0;
+    panes.forEach(function(pn,i){ var b=document.createElement("button"); b.type="button"; b.textContent=pn.dataset.title; b.setAttribute("role","tab"); b.addEventListener("click",function(){ show(i); }); pills.appendChild(b); });
+    function show(i){ cur=(i+panes.length)%panes.length; panes.forEach(function(pn,k){ pn.classList.toggle("active",k===cur); }); pills.querySelectorAll("button").forEach(function(b,k){ b.classList.toggle("active",k===cur); if(k===cur&&b.scrollIntoView) b.scrollIntoView({block:"nearest",inline:"center"}); }); }
+    doc.querySelectorAll(".gm-doc-arrow").forEach(function(a){ a.addEventListener("click",function(){ show(cur+parseInt(a.dataset.dir,10)); }); });
+    show(0);
   }
   document.querySelectorAll(".pl-open").forEach(function(b){ b.addEventListener("click",function(e){ e.stopPropagation(); openPlayer(b.dataset.pid); }); });
   modal.querySelector(".pl-close").addEventListener("click",closeModal);

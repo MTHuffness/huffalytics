@@ -797,6 +797,126 @@
     .hfa .pl-log td.wk, .hfa .pl-log th:first-child { position: sticky; left: 0; background: #0d0d11; z-index: 1; }
     :root[data-theme="light"] .hfa .pl-log td.wk, :root[data-theme="light"] .hfa .pl-log th:first-child { background: #fff; }
   }
+
+  /* ---- The plan / report panel under the scoreboard ---- */
+  .gm-doc { position: relative; overflow: visible; }
+  .gm-doc::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; border-radius: 14px 14px 0 0; background: linear-gradient(90deg, var(--hfa-accent), transparent 70%); pointer-events: none; }
+  .gm-doc.st-both::before { background: linear-gradient(90deg, var(--hfa-good), var(--hfa-accent) 55%, transparent 90%); }
+  .gm-doc > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.9rem; padding: 1rem 1.1rem; }
+  .gm-doc > summary::-webkit-details-marker { display: none; }
+  .gm-doc-chev { display: inline-grid; place-items: center; flex: none; width: 2rem; height: 2rem; border-radius: 50%; background: var(--hfa-accent); color: #fff; box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.22), 0 6px 14px -6px rgba(255, 31, 47, 0.9); transition: transform 0.18s; }
+  .gm-doc[open] > summary .gm-doc-chev { transform: rotate(180deg); background: #fff; color: var(--hfa-accent); }
+  .gm-doc-main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+  .gm-doc-eyebrow { font-size: 0.64rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-accent); }
+  .gm-doc-lead { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; line-height: 1.3; color: var(--hfa-body); }
+  .gm-doc-chips { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0.3rem; flex: 0 1 auto; }
+  .gm-doc-open { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); margin-left: 0.3rem; }
+  .gm-doc[open] .gm-doc-open { display: none; }
+  .gm-doc-body { border-top: var(--hfa-hairline); padding: 0.7rem 1.1rem 1.2rem; }
+  .gm-doc-nav { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.9rem; }
+  .gm-doc-pills { display: flex; gap: 0.3rem; overflow-x: auto; scrollbar-width: none; flex: 1 1 auto; padding: 2px; }
+  .gm-doc-pills::-webkit-scrollbar { display: none; }
+  .gm-doc-pills button { flex: none; border: 1px solid rgba(128, 128, 128, 0.25); background: transparent; color: var(--hfa-muted); border-radius: 999px; padding: 0.3rem 0.85rem; font-size: 0.76rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
+  .gm-doc-pills button.active { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-arrow { flex: none; width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid rgba(128, 128, 128, 0.3); background: transparent; color: var(--hfa-body); font-size: 1.2rem; line-height: 1; cursor: pointer; }
+  .gm-doc-arrow:hover { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-pane { display: none; animation: gm-fade 0.18s ease-out; }
+  .gm-doc-pane.active { display: block; }
+  @keyframes gm-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  .gm-doc-hook { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1.2; color: var(--hfa-accent); margin-bottom: 0.4rem; }
+  .gm-doc-headline { font-size: 1rem; font-weight: 600; line-height: 1.45; margin: 0 0 0.7rem; }
+  .gm-doc-p { font-size: 0.9rem; line-height: 1.55; margin: 0 0 0.7rem; }
+  .gm-doc-note { font-size: 0.76rem; color: var(--hfa-muted); line-height: 1.45; margin: 0 0 0.6rem; }
+  .gm-doc-prose { font-size: 0.9rem; line-height: 1.6; max-width: 60rem; }
+  .gm-doc-prose h2 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 1rem 0 0.3rem; }
+  .gm-doc-prose h3 { font-size: 0.9rem; margin: 0.8rem 0 0.2rem; }
+  .gm-doc-prose p { margin: 0 0 0.6rem; }
+  .gm-doc-prose ul { padding-left: 1.2rem; }
+  .gm-doc-k { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 0.9rem 0 0.35rem; }
+  .gm-doc-box > .gm-doc-k:first-child, .gm-doc-col > .gm-doc-k:first-child { margin-top: 0; }
+  .gm-doc-verdicts { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.2rem 0 0.7rem; }
+  .gm-doc-verdicts.wrap .badge { white-space: normal; text-align: left; }
+  .gm-doc-verdicts .badge b { color: inherit; }
+  .gm-doc-vs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 0.4rem; }
+  .gm-doc-col { padding: 0.75rem 0.9rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); font-size: 0.9rem; line-height: 1.5; }
+  .gm-doc-col.plan { border-left: 3px solid var(--hfa-accent); }
+  .gm-doc-col.game { border-left: 3px solid var(--hfa-good); }
+  .gm-doc-col.game .gm-doc-k { color: var(--hfa-good); }
+  .gm-doc-col p, .gm-doc-box p { margin: 0 0 0.45rem; font-size: 0.88rem; line-height: 1.5; }
+  .gm-doc-col p:last-child, .gm-doc-box p:last-child { margin-bottom: 0; }
+  .gm-doc p.sub, .gm-doc .went { font-size: 0.8rem; color: var(--hfa-muted); line-height: 1.45; }
+  .gm-doc .went { margin-top: 0.2rem; }
+  .gm-doc-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .gm-doc-three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; }
+  .gm-doc-box { min-width: 0; padding: 0.7rem 0.85rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); }
+  .gm-doc-boxhead { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.4rem; font-size: 0.92rem; }
+  .gm-doc-boxhead b { color: var(--hfa-body); font-weight: 800; }
+  .gm-doc-ul { margin: 0; padding-left: 1.1rem; font-size: 0.86rem; line-height: 1.5; }
+  .gm-doc-ul li { margin-bottom: 0.3rem; }
+  .gm-doc-list { display: flex; flex-direction: column; gap: 0.45rem; }
+  .gm-doc-item { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.45; padding: 0.5rem 0.7rem; border-radius: 10px; background: var(--hfa-tint); border: var(--hfa-hairline); }
+  .gm-doc-item > div { min-width: 0; }
+  .gm-doc-item b { color: var(--hfa-body); }
+  .gm-doc-flag { flex: none; min-width: 5.2rem; text-align: center; border-radius: 6px; padding: 0.2rem 0.45rem; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); margin-top: 0.15rem; }
+  .gm-doc-flag.decisive, .gm-doc-flag.signal, .gm-doc-flag.yes, .gm-doc-flag.held { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-flag.contributed, .gm-doc-flag.mixed, .gm-doc-flag.partly { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .gm-doc-flag.minor, .gm-doc-flag.noise, .gm-doc-flag.no, .gm-doc-flag.broke { background: rgba(255, 31, 47, 0.16); color: var(--hfa-accent); }
+  .gm-doc-flag.defense { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .gm-doc-flag.offense { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-calls { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  .gm-call { min-width: 0; padding: 0.65rem 0.85rem 0.6rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); border-left: 3px solid var(--hfa-muted); }
+  .gm-call.over { border-left-color: var(--hfa-good); } .gm-call.under { border-left-color: var(--hfa-accent); }
+  .gm-call.hit { background: rgba(47, 212, 164, 0.06); } .gm-call.miss { background: rgba(255, 176, 32, 0.06); }
+  .gm-call-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.5rem; font-size: 0.92rem; }
+  .gm-call-side { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .gm-call.over .gm-call-side { color: var(--hfa-good); } .gm-call.under .gm-call-side { color: var(--hfa-accent); }
+  .gm-call .who { color: var(--hfa-body); font-weight: 800; }
+  .gm-call .bet { font-weight: 700; color: var(--hfa-accent); }
+  .gm-call .res { font-weight: 800; font-size: 0.8rem; margin-left: auto; }
+  .gm-call .res.hit { color: var(--hfa-good); } .gm-call .res.miss { color: var(--hfa-bad); } .gm-call .res.void { color: var(--hfa-muted); font-weight: 500; }
+  .gm-call-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem; margin: 0.35rem 0 0.2rem; }
+  .gm-call .prob { font-size: 0.7rem; font-weight: 700; color: var(--hfa-muted); border: 1px solid rgba(128, 128, 128, 0.3); border-radius: 999px; padding: 0.1rem 0.5rem; }
+  .gm-call .rungs { margin: 0.35rem 0 0.4rem; }
+  .gm-call .rung small { font-weight: 500; color: var(--hfa-muted); }
+  .gm-call p.why { font-size: 0.84rem; line-height: 1.45; margin: 0.3rem 0 0.2rem; color: var(--hfa-body); }
+  .gm-call p.ev { font-size: 0.74rem; line-height: 1.4; margin: 0 0 0.15rem; color: var(--hfa-muted); }
+  .gm-doc .legs { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.4rem; }
+  .gm-doc .leg { border-radius: 8px; padding: 0.2rem 0.5rem; font-size: 0.76rem; font-weight: 700; background: rgba(128, 128, 128, 0.14); }
+  .gm-doc .leg em { font-style: normal; font-weight: 500; color: var(--hfa-muted); }
+  .gm-doc .leg i { font-style: normal; font-weight: 800; }
+  .gm-doc .leg.hit { background: rgba(47, 212, 164, 0.16); } .gm-doc .leg.hit i { color: var(--hfa-good); }
+  .gm-doc .leg.miss { background: rgba(255, 176, 32, 0.16); } .gm-doc .leg.miss i { color: var(--hfa-bad); }
+  .gm-doc-gradehead { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+  .gm-grade { flex: none; display: flex; align-items: center; gap: 0.6rem; padding: 0.4rem 0.9rem 0.4rem 0.6rem; border-radius: 14px; border: 2px solid var(--hfa-muted); background: var(--hfa-tint); }
+  .gm-grade b { font-size: 2.6rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .gm-grade span { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); line-height: 1.3; }
+  .gm-grade.good { border-color: var(--hfa-good); } .gm-grade.good b { color: var(--hfa-good); }
+  .gm-grade.warn { border-color: var(--hfa-bad); } .gm-grade.warn b { color: var(--hfa-bad); }
+  .gm-grade.bad { border-color: var(--hfa-accent); } .gm-grade.bad b { color: var(--hfa-accent); }
+  .gm-doc-gradetext { flex: 1 1 20rem; min-width: 0; }
+  .gm-doc-gradetext .gm-doc-verdicts { margin-bottom: 0; }
+  .hfa .gm-doc-table { font-size: 0.8rem; }
+  .hfa .gm-doc-table th, .hfa .gm-doc-table td { padding: 0.25rem 0.4rem; }
+  .hfa .gm-doc-table b { color: var(--hfa-body); }
+  .hfa .gm-doc-table td.meter { width: 5rem; }
+  .hfa .gm-doc-table td.meter i { display: block; height: 4px; border-radius: 2px; background: var(--hfa-good); }
+  .hfa .gm-doc-table td.meter i.bad { background: var(--hfa-bad); }
+  .gm-doc-tl { position: relative; padding-left: 1rem; border-left: 2px solid rgba(128, 128, 128, 0.25); display: flex; flex-direction: column; gap: 0.7rem; }
+  .gm-doc-tp { position: relative; font-size: 0.88rem; line-height: 1.45; }
+  .gm-doc-tp::before { content: ""; position: absolute; left: -1.4rem; top: 0.45rem; width: 10px; height: 10px; border-radius: 50%; background: var(--hfa-accent); box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.25); }
+  .gm-doc-tp .clock { font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-accent); }
+  @media (max-width: 1100px) { .gm-doc-three { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 760px) {
+    .gm-doc > summary { padding: 0.85rem 16px; gap: 0.6rem; flex-wrap: wrap; }
+    .gm-doc-main { flex: 1 1 0; }
+    .gm-doc-lead { font-size: 0.98rem; }
+    .gm-doc-chips { justify-content: flex-start; flex: 0 0 100%; padding-left: 2.6rem; }
+    .gm-doc-body { padding: 0.6rem 16px 1rem; }
+    .gm-doc-hook { font-size: 1.2rem; }
+    .gm-doc-vs, .gm-doc-two, .gm-doc-three, .gm-doc-calls { grid-template-columns: 1fr; }
+    .gm-doc-arrow { display: none; }
+    .gm-doc-flag { min-width: 4.4rem; font-size: 0.56rem; }
+  }
   @media (prefers-reduced-motion: reduce) { #hfa-rain { opacity: calc(var(--hfa-rain) * 0.5); } }
 </style>
 
@@ -821,7 +941,7 @@
     <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
   </div>
   <main>
-<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#away" data-sec="away">PIT offense</a><a href="#home" data-sec="home">TB offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
+<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#doc-sec" data-sec="doc">Plan vs game</a><a href="#away" data-sec="away">PIT offense</a><a href="#home" data-sec="home">TB offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
 
 <div class="hfa-card hfa-hero hfa-sec gm-hero" id="hero" data-sec="hero" style="--gm-away: #000000; --gm-home: #A71930;">
   <div class="gm-hero-top">
@@ -848,6 +968,475 @@
     <span class="gm-chip final"><i>final</i> <b>PIT 26 &ndash; 19 TB</b></span>
     <span class="gm-chip " title="Natural grass. Passing is the same on grass and turf; rushing runs about 3.5% higher on turf (+3.7 yards a team) and a catch gains a tenth of a yard more after it. Points, the closing lines and the engine show no surface effect, so it is not an engine input."><i>field</i> <b>grass</b></span><span class="gm-chip " title="Forecast for the kickoff window, as of Sun 10:03 AM Denver. Wind above 10 mph trims the passing projection."><i>forecast</i> <b>77°F · wind 14 mph (gusts 26)</b></span>
   </div>
+</div>
+
+<div class="hfa-sec" id="doc-sec" data-sec="doc">
+
+<details class="hfa-card gm-doc st-both" id="doc">
+  <summary class="gm-doc-bar">
+    <span class="gm-doc-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="gm-doc-main">
+      <span class="gm-doc-eyebrow">The plan against the game &middot; plan Sun Oct 18, 9:52 AM &middot; report Tue Oct 20, 11:53 AM</span>
+      <span class="gm-doc-lead">Tampa walls off the run. Warren eats on checkdowns, Rodgers gets a clean pocket.</span>
+    </span>
+    <span class="gm-doc-chips">
+      <span class="badge warn">script partly held</span>
+      <span class="badge good">6 hit</span><span class="badge bad">5 missed</span>
+      <span class="badge good" title="Projection grade: team volume and yardage, player lines, and the market calls the projection implied">projection B &middot; 70</span>
+      <span class="gm-doc-open">open</span>
+    </span>
+  </summary>
+  <div class="gm-doc-body">
+    <div class="gm-doc-nav">
+      <button type="button" class="gm-doc-arrow" data-dir="-1" aria-label="Previous section">&#8249;</button>
+      <div class="gm-doc-pills" role="tablist"></div>
+      <button type="button" class="gm-doc-arrow" data-dir="1" aria-label="Next section">&#8250;</button>
+    </div>
+
+    
+    
+    <section class="gm-doc-pane" data-title="Plan vs game">
+      <div class="gm-doc-verdicts">
+        <span class="badge warn" title="Whether the game went the way the plan's script described, for the reasons it gave">script partly held</span>
+        <span class="badge mute">followed the favorite&#x27;s path</span>
+        <span class="badge bad" title="Both teams ran 149 plays; the league's figure for two teams was 121.5">pace: called average, played fast</span>
+        <span class="badge good" title="PIT passed on 71% of its plays; its season rate entering the game was 65%">PIT: called pass, played pass</span><span class="badge bad" title="TB passed on 66% of its plays; its season rate entering the game was 55%">TB: called run, played pass</span>
+      </div>
+      <div class="gm-doc-vs">
+        <div class="gm-doc-col plan"><div class="gm-doc-k">The plan said</div><p>Tampa&#x27;s front takes away the run, so Pittsburgh&#x27;s yards arrive through the air and Warren&#x27;s targets; Irving is the Bucs&#x27; only lane in a low-scoring, field-goal-flavored game.</p><p class="sub">Pittsburgh wants to run and cannot: Tampa is second in yards per carry allowed and fifth in rush EPA allowed, which pushes Rodgers toward the high-30s attempt range he has hit every time this team has been forced to throw. Tampa gives that up safely, though — no pass rush and a secondary missing Winfield means clean pockets but also few sacks and few giveaways. Tampa answers by running Irving at a Pittsburgh front that ranks 23rd in rush EPA allowed, holding the ball and keeping the game inside one score. Points come in mixed currency: Tampa stalls at Pittsburgh&#x27;s 20 (50% TD rate allowed on trips, 7th), while Pittsburgh converts its trips against a Tampa unit 21st in red-zone TD rate allowed. Expect a two-score-or-less game in the 17–24 band per side.</p></div>
+        <div class="gm-doc-col game"><div class="gm-doc-k">What happened</div><p>Pittsburgh 26, Tampa Bay 19 in overtime: the Steelers covered -2.5 and the game blew through a 38.5 total only because regulation ended 19-19 (exactly 38) and Rodgers&#x27; 6-yard touchdown to Bernard in OT added seven. The projection nailed both team totals and both rushing numbers and badly missed the volume — 149 plays, 92 pass attempts — because Tampa&#x27;s offense never finished a drive and Pittsburgh spent 57 of 76 snaps trailing.</p><p class="sub">The plan read the Pittsburgh half of this game almost perfectly in shape — Rodgers threw, the yards came short and after the catch, Warren&#x27;s rushing was capped, Metcalf ate the air yards — and the parlay built on that mechanism went 3-for-3. It missed the Tampa half entirely, and missed it on the mechanism, not the bounce: the plan&#x27;s central premise that Tampa&#x27;s front erases the run while generating no pressure got exactly inverted (Pittsburgh ran for 4.0 a carry with 3 explosives; Tampa blitzed 47.3% for 5 sacks and 10 hits), and the prescribed Tampa script of Irving at 18-22 carries with Daniels under 30 attempts collapsed into 43 attempts and 46 rushing yards. The Otton and Irving calls failed because Tampa&#x27;s offense failed, which is a read miss; the Egbuka under failed while its efficiency logic held exactly (7-of-16, -11.48 EPA, both picks his way), which is a line-placement issue, not a reasoning one. The plan also correctly flagged Pittsburgh&#x27;s red-zone defense as the sevens-versus-threes lever, and that is what held Tampa to 19.</p><p class="sub"><b>The script:</b> The favorite&#x27;s path is what happened: Pittsburgh threw 49 times at a 68.4% pass rate (checks: lean called pass, actual pass, 0.711 vs a 0.647 season rate), lived on Warren-and-underneath volume plus one Metcalf conversion, converted 2 of 4 red-zone trips, and won while Tampa kicked four field goals on two red-zone trips. But the mechanism that was supposed to produce it broke twice: Pittsburgh threw because it trailed by 13, not because the run was erased (22 carries, 89 yards, 4.0 a carry, 3 explosive runs), and Tampa&#x27;s &#x27;pressure-less front&#x27; produced 5 sacks and 10 QB hits. Tampa&#x27;s own lean broke outright — called run, played pass at 65.8% against a 55.3% season rate — and the pace call broke too (149 plays vs 121.5 league, in overtime).</p></div>
+      </div>
+      
+      <div class="gm-doc-k">What the plan said would swing it</div>
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Freiermuth&#x27;s calf: Pittsburgh optimistic Sunday morning, but a scratch moves targets to Washington and Bernard.<div class="went"><b>Went:</b> Freiermuth played at a 72.2% snap share but caught 2 of 3 for 11 yards with -1.77 EPA; the target migration the plan described happened anyway — Washington 6 targets, Bernard 12.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag minor">minor</span><div>Tucker not expected to play — Irving keeps the goal-line work and the full backfield load.<div class="went"><b>Went:</b> Tucker did not play and Irving kept the full load (19 of TB&#x27;s 25 carries), but the load produced 46 yards on 5 stuffs — the workload premise held and was worthless.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Dowdle returns in a complementary role; Warren&#x27;s carries are capped, his routes are not.<div class="went"><b>Went:</b> Dowdle took 7 carries for 40 yards (two 10+ runs) on 26.6% of snaps and Warren&#x27;s carries capped at 14 — but Warren&#x27;s routes were capped too, only 4 targets on 52 dropbacks, which is the half the plan got backwards.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag minor">minor</span><div>Tampa&#x27;s pre-snap flags (2.2 per game, well above league) put a short-aDOT offense into long downs.<div class="went"><b>Went:</b> Tampa committed just 1 pre-snap flag (Goedeke false start, Q2 1:52) and 4 total for 38 yards; the damaging flags were in-play — Kancey&#x27;s roughing (Q4 14:35) and Parrish&#x27;s DPI (Q4 3:38, +1.55 EPA).</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Pittsburgh&#x27;s red-zone defense (7th in TD rate allowed) deciding whether Tampa&#x27;s drives become sevens or threes.<div class="went"><b>Went:</b> Pittsburgh&#x27;s goal-line defense did convert sevens into threes — Tampa had 2 red-zone trips, 1 TD, 1 FG, -0.262 EPA inside the 20 — but the bigger constraint was Tampa only reaching the red zone twice on 74 plays (-0.277 field EPA).</div></div></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">Each offense: expected &middot; happened</div>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>PIT</b><span class="badge good">held</span></div><p><b>Expected:</b> 35-38 dropbacks at a pass rate nearer 65% than the blended 59%, Warren at 13-16 carries for a poor per-carry number but 6 targets, Metcalf the air-yards share and Bernard a near-starter&#x27;s volume. Yards from YAC, points from converted trips rather than long touchdown drives.</p><p><b>Happened:</b> Expected 35-38 dropbacks near a 65% pass rate; got 52 dropbacks at 68.4%, Warren at 14 carries, Metcalf with a 68.6% air-yards share, Bernard at 93.7% snaps, 152 YAC and points from converted trips (2 of 4) rather than long touchdowns. The only break is the attempt count overshooting the plan&#x27;s own range.</p></div><div class="gm-doc-box"><div class="gm-doc-boxhead"><b>TB</b><span class="badge bad">broke</span></div><p><b>Expected:</b> 26-31 attempts at a short aDOT with 18-22 Irving carries, a pass rate near 50%, Otton and Godwin as the volume underneath, and points arriving as a mix of one or two short touchdowns and kicks.</p><p><b>Happened:</b> Expected 26-31 attempts with 18-22 Irving carries at a ~50% pass rate with Otton and Godwin underneath; got 43 attempts at 70.3% pass, Irving 19 for 46, Otton 2 targets for 4 yards, and Egbuka absorbing 16 targets for 48 yards.</p></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">For the next plan on these teams</div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="badge mute">TB</span><div>Do not lean Tampa run from Daniels&#x27; two prior starts. The moment Irving was stuffed (5 TFL by the midpoint), they threw 68% while leading. With this quarterback the run lean is conditional on the run working, not on the depth chart — plan the pass rate off in-game success, not the season split.</div></div><div class="gm-doc-item"><span class="badge mute">TB</span><div>The &#x27;no pass rush&#x27; tag is a four-man-rush trait, not a pressure forecast. Tampa blitzed 47.3% against a quarterback with zero scrambles and got 5 sacks and 10 hits. Any future plan citing their 10.1% pressure rate should check the opposing QB&#x27;s mobility first.</div></div><div class="gm-doc-item"><span class="badge mute">PIT</span><div>With Pittman, Wilson and Skowronek out, the two healthy wideouts took 27 of 49 targets. Route-share concentration should be modelled before RB checkdown volume — the plan&#x27;s Warren receiving case was the right idea applied to the wrong player.</div></div><div class="gm-doc-item"><span class="badge mute">both</span><div>The Irving and Otton misses are not bad luck to correct away — they came from the same broken read about which front was softer. The Egbuka miss IS bounce-adjacent (the mechanism held; 16 targets at -11.48 EPA beat a 39.5 line) and the next plan should keep that reasoning while respecting that a 16-target floor can clear any yardage under.</div></div></div>
+      
+    </section>
+    
+
+    
+    
+    <section class="gm-doc-pane" data-title="The script">
+      <div class="gm-doc-verdicts">
+        <span class="badge mute" title="Plays and tempo">average pace</span>
+        <span class="badge acc" title="Already a 64.7% pass team, and the one defense trait that can&#x27;t be run on removes the ground plan entirely; Tampa&#x27;s 31st-ranked pressure makes throwing the safe choice.">PIT pass</span><span class="badge acc" title="With Daniels starting they passed 49.2% and 44.3% in his two starts against a 55.3% season rate, and Pittsburgh&#x27;s front is the softer half of this matchup.">TB run</span>
+        <span class="badge mute">medium confidence</span>
+      </div>
+      <p class="gm-doc-p">Pittsburgh wants to run and cannot: Tampa is second in yards per carry allowed and fifth in rush EPA allowed, which pushes Rodgers toward the high-30s attempt range he has hit every time this team has been forced to throw. Tampa gives that up safely, though — no pass rush and a secondary missing Winfield means clean pockets but also few sacks and few giveaways. Tampa answers by running Irving at a Pittsburgh front that ranks 23rd in rush EPA allowed, holding the ball and keeping the game inside one score. Points come in mixed currency: Tampa stalls at Pittsburgh&#x27;s 20 (50% TD rate allowed on trips, 7th), while Pittsburgh converts its trips against a Tampa unit 21st in red-zone TD rate allowed. Expect a two-score-or-less game in the 17–24 band per side.</p>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-k">If the favorite wins</div><p>Pittsburgh accepts the run is dead, throws 35+ at a pressure-less front, and lives on Warren&#x27;s checkdowns, Freiermuth/Washington underneath and one Metcalf shot — then converts its red-zone trips while Tampa settles for kicks.</p></div>
+        <div class="gm-doc-box"><div class="gm-doc-k">If the underdog wins</div><p>Tampa wins the possession battle: Irving at 18-22 carries, Daniels under 30 attempts at a short aDOT, a long drive or two and a short field off a Rodgers giveaway, with the Bucs ahead late and the pass rate under 50%.</p></div>
+      </div>
+      
+      <div class="gm-doc-prose"><h2>The read</h2>
+<p>A 38.5-total game between two offenses that move the ball in opposite ways and neither of which finishes cleanly. Tampa's defense is the second-stingiest in the league in yards per carry allowed and fifth in rush EPA allowed (72.8 rush yards per game, 2nd) — it takes away the exact thing Pittsburgh wanted to lean on — but it generates the least pressure in the league (10.1%, 31st). So Pittsburgh gets a clean pocket and a dead ground game: more dropbacks than the blend assumes, yards from YAC and checkdowns, and a back whose production shifts from carries to catches. Tampa's own path is the mirror: a rookie quarterback at a 4.2–4.4 aDOT who cannot throw past the sticks, running at a Pittsburgh front that ranks 23rd in rush EPA allowed — but Pittsburgh holds at its own 20 (50% red-zone TD rate allowed, 7th), which turns Tampa drives into kicks.</p>
+<h2>Why</h2>
+<p>Pittsburgh's blended yards per carry falls to 3.6 against this front; its own season rate is 4.69. Every week that Pittsburgh has been taken out of the run it has thrown 39–40 times, and our week-4 review's lesson was explicit: price Rodgers' volume off the team's 64.7% pass rate, not the blend. Tampa has no pass rush to punish it and is without Winfield (ruled out Friday, Rotowire) with Morrison doubtful. On the other side, Tampa ran 39 times for 241 in week 5 and passed on 44.3% while ahead; Irving is the only lane and, with Tucker not expected to play (Rapoport via Rotowire, Sunday), he keeps the short-yardage work too.</p>
+<h2>What would change it</h2>
+<p>Freiermuth's calf — Pittsburgh is "optimistic" (Rapoport, Sunday morning) but a late scratch pushes targets to Washington and Bernard. Dowdle is expected back in a complementary role (Fowler, Sunday), which trims Warren's carry ceiling but not his routes. If Tampa's pre-snap flags (2.2 per game) put Daniels in long down-and-distance, his run lean collapses and the script flips to a chasing offense that cannot throw deep. Prices here are Kalshi's and thin.</p></div>
+    </section>
+    <section class="gm-doc-pane" data-title="Offenses">
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>PIT offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>A 61-play, 64.7% pass offense that gains between the 20s without separating: 6.63 yards per attempt against a 7.02 league mark, field EPA -0.027, and three straight 24+ point games built on YAC (158 in week 3) and explosive passing (tagged in weeks 3, 4 and 5).</p>
+          <div class="gm-doc-k">How it scores</div><p>Short and intermediate throws with run-after-catch to Warren, Freiermuth and Washington, one vertical shot per quarter to Metcalf, and a red-zone rate that has climbed to 2-of-3 and 2-of-2 in the last two weeks after stalling early.</p>
+          <div class="gm-doc-k">What stops it</div><p>Interior pressure (4 sacks at New England, 5 at Cleveland), third down (5-of-28 in weeks 1-2), and its own flags — 3.8 per game with 1.6 pre-snap, including holds that erased an 87-yard run in week 3.</p>
+          <div class="gm-doc-k">This matchup</div><p>Tampa takes the run away outright — 3.279 yards per carry allowed (2nd), 5th in rush EPA, 72.8 rush yards per game (2nd) — but cannot generate the pressure that has broken this offense, ranking 31st at 10.1% and tagged &#x27;no pass rush&#x27; in four of five weeks. Tampa holds the field (11th in EPA allowed between the 20s) but concedes touchdowns once you get inside: 63.6% of trips, 21st.</p>
+          <div class="gm-doc-k">Injuries</div><p>Pittman and Wilson are on IR and Skowronek is out, leaving Bernard as the full-time WR2 behind Metcalf, who was cleared Saturday (Schefter/Rotowire) after an illness. Freiermuth is questionable with a calf added late Saturday, with the team optimistic (Rapoport, Sunday 6:09 AM); Washington and Tonyan absorb his snaps if not. Dowdle is slated to play in a complementary role (Fowler, Sunday 5:12 AM). Tampa&#x27;s defense is without Winfield (87% of snaps), with Morrison doubtful and Trotter — their highest-rated linebacker — questionable.</p>
+          <div class="gm-doc-k">Expect</div><p>35-38 dropbacks at a pass rate nearer 65% than the blended 59%, Warren at 13-16 carries for a poor per-carry number but 6 targets, Metcalf the air-yards share and Bernard a near-starter&#x27;s volume. Yards from YAC, points from converted trips rather than long touchdown drives.</p>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>TB offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>With Daniels under center this is a run-first, short-passing team: 4.2 and 4.4 aDOT in his two starts, 27 and 25 attempts, a 44.3% pass rate in week 5, and 39 carries for 241 yards against Dallas. Field EPA -0.145 on the season is the worst number in this game.</p>
+          <div class="gm-doc-k">How it scores</div><p>Long possessions, Irving on the ground, checkdowns and jet-sweep usage near the goal line — three of their four week-5 touchdowns came from the run or from inside 10 yards.</p>
+          <div class="gm-doc-k">What stops it</div><p>Its own flags (5.0 per game, 2.2 pre-snap, 14 against Dallas), sacks on third down (16 in four Mayfield-era games) and red-zone stalls in weeks 1-3 (3 TDs on 10 trips).</p>
+          <div class="gm-doc-k">This matchup</div><p>Pittsburgh is the softer run front here — 23rd in rush EPA allowed, 4.039 yards per carry, 103.4 rush yards per game — and its pressure rate (14%, 22nd) is not the four-man wrecking crew that broke Mayfield in Minnesota. What Pittsburgh does do is hold at its own 20: 50% red-zone TD rate allowed, 7th, with a 14th-ranked red-zone EPA. Pittsburgh leaks explosive passes every single week, but a 4.3-aDOT quarterback is the one profile that can&#x27;t collect them.</p>
+          <div class="gm-doc-k">Injuries</div><p>Tucker (quad) is not expected to play per Rapoport on Sunday morning, which hands Irving the short-yardage and goal-line work with Gainwell as the passing-down back; Josh Williams was elevated as the No. 3. Mayfield remains out (thumb), with optimism for week 7. Pittsburgh&#x27;s secondary is thinned by Elliott being ruled out and Ramsey (wrist) and Dean (ankle) both questionable.</p>
+          <div class="gm-doc-k">Expect</div><p>26-31 attempts at a short aDOT with 18-22 Irving carries, a pass rate near 50%, Otton and Godwin as the volume underneath, and points arriving as a mix of one or two short touchdowns and kicks.</p>
+        </div>
+        
+      </div>
+    </section>
+    <section class="gm-doc-pane" data-title="The calls">
+      <p class="gm-doc-note">Each call is one player, one market, one side of the line Kalshi quoted when the plan was written; graded off the box score, with the report's read of whether the reason given showed up. The rungs are the same call down the Kalshi ladder, Edge halfway to its last rung and Edge+ the last, at Kalshi's last pregame price.</p>
+      <div class="gm-doc-verdicts"><span class="badge mute">Normal <b class="up">6</b>&ndash;<b class="down">5</b></span><span class="badge mute">Edge <b class="up">7</b>&ndash;<b class="down">4</b></span><span class="badge mute">Edge+ <b class="up">8</b>&ndash;<b class="down">3</b></span></div>
+      <div class="gm-doc-calls">
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Jaylen Warren</b><span class="flat">PIT</span>
+            <span class="bet">over 24.5 rec yds</span>
+            <span class="res hit">&#10003; 28</span>
+            <span class="badge good">hit · read partly held</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #18 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 81%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 57%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> over 24.5 rec yds <small>58&cent;</small></span><span class="rung hit"><i>Edge / Edge+</i> 15+ rec yds <small>76&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The over cashed at 28 yards, but on 4 targets and 4 air yards, not the checkdown volume the plan described; Tampa&#x27;s linebackers were never attacked — the targets went to Metcalf (15) and Bernard (12).</p>
+          <p class="why">When this offense can&#x27;t run it throws at the back, and Tampa&#x27;s linebackers have been the soft spot underneath all year. Trotter, their best cover man there, is questionable.</p>
+          <p class="ev">27, 34, 49, 33 and 87 receiving yards with 6, 4, 4, 6, 6 targets; our week-2 TB report charted Anzalone allowing 102 yards on three catches with two missed tackles.</p>
+          <p class="ev">vs #17 pass EPA (mid); the line sits far below the model&#x27;s mean and Kalshi&#x27;s own price implies barely better than a coin flip, which is the gap — it prices his usual carry-share role, not a throwing script.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Jaylen Warren</b><span class="flat">PIT</span>
+            <span class="bet">over 89.5 rush+rec yds</span>
+            <span class="res miss">&#10007; 78</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #5 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 69%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 55%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal / Edge / Edge+</i> over 89.5 rush+rec yds <small>54&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 78 combined yards against 89.5. His carries were capped as planned (14-50) but the receiving work that was supposed to replace them never came — 2 catches, 28 yards on 52 team dropbacks.</p>
+          <p class="why">Tampa&#x27;s front erases his carries but can&#x27;t touch the quarterback, so his production moves to routes and checkdowns. The combined market is the script-proof version of his workload.</p>
+          <p class="ev">Combined totals of 176, 126 and 188 over the last three weeks on 87-97% snap shares; 6 targets in three of five games; our week-4 review had this exact call cash at 126 when the carries disappeared.</p>
+          <p class="ev">Rushing half vs #5 rush EPA, receiving half vs #18 pass EPA and a TB unit tagged &#x27;no pass rush&#x27; four of five weeks; the model&#x27;s mean sits well above his line, and combined-yardage calls are 61% on the season record.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Cade Otton</b><span class="flat">TB</span>
+            <span class="bet">over 24.5 rec yds</span>
+            <span class="res miss">&#10007; 4</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #17 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 68%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 54%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> over 24.5 rec yds <small>55&cent;</small></span><span class="rung miss"><i>Edge / Edge+</i> 15+ rec yds <small>73&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 2 targets, 1 catch, 4 yards at 100% snap share. The premise that a short-aDOT passer feeds the tight end first was wrong in the most direct way: Daniels&#x27; -4 air yards to Otton versus 136 air yards at Egbuka.</p>
+          <p class="why">The most stable target in this offense regardless of quarterback, and a short-aDOT passer feeds the tight end first. His line is set near the bottom of his weekly range.</p>
+          <p class="ev">4-6 targets in every game on 89-98% snap shares; 26, 38, 56, 37 and 25 receiving yards — four of five clear this rung.</p>
+          <p class="ev">vs #17 pass EPA, with PIT 16th in fantasy points allowed to tight ends; the model&#x27;s mean is well above the line and Kalshi&#x27;s price is more conservative than his own game log.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Bucky Irving</b><span class="flat">TB</span>
+            <span class="bet">over 64.5 rush yds</span>
+            <span class="res miss">&#10007; 46</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #23 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 52%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 48%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> over 64.5 rush yds <small>50&cent;</small></span><span class="rung miss"><i>Edge</i> 50+ rush yds <small>69&cent;</small></span><span class="rung hit"><i>Edge+</i> 40+ rush yds <small>80&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 46 yards on 19 carries with 5 stuffs and -6.28 rush EPA. Pittsburgh&#x27;s front, rated the softer half of the matchup, held the middle to 4 carries for -4 yards; Tampa&#x27;s run plan was dead by the third quarter.</p>
+          <p class="why">He is the only lane Tampa has with a rookie throwing at four yards downfield, and Pittsburgh&#x27;s front is the softer half of this game. Tucker&#x27;s likely absence keeps every short-yardage carry his.</p>
+          <p class="ev">21 carries for 165 at Dallas and 16-17 in each of weeks 2-4; Tampa ran 39 times in his last outing at a 44.3% pass rate; PIT has allowed 4.039 yards per carry and 103.4 rush yards a game.</p>
+          <p class="ev">vs #23 rush EPA allowed — the soft band where overs have run 53% on the season record; the model is above his line and Kalshi is slightly below it, and the market mean looks priced for a chasing Tampa script.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Aaron Rodgers</b><span class="flat">PIT</span>
+            <span class="bet">over 224.5 pass yds</span>
+            <span class="res hit">&#10003; 253</span>
+            <span class="badge good">hit · read partly held</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #18 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 46%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 52%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> over 224.5 pass yds <small>51&cent;</small></span><span class="rung hit"><i>Edge</i> 175+ pass yds <small>79&cent;</small></span><span class="rung hit"><i>Edge+</i> 150+ pass yds <small>88&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 253 yards clears 224.5, and the attempt volume (49) arrived — but not from the absent pass rush the plan cited. Rodgers was sacked 5 times and hit 10 against a 47.3% blitz rate, and the attempts came from trailing by 13, plus an overtime possession.</p>
+          <p class="why">The one defense trait that has broken him — four-man pressure — is absent here, while the run he&#x27;d rather lean on is gone. That combination pushes his attempts toward the high-30s he hits whenever Pittsburgh can&#x27;t run.</p>
+          <p class="ev">40, 39, 34, 40 and 31 attempts; 292, 299 and 235 yards the last three weeks; Tampa generates 10.1% pressure and has allowed clean pockets to Cleveland and Green Bay with 0.307 and 0.230 EPA per dropback.</p>
+          <p class="ev">vs #18 pass EPA, with Winfield out and Morrison doubtful; the model sits essentially on his line and Kalshi barely above it — both price the blended 59% pass rate, not the 64.7% team rate our week-4 review said to use.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">DK Metcalf</b><span class="flat">PIT</span>
+            <span class="bet">over 49.5 rec yds</span>
+            <span class="res hit">&#10003; 93</span>
+            <span class="badge good">hit · read partly held</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #18 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 43%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 52%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> over 49.5 rec yds <small>52&cent;</small></span><span class="rung hit"><i>Edge</i> 40+ rec yds <small>62&cent;</small></span><span class="rung hit"><i>Edge+</i> 25+ rec yds <small>79&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 93 yards on 15 targets confirms the target-concentration logic with Pittman, Wilson and Skowronek out (68.6% air-yards share), but the &#x27;deep shots develop&#x27; half broke — 0-for-2 on deep throws, 41 YAC, longest a 20-yard crosser.</p>
+          <p class="why">Pittman, Wilson and Skowronek are all gone, so the air yards have nowhere else to go, and he was cleared Saturday. A pressure-less front lets the deep shots actually develop.</p>
+          <p class="ev">9-10 targets in three of five weeks, 115 yards on 9 targets at Cleveland; Wilson, who took 6 looks a week, went to IR Saturday and Pittman is already there.</p>
+          <p class="ev">vs #18 pass EPA with TB missing its starting safety and likely its top outside corner; the model&#x27;s mean sits right on the line and Kalshi marginally over — neither has repriced a WR room down to two receivers.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Kenny Gainwell</b><span class="flat">TB</span>
+            <span class="bet">under 29.5 rush+rec yds</span>
+            <span class="res hit">&#10003; 24</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #23 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 69%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 52%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 29.5 rush+rec yds <small>52&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;55 rush+rec yds <small>86&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;80 rush+rec yds <small>97&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 24 combined yards on 14.9% of snaps: 2 carries for 17, one catch for 7 at -6 air yards. Exactly the sub-45% passing-down role the plan described.</p>
+          <p class="why">A sub-45% snap passing-down back whose targets come behind the line of scrimmage, in a game Tampa wants to grind with its starter. The touches aren&#x27;t there.</p>
+          <p class="ev">28, 27, 10, 15 and 25 combined yards across five weeks; 3-5 carries a game behind Irving, with four week-5 targets at minus-27 air yards.</p>
+          <p class="ev">Rushing half vs #23 rush EPA; the model&#x27;s mean sits roughly ten yards below this line while Kalshi prices it near a coin flip — that gap is the call, and the same under cashed in week 5.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Germie Bernard</b><span class="flat">PIT</span>
+            <span class="bet">under 4.5 receptions</span>
+            <span class="res miss">&#10007; 11</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">low</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #18 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 65%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 58%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 4.5 receptions <small>58&cent;</small></span><span class="rung miss"><i>Edge</i> &lt;8 receptions <small>93&cent;</small></span><span class="rung miss"><i>Edge+</i> &lt;10 receptions <small>99&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 11 catches on 12 targets. He was not the third read — at 93.7% snaps he was the quick-game outlet against blitz, with 69 of his 87 yards after the catch and the overtime touchdown.</p>
+          <p class="why">The expanded role is real but this rung asks for a career-level catch count from a rookie who is the third read behind Metcalf, Warren and the tight ends.</p>
+          <p class="ev">Catches of 4, 1, 2 and 6 across four appearances; his one big week came on 9 targets against Indianapolis with 92% snaps.</p>
+          <p class="ev">vs #18 pass EPA; the model projects him under this number and Kalshi prices the over below even money — the case is that Pittsburgh&#x27;s target tree still runs through the back and tight ends.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Bucky Irving</b><span class="flat">TB</span>
+            <span class="bet">under 14.5 rec yds</span>
+            <span class="res hit">&#10003; 3</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #17 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 61%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 60%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 14.5 rec yds <small>61&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;40 rec yds <small>92&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;50 rec yds <small>96&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 3 receiving yards on 3 targets at -9 air yards — precisely the behind-the-line checkdown profile the plan described, even though Gainwell barely played (14.9% snaps).</p>
+          <p class="why">Gainwell owns the passing-down snaps and this quarterback&#x27;s checkdowns go at or behind the line. Irving&#x27;s value is carries, not routes.</p>
+          <p class="ev">12, 0 and 10 receiving yards the last three weeks, with zero targets against Green Bay; 3 targets at Dallas for 10 yards.</p>
+          <p class="ev">vs #17 pass EPA; the model&#x27;s mean is below the line and Kalshi&#x27;s price is below it too — the agreement is on the role, and the volume case for the under is the receiving work going to Gainwell.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Emeka Egbuka</b><span class="flat">TB</span>
+            <span class="bet">under 39.5 rec yds</span>
+            <span class="res miss">&#10007; 48</span>
+            <span class="badge warn">read held · result didn&#x27;t</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">efficiency</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #17 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 50%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 54%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 39.5 rec yds <small>54&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;70 rec yds <small>84&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;100 rec yds <small>96&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The efficiency read was right to the decimal — 7 of 16 for 48 yards, 136 air yards, -11.48 EPA, both interceptions his way — but 16 targets is twice the projection and raw volume carried him past 39.5.</p>
+          <p class="why">With this quarterback Tampa&#x27;s receiving market is a catch market, not a yardage market — his air yards arrive on incompletions and his catches come at the sticks. Efficiency call.</p>
+          <p class="ev">13 and 38 yards in Daniels&#x27; two starts on 4 and 9 targets at 89-94% snaps; team aDOT 4.2 and 4.4; the same call cashed at 38 in week 5.</p>
+          <p class="ev">vs #17 pass EPA, with PIT 6th in fantasy points allowed to receivers; the model sits right on the line and Kalshi slightly under it — both are carrying Mayfield-era yardage into a short-throw offense.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Jaylen Warren</b><span class="flat">PIT</span>
+            <span class="bet">under 59.5 rush yds</span>
+            <span class="res hit">&#10003; 50</span>
+            <span class="badge good">hit · read partly held</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #5 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 50%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 50%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 59.5 rush yds <small>51&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;100 rush yds <small>86&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;140 rush yds <small>98&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 50 rushing yards cashes the under, and Dowdle did take 7 carries. But Tampa&#x27;s front was not the reason: Pittsburgh as a team averaged 4.0 a carry with 3 explosive runs; Warren simply ran it only 14 times in a trailing script.</p>
+          <p class="why">This is the toughest front in the league to run at by yards allowed, and Dowdle is back to take short-yardage work. Warren&#x27;s yards come through the air this week, not on the ground.</p>
+          <p class="ev">Tampa allows 3.279 yards per carry and 72.8 rush yards per game; Pittsburgh&#x27;s own 4.69 blends down to 3.6; Dowdle expected to play in a complementary role (Fowler, Sunday).</p>
+          <p class="ev">vs #5 rush EPA, #2 in yards per carry allowed; the model&#x27;s mean sits above the line, which is the known blind spot — projections under-respond to run defenses. Note the record: unders vs top-10 defenses are 43% this season, so size it accordingly.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Same-script legs">
+      <p class="gm-doc-note">Legs the same script produces together: they move as one, which is what a same-game parlay pays for.</p>
+      <div class="gm-doc-three">
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Pittsburgh throws because it can&#x27;t run</b></div>
+          <div class="legs"><span class="leg hit">Jaylen Warren <em>under 59.5 rush yds</em> <i>&#10003;</i></span><span class="leg hit">Jaylen Warren <em>over 24.5 rec yds</em> <i>&#10003;</i></span><span class="leg hit">Aaron Rodgers <em>over 224.5 pass yds</em> <i>&#10003;</i></span></div>
+          <p class="sub">One mechanism: Tampa&#x27;s front kills the ground game while generating no pressure, so carries convert into dropbacks and Warren&#x27;s yards arrive as checkdowns. All three legs move together off the same script.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Tampa grinds, kicks and dinks</b></div>
+          <div class="legs"><span class="leg miss">Bucky Irving <em>over 64.5 rush yds</em> <i>&#10007;</i></span><span class="leg miss">Cade Otton <em>over 24.5 rec yds</em> <i>&#10007;</i></span><span class="leg miss">Emeka Egbuka <em>under 39.5 rec yds</em> <i>&#10007;</i></span></div>
+          <p class="sub">A run-leaning Tampa with a short-aDOT passer feeds Irving and the tight end while capping the outside receiver&#x27;s yardage; the same low pass rate that fuels Irving is what starves Egbuka.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    
+    
+
+    
+    <section class="gm-doc-pane" data-title="Projection grade">
+      <div class="gm-doc-gradehead">
+        <div class="gm-grade good"><b>B</b><span>projection<br>grade &middot; 70</span></div>
+        <div class="gm-doc-gradetext">
+          
+          <div class="gm-doc-verdicts"><span class="badge mute">PIT 26 – TB 19</span><span class="badge mute">PIT covered (PIT by 2.5)</span><span class="badge mute">Over 38.5 (45)</span><span class="badge mute">teams 74</span><span class="badge mute">player lines 17/42 in range</span><span class="badge mute">market calls 2/3</span></div>
+        </div>
+      </div>
+      
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>TB</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">18.0</td><td class="num"><b>19</b></td><td class="num flat">+1</td><td class="meter"><i style="width: 95%" class=""></i></td></tr><tr><td>Pass yds</td><td class="num flat">207.8</td><td class="num"><b>164.0</b></td><td class="num flat">-43.8</td><td class="meter"><i style="width: 71%" class=""></i></td></tr><tr><td>Rush yds</td><td class="num flat">111.5</td><td class="num"><b>102.0</b></td><td class="num flat">-9.5</td><td class="meter"><i style="width: 89%" class=""></i></td></tr><tr><td>Pass att</td><td class="num flat">30.7</td><td class="num"><b>43</b></td><td class="num up">+12.3</td><td class="meter"><i style="width: 23%" class="bad"></i></td></tr><tr><td>Carries</td><td class="num flat">26.6</td><td class="num"><b>25</b></td><td class="num flat">-1.6</td><td class="meter"><i style="width: 89%" class=""></i></td></tr>
+          </tbody></table>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>PIT</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">20.5</td><td class="num"><b>26</b></td><td class="num flat">+5.5</td><td class="meter"><i style="width: 72%" class=""></i></td></tr><tr><td>Pass yds</td><td class="num flat">221.8</td><td class="num"><b>253.0</b></td><td class="num flat">+31.2</td><td class="meter"><i style="width: 79%" class=""></i></td></tr><tr><td>Rush yds</td><td class="num flat">87.2</td><td class="num"><b>89.0</b></td><td class="num flat">+1.8</td><td class="meter"><i style="width: 98%" class=""></i></td></tr><tr><td>Pass att</td><td class="num flat">32.8</td><td class="num"><b>49</b></td><td class="num up">+16.2</td><td class="meter"><i style="width: 0%" class="bad"></i></td></tr><tr><td>Carries</td><td class="num flat">24.1</td><td class="num"><b>22</b></td><td class="num flat">-2.1</td><td class="meter"><i style="width: 85%" class=""></i></td></tr>
+          </tbody></table>
+        </div>
+        
+      </div>
+      <div class="gm-doc-verdicts"><span class="badge good">Winner: PIT &#10003;</span><span class="badge good">Spread: PIT -2.5 &#10003;</span><span class="badge bad">Total: Under 38.5 (proj 38.5) &#10007;</span></div>
+      
+      
+      <div class="gm-doc-k">Why the projection missed &middot; what it got right</div>
+      <p class="gm-doc-p">A B (0.696) that reads better on scoring than on volume: PIT 26 vs 20.5 projected, TB 19 vs 18.0, rush yards 89 vs 87.2 and 102 vs 111.5 — four of the ten team lines inside a score of 0.85 or better. Both pass-attempt lines graded as big misses (PIT 49 vs 32.8, TB 43 vs 30.7) and both have the same root: an overtime game at 149 total plays against a 121.5 league two-team baseline, with Pittsburgh behind by 13 for most of three quarters and Tampa throwing 68% of the time while LEADING. The player score (0.656, 17 of 42) was dragged down by the receiving distribution rather than the totals — Metcalf and Bernard combined for 27 targets, 22 catches and 180 yards against 12.1 projected targets, while Freiermuth (3 targets) and Otton (2) vanished. The market calls went 2-of-3: winner and spread right, Under 38.5 lost on the overtime touchdown. Nothing in the efficiency inputs was wrong; the plays-per-game input was.</p>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>PIT</b> &middot; 49 pass attempts against 32.8 projected, 52 dropbacks, 76 plays<div class="went">Game script plus pace: 57 of 76 snaps came while trailing (70.2% pass rate there), the engine blended a 58.7% pass rate against a 64.7% season rate, and overtime added a 12-play, 6:45 drive. Pittsburgh&#x27;s blended plays input was 59.7.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>PIT</b> &middot; 253 pass yards on 49 attempts — 5.2 per attempt, 0 explosive passes, 152 YAC at a 4.1 aDOT<div class="went">Efficiency: the volume arrived but the yards did not, because every throw was short (45 of 50 attempts charted short, 0-for-2 deep) against a 47.3% blitz rate. Yardage came from catch-and-run, not from the field-stretching the projection&#x27;s 6.75 Y/A implied.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>TB</b> &middot; 43 attempts for 164 yards, 22 completions, cpoe -15.0<div class="went">Both volume and efficiency: Tampa passed 70.3% overall and 68.1% while leading, abandoning a run game that was being stuffed (Irving 19 for 46, 5 TFL, -6.28 rush EPA). The engine&#x27;s 55.1% blended pass rate was a reasonable read of the season; the in-game run failure was not forecastable from it.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>TB</b> &middot; Only 19 points on 74 plays despite leading for 3,055 of the game&#x27;s seconds<div class="went">Field efficiency, not red-zone finishing: -0.277 EPA/play between the 20s, 30.9% success, only 2 red-zone trips all day. The team total was right for the wrong reason — the projection expected a modest, efficient offense; it got a bad one that kicked four field goals.</div></div></div></div>
+      <div class="gm-doc-verdicts wrap"><span class="badge good">&#10003; Both team totals within 5.5 and 1.0 points, and the side (PIT) and spread (-2.5) both correct.</span><span class="badge good">&#10003; Rushing volume and yardage on both sides: PIT 22 carries/89 yards vs 24.1/87.2; TB 25/102 vs 26.6/111.5.</span><span class="badge good">&#10003; Warren&#x27;s carries (14 vs 15.5) and Godwin&#x27;s line (4-37 vs 3.6-41.2) were near-exact.</span><span class="badge good">&#10003; The sack projections were conservative but directionally right on Tampa&#x27;s own protection (2.6 projected, 5 taken) and the interception rate call on Daniels (0.8 projected, 2 thrown).</span></div>
+      
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Turning points">
+      <div class="gm-doc-tl">
+        <div class="gm-doc-tp"><div class="clock">Q1 10:51</div><div class="what"><span class="badge mute">PIT</span> Rodgers&#x27; first-down throw to Washington intercepted by A&#x27;Shawn Robinson at the PIT 39 (EPA -5.32, WPA -0.138)<div class="went">Handed Tampa a 39-yard field on the game&#x27;s first competitive possession; the Bucs turned it into McLaughlin&#x27;s 43-yard field goal and never trailed until overtime.</div></div></div><div class="gm-doc-tp"><div class="clock">Q2 15:00</div><div class="what"><span class="badge mute">TB</span> 22-yard DPI on Everette on a deep right incompletion to Hurst, play before Daniels&#x27; 2-yard TD to Egbuka at 14:55<div class="went">Free yards that never show in Daniels&#x27; 164 passing: the 9-play, 38-yard touchdown drive lived on the flag and made it 10-0.</div></div></div><div class="gm-doc-tp"><div class="clock">Q3 14:04-05:05</div><div class="what"><span class="badge mute">TB</span> 16-play, 70-yard, 9:02 drive ending in a 33-yard McLaughlin field goal<div class="went">The Bucs&#x27; one sustained possession of the day produced three points instead of seven; 16-3 instead of 20-3 is the margin Pittsburgh eventually erased.</div></div></div><div class="gm-doc-tp"><div class="clock">Q4 13:14</div><div class="what"><span class="badge mute">TB</span> Daniels intercepted by Everette (Heyward pressure) at the TB 45 on 3rd-and-7 (EPA -3.20)<div class="went">Came 34 seconds after Pittsburgh&#x27;s first touchdown and gave the Steelers the ball at the TB 45; that drive produced the field goal that made it 16-13.</div></div></div><div class="gm-doc-tp"><div class="clock">Q4 03:38</div><div class="what"><span class="badge mute">PIT</span> 12-yard DPI on Parrish on a deep-left incompletion to Metcalf (EPA +1.55, WPA +0.154)<div class="went">Pittsburgh was 5-for-17 on third down all day; this third-and-5 conversion by penalty kept alive the drive that ended in Boswell&#x27;s 58-yard tying kick at 2:00.</div></div></div><div class="gm-doc-tp"><div class="clock">Q4 01:46</div><div class="what"><span class="badge mute">TB</span> Daniels intercepted by Jamel Dean, returned 40 yards to the TB 3 (EPA -6.89, WPA -0.45)<div class="went">The single biggest swing of the game — a tie game became a 19-16 Pittsburgh lead on Boswell&#x27;s 20-yarder three plays later; Tampa needed McLaughlin&#x27;s 53-yarder at :13 just to force overtime.</div></div></div><div class="gm-doc-tp"><div class="clock">OT1 09:11</div><div class="what"><span class="badge mute">PIT</span> 3rd-and-13 from their own 27, Rodgers to Metcalf for 20 (EPA +2.62, WPA +0.249)<div class="went">Saved the opening overtime possession after Warren&#x27;s -3 run; the drive went 12 plays, 70 yards, 6:45 and ended in the winning touchdown to Bernard.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="What decided it">
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Daniels&#x27; accuracy and the two interceptions he threw at Egbuka</b><div class="went">22-of-43, 164 yards, cpoe -15.0, EPA/dropback -0.33; Egbuka 7-of-16 for 48 yards with -11.48 receiving EPA, and both picks (Q4 13:14, Q4 1:46) were throws intended for him. The second was returned 40 yards to the TB 3.</div><div class="went"><b>Tell:</b> Tampa was tagged &#x27;turnovers&#x27; in three of five prior weeks (W1 four giveaways, W3 two, W4 two) and the engine carried a 3.3% INT rate against a 2.2% league mark, with the backup starting.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag no" title="Not visible before kickoff">in-game only</span><div><b>Tampa&#x27;s run game died and they abandoned it while ahead</b><div class="went">Irving 19 carries, 46 yards, 5 stuffs, -6.28 rush EPA; team rush EPA -0.238 and 28.6% rush success. With the lead Tampa passed 68.1% of 47 snaps; overall pass rate 70.3% against a 55.3% season rate.</div><div class="went"><b>Tell:</b> Nothing pre-game pointed here — Pittsburgh&#x27;s front graded 23rd in rush EPA allowed (4.04 YPC) and Tampa was 4.89 YPC on the season. This was the game, not a trait.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Pittsburgh&#x27;s short-passing volume against a blitzing front</b><div class="went">49 attempts, 45 charted short, 4.1 aDOT, +5.6 cpoe, 152 YAC; Metcalf 15 targets/93, Bernard 12/87 with 69 YAC and the OT touchdown, against a 47.3% blitz rate faced.</div><div class="went"><b>Tell:</b> Pittman, Wilson and Skowronek all unavailable concentrated the targets, and Pittsburgh&#x27;s own season pass rate (64.7%) was well above the engine&#x27;s 58.7% blend.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag no" title="Not visible before kickoff">in-game only</span><div><b>Kicking — 8 made field goals between them, five of them Boswell&#x27;s</b><div class="went">Boswell 4-of-5 including 52 and 58-yarders (the 58 at 2:00 tied it); McLaughlin 4-of-4 including a 53-yarder at :13 to force overtime. Twelve of Pittsburgh&#x27;s 26 and all but 7 of Tampa&#x27;s 19 came off the foot.</div><div class="went"><b>Tell:</b> Not forecastable, but the structural tell was there: two offenses that move between the 20s poorly (PIT field EPA -0.184, TB -0.277) and six total red-zone trips.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag no" title="Not visible before kickoff">in-game only</span><div><b>Field position from flags on both sides</b><div class="went">PIT 5 for 62 yards including an illegal blindside block that wiped a 53-yard kickoff return (Q1 7:51) and a holding penalty that killed a 28-yard return at Q4 0:08; TB gave 15 on Kancey&#x27;s roughing (Q4 14:35) and 12 on Parrish&#x27;s DPI (Q4 3:38) on Pittsburgh&#x27;s two biggest fourth-quarter drives.</div><div class="went"><b>Tell:</b> Only one pre-snap flag each — this was in-play officiating, not a persistent tendency, despite Tampa&#x27;s 2.2 pre-snap flags per game entering.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; PIT">
+      <div class="gm-doc-boxhead"><b>How PIT gets beaten</b><span class="flat">3-2 entering</span><span class="badge mute">medium confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">explosive passing &times;3</span><span class="badge bad">third down &times;2</span><span class="badge bad">pressure allowed &times;2</span><span class="badge bad">turnovers &times;2</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Explosive passing against the secondary</b><div class="went">Tagged &#x27;explosive passing&#x27; in weeks 3, 4 and 5 (CIN 4 explosives, CLE 4, IND 5). Tampa managed only 2 today (21-yard Sharp, 22-yard Hurst) because Daniels threw at a 6.3 aDOT with -15 cpoe.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Its own pressure allowed and sacks</b><div class="went">&#x27;Pressure allowed&#x27; tagged weeks 2 and 4 (4 and 5 sacks); 5 sacks and 10 QB hits today at a 28.8% QB pressure rate against the 47.3% blitz they faced. Two of the three worst non-turnover EPA plays were Rodgers sacks (Q4 2:47, -2.76; Q3 1:04, -1.53).</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Third down</b><div class="went">5-of-17 today; 3-of-14 (W1), 2-of-14 (W2), 4-of-13 (W4), 4-of-12 (W5). Tagged &#x27;third down&#x27; twice already and the drive log is full of three-and-outs (drives 2, 8, 15, 17).</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Rodgers giveaways in neutral script</b><div class="went">Pick-six-adjacent interception at Q1 10:51 setting up a short field; &#x27;turnovers&#x27; tagged weeks 2 and 4 (2 each).</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> Pittsburgh beats itself on early downs and third downs, then is vulnerable to one team of chunk throws it can&#x27;t stop. The defense is bend-don&#x27;t-break at the goal line — tagged that way in week 5 and again today: Tampa had 74 snaps and only two red-zone trips, one touchdown.</p>
+      <p class="gm-doc-p"><b>This week:</b> Tampa had the blueprint available — PIT allows explosives weekly — and could not execute it: 2-of-5 on deep attempts, 6.3 aDOT, -0.277 field EPA. The pass-rush half of the blueprint, though, they did execute, by blitzing Rodgers on nearly half his dropbacks for 5 sacks and 10 hits.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> A quarterback who will throw past 10 air yards with accuracy (Pittsburgh&#x27;s defense has surrendered 3+ explosives in four of six games) plus a blitz package, because Rodgers at a 4.1 aDOT will take the short completion all day and the sacks have to be manufactured. A grinding, short-passing team will move and stall.</p>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; TB">
+      <div class="gm-doc-boxhead"><b>How TB gets beaten</b><span class="flat">1-4 entering</span><span class="badge mute">medium confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">no pass rush &times;4</span><span class="badge bad">turnovers &times;3</span><span class="badge bad">run game &times;2</span><span class="badge bad">pressure allowed &times;2</span><span class="badge bad">pre-snap penalties &times;2</span><span class="badge bad">explosive passing &times;2</span><span class="badge bad">penalties &times;2</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Its own turnovers</b><div class="went">&#x27;Turnovers&#x27; tagged weeks 1 (4), 3 (2) and 4 (2); two more today, both Daniels throws at Egbuka, worth -3.20 and -6.89 EPA. The second was returned to the TB 3.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Third-down and field-level inefficiency</b><div class="went">6-of-19 today, 2-of-19 (W3), 7-of-18 (W2); field EPA/play -0.277 today, -0.244 (W3), -0.179 (W2). They get stuck between the 20s, not at the goal line.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Being run on when the game is even</b><div class="went">&#x27;Run game&#x27; tagged weeks 1 (CIN, 4 explosive runs) and 5 (DAL). Pittsburgh managed 22 carries for 89 at 4.0 with 3 explosive runs today — Dowdle 7 for 40 with two 10+ carries off the bench.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Pass rush that depends on volume blitzing</b><div class="went">&#x27;No pass rush&#x27; tagged in four of five prior weeks (0, 0, 1, 2, 3 sacks). Today they got 5 sacks only at a 47.3% blitz rate against an immobile quarterback (0 scrambles) — and still gave up 33 completions and the game.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag both">both</span><div><b>Penalties on its own drives</b><div class="went">&#x27;Pre-snap penalties&#x27; weeks 1 (6) and 5 (7); &#x27;penalties&#x27; weeks 3 (81 yds) and 5 (92 yds). Today was clean by their standard (4 for 38, 1 pre-snap), but Kancey&#x27;s roughing at Q4 14:35 and Parrish&#x27;s DPI at Q4 3:38 both extended Pittsburgh&#x27;s comeback drives.</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> A 1-4 team that loses close games the same way: it cannot sustain between the 20s, converts a third of its third downs, and gives the ball away twice a game. The defense is respectable on EPA but cannot pressure without sending extra and will cough up the run when the box is light.</p>
+      <p class="gm-doc-p"><b>This week:</b> Pittsburgh exploited the turnover half directly — two interceptions produced 10 of its 26 points — and did enough on the ground (3 explosive runs, Dowdle 5.7 YPC) to stay on schedule. It did not need to beat the pass rush; it absorbed 5 sacks and still ran 76 plays and held the ball 38:28.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> To cash this blueprint you need a defense with ball-hawking corners against short throws (Dean 6 PD and an INT, Everette an INT off a Heyward hit) and an offense willing to sustain 8-12 play drives — Tampa&#x27;s defense held PIT to -0.184 field EPA and still lost because it was on the field for 38 minutes. A big-play offense won&#x27;t be punished; a possession offense will win.</p>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Player lines">
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>DK Metcalf</b> <span class="flat">PIT</span> &middot; 15 targets, 11-93 (proj 7.1 / 4.2 / 44.4), 68.6% air-yards share, 0-for-2 deep<div class="went">With Pittman, Wilson and Skowronek unavailable, he absorbed the entire air-yards load at 94.9% snaps; the yards came short (41 YAC) rather than deep — including the 20-yard 3rd-and-13 conversion that saved the OT drive.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Germie Bernard</b> <span class="flat">PIT</span> &middot; 12 targets, 11-87-1 (proj 5.0 / 3.3 / 37.4), 69 YAC on 21 air yards<div class="went">A 93.7% snap rookie used as the quick-game outlet against blitz looks — 11 catches on 21 air yards is a screen/hitch role, plus the 6-yard winning touchdown in OT. The role, not the efficiency, is the repeatable part.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Emeka Egbuka</b> <span class="flat">TB</span> &middot; 16 targets, 7-48-1 (proj 7.4 / 4.1 / 39.6), 136 air yards, -11.48 receiving EPA<div class="went">Double the projected target share, but the quarterback&#x27;s -15 cpoe turned it into a 44% catch rate and both interceptions were thrown at him. Volume is bankable; efficiency with this quarterback is not.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Bucky Irving</b> <span class="flat">TB</span> &middot; 19 carries, 46 yards, 5 stuffs, -6.28 rush EPA (proj 16.2 / 75.8)<div class="went">Volume came as projected against a front rated 23rd in rush EPA allowed; the yards did not — Herbig and Heyward blew up the inside runs (TB middle runs: 4 for -4 yards) and Tampa stopped calling them while leading.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Cade Otton</b> <span class="flat">TB</span> &middot; 2 targets, 1-4 (proj 5.6 / 3.8 / 39.2) at 100% snap share<div class="went">Played every snap and was invisible — his two targets came at -4 air yards. A full-time tight end with zero route value in this passing distribution is a target-share read the model should revisit.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Aaron Rodgers</b> <span class="flat">PIT</span> &middot; 33-49, 253, 2 TD, 1 INT, 5 sacks, 10 QB hits, 4.1 aDOT, +5.6 cpoe, 0 scrambles<div class="went">Volume from script (57 trailing snaps) plus overtime; yards capped by depth — 5.2 per attempt with zero 20+ throws. He takes what blitz-heavy fronts give and is immobile when they get home.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Rico Dowdle</b> <span class="flat">PIT</span> &middot; 7 carries, 40 yards, 2 runs of 10+, +0.54 rush EPA on 26.6% snaps (proj 3.7 / 9.7)<div class="went">In his first game back he out-efficiencied Warren (14-50, -1.45 EPA) on half the carries. A split that would cut Warren&#x27;s rushing floor further if it holds.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Darnell Washington</b> <span class="flat">PIT</span> &middot; 6 targets, 4-25-1 (proj 3.6 / 2.5 / 23.8) with -3.79 receiving EPA<div class="went">Exactly the projected yardage with a red-zone touchdown at Q4 13:53 — the model&#x27;s best player call, but the negative EPA says the volume came in losing situations.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Jalon Daniels</b> <span class="flat">TB</span> &middot; 22-43, 164, 1 TD, 2 INT, cpoe -15.0, 4 scrambles for 39, 5 sacks taken<div class="went">The scrambling is live (including a 10-yard 4th-and-9 conversion in OT) but the accuracy is not; 3.8 yards per attempt at a 6.3 aDOT is a quarterback who cannot punish a defense that gives up explosives weekly.</div></div></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Traps">
+      <div class="gm-doc-three"><div class="gm-doc-box"><span class="badge mute">Totals</span><p><b>Regulation ended exactly 19-19 — 38 on a 38.5 total. The Under was a winner for 60 minutes and died on a 12-play, 6:45 overtime drive. In games projected under 40 between two low-field-EPA offenses, the overtime tail is a real share of the loss distribution; price it, and prefer regulation-only totals where offered.</b></p><p class="sub"><b>Trigger:</b> Projected total under 40 with both offenses below 0.0 field EPA/play and a combined red-zone trip expectation under 6.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>A &#x27;no pass rush&#x27; tag on a defense is not a protection-friendly matchup when the quarterback has zero scramble ability. Tampa had 0-3 sacks in four prior weeks, then blitzed 47.3% and got 5 sacks and 10 hits on Rodgers (0 scrambles all game).</b></p><p class="sub"><b>Trigger:</b> Low-sack-rate defense facing a statue quarterback — fade QB passing-yard overs priced purely on &#x27;clean pocket&#x27; logic, and look at sack/interception props instead.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>Short-aDOT offenses make receiving yardage a target-count market, not an efficiency market. Egbuka went over 39.5 with 7-of-16 for 48 yards and -11.48 EPA; Bernard turned 12 targets into 11 catches and 87 yards with 69 of them after the catch while projected for 3.3 catches.</b></p><p class="sub"><b>Trigger:</b> Team aDOT under 5.0 plus a receiver with a 90%+ snap share — buy receptions and yardage overs on volume even when the quarterback is inaccurate.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>Checkdown-back receiving props do not automatically follow a 49-attempt game. Warren saw just 4 targets (4 air yards) on 52 dropbacks because the targets concentrated in two depleted-room wideouts.</b></p><p class="sub"><b>Trigger:</b> When a team is down to two healthy receivers, route-share concentration beats the &#x27;they&#x27;ll throw at the back&#x27; script — check the WR room&#x27;s inactives before buying RB receiving.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>Two injury-thinned secondaries plus a trailing favorite is a plays-per-game shock, not a points shock. The model&#x27;s team totals were nearly perfect (26/20.5, 19/18) while both attempt projections graded as big misses.</b></p><p class="sub"><b>Trigger:</b> Any game where the favorite is projected to lead but the model&#x27;s play count sits below 61 — fade the volume projections, trust the scoring ones.</p></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="The story">
+      <div class="gm-doc-prose"><h2>The short version</h2>
+<p>Pittsburgh won 26-19 in overtime, covered -2.5, and sent a 38.5 total over by exactly the margin of the overtime touchdown — regulation finished 19-19, which is 38. The model's team totals were close to perfect (26 vs 20.5, 19 vs 18.0) and so were both rushing lines; what it could not see was 149 plays, 92 pass attempts and a game in which one team's quarterback threw for 164 yards on 43 attempts and the other threw for 253 on 49 with no completion longer than 22.</p>
+<h2>How it unfolded</h2>
+<p>Tampa built its lead on Pittsburgh's mistakes and a flag. Rodgers was intercepted by A'Shawn Robinson on the Steelers' second possession (Q1 10:51, -5.32 EPA), handing the Bucs the ball at the PIT 39 and three points. Everette's 22-yard DPI at the start of the second quarter put Tampa in scoring range on the drive that ended with Daniels' 2-yard touchdown to Egbuka at 14:55 — free yards that never show in the box score. By 4:12 of the second it was 13-0, and a Boswell 52-yarder as the half expired was all Pittsburgh had for 30 minutes of football.</p>
+<p>Tampa's third quarter is the game in miniature: a 16-play, 70-yard, 9:02 drive that produced three points, 16-3. That is a two-possession lead that should have been three. Pittsburgh then went 9 plays and 53 yards for a touchdown (Washington, Q4 13:53), Everette intercepted Daniels 34 seconds later, and the Steelers ground back in field goals — a 39-yarder, then a 58-yarder at the two-minute warning to tie. Jamel Dean's interception at Q4 1:46, returned 40 yards to the TB 3 (-6.89 EPA, -0.45 WPA), looked decisive until McLaughlin answered from 53 with 13 seconds left. In overtime Pittsburgh went 12 plays and 70 yards in 6:45, rescued on 3rd-and-13 by a 20-yard Metcalf crosser, and Bernard caught the winner from six yards.</p>
+<h2>Why the game diverged from the projection</h2>
+<p>Two mechanisms, both volume. Pittsburgh spent 57 of 76 snaps trailing and threw 70.2% of the time in that state against an engine blend of 58.7%; overtime added a dozen more plays. Tampa's divergence is more interesting and more useful: it led for 3,055 game-seconds and passed 68.1% of 47 snaps while ahead, because Irving was being buried (19 carries, 46 yards, 5 stuffs, -6.28 rush EPA, and 4 middle runs for -4 yards). The engine's 55.1% blended pass rate was a fair read of Tampa's season; the game it was handed had no running game in it.</p>
+<p>The scoring projections survived all of that because the efficiency inputs were right. Pittsburgh's field EPA was -0.184 and Tampa's -0.277; neither offense could sustain. Eight field goals and two touchdowns is what that produces.</p>
+<h2>The plan against the game</h2>
+<p>The plan's Pittsburgh half was close to a clean read — pass lean confirmed (71.1% dropback rate vs a 64.7% season rate), Warren's rushing capped, Metcalf fed, the yards from YAC, the points from converted trips — and the three-leg parlay built on it cashed in full. The Tampa half inverted. The premise was that Tampa's front erases the run while never touching the quarterback; instead Pittsburgh ran for 4.0 a carry with three explosive runs, and Tampa blitzed 47.3% of Rodgers' dropbacks for five sacks and ten hits. That is why Irving and Otton missed: not variance, a mis-sorted matchup. The Egbuka under is the opposite case — the efficiency logic held exactly (7-of-16, -11.48 EPA, both picks thrown his way), and 16 targets beat it anyway.</p>
+<h2>Player by player</h2>
+<p>Metcalf and Bernard were the game. Twenty-seven targets, 22 catches, 180 yards and the winning touchdown between them, against 12.1 projected targets. With Pittman, Wilson and Skowronek unavailable there was nowhere else for the ball to go, and Rodgers' 4.1 aDOT turned that concentration into a catch-and-run market: 152 team YAC, zero completions of 20+ yards. Warren got the carries (14) and almost none of the routes (4 targets, 4 air yards), which is the inverse of what a 52-dropback game normally yields and the single most instructive prop result here. Dowdle, back from the toe, out-produced him per touch (7-40, two 10+ runs).</p>
+<p>On Tampa's side Otton played every snap for two targets at negative air yards. Egbuka got 16 targets and -11.48 EPA. Daniels' -15.0 cpoe is the number to carry: 22-of-43 at a 6.3 aDOT, with the four scrambles (39 yards, including a 4th-and-9 conversion in overtime) the only part of his line that threatened anybody.</p>
+<h2>The defenses</h2>
+<p>Charting for pressure and coverage has not landed, so read the proxies. Pittsburgh's pass rush produced 5 sacks and 9 hits at a modest 26.4% opponent blitz rate — Ramsey had two sacks and four TFL, Herbig two sacks and three TFL, with Heyward forcing the Everette interception. That is a front getting home without help, which is more than the season rate (14% pressure) suggested. Tampa's rush was the opposite: it needed a 47.3% blitz rate to collect five sacks, which worked against a quarterback with zero scrambles but left 33 completions underneath.</p>
+<p>In the red zone Pittsburgh was again the bend-don't-break unit tagged in week 5: Tampa made two trips in 74 plays and scored once. But the binding constraint on Tampa was earlier — it never got there.</p>
+<h2>What the model should take from this</h2>
+<p>The play-count input is the weak link, not the efficiency inputs. The same projection that missed both attempt lines by double digits got both team totals, both rushing yardages and the side and spread correct. Where plays are projected below 61 for a favorite the model expects to lead, discount the volume projections and keep the scoring ones.</p>
+<p>Second, target distribution with a decimated receiver room needs a stronger prior. The engine gave Bernard 5.0 targets and he saw 12 on a 93.7% snap share; Metcalf's 7.1 became 15. The air-yards share (68.6% for Metcalf) is the kind of concentration that should be forecastable from the inactive list alone.</p>
+<p>Third: 'no pass rush' as a defensive tag has a mobility condition on it. And finally, the Under on a 38.5 total was alive for 60 minutes. In low-total games between two sub-zero field-EPA offenses, the overtime tail is a live share of the loss distribution.</p></div>
+    </section>
+    
+    
+  </div>
+</details>
+
 </div>
 
 
@@ -1806,6 +2395,15 @@
       if(pick) pick.addEventListener("change",function(){ node.querySelectorAll(".pl-tl").forEach(function(t){ t.hidden=t.dataset.key!==pick.value; }); });
       modal.querySelector(".pl-dialog").scrollTop=0;
     }).catch(function(){ body.innerHTML='<div class="pl-loading">The player sheets could not be loaded.</div>'; });
+  }
+  // The plan / report panel: pills and arrows walk its sections.
+  var doc=document.querySelector(".gm-doc");
+  if(doc){
+    var panes=[].slice.call(doc.querySelectorAll(".gm-doc-pane")), pills=doc.querySelector(".gm-doc-pills"), cur=0;
+    panes.forEach(function(pn,i){ var b=document.createElement("button"); b.type="button"; b.textContent=pn.dataset.title; b.setAttribute("role","tab"); b.addEventListener("click",function(){ show(i); }); pills.appendChild(b); });
+    function show(i){ cur=(i+panes.length)%panes.length; panes.forEach(function(pn,k){ pn.classList.toggle("active",k===cur); }); pills.querySelectorAll("button").forEach(function(b,k){ b.classList.toggle("active",k===cur); if(k===cur&&b.scrollIntoView) b.scrollIntoView({block:"nearest",inline:"center"}); }); }
+    doc.querySelectorAll(".gm-doc-arrow").forEach(function(a){ a.addEventListener("click",function(){ show(cur+parseInt(a.dataset.dir,10)); }); });
+    show(0);
   }
   document.querySelectorAll(".pl-open").forEach(function(b){ b.addEventListener("click",function(e){ e.stopPropagation(); openPlayer(b.dataset.pid); }); });
   modal.querySelector(".pl-close").addEventListener("click",closeModal);

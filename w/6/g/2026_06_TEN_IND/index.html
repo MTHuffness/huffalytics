@@ -797,6 +797,126 @@
     .hfa .pl-log td.wk, .hfa .pl-log th:first-child { position: sticky; left: 0; background: #0d0d11; z-index: 1; }
     :root[data-theme="light"] .hfa .pl-log td.wk, :root[data-theme="light"] .hfa .pl-log th:first-child { background: #fff; }
   }
+
+  /* ---- The plan / report panel under the scoreboard ---- */
+  .gm-doc { position: relative; overflow: visible; }
+  .gm-doc::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; border-radius: 14px 14px 0 0; background: linear-gradient(90deg, var(--hfa-accent), transparent 70%); pointer-events: none; }
+  .gm-doc.st-both::before { background: linear-gradient(90deg, var(--hfa-good), var(--hfa-accent) 55%, transparent 90%); }
+  .gm-doc > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.9rem; padding: 1rem 1.1rem; }
+  .gm-doc > summary::-webkit-details-marker { display: none; }
+  .gm-doc-chev { display: inline-grid; place-items: center; flex: none; width: 2rem; height: 2rem; border-radius: 50%; background: var(--hfa-accent); color: #fff; box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.22), 0 6px 14px -6px rgba(255, 31, 47, 0.9); transition: transform 0.18s; }
+  .gm-doc[open] > summary .gm-doc-chev { transform: rotate(180deg); background: #fff; color: var(--hfa-accent); }
+  .gm-doc-main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+  .gm-doc-eyebrow { font-size: 0.64rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-accent); }
+  .gm-doc-lead { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; line-height: 1.3; color: var(--hfa-body); }
+  .gm-doc-chips { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0.3rem; flex: 0 1 auto; }
+  .gm-doc-open { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); margin-left: 0.3rem; }
+  .gm-doc[open] .gm-doc-open { display: none; }
+  .gm-doc-body { border-top: var(--hfa-hairline); padding: 0.7rem 1.1rem 1.2rem; }
+  .gm-doc-nav { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.9rem; }
+  .gm-doc-pills { display: flex; gap: 0.3rem; overflow-x: auto; scrollbar-width: none; flex: 1 1 auto; padding: 2px; }
+  .gm-doc-pills::-webkit-scrollbar { display: none; }
+  .gm-doc-pills button { flex: none; border: 1px solid rgba(128, 128, 128, 0.25); background: transparent; color: var(--hfa-muted); border-radius: 999px; padding: 0.3rem 0.85rem; font-size: 0.76rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
+  .gm-doc-pills button.active { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-arrow { flex: none; width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid rgba(128, 128, 128, 0.3); background: transparent; color: var(--hfa-body); font-size: 1.2rem; line-height: 1; cursor: pointer; }
+  .gm-doc-arrow:hover { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-pane { display: none; animation: gm-fade 0.18s ease-out; }
+  .gm-doc-pane.active { display: block; }
+  @keyframes gm-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  .gm-doc-hook { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1.2; color: var(--hfa-accent); margin-bottom: 0.4rem; }
+  .gm-doc-headline { font-size: 1rem; font-weight: 600; line-height: 1.45; margin: 0 0 0.7rem; }
+  .gm-doc-p { font-size: 0.9rem; line-height: 1.55; margin: 0 0 0.7rem; }
+  .gm-doc-note { font-size: 0.76rem; color: var(--hfa-muted); line-height: 1.45; margin: 0 0 0.6rem; }
+  .gm-doc-prose { font-size: 0.9rem; line-height: 1.6; max-width: 60rem; }
+  .gm-doc-prose h2 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 1rem 0 0.3rem; }
+  .gm-doc-prose h3 { font-size: 0.9rem; margin: 0.8rem 0 0.2rem; }
+  .gm-doc-prose p { margin: 0 0 0.6rem; }
+  .gm-doc-prose ul { padding-left: 1.2rem; }
+  .gm-doc-k { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 0.9rem 0 0.35rem; }
+  .gm-doc-box > .gm-doc-k:first-child, .gm-doc-col > .gm-doc-k:first-child { margin-top: 0; }
+  .gm-doc-verdicts { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.2rem 0 0.7rem; }
+  .gm-doc-verdicts.wrap .badge { white-space: normal; text-align: left; }
+  .gm-doc-verdicts .badge b { color: inherit; }
+  .gm-doc-vs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 0.4rem; }
+  .gm-doc-col { padding: 0.75rem 0.9rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); font-size: 0.9rem; line-height: 1.5; }
+  .gm-doc-col.plan { border-left: 3px solid var(--hfa-accent); }
+  .gm-doc-col.game { border-left: 3px solid var(--hfa-good); }
+  .gm-doc-col.game .gm-doc-k { color: var(--hfa-good); }
+  .gm-doc-col p, .gm-doc-box p { margin: 0 0 0.45rem; font-size: 0.88rem; line-height: 1.5; }
+  .gm-doc-col p:last-child, .gm-doc-box p:last-child { margin-bottom: 0; }
+  .gm-doc p.sub, .gm-doc .went { font-size: 0.8rem; color: var(--hfa-muted); line-height: 1.45; }
+  .gm-doc .went { margin-top: 0.2rem; }
+  .gm-doc-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .gm-doc-three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; }
+  .gm-doc-box { min-width: 0; padding: 0.7rem 0.85rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); }
+  .gm-doc-boxhead { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.4rem; font-size: 0.92rem; }
+  .gm-doc-boxhead b { color: var(--hfa-body); font-weight: 800; }
+  .gm-doc-ul { margin: 0; padding-left: 1.1rem; font-size: 0.86rem; line-height: 1.5; }
+  .gm-doc-ul li { margin-bottom: 0.3rem; }
+  .gm-doc-list { display: flex; flex-direction: column; gap: 0.45rem; }
+  .gm-doc-item { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.45; padding: 0.5rem 0.7rem; border-radius: 10px; background: var(--hfa-tint); border: var(--hfa-hairline); }
+  .gm-doc-item > div { min-width: 0; }
+  .gm-doc-item b { color: var(--hfa-body); }
+  .gm-doc-flag { flex: none; min-width: 5.2rem; text-align: center; border-radius: 6px; padding: 0.2rem 0.45rem; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); margin-top: 0.15rem; }
+  .gm-doc-flag.decisive, .gm-doc-flag.signal, .gm-doc-flag.yes, .gm-doc-flag.held { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-flag.contributed, .gm-doc-flag.mixed, .gm-doc-flag.partly { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .gm-doc-flag.minor, .gm-doc-flag.noise, .gm-doc-flag.no, .gm-doc-flag.broke { background: rgba(255, 31, 47, 0.16); color: var(--hfa-accent); }
+  .gm-doc-flag.defense { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .gm-doc-flag.offense { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-calls { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  .gm-call { min-width: 0; padding: 0.65rem 0.85rem 0.6rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); border-left: 3px solid var(--hfa-muted); }
+  .gm-call.over { border-left-color: var(--hfa-good); } .gm-call.under { border-left-color: var(--hfa-accent); }
+  .gm-call.hit { background: rgba(47, 212, 164, 0.06); } .gm-call.miss { background: rgba(255, 176, 32, 0.06); }
+  .gm-call-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.5rem; font-size: 0.92rem; }
+  .gm-call-side { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .gm-call.over .gm-call-side { color: var(--hfa-good); } .gm-call.under .gm-call-side { color: var(--hfa-accent); }
+  .gm-call .who { color: var(--hfa-body); font-weight: 800; }
+  .gm-call .bet { font-weight: 700; color: var(--hfa-accent); }
+  .gm-call .res { font-weight: 800; font-size: 0.8rem; margin-left: auto; }
+  .gm-call .res.hit { color: var(--hfa-good); } .gm-call .res.miss { color: var(--hfa-bad); } .gm-call .res.void { color: var(--hfa-muted); font-weight: 500; }
+  .gm-call-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem; margin: 0.35rem 0 0.2rem; }
+  .gm-call .prob { font-size: 0.7rem; font-weight: 700; color: var(--hfa-muted); border: 1px solid rgba(128, 128, 128, 0.3); border-radius: 999px; padding: 0.1rem 0.5rem; }
+  .gm-call .rungs { margin: 0.35rem 0 0.4rem; }
+  .gm-call .rung small { font-weight: 500; color: var(--hfa-muted); }
+  .gm-call p.why { font-size: 0.84rem; line-height: 1.45; margin: 0.3rem 0 0.2rem; color: var(--hfa-body); }
+  .gm-call p.ev { font-size: 0.74rem; line-height: 1.4; margin: 0 0 0.15rem; color: var(--hfa-muted); }
+  .gm-doc .legs { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.4rem; }
+  .gm-doc .leg { border-radius: 8px; padding: 0.2rem 0.5rem; font-size: 0.76rem; font-weight: 700; background: rgba(128, 128, 128, 0.14); }
+  .gm-doc .leg em { font-style: normal; font-weight: 500; color: var(--hfa-muted); }
+  .gm-doc .leg i { font-style: normal; font-weight: 800; }
+  .gm-doc .leg.hit { background: rgba(47, 212, 164, 0.16); } .gm-doc .leg.hit i { color: var(--hfa-good); }
+  .gm-doc .leg.miss { background: rgba(255, 176, 32, 0.16); } .gm-doc .leg.miss i { color: var(--hfa-bad); }
+  .gm-doc-gradehead { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+  .gm-grade { flex: none; display: flex; align-items: center; gap: 0.6rem; padding: 0.4rem 0.9rem 0.4rem 0.6rem; border-radius: 14px; border: 2px solid var(--hfa-muted); background: var(--hfa-tint); }
+  .gm-grade b { font-size: 2.6rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .gm-grade span { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); line-height: 1.3; }
+  .gm-grade.good { border-color: var(--hfa-good); } .gm-grade.good b { color: var(--hfa-good); }
+  .gm-grade.warn { border-color: var(--hfa-bad); } .gm-grade.warn b { color: var(--hfa-bad); }
+  .gm-grade.bad { border-color: var(--hfa-accent); } .gm-grade.bad b { color: var(--hfa-accent); }
+  .gm-doc-gradetext { flex: 1 1 20rem; min-width: 0; }
+  .gm-doc-gradetext .gm-doc-verdicts { margin-bottom: 0; }
+  .hfa .gm-doc-table { font-size: 0.8rem; }
+  .hfa .gm-doc-table th, .hfa .gm-doc-table td { padding: 0.25rem 0.4rem; }
+  .hfa .gm-doc-table b { color: var(--hfa-body); }
+  .hfa .gm-doc-table td.meter { width: 5rem; }
+  .hfa .gm-doc-table td.meter i { display: block; height: 4px; border-radius: 2px; background: var(--hfa-good); }
+  .hfa .gm-doc-table td.meter i.bad { background: var(--hfa-bad); }
+  .gm-doc-tl { position: relative; padding-left: 1rem; border-left: 2px solid rgba(128, 128, 128, 0.25); display: flex; flex-direction: column; gap: 0.7rem; }
+  .gm-doc-tp { position: relative; font-size: 0.88rem; line-height: 1.45; }
+  .gm-doc-tp::before { content: ""; position: absolute; left: -1.4rem; top: 0.45rem; width: 10px; height: 10px; border-radius: 50%; background: var(--hfa-accent); box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.25); }
+  .gm-doc-tp .clock { font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-accent); }
+  @media (max-width: 1100px) { .gm-doc-three { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 760px) {
+    .gm-doc > summary { padding: 0.85rem 16px; gap: 0.6rem; flex-wrap: wrap; }
+    .gm-doc-main { flex: 1 1 0; }
+    .gm-doc-lead { font-size: 0.98rem; }
+    .gm-doc-chips { justify-content: flex-start; flex: 0 0 100%; padding-left: 2.6rem; }
+    .gm-doc-body { padding: 0.6rem 16px 1rem; }
+    .gm-doc-hook { font-size: 1.2rem; }
+    .gm-doc-vs, .gm-doc-two, .gm-doc-three, .gm-doc-calls { grid-template-columns: 1fr; }
+    .gm-doc-arrow { display: none; }
+    .gm-doc-flag { min-width: 4.4rem; font-size: 0.56rem; }
+  }
   @media (prefers-reduced-motion: reduce) { #hfa-rain { opacity: calc(var(--hfa-rain) * 0.5); } }
 </style>
 
@@ -821,7 +941,7 @@
     <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
   </div>
   <main>
-<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#away" data-sec="away">TEN offense</a><a href="#home" data-sec="home">IND offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
+<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#doc-sec" data-sec="doc">Plan vs game</a><a href="#away" data-sec="away">TEN offense</a><a href="#home" data-sec="home">IND offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
 
 <div class="hfa-card hfa-hero hfa-sec gm-hero" id="hero" data-sec="hero" style="--gm-away: #4495D2; --gm-home: #002C5F;">
   <div class="gm-hero-top">
@@ -848,6 +968,478 @@
     <span class="gm-chip final"><i>final</i> <b>TEN 26 &ndash; 20 IND</b></span>
     <span class="gm-chip " title="Artificial turf. Passing is the same on grass and turf; rushing runs about 3.5% higher on turf (+3.7 yards a team) and a catch gains a tenth of a yard more after it. Points, the closing lines and the engine show no surface effect, so it is not an engine input."><i>field</i> <b>turf</b></span><span class="gm-chip " title="Retractable roof, not yet decided: outside it is forecast 59°F · wind 7 mph."><i>roof</i> <b>undecided</b></span>
   </div>
+</div>
+
+<div class="hfa-sec" id="doc-sec" data-sec="doc">
+
+<details class="hfa-card gm-doc st-both" id="doc">
+  <summary class="gm-doc-bar">
+    <span class="gm-doc-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="gm-doc-main">
+      <span class="gm-doc-eyebrow">The plan against the game &middot; plan Sun Oct 18, 9:38 AM &middot; report Tue Oct 20, 11:38 AM</span>
+      <span class="gm-doc-lead">Taylor punches in the scores. Ward throws from behind all afternoon.</span>
+    </span>
+    <span class="gm-doc-chips">
+      <span class="badge warn">script partly held</span>
+      <span class="badge good">5 hit</span><span class="badge bad">6 missed</span>
+      <span class="badge bad" title="Projection grade: team volume and yardage, player lines, and the market calls the projection implied">projection D &middot; 52</span>
+      <span class="gm-doc-open">open</span>
+    </span>
+  </summary>
+  <div class="gm-doc-body">
+    <div class="gm-doc-nav">
+      <button type="button" class="gm-doc-arrow" data-dir="-1" aria-label="Previous section">&#8249;</button>
+      <div class="gm-doc-pills" role="tablist"></div>
+      <button type="button" class="gm-doc-arrow" data-dir="1" aria-label="Next section">&#8250;</button>
+    </div>
+
+    
+    
+    <section class="gm-doc-pane" data-title="Plan vs game">
+      <div class="gm-doc-verdicts">
+        <span class="badge warn" title="Whether the game went the way the plan's script described, for the reasons it gave">script partly held</span>
+        <span class="badge mute">followed the underdog&#x27;s path</span>
+        <span class="badge good" title="Both teams ran 123 plays; the league's figure for two teams was 121.5">pace: called average, played average</span>
+        <span class="badge bad" title="IND passed on 62% of its plays; its season rate entering the game was 57%">IND: called run, played pass</span><span class="badge bad" title="TEN passed on 49% of its plays; its season rate entering the game was 60%">TEN: called pass, played run</span>
+      </div>
+      <div class="gm-doc-vs">
+        <div class="gm-doc-col plan"><div class="gm-doc-k">The plan said</div><p>Indianapolis controls this with Taylor and the clock while Tennessee&#x27;s 0-5 offense chases; the biggest lever is Tyler Warren&#x27;s game-time groin call, which reshuffles every Colts target.</p><p class="sub">Indianapolis should score first or early-second and never trail by much, leaning on Taylor and a short passing game that doesn&#x27;t need depth. Tennessee&#x27;s offense has not cleared 20 points all season and is averaging 53 snaps a game, so possession skews Colts. Tennessee gets to its number only through chase-mode volume against a secondary that has allowed 268 passing yards a game. The likely shape is Colts field goals plus short rushing touchdowns, Titans yardage without finishing — the exact split both offenses have shown.</p></div>
+        <div class="gm-doc-col game"><div class="gm-doc-k">What happened</div><p>Tennessee won 26-20 and covered +6.5 while gaining 186 yards on 45 snaps — Indianapolis outgained them 434-186 and lost the game on three turnovers, six sacks and a blocked punt returned for a touchdown. The total went over 43.5 largely on four Slye field goals and a defensive score, not on offense.</p><p class="sub">The plan read the mechanism of the upset better than it read the shape of the game: it named Jones&#x27;s ball security as a swing factor and wrote an underdog path in which Jones gives it away under pressure and Tennessee wins a 20-23 point game late — which is exactly what happened, with three IND turnovers and six sacks. What it missed was how Tennessee would get its points: it assumed chase-mode volume, 33-36 Ward attempts and 240 passing yards, and instead the Titans threw 22 times for 102 and scored on a blocked punt and four field goals. Both lean calls broke in the same direction — Indy threw more while leading (61.5%), Tennessee ran more while tied (48.9%) — because the script never pushed Tennessee into a two-score deficit. Pace was called correctly (123 plays vs 121.5 league), and the Warren-out swing factor landed, just on the wrong receiver.</p><p class="sub"><b>The script:</b> The underdog path&#x27;s causal chain held: Tennessee ran early (21 carries, 4.0 ypc, Pollard&#x27;s 16-yarder at Q3 4:46), Jones gave it away under pressure (INTs at Q1 2:44 and Q3 7:07, 6 sacks, 11 hits), and the Titans won a 26-20 game late on field goals at 2:07 and 0:47. The half of the path that broke is the one the plan leaned on hardest — Ward&#x27;s quick game never produced the 35 attempts or 240 yards; `checks` shows TEN&#x27;s pass rate at 0.489 against a 0.596 season rate and IND&#x27;s at 0.615 against 0.573, so both leans were inverted. Favorite-path markers also failed: Indy&#x27;s pass rate stayed at 52.8% while leading rather than dropping under 50%, and its drives died inside the 20 (2 TDs on 4 trips, -0.333 red-zone EPA) rather than Tennessee&#x27;s.</p></div>
+      </div>
+      
+      <div class="gm-doc-k">What the plan said would swing it</div>
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Tyler Warren&#x27;s groin — game-time decision per ESPN Friday/Sunday reporting; out, and Colts targets scatter to Downs, Treadwell and Allen.<div class="went"><b>Went:</b> Warren did not play. Targets scattered as predicted, but to Allen (11) and Mallory (6, unprojected, 51.8% snaps) rather than to Treadwell (5 for 21 yards on a 92.8% snap share).</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag decisive">decisive</span><div>Daniel Jones&#x27; ball security: six giveaways in his first three games, two of them strip-sacks, and Tennessee&#x27;s defense has forced almost none.<div class="went"><b>Went:</b> Jones threw two interceptions ending drives at the TEN 6 and TEN 11, and Taylor fumbled on the first snap of the second half (-5.47 EPA) — three takeaways by a defense that had forced almost none, worth roughly two scores of field position in a six-point game.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Indy&#x27;s pass rush with Tuimoloau in concussion evaluation and Buckner on a veteran rest day — a clean pocket is Ward&#x27;s whole game.<div class="went"><b>Went:</b> The premise held exactly — Tuimoloau and Buckner played 51.8% of snaps and Ward faced 0 sacks, 1 QB hit, a 4.3% pressure rate — but the conclusion failed: the clean pocket produced 102 yards and a -20.1 CPOE.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Tennessee&#x27;s red-zone finishing: 40% touchdowns per trip, with a defense across from it that holds at its own 20.<div class="went"><b>Went:</b> Tennessee had only two red-zone trips (1 TD, 1 FG, 0.005 EPA/play), so finishing capped the offense exactly as flagged; the points came from 44-, 49- and 56-yard kicks and a special-teams touchdown instead.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag minor">minor</span><div>Whether Spears (knee, full Friday) plays and keeps taking passing-down snaps from Pollard.<div class="went"><b>Went:</b> Spears played 23.9% of snaps for one carry and one target; Pollard took 19 carries and the backfield outright, which is what the plan assumed.</div></div></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">Each offense: expected &middot; happened</div>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>IND</b><span class="badge warn">partly</span></div><p><b>Expected:</b> 52-56% pass, 32-35 dropbacks only if the game stays close, Taylor 20-23 carries plus 3-4 targets, McGowan 4-6 carries once ahead, and the passing yards distributed rather than concentrated.</p><p><b>Happened:</b> Taylor hit 21 carries and 4 targets and McGowan took 4, as written, but the pass rate was 61% on 50 dropbacks (not 52-56% and 32-35), and the yardage concentrated on Allen&#x27;s 11 targets rather than distributing.</p></div><div class="gm-doc-box"><div class="gm-doc-boxhead"><b>TEN</b><span class="badge bad">broke</span></div><p><b>Expected:</b> 60-65% pass, 33-36 attempts, 220-245 passing yards concentrated on Tate with Robinson underneath, Pollard 15-18 carries, and finishing — not yardage — the reason the team total stays low.</p><p><b>Happened:</b> Expected 60-65% pass on 33-36 attempts for 220-245 yards; actual was 48.9% pass, 22 attempts, 102 yards. Only the Tate concentration (7 targets, 87 air yards, 64.9% share) and Pollard&#x27;s 19 carries landed.</p></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">For the next plan on these teams</div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="badge mute">TEN</span><div>Stop inferring Ward&#x27;s attempt volume from a projected deficit. Tennessee&#x27;s path to points in this game was defense and special teams, which keeps the score close and suppresses dropbacks — when a dog&#x27;s cover path is takeaway-driven rather than offense-driven, cut the QB attempt and yardage projections rather than raising them.</div></div><div class="gm-doc-item"><span class="badge mute">IND</span><div>Jones&#x27;s pass volume rises with plays, not with script. Indy led for most of the game and still threw 61.5% on 82 snaps; the &#x27;favorite leads, throws less&#x27; prior has now failed against a team whose offense keeps stalling and needing more series.</div></div><div class="gm-doc-item"><span class="badge mute">IND</span><div>With Warren out, treat Allen as the primary short-area target, not a capped part-timer — 11 targets, 104 air yards, 71.1% snaps. Treadwell&#x27;s snap share is not target share.</div></div><div class="gm-doc-item"><span class="badge mute">both</span><div>Do not re-rate Tennessee&#x27;s pass rush off this game or Indy&#x27;s run defense off 165 yards allowed. Six sacks against 11.7% season pressure is one observation against a line that also gave up four in Week 3; the blocked punt and the 36-yard DPI that set up the go-ahead kick are bounce, and the next plan should not price either in.</div></div></div>
+      
+    </section>
+    
+
+    
+    
+    <section class="gm-doc-pane" data-title="The script">
+      <div class="gm-doc-verdicts">
+        <span class="badge mute" title="Plays and tempo">average pace</span>
+        <span class="badge acc" title="Relative to its 57.3% season pass rate, a touchdown favorite at home against a team whose offense cannot sustain drives leans run; Indy threw 42.9% in the second half of its Week 4 win and scored three times on the ground.">IND run</span><span class="badge acc" title="Tennessee&#x27;s 59.6% pass rate climbs whenever it trails (68% vs HOU, 61% at NYG), and it will trail; the run game is at 3.82 a carry with no explosive runs since Week 2.">TEN pass</span>
+        <span class="badge mute">medium confidence</span>
+      </div>
+      <p class="gm-doc-p">Indianapolis should score first or early-second and never trail by much, leaning on Taylor and a short passing game that doesn&#x27;t need depth. Tennessee&#x27;s offense has not cleared 20 points all season and is averaging 53 snaps a game, so possession skews Colts. Tennessee gets to its number only through chase-mode volume against a secondary that has allowed 268 passing yards a game. The likely shape is Colts field goals plus short rushing touchdowns, Titans yardage without finishing — the exact split both offenses have shown.</p>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-k">If the favorite wins</div><p>Indy takes a one-to-two score lead by halftime, Taylor hits 22-25 touches, the pass rate drops under 50% after the break, and the points arrive as short runs and kicks; Tennessee&#x27;s drives die inside the 20 against a defense ranked 4th in red-zone EPA allowed.</p></div>
+        <div class="gm-doc-box"><div class="gm-doc-k">If the underdog wins</div><p>Tennessee stays within a score by running early against a front that allows 4.97 a carry, Jones gives it away under pressure as he has repeatedly, and Ward&#x27;s quick game turns 35 attempts into 240-plus yards against a defense that neither pressures nor covers — a 20-23 point game Tennessee can win late.</p></div>
+      </div>
+      
+      <div class="gm-doc-prose"><h2>The read</h2>
+<p>Indianapolis by a touchdown over a Tennessee team that has scored 10, 20, 7, 18 and 3 and runs the fewest plays in the league (53.4/game). The Colts don't have to be good to win this — they have to stay ahead and hand it off. Tennessee's defense is 30th in pass EPA allowed and 28th in pressure generated, which is the one place Cam Ward's low-aDOT quick game can actually function; the problem is that Tennessee is 4th in yards per carry allowed and 4th in red-zone EPA allowed, so this is a game where Indianapolis moves the ball between the 20s and may well cash it in field goals and short runs rather than chunk drives. Expect Tennessee trailing from the second quarter on, Ward at 33-36 attempts, and Jonathan Taylor at 20+ touches with his yardage grinding rather than exploding.</p>
+<h2>Why</h2>
+<p>The Colts' own profile is run-first when ahead: 42.9% second-half pass rate in the Week 4 win at Washington, 54.5% overall, three rushing touchdowns and 143 passing yards. Tennessee's run defense allows 3.54 yards a carry (4th) but 114 rushing yards a game — volume without efficiency, which is exactly how a lead-protecting offense uses it. On the other side, Indianapolis generates pressure at 12.9% (24th) with Tuimoloau in concussion evaluation, and has allowed 268 passing yards a game (28th). Ward's chase volume has been real in every game he trailed (32, 36, 31, 36 attempts), and Carnell Tate is the designated air-yards winner (73.1% of them in Week 4).</p>
+<h2>What would change it</h2>
+<p>Tyler Warren's groin — ESPN's Fowler had him a game-time decision Sunday morning. Out, and the Colts' targets scatter to Downs, Treadwell and Allen and the red-zone menu narrows to Taylor. An early Tennessee score or a Jones giveaway (six in his first three games) flips this into a two-way passing game and lifts both totals.</p></div>
+    </section>
+    <section class="gm-doc-pane" data-title="Offenses">
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>IND offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>A short-area, run-leaning offense: 64.2 plays a game, 5.80 yards an attempt, 3.68 a carry, field EPA -0.053 but red-zone EPA +0.193 and a 61.5% red-zone touchdown rate — it finishes better than it moves.</p>
+          <div class="gm-doc-k">How it scores</div><p>Taylor at the goal line (five rushing scores in five weeks), Warren and the slot underneath, and a kicker: four Shrader field goals in Week 3, two more at Pittsburgh.</p>
+          <div class="gm-doc-k">What stops it</div><p>A four-man rush. Jones took 9 hits vs BAL (26.5%), 4 sacks and two strip-sacks vs HOU, 5 hits at WAS — six giveaways in three games. Third down has also been a problem (4/16 at PIT, 5/15 at WAS).</p>
+          <div class="gm-doc-k">This matchup</div><p>Tennessee generates pressure at 11.9% (28th), which removes the one thing that has broken this offense, and ranks 30th in pass EPA allowed and 29th on the field between the 20s. But it is 4th in yards per carry allowed (3.54) and 4th in red-zone EPA allowed — yards should come, clean touchdown drives less so.</p>
+          <div class="gm-doc-k">Injuries</div><p>Warren (groin) is a game-time decision per ESPN&#x27;s Fowler Sunday morning — he is a 85-94% snap tight end and the target leader; without him Downs, Treadwell, Allen and the newly activated Mallory split it. Dulin is out, Pierce on IR. Goncalves limited with a concussion evaluation on the line. Facing Tennessee without safety Kevin Winston Jr. (100% of snaps), though Hooker is back from concussion.</p>
+          <div class="gm-doc-k">Expect</div><p>52-56% pass, 32-35 dropbacks only if the game stays close, Taylor 20-23 carries plus 3-4 targets, McGowan 4-6 carries once ahead, and the passing yards distributed rather than concentrated.</p>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>TEN offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>The league&#x27;s lowest-volume offense: 53.4 plays, 5.78 yards an attempt, field EPA -0.158, 40% red-zone touchdown rate. Ward&#x27;s aDOT has sat between 5.9 and 8.1 with one explosive-pass game in five.</p>
+          <div class="gm-doc-k">How it scores</div><p>Short completions to Tate and Robinson, Ward&#x27;s legs near the goal line (two rushing TDs vs PHI), and whatever Pollard can grind. Three points last week.</p>
+          <div class="gm-doc-k">What stops it</div><p>Pressure (4 sacks vs HOU, 3 vs NYJ), its own flags — two OPIs at NYG, one erasing a 28-yard completion — and the red zone: 1 touchdown on 8 trips across Weeks 1-3, 0-for-1 in Week 5.</p>
+          <div class="gm-doc-k">This matchup</div><p>The best passing matchup Ward has seen: Indy allows 8.02 yards an attempt (29th), 268 passing yards a game (28th) and pressures at 12.9% (24th). Indy is also 29th in rush EPA allowed and 27th in yards per carry (4.97), so Pollard&#x27;s lane is real even in a trailing script.</p>
+          <div class="gm-doc-k">Injuries</div><p>Spears questionable (knee) but full Friday per Rotowire — expect him active and in the passing-down role that produced nine catches in Week 5. On the Colts&#x27; side, Tuimoloau is in concussion evaluation and Buckner did not practice (rest): a front that was already the league&#x27;s 24th in pressure may be lighter still, which is the clean pocket Ward needs.</p>
+          <div class="gm-doc-k">Expect</div><p>60-65% pass, 33-36 attempts, 220-245 passing yards concentrated on Tate with Robinson underneath, Pollard 15-18 carries, and finishing — not yardage — the reason the team total stays low.</p>
+        </div>
+        
+      </div>
+    </section>
+    <section class="gm-doc-pane" data-title="The calls">
+      <p class="gm-doc-note">Each call is one player, one market, one side of the line Kalshi quoted when the plan was written; graded off the box score, with the report's read of whether the reason given showed up. The rungs are the same call down the Kalshi ladder, Edge halfway to its last rung and Edge+ the last, at Kalshi's last pregame price.</p>
+      <div class="gm-doc-verdicts"><span class="badge mute">Normal <b class="up">5</b>&ndash;<b class="down">6</b></span><span class="badge mute">Edge <b class="up">9</b>&ndash;<b class="down">2</b></span><span class="badge mute">Edge+ <b class="up">10</b>&ndash;<b class="down">1</b></span></div>
+      <div class="gm-doc-calls">
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Jonathan Taylor</b><span class="flat">IND</span>
+            <span class="bet">to score</span>
+            <span class="res hit">&#10003; 1</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on EPA allowed entering the week (#1 toughest)">D #24 EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 72%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 70%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal / Edge / Edge+</i> to score <small>69&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Taylor scored from the 4 on a left-end run at Q4 5:36 — the short-area goal-line role the mechanism described, on a drive that started at the IND 28 and covered 72 yards.</p>
+          <p class="why">He is the entire goal-line menu for a team that finishes with runs, and the favorite&#x27;s script hands him the short-field work; his yardage can stall and the score still arrives.</p>
+          <p class="ev">Five rushing TDs in five games; all three Colts TDs at WAS were runs of 5, 5 and 4 yards; IND converts 61.5% of red-zone trips, TEN allows 57.1%.</p>
+          <p class="ev">vs #24 EPA allowed; model and exchange agree directionally (72% vs 70%), so this is a correlation leg rather than a price edge — and it rests on finishing, the least persistent half, which is why it sits behind the volume calls. Anytime-TD calls are 8-of-12 this season.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Laquon Treadwell</b><span class="flat">IND</span>
+            <span class="bet">over 24.5 rec yds</span>
+            <span class="res miss">&#10007; 21</span>
+            <span class="badge bad">missed · read partly held</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #30 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 71%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 53%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> over 24.5 rec yds <small>54&cent;</small></span><span class="rung hit"><i>Edge / Edge+</i> 15+ rec yds <small>70&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The role was there — 92.8% snap share, 69 air yards, second on the team — but only 5 targets and 2 catches for 21; the downfield work went 2/10 team-wide and Allen, not Treadwell, absorbed the Warren vacancy.</p>
+          <p class="why">With the outside receiver room thinned, Indy&#x27;s downfield work has gone to him rather than the slot, and a tight end game-time decision only adds to it.</p>
+          <p class="ev">Snap share 79-85% in Weeks 3-5 with 6 then 8 targets, 36.2% of air yards at WAS; Pierce on IR and Dulin out again per Rotowire Friday.</p>
+          <p class="ev">vs #30 pass EPA allowed; the model is far above this rung (42.8) and the exchange only 53% over — the market still prices him as a fourth option, the Week-4 review flagged the opposite.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Tony Pollard</b><span class="flat">TEN</span>
+            <span class="bet">over 59.5 rush yds</span>
+            <span class="res hit">&#10003; 76</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #29 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 60%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 44%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> over 59.5 rush yds <small>45&cent;</small></span><span class="rung hit"><i>Edge</i> 40+ rush yds <small>73&cent;</small></span><span class="rung hit"><i>Edge+</i> 25+ rush yds <small>89&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Pollard got 19 carries (above the 14-17 range the plan cited) for 76 yards, 4.0 a carry, including a 16-yard run at Q3 4:46 — the soft-front read cashed as written.</p>
+          <p class="why">His carry count has held between 14 and 17 in four straight weeks regardless of score, and he meets the softest run defense he has faced all year on a per-carry basis.</p>
+          <p class="ev">Carries 14, 17, 16, 14 in Weeks 2-5 at 48-74 yards; IND allows 4.97 yards a carry and 130.2 rushing yards a game, with +0.298 rush EPA allowed at PIT in Week 5.</p>
+          <p class="ev">vs #29 rush EPA allowed (also 27th in YPC). The model is well above this rung (77.5) while the exchange prices the over at only 44% — the market is paying for the trailing script, but his carries have not moved with the score.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Cam Ward</b><span class="flat">TEN</span>
+            <span class="bet">over 199.5 pass yds</span>
+            <span class="res miss">&#10007; 102</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #24 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 57%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 52%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> over 199.5 pass yds <small>53&cent;</small></span><span class="rung miss"><i>Edge</i> 150+ pass yds <small>81&cent;</small></span><span class="rung miss"><i>Edge+</i> 125+ pass yds <small>90&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The mechanism was &#x27;he throws 33-36 times whenever Tennessee trails, and it will trail.&#x27; Tennessee was tied or leading for 1,908 of the game&#x27;s seconds and threw 22 times; the clean pocket arrived and the volume did not.</p>
+          <p class="why">He throws 33-36 times whenever Tennessee trails, and it will trail. Indianapolis neither pressures nor covers, and its pass rush may be short-handed, which is the clean pocket his quick game needs.</p>
+          <p class="ev">Attempts of 32, 36, 31 and 36 in the four games TEN trailed; IND allows 268 pass ypg and 8.02 Y/A, generates 12.9% pressure, with Tuimoloau in concussion evaluation and Buckner a DNP (rest). Week-4 review: the same chase-volume read cleared 183.5 for 222.</p>
+          <p class="ev">vs #24 pass EPA allowed; the model has him above this rung (222) while the exchange prices the over near a coin flip (52.5%) — the gap is attempts the market hasn&#x27;t credited to a team that never leads. Record note: pass_yds calls are 45% this season, so this is volume-only.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Carnell Tate</b><span class="flat">TEN</span>
+            <span class="bet">over 49.5 rec yds</span>
+            <span class="res hit">&#10003; 70</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #24 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 56%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 54%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> over 49.5 rec yds <small>51&cent;</small></span><span class="rung hit"><i>Edge</i> 40+ rec yds <small>62&cent;</small></span><span class="rung hit"><i>Edge+</i> 25+ rec yds <small>79&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 7 targets, 6 catches, 70 yards, 1 TD and 64.9% of the team&#x27;s air yards on a 22-attempt day — precisely the &#x27;field-stretcher by role, not by game state&#x27; mechanism.</p>
+          <p class="why">He is the field-stretcher by role, not by game state — the one Titan who concentrates air yards — and chase mode funnels throws to him against a secondary that surrenders the field.</p>
+          <p class="ev">12 targets, 9-145 and 73.1% of air yards vs BAL in Week 4; 9 targets at NYG; 76-88% snaps every week. IND has allowed 3+ explosive passes in four of five games and 0.171 pass EPA.</p>
+          <p class="ev">vs #24 pass EPA allowed; model at 60.6, exchange at 54% over — a small edge, but the Week-4 review graded this exact read (field-stretcher vs a beatable secondary) as held.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Keenan Allen</b><span class="flat">IND</span>
+            <span class="bet">under 39.5 rec yds</span>
+            <span class="res miss">&#10007; 82</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #30 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 65%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 44%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 39.5 rec yds <small>44&cent;</small></span><span class="rung miss"><i>Edge</i> &lt;70 rec yds <small>77&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;100 rec yds <small>94&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The premise that he was fourth in the air-yards pecking order failed immediately: Allen led the team with 11 targets and 104 air yards on 71.1% of snaps, and Indy threw 50 dropbacks while leading rather than fewer.</p>
+          <p class="why">He is a part-time player now, fourth in the pecking order for air yards behind the tight end, the slot and Treadwell, on an offense that throws less once it leads.</p>
+          <p class="ev">Snap shares of 45% at PIT and 51% at KC; 1-5 for 5 yards vs KC; did not play Week 4. Indy threw 42.9% in the second half of its last win.</p>
+          <p class="ev">vs #30 pass EPA allowed — the soft matchup is the risk here. The model is well below this rung (31.3) while the exchange prices it 56.5% over; that gap is the call, and it widens if the tight end plays.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Jonathan Taylor</b><span class="flat">IND</span>
+            <span class="bet">under 89.5 rush yds</span>
+            <span class="res miss">&#10007; 94</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">efficiency</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #18 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 64%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 52%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 89.5 rush yds <small>53&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;140 rush yds <small>88&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;180 rush yds <small>98&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Taylor went 21/94 at 4.48 a carry with two runs of 10+ and McGowan siphoned only 4 carries; the &#x27;carries but not yards per carry&#x27; read on the Tennessee front failed — the team ran 5.5 a carry, 7.3 to the right side.</p>
+          <p class="why">Tennessee&#x27;s front gives up carries but not yards per carry, and McGowan siphons 5-6 of them whenever Indy is ahead. The scores are his; the yardage line is the stretch.</p>
+          <p class="ev">2.96 YPC vs HOU, 3.0 at PIT on 15 carries; TEN allows 3.54 yards a carry, the 4th-lowest, with -0.164 and -0.148 rush EPA allowed to BAL and NYG; McGowan 6 and 5 carries in Weeks 4-5.</p>
+          <p class="ev">vs #18 rush EPA allowed but #4 in yards per carry — the per-carry number is what this market pays. Model below the rung (81.8) while the exchange sits 47.5% over. Labelled efficiency: the volume is not in doubt.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Tyjae Spears</b><span class="flat">TEN</span>
+            <span class="bet">under 39.5 rush+rec yds</span>
+            <span class="res hit">&#10003; 8</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #29 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 64%</span>
+            
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal / Edge / Edge+</i> under 39.5 rush+rec yds</span></div>
+          <p class="why"><b>In the game:</b> Exactly as reasoned: 23.9% snaps, 1 carry, 1 target, 8 yards. Week 5&#x27;s nine targets were blowout noise, not a passing-down role.</p>
+          <p class="why">Pollard owns the backfield, and last week&#x27;s nine catches were dump-offs in a 23-point blowout, not a role. He is also carrying a knee through the week.</p>
+          <p class="ev">2, 2 and 3 carries in three of the last four weeks; 36-54% snaps all season; questionable (knee) with a full Friday per Rotowire. The same under cashed at 6 yards in Week 4.</p>
+          <p class="ev">vs #29 rush EPA allowed — the soft front is the counter, but he barely carries it. No exchange quote on this market, so the call is against the model&#x27;s own figure (29.4), which already sits under the rung.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Josh Downs</b><span class="flat">IND</span>
+            <span class="bet">under 4.5 receptions</span>
+            <span class="res hit">&#10003; 4</span>
+            <span class="badge warn">hit · not for the reason given</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">low</span>
+            <span class="badge good" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #30 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 57%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 56%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 4.5 receptions <small>44&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;8 receptions <small>89&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;10 receptions <small>99&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The call hit at 4 receptions, but through drops/incompletions on 8 targets, not through low dropback volume — Indy threw 42 times and Downs ran 85.5% of snaps. Right side, wrong reason.</p>
+          <p class="why">The target concentration keeps going elsewhere — to the tight end and the perimeter — and a leading Colts team runs fewer dropbacks than this number needs.</p>
+          <p class="ev">10 targets total across Weeks 4-5 (4 and 6) with 3 catches each time, despite 77-85% snaps; Treadwell and Dulin out-targeted him 12-4 at WAS.</p>
+          <p class="ev">vs #30 pass EPA allowed, and he gains if Warren is scratched — that is the main risk. Model sits at 4.44 against this rung with the exchange 43.5% over; both lean under, the read is that the role has not changed.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Cam Ward</b><span class="flat">TEN</span>
+            <span class="bet">under 0.5 INTs</span>
+            <span class="res miss">&#10007; 1</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">low</span>
+            <span class="badge good" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #24 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 57%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 50%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 0.5 INTs <small>51&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;2 INTs <small>86&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;3 INTs <small>98&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The pick came at Q2 2:00 on a first-and-10 deep shot to Robinson with Adebawore in his face — not late desperation volume, which is what the mechanism had excluded.</p>
+          <p class="why">This is a read that he throws it away rather than into trouble: the Colts take the ball away less than anyone, and a one-score chase does not produce the late desperation volume that creates picks.</p>
+          <p class="ev">IND has generated interceptions on 0.6% of attempts this season and no takeaways at all in Weeks 3 and 5; Ward&#x27;s three picks came against NYG, BAL and HOU.</p>
+          <p class="ev">vs #24 pass EPA allowed. Model already below the rung (0.57 mean, 43% over) while the exchange prices it a coin flip (49.5%) — and 1+ INT is the number most often overstated because projected attempts run high.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Daniel Jones</b><span class="flat">IND</span>
+            <span class="bet">under 224.5 pass yds</span>
+            <span class="res miss">&#10007; 269</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #30 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 55%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 48%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 224.5 pass yds <small>49&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;300 pass yds <small>89&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;350 pass yds <small>97&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The &#x27;leading team throws less and shorter&#x27; premise inverted: Indy led for 1,692 seconds, still threw 61.5%, 42 attempts, 269 yards at an 11.5 adot across 82 plays.</p>
+          <p class="why">A touchdown favorite that leads throws less and shorter — that is exactly what happened the last time this team was ahead — and his top target is a game-time call.</p>
+          <p class="ev">143 yards on 34 attempts at WAS with a 3.8 aDOT and 42.9% second-half pass rate; 166 and 210 in Weeks 1-2. The 267 at PIT came chasing a two-score deficit. Warren (groin) a game-time decision per ESPN.</p>
+          <p class="ev">vs #30 pass EPA allowed, which argues the other way — the mechanism is script and personnel, not coverage. Model below the rung (220) with the exchange at 52.5% over.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Same-script legs">
+      <p class="gm-doc-note">Legs the same script produces together: they move as one, which is what a same-game parlay pays for.</p>
+      <div class="gm-doc-three">
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Colts grind, Titans chase</b></div>
+          <div class="legs"><span class="leg hit">Jonathan Taylor <em>to score</em> <i>&#10003;</i></span><span class="leg miss">Cam Ward <em>over 199.5 pass yds</em> <i>&#10007;</i></span><span class="leg hit">Carnell Tate <em>over 49.5 rec yds</em> <i>&#10003;</i></span></div>
+          <p class="sub">One script: Indianapolis leads and finishes drives on the ground, which puts Tennessee behind and forces Ward into 34-plus attempts with the air yards funnelled to Tate. The Colts&#x27; lead is the engine of all three.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Yards without touchdowns, Indianapolis edition</b></div>
+          <div class="legs"><span class="leg miss">Daniel Jones <em>under 224.5 pass yds</em> <i>&#10007;</i></span><span class="leg miss">Keenan Allen <em>under 39.5 rec yds</em> <i>&#10007;</i></span><span class="leg miss">Jonathan Taylor <em>under 89.5 rush yds</em> <i>&#10007;</i></span></div>
+          <p class="sub">If Indy protects a lead it drops its pass rate and its receiving yardage spreads thin, while Tennessee&#x27;s front concedes carries at 3.5 a pop — the same game produces a short passing day, a capped part-time receiver and a touchdown-heavy, yardage-light back.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Titans volume, Colts soft middle</b></div>
+          <div class="legs"><span class="leg hit">Tony Pollard <em>over 59.5 rush yds</em> <i>&#10003;</i></span><span class="leg miss">Cam Ward <em>over 199.5 pass yds</em> <i>&#10007;</i></span></div>
+          <p class="sub">Tennessee gets its snaps only if it stays within a score, and the path to that is the one soft spot in Indianapolis&#x27;s defense — 4.97 yards a carry allowed — keeping Pollard&#x27;s touches alive while Ward&#x27;s attempts stay high.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    
+    
+
+    
+    <section class="gm-doc-pane" data-title="Projection grade">
+      <div class="gm-doc-gradehead">
+        <div class="gm-grade bad"><b>D</b><span>projection<br>grade &middot; 52</span></div>
+        <div class="gm-doc-gradetext">
+          
+          <div class="gm-doc-verdicts"><span class="badge mute">TEN 26 – IND 20</span><span class="badge mute">TEN covered (IND by 6.5)</span><span class="badge mute">Over 43.5 (46)</span><span class="badge mute">teams 59</span><span class="badge mute">player lines 25/40 in range</span><span class="badge mute">market calls 1/3</span></div>
+        </div>
+      </div>
+      
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>IND</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">25.0</td><td class="num"><b>20</b></td><td class="num flat">-5</td><td class="meter"><i style="width: 75%" class=""></i></td></tr><tr><td>Pass yds</td><td class="num flat">220.1</td><td class="num"><b>269.0</b></td><td class="num flat">+48.9</td><td class="meter"><i style="width: 67%" class=""></i></td></tr><tr><td>Rush yds</td><td class="num flat">107.6</td><td class="num"><b>165.0</b></td><td class="num up">+57.4</td><td class="meter"><i style="width: 36%" class="bad"></i></td></tr><tr><td>Pass att</td><td class="num flat">32.0</td><td class="num"><b>42</b></td><td class="num up">+10</td><td class="meter"><i style="width: 38%" class="bad"></i></td></tr><tr><td>Carries</td><td class="num flat">28.5</td><td class="num"><b>30</b></td><td class="num flat">+1.5</td><td class="meter"><i style="width: 89%" class=""></i></td></tr>
+          </tbody></table>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>TEN</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">18.5</td><td class="num"><b>26</b></td><td class="num flat">+7.5</td><td class="meter"><i style="width: 62%" class=""></i></td></tr><tr><td>Pass yds</td><td class="num flat">222.0</td><td class="num"><b>102.0</b></td><td class="num down">-120</td><td class="meter"><i style="width: 20%" class="bad"></i></td></tr><tr><td>Rush yds</td><td class="num flat">107.4</td><td class="num"><b>84.0</b></td><td class="num flat">-23.4</td><td class="meter"><i style="width: 74%" class=""></i></td></tr><tr><td>Pass att</td><td class="num flat">31.9</td><td class="num"><b>22</b></td><td class="num down">-9.9</td><td class="meter"><i style="width: 38%" class="bad"></i></td></tr><tr><td>Carries</td><td class="num flat">25.2</td><td class="num"><b>23</b></td><td class="num flat">-2.2</td><td class="meter"><i style="width: 84%" class=""></i></td></tr>
+          </tbody></table>
+        </div>
+        
+      </div>
+      <div class="gm-doc-verdicts"><span class="badge bad">Winner: IND &#10007;</span><span class="badge good">Spread: TEN +6.5 &#10003;</span><span class="badge bad">Total: Under 43.5 (proj 43.5) &#10007;</span></div>
+      
+      
+      <div class="gm-doc-k">Why the projection missed &middot; what it got right</div>
+      <p class="gm-doc-p">The grade is a D (0.525) and the market score (0.333) is why: the model picked IND straight-up and Under 43.5, and got only the spread (TEN +6.5) right. Team-level, the shape was inverted — the model gave TEN 58.8 plays and 31.9 attempts and they ran 45 and 22; IND was projected 62.3 plays and got 82, with 165 rush yards against a 107.6 projection. The blended inputs weren&#x27;t crazy (Pollard 77.5 proj / 76 actual, Taylor 20.4 carries / 21, McGowan 4.1 / 4), but every volume assumption was downstream of a script that never arrived: TEN never trailed by more than 13 and was tied or leading for 1,908 of the game&#x27;s seconds, so the pass-rate bump the engine blended (0.572) collapsed to 0.511. The points miss on TEN (18.5 proj, 26 actual) is almost entirely non-offensive — 13 of the 26 came from a blocked-punt touchdown and two 44+ field goals off turnover field position. Player grade 25/40 hit; the two biggest misses (Ward -120 pass yards, Allen +52.8 rec yards) both trace to volume, not projection error on efficiency.</p>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>TEN</b> &middot; Pass yards 222 → 102, attempts 31.9 → 22<div class="went">Game script plus plays: TEN ran 45 total snaps with 1,277 seconds of possession, and its pass rate was 0.45 while tied and 0.0 while leading. The engine blended a 0.572 pass rate off a 0.596 season rate that assumed a chase; TEN was never chasing by more than one score after halftime. Ward&#x27;s -20.1 CPOE (11/22) compounded it.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>IND</b> &middot; Rush yards 107.6 → 165 on 30 carries<div class="went">Efficiency and explosives: 3 rushes of 10+, 7.3 ypc on 11 right-side carries, Taylor 21/94 and McGowan 4/27. The blended 3.778 ypc leaned on TEN&#x27;s 3.54 allowed; the actual was 5.5. Still, IND rush EPA was -0.192 — yards without value.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>IND</b> &middot; Pass attempts 32 → 42, 50 dropbacks<div class="went">Volume: IND ran 82 plays and threw 61% overall, 52.8% even while leading, against a projected 0.543 blend. Six sacks and a 7/17 third-down day extended series without ending them.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>TEN</b> &middot; Points 18.5 → 26 with only 186 yards<div class="went">Field position and special teams, not offense: blocked punt TD (Q4 10:25), drives starting at IND 33 and IND 28, and Slye 4/4 including a 56.</div></div></div></div>
+      <div class="gm-doc-verdicts wrap"><span class="badge good">&#10003; Spread: TEN +6.5 was the graded call and it cashed.</span><span class="badge good">&#10003; Pollard&#x27;s rushing line (77.5 proj / 76 actual on 19 carries) and Taylor&#x27;s workload (20.4/21 carries, 3.8/4 targets).</span><span class="badge good">&#10003; Tate&#x27;s receiving projection (60.6 / 70) despite a 22-attempt passing game — his air-yards concentration held.</span><span class="badge good">&#10003; McGowan&#x27;s complementary carries (4.1 / 4) and Ridley&#x27;s target floor (2.3 / 2).</span></div>
+      
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Turning points">
+      <div class="gm-doc-tl">
+        <div class="gm-doc-tp"><div class="clock">Q1 02:44</div><div class="what"><span class="badge mute">IND</span> Jones intercepted by A.Hooker at the TEN 6 on 2nd-and-13 (EPA -3.85)<div class="went">Ended a 14-play, 77-yard opening possession with zero points and set the template: Indianapolis moved the ball all day and kept handing it back.</div></div></div><div class="gm-doc-tp"><div class="clock">Q2 02:00</div><div class="what"><span class="badge mute">TEN</span> Ward deep right for Robinson intercepted by C.Bynum, pressure by Adebawore (EPA -4.05)<div class="went">Handed IND the ball at the TEN 49 with 1:50 left and turned a 10-0 half into 13-0 — the only cushion Indianapolis ever built.</div></div></div><div class="gm-doc-tp"><div class="clock">Q3 14:56</div><div class="what"><span class="badge mute">IND</span> J.Taylor fumble forced and recovered by J.Simmons at the IND 33 (EPA -5.47)<div class="went">First snap of the second half; TEN&#x27;s offense had generated nothing and this gave it a 22-yard field for the 29-yard field goal that started the climb back.</div></div></div><div class="gm-doc-tp"><div class="clock">Q3 07:07</div><div class="what"><span class="badge mute">IND</span> Jones intercepted by C.Flott at the TEN 11 ending a 12-play drive (EPA -4.93)<div class="went">Third IND takeaway in the red-zone approach; TEN answered with a 51-yard drive and the 56-yard field goal that made it 13-6.</div></div></div><div class="gm-doc-tp"><div class="clock">Q4 10:25</div><div class="what"><span class="badge mute">TEN</span> Sanchez punt blocked by J.Chestnut, recovered and returned 14 yards for a touchdown by O.Oladejo (WPA -0.279)<div class="went">Largest swing in the game. It turned a 13-13 tie into a Titans lead without the offense taking a snap and is the single reason the team total beat the projection.</div></div></div><div class="gm-doc-tp"><div class="clock">Q4 05:26</div><div class="what"><span class="badge mute">TEN</span> Incomplete deep left to Tate, 36-yard DPI on C.Taylor-Britt (EPA +2.58)<div class="went">Thirty-six free yards that never show in Ward&#x27;s 102 passing yards; it moved TEN from its own 17 into range for the 49-yard go-ahead field goal with 2:07 left.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="What decided it">
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Indianapolis&#x27;s giveaways and negative plays inside its own scoring drives</b><div class="went">Three turnovers (two Jones INTs, Taylor fumble), six sacks for -35 yards, 11 QB hits, plus two failed fourth downs; 434 yards and 82 plays produced 20 points.</div><div class="went"><b>Tell:</b> IND carried the &#x27;turnovers&#x27; tag in three of five weeks (Wk1 2, Wk3 3, Wk4 2) and &#x27;pressure allowed&#x27; in Week 3 (4 sacks vs HOU). The plan&#x27;s own swing factor flagged six giveaways in three games.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag no" title="Not visible before kickoff">in-game only</span><div><b>Tennessee&#x27;s pass rush finally showing up</b><div class="went">6 sacks, 11 hits, 22% pressure rate (sack-or-hit) — Simmons 2 sacks/2 TFL, Johnson 2 sacks, against a season generation rate of 11.7% and a &#x27;no pass rush&#x27; tag in Weeks 1 and 5.</div><div class="went"><b>Tell:</b> Nothing in the inputs pointed here; TEN&#x27;s 5.2% opponent sack rate and 12.9% pressure were bottom-tier. This is one game against a line that allowed four sacks in Week 3 — treat it as the matchup, not a new TEN trait.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag no" title="Not visible before kickoff">in-game only</span><div><b>Special teams and field position replacing offense</b><div class="went">TEN&#x27;s 26 points came from one 28-yard touchdown drive, a blocked-punt return TD, and field goals from 29, 56, 49 and 44; starting fields of IND 33, IND 28 and IND 31 after takeaways/short punts.</div><div class="went"><b>Tell:</b> Blocked punts are not projectable. The projectable half — TEN scoring more than 18.5 on 45 snaps — required exactly this.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Red-zone finishing on both sides</b><div class="went">IND 4 trips, 2 TDs, 1 FG, -0.333 EPA/play inside the 20 against -0.063 in the field; TEN 2 trips, 1 TD, 1 FG. IND&#x27;s field EPA was barely negative while its red-zone EPA cratered.</div><div class="went"><b>Tell:</b> IND&#x27;s &#x27;red zone stalls&#x27; tag in Weeks 3 and 5 (1/3 and 1/3 TD per trip, -0.431 EPA vs PIT) and TEN&#x27;s &#x27;red zone defense&#x27; tag in Weeks 2 and 4.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag no" title="Not visible before kickoff">in-game only</span><div><b>Free yards via penalty on the decisive drive</b><div class="went">36 DPI yards drawn by TEN — its entire drawn total — on the Q4 5:26 Tate incompletion, converting a 1st-and-10 at its own 17 into field-goal range.</div><div class="went"><b>Tell:</b> TEN had drawn 0 DPI yards per game on offense entering; IND had allowed 2.0. One flag, not a tendency.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; TEN">
+      <div class="gm-doc-boxhead"><b>How TEN gets beaten</b><span class="flat">0-5 entering</span><span class="badge mute">medium confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">explosive passing &times;3</span><span class="badge bad">no pass rush &times;2</span><span class="badge bad">red zone defense &times;2</span><span class="badge bad">turnovers &times;2</span><span class="badge bad">third down &times;2</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Explosive passing against the secondary</b><div class="went">&#x27;Explosive passing&#x27; tag in Weeks 1, 4 and 5 (4, 4 and 2 completions of 20+; 0.35 and 0.389 EPA/dropback allowed in Wks 1 and 4). This week IND had 3 explosive passes at an 11.5 adot and 269 yards.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>An offense that cannot sustain — 53.4 plays/game, -0.158 field EPA, third downs</b><div class="went">3/10 on third down here; 2/10 at BAL, 4/14 vs HOU. 45 snaps and 186 yards this week with 1,277 seconds of possession.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Red-zone and finishing failure</b><div class="went">0.40 TD/trip and -0.296 red-zone EPA on the season; 0/1 vs HOU, 1/3 at NYG. Two trips here produced one TD, and 12 of 26 points came from 44+ yard kicks.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Ward&#x27;s accuracy under a real rush</b><div class="went">-20.1 CPOE on 22 attempts here even at a 4.3% pressure rate; 2 turnovers vs HOU, 2 at BAL, &#x27;pressure allowed&#x27; tag Wk5 (4 sacks).</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> Five straight losses built the same way: the defense surrenders chunk passes between the 20s, the offense runs 50-55 snaps and stalls inside the 20. The win came without the offense fixing anything — it came from three takeaways and a blocked punt. Note also the run-location split: 1.7 ypc up the middle on 6 carries, 5.2 right.</p>
+      <p class="gm-doc-p"><b>This week:</b> Indianapolis had the profile to cash the blueprint — 11.5 adot, 3 explosive passes, 434 yards, 82 snaps — and tried it, but it couldn&#x27;t finish drives, and TEN&#x27;s front produced far more pressure (22%) than its 11.7% season rate suggested it could.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> An offense that throws at depth (adot 9+) with a quarterback who protects the ball, plus a line that can handle interior pressure from Simmons; and crucially, the ability to convert red-zone trips, since TEN&#x27;s bend-don&#x27;t-break at its own 20 shows in Weeks 2 and 4 as well as here.</p>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; IND">
+      <div class="gm-doc-boxhead"><b>How IND gets beaten</b><span class="flat">2-3 entering</span><span class="badge mute">medium confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">run game &times;3</span><span class="badge bad">no pass rush &times;3</span><span class="badge bad">turnovers &times;3</span><span class="badge bad">explosive passing &times;2</span><span class="badge bad">third down &times;2</span><span class="badge bad">pre-snap penalties &times;2</span><span class="badge bad">red zone stalls &times;2</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Its own turnovers</b><div class="went">&#x27;Turnovers&#x27; tag in Weeks 1, 3 and 4 (2, 3, 2); three more here — Jones INTs at Q1 2:44 and Q3 7:07 both ending drives inside TEN territory, Taylor&#x27;s fumble on the first snap of the second half.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Pass protection collapsing against interior rush</b><div class="went">6 sacks, 11 QB hits, 22% pressure this week against a 26.9% blitz rate and 4.27 average rushers — i.e., mostly four-man pressure. Week 3 vs HOU: 4 sacks, 17.1% pressure, 3 turnovers.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Red-zone stalls</b><div class="went">&#x27;Red zone stalls&#x27; Weeks 3 and 5 (1/3 trips each, -0.431 EPA vs PIT); 2/4 with -0.333 EPA here despite -0.063 in the field. Season red-zone EPA 0.193 is now stale.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>No pass rush of its own</b><div class="went">&#x27;No pass rush&#x27; tag Weeks 1, 2 and 5; this week TEN took 0 sacks and 1 QB hit on 23 dropbacks (4.3% pressure). Ward had a clean pocket all day and still only threw 22 times.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Run game against it</b><div class="went">&#x27;Run game&#x27; tag Weeks 1, 2 and 5 (0.101, 0.094, 0.298 rush EPA allowed). Pollard went 19/76 with a 16-yard run at Q3 4:46 and TEN ran 4.0 a carry on 21 attempts in a game it barely needed to.</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> Indianapolis moves the ball at a league-average clip and loses the game at the margins: a strip, a forced throw into coverage, a sack on third-and-10, a trip that ends as a field goal. Three of five prior weeks carried the turnover tag and three the no-pass-rush tag; this game added both at once.</p>
+      <p class="gm-doc-p"><b>This week:</b> Tennessee tried the run-game half (21 carries, 4.0 ypc) and had the pressure to cash the protection half far beyond what its 11.7% season rate implied — but its offense could not convert the takeaways into touchdowns either (one offensive TD), which is why a three-turnover, blocked-punt game was still only a six-point win.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> A front that gets home with four — a disruptive interior rusher is the specific lever (Simmons took the fumble, two TFL and two sacks) — plus a secondary willing to play the short throw: 31 of Jones&#x27;s 43 attempts were short for 210 yards, and his deep ball was 2/10.</p>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Player lines">
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Keenan Allen</b> <span class="flat">IND</span> &middot; 11 targets, 8/82, 28.3% air-yards share on 71.1% snaps<div class="went">Warren (groin) did not play; Indy&#x27;s 50 dropbacks and 31 short attempts funneled to the one reliable short-area target, with 34 YAC. Projection had him at 4.7 targets as a part-time player.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Cam Ward</b> <span class="flat">TEN</span> &middot; 11/22, 102 yards, 1 TD, 1 INT, -20.1 CPOE, 6.1 adot<div class="went">Only 23 dropbacks because TEN was tied or leading most of the day and ran 21 times; and he was inaccurate in a clean pocket (0 sacks, 1 hit). Both the volume and the efficiency failed.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Carnell Tate</b> <span class="flat">TEN</span> &middot; 7 targets, 6/70, 1 TD, 87 air yards, 64.9% air-yards share<div class="went">Role-based concentration, not script — he took nearly two-thirds of the team&#x27;s air yards on a 22-attempt day and caught the 19-yarder (Q3 14:40) and the 8-yard TD (Q4 13:04). He is bet-able even in low-volume TEN games.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Jonathan Taylor</b> <span class="flat">IND</span> &middot; 21/94 rushing, TD; 2/57 receiving on 4 targets, 68 YAC<div class="went">Workload exactly as projected; the receiving line is one 38-yard catch-and-run (Q2 14:34). Rushing EPA was -4.76 despite 4.48 ypc — yardage without value, and the TD came from the 4.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Will Mallory</b> <span class="flat">IND</span> &middot; 6 targets, 2/20 on 51.8% snaps, unprojected<div class="went">Direct Warren replacement; his target volume (6) exceeded Treadwell&#x27;s and he was the intercept target at Q3 7:07. If Warren misses again, he is a live cheap-target body.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Wan&#x27;Dale Robinson</b> <span class="flat">TEN</span> &middot; 7 targets, 3/22, -5.94 receiving EPA<div class="went">Second in targets but 37 air yards and the Bynum interception target at Q2 2:00. Volume without productive depth in a low-attempt offense.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Daniel Jones</b> <span class="flat">IND</span> &middot; 22/42, 269 yards, 1 TD, 2 INT, 6 sacks, 11 hits, 2/10 deep, 3 scrambles for 30<div class="went">82-play game forced attempts up 10 over projection; 34% pressure rate and an 11.5 adot produced the yardage and the giveaways together.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Tyjae Spears</b> <span class="flat">TEN</span> &middot; 23.9% snaps, 1 carry, 1 target, 8 total yards<div class="went">Week 5&#x27;s nine targets were blowout dump-offs, not a role. Pollard took 19 of 21 backfield carries at a 76.1% snap share.</div></div></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Traps">
+      <div class="gm-doc-three"><div class="gm-doc-box"><span class="badge mute">Totals</span><p><b>A team total built on a 45-snap offense can still beat its projection when the points come from non-offensive scores and long field goals. Don&#x27;t treat yards and points as the same variable: TEN had 186 yards and 26 points.</b></p><p class="sub"><b>Trigger:</b> Underdog with a bottom-five play count and a defense generating multiple takeaways; look for games where projected team total is derived from drive efficiency while field position is being handed over.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>&#x27;Trailing team throws&#x27; only applies if it actually trails. TEN&#x27;s blended 0.572 pass rate assumed chase mode; the Titans were tied or ahead for the majority of the game and threw 48.9%, 10.7 points under their season rate.</b></p><p class="sub"><b>Trigger:</b> Underdog QB pass-attempt overs priced off a projected deficit — check whether the dog&#x27;s path to covering is defensive/special-teams scoring, which produces points without volume.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>Soft pass-rush and coverage grades on the opponent are not enough to cash a QB yardage over if the QB can&#x27;t throw it. Ward had a 4.3% pressure rate, zero sacks, a clean pocket — and -20.1 CPOE on 22 attempts for 102 yards.</b></p><p class="sub"><b>Trigger:</b> QB yardage overs justified by opponent softness alone when the QB&#x27;s own season YPA is below 6.0 (TEN 5.78) and the team averages under 55 plays.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>When a projected WR3 is the only healthy veteran route-runner after a tight end scratch, the target share moves to him, not to the player who &#x27;has been getting the downfield work.&#x27; Allen went from a 4.7-target projection to 11 targets and 28.3% of air yards with Warren out; Treadwell&#x27;s 92.8% snap share produced only 5 targets.</b></p><p class="sub"><b>Trigger:</b> Primary pass-catcher ruled out at game time — buy the receiver with route volume and separation (short-area), fade the pure air-yards replacement.</p></div><div class="gm-doc-box"><span class="badge mute">Sides</span><p><b>A one-week pressure spike against a line with a prior collapse week is matchup, not a new defensive trait. TEN went from 11.7% season pressure to 22% in one afternoon against an IND line that also gave up four sacks in Week 3.</b></p><p class="sub"><b>Trigger:</b> Before pricing a defense up on a 6-sack game, check whether the opponent&#x27;s line had a prior multi-sack week and whether the sacks came without blitzing (here, 4.27 average rushers).</p></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="The story">
+      <div class="gm-doc-prose"><h2>The short version</h2>
+<p>Indianapolis gained 434 yards on 82 snaps and lost by six. Tennessee gained 186 on 45, threw for 102, and scored 26. That is a game decided entirely by the margins: three Colts turnovers, six sacks of Daniel Jones, a blocked punt returned for a touchdown, and Joey Slye going 4-for-4 including a 56. The model's spread call (TEN +6.5) cashed; its winner and its Under did not, and the projection graded out a D at 0.525 largely because the volume shape of the game inverted — Tennessee was supposed to throw 32 times chasing and threw 22 while tied.</p>
+<h2>How it unfolded</h2>
+<p>Indianapolis opened with a 14-play, 77-yard march and finished it with an interception at the Tennessee 6. That play set the day's grammar. The Colts' next drive produced the game's only sustained touchdown — Jones's 38-yard throw to Taylor (Q2 14:34) and a one-yard score to Alie-Cox — and after that the offense alternated between first downs and self-inflicted wounds: three sacks before halftime, a 13-play, 70-yard drive that ended in a 23-yard field goal after Johnson's nine-yard sack at Q2 3:39.</p>
+<p>Tennessee trailed 13-0 at the half having produced 17 plays and -0.386 EPA per play. Then the field reversed. Simmons punched the ball out of Taylor's hands on the first snap of the third quarter, giving the Titans the ball at the IND 33 (field goal); Flott intercepted Jones at the Tennessee 11 to end a 12-play drive; Tennessee's 51-yard answer ended in a 56-yard kick. At 13-6 the Titans took over at the IND 28 and Ward hit Tate for the tying score. Three minutes later Chestnut blocked Sanchez's punt and Oladejo returned it 14 yards — 0.279 of win probability in one play, and Tennessee's lead.</p>
+<p>Indianapolis answered with its best drive of the day (8 plays, 72 yards, Taylor from the 4). Tennessee's winning possession started at its own 17 and lived on a 36-yard pass interference call on Taylor-Britt at Q4 5:26 — free yards that appear nowhere in Ward's passing line — before Slye's 49-yarder. A Johnson sack on third-and-10 and a 4th-and-17 incompletion ended it.</p>
+<h2>Why the game diverged from the projection</h2>
+<p>The engine built Tennessee's line off a 0.572 blended pass rate, which assumed chase mode. Tennessee was tied or leading for 1,908 of 3,600 seconds and threw 45% while tied and 0% while leading; the result was 22 attempts and 102 yards against a 222 projection. That is script, not projection error on rate — but the efficiency failed too: -20.1 CPOE in a pocket that produced zero sacks and one QB hit. On the other side the Colts were given 62 plays and ran 82, because their drives kept extending without ending. Rush yards beat the projection by 57 (5.5 a carry, 7.3 right side) while rushing EPA was -0.192 — movement, not value. The 7.5-point miss on Tennessee's total is mostly non-offensive: 13 of 26 points came from the blocked punt and two kicks of 44-plus.</p>
+<h2>The plan against the game</h2>
+<p>The plan wrote the underdog path almost correctly and for the right reason — Jones gives it away under pressure, Tennessee runs early against a soft front, a 20-23 point game the Titans win late — and then bet the half of it that failed. It needed Ward's quick game to turn 35 attempts into 240 yards; Tennessee never trailed enough to produce attempts, and <code>checks</code> shows both leans inverted (IND 61.5% pass against a 57.3% season rate, TEN 48.9% against 59.6%). Pace was called right at 123 total plays. The Warren swing factor landed but redistributed to Allen and Mallory rather than Treadwell, which is why D1 missed by 42 yards.</p>
+<h2>Player by player</h2>
+<p>Tate was the one Titan who was bet-able regardless of volume: 7 targets, 6-70-1, 64.9% of the team's air yards on a 22-attempt day. Pollard's 19/76 matched the projection almost exactly. Ward's line is a warning — a clean pocket does not fix accuracy. For Indianapolis, Allen is the story: 11 targets, 8-82, 34 YAC, 71% of snaps with Warren out; Mallory's six targets on 52% of snaps are the other half of that vacancy. Taylor's 21/94 plus a 38-yard catch-and-run inflated his receiving line on one play, and his touchdown came from the 4 — the role, not the yardage, is what repeats.</p>
+<h2>The defenses</h2>
+<p>Tennessee generated a 22% pressure rate (6 sacks, 11 hits) against a season rate of 11.7%, almost all of it from four rushers against a 26.9% blitz rate. Simmons alone had two sacks, two TFL and the forced fumble. That is a line-matchup result — the Colts gave up four sacks to Houston in Week 3 — more than a Titans trait. Indianapolis, meanwhile, did not touch Ward (4.3% pressure) and still held him to 102 yards, because Tennessee only needed 23 dropbacks. The Colts held at their own 20 when it mattered less than usual; Tennessee's defense allowed 0.145-type field movement all day and then took the ball away three times in scoring territory.</p>
+<h2>The blueprint</h2>
+<p>Indianapolis gets beaten by itself — three turnover-tagged weeks out of five before this one, red-zone stalls in Weeks 3 and 5, a line that folds against interior rush — and it gets beaten on the ground, with the run-game tag in Weeks 1, 2 and 5. Tennessee gets beaten by explosive passing (three weeks tagged) and by its own inability to sustain: 53 snaps a game, 0.40 red-zone touchdown rate, -0.158 field EPA. Indianapolis tried the blueprint and had the yardage to cash it; it could not finish, and that is the whole six points.</p>
+<h2>What the model should take from this</h2>
+<p>Two real reads: Jones's volume rises with plays rather than falling with a lead, and Allen is the primary short-area target when Warren is out. Two bounces not to price in: the blocked punt and the 36-yard DPI. And one structural correction — when an underdog's path to covering runs through takeaways and special teams rather than offense, its QB's attempt and yardage projections should come down, not up.</p></div>
+    </section>
+    
+    
+  </div>
+</details>
+
 </div>
 
 
@@ -1830,6 +2422,15 @@
       if(pick) pick.addEventListener("change",function(){ node.querySelectorAll(".pl-tl").forEach(function(t){ t.hidden=t.dataset.key!==pick.value; }); });
       modal.querySelector(".pl-dialog").scrollTop=0;
     }).catch(function(){ body.innerHTML='<div class="pl-loading">The player sheets could not be loaded.</div>'; });
+  }
+  // The plan / report panel: pills and arrows walk its sections.
+  var doc=document.querySelector(".gm-doc");
+  if(doc){
+    var panes=[].slice.call(doc.querySelectorAll(".gm-doc-pane")), pills=doc.querySelector(".gm-doc-pills"), cur=0;
+    panes.forEach(function(pn,i){ var b=document.createElement("button"); b.type="button"; b.textContent=pn.dataset.title; b.setAttribute("role","tab"); b.addEventListener("click",function(){ show(i); }); pills.appendChild(b); });
+    function show(i){ cur=(i+panes.length)%panes.length; panes.forEach(function(pn,k){ pn.classList.toggle("active",k===cur); }); pills.querySelectorAll("button").forEach(function(b,k){ b.classList.toggle("active",k===cur); if(k===cur&&b.scrollIntoView) b.scrollIntoView({block:"nearest",inline:"center"}); }); }
+    doc.querySelectorAll(".gm-doc-arrow").forEach(function(a){ a.addEventListener("click",function(){ show(cur+parseInt(a.dataset.dir,10)); }); });
+    show(0);
   }
   document.querySelectorAll(".pl-open").forEach(function(b){ b.addEventListener("click",function(e){ e.stopPropagation(); openPlayer(b.dataset.pid); }); });
   modal.querySelector(".pl-close").addEventListener("click",closeModal);

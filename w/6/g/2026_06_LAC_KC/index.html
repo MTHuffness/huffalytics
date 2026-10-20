@@ -797,6 +797,126 @@
     .hfa .pl-log td.wk, .hfa .pl-log th:first-child { position: sticky; left: 0; background: #0d0d11; z-index: 1; }
     :root[data-theme="light"] .hfa .pl-log td.wk, :root[data-theme="light"] .hfa .pl-log th:first-child { background: #fff; }
   }
+
+  /* ---- The plan / report panel under the scoreboard ---- */
+  .gm-doc { position: relative; overflow: visible; }
+  .gm-doc::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; border-radius: 14px 14px 0 0; background: linear-gradient(90deg, var(--hfa-accent), transparent 70%); pointer-events: none; }
+  .gm-doc.st-both::before { background: linear-gradient(90deg, var(--hfa-good), var(--hfa-accent) 55%, transparent 90%); }
+  .gm-doc > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.9rem; padding: 1rem 1.1rem; }
+  .gm-doc > summary::-webkit-details-marker { display: none; }
+  .gm-doc-chev { display: inline-grid; place-items: center; flex: none; width: 2rem; height: 2rem; border-radius: 50%; background: var(--hfa-accent); color: #fff; box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.22), 0 6px 14px -6px rgba(255, 31, 47, 0.9); transition: transform 0.18s; }
+  .gm-doc[open] > summary .gm-doc-chev { transform: rotate(180deg); background: #fff; color: var(--hfa-accent); }
+  .gm-doc-main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+  .gm-doc-eyebrow { font-size: 0.64rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-accent); }
+  .gm-doc-lead { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; line-height: 1.3; color: var(--hfa-body); }
+  .gm-doc-chips { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0.3rem; flex: 0 1 auto; }
+  .gm-doc-open { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); margin-left: 0.3rem; }
+  .gm-doc[open] .gm-doc-open { display: none; }
+  .gm-doc-body { border-top: var(--hfa-hairline); padding: 0.7rem 1.1rem 1.2rem; }
+  .gm-doc-nav { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.9rem; }
+  .gm-doc-pills { display: flex; gap: 0.3rem; overflow-x: auto; scrollbar-width: none; flex: 1 1 auto; padding: 2px; }
+  .gm-doc-pills::-webkit-scrollbar { display: none; }
+  .gm-doc-pills button { flex: none; border: 1px solid rgba(128, 128, 128, 0.25); background: transparent; color: var(--hfa-muted); border-radius: 999px; padding: 0.3rem 0.85rem; font-size: 0.76rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
+  .gm-doc-pills button.active { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-arrow { flex: none; width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid rgba(128, 128, 128, 0.3); background: transparent; color: var(--hfa-body); font-size: 1.2rem; line-height: 1; cursor: pointer; }
+  .gm-doc-arrow:hover { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-pane { display: none; animation: gm-fade 0.18s ease-out; }
+  .gm-doc-pane.active { display: block; }
+  @keyframes gm-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  .gm-doc-hook { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1.2; color: var(--hfa-accent); margin-bottom: 0.4rem; }
+  .gm-doc-headline { font-size: 1rem; font-weight: 600; line-height: 1.45; margin: 0 0 0.7rem; }
+  .gm-doc-p { font-size: 0.9rem; line-height: 1.55; margin: 0 0 0.7rem; }
+  .gm-doc-note { font-size: 0.76rem; color: var(--hfa-muted); line-height: 1.45; margin: 0 0 0.6rem; }
+  .gm-doc-prose { font-size: 0.9rem; line-height: 1.6; max-width: 60rem; }
+  .gm-doc-prose h2 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 1rem 0 0.3rem; }
+  .gm-doc-prose h3 { font-size: 0.9rem; margin: 0.8rem 0 0.2rem; }
+  .gm-doc-prose p { margin: 0 0 0.6rem; }
+  .gm-doc-prose ul { padding-left: 1.2rem; }
+  .gm-doc-k { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 0.9rem 0 0.35rem; }
+  .gm-doc-box > .gm-doc-k:first-child, .gm-doc-col > .gm-doc-k:first-child { margin-top: 0; }
+  .gm-doc-verdicts { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.2rem 0 0.7rem; }
+  .gm-doc-verdicts.wrap .badge { white-space: normal; text-align: left; }
+  .gm-doc-verdicts .badge b { color: inherit; }
+  .gm-doc-vs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 0.4rem; }
+  .gm-doc-col { padding: 0.75rem 0.9rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); font-size: 0.9rem; line-height: 1.5; }
+  .gm-doc-col.plan { border-left: 3px solid var(--hfa-accent); }
+  .gm-doc-col.game { border-left: 3px solid var(--hfa-good); }
+  .gm-doc-col.game .gm-doc-k { color: var(--hfa-good); }
+  .gm-doc-col p, .gm-doc-box p { margin: 0 0 0.45rem; font-size: 0.88rem; line-height: 1.5; }
+  .gm-doc-col p:last-child, .gm-doc-box p:last-child { margin-bottom: 0; }
+  .gm-doc p.sub, .gm-doc .went { font-size: 0.8rem; color: var(--hfa-muted); line-height: 1.45; }
+  .gm-doc .went { margin-top: 0.2rem; }
+  .gm-doc-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .gm-doc-three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; }
+  .gm-doc-box { min-width: 0; padding: 0.7rem 0.85rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); }
+  .gm-doc-boxhead { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.4rem; font-size: 0.92rem; }
+  .gm-doc-boxhead b { color: var(--hfa-body); font-weight: 800; }
+  .gm-doc-ul { margin: 0; padding-left: 1.1rem; font-size: 0.86rem; line-height: 1.5; }
+  .gm-doc-ul li { margin-bottom: 0.3rem; }
+  .gm-doc-list { display: flex; flex-direction: column; gap: 0.45rem; }
+  .gm-doc-item { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.45; padding: 0.5rem 0.7rem; border-radius: 10px; background: var(--hfa-tint); border: var(--hfa-hairline); }
+  .gm-doc-item > div { min-width: 0; }
+  .gm-doc-item b { color: var(--hfa-body); }
+  .gm-doc-flag { flex: none; min-width: 5.2rem; text-align: center; border-radius: 6px; padding: 0.2rem 0.45rem; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); margin-top: 0.15rem; }
+  .gm-doc-flag.decisive, .gm-doc-flag.signal, .gm-doc-flag.yes, .gm-doc-flag.held { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-flag.contributed, .gm-doc-flag.mixed, .gm-doc-flag.partly { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .gm-doc-flag.minor, .gm-doc-flag.noise, .gm-doc-flag.no, .gm-doc-flag.broke { background: rgba(255, 31, 47, 0.16); color: var(--hfa-accent); }
+  .gm-doc-flag.defense { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .gm-doc-flag.offense { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-calls { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  .gm-call { min-width: 0; padding: 0.65rem 0.85rem 0.6rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); border-left: 3px solid var(--hfa-muted); }
+  .gm-call.over { border-left-color: var(--hfa-good); } .gm-call.under { border-left-color: var(--hfa-accent); }
+  .gm-call.hit { background: rgba(47, 212, 164, 0.06); } .gm-call.miss { background: rgba(255, 176, 32, 0.06); }
+  .gm-call-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.5rem; font-size: 0.92rem; }
+  .gm-call-side { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .gm-call.over .gm-call-side { color: var(--hfa-good); } .gm-call.under .gm-call-side { color: var(--hfa-accent); }
+  .gm-call .who { color: var(--hfa-body); font-weight: 800; }
+  .gm-call .bet { font-weight: 700; color: var(--hfa-accent); }
+  .gm-call .res { font-weight: 800; font-size: 0.8rem; margin-left: auto; }
+  .gm-call .res.hit { color: var(--hfa-good); } .gm-call .res.miss { color: var(--hfa-bad); } .gm-call .res.void { color: var(--hfa-muted); font-weight: 500; }
+  .gm-call-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem; margin: 0.35rem 0 0.2rem; }
+  .gm-call .prob { font-size: 0.7rem; font-weight: 700; color: var(--hfa-muted); border: 1px solid rgba(128, 128, 128, 0.3); border-radius: 999px; padding: 0.1rem 0.5rem; }
+  .gm-call .rungs { margin: 0.35rem 0 0.4rem; }
+  .gm-call .rung small { font-weight: 500; color: var(--hfa-muted); }
+  .gm-call p.why { font-size: 0.84rem; line-height: 1.45; margin: 0.3rem 0 0.2rem; color: var(--hfa-body); }
+  .gm-call p.ev { font-size: 0.74rem; line-height: 1.4; margin: 0 0 0.15rem; color: var(--hfa-muted); }
+  .gm-doc .legs { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.4rem; }
+  .gm-doc .leg { border-radius: 8px; padding: 0.2rem 0.5rem; font-size: 0.76rem; font-weight: 700; background: rgba(128, 128, 128, 0.14); }
+  .gm-doc .leg em { font-style: normal; font-weight: 500; color: var(--hfa-muted); }
+  .gm-doc .leg i { font-style: normal; font-weight: 800; }
+  .gm-doc .leg.hit { background: rgba(47, 212, 164, 0.16); } .gm-doc .leg.hit i { color: var(--hfa-good); }
+  .gm-doc .leg.miss { background: rgba(255, 176, 32, 0.16); } .gm-doc .leg.miss i { color: var(--hfa-bad); }
+  .gm-doc-gradehead { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+  .gm-grade { flex: none; display: flex; align-items: center; gap: 0.6rem; padding: 0.4rem 0.9rem 0.4rem 0.6rem; border-radius: 14px; border: 2px solid var(--hfa-muted); background: var(--hfa-tint); }
+  .gm-grade b { font-size: 2.6rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .gm-grade span { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); line-height: 1.3; }
+  .gm-grade.good { border-color: var(--hfa-good); } .gm-grade.good b { color: var(--hfa-good); }
+  .gm-grade.warn { border-color: var(--hfa-bad); } .gm-grade.warn b { color: var(--hfa-bad); }
+  .gm-grade.bad { border-color: var(--hfa-accent); } .gm-grade.bad b { color: var(--hfa-accent); }
+  .gm-doc-gradetext { flex: 1 1 20rem; min-width: 0; }
+  .gm-doc-gradetext .gm-doc-verdicts { margin-bottom: 0; }
+  .hfa .gm-doc-table { font-size: 0.8rem; }
+  .hfa .gm-doc-table th, .hfa .gm-doc-table td { padding: 0.25rem 0.4rem; }
+  .hfa .gm-doc-table b { color: var(--hfa-body); }
+  .hfa .gm-doc-table td.meter { width: 5rem; }
+  .hfa .gm-doc-table td.meter i { display: block; height: 4px; border-radius: 2px; background: var(--hfa-good); }
+  .hfa .gm-doc-table td.meter i.bad { background: var(--hfa-bad); }
+  .gm-doc-tl { position: relative; padding-left: 1rem; border-left: 2px solid rgba(128, 128, 128, 0.25); display: flex; flex-direction: column; gap: 0.7rem; }
+  .gm-doc-tp { position: relative; font-size: 0.88rem; line-height: 1.45; }
+  .gm-doc-tp::before { content: ""; position: absolute; left: -1.4rem; top: 0.45rem; width: 10px; height: 10px; border-radius: 50%; background: var(--hfa-accent); box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.25); }
+  .gm-doc-tp .clock { font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-accent); }
+  @media (max-width: 1100px) { .gm-doc-three { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 760px) {
+    .gm-doc > summary { padding: 0.85rem 16px; gap: 0.6rem; flex-wrap: wrap; }
+    .gm-doc-main { flex: 1 1 0; }
+    .gm-doc-lead { font-size: 0.98rem; }
+    .gm-doc-chips { justify-content: flex-start; flex: 0 0 100%; padding-left: 2.6rem; }
+    .gm-doc-body { padding: 0.6rem 16px 1rem; }
+    .gm-doc-hook { font-size: 1.2rem; }
+    .gm-doc-vs, .gm-doc-two, .gm-doc-three, .gm-doc-calls { grid-template-columns: 1fr; }
+    .gm-doc-arrow { display: none; }
+    .gm-doc-flag { min-width: 4.4rem; font-size: 0.56rem; }
+  }
   @media (prefers-reduced-motion: reduce) { #hfa-rain { opacity: calc(var(--hfa-rain) * 0.5); } }
 </style>
 
@@ -821,7 +941,7 @@
     <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
   </div>
   <main>
-<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#away" data-sec="away">LAC offense</a><a href="#home" data-sec="home">KC offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
+<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#doc-sec" data-sec="doc">Plan vs game</a><a href="#away" data-sec="away">LAC offense</a><a href="#home" data-sec="home">KC offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
 
 <div class="hfa-card hfa-hero hfa-sec gm-hero" id="hero" data-sec="hero" style="--gm-away: #007BC7; --gm-home: #E31837;">
   <div class="gm-hero-top">
@@ -848,6 +968,458 @@
     <span class="gm-chip final"><i>final</i> <b>LAC 6 &ndash; 22 KC</b></span>
     <span class="gm-chip " title="Natural grass. Passing is the same on grass and turf; rushing runs about 3.5% higher on turf (+3.7 yards a team) and a catch gains a tenth of a yard more after it. Points, the closing lines and the engine show no surface effect, so it is not an engine input."><i>field</i> <b>grass</b></span><span class="gm-chip " title="Forecast for the kickoff window, as of Sun 12:48 PM Denver. Wind above 10 mph trims the passing projection."><i>forecast</i> <b>65°F · wind 11 mph</b></span>
   </div>
+</div>
+
+<div class="hfa-sec" id="doc-sec" data-sec="doc">
+
+<details class="hfa-card gm-doc st-both" id="doc">
+  <summary class="gm-doc-bar">
+    <span class="gm-doc-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="gm-doc-main">
+      <span class="gm-doc-eyebrow">The plan against the game &middot; plan Sun Oct 18, 9:32 AM &middot; report Tue Oct 20, 10:56 AM</span>
+      <span class="gm-doc-lead">Walker pounds a patchwork Charger front. Herbert&#x27;s thinned receiver room can&#x27;t answer.</span>
+    </span>
+    <span class="gm-doc-chips">
+      <span class="badge warn">script partly held</span>
+      <span class="badge good">8 hit</span><span class="badge bad">2 missed</span>
+      <span class="badge good" title="Projection grade: team volume and yardage, player lines, and the market calls the projection implied">projection B &middot; 73</span>
+      <span class="gm-doc-open">open</span>
+    </span>
+  </summary>
+  <div class="gm-doc-body">
+    <div class="gm-doc-nav">
+      <button type="button" class="gm-doc-arrow" data-dir="-1" aria-label="Previous section">&#8249;</button>
+      <div class="gm-doc-pills" role="tablist"></div>
+      <button type="button" class="gm-doc-arrow" data-dir="1" aria-label="Next section">&#8250;</button>
+    </div>
+
+    
+    
+    <section class="gm-doc-pane" data-title="Plan vs game">
+      <div class="gm-doc-verdicts">
+        <span class="badge warn" title="Whether the game went the way the plan's script described, for the reasons it gave">script partly held</span>
+        <span class="badge mute">followed the favorite&#x27;s path</span>
+        <span class="badge bad" title="Both teams ran 120 plays; the league's figure for two teams was 121.5">pace: called slow, played average</span>
+        <span class="badge bad" title="KC passed on 53% of its plays; its season rate entering the game was 53%">KC: called run, played balanced</span><span class="badge bad" title="LAC passed on 65% of its plays; its season rate entering the game was 52%">LAC: called balanced, played pass</span>
+      </div>
+      <div class="gm-doc-vs">
+        <div class="gm-doc-col plan"><div class="gm-doc-k">The plan said</div><p>Kansas City takes an early lead and hands it to Kenneth Walker against a Charger interior missing bodies; the lever is whether Los Angeles will finally throw when it trails — five weeks say no.</p><p class="sub">Kansas City scores first or second and never gives the lead back, then leans on Kenneth Walker to bleed clock against a Charger interior that has been run through in consecutive weeks. Los Angeles moves the ball in bursts behind a patched line, stalls or gives it away, and settles for kicks against a defense that is 4th in red-zone touchdown rate allowed. The Chargers trail by two scores and still do not become pass-heavy — three straight weeks of running well below the expected rate when behind. Expect low play counts on both sides, a KC total built on a rushing touchdown or two plus field goals, and a Charger total that lands under its implied number if one drive ends in a takeaway.</p></div>
+        <div class="gm-doc-col game"><div class="gm-doc-k">What happened</div><p>Kansas City 22, Los Angeles 6: the Chiefs covered -7.5 and the game stayed 13.5 under the 41.5 total because the Chargers moved the ball to the 20 three times and scored zero touchdowns, while Kenneth Walker (19-128-2) turned a 150-yard ground game into the only touchdowns anyone scored.</p><p class="sub">The plan read the game&#x27;s shape almost perfectly: KC in front from the first possession, Walker over 20 touches&#x27; worth of work with the touchdowns, Mahomes around 30 attempts at a tiny aDOT with Worthy as the one air-yards share, LAC moving the ball and kicking field goals against a defense that holds at its own 20, and the Charger drive that dies on a pick. Eight of ten calls hit, both of the thesis parlays that depended on the KC grind came in. Where it was wrong was its headline lever — it bet the Chargers would not chase, and they threw on 65.1% of snaps against a 52.0% season rate; that miss was harmless because the chase was all short throws (5.4 aDOT, -9.9 CPOE), which is why Herbert cleared 199.5 by four and a half yards. The other miss, Mitchell&#x27;s receptions, was a role error rather than a script error: the outlet work went to Vidal and the just-activated Lambert-Smith.</p><p class="sub"><b>The script:</b> The favorite path read &#x27;KC leads by 10 by the third quarter, Walker crosses 20 carries with a score, Mahomes throws around 30 times at a modest aDOT with Worthy as the only real air-yards share, and the Chargers&#x27; comeback dies on a sack or a pick&#x27; — KC led 19-3 at half, Walker had 19 carries and both touchdowns, Mahomes threw 30 at 3.6 aDOT with Worthy at a 25.2% air-yards share, and LAC&#x27;s best drive died on Cochrane&#x27;s interception at Q2 10:59. The mechanism that broke is the Charger lean: checks show LAC at a 65.1% pass rate against its own 52.0%, so &#x27;still do not become pass-heavy&#x27; was wrong even as &#x27;their total lands under its implied number&#x27; was right (6 points on 68 plays). Pace was called slow and came in average (120 plays vs a 121.5 league pair), and KC&#x27;s called run lean graded balanced at 52.6% — a shade under its 53.0% season rate but inside the four-point band.</p></div>
+      </div>
+      
+      <div class="gm-doc-k">What the plan said would swing it</div>
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag decisive">decisive</span><div>Charger giveaways — five games, five with at least one turnover, most of them in scoring range.<div class="went"><b>Went:</b> Two offensive giveaways plus a punt-return fumble: the Herbert INT returned 48 yards to the LAC 17 (-7.86 EPA, -0.154 WPA), the Remigio muff recovered at the LAC 41 (+4.79 for KC), the Lambert-Smith fumble at the KC 36 (-4.80). All three were in or near scoring range, exactly as described.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Tomlinson and Caldwell (both limited, knee/hamstring) inside: if either sits, Walker&#x27;s lanes widen further.<div class="went"><b>Went:</b> The dossier never says whether Tomlinson or Caldwell sat, but the lanes did widen: KC ran for 150 on 27 carries with 6 explosive runs and 8.4 ypc on 9 middle carries, including Walker&#x27;s 33-yard TD on 3rd-and-1.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>McConkey and Johnston are cleared but with no committed snap count — the Charger target tree could be two healthy bodies or two decoys.<div class="went"><b>Went:</b> The target tree was two decoys and a surprise: McConkey played 11.8% of snaps for 1 target, Johnston drew 3 targets on 82.4% of snaps, and Lambert-Smith — the stated unknown — led the team with 9 targets on 86.8%. It tanked U1 and the McConkey leg was only right for the health reason, not the volume one.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Kansas City&#x27;s flags: 30th in penalties, 31st pre-snap, against an offense that draws DPI at twice the league rate.<div class="went"><b>Went:</b> KC drew 8 flags for 89 yards and two of them mattered: the Q2 13:40 roughing the passer erased a Roland-Wallace interception, and the Q4 1:28 roughing extended LAC&#x27;s last drive. LAC drew 54 penalty yards including 15 of DPI — free yards, but in a game already decided.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag decisive">decisive</span><div>Red-zone split: KC holds at its 20 (4th), so Charger drives convert to field goals, not touchdowns.<div class="went"><b>Went:</b> Exactly as written: LAC had 3 trips inside the 20, 0 touchdowns, 2 field goals, -0.965 EPA/play and 0% success on 11 red-zone snaps — including first-and-goal from the 1 after Johnston&#x27;s 57-yarder that ended as a 30-yard kick.</div></div></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">Each offense: expected &middot; happened</div>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>KC</b><span class="badge good">held</span></div><p><b>Expected:</b> Pass rate at or below their 53% season mark, around 30 attempts, Walker near 20 carries plus goal-line work, Worthy as the concentrated air-yards share, Kelce and Gray underneath on modest volume, and a team total that arrives partly on the ground and partly through Butker.</p><p><b>Happened:</b> 52.6% pass rate against a 53.0% season mark, 30 attempts, Walker 19 carries plus two scores including the goal-line one, Worthy the concentrated air-yards share (25.2%), Kelce and Gray on 5 and 3 targets, and the team total split between two rushing TDs and three Butker makes. The only overshoot was efficiency — 272 yards on a 3.6 aDOT with +9.4 CPOE.</p></div><div class="gm-doc-box"><div class="gm-doc-boxhead"><b>LAC</b><span class="badge warn">partly</span></div><p><b>Expected:</b> Around 31 attempts at best, a 55% pass rate that falls short of what a two-score deficit should produce, Hampton leading a three-way committee with Mitchell taking the receiving back work, and the tight ends plus checkdowns absorbing targets if the wideouts are on pitch counts.</p><p><b>Happened:</b> The &#x27;yards that become field goals&#x27; half held exactly (3 RZ trips, 0 TDs, 2 FGs, no sacks expected but 4 taken). The volume half broke: 37 attempts not ~31, a 65.1% pass rate not 55%, Hampton at 7 carries on 50% of snaps rather than leading a committee, and Mitchell taking zero receiving-back work. The tight ends and checkdowns did absorb targets (Kolar 6, Gadsden 5).</p></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">For the next plan on these teams</div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="badge mute">LAC</span><div>Retire the &#x27;they won&#x27;t chase&#x27; lever as an absolute. Down 16 they threw on 65.1% of snaps. But the right version survives: early-down pass rate was still 56.2% against a 64.8% expectation, so the chase shows up in late downs. Model the attempts up and the aDOT down — Herbert&#x27;s yardage caps come from 5.4 air yards, not from a run-first staff.</div></div><div class="gm-doc-item"><span class="badge mute">LAC</span><div>Do not assume the projected receiving back has the role. Mitchell at 25% of snaps with Vidal splitting the backfield evenly (7 carries each) and Lambert-Smith leading the team in targets means any Charger skill call needs a snap-share check, not a usage-share blend.</div></div><div class="gm-doc-item"><span class="badge mute">KC</span><div>The ground-plus-Butker scoring profile is the real, repeatable read — 2 rushing TDs, 0 passing TDs, three made field goals, a 52.6% pass rate with a lead. Keep leaning on Walker volume and Mahomes passing-TD unders when KC is laying points at home.</div></div><div class="gm-doc-item"><span class="badge mute">KC</span><div>The 1-for-4 red-zone day, the stuffed 4th-and-1 at the 1 and the missed 52-yarder were the bounce, not a trait: KC entered at 62.5% RZ TD rate with 0.197 field EPA and moved the ball fine (0.319 field EPA here). The next plan should not shade KC&#x27;s team total down for this.</div></div></div>
+      
+    </section>
+    
+
+    
+    
+    <section class="gm-doc-pane" data-title="The script">
+      <div class="gm-doc-verdicts">
+        <span class="badge mute" title="Plays and tempo">slow pace</span>
+        <span class="badge acc" title="Below their own 53% pass rate: a favorite with a healthy lead, two of their top three receivers unavailable, and a back averaging 5.5 a carry against a front that has conceded 176 and 138 on the ground.">KC run</span><span class="badge acc" title="Relative to league trailing behavior this is run-leaning: 38% early-down pass rate while behind in week 2, 48% against a 68% expectation in week 4. The staff does not chase with the ball in the air.">LAC balanced</span>
+        <span class="badge mute">medium confidence</span>
+      </div>
+      <p class="gm-doc-p">Kansas City scores first or second and never gives the lead back, then leans on Kenneth Walker to bleed clock against a Charger interior that has been run through in consecutive weeks. Los Angeles moves the ball in bursts behind a patched line, stalls or gives it away, and settles for kicks against a defense that is 4th in red-zone touchdown rate allowed. The Chargers trail by two scores and still do not become pass-heavy — three straight weeks of running well below the expected rate when behind. Expect low play counts on both sides, a KC total built on a rushing touchdown or two plus field goals, and a Charger total that lands under its implied number if one drive ends in a takeaway.</p>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-k">If the favorite wins</div><p>KC leads by 10 by the third quarter, Walker crosses 20 carries with a score, Mahomes throws around 30 times at a modest aDOT with Worthy as the only real air-yards share, and the Chargers&#x27; comeback dies on a sack or a pick. Something like 27-16.</p></div>
+        <div class="gm-doc-box"><div class="gm-doc-k">If the underdog wins</div><p>LAC uses the one thing KC gives away — flags and a pass rush that does not exist — to stay on schedule, Herbert finds McConkey and the tight ends underneath, and the Chargers win the turnover column for the first time all year. That is a 20-17 game decided inside the last five minutes.</p></div>
+      </div>
+      
+      <div class="gm-doc-prose"><h2>The read</h2>
+<p>Kansas City by a touchdown-plus in a low-total, clock-chewing afternoon. The Chiefs have led almost wire-to-wire all season and their best play has been the run: 5.5 yards a carry with 4, 3, 3 and 5 explosive runs in four games, and +0.197 EPA per play between the 20s. Los Angeles is 0-5 with the opposite profile — -0.302 field EPA, a 10.9% sack rate allowed behind a line missing Slater, Alt, Penning, Pipkins, Biadasz and Awosika, and giveaways in all five games. The Chargers will move the ball in stretches and then hand a possession back; Kansas City needs five or six drives.</p>
+<h2>Why</h2>
+<p>The Chiefs' run game meets a Charger front whose low yards-per-carry number was earned against Arizona and Las Vegas and has since been gashed — 176 to Buffalo at 5.4, 138 to Seattle with 8.5 a pop on left-side carries — with Tomlinson and Caldwell both limited and Teair Tart rated in the bottom fifth of interior linemen. Derwin James (96% of snaps), Donte Jackson out and Rodney Shelley doubtful means the pass defense that ranks 8th in EPA allowed is not the unit that earned the rank. With Rashee Rice out and Tyquan Thornton on IR, Kansas City's throws concentrate: Worthy on the perimeter, Kelce and Gray inside, few of them.</p>
+<p>For Los Angeles, the Chiefs' front does not get home (21st in pressure generated, zero sacks in three of four games), so Herbert should see a cleaner pocket than usual — but Kansas City holds at its own 20 (4th in red-zone touchdown rate allowed), which turns Charger yards into field goals. Kansas City is also 30th in flags and 31st in pre-snap flags, and Los Angeles draws DPI at better than twice the league rate: free first downs are the one thing that lengthens Charger drives.</p>
+<h2>What would change it</h2>
+<p>Snap counts on McConkey and Johnston, both just off the injury report with Harbaugh declining to commit (Rotowire, Friday). An early Charger takeaway flipping field position. Sneed's knee and Henley's knee designations. Every price here is Kalshi's, and its player markets are thin.</p></div>
+    </section>
+    <section class="gm-doc-pane" data-title="Offenses">
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>KC offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>Explosive, low-volume scoring: +0.197 EPA per play between the 20s, 8.1 yards per attempt, 5.5 yards per carry with 3+ explosive runs in all four games, on 62.75 plays a game. Points come in chunks, not on 14-play drives.</p>
+          <div class="gm-doc-k">How it scores</div><p>Walker breaking the edge (76- and 22-yard touchdowns in week 4, a 60-yarder in week 1), deep shots off play-action, and a 62.5% red-zone touchdown rate that has sat at three-of-five most weeks.</p>
+          <div class="gm-doc-k">What stops it</div><p>Interior run stuffs (Miami held them to 2.8 a carry up the middle and stuffed a 4th-and-1), short-yardage failure, and their own flags — 7, 8, 8, 8 in four games. Their counting stats also collapse when the opponent owns the clock, as Miami and Las Vegas did with 73 and 80 plays.</p>
+          <div class="gm-doc-k">This matchup</div><p>Los Angeles generates real pressure (4th, 19.3%) with Mack and Tuipulotu and ranks 8th in pass EPA allowed, which argues against a big Mahomes day. But that secondary is without Derwin James and Donte Jackson with Shelley doubtful, and the run defense&#x27;s good yards-per-carry number was built on Arizona and Las Vegas before Buffalo and Seattle ran for 176 and 138. The ground game is the clean edge.</p>
+          <div class="gm-doc-k">Injuries</div><p>Rice is out (did not practice all week, ruled out Friday by Rotowire/FantasyPros) and Thornton is on IR for 3-4 months, leaving Worthy, Royals and Cyrus Allen at receiver; Simmons was ruled out Friday after three limited practices, so the line is the same one that has played all year. Opposite: James out, Jackson out, Shelley doubtful, Henley and Caldwell and Tomlinson questionable.</p>
+          <div class="gm-doc-k">Expect</div><p>Pass rate at or below their 53% season mark, around 30 attempts, Walker near 20 carries plus goal-line work, Worthy as the concentrated air-yards share, Kelce and Gray underneath on modest volume, and a team total that arrives partly on the ground and partly through Butker.</p>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>LAC offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>Yards in stretches, points rarely: -0.302 EPA per play between the 20s, 6.5 yards per attempt, 59% completions, a 10.9% sack rate and 21.9% pressure allowed, 4.4 flags a game with 2.4 of them pre-snap against a 1.55 league rate.</p>
+          <div class="gm-doc-k">How it scores</div><p>Short fields and a red zone that actually finishes — 66.7% touchdowns per trip, with Hampton and Vidal getting the goal-line work — plus drive-extending DPI (16.6 yards drawn a game, more than double league).</p>
+          <div class="gm-doc-k">What stops it</div><p>Themselves: 12 giveaways in five games, false starts inside the opponent 10 (two at the Buffalo 1 and 6 in week 3), and a line missing six contributors that has allowed 3+ sacks in four of five. The staff also will not pass when behind, so deficits do not close.</p>
+          <div class="gm-doc-k">This matchup</div><p>Kansas City&#x27;s front is the softest Herbert has faced — 21st in pressure generated, zero sacks in three of four games — which should let the short game function. What Kansas City does take away is the finish: 4th in red-zone touchdown rate allowed and 1st in fantasy points allowed to receivers. Expect yards that become field goals.</p>
+          <div class="gm-doc-k">Injuries</div><p>Harris is out (hamstring), McConkey and Johnston are cleared but Harbaugh declined to commit to playing time (Rotowire, Friday), Lambert-Smith came off IR Saturday as questionable, and Ingold and Njoku are on IR. The line is without Slater, Alt, Penning, Pipkins, Biadasz and Awosika — not an input the model carries, but it is the reason the sack and pressure rates sit where they do, and it caps any efficiency read on this offense.</p>
+          <div class="gm-doc-k">Expect</div><p>Around 31 attempts at best, a 55% pass rate that falls short of what a two-score deficit should produce, Hampton leading a three-way committee with Mitchell taking the receiving back work, and the tight ends plus checkdowns absorbing targets if the wideouts are on pitch counts.</p>
+        </div>
+        
+      </div>
+    </section>
+    <section class="gm-doc-pane" data-title="The calls">
+      <p class="gm-doc-note">Each call is one player, one market, one side of the line Kalshi quoted when the plan was written; graded off the box score, with the report's read of whether the reason given showed up. The rungs are the same call down the Kalshi ladder, Edge halfway to its last rung and Edge+ the last, at Kalshi's last pregame price.</p>
+      <div class="gm-doc-verdicts"><span class="badge mute">Normal <b class="up">8</b>&ndash;<b class="down">2</b></span><span class="badge mute">Edge <b class="up">9</b>&ndash;<b class="down">1</b></span><span class="badge mute">Edge+ <b class="up">9</b>&ndash;<b class="down">1</b></span></div>
+      <div class="gm-doc-calls">
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Keaton Mitchell</b><span class="flat">LAC</span>
+            <span class="bet">over 2.5 receptions</span>
+            <span class="res miss">&#10007; 0</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #15 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 60%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 44%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> over 2.5 receptions <small>44&cent;</small></span><span class="rung miss"><i>Edge / Edge+</i> 2+ receptions <small>68&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Miss, and the mechanism never appeared: Mitchell played 25% of snaps for 1 target and 0 catches. LAC did trail and did check down (team aDOT 5.4), but the outlet role went to Vidal (4 targets, 3 catches, 22 YAC) and Hampton (4 catches).</p>
+          <p class="why">He is the receiving back on a team that will trail and whose staff checks down rather than pushes it downfield, with Ingold on IR and the receiver room thinned by Harris&#x27;s absence.</p>
+          <p class="ev">Targets of 3, 6 and 4 in weeks 3-5 with 3, 5 and 3 catches; a team-high six RB targets in week 4 at a 37% snap share. Ingold (4 targets in wk3) is on IR.</p>
+          <p class="ev">vs #15 pass EPA allowed — mid, and KC ranks 21st in pressure generated, so Herbert has time to work the outlet. Engine 3.17 against his line while Kalshi sits at 43.5%; the gap is Ingold&#x27;s vacated short-area work.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Kenneth Walker III</b><span class="flat">KC</span>
+            <span class="bet">to score</span>
+            <span class="res hit">&#10003; 2</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on EPA allowed entering the week (#1 toughest)">D #7 EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 58%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 60%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal / Edge / Edge+</i> to score <small>61&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Hit twice over. Walker scored from 33 yards on 3rd-and-1 in Q1 and from 2 yards in Q2; KC&#x27;s only red-zone touchdown of the day was a handoff, as the plan said it would be.</p>
+          <p class="why">Kansas City&#x27;s trips inside the 20 end in handoffs with two of its top three receivers unavailable, and Walker is the goal-line back. He has scored in three of four games.</p>
+          <p class="ev">Walker: rushing TD wk1, rushing + receiving TD wk3, two rushing TDs wk4. KC finishes 62.5% of red-zone trips; LAC allows 56.2% (12th) and sits 8th in red-zone EPA — tough but not a wall.</p>
+          <p class="ev">vs #7 EPA allowed overall; this rests on the finishing half of the split, not the field half. Kalshi has him just over 60%, the engine near 0.87 expected scores. Anytime-TD calls are 8-of-12 on the season.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Xavier Worthy</b><span class="flat">KC</span>
+            <span class="bet">over 49.5 rec yds</span>
+            <span class="res hit">&#10003; 73</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #8 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 57%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 48%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> over 49.5 rec yds <small>49&cent;</small></span><span class="rung hit"><i>Edge</i> 40+ rec yds <small>61&cent;</small></span><span class="rung hit"><i>Edge+</i> 25+ rec yds <small>79&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Hit at 73 yards on 7-for-7 targets with the highest perimeter air-yards share (25.2%) on the roster. Worth noting the yards were 30 air plus 43 YAC — the concentration mechanism held, the downfield part did not.</p>
+          <p class="why">Rice is out and Thornton is on IR, leaving Worthy as the only perimeter target with an air-yards share. The Charger secondary that earned its ranking is missing its safety and both outside corners from earlier weeks.</p>
+          <p class="ev">Week 4 with Rice inactive: 7 targets, 115 air yards, 36.1% air-yards share, 4-70 including a 41-yard conversion. James (96% snap share) out, Jackson out, Shelley doubtful; Deane Leonard starts on a thin sample.</p>
+          <p class="ev">vs #8 pass EPA allowed — the rank does not bind because three of the defensive backs who built it are unavailable. Engine 61.3 sits above his line while Kalshi is at 48%; the market is paying for the rank, not the roster.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Justin Herbert</b><span class="flat">LAC</span>
+            <span class="bet">over 0.5 INTs</span>
+            <span class="res hit">&#10003; 1</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">low</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #15 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 51%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 56%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal / Edge / Edge+</i> over 0.5 INTs <small>56&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Hit: one interception, thrown from the KC 42 on 2nd-and-3 with Gillotte in his face, in exactly the chasing script and behind exactly the patched line the call described.</p>
+          <p class="why">A chasing script against a defense that has forced a giveaway in three of four games, with a quarterback who has thrown a pick in every game this season behind a line down six contributors.</p>
+          <p class="ev">7 INTs in 5 games, a 4.9% interception rate against a 2.2% league mark; two picks each against LV and SEA. KC&#x27;s defense forced 2, 1, 2, 1 takeaways. The blend shrinks LAC&#x27;s own rate all the way to league.</p>
+          <p class="ev">vs #15 pass EPA allowed. This is the script half of the call — trailing late with the Chargers needing the ball in the air; Kalshi is at ~55.5% over, modestly ahead of the engine&#x27;s 0.7 expected picks, and the volume caveat is that this staff does not always throw when behind.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Kenneth Walker III</b><span class="flat">KC</span>
+            <span class="bet">over 89.5 rush yds</span>
+            <span class="res hit">&#10003; 128</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #17 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 44%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 52%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> over 89.5 rush yds <small>53&cent;</small></span><span class="rung hit"><i>Edge</i> 70+ rush yds <small>72&cent;</small></span><span class="rung hit"><i>Edge+</i> 50+ rush yds <small>88&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Hit by 38.5 yards on 19 carries with 6 explosive runs, 8.4 ypc up the middle, against a lead KC held for 3,385 of 3,600 seconds — the volume-plus-matchup mechanism delivered in full.</p>
+          <p class="why">A favorite that has led nearly every snap all season hands it to Walker against a front whose interior is limited and rated near the bottom. He has had 18+ carries in all four games.</p>
+          <p class="ev">Walker 23/173, 24/117, 18/70, 22/177; KC 5.5 YPC with 3+ explosive runs every week. LAC allowed 176 rush yards to BUF (5.4) in wk3 and 138 to SEA (8.5 on left-side carries) in wk4; Tart rates 12th pct, Tomlinson (hamstring) and Caldwell (knee) limited.</p>
+          <p class="ev">vs #17 rush EPA allowed (#5 YPC, earned largely on the ARI/LV weeks). Engine 91.8 against his line, Kalshi ~52% over — neither prices the interior absences. Rushing-yard calls are the record&#x27;s best market (56%).</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Ladd McConkey</b><span class="flat">LAC</span>
+            <span class="bet">under 3.5 receptions</span>
+            <span class="res hit">&#10003; 1</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #15 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 79%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 52%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal / Edge / Edge+</i> under 3.5 receptions <small>53&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Hit at 1 reception, and for the stated reason: McConkey played 11.8% of the snaps. The uncommitted snap count was the whole call and it resolved to the under side.</p>
+          <p class="why">He is off the injury report but his coach would not commit to a snap count, and he has come off back-to-back near-zero games on a third of the snaps in a low-attempt offense.</p>
+          <p class="ev">Snap shares of 49%, 46%, 88%, 34%; 2 targets and no catches in week 4, then missed time with the foot. Harbaugh on Friday: &quot;I don&#x27;t know... we&#x27;ll see how it goes&quot; (Rotowire).</p>
+          <p class="ev">vs #15 pass EPA allowed and the #1 defense in fantasy points allowed to receivers. The engine already has him at 2.2 catches while Kalshi prices the over near 47.5% — the market is paying for a full-health return the beat reporting does not promise.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Patrick Mahomes</b><span class="flat">KC</span>
+            <span class="bet">under 1.5 pass TDs</span>
+            <span class="res hit">&#10003; 0</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">low</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #8 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 52%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 49%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 1.5 pass TDs <small>49&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;3 pass TDs <small>79&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;4 pass TDs <small>93&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Hit at zero passing touchdowns. KC&#x27;s four red-zone trips produced one touchdown (Walker&#x27;s 2-yard run), a field goal, a stuffed 4th-and-1 at the 1 and a turnover on downs — the ground-finish logic was exactly right.</p>
+          <p class="why">With a lead and two of the top three receivers unavailable, the red-zone answer is Walker, and the Chargers defend their own 20 better than they defend the field.</p>
+          <p class="ev">KC scored three of four touchdowns in week 4 on a 76-yard run, a 22-yard run and a deep ball; Rice out, Thornton on IR. LAC sits 8th in red-zone EPA allowed and 12th in red-zone TD rate allowed.</p>
+          <p class="ev">vs #8 pass EPA allowed. Engine 1.63 and Kalshi 51% both sit just over the line, so this is a small edge resting on the finishing half of the split; note unders against top-10 defenses are 43% on the season.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Justin Herbert</b><span class="flat">LAC</span>
+            <span class="bet">under 199.5 pass yds</span>
+            <span class="res miss">&#10007; 204</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #15 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 49%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 56%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 199.5 pass yds <small>55&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;275 pass yds <small>89&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;325 pass yds <small>96&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Miss by 4.5 yards, and the mechanism failed: the call was built on attempt suppression and Herbert threw 37 times at a 65.1% pass rate, well above his 52.0% season mark. The under nearly survived only because of a 5.4 aDOT and -9.9 CPOE.</p>
+          <p class="why">Attempt suppression, not matchup: this staff runs when it trails, and the receiver room is Harris-less with two starters on unclear snap counts. He has not cleared 226 yards in any game.</p>
+          <p class="ev">Pass yards of 209, 192, 226, 189, 121; 38.1% pass rate while behind in week 2 and 48.1% early-down against a 68.2% expectation in week 4. Harris out, McConkey and Johnston uncommitted.</p>
+          <p class="ev">vs #15 pass EPA allowed — the pass rush is soft (KC 21st in pressure), which is the risk to this call. Engine 207.9 sits above his line while Kalshi is at 44.5%; the blend uses a 55% pass rate this staff has not produced while trailing.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Travis Kelce</b><span class="flat">KC</span>
+            <span class="bet">under 4.5 receptions</span>
+            <span class="res hit">&#10003; 4</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">low</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #8 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 45%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 52%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 4.5 receptions <small>52&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;8 receptions <small>89&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;11 receptions</span></div>
+          <p class="why"><b>In the game:</b> Hit at 4 receptions on 5 targets with KC at 30 attempts and a 52.6% pass rate — the &#x27;volume tracks team attempts under a run-leaning favorite&#x27; logic played out exactly.</p>
+          <p class="why">His volume tracks team attempts, and a run-leaning favorite in a low-total game does not throw enough. Our week-4 review flagged exactly this: the tight-end edge never got tested because Kansas City ran.</p>
+          <p class="ev">Targets of 5, 11, 2, 4 — the 11 came in the one game KC threw 47 times while trailing. In week 4 he played 83% of snaps for 4 targets and 15 yards.</p>
+          <p class="ev">vs #8 pass EPA allowed and a defense 9th in fantasy points allowed to tight ends — the one position stat that carries. Engine 5.12 catches, Kalshi 47.5% over; both assume more attempts than this script gives.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Kenneth Walker III</b><span class="flat">KC</span>
+            <span class="bet">under 3.5 receptions</span>
+            <span class="res hit">&#10003; 2</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #8 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 44%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 58%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 3.5 receptions <small>58&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;6 receptions <small>87&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;8 receptions <small>98&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Hit at 2 catches on 3 targets. KC led wire-to-wire and never needed the back as an outlet; Emmett Johnson&#x27;s 3 targets in the same role confirm the checkdowns were spread, not concentrated.</p>
+          <p class="why">The checkdown work only appears when Kansas City trails. With a lead and roughly 30 attempts, the back disappears from the pattern — it happened in both of their wire-to-wire wins.</p>
+          <p class="ev">Targets by week: 6, 10 (the one game KC trailed most of the way), 2, 1. In week 4 he caught one ball for two yards on 30 team attempts; week 3 produced 2 targets on 24.</p>
+          <p class="ev">vs #8 pass EPA allowed. Engine 4.05 catches versus his line, Kalshi only 41.5% over — the market is already closer than the model here, and the script is the reason.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Same-script legs">
+      <p class="gm-doc-note">Legs the same script produces together: they move as one, which is what a same-game parlay pays for.</p>
+      <div class="gm-doc-three">
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Chiefs grind it out</b></div>
+          <div class="legs"><span class="leg hit">Kenneth Walker III <em>over 89.5 rush yds</em> <i>&#10003;</i></span><span class="leg hit">Kenneth Walker III <em>under 3.5 receptions</em> <i>&#10003;</i></span><span class="leg hit">Patrick Mahomes <em>under 1.5 pass TDs</em> <i>&#10003;</i></span></div>
+          <p class="sub">All three are the same script: Kansas City in front, Walker carrying 20+ to burn clock, no checkdown volume and the red-zone points arriving on the ground rather than through the air.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Los Angeles chases without throwing</b></div>
+          <div class="legs"><span class="leg miss">Justin Herbert <em>under 199.5 pass yds</em> <i>&#10007;</i></span><span class="leg miss">Keaton Mitchell <em>over 2.5 receptions</em> <i>&#10007;</i></span><span class="leg hit">Ladd McConkey <em>under 3.5 receptions</em> <i>&#10003;</i></span></div>
+          <p class="sub">A Charger deficit that produces carries and checkdowns rather than downfield volume: Herbert&#x27;s yardage capped, the outlet back collecting catches, and the nominal WR1 on a snap count taking the squeeze.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Thinned target tree</b></div>
+          <div class="legs"><span class="leg hit">Xavier Worthy <em>over 49.5 rec yds</em> <i>&#10003;</i></span><span class="leg hit">Travis Kelce <em>under 4.5 receptions</em> <i>&#10003;</i></span></div>
+          <p class="sub">With Rice and Thornton gone, a small number of attempts concentrates in the one perimeter air-yards share instead of spreading underneath — the same distribution that produced 111 and 70 yards to the outside in week 4 while Kelce took four targets.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    
+    
+
+    
+    <section class="gm-doc-pane" data-title="Projection grade">
+      <div class="gm-doc-gradehead">
+        <div class="gm-grade good"><b>B</b><span>projection<br>grade &middot; 73</span></div>
+        <div class="gm-doc-gradetext">
+          
+          <div class="gm-doc-verdicts"><span class="badge mute">LAC 6 – KC 22</span><span class="badge mute">KC covered (KC by 7.5)</span><span class="badge mute">Under 41.5 (28)</span><span class="badge mute">teams 73</span><span class="badge mute">player lines 29/42 in range</span><span class="badge mute">market calls 2/3</span></div>
+        </div>
+      </div>
+      
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>KC</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">24.5</td><td class="num"><b>22</b></td><td class="num flat">-2.5</td><td class="meter"><i style="width: 88%" class=""></i></td></tr><tr><td>Pass yds</td><td class="num flat">224.0</td><td class="num"><b>272.0</b></td><td class="num flat">+48</td><td class="meter"><i style="width: 68%" class=""></i></td></tr><tr><td>Rush yds</td><td class="num flat">127.2</td><td class="num"><b>150.0</b></td><td class="num flat">+22.8</td><td class="meter"><i style="width: 75%" class=""></i></td></tr><tr><td>Pass att</td><td class="num flat">30.7</td><td class="num"><b>30</b></td><td class="num flat">-0.7</td><td class="meter"><i style="width: 96%" class=""></i></td></tr><tr><td>Carries</td><td class="num flat">28.8</td><td class="num"><b>27</b></td><td class="num flat">-1.8</td><td class="meter"><i style="width: 87%" class=""></i></td></tr>
+          </tbody></table>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>LAC</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">17.0</td><td class="num"><b>6</b></td><td class="num down">-11</td><td class="meter"><i style="width: 45%" class="bad"></i></td></tr><tr><td>Pass yds</td><td class="num flat">207.9</td><td class="num"><b>204.0</b></td><td class="num flat">-3.9</td><td class="meter"><i style="width: 97%" class=""></i></td></tr><tr><td>Rush yds</td><td class="num flat">107.3</td><td class="num"><b>73.0</b></td><td class="num flat">-34.3</td><td class="meter"><i style="width: 62%" class=""></i></td></tr><tr><td>Pass att</td><td class="num flat">31.3</td><td class="num"><b>37</b></td><td class="num flat">+5.7</td><td class="meter"><i style="width: 64%" class=""></i></td></tr><tr><td>Carries</td><td class="num flat">27.4</td><td class="num"><b>22</b></td><td class="num flat">-5.4</td><td class="meter"><i style="width: 61%" class=""></i></td></tr>
+          </tbody></table>
+        </div>
+        
+      </div>
+      <div class="gm-doc-verdicts"><span class="badge good">Winner: KC &#10003;</span><span class="badge bad">Spread: LAC +7.5 &#10007;</span><span class="badge good">Total: Under 41.5 (proj 41.5) &#10003;</span></div>
+      
+      
+      <div class="gm-doc-k">Why the projection missed &middot; what it got right</div>
+      <p class="gm-doc-p">The grade of 0.73 (B) is almost entirely a Chargers points problem: 17.0 projected against 6 actual (score 0.45, the only flagged big miss), while LAC&#x27;s passing yardage came in at 204 against 207.9 and KC&#x27;s points at 22 against 24.5. The model got the shape right — low plays, a KC total built on the ground, an under — and missed the finishing. LAC&#x27;s 68 plays and 37 attempts actually exceeded the projection&#x27;s volume; the 11-point shortfall came from 0-for-3 in the red zone (RZ EPA -0.965), 5-of-17 on third down, 0-of-3 on fourth down and two giveaways in scoring range. On the KC side the engine underrated the passing efficiency (272 on 30 attempts, +9.4 CPOE, 161 YAC) and the explosive run rate (6 rushes of 10+), but those cancelled against zero passing touchdowns, so the team total landed. Market score 0.667: winner and under hit, LAC +7.5 lost.</p>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>LAC</b> &middot; 17.0 projected points, 6 actual, with passing yardage essentially exact<div class="went">Finishing, not movement: 3 red-zone trips, 0 TDs, 2 FGs, red-zone EPA/play -0.965 and 0% success on 11 snaps inside the 20; plus the Q2 pick-six-adjacent return to the LAC 17 and the Q4 Lambert-Smith fumble. Field EPA was -0.162, bad but not six-point bad.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>LAC</b> &middot; 37 pass attempts and a 65.1% pass rate against a blended 55.4% and a 52.0% season rate<div class="went">Game script — trailing on all 68 snaps — but note early-down pass rate was still 56.2% against a 64.8% expectation, so the chase came in obvious passing situations, not by design. Volume up, aDOT 5.4 and CPOE -9.9 meant the yards did not scale.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>LAC</b> &middot; 107.3 rush yards projected, 73 actual on 22 carries<div class="went">Script compression (they never led a second) plus a front that held: 20 rushes, 20% rush success, zero explosive runs, 1.8 ypc to the right side.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>KC</b> &middot; 224 pass yards projected, 272 actual on 30 attempts, with 0 passing TDs against 1.6 projected<div class="went">Efficiency and YAC, not volume: aDOT 3.6, CPOE +9.4, 161 YAC, with Gray (31-yard catch-and-run) and Worthy (7-for-7, 43 YAC) doing the damage; the touchdowns went to Walker on the ground instead.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>KC</b> &middot; 127.2 rush yards projected, 150 actual<div class="went">Explosive-run variance against a thin LAC interior: 6 rushes of 10+, 8.4 ypc on 9 carries up the middle, including Walker&#x27;s 33-yard TD on 3rd-and-1.</div></div></div></div>
+      <div class="gm-doc-verdicts wrap"><span class="badge good">&#10003; KC total (24.5 vs 22) and the under on 41.5 (28 actual).</span><span class="badge good">&#10003; Herbert passing yards: 207.9 projected, 204 actual — one of the five best calls in the grade.</span><span class="badge good">&#10003; KC volume: 30.7 attempts projected / 30 actual, 28.8 carries / 27 actual, 61.5 plays / 59.</span><span class="badge good">&#10003; Walker&#x27;s workload: 19.6 carries projected, 19 actual, with the touchdown equity landing where projected.</span><span class="badge good">&#10003; Gadsden (16.2 proj / 17 actual rec yds), Emmett Johnson (18.2 / 18), Noah Gray targets (3.1 / 3).</span></div>
+      
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Turning points">
+      <div class="gm-doc-tl">
+        <div class="gm-doc-tp"><div class="clock">Q1 07:29</div><div class="what"><span class="badge mute">KC</span> Walker up the middle for 33 yards, TOUCHDOWN on 3rd-and-1 (EPA +3.53, WPA +0.095)<div class="went">The only true explosive of the first half and the play that set the game&#x27;s shape: KC never trailed, and a short-yardage call became the first of two Walker scores.</div></div></div><div class="gm-doc-tp"><div class="clock">Q2 10:59</div><div class="what"><span class="badge mute">LAC</span> Herbert pass intended for Lambert-Smith INTERCEPTED by Cochrane, returned to the LAC 17 (EPA -7.86, WPA -0.154)<div class="went">The single biggest swing in the game. LAC was at the KC 42 trailing 9-3 with a live drive; the return handed KC the ball in field-goal range.</div></div></div><div class="gm-doc-tp"><div class="clock">Q2 08:37</div><div class="what"><span class="badge mute">KC</span> Mahomes intercepted by Cam Hart in the end zone, touchback (EPA -5.85)<div class="went">The only thing that kept the first half from being a blowout — KC gave the points back from the LAC 2, and the score stayed 9-3 instead of 16-3 at that point.</div></div></div><div class="gm-doc-tp"><div class="clock">Q3 12:26</div><div class="what"><span class="badge mute">LAC</span> Herbert deep left to Johnston for 57 yards to the KC 1 on 3rd-and-12 (EPA +6.16)<div class="went">The Chargers&#x27; one explosive of the day put them on the 1 down 19-3; a Slaughter holding penalty at 11:45 pushed them back and the drive produced a 30-yard field goal. That sequence is the whole game in miniature: yards without touchdowns.</div></div></div><div class="gm-doc-tp"><div class="clock">Q3 06:34</div><div class="what"><span class="badge mute">KC</span> 4th-and-1 at the LAC 1, Walker left guard for no gain (EPA -3.98)<div class="went">KC left four points on the field and gave LAC the ball at its own 1 — the one real crack in the favorite&#x27;s script, and LAC went three-and-out and punted from its own 2.</div></div></div><div class="gm-doc-tp"><div class="clock">Q4 09:50</div><div class="what"><span class="badge mute">LAC</span> Lambert-Smith catch and fumble forced by Sneed, recovered by Tranquill at the KC 38 (EPA -4.80)<div class="went">Ended the last drive with any leverage; KC answered with an 11-play, 5:51 field-goal drive that bled the game out.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="What decided it">
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Los Angeles&#x27;s red-zone and short-yardage finishing</b><div class="went">3 trips, 0 TDs, 2 FGs, 11 snaps inside the 20 at -0.965 EPA/play and 0% success; 0-for-3 on fourth down; first-and-goal from the 1 after Johnston&#x27;s 57-yarder produced three points.</div><div class="went"><b>Tell:</b> LAC had already gone 1-for-4 in the red zone in week 3 against BUF with the &#x27;red zone stalls&#x27; tag, and KC&#x27;s defense carried a 56.2% red-zone TD rate allowed with -0.106 RZ EPA — a bend-don&#x27;t-break profile the dossier flagged in week 4 vs LV (3 trips, 1 TD, -0.539 RZ EPA).</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Turnovers in scoring range</b><div class="went">Herbert&#x27;s INT returned to the LAC 17 (-7.86 EPA), the Remigio punt-return fumble at the LAC 41 (+4.79 for KC), the Lambert-Smith fumble at the KC 38 (-4.80). KC&#x27;s own INT from the LAC 2 was the only offset.</div><div class="went"><b>Tell:</b> The &#x27;turnovers&#x27; tag on four of five LAC weeks (recurring list: turnovers x4) with 3 giveaways in each of weeks 2, 4 and 5.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>KC&#x27;s run game against the Charger interior</b><div class="went">27 carries, 150 yards, 6 explosive runs, 8.4 ypc on 9 middle carries, 47.8% rush success, two Walker touchdowns from 33 and 2 yards.</div><div class="went"><b>Tell:</b> KC entered at 5.5 yards per carry; LAC&#x27;s run-defense tags said &#x27;run game&#x27; in week 3 (BUF, 5 explosive rushes allowed) and the week-4 SEA game, with Tomlinson and Caldwell both limited inside.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Pass-rush asymmetry</b><div class="went">Herbert took 4 sacks and 8 QB hits (27.3% sack-or-hit) on 44 dropbacks; Mahomes took zero sacks and 3 hits on 32 dropbacks and faced a 20.8% blitz rate.</div><div class="went"><b>Tell:</b> LAC&#x27;s own sack rate allowed was 10.9% (league 6.4%) with Alt and Awosika out, and the engine&#x27;s blended 8.3% was still too generous; KC&#x27;s pressure allowed was 11.4%, the lowest number in either input set.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag no" title="Not visible before kickoff">in-game only</span><div><b>KC&#x27;s own finishing wobble kept the total under</b><div class="went">4 red-zone trips, 1 TD, 1 FG, -0.748 RZ EPA/play, a stuffed 4th-and-1 at the 1 and a missed 52-yard FG; zero passing touchdowns on 272 passing yards.</div><div class="went"><b>Tell:</b> KC&#x27;s season RZ TD rate was 62.5% and its RZ EPA -0.004 — a shade below average but nothing that pointed at 1-for-4; this was the small-sample side of the ledger.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; LAC">
+      <div class="gm-doc-boxhead"><b>How LAC gets beaten</b><span class="flat">0-5 entering</span><span class="badge mute">high confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">turnovers &times;4</span><span class="badge bad">pre-snap penalties &times;3</span><span class="badge bad">pressure allowed &times;2</span><span class="badge bad">penalties &times;2</span><span class="badge bad">defensive penalties &times;2</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Its own giveaways, usually in scoring position</b><div class="went">&#x27;turnovers&#x27; tagged in weeks 1, 2, 4, 5 (3 apiece in weeks 2, 4, 5); here the Herbert INT from the KC 42 (-7.86 EPA), the Lambert-Smith fumble at the KC 36, plus a muffed punt at its own 41.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Pass protection — pressure converts to sacks at a high rate</b><div class="went">Season sack rate allowed 10.9% vs league 6.4%; 5 sacks vs DEN (wk5), 4 vs SEA (wk4), 4 here on 44 dropbacks with 8 QB hits, Alt and Awosika out.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Finishing drives</b><div class="went">1-for-4 in the red zone vs BUF (wk3); 0-for-3 here with -0.965 RZ EPA and 0-for-3 on fourth down and 5-of-17 on third down.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>The interior run defense when the opponent has a real back</b><div class="went">BUF ran for the &#x27;run game&#x27; tag with 5 explosive rushes (wk3), SEA tagged (wk4); KC 150 yards, 6 explosive runs, 8.4 ypc up the middle here.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag both">both</span><div><b>Pre-snap and coverage flags on its own drives</b><div class="went">&#x27;pre-snap penalties&#x27; tagged weeks 1, 2, 4 (4, 4 and 7 pre-snap flags); here 7 for 59 with a false start, a delay of game at its own 1 and the Slaughter hold that cost a first-and-goal from the 2; defensively a 20-yard DPI gave KC a scoring drive in Q1.</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> Five weeks, five losses, and the mechanism barely changes: the offense generates adequate field yardage (field EPA between -0.02 and -0.40), then hands the possession back via a sack, a pick or a stall inside the 20. The defense is competent between the 20s (-0.09 to -0.19 field EPA allowed in weeks 3-5) but can be run through by a back with explosive ability.</p>
+      <p class="gm-doc-p"><b>This week:</b> KC tried exactly this and had the goods: 5.5 ypc entering, 0.197 field EPA/play entering, the lowest pressure-allowed rate in the matchup. It generated 6 explosive runs, didn&#x27;t take a sack, and converted the short field that LAC&#x27;s own pick gave it.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> A back who produces explosive runs on interior carries (10+ rate above 2.3/game), a line that keeps the pass rush below league pressure (LAC&#x27;s edges still produced 8 QB hits), and the patience to take field goals — you do not need an efficient passing offense to beat LAC, you need to not give the ball back.</p>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; KC">
+      <div class="gm-doc-boxhead"><b>How KC gets beaten</b><span class="flat">4-0 entering</span><span class="badge mute">medium confidence</span></div>
+      
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Explosive passing over the top</b><div class="went">&#x27;explosive passing&#x27; tagged vs LV in wk4 (6 passes of 20+ allowed, 27 points); 3 allowed vs MIA (wk3), 2 vs IND (wk2, 30 points); here Johnston&#x27;s 57-yarder on 3rd-and-12 went for +6.16 EPA.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Running on them when they are not ahead</b><div class="went">&#x27;run game&#x27; tag vs IND (wk2): 4 explosive rushes, 0.187 rush EPA allowed; here they allowed only 73 on 22 because LAC trailed from 11:25 of Q1 and abandoned the ground.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Its own red-zone conversion and flags</b><div class="went">4 trips / 1 TD / -0.748 RZ EPA here with a 4th-and-1 stuff at the 1 and a missed 52-yarder; 8 flags for 89 yards including a roughing-the-passer that wiped out a Roland-Wallace interception at Q2 13:40.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>No pass rush in some weeks</b><div class="went">&#x27;no pass rush&#x27; tag vs MIA (wk3) with 0 sacks and a 2.4% pressure rate allowed; season pressure generated 19.3%, but it is streaky — here it produced 4 sacks and 8 hits against a patched line.</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> KC gives up chunk plays through the air and has let two opponents (IND, LV) stay within one score by scoring 27-30, but it holds at its own 20 (opponent 1-for-3 in RZ in wk4 at -0.539 EPA/play) and its offense is efficient between the 20s (0.197 field EPA) while converting only about 60% of its own trips. The loss profile is a shootout, not a grind.</p>
+      <p class="gm-doc-p"><b>This week:</b> LAC had none of what it takes: -0.302 field EPA entering, 6.5 YPA, one explosive pass all day, and an offensive line that let 4 sacks through. It produced the deep shot but could not sustain or finish.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> An offense with field EPA above league (0.004+), 3+ explosive passes per game, protection that keeps the sack rate near 6% so the explosives can be attempted, and the red-zone conversion to turn the chunks into seven — KC will trade field for field goals all day.</p>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Player lines">
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Kenneth Walker III</b> <span class="flat">KC</span> &middot; 19 carries, 128 rush yds, 2 rush TDs vs 19.6/91.8/0.7 projected<div class="went">Wire-to-wire lead (KC led 3,385 of 3,600 seconds) plus 6 explosive runs against a thin LAC interior; 33-yard TD came on 3rd-and-1, the goal-line score from 2 yards. Volume was projected correctly; the yards-per-carry was the beat.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Xavier Worthy</b> <span class="flat">KC</span> &middot; 7 targets, 7 rec, 73 yds vs 6.6/4.0/45.4 projected<div class="went">With Rice out and Thornton unavailable he was the only perimeter air-yards share (25.2%), but the yards were manufactured underneath — 30 air yards and 43 YAC on a 3.6 team aDOT.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Noah Gray</b> <span class="flat">KC</span> &middot; 3 targets, 3 rec, 53 yds vs 3.1/2.2/18.0 projected<div class="went">Targets landed exactly where projected; the yardage came from two catch-and-runs (16 on 3rd-and-18 in Q1, 31 in Q3 — 36 YAC on 17 air yards). Efficiency spike, not role change.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>KeAndre Lambert-Smith</b> <span class="flat">LAC</span> &middot; 9 targets, 5 rec, 32 yds — completely unprojected, 86.8% snap share<div class="went">Activated off IR as questionable with Harris out and McConkey on a pitch count; he took the team target lead. Also the Q2 interception target and the Q4 forced fumble.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Ladd McConkey</b> <span class="flat">LAC</span> &middot; 1 target, 1 rec, 17 yds on an 11.8% snap share<div class="went">Health-limited role, not game script — he played a third of his projected snaps while Johnston (82.4%) and Lambert-Smith (86.8%) ran the route tree.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Omarion Hampton</b> <span class="flat">LAC</span> &middot; 7 carries, 18 yds, 4 rec, 21 yds on a 50% snap share vs 12.8 carries projected<div class="went">Trailing all game compressed the run volume (22 team carries) and Vidal split it evenly (7 carries, 4 targets). -2.55 rushing EPA on 7 carries; no explosive runs.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Justin Herbert</b> <span class="flat">LAC</span> &middot; 22/37, 204 yds, 0 TD, 1 INT, 4 sacks, 8 QB hits<div class="went">Volume from the deficit, efficiency killed by pressure (27.3% sack-or-hit on dropbacks) and a 5.4 aDOT with -9.9 CPOE; the one deep ball that connected went 57 yards.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Quentin Johnston</b> <span class="flat">LAC</span> &middot; 3 targets, 1 rec, 57 yds vs 4.6/2.8/32.9<div class="went">Single-play yardage (35.4% air-yards share on three looks). A boom-or-zero profile in a low-attempt, short-aDOT offense.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Charlie Kolar</b> <span class="flat">LAC</span> &middot; 6 targets, 3 rec, 20 yds vs 4.3/3.1/46.8, -1.91 EPA<div class="went">Volume arrived (66.2% snaps, 6 targets) but at 18 air yards with 3 YAC — the targets were low-value checkdowns in a stalled offense.</div></div></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Traps">
+      <div class="gm-doc-three"><div class="gm-doc-box"><span class="badge mute">Totals</span><p><b>When a team&#x27;s miss is finishing, not movement, fade the team total and touchdown props, not the yardage props. LAC&#x27;s passing yards hit within 4 of projection while the team scored 6 — the markets to attack were anytime-TD and alternate team totals, not receiving yards unders.</b></p><p class="sub"><b>Trigger:</b> Offense with field EPA within 0.15 of league but a red-zone TD rate under 0.50 facing a defense with RZ EPA allowed below -0.10 (KC was at -0.106).</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>A chasing offense&#x27;s attempt total can spike without the yardage following when aDOT collapses. Herbert threw 37 times (6 over projection) for 204 yards at 5.4 aDOT and -9.9 CPOE. Buy attempts-based props, not yardage props, on a bad offense trailing by two scores.</b></p><p class="sub"><b>Trigger:</b> Trailing team with early-down pass rate below expectation (56.2% vs 64.8% here) but a huge late-down pass rate — the volume is all check-downs.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>Receiving-back roles move week to week on committee backfields. The projected outlet (Mitchell, 25% snaps, 1 target, 0 catches) was displaced by Vidal (4 targets, 3 catches, 22 YAC) and by a just-activated WR (Lambert-Smith, 9 targets on 86.8% of snaps). Verify the snap share before the role.</b></p><p class="sub"><b>Trigger:</b> Any RB projected for 4+ targets whose prior-week snap share is under 35%, especially when a receiver has just been activated off IR.</p></div><div class="gm-doc-box"><span class="badge mute">Totals</span><p><b>A favorite that wins by running and scores zero passing touchdowns is a reliable under even when it goes over its projected yardage. KC gained 272 passing yards and 150 rushing yards and scored 22 — the under cashed by 13.5.</b></p><p class="sub"><b>Trigger:</b> Favorite with a season pass rate at or below 53%, a back averaging 5+ ypc, and an opponent with four or more weeks of red-zone stalls.</p></div><div class="gm-doc-box"><span class="badge mute">Sides</span><p><b>Penalties can erase turnovers. KC&#x27;s roughing the passer at Q2 13:40 wiped out a Roland-Wallace interception, and a 13-yard roughing extended LAC&#x27;s final drive. With a defense carrying a bottom-tier flag profile, discount a point or two of turnover-margin edge.</b></p><p class="sub"><b>Trigger:</b> Defense averaging 8+ accepted flags and facing an offense drawing DPI at 2x league (LAC entered at 16.6 DPI yards/game).</p></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="The story">
+      <div class="gm-doc-prose"><h2>The short version</h2>
+<p>Kansas City never trailed, never needed to throw a touchdown, and won 22-6 by handing the ball to Kenneth Walker 19 times for 128 yards and both scores. The Chargers' projected 17 points became six, and the gap was entirely at the goal line: three trips inside the 20, zero touchdowns, -0.965 EPA per snap in there, 5-of-17 on third down and 0-for-3 on fourth. KC -7.5 cashed, the under cashed by 13.5, and the engine's biggest single error (LAC points, score 0.45) was a finishing error, not a yardage error — Herbert's 204 passing yards landed within four of projection.</p>
+<h2>How it unfolded</h2>
+<p>KC's first two drives produced 128 yards and ten points, the second ending with Walker's 33-yard run on 3rd-and-1 at 7:29 of the first. From that point the Chargers were chasing on all 68 of their snaps. The one stretch where the game was live came in the second quarter: LAC moved to the KC 42, Herbert's pass for Lambert-Smith was picked by Cochrane and returned to the LAC 17 (-7.86 EPA, the biggest swing of the day), and then KC handed it straight back with Mahomes's interception from the LAC 2. From 9-3 KC went 80 yards in eight plays on a Kelce 24-yarder and a Walker goal-line run, and tacked on a 50-yard Butker kick with seven seconds left for 19-3.</p>
+<p>The third quarter contained both teams' best and worst work. Johnston's 57-yard catch on 3rd-and-12 put LAC first-and-goal at the 1; a Slaughter holding penalty at 11:45 pushed them back and the drive produced three points. KC then ran seven plays to the LAC 1 and got stopped on 4th-and-1 (-3.98 EPA), giving LAC the ball at its own 1 — where a delay of game, a sack split by Woods and Jones, and a punt from the back of the end zone followed. Dye's forced fumble on the return handed KC the ball at the LAC 41. The fourth quarter was attrition: a missed 52-yarder, the Lambert-Smith fumble forced by Sneed at the KC 36, and an 11-play, 5:51 Chiefs field-goal drive to end it.</p>
+<h2>Why the game diverged from the projection</h2>
+<p>The volume projections were close to perfect on both sides — KC 30 attempts/27 carries against 30.7/28.8, LAC's 68 plays above a projected 61.6. What the engine could not price was the split at the 20. LAC's field EPA (-0.162) was bad but survivable; its red-zone EPA (-0.965) was catastrophic, and three trips produced six points. KC ran the inverse: 0.319 field EPA, -0.748 inside the 20, one touchdown on four trips, which is why 272 passing and 150 rushing yards came to only 22 points and the total still went under.</p>
+<p>The other divergence was in the passing shape. KC's projected 224 yards became 272 on <em>fewer</em> attempts than projected, built on a 3.6 aDOT, +9.4 CPOE and 161 YAC — Worthy 7-for-7, Gray's 31-yard catch-and-run, Kelce's 24. LAC threw six more times than projected and gained less, at 5.4 aDOT with -9.9 CPOE and four sacks on 44 dropbacks.</p>
+<h2>The plan against the game</h2>
+<p>The pre-game plan's favorite path is almost a transcript of the first three quarters, and eight of its ten calls cashed, including the whole Chiefs-grind parlay. Its one real analytic error was its headline lever: it bet the Chargers would refuse to chase, and they threw on 65.1% of snaps against a 52.0% season rate. The error was harmless because the chase was all short — Herbert cleared the 199.5 yardage under by four yards on six extra attempts — but it should change how the next Charger plan is built: attempts up, air yards down. The Mitchell receptions miss was a role read, not a script read; the outlet work went to Vidal and a just-activated Lambert-Smith, exactly the risk the plan listed as an unknown.</p>
+<h2>Player by player</h2>
+<p>Walker is the signal: 19 carries matched projection, the 128 yards and two scores came from six explosive runs and 8.4 ypc up the middle against a thin Charger interior. Worthy's 73 on 7-for-7 confirms the concentration thesis (25.2% air-yards share with Rice out), though 43 of those were YAC. Gray's 53 on three targets is efficiency noise — the target count hit exactly. On the other side, McConkey played 11.8% of snaps for one target while Lambert-Smith, unprojected, led the team with nine, and Hampton split a 22-carry backfield evenly with Vidal at a 50% snap share. Kolar's six targets for 20 yards (18 air yards, 3 YAC) is what a stalled offense's tight end looks like.</p>
+<h2>The defenses</h2>
+<p>Charting carries box counts and blitz rates only, no coverage. KC faced a 20.8% blitz rate and a 6.31 average box and took zero sacks on 32 dropbacks; LAC faced 22.2% blitz and a 6.41 box and gave up 4 sacks and 8 QB hits on 44 dropbacks. That asymmetry, against an LAC line missing Alt and Awosika with a 10.9% season sack rate allowed, is the clearest pre-game edge in the dossier. KC's defense was the bend-don't-break unit it has been: it allowed 70 yards on the Johnston drive and three points, and 34 yards on the final drive and nothing.</p>
+<h2>The blueprint</h2>
+<p>To beat the Chargers you do not need an efficient offense — you need a back who hits explosive interior runs and a line that keeps you out of sack-fumble territory, because LAC has handed the ball over in four of five weeks and finished 0-for-3 in the red zone here. To beat the Chiefs you need something LAC did not have: 3+ explosive passes, field EPA above league, and the red-zone conversion to turn chunks into seven. LV did it (6 explosive passes, 27 points), IND did it (30). LAC produced one explosive play all day and kicked.</p>
+<h2>What the model should take from this</h2>
+<p>Two entries. First, the Charger trailing-lean input is now in doubt — one game is one observation, but a 13-point gap between actual and season pass rate with early-down rate still below expectation says the right model is high attempts at suppressed depth. Second, do not shade KC's team total down for a 1-for-4 red-zone day, a stuffed 4th-and-1 and a missed 52-yarder; the field efficiency (0.319 EPA/play) was fine and the finishing is the least persistent number in the dossier.</p></div>
+    </section>
+    
+    
+  </div>
+</details>
+
 </div>
 
 
@@ -1854,6 +2426,15 @@
       if(pick) pick.addEventListener("change",function(){ node.querySelectorAll(".pl-tl").forEach(function(t){ t.hidden=t.dataset.key!==pick.value; }); });
       modal.querySelector(".pl-dialog").scrollTop=0;
     }).catch(function(){ body.innerHTML='<div class="pl-loading">The player sheets could not be loaded.</div>'; });
+  }
+  // The plan / report panel: pills and arrows walk its sections.
+  var doc=document.querySelector(".gm-doc");
+  if(doc){
+    var panes=[].slice.call(doc.querySelectorAll(".gm-doc-pane")), pills=doc.querySelector(".gm-doc-pills"), cur=0;
+    panes.forEach(function(pn,i){ var b=document.createElement("button"); b.type="button"; b.textContent=pn.dataset.title; b.setAttribute("role","tab"); b.addEventListener("click",function(){ show(i); }); pills.appendChild(b); });
+    function show(i){ cur=(i+panes.length)%panes.length; panes.forEach(function(pn,k){ pn.classList.toggle("active",k===cur); }); pills.querySelectorAll("button").forEach(function(b,k){ b.classList.toggle("active",k===cur); if(k===cur&&b.scrollIntoView) b.scrollIntoView({block:"nearest",inline:"center"}); }); }
+    doc.querySelectorAll(".gm-doc-arrow").forEach(function(a){ a.addEventListener("click",function(){ show(cur+parseInt(a.dataset.dir,10)); }); });
+    show(0);
   }
   document.querySelectorAll(".pl-open").forEach(function(b){ b.addEventListener("click",function(e){ e.stopPropagation(); openPlayer(b.dataset.pid); }); });
   modal.querySelector(".pl-close").addEventListener("click",closeModal);

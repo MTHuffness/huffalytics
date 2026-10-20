@@ -797,6 +797,126 @@
     .hfa .pl-log td.wk, .hfa .pl-log th:first-child { position: sticky; left: 0; background: #0d0d11; z-index: 1; }
     :root[data-theme="light"] .hfa .pl-log td.wk, :root[data-theme="light"] .hfa .pl-log th:first-child { background: #fff; }
   }
+
+  /* ---- The plan / report panel under the scoreboard ---- */
+  .gm-doc { position: relative; overflow: visible; }
+  .gm-doc::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; border-radius: 14px 14px 0 0; background: linear-gradient(90deg, var(--hfa-accent), transparent 70%); pointer-events: none; }
+  .gm-doc.st-both::before { background: linear-gradient(90deg, var(--hfa-good), var(--hfa-accent) 55%, transparent 90%); }
+  .gm-doc > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.9rem; padding: 1rem 1.1rem; }
+  .gm-doc > summary::-webkit-details-marker { display: none; }
+  .gm-doc-chev { display: inline-grid; place-items: center; flex: none; width: 2rem; height: 2rem; border-radius: 50%; background: var(--hfa-accent); color: #fff; box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.22), 0 6px 14px -6px rgba(255, 31, 47, 0.9); transition: transform 0.18s; }
+  .gm-doc[open] > summary .gm-doc-chev { transform: rotate(180deg); background: #fff; color: var(--hfa-accent); }
+  .gm-doc-main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+  .gm-doc-eyebrow { font-size: 0.64rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-accent); }
+  .gm-doc-lead { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; line-height: 1.3; color: var(--hfa-body); }
+  .gm-doc-chips { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0.3rem; flex: 0 1 auto; }
+  .gm-doc-open { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); margin-left: 0.3rem; }
+  .gm-doc[open] .gm-doc-open { display: none; }
+  .gm-doc-body { border-top: var(--hfa-hairline); padding: 0.7rem 1.1rem 1.2rem; }
+  .gm-doc-nav { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.9rem; }
+  .gm-doc-pills { display: flex; gap: 0.3rem; overflow-x: auto; scrollbar-width: none; flex: 1 1 auto; padding: 2px; }
+  .gm-doc-pills::-webkit-scrollbar { display: none; }
+  .gm-doc-pills button { flex: none; border: 1px solid rgba(128, 128, 128, 0.25); background: transparent; color: var(--hfa-muted); border-radius: 999px; padding: 0.3rem 0.85rem; font-size: 0.76rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
+  .gm-doc-pills button.active { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-arrow { flex: none; width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid rgba(128, 128, 128, 0.3); background: transparent; color: var(--hfa-body); font-size: 1.2rem; line-height: 1; cursor: pointer; }
+  .gm-doc-arrow:hover { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-pane { display: none; animation: gm-fade 0.18s ease-out; }
+  .gm-doc-pane.active { display: block; }
+  @keyframes gm-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  .gm-doc-hook { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1.2; color: var(--hfa-accent); margin-bottom: 0.4rem; }
+  .gm-doc-headline { font-size: 1rem; font-weight: 600; line-height: 1.45; margin: 0 0 0.7rem; }
+  .gm-doc-p { font-size: 0.9rem; line-height: 1.55; margin: 0 0 0.7rem; }
+  .gm-doc-note { font-size: 0.76rem; color: var(--hfa-muted); line-height: 1.45; margin: 0 0 0.6rem; }
+  .gm-doc-prose { font-size: 0.9rem; line-height: 1.6; max-width: 60rem; }
+  .gm-doc-prose h2 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 1rem 0 0.3rem; }
+  .gm-doc-prose h3 { font-size: 0.9rem; margin: 0.8rem 0 0.2rem; }
+  .gm-doc-prose p { margin: 0 0 0.6rem; }
+  .gm-doc-prose ul { padding-left: 1.2rem; }
+  .gm-doc-k { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 0.9rem 0 0.35rem; }
+  .gm-doc-box > .gm-doc-k:first-child, .gm-doc-col > .gm-doc-k:first-child { margin-top: 0; }
+  .gm-doc-verdicts { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.2rem 0 0.7rem; }
+  .gm-doc-verdicts.wrap .badge { white-space: normal; text-align: left; }
+  .gm-doc-verdicts .badge b { color: inherit; }
+  .gm-doc-vs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 0.4rem; }
+  .gm-doc-col { padding: 0.75rem 0.9rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); font-size: 0.9rem; line-height: 1.5; }
+  .gm-doc-col.plan { border-left: 3px solid var(--hfa-accent); }
+  .gm-doc-col.game { border-left: 3px solid var(--hfa-good); }
+  .gm-doc-col.game .gm-doc-k { color: var(--hfa-good); }
+  .gm-doc-col p, .gm-doc-box p { margin: 0 0 0.45rem; font-size: 0.88rem; line-height: 1.5; }
+  .gm-doc-col p:last-child, .gm-doc-box p:last-child { margin-bottom: 0; }
+  .gm-doc p.sub, .gm-doc .went { font-size: 0.8rem; color: var(--hfa-muted); line-height: 1.45; }
+  .gm-doc .went { margin-top: 0.2rem; }
+  .gm-doc-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .gm-doc-three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; }
+  .gm-doc-box { min-width: 0; padding: 0.7rem 0.85rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); }
+  .gm-doc-boxhead { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.4rem; font-size: 0.92rem; }
+  .gm-doc-boxhead b { color: var(--hfa-body); font-weight: 800; }
+  .gm-doc-ul { margin: 0; padding-left: 1.1rem; font-size: 0.86rem; line-height: 1.5; }
+  .gm-doc-ul li { margin-bottom: 0.3rem; }
+  .gm-doc-list { display: flex; flex-direction: column; gap: 0.45rem; }
+  .gm-doc-item { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.45; padding: 0.5rem 0.7rem; border-radius: 10px; background: var(--hfa-tint); border: var(--hfa-hairline); }
+  .gm-doc-item > div { min-width: 0; }
+  .gm-doc-item b { color: var(--hfa-body); }
+  .gm-doc-flag { flex: none; min-width: 5.2rem; text-align: center; border-radius: 6px; padding: 0.2rem 0.45rem; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); margin-top: 0.15rem; }
+  .gm-doc-flag.decisive, .gm-doc-flag.signal, .gm-doc-flag.yes, .gm-doc-flag.held { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-flag.contributed, .gm-doc-flag.mixed, .gm-doc-flag.partly { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .gm-doc-flag.minor, .gm-doc-flag.noise, .gm-doc-flag.no, .gm-doc-flag.broke { background: rgba(255, 31, 47, 0.16); color: var(--hfa-accent); }
+  .gm-doc-flag.defense { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .gm-doc-flag.offense { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-calls { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  .gm-call { min-width: 0; padding: 0.65rem 0.85rem 0.6rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); border-left: 3px solid var(--hfa-muted); }
+  .gm-call.over { border-left-color: var(--hfa-good); } .gm-call.under { border-left-color: var(--hfa-accent); }
+  .gm-call.hit { background: rgba(47, 212, 164, 0.06); } .gm-call.miss { background: rgba(255, 176, 32, 0.06); }
+  .gm-call-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.5rem; font-size: 0.92rem; }
+  .gm-call-side { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .gm-call.over .gm-call-side { color: var(--hfa-good); } .gm-call.under .gm-call-side { color: var(--hfa-accent); }
+  .gm-call .who { color: var(--hfa-body); font-weight: 800; }
+  .gm-call .bet { font-weight: 700; color: var(--hfa-accent); }
+  .gm-call .res { font-weight: 800; font-size: 0.8rem; margin-left: auto; }
+  .gm-call .res.hit { color: var(--hfa-good); } .gm-call .res.miss { color: var(--hfa-bad); } .gm-call .res.void { color: var(--hfa-muted); font-weight: 500; }
+  .gm-call-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem; margin: 0.35rem 0 0.2rem; }
+  .gm-call .prob { font-size: 0.7rem; font-weight: 700; color: var(--hfa-muted); border: 1px solid rgba(128, 128, 128, 0.3); border-radius: 999px; padding: 0.1rem 0.5rem; }
+  .gm-call .rungs { margin: 0.35rem 0 0.4rem; }
+  .gm-call .rung small { font-weight: 500; color: var(--hfa-muted); }
+  .gm-call p.why { font-size: 0.84rem; line-height: 1.45; margin: 0.3rem 0 0.2rem; color: var(--hfa-body); }
+  .gm-call p.ev { font-size: 0.74rem; line-height: 1.4; margin: 0 0 0.15rem; color: var(--hfa-muted); }
+  .gm-doc .legs { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.4rem; }
+  .gm-doc .leg { border-radius: 8px; padding: 0.2rem 0.5rem; font-size: 0.76rem; font-weight: 700; background: rgba(128, 128, 128, 0.14); }
+  .gm-doc .leg em { font-style: normal; font-weight: 500; color: var(--hfa-muted); }
+  .gm-doc .leg i { font-style: normal; font-weight: 800; }
+  .gm-doc .leg.hit { background: rgba(47, 212, 164, 0.16); } .gm-doc .leg.hit i { color: var(--hfa-good); }
+  .gm-doc .leg.miss { background: rgba(255, 176, 32, 0.16); } .gm-doc .leg.miss i { color: var(--hfa-bad); }
+  .gm-doc-gradehead { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+  .gm-grade { flex: none; display: flex; align-items: center; gap: 0.6rem; padding: 0.4rem 0.9rem 0.4rem 0.6rem; border-radius: 14px; border: 2px solid var(--hfa-muted); background: var(--hfa-tint); }
+  .gm-grade b { font-size: 2.6rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .gm-grade span { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); line-height: 1.3; }
+  .gm-grade.good { border-color: var(--hfa-good); } .gm-grade.good b { color: var(--hfa-good); }
+  .gm-grade.warn { border-color: var(--hfa-bad); } .gm-grade.warn b { color: var(--hfa-bad); }
+  .gm-grade.bad { border-color: var(--hfa-accent); } .gm-grade.bad b { color: var(--hfa-accent); }
+  .gm-doc-gradetext { flex: 1 1 20rem; min-width: 0; }
+  .gm-doc-gradetext .gm-doc-verdicts { margin-bottom: 0; }
+  .hfa .gm-doc-table { font-size: 0.8rem; }
+  .hfa .gm-doc-table th, .hfa .gm-doc-table td { padding: 0.25rem 0.4rem; }
+  .hfa .gm-doc-table b { color: var(--hfa-body); }
+  .hfa .gm-doc-table td.meter { width: 5rem; }
+  .hfa .gm-doc-table td.meter i { display: block; height: 4px; border-radius: 2px; background: var(--hfa-good); }
+  .hfa .gm-doc-table td.meter i.bad { background: var(--hfa-bad); }
+  .gm-doc-tl { position: relative; padding-left: 1rem; border-left: 2px solid rgba(128, 128, 128, 0.25); display: flex; flex-direction: column; gap: 0.7rem; }
+  .gm-doc-tp { position: relative; font-size: 0.88rem; line-height: 1.45; }
+  .gm-doc-tp::before { content: ""; position: absolute; left: -1.4rem; top: 0.45rem; width: 10px; height: 10px; border-radius: 50%; background: var(--hfa-accent); box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.25); }
+  .gm-doc-tp .clock { font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-accent); }
+  @media (max-width: 1100px) { .gm-doc-three { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 760px) {
+    .gm-doc > summary { padding: 0.85rem 16px; gap: 0.6rem; flex-wrap: wrap; }
+    .gm-doc-main { flex: 1 1 0; }
+    .gm-doc-lead { font-size: 0.98rem; }
+    .gm-doc-chips { justify-content: flex-start; flex: 0 0 100%; padding-left: 2.6rem; }
+    .gm-doc-body { padding: 0.6rem 16px 1rem; }
+    .gm-doc-hook { font-size: 1.2rem; }
+    .gm-doc-vs, .gm-doc-two, .gm-doc-three, .gm-doc-calls { grid-template-columns: 1fr; }
+    .gm-doc-arrow { display: none; }
+    .gm-doc-flag { min-width: 4.4rem; font-size: 0.56rem; }
+  }
   @media (prefers-reduced-motion: reduce) { #hfa-rain { opacity: calc(var(--hfa-rain) * 0.5); } }
 </style>
 
@@ -821,7 +941,7 @@
     <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
   </div>
   <main>
-<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#away" data-sec="away">CHI offense</a><a href="#home" data-sec="home">ATL offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
+<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#doc-sec" data-sec="doc">Plan vs game</a><a href="#away" data-sec="away">CHI offense</a><a href="#home" data-sec="home">ATL offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
 
 <div class="hfa-card hfa-hero hfa-sec gm-hero" id="hero" data-sec="hero" style="--gm-away: #0B162A; --gm-home: #A71930;">
   <div class="gm-hero-top">
@@ -848,6 +968,480 @@
     <span class="gm-chip final"><i>final</i> <b>CHI 31 &ndash; 23 ATL</b></span>
     <span class="gm-chip " title="Artificial turf. Passing is the same on grass and turf; rushing runs about 3.5% higher on turf (+3.7 yards a team) and a catch gains a tenth of a yard more after it. Points, the closing lines and the engine show no surface effect, so it is not an engine input."><i>field</i> <b>turf</b></span><span class="gm-chip " title="Played under a roof: the weather outside does not reach the field."><i>roof</i> <b>closed</b></span>
   </div>
+</div>
+
+<div class="hfa-sec" id="doc-sec" data-sec="doc">
+
+<details class="hfa-card gm-doc st-both" id="doc">
+  <summary class="gm-doc-bar">
+    <span class="gm-doc-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="gm-doc-main">
+      <span class="gm-doc-eyebrow">The plan against the game &middot; plan Sun Oct 18, 10:03 AM &middot; report Tue Oct 20, 12:13 PM</span>
+      <span class="gm-doc-lead">Bijan gashes a Bears front with no pass rush. Caleb returns into Atlanta&#x27;s teeth.</span>
+    </span>
+    <span class="gm-doc-chips">
+      <span class="badge warn">script partly held</span>
+      <span class="badge good">6 hit</span><span class="badge bad">5 missed</span>
+      <span class="badge good" title="Projection grade: team volume and yardage, player lines, and the market calls the projection implied">projection B &middot; 71</span>
+      <span class="gm-doc-open">open</span>
+    </span>
+  </summary>
+  <div class="gm-doc-body">
+    <div class="gm-doc-nav">
+      <button type="button" class="gm-doc-arrow" data-dir="-1" aria-label="Previous section">&#8249;</button>
+      <div class="gm-doc-pills" role="tablist"></div>
+      <button type="button" class="gm-doc-arrow" data-dir="1" aria-label="Next section">&#8250;</button>
+    </div>
+
+    
+    
+    <section class="gm-doc-pane" data-title="Plan vs game">
+      <div class="gm-doc-verdicts">
+        <span class="badge warn" title="Whether the game went the way the plan's script described, for the reasons it gave">script partly held</span>
+        <span class="badge mute">followed the favorite&#x27;s path</span>
+        <span class="badge good" title="Both teams ran 123 plays; the league's figure for two teams was 121.5">pace: called average, played average</span>
+        <span class="badge bad" title="CHI passed on 55% of its plays; its season rate entering the game was 50%">CHI: called balanced, played pass</span><span class="badge bad" title="ATL passed on 76% of its plays; its season rate entering the game was 46%">ATL: called run, played pass</span>
+      </div>
+      <div class="gm-doc-vs">
+        <div class="gm-doc-col plan"><div class="gm-doc-k">The plan said</div><p>Atlanta runs at a Chicago front missing Sweat, Odeyingbo and Edwards; Chicago&#x27;s returning quarterback meets the league&#x27;s No. 5 pressure defense. The lever is whether the Falcons get the early lead that kills their own pass rate.</p><p class="sub">Atlanta should get the matchup it wants early: Bijan Robinson and Brian Robinson running at a Bears front missing its two best edge rushers and its starting linebacker. Chicago answers with pace — it runs 72.8 plays a game and holds the ball — but its yards come between the 20s and stall inside them. Expect Atlanta&#x27;s passing to be low-volume and explosive rather than long drives, and Chicago&#x27;s to be short and YAC-dependent against a front that pressures at the fifth-highest rate. The likeliest shape is a possession-heavy game that scores closer to the mid-40s than the 52.5 number unless the short fields show up.</p></div>
+        <div class="gm-doc-col game"><div class="gm-doc-k">What happened</div><p>Chicago led wire to wire and won 31-23, covering -1.5 while the game went over 51.5 on 16 Atlanta points after the Bears led 31-7; the projection&#x27;s team totals were close but its biggest input — 27 Atlanta carries — died the moment the Falcons trailed by 14 in the first quarter.</p><p class="sub">The plan picked the right side of the central question — it named the lever as &#x27;whether the Falcons get the early lead that kills their own pass rate&#x27; — and the answer was no, which decided everything. But it had the mechanism pointed the wrong way: it expected Atlanta to be the team that ran and led, and it expected Chicago&#x27;s passing to shrink under pressure. Chicago won by being the efficient, lead-holding team the plan&#x27;s favorite path described, except the quick game produced 305 yards instead of a short-yardage grind, and the red-zone conversion the plan treated as an if came in at 4-of-5. The Bijan calls were not a bad read of the matchup, they were a bad read of script probability; the Loveland and Williams unders were read errors about where a 3.9-aDOT offense&#x27;s yards go.</p><p class="sub"><b>The script:</b> The favorite path called for Chicago winning the snap count, moving it with the quick game and converting the red-zone trips it had been wasting, for roughly 27-20 — it won the snap count 76-53, ran a 3.9 aDOT, went 4-of-5 inside the 20 and won 31-23. But two pieces of the stated mechanism failed: Williams was not kept clean (4 sacks, 7 hits, 17.1% pressure) and Odunze was not the engine (4 targets, 39 yards) — Burden and Loveland were. Checks confirm the pace call (123 plays vs 121.5 league) and show both lean calls broke: Chicago passed at .548 against a &#x27;balanced&#x27; call and Atlanta at .760 against a &#x27;run&#x27; call, because it trailed on all 53 snaps.</p></div>
+      </div>
+      
+      <div class="gm-doc-k">What the plan said would swing it</div>
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag decisive">decisive</span><div>Whether Atlanta scores first: their pass rate collapses toward .30 with a lead, which decides Bijan&#x27;s carries and London&#x27;s targets.<div class="went"><b>Went:</b> Chicago scored first (Q1 8:25) and Atlanta never led a second. Atlanta&#x27;s pass rate went to .736 against a .464 season rate, Bijan got 9 carries instead of 20-plus, and London saw 11 targets for 4 catches. Every downstream call turned on this.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Pressure on Williams in his first game back — 20%+ hit rates have produced 3 and 7 points from this offense.<div class="went"><b>Went:</b> The pressure arrived — 4 sacks and 7 QB hits, a 26.8% hit rate on Williams&#x27;s dropbacks — but the offense did not shrink: +0.247 EPA/dropback, 30-of-36. It cost a drive at Q4 4:20 (sack on 3rd-and-5 at 31-23) and the half-ending drive, nothing more.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag decisive">decisive</span><div>Chicago&#x27;s red-zone finishing: three straight weeks tagged for stalls, 43.8% touchdowns per trip.<div class="went"><b>Went:</b> Chicago converted 4 of 5 red-zone trips with zero field goals and +0.558 EPA/play inside the 20 — against the 43.8% season rate the plan flagged. Those three short touchdown runs are the eight-point margin.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag minor">minor</span><div>Atlanta&#x27;s flags: 28th in pre-snap penalties and DPI yards allowed — free first downs extend Chicago drives.<div class="went"><b>Went:</b> It inverted: Atlanta committed 4 flags for 31 yards (1 pre-snap) while Chicago took 12 for 133 and gave up 28 DPI yards that started Atlanta&#x27;s 8-play, 6-yard third-quarter drive. The free yards flowed the other way and still didn&#x27;t matter.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Kyler Gordon&#x27;s first game back and Stevenson inactive leaves Chicago thin outside against London&#x27;s chunk plays.<div class="went"><b>Went:</b> Gordon played only 22.1% of snaps but produced two strip-sacks (Q3 5:41 at the ATL 2, Q4 3:01 at the ATL 14) and 3 TFL — he was a weapon, not the hole. Atlanta did get 4 explosive passes for 142 yards, three of them after the lead hit 24.</div></div></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">Each offense: expected &middot; happened</div>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>CHI</b><span class="badge warn">partly</span></div><p><b>Expected:</b> Pass rate a touch above their .497 season mark, 32-35 attempts at a short aDOT, Swift at 15-18 carries for modest yardage with real receiving work, Odunze as the only downfield share, and points that lag the yardage.</p><p><b>Happened:</b> The volume and shape were right — .548 pass rate, 36 attempts, 3.9 aDOT, Swift 16 carries for 44 with 4 catches for 26. Wrong on two counts: Odunze was not the downfield share that mattered (4 targets) and the points did not lag the yardage; Chicago scored 31 on 403 total yards with four red-zone touchdowns.</p></div><div class="gm-doc-box"><div class="gm-doc-boxhead"><b>ATL</b><span class="badge bad">broke</span></div><p><b>Expected:</b> 28-30 carries, Bijan in the 18-22 band with goal-line work shared, 22-27 Penix attempts funneled to London with Dotson as the vertical complement, and touchdowns rather than field goals when they get inside the 20.</p><p><b>Happened:</b> Called for 28-30 carries and 22-27 Penix attempts; Atlanta got 11 rushes and 36 pass attempts with 5 sacks. The touchdown-rather-than-field-goal part held (3 trips, 3 TDs), but it arrived in the fourth quarter down three scores.</p></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">For the next plan on these teams</div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="badge mute">ATL</span><div>Stop treating Atlanta&#x27;s run lean as a property of the offense; it is a property of the scoreboard. Its season pass rate (.464) comes from two games it led wire-to-wire. Any plan that depends on 28-30 Falcons carries needs the lead as an explicit condition, with a fallback branch at .70+ pass rate when they trail.</div></div><div class="gm-doc-item"><span class="badge mute">CHI</span><div>Model Chicago&#x27;s passing by aDOT and CPOE, not by opponent pressure rate. At a 3.9 aDOT with 193 YAC and 83% completion, a top-five pressure defense produced 4 sacks and 305 yards in the same game — the passing-yardage under was a read error, not a bounce.</div></div><div class="gm-doc-item"><span class="badge mute">CHI</span><div>The receiving distribution is the live problem: Burden at 39% snaps went 8-for-8 for 95 while Odunze at 96% snaps saw 4 targets. Weight routes and air-yards share, not snap share, before writing the next Chicago prop card.</div></div><div class="gm-doc-item"><span class="badge mute">both</span><div>Do not react to the finishing splits. Chicago&#x27;s 4-of-5 red zone (against a 43.8% season rate) and Atlanta&#x27;s 3-of-3 are 8 trips of small-sample noise; equally, Chicago&#x27;s 12 flags for 133 yards came with only 2 pre-snap, so the persistent penalty component was normal and the plan&#x27;s S4 inversion is not a trend.</div></div></div>
+      
+    </section>
+    
+
+    
+    
+    <section class="gm-doc-pane" data-title="The script">
+      <div class="gm-doc-verdicts">
+        <span class="badge mute" title="Plays and tempo">average pace</span>
+        <span class="badge acc" title="Williams back lifts the pass rate off the .497 season mark, but Atlanta&#x27;s front (3.78 YPC, 1.84 before contact) makes the run a grind — fewer carries than their four-game norm, more quick throws.">CHI balanced</span><span class="badge acc" title="Already a .464 pass-rate offense, now facing the 31st-ranked rush EPA defense without Sweat, Odeyingbo and Edwards; any lead pushes them toward the .29-.37 pass rates of weeks 3 and 4.">ATL run</span>
+        <span class="badge mute">medium confidence</span>
+      </div>
+      <p class="gm-doc-p">Atlanta should get the matchup it wants early: Bijan Robinson and Brian Robinson running at a Bears front missing its two best edge rushers and its starting linebacker. Chicago answers with pace — it runs 72.8 plays a game and holds the ball — but its yards come between the 20s and stall inside them. Expect Atlanta&#x27;s passing to be low-volume and explosive rather than long drives, and Chicago&#x27;s to be short and YAC-dependent against a front that pressures at the fifth-highest rate. The likeliest shape is a possession-heavy game that scores closer to the mid-40s than the 52.5 number unless the short fields show up.</p>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-k">If the favorite wins</div><p>Chicago keeps Williams clean, wins the snap count again (90 and 70 plays in two home wins), moves it with Odunze and the quick game, and converts the red-zone trips it has been wasting. That version is 27-20 with Atlanta&#x27;s carries capped near 20.</p></div>
+        <div class="gm-doc-box"><div class="gm-doc-k">If the underdog wins</div><p>Atlanta scores on its first two possessions on the ground, leads by double digits and drops its pass rate toward .30, as it did at Green Bay and New Orleans. Bijan sees 20-plus carries, Penix throws under 25 times with a deep shot or two, and the Falcons win 31-20.</p></div>
+      </div>
+      
+      <div class="gm-doc-prose"><h2>The read</h2>
+<p>Two defenses that are efficient between the 20s against two offenses that get beaten the same way, meeting on a 52.5 total that looks generous. Atlanta's path is obvious and repeatable: Chicago ranks 31st in rush EPA allowed and 29th in rush success allowed, and it plays this one without Montez Sweat (suspended), Dayo Odeyingbo (IR) and T.J. Edwards, with Tyrique Stevenson inactive. Atlanta has run for 5.9 and 5.9 yards a carry in its two wins and its pass rate falls to .29 the moment it leads. Chicago's path is volume — 72.8 plays a game, more than any offense in this dossier — but it runs into Atlanta's front: 3.78 yards per carry allowed (10th), 1.84 yards before contact, 6.22 yards per attempt allowed (5th) and an 18.9% pressure rate (5th). Caleb Williams is back from the hamstring and active (Rotowire, Sunday morning), which raises Chicago's ceiling and its variance: at 8% pressure this offense scored 59 and 27, at 20%+ it scored 3 and 7 with seven giveaways.</p>
+<h2>Why</h2>
+<p>The split at the 20 points the same way for both. Atlanta moves the ball poorly between the 20s (-0.049 field EPA) but finishes at a 66.7% red-zone rate; Chicago is the reverse (+0.080 field EPA, 43.8% red-zone, three straight weeks tagged for red-zone stalls). That argues Atlanta's points arrive as touchdowns off short fields and ground scores while Chicago piles up yardage and kicks. Atlanta's secondary gives chunk plays (explosive passes allowed every week, Henderson out), and Chicago allows 8.79 yards per attempt (31st) despite a 4th-ranked pass EPA — both passing games should be low-attempt and explosive rather than high-volume.</p>
+<h2>What would change it</h2>
+<p>If Chicago scores first and Atlanta has to throw 35 times, the Bijan carry calls shrink and London's reception line comes alive. If Williams is hit early, Chicago's whole offense collapses the way it did in weeks 2 and 5 and the total dies. Kalshi is the price here and its player markets are thin — check volume before leaning on any gap.</p></div>
+    </section>
+    <section class="gm-doc-pane" data-title="Offenses">
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>CHI offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>A pace-and-possession offense: 72.8 plays a game, 4.73 yards a carry and 2.90 yards before contact, with passing that lives on short throws and YAC (6.1 and 6.3 aDOT in weeks 3-4, 120 and 135 team YAC). Field EPA +0.080, red-zone EPA -0.13.</p>
+          <div class="gm-doc-k">How it scores</div><p>Long drives and ground touchdowns — six rushing scores in week 1, both week-4 touchdowns on Monangai runs. Explosive passing arrives in bursts (five 20-plus completions in weeks 1 and 4) rather than as a plan.</p>
+          <div class="gm-doc-k">What stops it</div><p>Pressure, full stop. 24.4% sack-or-hit vs Minnesota produced 3 points; 19.1% at Green Bay produced 7 points and five giveaways. Add red-zone stalls: 0-for-3 (wk2), 2-of-4 (wk3), 2-of-7 (wk4).</p>
+          <div class="gm-doc-k">This matchup</div><p>Atlanta is the blueprint on paper: 5th in pressure rate generated, 5th in yards per attempt allowed, 10th in rush EPA allowed and 4th in rush yards allowed per game, with 1.84 yards before contact conceded. What Atlanta does not do is take the ball away (0.5% opponent INT rate) or avoid flags — 28th in pre-snap penalties and 28th in DPI yards, which extends drives for a team that already wins the snap count.</p>
+          <div class="gm-doc-k">Injuries</div><p>Williams is active and starting after a hamstring absence (Rotowire, Sunday morning). Kyle Monangai is out (thumb/toe), handing the backfield to Swift with Roschon Johnson behind him. Left tackle Braxton Jones is on IR — not a number in the projection, but a reason to hold confidence down on protection against Atlanta&#x27;s front. On Atlanta&#x27;s side C.J. Henderson is out and A.J. Terrell on IR, leaving Avieon Terrell opposite Mike Hughes.</p>
+          <div class="gm-doc-k">Expect</div><p>Pass rate a touch above their .497 season mark, 32-35 attempts at a short aDOT, Swift at 15-18 carries for modest yardage with real receiving work, Odunze as the only downfield share, and points that lag the yardage.</p>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>ATL offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>A run-identity offense: .464 pass rate, 5.06 yards a carry, 205 and 242 rushing yards in its two wins. Poor between the 20s (-0.049 field EPA) and excellent inside them (66.7% touchdowns per trip, +0.116 red-zone EPA).</p>
+          <div class="gm-doc-k">How it scores</div><p>Bijan and Brian Robinson in short yardage — five rushing touchdowns at New Orleans — plus one or two explosive throws to London or Dotson in a 20-25 attempt game.</p>
+          <div class="gm-doc-k">What stops it</div><p>Its own giveaways (seven in weeks 1-2) and pressure when it has to drop back: four sacks and 19.2% pressure at Pittsburgh produced 13 points. Both bad games came with a backup at quarterback.</p>
+          <div class="gm-doc-k">This matchup</div><p>Chicago is 31st in rush EPA allowed and 29th in rush success allowed, and it plays without Sweat (suspended), Odeyingbo (IR) and Edwards (hamstring) — the exact front-seven depletion that preceded Atlanta&#x27;s 242- and 205-yard rushing games. Chicago&#x27;s pass defense is genuinely good on efficiency (4th in pass EPA, 2nd in success allowed) but 31st in yards per attempt: the way through it is one chunk, not sustained volume.</p>
+          <div class="gm-doc-k">Injuries</div><p>Penix has no designation after full practices (Rotowire, Friday) despite the ribs. London was limited with a hip but is expected to play (RotoBaller, Saturday). Jake Matthews limited (groin) and Jawaan Taylor rested. Against them, Chicago is down Sweat, Odeyingbo, Edwards and Stevenson, with Gordon activated off PUP.</p>
+          <div class="gm-doc-k">Expect</div><p>28-30 carries, Bijan in the 18-22 band with goal-line work shared, 22-27 Penix attempts funneled to London with Dotson as the vertical complement, and touchdowns rather than field goals when they get inside the 20.</p>
+        </div>
+        
+      </div>
+    </section>
+    <section class="gm-doc-pane" data-title="The calls">
+      <p class="gm-doc-note">Each call is one player, one market, one side of the line Kalshi quoted when the plan was written; graded off the box score, with the report's read of whether the reason given showed up. The rungs are the same call down the Kalshi ladder, Edge halfway to its last rung and Edge+ the last, at Kalshi's last pregame price.</p>
+      <div class="gm-doc-verdicts"><span class="badge mute">Normal <b class="up">6</b>&ndash;<b class="down">5</b></span><span class="badge mute">Edge <b class="up">8</b>&ndash;<b class="down">3</b></span><span class="badge mute">Edge+ <b class="up">10</b>&ndash;<b class="down">1</b></span></div>
+      <div class="gm-doc-calls">
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">D&#x27;Andre Swift</b><span class="flat">CHI</span>
+            <span class="bet">over 14.5 rec yds</span>
+            <span class="res hit">&#10003; 26</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #7 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 67%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 54%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal / Edge / Edge+</i> over 14.5 rec yds <small>54&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Exactly the stated mechanism: 5 targets on 1 total air yard, 32 YAC, against a front that hit Williams 7 times. 26 receiving yards on a 14.5 line.</p>
+          <p class="why">Atlanta pressures at the fifth-highest rate, and every time this line leaks the ball goes to the back underneath. With the other back out, Swift owns the checkdowns.</p>
+          <p class="ev">5-54 receiving vs MIN under a 24.4% pressure rate and 4-30 at GB under 19.1%; Monangai ruled out (Rotowire, Friday), leaving Swift and Roschon Johnson.</p>
+          <p class="ev">vs #7 pass EPA allowed, a rank built on success rate rather than denying underneath throws; backs&#x27; receiving is the one area opponent strength barely moves. The model&#x27;s mean is well clear of the line and the market&#x27;s price is not.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Rome Odunze</b><span class="flat">CHI</span>
+            <span class="bet">over 39.5 rec yds</span>
+            <span class="res miss">&#10007; 39</span>
+            <span class="badge bad">missed · read partly held</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #7 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 64%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 54%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> over 39.5 rec yds <small>55&cent;</small></span><span class="rung hit"><i>Edge</i> 25+ rec yds <small>72&cent;</small></span><span class="rung hit"><i>Edge+</i> 15+ rec yds <small>84&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The air-yards premise held — Odunze led the team with 38 air yards and a 31.7% air-yards share and produced +6.63 EPA — but only 4 targets came, and the line missed by one yard at 39.0. The quick game sent the volume to Burden (8) and Loveland (7).</p>
+          <p class="why">He is the only outside-the-numbers volume Chicago has, and his snap share has climbed to near every snap. With Williams back the downfield share goes to him first.</p>
+          <p class="ev">Snaps 48% to 99% across five weeks; targets 3-4-6-7-9; 6-94 vs NYJ with 43% of the air yards. ATL allows 261.4 pass yards a game (27th) and 14.6 DPI yards (28th).</p>
+          <p class="ev">vs #7 pass EPA allowed — the rank rests on efficiency, not volume suppression: Atlanta concedes the 27th-most passing yardage and extends drives with flags. Our week-4 review had this same read hit on his receptions.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Jahan Dotson</b><span class="flat">ATL</span>
+            <span class="bet">over 24.5 rec yds</span>
+            <span class="res hit">&#10003; 87</span>
+            <span class="badge good">hit · read partly held</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">efficiency</span><span class="badge mute">low</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #4 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 63%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 50%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> over 24.5 rec yds <small>48&cent;</small></span><span class="rung hit"><i>Edge / Edge+</i> 15+ rec yds <small>64&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Right that Chicago concedes the chunk (4 explosives allowed, 142 yards), wrong about the script: this was not a &#x27;low-attempt Falcons game.&#x27; Dotson&#x27;s 87 came on 33 attempts, with the 33- and 41-yarders arriving down 24 and 16 in the fourth quarter.</p>
+          <p class="why">In a low-attempt Falcons game one deep shot is the whole number, and Chicago is the defense that gives those up with its pass rush gutted. He is the vertical complement to London.</p>
+          <p class="ev">54 yards on 3 targets (wk4, TD) and 54 on 4 (wk5); CHI allows 8.79 yards per attempt (31st) and explosive passes in every week of its log.</p>
+          <p class="ev">vs #4 pass EPA allowed — the exception is the yards-per-attempt rank (31st): this defense wins on success rate and gives up chunks. Labelled an efficiency call, the weaker kind, and our week-4 review lost the opposite side of exactly this read.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Bijan Robinson</b><span class="flat">ATL</span>
+            <span class="bet">over 89.5 rush yds</span>
+            <span class="res miss">&#10007; 61</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">high</span>
+            <span class="badge good" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #31 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 37%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 54%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> over 89.5 rush yds <small>54&cent;</small></span><span class="rung miss"><i>Edge</i> 70+ rush yds <small>72&cent;</small></span><span class="rung hit"><i>Edge+</i> 50+ rush yds <small>88&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The matchup premise was never tested — 9 carries, not 20-plus, because Atlanta trailed on every snap. 61 yards, and 23 of them came on one second-quarter run (Q2 11:34).</p>
+          <p class="why">Chicago can&#x27;t stop the run and now plays without its two best edge rushers and its starting linebacker. Any Falcons lead turns this into 20-plus carries, the way it did at Green Bay and New Orleans.</p>
+          <p class="ev">CHI 31st in rush EPA allowed, 29th in rush success; Sweat suspended, Odeyingbo to IR, Edwards out. Bijan 29-194 (wk3) and 19-145 (wk4) in the two games ATL led; 17-86 vs BAL in a loss.</p>
+          <p class="ev">vs #31 rush EPA allowed. The model&#x27;s own mean sits below his line because the blend splits the matchup; backs&#x27; projections systematically under-respond to a weak run defense, which is where the call lives. Rushing calls are the plans&#x27; best market this season (56%).</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Bijan Robinson</b><span class="flat">ATL</span>
+            <span class="bet">over 129.5 rush+rec yds</span>
+            <span class="res miss">&#10007; 53</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #31 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 32%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 48%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal / Edge / Edge+</i> over 129.5 rush+rec yds <small>50&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The &#x27;volume survives either script&#x27; claim failed outright: 9 carries and 2 targets for -8 receiving yards, 53 total. Atlanta threw 36 times and did not use him underneath at all.</p>
+          <p class="why">Same ground edge, plus a receiving floor that reappeared last week when Atlanta had to chase. He is the one Falcon whose volume survives either script.</p>
+          <p class="ev">Weeks 3-5: 194+19, 145+2, 86+32 scrimmage yards; 7 targets vs BAL on an 81% snap share, his highest since week 1.</p>
+          <p class="ev">vs #31 rush EPA allowed, #4 pass EPA allowed. The market&#x27;s price sits near a coin flip while the model&#x27;s mean is well under the line — the blend is the thing understating the run matchup, not the usage.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Drake London</b><span class="flat">ATL</span>
+            <span class="bet">under 6.5 receptions</span>
+            <span class="res hit">&#10003; 4</span>
+            <span class="badge warn">hit · not for the reason given</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #4 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 71%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 56%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 6.5 receptions <small>57&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;10 receptions <small>89&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;13 receptions <small>98&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Hit for the opposite reason: London got 11 targets and a 44% air-yards share in a 36-attempt game, not a capped look. He finished with 4 catches because Penix was 19-of-33 at -7.3 CPOE under pressure.</p>
+          <p class="why">He is the alpha, but a low-attempt Falcons game caps catches — his yardage comes in chunks, not in volume. Seven-plus grabs needs a throwing script Atlanta avoids.</p>
+          <p class="ev">Catches by week: 2, 4, 9, 5, 7 — the two big ones came on 25 and 32 attempts. ATL projects under 30 attempts here.</p>
+          <p class="ev">vs #4 pass EPA allowed, #2 in pass success allowed. Both the model and the market sit under the line; the market is the higher of the two, and the attempt ceiling is what it is underweighting.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Michael Penix Jr.</b><span class="flat">ATL</span>
+            <span class="bet">under 249.5 pass yds</span>
+            <span class="res hit">&#10003; 225</span>
+            <span class="badge warn">hit · not for the reason given</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #4 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 69%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 56%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 249.5 pass yds <small>57&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;325 pass yds <small>90&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;375 pass yds <small>96&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 225 yards came from 33 attempts and 5 sacks, not the &#x27;under 25 attempts with a lead&#x27; script the plan described. Atlanta&#x27;s pass rate was .736, the mirror image of the .30 the mechanism required.</p>
+          <p class="why">Atlanta&#x27;s attempts die whenever it can run, and this is the softest run matchup on its schedule. A lead drops their pass rate toward thirty percent.</p>
+          <p class="ev">Pass rate .368 at GB and .382 at NO with 25 and 20 attempts; .294 second-half rate in week 4. Season rate .464 against a .558 league mark.</p>
+          <p class="ev">vs #4 pass EPA allowed. The model already sits under the line; what it still misses is that the blend pulls Atlanta&#x27;s pass rate toward league, the same error our week-4 review graded as a hit.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Colston Loveland</b><span class="flat">CHI</span>
+            <span class="bet">under 39.5 rec yds</span>
+            <span class="res miss">&#10007; 65</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">low</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #7 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 68%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 54%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 39.5 rec yds <small>54&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;70 rec yds <small>83&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;100 rec yds <small>94&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 7 targets, 6 catches, 65 yards and the opening touchdown on 88.3% snaps, with 33 air yards and 27.5% of the team&#x27;s air yards — he was a downfield piece, not a traffic checkdown, and Atlanta was not stingy to him.</p>
+          <p class="why">Full-time snaps have produced a target floor but not yardage: his catches come short and in traffic. Atlanta has been stingy to tight ends relative to what it gives receivers.</p>
+          <p class="ev">Yardage by week: 0, 3, 31, 57, 19 on snap shares of 79-92%; ATL 19th in fantasy points allowed to tight ends with its safeties playing every snap.</p>
+          <p class="ev">vs #7 pass EPA allowed. Our week-4 review lost this call when he led the team in targets — the volume read broke, so this one rests on yards per catch, not on usage, and is sized accordingly.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Caleb Williams</b><span class="flat">CHI</span>
+            <span class="bet">under 0.5 INTs</span>
+            <span class="res hit">&#10003; 0</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">low</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #7 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 55%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 58%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 0.5 INTs <small>58&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;2 INTs <small>93&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;3 INTs <small>98&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Zero interceptions on 36 attempts; the reasoning held precisely — Atlanta&#x27;s 0.5% opponent INT rate, and Chicago led wire to wire with 33 carries, so no desperate throws existed.</p>
+          <p class="why">Atlanta almost never intercepts the ball — its takeaways this year came from opponents&#x27; mistakes, not its coverage. A favorite leaning on the run throws fewer risky balls late.</p>
+          <p class="ev">ATL&#x27;s generated interception rate is 0.5% per attempt against a 2.2% league mark; CHI projects to lead or sit within a score, and CHI&#x27;s own rate is 2.9%.</p>
+          <p class="ev">vs #7 pass EPA allowed. Both the model and the market put him near a coin flip on one pick; the one-or-more rung is the weakest number of the lot and is overstated by roughly an attempt a game.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">D&#x27;Andre Swift</b><span class="flat">CHI</span>
+            <span class="bet">under 59.5 rush yds</span>
+            <span class="res hit">&#10003; 44</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #10 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 53%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 44%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 59.5 rush yds <small>47&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;110 rush yds <small>89&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;160 rush yds <small>99&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 16 carries for 44 (2.75 YPC) with 2 stuffs against the front the plan trusted. Extra volume from Monangai&#x27;s absence did not fix the yards-per-carry, exactly as written.</p>
+          <p class="why">Atlanta&#x27;s front is the one thing that has held up all year: almost no yards before contact and the fourth-fewest rushing yards allowed. Volume from the backup&#x27;s absence doesn&#x27;t fix yards per carry.</p>
+          <p class="ev">ATL allows 3.78 YPC and 1.84 yards before contact against a 2.54 league mark; Swift at 43, 58 and 84 yards in his last three full workloads.</p>
+          <p class="ev">vs #10 rush EPA allowed, #4 in rush yards allowed per game. The model&#x27;s mean sits above the line on carry volume inherited from the ruled-out back; those inherited-share legs run under projection, rushing by the widest margin.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Caleb Williams</b><span class="flat">CHI</span>
+            <span class="bet">under 224.5 pass yds</span>
+            <span class="res miss">&#10007; 305</span>
+            <span class="badge bad">missed · read partly held</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #7 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 48%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 48%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 224.5 pass yds <small>47&cent;</small></span><span class="rung miss"><i>Edge</i> &lt;300 pass yds <small>84&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;350 pass yds <small>94&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The pressure premise was correct — 4 sacks, 7 hits, 17.1% rate, and Williams&#x27;s rushing died with the hamstring (3 yards) — but the conclusion failed: 30-of-36 for 305 at +15.3 CPOE and 193 YAC. A 3.9-aDOT offense does not shrink under pressure, it gets the ball out.</p>
+          <p class="why">First game back from the hamstring, a replacement left tackle, and the league&#x27;s fifth-best pressure defense that also allows the fifth-fewest yards per attempt. This offense shrinks when the quarterback gets hit.</p>
+          <p class="ev">138 yards vs MIN at a 24.4% pressure rate; ATL generates 18.9% pressure and allows 6.22 Y/A; Braxton Jones on IR.</p>
+          <p class="ev">vs #7 pass EPA allowed. The model&#x27;s mean is above the line; it carries no input for the missing tackle and prices his two clean-pocket weeks equally with the two he spent on the ground. Passing overs against top-5 pass defenses are 1-for-3 this season.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Same-script legs">
+      <p class="gm-doc-note">Legs the same script produces together: they move as one, which is what a same-game parlay pays for.</p>
+      <div class="gm-doc-three">
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Atlanta leads and runs</b></div>
+          <div class="legs"><span class="leg miss">Bijan Robinson <em>over 89.5 rush yds</em> <i>&#10007;</i></span><span class="leg hit">Michael Penix Jr. <em>under 249.5 pass yds</em> <i>&#10003;</i></span><span class="leg hit">Drake London <em>under 6.5 receptions</em> <i>&#10003;</i></span></div>
+          <p class="sub">One mechanism: carries against a depleted Bears front put Atlanta ahead, the pass rate falls toward thirty percent, and the attempts that would feed London&#x27;s catch total never get thrown.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Chicago squeezed into the short game</b></div>
+          <div class="legs"><span class="leg miss">Caleb Williams <em>under 224.5 pass yds</em> <i>&#10007;</i></span><span class="leg hit">D&#x27;Andre Swift <em>over 14.5 rec yds</em> <i>&#10003;</i></span><span class="leg hit">D&#x27;Andre Swift <em>under 59.5 rush yds</em> <i>&#10003;</i></span></div>
+          <p class="sub">Atlanta&#x27;s pressure and its stout front push Chicago off the ground and into checkdowns: the back&#x27;s yardage moves from the carries to the catches while the passing total stays short.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Chunks, not drives</b></div>
+          <div class="legs"><span class="leg hit">Jahan Dotson <em>over 24.5 rec yds</em> <i>&#10003;</i></span><span class="leg miss">Rome Odunze <em>over 39.5 rec yds</em> <i>&#10007;</i></span></div>
+          <p class="sub">Both defenses are efficient on success rate and leaky on yards per attempt with thin pass rushes — the passing yardage in this game arrives as a handful of explosives to the two downfield pieces.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    
+    
+
+    
+    <section class="gm-doc-pane" data-title="Projection grade">
+      <div class="gm-doc-gradehead">
+        <div class="gm-grade good"><b>B</b><span>projection<br>grade &middot; 71</span></div>
+        <div class="gm-doc-gradetext">
+          
+          <div class="gm-doc-verdicts"><span class="badge mute">CHI 31 – ATL 23</span><span class="badge mute">CHI covered (CHI by 1.5)</span><span class="badge mute">Over 51.5 (54)</span><span class="badge mute">teams 70</span><span class="badge mute">player lines 24/43 in range</span><span class="badge mute">market calls 2/3</span></div>
+        </div>
+      </div>
+      
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>ATL</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">25.0</td><td class="num"><b>23</b></td><td class="num flat">-2</td><td class="meter"><i style="width: 90%" class=""></i></td></tr><tr><td>Pass yds</td><td class="num flat">221.4</td><td class="num"><b>225.0</b></td><td class="num flat">+3.6</td><td class="meter"><i style="width: 98%" class=""></i></td></tr><tr><td>Rush yds</td><td class="num flat">116.8</td><td class="num"><b>63.0</b></td><td class="num down">-53.8</td><td class="meter"><i style="width: 40%" class="bad"></i></td></tr><tr><td>Pass att</td><td class="num flat">28.9</td><td class="num"><b>33</b></td><td class="num flat">+4.1</td><td class="meter"><i style="width: 74%" class=""></i></td></tr><tr><td>Carries</td><td class="num flat">27.1</td><td class="num"><b>12</b></td><td class="num down">-15.1</td><td class="meter"><i style="width: 0%" class="bad"></i></td></tr>
+          </tbody></table>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>CHI</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">26.5</td><td class="num"><b>31</b></td><td class="num flat">+4.5</td><td class="meter"><i style="width: 78%" class=""></i></td></tr><tr><td>Pass yds</td><td class="num flat">235.6</td><td class="num"><b>305.0</b></td><td class="num flat">+69.4</td><td class="meter"><i style="width: 54%" class=""></i></td></tr><tr><td>Rush yds</td><td class="num flat">113.7</td><td class="num"><b>98.0</b></td><td class="num flat">-15.7</td><td class="meter"><i style="width: 83%" class=""></i></td></tr><tr><td>Pass att</td><td class="num flat">35.1</td><td class="num"><b>36</b></td><td class="num flat">+0.9</td><td class="meter"><i style="width: 94%" class=""></i></td></tr><tr><td>Carries</td><td class="num flat">27.9</td><td class="num"><b>33</b></td><td class="num flat">+5.1</td><td class="meter"><i style="width: 64%" class=""></i></td></tr>
+          </tbody></table>
+        </div>
+        
+      </div>
+      <div class="gm-doc-verdicts"><span class="badge good">Winner: CHI &#10003;</span><span class="badge good">Spread: CHI -1.5 &#10003;</span><span class="badge bad">Total: Under 51.5 (proj 51.5) &#10007;</span></div>
+      
+      
+      <div class="gm-doc-k">Why the projection missed &middot; what it got right</div>
+      <p class="gm-doc-p">A B (0.708) that reads better on points than on shape: CHI 31 vs 26.5 projected, ATL 23 vs 25.0, and the market calls went 2-of-3 (winner and spread right, total wrong). Everything that graded badly came from one mechanism — Atlanta never led for a single snap (seconds_led ATL 0) and ran the ball 12 times against a projected 27.1, the only 0.00 component on the card. Chicago&#x27;s 305 pass yards against 235.6 projected is the other miss, and it was not volume (36 attempts vs 35.1 projected) but completion efficiency: 30-of-36, CPOE +15.3, aDOT 3.9, 193 YAC. The player card was the strongest piece (0.743, 24 of 43 lines), anchored by Penix&#x27;s 225 pass yards against 221.4 and Swift&#x27;s 26 receiving yards against 26.6. The misses underneath were distribution misses — Burden, Loveland and Roschon Johnson absorbed volume the model gave to Odunze, Raymond and Swift.</p>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>ATL</b> &middot; 12 carries and 63 rush yards against 27.1 and 116.8 projected; Bijan 9 carries, Brian Robinson 2<div class="went">Game script. Atlanta trailed on all 53 of its snaps and ran a .736 pass rate (.464 season), .781 in the second half with 18.9% no-huddle. The engine blended a .533 pass rate from a team whose season rate was built on leading in weeks 3-4.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>CHI</b> &middot; 305 pass yards vs 235.6, on the projected attempt volume<div class="went">Efficiency, not volume: 83% completion rate, CPOE +15.3, 193 of 305 yards after the catch at a 3.9 aDOT. The blended 6.715 Y/A assumed Atlanta&#x27;s pressure would shorten the output; the pressure arrived (4 sacks, 7 hits, 17.1%) and the quick game beat it anyway.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>CHI</b> &middot; 5 red-zone trips, 4 touchdowns, +0.558 EPA/play inside the 20 against a 43.8% season rate and -0.13 red-zone EPA<div class="went">Finishing. The engine reported a shrunk 54.4% matchup rate and applied the league constant, which was the right handling — this is the least persistent number in the dossier, and three straight &#x27;red zone stalls&#x27; weeks did not carry.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>CHI</b> &middot; 33 carries for 98 (4.08 blended YPC vs 2.97 actual), with Roschon Johnson at 13 carries against 2.9 projected<div class="went">Volume shift from Monangai&#x27;s absence plus an Atlanta front that did what the inputs said (1.84 YBC/carry allowed, 5 combined stuffs between Swift and Johnson). Carries over, yards under.</div></div></div></div>
+      <div class="gm-doc-verdicts wrap"><span class="badge good">&#10003; Atlanta&#x27;s team total (23 vs 25.0) and Penix&#x27;s passing yards (225 vs 221.4) — both landed despite the route to them being entirely different from the projected one.</span><span class="badge good">&#10003; Chicago as the side: projected margin -1.5 home, actual -8, with the spread and winner both correct.</span><span class="badge good">&#10003; Chicago&#x27;s pass attempts (36 vs 35.1) and Swift&#x27;s receiving line (4-26 vs 2.7-26.6).</span><span class="badge good">&#10003; Atlanta&#x27;s sack exposure: 2.0 projected is light, but the 0.073 offensive sack rate and 0.089 opponent rate pointed at the 5-sack, 2-fumble afternoon Penix had.</span></div>
+      
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Turning points">
+      <div class="gm-doc-tl">
+        <div class="gm-doc-tp"><div class="clock">Q1 11:24</div><div class="what"><span class="badge mute">CHI</span> 3rd-and-11: Williams short right to Odunze for 2, lateral to Roschon Johnson for 12 more (EPA +3.01, WPA +0.124)<div class="went">Rescued the opening drive two plays after a holding penalty at the ATL 40; the drive ended in the Loveland touchdown and Chicago never trailed again.</div></div></div><div class="gm-doc-tp"><div class="clock">Q1 05:15</div><div class="what"><span class="badge mute">CHI</span> 3rd-and-17: Williams deep middle to Odunze for 23 (EPA +3.18)<div class="went">The only true downfield completion of Chicago&#x27;s afternoon turned a punt into the 14-0 drive, which is what locked Atlanta out of its run-lead script for the rest of the day.</div></div></div><div class="gm-doc-tp"><div class="clock">Q2 01:52</div><div class="what"><span class="badge mute">CHI</span> Taylor punt, Branch muffs at the ATL 10, Blackwell recovers (EPA +5.07, WPA +0.103)<div class="went">Chicago had just punted from its own 40; instead it got a 3-play, 10-yard touchdown drive for 21-7 at the half — the largest single swing in the game and a score Chicago&#x27;s offense did not earn.</div></div></div><div class="gm-doc-tp"><div class="clock">Q3 10:38</div><div class="what"><span class="badge mute">ATL</span> 4th-and-3 at the CHI 28, Penix incomplete to London with Hardy in his face (EPA -3.34)<div class="went">Atlanta&#x27;s second failed fourth down; an 8-play, 6-yard drive off a 28-yard DPI start produced nothing and the deficit stayed three scores.</div></div></div><div class="gm-doc-tp"><div class="clock">Q3 05:41</div><div class="what"><span class="badge mute">ATL</span> 3rd-and-6 at the ATL 8: Gordon strip-sacks Penix at the 2, Neuzil recovers (EPA -2.11)<div class="went">Gave Chicago the ball at its own 48; seven plays later Johnson scored for 28-7 and the win-probability window closed (ATL max 0.432, all of it in the first quarter).</div></div></div><div class="gm-doc-tp"><div class="clock">Q4 03:01</div><div class="what"><span class="badge mute">ATL</span> 3rd-and-16: Gordon strip-sacks Penix, Bush recovers at the ATL 28 (EPA -3.06)<div class="went">At 31-23 with 3:01 left this was the comeback; Chicago then bled 2:54 on a 6-play drive ending the game.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="What decided it">
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Atlanta never led, and its offense is a different team when it can&#x27;t run</b><div class="went">53 snaps, all trailing, .736 pass rate, -0.27 EPA/play, -0.473 EPA/play between the 20s, 3-of-13 on third down, 0-for-3 on fourth. Bijan got 9 carries.</div><div class="went"><b>Tell:</b> Weeks 1-2, when Atlanta fell behind, its offense posted -0.358 and -0.485 EPA/play with 7 combined turnovers; its two good games (wks 3-4) came at .368 and .382 pass rates with leads. The engine&#x27;s .533 blended pass rate assumed a neutral script.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag no" title="Not visible before kickoff">in-game only</span><div><b>Chicago finished in the red zone for the first time this season</b><div class="went">5 trips, 4 touchdowns, 0 field goals, +0.558 EPA/play inside the 20 — against a 43.8% season TD rate and &#x27;red zone stalls&#x27; tags in weeks 2, 4 and 5. Three of the four were short rushing scores (Swift twice, Johnson).</div><div class="went"><b>Tell:</b> Nothing pointed at it; Atlanta&#x27;s own &#x27;red zone defense&#x27; tag in weeks 4 and 5 (75% TD per trip allowed both weeks) was the only hint, and that&#x27;s a 7-trip sample.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag no" title="Not visible before kickoff">in-game only</span><div><b>Hidden points: two Branch special-teams fumbles</b><div class="went">Muffed punt at the ATL 10 (Q2 1:52, +5.07 EPA) became a touchdown; the kickoff fumble recovered by McCloud (Q3 1:48, -5.49 EPA for ATL) became the 50-yard field goal to open Q4. Ten of Chicago&#x27;s 31 points.</div><div class="went"><b>Tell:</b> No pre-game marker; this is the part of the 54 total the model should not expect to repeat.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Chicago&#x27;s pass rush beat Atlanta without Sweat or Odeyingbo</b><div class="went">5 sacks, 6 QB hits, 17.9% pressure rate, two Gordon strip-sacks (Q3 5:41, Q4 3:01) and a Hardy strip-sack (Q2 1:05) — all three inside Atlanta&#x27;s own 25. Atlanta faced a 52.4% blitz rate (charted) and 4.79 average rushers.</div><div class="went"><b>Tell:</b> Atlanta&#x27;s season sack rate taken was 0.073 with 4 and 3 sacks allowed in its two losing scripts; a trailing, 73.6% shotgun offense invites exactly this.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Chicago&#x27;s 133 penalty yards did not cost it</b><div class="went">12 flags for 133 yards, four offensive holdings (two wiping 21- and 24-yard completions at Q2 9:16 and Q2 2:39), a 28-yard DPI and a 15-yard disqualification on the kickoff — and the Bears still scored 31.</div><div class="went"><b>Tell:</b> CHI&#x27;s offense ran 12 and 8 flags in weeks 1 and 2 and carries 3.4/game, but only 2 of today&#x27;s 12 were pre-snap — the persistent subset was normal. Treat the rest as variance, not trait.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; CHI">
+      <div class="gm-doc-boxhead"><b>How CHI gets beaten</b><span class="flat">3-2 entering</span><span class="badge mute">medium confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">turnovers &times;3</span><span class="badge bad">red zone stalls &times;3</span><span class="badge bad">explosive passing &times;2</span><span class="badge bad">pre-snap penalties &times;2</span><span class="badge bad">pressure allowed &times;2</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Giving up explosive passes when the game is already decided — and sometimes when it isn&#x27;t</b><div class="went">6 explosives allowed at CAR (wk 1, 0.312 EPA/dropback), 6 at GB (wk 5, 0.475), 4 today for 142 yards (33, 29, 41, 39) with three of them after the lead reached 24.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Its own turnovers</b><div class="went">&#x27;turnovers&#x27; tagged weeks 2, 4 and 5 — 5 giveaways at GB, 2 vs MIN, 2 vs NYJ; today Johnson&#x27;s fumble at the ATL 45 (Q4 7:21, -5.58 EPA) handed Atlanta the drive that made it 31-15.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Pressure on Williams turning drives off</b><div class="went">24.4% hit rate vs MIN (3 points), 19.1% at GB (7 points); today 4 sacks and 7 hits, including the 3rd-and-5 sack by Z.Smith at 31-23 (Q4 4:20) that forced a punt with the lead at one score.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Offensive holding and drive-killing flags</b><div class="went">12 flags for 133 yards today, four holds, two erasing 20+ yard completions; 12 flags in week 1, 8 vs MIN. Only 2 pre-snap today, so the persistent component is league-average.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Run efficiency that doesn&#x27;t travel</b><div class="went">2.97 YPC today (98 on 33), -0.24 EPA/rush, 5 stuffs; -0.309 EPA/rush vs MIN, -0.055 vs NYJ. The season 4.73 YPC is carried by the CAR and NYJ explosives.</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> Chicago wins by volume and ball security, not by efficiency: it runs 72.8 plays a game, lives on short, high-CPOE throws (aDOT 3.9 today, 193 YAC) and loses when it gives the ball away or the quarterback gets hit at a 20%+ rate. Its defense holds success rate down (ATL 32.1% today) but concedes chunk plays to anyone who can hold up long enough to throw past the sticks.</p>
+      <p class="gm-doc-p"><b>This week:</b> Atlanta had the tool — 7.77 Y/A season, 4 explosive passes — but never got to use it in a neutral script, and its field offense (-0.473 EPA/play, 3-of-13 third downs) couldn&#x27;t sustain drives to get there. Three of its four explosives came in no-huddle chase mode down 24.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> An opponent needs a pass rush that gets home without volume blitzing (Atlanta blitzed 52.4% and got 4 sacks and 7 hits, but Chicago still completed 83%) and a vertical passing game that can hit the chunk early, before Chicago&#x27;s snap-count advantage compounds. Rushing offenses need above-league explosive-run rate; Chicago&#x27;s front gave up only 2 ATL runs of 10+.</p>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; ATL">
+      <div class="gm-doc-boxhead"><b>How ATL gets beaten</b><span class="flat">2-3 entering</span><span class="badge mute">medium confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">turnovers &times;2</span><span class="badge bad">penalties &times;2</span><span class="badge bad">red zone defense &times;2</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Score first and its offense stops existing</b><div class="went">Trailing all day: -0.27 EPA/play, -0.473 between the 20s, 12 carries. Weeks 1 and 2 behind: -0.358 and -0.485 EPA/play with 7 turnovers. Its two wins came at .368 and .382 pass rates with leads.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Pressure and strip-sacks on Penix</b><div class="went">5 sacks and 3 fumbles today (Hardy Q2 1:05, Gordon Q3 5:41 and Q4 3:01 — the last recovered by CHI at the ATL 28); 4 sacks at PIT (wk 1), 3 vs CAR (wk 2), 3 vs BAL (wk 5). 19.2% and 15.0% hit rates in those losses.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Third and fourth down</b><div class="went">3-of-13 and 0-for-3 today; 2-of-12 at PIT, 4-of-13 vs CAR. The two fourth-down failures (Q2 9:29, Q3 10:38) cost -6.1 EPA combined.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Red-zone defense that concedes touchdowns</b><div class="went">&#x27;red zone defense&#x27; tagged weeks 4 and 5 — 75% TD per trip allowed to NO and BAL, +0.324 and +0.391 EPA/play inside the 20; today Chicago went 4-of-5 with +0.558. The front holds YPC down (2.97 allowed) and then surrenders the short scores.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>The run game against it when the opponent is physical downhill</b><div class="went">BAL week 5: 6 explosive runs, +0.229 EPA/rush allowed. Today Chicago ran 33 times for only 98, so this is a one-week facet, not a trait.</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> Atlanta is a lead-dependent run offense with a passing game that only produces chunks. Take an early two-score lead and the carries vanish, Penix goes to shotgun (77.4%) and the pass rush eats him; its red-zone defense then keeps the opponent&#x27;s touchdown rate high enough that the deficit never shrinks.</p>
+      <p class="gm-doc-p"><b>This week:</b> Chicago executed it exactly — scored on its first two drives, led 14-0 by 1:10 of Q1, and Atlanta&#x27;s run attempts fell to 11 rushes on 53 snaps. Chicago had the efficiency that matters here (0.247 EPA/dropback, 56.1% pass success, 83% completion) without needing explosive plays.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> An offense that can score on its opening two possessions without relying on explosives — high success rate and red-zone finishing — plus any pass rush that can strip-sack a shotgun quarterback. Teams that fall behind Atlanta instead get the week-3/4 version and lose by three scores.</p>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Player lines">
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Luther Burden III</b> <span class="flat">CHI</span> &middot; 8 rec on 8 targets, 95 yards (proj 5.1-53.8) at a 39.0% snap share<div class="went">Perfect-catch volume in the short/YAC game — Chicago threw 33 of 36 attempts short for 260 yards. He is a per-snap monster the projection underweighted by using snap-based usage shares.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Colston Loveland</b> <span class="flat">CHI</span> &middot; 6-65 and the opening touchdown on 7 targets (proj 3.7-26.3), 88.3% snaps<div class="went">33 air yards and 34 YAC, 27.5% air-yards share — he was the second downfield piece, not a traffic checkdown, and he caught the 14-yard score on 2nd-and-13.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Rome Odunze</b> <span class="flat">CHI</span> &middot; 3-39 on 4 targets (proj 3.9-57.3) despite 96.1% snaps and a team-high 31.7% air-yards share<div class="went">Efficiency was there (+6.63 receiving EPA, the 23-yard 3rd-and-17 conversion), volume was not. In a 3.9-aDOT game the alpha outside receiver is a low-target, high-variance play.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Roschon Johnson</b> <span class="flat">CHI</span> &middot; 13 carries, 51 yards, a touchdown, 2-34 receiving (proj 2.9 carries)<div class="went">Monangai out created a near-even split with Swift (16 carries, 58.4% snaps vs 40.3%). The projection kept too much of the vacated work on Swift.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>D&#x27;Andre Swift</b> <span class="flat">CHI</span> &middot; 16-44 rushing with 2 short TDs, 4-26 receiving<div class="went">Volume as projected, yards per carry crushed by Atlanta&#x27;s front (2 stuffs, 2.75 YPC); the value came entirely from goal-line touches and checkdowns.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Bijan Robinson</b> <span class="flat">ATL</span> &middot; 9-61 rushing, 2 rec for -8 (proj 16-85.7 and 4-30.4)<div class="went">Script. One 23-yard run (Q2 11:34) is most of the yardage; the deficit took the carries away and Atlanta threw 36 times without using him underneath.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Jahan Dotson</b> <span class="flat">ATL</span> &middot; 3-87, TD on 5 targets (proj 2.4-34.8)<div class="went">Two chase-mode chunks — 33 yards no-huddle at Q4 11:08 down 24, and 41 yards at Q4 7:11 down 16 — plus the 13-yard touchdown. 87 air yards on 5 looks, pure variance.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Kyle Pitts</b> <span class="flat">ATL</span> &middot; 5-60, 2 TDs on 7 targets (proj 2.3-20.6)<div class="went">All of it in the fourth quarter at 31-7 and 31-15; 39 air yards and 35 YAC against soft coverage. Target share rose only because Atlanta threw 36 times.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Drake London</b> <span class="flat">ATL</span> &middot; 4 of 11 targets for 62, 44% of the team&#x27;s air yards, -2.27 receiving EPA<div class="went">Volume with no conversion — Penix was 19-of-33 at -7.3 CPOE under a 17.9% pressure rate. Targets held, catches and efficiency didn&#x27;t.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Michael Penix Jr.</b> <span class="flat">ATL</span> &middot; 19-33, 225, 3 TD, 0 INT, 5 sacks, 3 fumbles<div class="went">The touchdown total is red-zone-only output (ATL 3-for-3 inside the 20, +0.599 EPA) sitting on top of -0.325 EPA/dropback. Passing-yard line landed; the TD prop cashed for reasons no model projects.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Caleb Williams</b> <span class="flat">CHI</span> &middot; 30-36, 305, 1 TD, 0 INT, 4 sacks, 3 rush yards (proj 22.8-235.6 and 20 rush yards)<div class="went">Record completion efficiency on a 3.9 aDOT; the rushing line died with the hamstring designation — 2 designed carries, 1 scramble for 2 yards.</div></div></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Traps">
+      <div class="gm-doc-three"><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>When a team&#x27;s season carry projection is built on leading scripts, a double-digit first-quarter deficit voids it: Atlanta was projected 27.1 carries and ran 12, with Bijan at 9. Fade RB rushing overs on the team that is a touchdown-plus underdog in live markets the moment the deficit hits 14.</b></p><p class="sub"><b>Trigger:</b> A run-lean offense (season pass rate under .48) that trails by 14+ before halftime.</p></div><div class="gm-doc-box"><span class="badge mute">Totals</span><p><b>Garbage time pays the total, not the side. Atlanta scored 16 points and both two-point conversions after 31-7, with 18 of its 53 plays in garbage time and three of its four explosives there. The total went over by 2.5 entirely on that stretch.</b></p><p class="sub"><b>Trigger:</b> A 24-point lead with 12+ minutes left and a trailing offense that goes no-huddle (18.9% here) — buy the live over, not the comeback.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>A pass rush does not suppress a sub-5 aDOT offense. Chicago faced 4 sacks, 7 hits and a 17.1% pressure rate and still threw for 305 at +15.3 CPOE with 193 YAC. Quarterback passing unders priced off pressure need the QB to actually throw downfield.</b></p><p class="sub"><b>Trigger:</b> Offense aDOT under 5.0 with completion rate over 65% — ignore the opponent pressure-rate angle on his yardage line.</p></div><div class="gm-doc-box"><span class="badge mute">Totals</span><p><b>Red-zone TD rate is the least persistent input in the file. Chicago entered at 43.8% with &#x27;red zone stalls&#x27; tagged three straight weeks and went 4-of-5 with +0.558 EPA/play. Don&#x27;t build team-total unders on a team&#x27;s red-zone history.</b></p><p class="sub"><b>Trigger:</b> Any team whose total is being shaded down purely on a sub-45% red-zone TD rate over five or fewer games.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>Snap share is not target share in a quick-game offense: Odunze played 96.1% of snaps for 4 targets, Burden played 39.0% and caught 8-of-8 for 95. Price receiving props off route usage and air-yards share (Odunze 31.7%, Loveland 27.5%) rather than snaps.</b></p><p class="sub"><b>Trigger:</b> A YAC-heavy offense (aDOT under 5) where the slot/gadget receiver has sub-50% snaps.</p></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="The story">
+      <div class="gm-doc-prose"><h2>The short version</h2>
+<p>Chicago 31, Atlanta 23 — a one-score final that was never a one-score game. The Bears led 14-0 after eleven minutes, 31-7 at the start of the fourth quarter, and surrendered 16 points in the last ten minutes to a no-huddle offense that was already beaten. CHI -1.5 cashed, the 51.5 went over on garbage-time touchdowns and two successful two-point conversions, and the projection's single biggest error — Atlanta at 27.1 carries, actual 12 — was a script failure, not a matchup failure.</p>
+<h2>How it unfolded</h2>
+<p>Chicago's opening drive answered the pre-game question in six minutes: eleven plays, 87 yards, two third-down conversions (the Odunze catch-and-lateral on 3rd-and-11, EPA +3.01, and the 14-yard Loveland touchdown on 2nd-and-13). The second drive needed a 23-yard Odunze completion on 3rd-and-17 and ended in a Swift touchdown. Atlanta's first two possessions produced three yards on six plays.</p>
+<p>From there the Falcons' day was a sequence of near-misses in bad field position. A 39-yard London catch set up the Dotson touchdown that made it 14-7, and then the game's biggest single swing arrived: Taylor's punt with 1:52 left in the half, Branch muffing it at the ATL 10, Blackwell recovering (+5.07 EPA), Swift scoring three plays later for 21-7. Atlanta's next five possessions: turnover on downs (the 4th-and-3 incompletion to London at the CHI 28, -3.34 EPA), punt after a Gordon strip-sack at its own 2, a Branch kickoff fumble that became a 50-yard field goal, and another turnover on downs. Three of Atlanta's four fourth-quarter touchdown drives came at 31-7 or worse; the only one that mattered followed Roschon Johnson's fumble at the ATL 45 (Q4 7:21, -5.58 EPA). Gordon's second strip-sack at 31-23 with 3:01 left ended it.</p>
+<h2>Why the game diverged from the projection</h2>
+<p>Two components: Atlanta's carries scored a flat 0.00 and its rushing yards 0.40. Atlanta trailed on all 53 of its snaps, ran a .736 pass rate against a .464 season rate, and went 77.4% shotgun with 18.9% no-huddle. That is the engine blending a lead-script pass rate into a game the team never led. Everything downstream — Bijan at 9 carries, Brian Robinson at 2, London at 11 targets instead of 8.5 — follows from it.</p>
+<p>Chicago's 305 passing yards against 235.6 is the more interesting miss because the volume was right (36 attempts vs 35.1). The yardage came from a completion rate the inputs had no way to carry: 30-of-36, +15.3 CPOE, 3.9 aDOT, 193 of 305 yards after the catch. Atlanta's front did its job — 2.97 yards per Bears carry, 4 sacks, 7 hits — and the Bears simply threw it out of their hands. The other distortion is the red zone: a team tagged for red-zone stalls three weeks running went 4-for-5 with +0.558 EPA/play inside the 20 while posting -0.152 EPA/play on its other 59 snaps. That is the inverse of its season profile and the reason 403 total yards turned into 31 points.</p>
+<h2>The plan against the game</h2>
+<p>The plan named the right lever — whether Atlanta got the early lead that kills its own pass rate — and then bet the wrong side of it. Its favorite path (snap-count edge, quick game, red-zone conversion, roughly 27-20) is essentially what happened, but the two mechanisms it leaned on inside that path both broke: Williams was hit seven times and threw for 305 anyway, and Odunze, the designated downfield share, got four targets while Burden and Loveland took fifteen. The Bijan calls were a defensible matchup read drowned by script probability; the Loveland and Williams passing unders were read errors about where a 3.9-aDOT offense puts its yards. Checks: pace called average and played average (123 plays vs 121.5), both lean calls failed.</p>
+<h2>Player by player</h2>
+<p>Burden caught all eight targets for 95 on a 39% snap share — the clearest per-snap mispricing on the card, and repeatable in this offense. Loveland went 6-65 and a touchdown on 88.3% of snaps with 27.5% of the air yards; the under on him was built on a premise about his role that the tape contradicts. Odunze led Chicago in air yards and air-yards share (38, 31.7%) with +6.63 receiving EPA and still missed 39.5 by half a yard — a four-target alpha. Roschon Johnson's 13 carries against 2.9 projected is the Monangai vacancy landing somewhere the model didn't look.</p>
+<p>On the Atlanta side, Penix's passing yards (225 vs 221.4) were the single best call in the file and arrived by an entirely wrong route: 33 attempts and five sacks rather than 25 attempts with a lead. His three touchdowns are red-zone-only output (3-for-3, +0.599 EPA/play) bolted onto -0.325 EPA/dropback. Pitts and Dotson both tripled their projections in the fourth quarter at 31-7 and 31-15; London took 44% of the air yards for four catches and -2.27 EPA.</p>
+<h2>The defenses</h2>
+<p>Chicago's, without Odeyingbo, held Atlanta to 32.1% success and -0.473 EPA/play between the 20s, forced 5 sacks and 3 fumbles, and stopped three of three fourth downs. Gordon, at 22% of snaps, had two strip-sacks and three tackles for loss. What it gave up were chunks: 33, 29, 41 and 39 yards — the same facet as six explosives allowed at Carolina and six at Green Bay. Charting shows Atlanta faced a 52.4% blitz rate and 4.79 average rushers, so the pressure was manufactured.</p>
+<p>Atlanta's front held Chicago to 2.97 a carry and 5 stuffs with only a 22.2% blitz rate and 4.2 rushers against 76 snaps — and then conceded four touchdowns on five red-zone trips, which is now three straight weeks of giving up 75%+ inside the 20.</p>
+<h2>The blueprint</h2>
+<p>Beat Atlanta by scoring on your first two possessions without needing explosives; the carries disappear, Penix goes to shotgun and the strip-sacks follow. Beat Chicago by holding up in protection long enough to hit one chunk per drive, and by winning the turnover column — its own giveaways are tagged in three of five weeks. Neither team was capable of executing the other's blueprint today: Atlanta had the Y/A (7.77 season) and never got a neutral script to use it.</p>
+<h2>What the model should take from this</h2>
+<p>Treat Atlanta's run lean as conditional on the scoreboard and branch it. Model Chicago's passing off aDOT and CPOE rather than opponent pressure rate. And leave the finishing splits alone — 8 red-zone trips between the two teams is noise, and Chicago's 133 penalty yards carried only two pre-snap flags, which is the only part that persists.</p></div>
+    </section>
+    
+    
+  </div>
+</details>
+
 </div>
 
 
@@ -1774,6 +2368,15 @@
       if(pick) pick.addEventListener("change",function(){ node.querySelectorAll(".pl-tl").forEach(function(t){ t.hidden=t.dataset.key!==pick.value; }); });
       modal.querySelector(".pl-dialog").scrollTop=0;
     }).catch(function(){ body.innerHTML='<div class="pl-loading">The player sheets could not be loaded.</div>'; });
+  }
+  // The plan / report panel: pills and arrows walk its sections.
+  var doc=document.querySelector(".gm-doc");
+  if(doc){
+    var panes=[].slice.call(doc.querySelectorAll(".gm-doc-pane")), pills=doc.querySelector(".gm-doc-pills"), cur=0;
+    panes.forEach(function(pn,i){ var b=document.createElement("button"); b.type="button"; b.textContent=pn.dataset.title; b.setAttribute("role","tab"); b.addEventListener("click",function(){ show(i); }); pills.appendChild(b); });
+    function show(i){ cur=(i+panes.length)%panes.length; panes.forEach(function(pn,k){ pn.classList.toggle("active",k===cur); }); pills.querySelectorAll("button").forEach(function(b,k){ b.classList.toggle("active",k===cur); if(k===cur&&b.scrollIntoView) b.scrollIntoView({block:"nearest",inline:"center"}); }); }
+    doc.querySelectorAll(".gm-doc-arrow").forEach(function(a){ a.addEventListener("click",function(){ show(cur+parseInt(a.dataset.dir,10)); }); });
+    show(0);
   }
   document.querySelectorAll(".pl-open").forEach(function(b){ b.addEventListener("click",function(e){ e.stopPropagation(); openPlayer(b.dataset.pid); }); });
   modal.querySelector(".pl-close").addEventListener("click",closeModal);

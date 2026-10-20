@@ -797,6 +797,126 @@
     .hfa .pl-log td.wk, .hfa .pl-log th:first-child { position: sticky; left: 0; background: #0d0d11; z-index: 1; }
     :root[data-theme="light"] .hfa .pl-log td.wk, :root[data-theme="light"] .hfa .pl-log th:first-child { background: #fff; }
   }
+
+  /* ---- The plan / report panel under the scoreboard ---- */
+  .gm-doc { position: relative; overflow: visible; }
+  .gm-doc::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; border-radius: 14px 14px 0 0; background: linear-gradient(90deg, var(--hfa-accent), transparent 70%); pointer-events: none; }
+  .gm-doc.st-both::before { background: linear-gradient(90deg, var(--hfa-good), var(--hfa-accent) 55%, transparent 90%); }
+  .gm-doc > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.9rem; padding: 1rem 1.1rem; }
+  .gm-doc > summary::-webkit-details-marker { display: none; }
+  .gm-doc-chev { display: inline-grid; place-items: center; flex: none; width: 2rem; height: 2rem; border-radius: 50%; background: var(--hfa-accent); color: #fff; box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.22), 0 6px 14px -6px rgba(255, 31, 47, 0.9); transition: transform 0.18s; }
+  .gm-doc[open] > summary .gm-doc-chev { transform: rotate(180deg); background: #fff; color: var(--hfa-accent); }
+  .gm-doc-main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+  .gm-doc-eyebrow { font-size: 0.64rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-accent); }
+  .gm-doc-lead { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; line-height: 1.3; color: var(--hfa-body); }
+  .gm-doc-chips { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0.3rem; flex: 0 1 auto; }
+  .gm-doc-open { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); margin-left: 0.3rem; }
+  .gm-doc[open] .gm-doc-open { display: none; }
+  .gm-doc-body { border-top: var(--hfa-hairline); padding: 0.7rem 1.1rem 1.2rem; }
+  .gm-doc-nav { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.9rem; }
+  .gm-doc-pills { display: flex; gap: 0.3rem; overflow-x: auto; scrollbar-width: none; flex: 1 1 auto; padding: 2px; }
+  .gm-doc-pills::-webkit-scrollbar { display: none; }
+  .gm-doc-pills button { flex: none; border: 1px solid rgba(128, 128, 128, 0.25); background: transparent; color: var(--hfa-muted); border-radius: 999px; padding: 0.3rem 0.85rem; font-size: 0.76rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
+  .gm-doc-pills button.active { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-arrow { flex: none; width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid rgba(128, 128, 128, 0.3); background: transparent; color: var(--hfa-body); font-size: 1.2rem; line-height: 1; cursor: pointer; }
+  .gm-doc-arrow:hover { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-pane { display: none; animation: gm-fade 0.18s ease-out; }
+  .gm-doc-pane.active { display: block; }
+  @keyframes gm-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  .gm-doc-hook { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1.2; color: var(--hfa-accent); margin-bottom: 0.4rem; }
+  .gm-doc-headline { font-size: 1rem; font-weight: 600; line-height: 1.45; margin: 0 0 0.7rem; }
+  .gm-doc-p { font-size: 0.9rem; line-height: 1.55; margin: 0 0 0.7rem; }
+  .gm-doc-note { font-size: 0.76rem; color: var(--hfa-muted); line-height: 1.45; margin: 0 0 0.6rem; }
+  .gm-doc-prose { font-size: 0.9rem; line-height: 1.6; max-width: 60rem; }
+  .gm-doc-prose h2 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 1rem 0 0.3rem; }
+  .gm-doc-prose h3 { font-size: 0.9rem; margin: 0.8rem 0 0.2rem; }
+  .gm-doc-prose p { margin: 0 0 0.6rem; }
+  .gm-doc-prose ul { padding-left: 1.2rem; }
+  .gm-doc-k { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 0.9rem 0 0.35rem; }
+  .gm-doc-box > .gm-doc-k:first-child, .gm-doc-col > .gm-doc-k:first-child { margin-top: 0; }
+  .gm-doc-verdicts { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.2rem 0 0.7rem; }
+  .gm-doc-verdicts.wrap .badge { white-space: normal; text-align: left; }
+  .gm-doc-verdicts .badge b { color: inherit; }
+  .gm-doc-vs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 0.4rem; }
+  .gm-doc-col { padding: 0.75rem 0.9rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); font-size: 0.9rem; line-height: 1.5; }
+  .gm-doc-col.plan { border-left: 3px solid var(--hfa-accent); }
+  .gm-doc-col.game { border-left: 3px solid var(--hfa-good); }
+  .gm-doc-col.game .gm-doc-k { color: var(--hfa-good); }
+  .gm-doc-col p, .gm-doc-box p { margin: 0 0 0.45rem; font-size: 0.88rem; line-height: 1.5; }
+  .gm-doc-col p:last-child, .gm-doc-box p:last-child { margin-bottom: 0; }
+  .gm-doc p.sub, .gm-doc .went { font-size: 0.8rem; color: var(--hfa-muted); line-height: 1.45; }
+  .gm-doc .went { margin-top: 0.2rem; }
+  .gm-doc-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .gm-doc-three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; }
+  .gm-doc-box { min-width: 0; padding: 0.7rem 0.85rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); }
+  .gm-doc-boxhead { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.4rem; font-size: 0.92rem; }
+  .gm-doc-boxhead b { color: var(--hfa-body); font-weight: 800; }
+  .gm-doc-ul { margin: 0; padding-left: 1.1rem; font-size: 0.86rem; line-height: 1.5; }
+  .gm-doc-ul li { margin-bottom: 0.3rem; }
+  .gm-doc-list { display: flex; flex-direction: column; gap: 0.45rem; }
+  .gm-doc-item { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.45; padding: 0.5rem 0.7rem; border-radius: 10px; background: var(--hfa-tint); border: var(--hfa-hairline); }
+  .gm-doc-item > div { min-width: 0; }
+  .gm-doc-item b { color: var(--hfa-body); }
+  .gm-doc-flag { flex: none; min-width: 5.2rem; text-align: center; border-radius: 6px; padding: 0.2rem 0.45rem; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); margin-top: 0.15rem; }
+  .gm-doc-flag.decisive, .gm-doc-flag.signal, .gm-doc-flag.yes, .gm-doc-flag.held { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-flag.contributed, .gm-doc-flag.mixed, .gm-doc-flag.partly { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .gm-doc-flag.minor, .gm-doc-flag.noise, .gm-doc-flag.no, .gm-doc-flag.broke { background: rgba(255, 31, 47, 0.16); color: var(--hfa-accent); }
+  .gm-doc-flag.defense { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .gm-doc-flag.offense { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-calls { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  .gm-call { min-width: 0; padding: 0.65rem 0.85rem 0.6rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); border-left: 3px solid var(--hfa-muted); }
+  .gm-call.over { border-left-color: var(--hfa-good); } .gm-call.under { border-left-color: var(--hfa-accent); }
+  .gm-call.hit { background: rgba(47, 212, 164, 0.06); } .gm-call.miss { background: rgba(255, 176, 32, 0.06); }
+  .gm-call-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.5rem; font-size: 0.92rem; }
+  .gm-call-side { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .gm-call.over .gm-call-side { color: var(--hfa-good); } .gm-call.under .gm-call-side { color: var(--hfa-accent); }
+  .gm-call .who { color: var(--hfa-body); font-weight: 800; }
+  .gm-call .bet { font-weight: 700; color: var(--hfa-accent); }
+  .gm-call .res { font-weight: 800; font-size: 0.8rem; margin-left: auto; }
+  .gm-call .res.hit { color: var(--hfa-good); } .gm-call .res.miss { color: var(--hfa-bad); } .gm-call .res.void { color: var(--hfa-muted); font-weight: 500; }
+  .gm-call-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem; margin: 0.35rem 0 0.2rem; }
+  .gm-call .prob { font-size: 0.7rem; font-weight: 700; color: var(--hfa-muted); border: 1px solid rgba(128, 128, 128, 0.3); border-radius: 999px; padding: 0.1rem 0.5rem; }
+  .gm-call .rungs { margin: 0.35rem 0 0.4rem; }
+  .gm-call .rung small { font-weight: 500; color: var(--hfa-muted); }
+  .gm-call p.why { font-size: 0.84rem; line-height: 1.45; margin: 0.3rem 0 0.2rem; color: var(--hfa-body); }
+  .gm-call p.ev { font-size: 0.74rem; line-height: 1.4; margin: 0 0 0.15rem; color: var(--hfa-muted); }
+  .gm-doc .legs { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.4rem; }
+  .gm-doc .leg { border-radius: 8px; padding: 0.2rem 0.5rem; font-size: 0.76rem; font-weight: 700; background: rgba(128, 128, 128, 0.14); }
+  .gm-doc .leg em { font-style: normal; font-weight: 500; color: var(--hfa-muted); }
+  .gm-doc .leg i { font-style: normal; font-weight: 800; }
+  .gm-doc .leg.hit { background: rgba(47, 212, 164, 0.16); } .gm-doc .leg.hit i { color: var(--hfa-good); }
+  .gm-doc .leg.miss { background: rgba(255, 176, 32, 0.16); } .gm-doc .leg.miss i { color: var(--hfa-bad); }
+  .gm-doc-gradehead { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+  .gm-grade { flex: none; display: flex; align-items: center; gap: 0.6rem; padding: 0.4rem 0.9rem 0.4rem 0.6rem; border-radius: 14px; border: 2px solid var(--hfa-muted); background: var(--hfa-tint); }
+  .gm-grade b { font-size: 2.6rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .gm-grade span { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); line-height: 1.3; }
+  .gm-grade.good { border-color: var(--hfa-good); } .gm-grade.good b { color: var(--hfa-good); }
+  .gm-grade.warn { border-color: var(--hfa-bad); } .gm-grade.warn b { color: var(--hfa-bad); }
+  .gm-grade.bad { border-color: var(--hfa-accent); } .gm-grade.bad b { color: var(--hfa-accent); }
+  .gm-doc-gradetext { flex: 1 1 20rem; min-width: 0; }
+  .gm-doc-gradetext .gm-doc-verdicts { margin-bottom: 0; }
+  .hfa .gm-doc-table { font-size: 0.8rem; }
+  .hfa .gm-doc-table th, .hfa .gm-doc-table td { padding: 0.25rem 0.4rem; }
+  .hfa .gm-doc-table b { color: var(--hfa-body); }
+  .hfa .gm-doc-table td.meter { width: 5rem; }
+  .hfa .gm-doc-table td.meter i { display: block; height: 4px; border-radius: 2px; background: var(--hfa-good); }
+  .hfa .gm-doc-table td.meter i.bad { background: var(--hfa-bad); }
+  .gm-doc-tl { position: relative; padding-left: 1rem; border-left: 2px solid rgba(128, 128, 128, 0.25); display: flex; flex-direction: column; gap: 0.7rem; }
+  .gm-doc-tp { position: relative; font-size: 0.88rem; line-height: 1.45; }
+  .gm-doc-tp::before { content: ""; position: absolute; left: -1.4rem; top: 0.45rem; width: 10px; height: 10px; border-radius: 50%; background: var(--hfa-accent); box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.25); }
+  .gm-doc-tp .clock { font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-accent); }
+  @media (max-width: 1100px) { .gm-doc-three { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 760px) {
+    .gm-doc > summary { padding: 0.85rem 16px; gap: 0.6rem; flex-wrap: wrap; }
+    .gm-doc-main { flex: 1 1 0; }
+    .gm-doc-lead { font-size: 0.98rem; }
+    .gm-doc-chips { justify-content: flex-start; flex: 0 0 100%; padding-left: 2.6rem; }
+    .gm-doc-body { padding: 0.6rem 16px 1rem; }
+    .gm-doc-hook { font-size: 1.2rem; }
+    .gm-doc-vs, .gm-doc-two, .gm-doc-three, .gm-doc-calls { grid-template-columns: 1fr; }
+    .gm-doc-arrow { display: none; }
+    .gm-doc-flag { min-width: 4.4rem; font-size: 0.56rem; }
+  }
   @media (prefers-reduced-motion: reduce) { #hfa-rain { opacity: calc(var(--hfa-rain) * 0.5); } }
 </style>
 
@@ -821,7 +941,7 @@
     <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
   </div>
   <main>
-<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#away" data-sec="away">NYJ offense</a><a href="#home" data-sec="home">NE offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
+<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#doc-sec" data-sec="doc">Plan vs game</a><a href="#away" data-sec="away">NYJ offense</a><a href="#home" data-sec="home">NE offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
 
 <div class="hfa-card hfa-hero hfa-sec gm-hero" id="hero" data-sec="hero" style="--gm-away: #003F2D; --gm-home: #002244;">
   <div class="gm-hero-top">
@@ -848,6 +968,457 @@
     <span class="gm-chip final"><i>final</i> <b>NYJ 19 &ndash; 26 NE</b></span>
     <span class="gm-chip " title="Artificial turf. Passing is the same on grass and turf; rushing runs about 3.5% higher on turf (+3.7 yards a team) and a catch gains a tenth of a yard more after it. Points, the closing lines and the engine show no surface effect, so it is not an engine input."><i>field</i> <b>turf</b></span><span class="gm-chip " title="Forecast for the kickoff window, as of Sun 10:03 AM Denver. Wind above 10 mph trims the passing projection."><i>forecast</i> <b>52°F · wind 4 mph</b></span>
   </div>
+</div>
+
+<div class="hfa-sec" id="doc-sec" data-sec="doc">
+
+<details class="hfa-card gm-doc st-both" id="doc">
+  <summary class="gm-doc-bar">
+    <span class="gm-doc-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="gm-doc-main">
+      <span class="gm-doc-eyebrow">The plan against the game &middot; plan Sun Oct 18, 9:35 AM &middot; report Tue Oct 20, 11:34 AM</span>
+      <span class="gm-doc-lead">Allen carries a Jets offense that can&#x27;t stay on the field. Maye picks it apart.</span>
+    </span>
+    <span class="gm-doc-chips">
+      <span class="badge warn">script partly held</span>
+      <span class="badge good">4 hit</span><span class="badge bad">6 missed</span>
+      <span class="badge good" title="Projection grade: team volume and yardage, player lines, and the market calls the projection implied">projection B &middot; 78</span>
+      <span class="gm-doc-open">open</span>
+    </span>
+  </summary>
+  <div class="gm-doc-body">
+    <div class="gm-doc-nav">
+      <button type="button" class="gm-doc-arrow" data-dir="-1" aria-label="Previous section">&#8249;</button>
+      <div class="gm-doc-pills" role="tablist"></div>
+      <button type="button" class="gm-doc-arrow" data-dir="1" aria-label="Next section">&#8250;</button>
+    </div>
+
+    
+    
+    <section class="gm-doc-pane" data-title="Plan vs game">
+      <div class="gm-doc-verdicts">
+        <span class="badge warn" title="Whether the game went the way the plan's script described, for the reasons it gave">script partly held</span>
+        <span class="badge mute">followed the favorite&#x27;s path</span>
+        <span class="badge bad" title="Both teams ran 128 plays; the league's figure for two teams was 121.5">pace: called average, played fast</span>
+        <span class="badge good" title="NE passed on 47% of its plays; its season rate entering the game was 52%">NE: called run, played run</span><span class="badge bad" title="NYJ passed on 55% of its plays; its season rate entering the game was 55%">NYJ: called pass, played balanced</span>
+      </div>
+      <div class="gm-doc-vs">
+        <div class="gm-doc-col plan"><div class="gm-doc-k">The plan said</div><p>New England controls this with short passing and a committee run game; the Jets&#x27; path is Allen on the ground, and their biggest enemy is their own drive count.</p><p class="sub">New England should lead early and play the possession game it played against Buffalo and Las Vegas: long drives, short throws, a three-way backfield, and fourth-down aggression inside scoring range. The Jets&#x27; answer is Braelon Allen and a handful of concentrated shots to Garrett Wilson, with their drive count the limiting factor — penalties and third downs have ended New York&#x27;s possessions all season. The Jets&#x27; defense is good enough to keep this nearer 24-17 than 31-17, so points may arrive as field goals as often as touchdowns. Expect the totals pressure to come from the Jets&#x27; side of the ledger, not New England&#x27;s.</p></div>
+        <div class="gm-doc-col game"><div class="gm-doc-k">What happened</div><p>New England won 26-19 as a 7.5-point favorite — the Jets covered and the game went over 43.5 by a point and a half — and the entire gap was finishing: the Jets outgained their projection and scored zero touchdowns on three red-zone trips plus two failed fourth downs in New England territory.</p><p class="sub">The plan read the shape of this game well: New England leading throughout, winning short with a three-man backfield and a run lean, points arriving as field goals as often as touchdowns, the Jets&#x27; offense limited rather than explosive. Where it went wrong is the mechanism behind the Jets&#x27; limitation — it bet on pre-snap penalties and third downs ending New York&#x27;s drives, and instead New York cleaned up its flags (5 for 35, 2 pre-snap) and died at the 20 and on fourth down. That inversion flipped three calls at once: Smith&#x27;s yardage, his interception, and the Under. The call record (4-6) understates the read; most of the misses were efficiency and target-tree surprises (Cooper, Brown&#x27;s return, Henry&#x27;s 39 YAC), not a misread of the script.</p><p class="sub"><b>The script:</b> New England followed the favorite path almost literally from the second quarter on: it leaned on Stevenson and Kiner between the 20s (36 carries, checks confirm a run lean at a 47.1% pass rate against a 52.5% season rate), Maye finished with 32 attempts and 235 modest yards, and the Jets threw from behind — 45 of their 61 snaps came trailing and their second-half pass rate was 73.1%. But the plan&#x27;s two stated limiters both failed: the Patriots did not score on their first two or three possessions (punt, punt, then the 42-yard Doubs shot off a short field), and the Jets&#x27; drive count was never the constraint — 61 plays, 29:49 of possession, and 345 yards. Pace was called average and came in fast (128 plays vs 121.5 league), the NYJ lean was called pass and graded balanced (55.0% against a 55.3% season rate), and the total the plan expected to land &#x27;well under&#x27; went over by a point and a half on six field goals.</p></div>
+      </div>
+      
+      <div class="gm-doc-k">What the plan said would swing it</div>
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag minor">minor</span><div>Jets pre-snap penalties: nearly three a game, double the league offense rate, and they end New York drives before script matters.<div class="went"><b>Went:</b> The Jets committed 5 flags for 35 yards with only 2 pre-snap — well under their 5.2 / 2.8 season rates — and ran 61 plays. The one drive-killing flag was a non-pre-snap OPI that erased a 14-yard touchdown at Q1 8:34; the swing factor as written did not appear.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>A.J. Brown&#x27;s workload in his first game back — reported Sunday as a &#x27;good amount&#x27; of snaps, which reshuffles New England&#x27;s targets.<div class="went"><b>Went:</b> Brown played 76.5% of snaps and commanded 10 targets and 37.4% of New England&#x27;s air yards for 3-27 (-7.39 EPA). The reshuffle was real and it cost efficiency (team cpoe -1.9); the Patriots won anyway because Douglas (7-86-TD) and Henry (4-48-TD) absorbed the rest.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>TreVeyon Henderson&#x27;s ankle: if he&#x27;s active, Stevenson&#x27;s carries and goal-line equity both shrink.<div class="went"><b>Went:</b> Henderson was active (23.5% snaps, 7 carries, 31 yards) and his third-quarter fumble was the biggest single-play EPA swing of the game (-5.25). Stevenson&#x27;s share did shrink, but the third beneficiary was Kiner at 11 carries and 57 yards, not Henderson.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag decisive">decisive</span><div>Red-zone finishing: New England has converted trips at a high rate for two weeks after seven straight failures; the Jets hold at their 20.<div class="went"><b>Went:</b> Exactly the hinge: New England 2 TDs and 2 FGs on 4 trips (+0.082 EPA inside the 20), New York 0 TDs and 3 FGs on 3 trips (-0.584). A 7-point final in a game where the Jets outgained their projection.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>New York&#x27;s protection — four sacks allowed in two of the last four weeks against a Patriots front that pressures at the 9th-highest rate.<div class="went"><b>Went:</b> Three sacks and six hits on 33 dropbacks (27.3% pressure). Two first-quarter sacks produced a -16-yard drive, and Ponder&#x27;s sack at the NE 18 (Q3 5:31, -0.084 WP) turned a short field after a fumble recovery into three points.</div></div></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">Each offense: expected &middot; happened</div>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>NE</b><span class="badge warn">partly</span></div><p><b>Expected:</b> About 31-33 attempts at a pass rate near their season mark, 28-ish carries split three ways, yardage below their two-week pace, and the receiving tree spread rather than concentrated. Yards between the 20s; the question is whether trips end in sevens or threes.</p><p><b>Happened:</b> Attempts landed exactly (32 vs the 31-33 band), the tree spread as described (Brown 10, Douglas 8, Henry 5, Raridon 3), and yardage came in below the two-week pace at 235. But the carry split was 36, not 28, and the yards did not come between the 20s — field EPA was -0.006 while the red zone produced two touchdowns.</p></div><div class="gm-doc-box"><div class="gm-doc-boxhead"><b>NYJ</b><span class="badge warn">partly</span></div><p><b>Expected:</b> Pass rate near 60% but on a suppressed play count — 28-32 attempts is the realistic band, not 38. Allen 18-22 carries, Wilson 9-11 targets with the air yards, and the rest of the room splitting scraps.</p><p><b>Happened:</b> Attempts (30) and Allen&#x27;s carries (17) hit the bands, but the pass rate was 54.1%, not &#x27;near 60%&#x27;, and Wilson drew 6 targets rather than 9-11 with Cooper taking 7 and Taylor 6. The suppressed play count the plan assumed never materialized: 61 plays, 52 of them between the 20s.</p></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">For the next plan on these teams</div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="badge mute">NYJ</span><div>Stop pricing drive-count suppression off their penalty rate. They ran 61 plays with 2 pre-snap flags against a 2.8 season mark; the thing that actually kills their possessions is red-zone and short-yardage failure — three straight weeks without a red-zone touchdown and 0-for-2 on fourth down here. Shift the Under case from flags to finishing.</div></div><div class="gm-doc-item"><span class="badge mute">NYJ</span><div>The target tree is no longer Wilson-or-nothing. Cooper Jr. at 82.3% of snaps with 7 targets in his first game back changes the concentration premise; until a second week confirms it, price Wilson&#x27;s share lower and keep his receiving-yards overs off high lines.</div></div><div class="gm-doc-item"><span class="badge mute">NE</span><div>Do not assign a pass-down receiving role to any back here. Stevenson, Henderson and Kiner combined for 1 target on 67 snaps; the checkdown layer is Douglas and Henry. Carry splits are also lead-dependent — Kiner&#x27;s 11 carries came off a wire-to-wire lead, not a fixed share.</div></div><div class="gm-doc-item"><span class="badge mute">both</span><div>The target-tree surprises (Doubs injured on his 42-yard score, Brown&#x27;s 10-target, 27-yard return, Henry&#x27;s 39 YAC) are one observation each and should not move the model&#x27;s usage priors; the mechanism to carry forward is that a questionable alpha receiver&#x27;s targets arrive before his efficiency does.</div></div></div>
+      
+    </section>
+    
+
+    
+    
+    <section class="gm-doc-pane" data-title="The script">
+      <div class="gm-doc-verdicts">
+        <span class="badge mute" title="Plays and tempo">average pace</span>
+        <span class="badge acc" title="Already the league&#x27;s run-leaning side at a 52.5% pass rate, and with a lead against a defense 27th in rush success allowed they will keep handing it off and throwing short.">NE run</span><span class="badge acc" title="Above their 55.3% season pass rate: Hall is out, the ground game is at 3.59 a carry, and a touchdown-plus deficit forces throws — but their own drive count caps how many.">NYJ pass</span>
+        <span class="badge mute">medium confidence</span>
+      </div>
+      <p class="gm-doc-p">New England should lead early and play the possession game it played against Buffalo and Las Vegas: long drives, short throws, a three-way backfield, and fourth-down aggression inside scoring range. The Jets&#x27; answer is Braelon Allen and a handful of concentrated shots to Garrett Wilson, with their drive count the limiting factor — penalties and third downs have ended New York&#x27;s possessions all season. The Jets&#x27; defense is good enough to keep this nearer 24-17 than 31-17, so points may arrive as field goals as often as touchdowns. Expect the totals pressure to come from the Jets&#x27; side of the ledger, not New England&#x27;s.</p>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-k">If the favorite wins</div><p>New England scores on its first two or three possessions, leans on Stevenson and Kiner between the 20s, and makes Geno throw from behind into a defense that doesn&#x27;t give anything deep. Maye finishes near 30 attempts with modest yardage and the Patriots win comfortably without a shootout.</p></div>
+        <div class="gm-doc-box"><div class="gm-doc-k">If the underdog wins</div><p>New York wins the penalty battle, Allen moves the chains on early downs, and Wilson converts his usual air-yards share into a couple of explosives. The Jets&#x27; defense gets New England into third-and-long, the game sits at 17-16 in the fourth, and the total lands well under.</p></div>
+      </div>
+      
+      <div class="gm-doc-prose"><h2>The read</h2>
+<p>New England by a touchdown-plus feels right in shape, not necessarily in points. The Jets' defense is the best unit on the field — 6th in EPA allowed, 4th in passing yards and yards per attempt allowed — and New England's offense, hot as it has been (0.366 EPA/play on 45 points against Las Vegas), has never met a secondary like this in its two-game surge. What New York cannot do is stay on the field: 5.2 accepted flags a game with 2.8 of them pre-snap (the league offense averages 1.55), 3.59 yards a carry, and two of five games under 40 team plays or close to it. New England should own possession and win on short, high-completion throws and committee carries rather than chunk plays.</p>
+<h2>Why</h2>
+<p>The Jets' defense is stingy per play but 27th in rush success allowed — it concedes the first-down-at-a-time ground script Chicago used in week 4 (54 carries) without conceding yards per carry (6th in rush EPA). That caps Stevenson's yardage while keeping New England on schedule, and pushes Maye into the checkdown layer where Douglas and Stevenson live. On the other side, Breece Hall is out again and Braelon Allen is a true workhorse (24-116 in week 5) against a Patriots front that is 20th in rush EPA allowed; Allen's carry count is the most dependable volume in the game. Garrett Wilson remains the only concentrated target in New York's tree with Mitchell out, and New England is without Carlton Davis.</p>
+<h2>What would change it</h2>
+<p>Our week-4 Jets review is the warning: we priced their passing volume off score state and they threw 15 times because they never possessed the ball. If New York converts third downs and keeps flags down, Geno's and Wilson's volume plays up. Henderson's and A.J. Brown's game-day status, and whether Brown's snaps are real, move New England's target tree. Sadiq's clearance from concussion protocol is still pending at the inactives.</p></div>
+    </section>
+    <section class="gm-doc-pane" data-title="Offenses">
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>NE offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>A low-margin offense that has flipped in two weeks: 8.1 yards per attempt on the season, 0.063 field EPA, and 45 points on Las Vegas with 0.35 EPA/play between the 20s. It moves on short, accurate throws and scrambles, not on a dominant run game (4.21 YPC).</p>
+          <div class="gm-doc-k">How it scores</div><p>Long, possession-heavy drives with fourth-down aggression inside scoring range (2-for-2 at Buffalo), checkdowns and intermediate throws to Henry, Douglas, Chism and Doubs, and Maye&#x27;s legs. Touchdowns have come from short-field finishing rather than deep shots.</p>
+          <div class="gm-doc-k">What stops it</div><p>Its own giveaways — tagged for turnovers in four of five weeks, with a 4.5% INT rate — plus third down (roughly 30% for the season) and stretches of red-zone stalling (1 TD on 7 trips across weeks 1-3). A stout interior run defense makes it one-dimensional.</p>
+          <div class="gm-doc-k">This matchup</div><p>The Jets are 4th in pass yards and yards per attempt allowed and 6th in rush EPA — they do not give up chunks. But they are 27th in rush success allowed, so New England can stay on schedule on the ground without gaining much per carry, and they are 27th in accepted flags with 15 DPI yards a game (29th), which hands out free first downs. New York holds in the red zone at a middling rate; nothing here says this becomes a 35-point day.</p>
+          <div class="gm-doc-k">Injuries</div><p>Mack Hollins is on IR; A.J. Brown was activated and Rapoport reported Sunday morning he&#x27;ll play &#x27;a good amount&#x27; of snaps, which thins Doubs&#x27; and Chism&#x27;s shares. Henderson is questionable but Rapoport (Sunday) expects him to suit up. The line is patched — Will Campbell questionable with an MCL sprain but expected to play per Rapoport, Moses limited, Onwenu and Van Roten on IR — a real temper on protection and run efficiency even though the projection carries no line input. Against them the Jets are without edge Joseph Ossai (31% of snaps) and DT Onyemata.</p>
+          <div class="gm-doc-k">Expect</div><p>About 31-33 attempts at a pass rate near their season mark, 28-ish carries split three ways, yardage below their two-week pace, and the receiving tree spread rather than concentrated. Yards between the 20s; the question is whether trips end in sevens or threes.</p>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>NYJ offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>A possession offense without the efficiency to possess: 3.59 YPC, 2.07 yards before contact, field EPA of -0.04, and 5.2 accepted flags a game. Its yardage comes in bursts — Wilson&#x27;s air-yards share and the occasional Allen explosive.</p>
+          <div class="gm-doc-k">How it scores</div><p>Garrett Wilson, who has carried roughly half the team&#x27;s air yards in three of five weeks, plus Allen&#x27;s early-down volume. Red-zone trips have been scarce and converted at 50%; field goals have carried the scoreboard.</p>
+          <div class="gm-doc-k">What stops it</div><p>Pressure (sacks in four straight weeks, 9.3% sack rate) and their own flags — three delay-of-game penalties at Chicago, 13 flags against Green Bay. When the run is stuffed they have no counterpunch, and when the drives die the whole volume model dies with it (32 plays at Chicago).</p>
+          <div class="gm-doc-k">This matchup</div><p>New England pressures at the 9th-highest rate but converts little of it to sacks (5.8%), and ranks 20th in rush EPA allowed with 14th in rush success — a front Allen can move, even if yardage allowed per game is low. The Patriots give up the red zone: 23rd in TD rate allowed per trip and 28th in EPA inside their 20, which is the case for New York&#x27;s touchdowns if they can get there.</p>
+          <div class="gm-doc-k">Injuries</div><p>Breece Hall is out (ruled out Friday, per the New York Post), making Allen the workhorse again; Adonai Mitchell is out for a third straight week; Omar Cooper Jr. activated off IR and is questionable but expected to play, an unknown role; Sadiq cleared a full Friday practice and is expected to play per Rapoport. Guard Dylan Parham is out for a third week, which is part of the protection story. Opposite them, Carlton Davis is out at corner and Prunty is out, but Gonzalez is back full.</p>
+          <div class="gm-doc-k">Expect</div><p>Pass rate near 60% but on a suppressed play count — 28-32 attempts is the realistic band, not 38. Allen 18-22 carries, Wilson 9-11 targets with the air yards, and the rest of the room splitting scraps.</p>
+        </div>
+        
+      </div>
+    </section>
+    <section class="gm-doc-pane" data-title="The calls">
+      <p class="gm-doc-note">Each call is one player, one market, one side of the line Kalshi quoted when the plan was written; graded off the box score, with the report's read of whether the reason given showed up. The rungs are the same call down the Kalshi ladder, Edge halfway to its last rung and Edge+ the last, at Kalshi's last pregame price.</p>
+      <div class="gm-doc-verdicts"><span class="badge mute">Normal <b class="up">4</b>&ndash;<b class="down">6</b></span><span class="badge mute">Edge <b class="up">8</b>&ndash;<b class="down">2</b></span><span class="badge mute">Edge+ <b class="up">9</b>&ndash;<b class="down">1</b></span></div>
+      <div class="gm-doc-calls">
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">DeMario Douglas</b><span class="flat">NE</span>
+            <span class="bet">over 1.5 receptions</span>
+            <span class="res hit">&#10003; 7</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #11 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 82%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 62%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal / Edge / Edge+</i> over 1.5 receptions <small>62&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Douglas caught 7 of 8 in exactly the underneath role described, with 24 YAC and the 9-yard touchdown before half. The only nuance is 71 air yards — he was more than a checkdown, but the mechanism (short throws, volume to the slot) is what produced it.</p>
+          <p class="why">New England wins this by checkdown and short throws against a defense that concedes nothing deep, and Douglas is the underneath target. A low catch bar for a man seeing five looks a week.</p>
+          <p class="ev">Targets of 7, 2, 5, 3, 5; 4-65-2 in week 5 at a 49% snap share. Engine projects 3.4 catches on 5.1 targets.</p>
+          <p class="ev">vs #11 pass EPA allowed — mid, and the Jets&#x27; strength is yards per attempt (4th), not catch volume; market&#x27;s price is well below the engine.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Rhamondre Stevenson</b><span class="flat">NE</span>
+            <span class="bet">over 2.5 receptions</span>
+            <span class="res miss">&#10007; 0</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #11 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 63%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 57%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> over 2.5 receptions <small>57&cent;</small></span><span class="rung miss"><i>Edge / Edge+</i> 2+ receptions <small>79&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Zero targets on 60.3% of snaps. New England&#x27;s backs saw one target combined all game; the pass-down receiving role the call assumed does not exist in this offense.</p>
+          <p class="why">He is the pass-down back in an offense that will throw short against a defense that takes away depth, and the Jets concede receiving work to backs.</p>
+          <p class="ev">Targets of 6, 2, 3, 5, 3; three catches in each of the last two weeks. Jets rank 24th in fantasy points allowed to backs.</p>
+          <p class="ev">vs #11 pass EPA allowed; engine above the line, market shades it lower — the market is pricing a run-script game that actually raises his checkdown share.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Braelon Allen</b><span class="flat">NYJ</span>
+            <span class="bet">over 59.5 rush yds</span>
+            <span class="res hit">&#10003; 78</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #20 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 60%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 56%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> over 59.5 rush yds <small>55&cent;</small></span><span class="rung hit"><i>Edge</i> 50+ rush yds <small>67&cent;</small></span><span class="rung hit"><i>Edge+</i> 40+ rush yds <small>78&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 17 carries for 78 with four runs of 10+ — the workhorse share with Hall out, and the chunk-yardage-against-value profile the plan described. Even his two stuffs and -3.24 rush EPA fit &#x27;volume over value.&#x27;</p>
+          <p class="why">With Hall out again Allen is the whole backfield, and he&#x27;s handled a true workhorse load the last two weeks. New England stops rushing value better than it stops rushing volume.</p>
+          <p class="ev">Week 5: 24 carries, 116 yards, TD; week 4: 14 of the Jets&#x27; 14 RB carries. 38 attempts over two games; projected 20.1 here.</p>
+          <p class="ev">vs #20 rush EPA allowed; engine mean sits comfortably above the line, market prices it near a coin flip. Rush_yds calls are the plans&#x27; best market this season (56%).</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Garrett Wilson</b><span class="flat">NYJ</span>
+            <span class="bet">over 69.5 rec yds</span>
+            <span class="res miss">&#10007; 44</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #13 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 55%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 54%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> over 69.5 rec yds <small>52&cent;</small></span><span class="rung miss"><i>Edge</i> 50+ rec yds <small>71&cent;</small></span><span class="rung hit"><i>Edge+</i> 40+ rec yds <small>80&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The chasing script arrived (45 trailing snaps, 73.1% second-half pass rate), but the concentration premise failed: Cooper, off IR, took 7 targets and 103 yards and Taylor took 6 for 33, leaving Wilson 6 for 44 and a 22.1% air-yards share.</p>
+          <p class="why">Mitchell out for a third week leaves Wilson as the only concentrated target, and a chasing script funnels everything through him against a secondary missing its second corner.</p>
+          <p class="ev">104 yards on 11 targets in week 5, 107 on 13 in week 3; roughly half the team&#x27;s air yards in three of five weeks. Carlton Davis ruled out Friday.</p>
+          <p class="ev">vs #11 pass EPA allowed; engine sits well above the line and the market is barely over even — the gap is the air-yards concentration the market smooths away.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Braelon Allen</b><span class="flat">NYJ</span>
+            <span class="bet">under 14.5 rec yds</span>
+            <span class="res miss">&#10007; 26</span>
+            <span class="badge warn">read held · result didn&#x27;t</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">high</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #13 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 88%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 52%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 14.5 rec yds <small>53&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;40 rec yds <small>90&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;60 rec yds <small>98&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The role read was right — 2 targets, 3 total air yards, both behind or at the line. The 26 yards came from 23 YAC on two catches, which is the bounce, not a usage change.</p>
+          <p class="why">Allen is a carry-volume back, not a receiving one: his targets are behind-the-line and his catches have produced almost nothing all year. The Jets&#x27; checkdown work has gone elsewhere.</p>
+          <p class="ev">Receiving yards by week: 0, 8, 3, 8, 0 on nine total targets. Engine projects barely a third of the posted line.</p>
+          <p class="ev">vs #11 pass EPA allowed; the engine&#x27;s mean is far under the line while the market prices it near even money — the clearest disagreement on the card.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Rhamondre Stevenson</b><span class="flat">NE</span>
+            <span class="bet">under 99.5 rush+rec yds</span>
+            <span class="res hit">&#10003; 36</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">high</span>
+            <span class="badge bad" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #6 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 82%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 70%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 99.5 rush+rec yds <small>72&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;125 rush+rec yds <small>89&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;150 rush+rec yds <small>95&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 36 total yards against a 99.5 line, with 3 stuffs and zero receiving work. The committee cap plus the Jets&#x27; rushing-value defense (-0.219 EPA/rush allowed) is exactly the stated mechanism.</p>
+          <p class="why">A three-way backfield meets the one thing the Jets actually do well — stopping rushing value. Henderson is expected to play, which caps the carry share further.</p>
+          <p class="ev">Stevenson&#x27;s season high is 64 rushing yards; 13 carries in each of the last two weeks with Kiner taking 6 in week 5. Rapoport Sunday: Henderson likely to suit up.</p>
+          <p class="ev">vs #6 rush EPA allowed; the line sits far above the engine&#x27;s mean and even the market&#x27;s own price implies well under 50%.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Rhamondre Stevenson</b><span class="flat">NE</span>
+            <span class="bet">under 49.5 rush yds</span>
+            <span class="res hit">&#10003; 36</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #6 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 63%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 44%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 49.5 rush yds <small>46&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;100 rush yds <small>90&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;140 rush yds <small>99&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 14 carries for 36 (2.6/carry). The Jets allowed 4.1 a carry overall but held Stevenson specifically, with Kiner (5.2) getting the efficient work.</p>
+          <p class="why">Committee carries into the Jets&#x27; best trait: they allow first downs on the ground but not yardage, and New England&#x27;s interior is patched with two starters on IR.</p>
+          <p class="ev">Jets allow 4.21 per carry with -0.203 rush EPA; Stevenson at 3.5 per carry on the season. Engine projects under 10 carries with Henderson and Kiner active.</p>
+          <p class="ev">vs #6 rush EPA allowed; engine mean sits clearly under the line while the market prices it over — the market is buying the lead script, not the matchup.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Geno Smith</b><span class="flat">NYJ</span>
+            <span class="bet">under 224.5 pass yds</span>
+            <span class="res miss">&#10007; 252</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #13 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 56%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 56%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 224.5 pass yds <small>58&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;275 pass yds <small>83&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;325 pass yds <small>94&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 252 yards on 30 attempts. The premise — that flags and third downs would cap the attempt count — failed on both legs: only 2 pre-snap flags, 61 plays, and the deficit did force throws (33 dropbacks, 73.1% second-half pass rate).</p>
+          <p class="why">The Jets&#x27; passing volume dies with their drive count, not with the scoreboard: pre-snap flags and third-down failures end possessions before a deficit can force throws. Mitchell is out again.</p>
+          <p class="ev">Our week-4 review: they trailed all game at Chicago and threw 15 times on 32 plays. Season: 2.8 pre-snap flags a game, 5.2 total; 182 yards in week 5.</p>
+          <p class="ev">vs #13 pass EPA allowed, and New England is 10th in pass yards allowed per game; engine mean already below the line, market a shade lower still — the read is that both understate the possession cap.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Geno Smith</b><span class="flat">NYJ</span>
+            <span class="bet">under 0.5 INTs</span>
+            <span class="res miss">&#10007; 1</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #13 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 47%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 50%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 0.5 INTs <small>50&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;2 INTs <small>84&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;3 INTs <small>97&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The interception came at Q4 12:31 on a deep shot for Sadiq from a 10-point deficit — precisely the chasing volume the call assumed would never arrive. The defense that &#x27;almost never gets the ball&#x27; also recovered a fumble and forced two fourth-down stops.</p>
+          <p class="why">This is a volume call on takeaways: New England&#x27;s defense almost never gets the ball, and the Jets&#x27; attempt count is capped by their own drive-killing penalties rather than inflated by chasing.</p>
+          <p class="ev">Smith has thrown zero interceptions on 147 attempts; New England generates picks on 0.6% of attempts, a third of league rate, with two corners out of the rotation.</p>
+          <p class="ev">vs #13 pass EPA allowed; the engine&#x27;s mean implies better than a coin flip on 1+, the rung our own doctrine calls its weakest number — we fade it.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Hunter Henry</b><span class="flat">NE</span>
+            <span class="bet">under 24.5 rec yds</span>
+            <span class="res miss">&#10007; 48</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #11 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 41%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 50%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 24.5 rec yds <small>49&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;60 rec yds <small>88&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;100 rec yds <small>98&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Henry went 4-48 with a touchdown on 5 targets and 13 air yards, +5.46 EPA, 39 of the yards after the catch. The Jets did not suppress the tight end, and Brown&#x27;s return did not reduce the middle-field looks.</p>
+          <p class="why">The Jets are one of the few defenses that genuinely suppresses tight ends, and with A.J. Brown back the middle-field layer gets fewer looks than it did the last two weeks.</p>
+          <p class="ev">New York allows 8.42 fantasy points per game to tight ends, 5th fewest; Henry&#x27;s targets have ranged 2-5 all season with a 64% snap share the last two weeks.</p>
+          <p class="ev">vs #11 pass EPA allowed and #5 against tight ends — the one position group where a stingy defense is a real signal; engine sits above the line, market near even.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Same-script legs">
+      <p class="gm-doc-note">Legs the same script produces together: they move as one, which is what a same-game parlay pays for.</p>
+      <div class="gm-doc-three">
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>New England wins it short, not long</b></div>
+          <div class="legs"><span class="leg hit">Rhamondre Stevenson <em>under 99.5 rush+rec yds</em> <i>&#10003;</i></span><span class="leg hit">DeMario Douglas <em>over 1.5 receptions</em> <i>&#10003;</i></span><span class="leg miss">Rhamondre Stevenson <em>over 2.5 receptions</em> <i>&#10007;</i></span></div>
+          <p class="sub">One script: the Jets&#x27; front holds rushing value (6th in rush EPA) and their secondary takes away depth, so New England&#x27;s yards come from the checkdown layer. Backfield yardage stays capped while catch counts rise.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Jets&#x27; low-event offense</b></div>
+          <div class="legs"><span class="leg miss">Geno Smith <em>under 224.5 pass yds</em> <i>&#10007;</i></span><span class="leg miss">Braelon Allen <em>under 14.5 rec yds</em> <i>&#10007;</i></span><span class="leg miss">Geno Smith <em>under 0.5 INTs</em> <i>&#10007;</i></span></div>
+          <p class="sub">All three rest on the same mechanism: New York runs few plays because its own penalties and third downs end drives, so neither the passing yardage nor the giveaway volume the market implies ever gets the attempts to arrive.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>What&#x27;s left of the Jets goes through two men</b></div>
+          <div class="legs"><span class="leg hit">Braelon Allen <em>over 59.5 rush yds</em> <i>&#10003;</i></span><span class="leg miss">Garrett Wilson <em>over 69.5 rec yds</em> <i>&#10007;</i></span></div>
+          <p class="sub">With Hall and Mitchell out, the touches concentrate: Allen takes every carry against a mid-tier run defense and Wilson takes the air yards against a corner room without Carlton Davis. Even on a short possession count both shares are near-total.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    
+    
+
+    
+    <section class="gm-doc-pane" data-title="Projection grade">
+      <div class="gm-doc-gradehead">
+        <div class="gm-grade good"><b>B</b><span>projection<br>grade &middot; 78</span></div>
+        <div class="gm-doc-gradetext">
+          
+          <div class="gm-doc-verdicts"><span class="badge mute">NYJ 19 – NE 26</span><span class="badge mute">NYJ covered (NE by 7.5)</span><span class="badge mute">Over 43.5 (45)</span><span class="badge mute">teams 87</span><span class="badge mute">player lines 25/47 in range</span><span class="badge mute">market calls 2/3</span></div>
+        </div>
+      </div>
+      
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>NE</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">25.5</td><td class="num"><b>26</b></td><td class="num flat">+0.5</td><td class="meter"><i style="width: 97%" class=""></i></td></tr><tr><td>Pass yds</td><td class="num flat">224.8</td><td class="num"><b>235.0</b></td><td class="num flat">+10.2</td><td class="meter"><i style="width: 93%" class=""></i></td></tr><tr><td>Rush yds</td><td class="num flat">116.8</td><td class="num"><b>148.0</b></td><td class="num flat">+31.2</td><td class="meter"><i style="width: 65%" class=""></i></td></tr><tr><td>Pass att</td><td class="num flat">31.8</td><td class="num"><b>32</b></td><td class="num flat">+0.2</td><td class="meter"><i style="width: 99%" class=""></i></td></tr><tr><td>Carries</td><td class="num flat">28.1</td><td class="num"><b>36</b></td><td class="num up">+7.9</td><td class="meter"><i style="width: 44%" class="bad"></i></td></tr>
+          </tbody></table>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>NYJ</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">18.0</td><td class="num"><b>19</b></td><td class="num flat">+1</td><td class="meter"><i style="width: 95%" class=""></i></td></tr><tr><td>Pass yds</td><td class="num flat">218.5</td><td class="num"><b>252.0</b></td><td class="num flat">+33.5</td><td class="meter"><i style="width: 78%" class=""></i></td></tr><tr><td>Rush yds</td><td class="num flat">96.9</td><td class="num"><b>97.0</b></td><td class="num flat">+0.1</td><td class="meter"><i style="width: 100%" class=""></i></td></tr><tr><td>Pass att</td><td class="num flat">30.9</td><td class="num"><b>30</b></td><td class="num flat">-0.9</td><td class="meter"><i style="width: 94%" class=""></i></td></tr><tr><td>Carries</td><td class="num flat">25.5</td><td class="num"><b>27</b></td><td class="num flat">+1.5</td><td class="meter"><i style="width: 89%" class=""></i></td></tr>
+          </tbody></table>
+        </div>
+        
+      </div>
+      <div class="gm-doc-verdicts"><span class="badge good">Winner: NE &#10003;</span><span class="badge good">Spread: NYJ +7.5 &#10003;</span><span class="badge bad">Total: Under 43.5 (proj 43.5) &#10007;</span></div>
+      
+      
+      <div class="gm-doc-k">Why the projection missed &middot; what it got right</div>
+      <p class="gm-doc-p">A B (0.781) built almost entirely on team-level accuracy: NYJ projected 18, scored 19; NE projected 25.5, scored 26; projected margin 7.5, actual 7. Pass attempts were nearly exact for both quarterbacks (Smith 30 vs 30.9, Maye 32 vs 31.8) and Jets rush yards landed on the nose (97 vs 96.9). The one flagged team miss is New England&#x27;s carries — 36 against 28.1 — a pure product of leading for 2,975 of 3,600 seconds (62 of its 67 snaps came with a lead) rather than any read the engine got wrong about volume. Player score (0.734, 25 of 47 lines) carried the damage: Omar Cooper Jr. was projected 0.2 targets and caught 6 of 7 for 103, A.J. Brown was projected 0.5 targets and saw 10, and DeMario Douglas quadrupled his receiving line. The market line was the weak spot (0.667): the side and spread calls hit, the Under 43.5 lost by 1.5 points on a game that produced six field goals.</p>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>NE</b> &middot; 36 carries for 148 rush yards vs 28.1 / 116.8 projected<div class="went">Game script: NE never trailed after Q1 4:18 and ran 62 of 67 snaps while leading; second-half pass rate fell to 44.7% on 38 plays. Corey Kiner (11 carries, 57 yards, projected 3.7) absorbed the surplus.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>NYJ</b> &middot; 252 pass yards vs 218.5, on one fewer attempt than projected<div class="went">Efficiency and one play: Cooper&#x27;s 48-yard touchdown (Q3 10:32, +4.38 EPA) plus a 7-target debut role. CPOE +3.5 and 0.178 EPA/dropback on 33 dropbacks; volume was as projected, yards per attempt was not.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>NYJ</b> &middot; 0 passing/rushing touchdowns from 3 red-zone trips (projected 1.2 pass TD, 0.7 rush TD); four field goals<div class="went">Red-zone finishing — RZ EPA/play -0.584 on 9 snaps, success 33%, plus 0-for-2 on fourth downs at the NE 30 and NE 39. The engine keeps the TD split on the league constant by design, and the Jets&#x27; own season rate (0.5, with 0-for-1 in weeks 4 and 5) was already below it.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>NE</b> &middot; 3 pass TDs vs 1.7 projected, 0 sacks taken vs 2.3<div class="went">Protection and finishing: Maye faced 4 QB hits on 35 dropbacks (11.4% pressure) against a Jets front that blitzed 42.9% and got nothing home. Two of the three scores came from inside 10 yards, the third on a 42-yard shot.</div></div></div></div>
+      <div class="gm-doc-verdicts wrap"><span class="badge good">&#10003; Both team totals inside a point and the margin inside half a point of the market/projection.</span><span class="badge good">&#10003; Both quarterbacks&#x27; attempt counts (Maye 32 vs 31.8, Smith 30 vs 30.9) and Jets team rush yards (97 vs 96.9).</span><span class="badge good">&#10003; Braelon Allen 78 rush yards vs 76.4 projected on 17 carries — workhorse share with Hall out, as modeled.</span><span class="badge good">&#10003; TreVeyon Henderson 31 rush yards vs 31.4 projected.</span><span class="badge good">&#10003; The side: NE to win, Jets to cover 7.5 — a 7-point game.</span></div>
+      
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Turning points">
+      <div class="gm-doc-tl">
+        <div class="gm-doc-tp"><div class="clock">Q1 08:34</div><div class="what"><span class="badge mute">NYJ</span> Smith&#x27;s 14-yard touchdown to Omar Cooper Jr. wiped out by offensive pass interference; drive ends in a 42-yard Sanders field goal.<div class="went">The first of the day&#x27;s four-points-left-behind moments; NYJ settle for 3 and never score a touchdown inside the 20 all afternoon.</div></div></div><div class="gm-doc-tp"><div class="clock">Q1 04:18</div><div class="what"><span class="badge mute">NE</span> Maye deep right to Romeo Doubs, 42 yards, touchdown (+4.12 EPA) on a drive that started at the NYJ 42 after a punt-coverage penalty.<div class="went">Two plays, 42 yards, the lead New England never gave back — and Doubs was injured on the play, which reshuffled the target tree to Douglas and Henry.</div></div></div><div class="gm-doc-tp"><div class="clock">Q2 07:00</div><div class="what"><span class="badge mute">NYJ</span> Smith sneak on 4th-and-1 at the NE 39 stopped for no gain (-3.19 EPA), after Allen was stopped on 4th-and-2 at the NE 30 at 14:22 (-3.17 EPA).<div class="went">Two trips into scoring range turned into zero points; combined -6.36 EPA and -0.153 WP in a game decided by seven.</div></div></div><div class="gm-doc-tp"><div class="clock">Q2 00:20</div><div class="what"><span class="badge mute">NE</span> Maye 9 yards to Douglas, touchdown, capping a 7-play, 61-yard drive in 1:09 before the half.<div class="went">Turned a 10-3 edge into 17-3 and forced the Jets into the chase script that produced their second-half 73.1% pass rate.</div></div></div><div class="gm-doc-tp"><div class="clock">Q3 08:17</div><div class="what"><span class="badge mute">NE</span> Henderson fumbles (forced by D.Bailey), recovered by Sherwood at the NE 36 (-5.25 EPA, -0.104 WP).<div class="went">The Jets&#x27; best field position of the day, seven points down; a Ponder sack at the NE 18 (Q3 5:31) ended it as a 36-yard field goal, 13-17.</div></div></div><div class="gm-doc-tp"><div class="clock">Q4 12:31</div><div class="what"><span class="badge mute">NYJ</span> Smith&#x27;s deep left for Sadiq intercepted by C.Woods at the NE 24 (-3.56 EPA).<div class="went">Down 10 with 12:31 left and a defense that had just been handed the ball back twice, the Jets&#x27; only turnover ended the last realistic tying sequence.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="What decided it">
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Red-zone finishing, both directions</b><div class="went">NYJ 3 trips, 0 TDs, 3 FGs, -0.584 EPA/play inside the 20 against field EPA of +0.076 on 52 snaps; NE 4 trips, 2 TDs, 2 FGs, +0.082 EPA inside the 20. Final margin 7.</div><div class="went"><b>Tell:</b> Jets&#x27; season RZ TD rate 0.5 with 0-for-1 in each of weeks 4 and 5, and their own RZ EPA/play -0.216 against field EPA -0.04 — an offense already failing at the 20. NE&#x27;s defense carried a `red zone defense` tag from week 3.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>New York&#x27;s fourth-down and short-yardage failure in plus territory</b><div class="went">0-for-2 on fourth down (Allen stopped at the NE 30, Q2 14:22; Smith sneak at the NE 39, Q2 7:00) for -6.36 combined EPA; both drives had already gained 51 and 58 yards.</div><div class="went"><b>Tell:</b> Jets&#x27; season rush success 38.5% here and 3.59 yards per carry entering, with YBC/carry 2.07 against a league 2.54 — a run game that moves in chunks but not on demand.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Pressure asymmetry on the quarterbacks</b><div class="went">Smith: 3 sacks, 6 hits, 27.3% pressure on 33 dropbacks despite the Jets having the ball less; Maye: 0 sacks, 4 hits, 11.4%, plus 3 scrambles for 25 including a 21-yarder at Q3 14:16. Two Q1 sacks produced a -16-yard Jets drive.</div><div class="went"><b>Tell:</b> `pressure allowed` is the Jets&#x27; most recurring tag (4 of 5 weeks), and NE&#x27;s defense had generated pressure at 16.4% allowed-counterpart with a 9.7% sack rate. The Jets&#x27; own blitz rate of 42.9% produced zero sacks — a no-pass-rush profile that showed up against CHI in week 4.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag no" title="Not visible before kickoff">in-game only</span><div><b>Target-tree reshuffles on both sides</b><div class="went">Doubs injured on his 42-yard score (2.9% snap share); Brown back from an ankle took 10 targets and 37.4% of the air yards for 3-27 (-7.39 EPA); Cooper Jr., off IR, played 82.3% of snaps for 6-103. NE cpoe -1.9 despite 3 TDs; NYJ cpoe +3.5.</div><div class="went"><b>Tell:</b> Both were flagged as unpriced unknowns pre-game (Brown limited in practice, Cooper questionable in his first game off IR) — the direction was not knowable, only the variance.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; NYJ">
+      <div class="gm-doc-boxhead"><b>How NYJ gets beaten</b><span class="flat">2-3 entering</span><span class="badge mute">high confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">pressure allowed &times;4</span><span class="badge bad">explosive passing &times;3</span><span class="badge bad">pre-snap penalties &times;2</span><span class="badge bad">penalties &times;2</span><span class="badge bad">defensive penalties &times;2</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Explosive passing against the secondary</b><div class="went">3 explosives of 20+ allowed here (Doubs 42 TD, Maye 21-yard scramble, Douglas 39) and the `explosive passing` tag in weeks 3, 4 and 5 — DET 3, CHI 5, CLE 5.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>The run game as a clock weapon, not a yardage one</b><div class="went">NE 36 carries for 148 (4.1/carry) with Kiner at 5.2; the `run game` tag from week 4 vs CHI (6 explosive rushes allowed). Their rush EPA allowed held (-0.219 for NE) but the volume ate 29:25 of possession.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Pass protection breaks down under even modest rush numbers</b><div class="went">3 sacks and 6 hits on 33 dropbacks (27.3%); `pressure allowed` in weeks 2, 3, 4 and 5 (4, 5, 3, 4 sacks). The Q3 5:31 sack at the NE 18 cost a goal-to-go chance.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Red-zone and short-yardage failure</b><div class="went">0 TDs on 3 trips plus 0-for-2 on fourth down here; 0-for-1 red zone TDs in week 4 and week 5, RZ EPA -0.681 and -1.647 in those games. Three straight weeks without a red-zone touchdown.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Their own pre-snap flags (down-weight: did not recur here)</b><div class="went">Season 2.8 pre-snap flags/game (weeks 1 and 4 at 6 and 5), but only 2 pre-snap and 5 total for 35 yards in this game — the drive-killing flag was a non-pre-snap OPI that erased a touchdown at Q1 8:34.</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> An offense that moves between the 20s (field EPA +0.076 here, +0.196 at DET) and converts nothing at the goal line, behind a line that gives up pressure every week; a defense that holds rushing value and bends on explosives, with a blitz-heavy front that generates nothing (42.9% blitz, 0 sacks).</p>
+      <p class="gm-doc-p"><b>This week:</b> New England had exactly the profile to cash it: league-best-ish 8.1 yards per attempt entering, a quarterback who took zero sacks against a 42.9% blitz rate, and the patience to run 36 times. It did not need chunks — one 42-yard shot, one 39-yarder and 29 short attempts.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> A quarterback who beats the blitz without a clean pocket requirement (scrambles count — Maye&#x27;s 3 for 25), one deep-shot receiver to punish the explosive-pass leak, and a back room deep enough to take 30+ carries while leading. A front that can win one-on-one without blitzing (Williams, Barmore, Ponder each had a TFL/sack) turns Jets drives negative.</p>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; NE">
+      <div class="gm-doc-boxhead"><b>How NE gets beaten</b><span class="flat">3-2 entering</span><span class="badge mute">medium confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">turnovers &times;4</span><span class="badge bad">run game &times;2</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Giving the ball away</b><div class="went">2 turnovers here (Henderson fumble at Q3 8:17, Douglas fumble after a 39-yard gain at Q4 11:16) and the `turnovers` tag in 4 of 5 prior weeks — 3 at SEA, 2 vs PIT, 3 at JAX, 2 at BUF.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Explosive passing allowed when the opponent takes a shot</b><div class="went">Cooper&#x27;s 48-yard touchdown on 1st-and-10 (Q3 10:32, +4.38 EPA) and Byard&#x27;s 17-yard DPI on the final drive; week 4 BUF 5 explosives, week 5 LV 4, week 1 SEA 3.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Field-position generosity between the 20s</b><div class="went">NYJ gained 58, 51, 58, 60, 33 and 40 yards on six separate drives and reached NE territory seven times; NE field EPA allowed +0.133 vs BUF, +0.022 vs JAX. The holding is done at the 20.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Its own red-zone stalls when the shots don&#x27;t land</b><div class="went">2 FGs on 4 trips here including a delay of game at the NYJ 4 (Q4 1:14); `red zone stalls` at JAX week 3 (0 TDs on 4 trips, -0.92 EPA) and 0-for-1 vs PIT.</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> A team that wins by not needing many clean drives — explosive shots plus a checkdown layer and a three-man backfield — while leaking turnovers and yardage between the 20s, then holding at the goal line (opponents 0-for-3 here, 0-for-2 vs SEA, 0-for-1 vs PIT).</p>
+      <p class="gm-doc-p"><b>This week:</b> The Jets had the blueprint handed to them — two NE fumbles, seven trips into NE territory — and could not execute: 3-for-11 on third down, 0-for-2 on fourth, 0 red-zone touchdowns. The efficiency simply wasn&#x27;t there: season field EPA -0.04 and rush success 38.5%.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> An offense that finishes — red-zone TD rate above the 0.576 league mark and short-yardage rushing above 4.3 YPC — plus a secondary that can convert the two giveaways NE hands out per game into points, not field goals. Teams that merely move the ball on NE will keep losing by a touchdown.</p>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Player lines">
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Omar Cooper Jr.</b> <span class="flat">NYJ</span> &middot; 6-103 on 7 targets (projected 0.1-4.9 on 0.2 targets), 82.3% snaps<div class="went">First game off IR; the model had no role priced. He took the WR2 snaps outright, drew a nullified 14-yard TD (Q1 8:34) and scored from 48 (Q3 10:32). With Mitchell out, the role is real.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>A.J. Brown</b> <span class="flat">NE</span> &middot; 3-27 on 10 targets, 99 air yards (37.4% share), -7.39 receiving EPA, 76.5% snaps<div class="went">Ankle, limited practice, first game back — the volume and air-yards role arrived immediately and the catch rate didn&#x27;t (NE cpoe -1.9). Target share is the repeatable part.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>DeMario Douglas</b> <span class="flat">NE</span> &middot; 7-86-TD on 8 targets (projected 2.8-24.4), 58.8% snaps<div class="went">Underneath layer against a defense conceding nothing deep; promoted further when Doubs was hurt on the first-quarter touchdown. 71 air yards plus 24 YAC — not a pure checkdown role.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Rhamondre Stevenson</b> <span class="flat">NE</span> &middot; 14-36 rushing, 3 stuffs, 0 targets on 60.3% of snaps (projected 3.6 targets)<div class="went">Committee and no receiving role at all; Kiner (11-57) and Henderson (7-31) split the rest. His yardage cap held even in a 36-carry team game.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Corey Kiner</b> <span class="flat">NE</span> &middot; 11-57 rushing (projected 3.7-16.6), 17.6% snaps<div class="went">Script-driven: NE ran 62 of 67 snaps with a lead and he was the most efficient back (+1.61 rush EPA, one 10+ run). Workload tied to a lead, not to a fixed share.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Hunter Henry</b> <span class="flat">NE</span> &middot; 4-48-TD on 5 targets, 13 air yards, 39 YAC, +5.46 EPA<div class="went">YAC against a Jets second level — 15-yard catch-and-run at Q4 6:30 set up the clinching field goal, 7-yard TD at Q4 14:13. Usage modest, production was after the catch.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Garrett Wilson</b> <span class="flat">NYJ</span> &middot; 4-44 on 6 targets (projected 5.9-83.0 on 9.7), 98.4% snaps<div class="went">Volume shift, not deployment: Cooper (7) and Mason Taylor (6) took as many looks each. His 22.1% air-yards share was below Taylor&#x27;s 24.1%. Watch whether the target tree stays split with Cooper healthy.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Braelon Allen</b> <span class="flat">NYJ</span> &middot; 17-78 rushing with 4 runs of 10+, plus 2-26 receiving on 3 air yards<div class="went">Workhorse with Hall out, as modeled; but -3.24 rush EPA with 2 stuffs — chunk yardage without short-yardage reliability (stopped on 4th-and-2 at the NE 30). The 26 receiving yards were 23 YAC on behind-the-line throws.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Isaiah Davis</b> <span class="flat">NYJ</span> &middot; 7-16 rushing plus 1-10 (projected 0.7 carries), 12.9% snaps<div class="went">Real complementary carries behind Allen — enough to cap Allen&#x27;s ceiling in a game where NYJ ran 27 times.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Geno Smith</b> <span class="flat">NYJ</span> &middot; 20/30, 252, 1 TD, 1 INT, 3 sacks, 6 hits, +3.5 cpoe, 0.178 EPA/dropback<div class="went">Efficient passer under a 27.3% pressure rate; the yardage came on volume-neutral efficiency plus the Cooper explosive. His rushing line (1 carry, the failed sneak) is a short-yardage role, not a prop.</div></div></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Traps">
+      <div class="gm-doc-three"><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>An offense with positive field EPA and a multi-week red-zone drought is a dog-cover/kicker machine, not a team-total play. The Jets gained 345 yards, covered +7.5, and scored zero touchdowns — four made field goals.</b></p><p class="sub"><b>Trigger:</b> Team with field EPA/play &gt; 0 but 0 red-zone TDs in each of the last two or three weeks: fade anytime-TD and team-TD props, take the kicker&#x27;s makes over, and treat the dog spread separately from the team total.</p></div><div class="gm-doc-box"><span class="badge mute">Totals</span><p><b>Don&#x27;t build an Under on an offense&#x27;s penalty rate suppressing its drive count. The Jets, at 5.2 flags and 2.8 pre-snap per game entering, committed 5 for 35 with 2 pre-snap and ran 61 plays; the game went over on 128 total snaps at a fast pace.</b></p><p class="sub"><b>Trigger:</b> Any total thesis whose mechanism is &#x27;their flags end drives.&#x27; Pre-snap defensive flags persist faintly; an offense&#x27;s do not. Price the drive count off plays and third downs instead.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>A high-air-yards receiver returning from injury delivers targets, not yards. Brown played 76.5% of snaps, took 10 targets and 37.4% of NE&#x27;s air yards, and produced 3-27 with -7.39 EPA.</b></p><p class="sub"><b>Trigger:</b> Limited-practice questionable WR, first game back, projected as the alpha: play targets/receptions overs cautiously but fade receiving-yards overs; the downstream beneficiary (Douglas 7-86, Henry 4-48) is the better side.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>Committee backfield receiving roles are the least stable prop in the book. Stevenson was the modeled pass-down back and saw zero targets on 60.3% of snaps; NE backs combined for one target all day while Kiner took 11 carries.</b></p><p class="sub"><b>Trigger:</b> Three-man backfield with no 70%+ snap holder — avoid RB reception overs entirely and price rushing-yards unders off the carry split, not the depth chart.</p></div><div class="gm-doc-box"><span class="badge mute">Sides</span><p><b>A blitz-heavy defense that gets no sacks is a fake pass rush. The Jets sent extra rushers on 42.9% of NE&#x27;s dropbacks (4.66 average rushers) and recorded zero sacks and four hits while allowing 3 TD passes.</b></p><p class="sub"><b>Trigger:</b> Defense with a blitz rate near 40% and a sack rate at or below league: back opposing QB passing-TD overs and fade the defense&#x27;s implied stops, especially against a quarterback with scramble ability.</p></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="The story">
+      <div class="gm-doc-prose"><h2>The short version</h2>
+<p>New England 26, New York 19 — a seven-point game under a 7.5-point line, so the Jets covered, and 45 total points cleared a 43.5 total that the projection had nailed to the decimal. The team totals could hardly have been better: 18 projected against 19 scored, 25.5 against 26. What the projection could not have known is how those points would be assembled. New York gained 349 yards, reached New England territory on seven of its ten real possessions, and scored no touchdowns inside the 20 — four Sanders field goals, two failed fourth downs in plus territory, and an offensive pass interference that erased a 14-yard touchdown in the first quarter. Its only touchdown came from 48 yards out. That is the whole margin.</p>
+<h2>How it unfolded</h2>
+<p>The Jets opened with a 13-play, 6:43 field-goal drive and then handed the game away in the next ten minutes: a two-sack series that lost 16 yards, a 53-yard punt wiped out by a player-out-of-bounds penalty giving New England the ball at the NYJ 42, and two plays later a 42-yard Maye-to-Doubs touchdown (+4.12 EPA) — on which Doubs was injured and essentially disappeared (2.9% snap share).</p>
+<p>The second quarter was where New York actually lost it. Two drives of 51 and 58 yards ended on fourth down inside New England's half: Allen for one yard on 4th-and-2 at the NE 30 (-3.17 EPA), then Smith's sneak stuffed at the NE 39 on 4th-and-1 (-3.19). New England answered the second with an 11-play field-goal drive that converted its own 4th-and-1, then went 61 yards in 1:09 before the half for 17-3.</p>
+<p>New York got it back to 13-17 — Cooper's 48-yard touchdown at Q3 10:32 and a field goal after Henderson's fumble at the NE 36 (-5.25 EPA, the game's biggest swing). The Patriots responded with a 12-play, 63-yard touchdown drive ending on Henry's 7-yarder, and when Smith threw his only interception at Q4 12:31 from a 10-point hole, the sequence was over. New England even gave the ball back again — Douglas fumbling after a 39-yard gain — and still closed it with a 12-play, 6:08 field-goal drive.</p>
+<h2>Why the game diverged from the projection</h2>
+<p>It barely did at the team level; the grade's only flagged miss is New England's 36 carries against 28.1, and that is script. The Patriots ran 62 of their 67 snaps with a lead and dropped to a 44.7% pass rate in the second half, with Kiner (11 carries, 57 yards, projected 3.7) collecting the surplus. The real divergence is inside the Jets' box score: the same 30 attempts, 33 more yards, and zero touchdowns from the three red-zone trips the model's league-constant TD split expects to produce roughly 1.7. Their field EPA was +0.076 on 52 snaps; inside the 20 it was -0.584 on nine. That is a finishing miss, not a movement miss — and their own season inputs (RZ EPA -0.216, 0-for-1 in each of weeks 4 and 5) pointed at it.</p>
+<h2>The plan against the game</h2>
+<p>The plan's shape was right and its mechanism was wrong in a specific, instructive way. It expected New England to lead and grind — it did, with the run lean confirmed at a 47.1% pass rate — and it expected the Jets' total to be capped. But it located the cap in pre-snap penalties and third downs ending drives. New York committed five flags for 35 yards with two pre-snap, against season rates of 5.2 and 2.8, and ran 61 plays at a pace the checks grade as fast (128 total snaps vs 121.5). The drives arrived; the touchdowns did not. That inversion took down the Smith yardage under, the Smith interception under (the pick came from a chasing script the plan said wouldn't materialize) and, by a point and a half, the Under. Four of ten calls hit, but the Stevenson structure calls were right for the right reasons and the Wilson miss was a role surprise — Cooper Jr., unpriced off IR, taking 7 targets for 103.</p>
+<h2>Player by player</h2>
+<p>Cooper is the headline: 82.3% of snaps, 6-103, the 48-yard score and the nullified one. Wilson fell to 6 targets and a 22.1% air-yards share, below Mason Taylor's 24.1%. Allen hit his number (17-78, four runs of 10+) but with -3.24 rush EPA and the failed fourth-down carry — chunk yardage without short-yardage reliability. On the other side, A.J. Brown's return produced 10 targets, 99 air yards and 3 catches for 27 with -7.39 EPA; Douglas (7-86-TD) and Henry (4-48-TD, 39 of it after the catch) ate what he left. Stevenson took 14 carries for 36 with three stuffs and, notably, zero targets on 60.3% of snaps.</p>
+<h2>The defenses</h2>
+<p>Charting here is box counts and rushers only — no coverage shells. The Jets blitzed on 42.9% of Maye's dropbacks (4.66 average rushers) and recorded zero sacks and four hits; Maye scrambled three times for 25 including a 21-yarder. That is the week-4 CHI profile again: pressure sent, nothing home, explosives allowed. New England's front needed less help — three sacks and six hits on 33 dropbacks (27.3%) against a 31.4% blitz rate, with Williams, Barmore and Ponder each getting one home at a drive-ending moment. New England's secondary gave up the field and held at the 20: opponents are now 0-for-3 here, 0-for-2 vs SEA, 0-for-1 vs PIT inside it.</p>
+<h2>The blueprint</h2>
+<p>To beat the Jets you do not need efficiency between the 20s — you need one or two shots over a secondary that has conceded explosive passes in four straight weeks, a quarterback who survives the blitz without a clean pocket, and enough backfield depth to take 30+ carries once ahead. To beat New England you need to finish: they hand out two turnovers a game and seven trips into their territory, and they have now watched three opponents turn that into field goals. Moving the ball on them is not the blueprint; converting is, and the Jets' own red-zone numbers said they couldn't.</p>
+<h2>What the model should take from this</h2>
+<p>Three things. The Jets' red-zone drought is now three weeks old and deserves weight the league-constant TD split won't give it — their team total will keep landing while their touchdown props keep failing. Their penalty profile should stop carrying any drive-count implication; it did not show up and it barely persists anyway. And New England's backfield should be priced as lead-dependent carries with no receiving role at all: one target to three backs over 67 snaps is not a sample artifact, it is the design.</p></div>
+    </section>
+    
+    
+  </div>
+</details>
+
 </div>
 
 
@@ -1830,6 +2401,15 @@
       if(pick) pick.addEventListener("change",function(){ node.querySelectorAll(".pl-tl").forEach(function(t){ t.hidden=t.dataset.key!==pick.value; }); });
       modal.querySelector(".pl-dialog").scrollTop=0;
     }).catch(function(){ body.innerHTML='<div class="pl-loading">The player sheets could not be loaded.</div>'; });
+  }
+  // The plan / report panel: pills and arrows walk its sections.
+  var doc=document.querySelector(".gm-doc");
+  if(doc){
+    var panes=[].slice.call(doc.querySelectorAll(".gm-doc-pane")), pills=doc.querySelector(".gm-doc-pills"), cur=0;
+    panes.forEach(function(pn,i){ var b=document.createElement("button"); b.type="button"; b.textContent=pn.dataset.title; b.setAttribute("role","tab"); b.addEventListener("click",function(){ show(i); }); pills.appendChild(b); });
+    function show(i){ cur=(i+panes.length)%panes.length; panes.forEach(function(pn,k){ pn.classList.toggle("active",k===cur); }); pills.querySelectorAll("button").forEach(function(b,k){ b.classList.toggle("active",k===cur); if(k===cur&&b.scrollIntoView) b.scrollIntoView({block:"nearest",inline:"center"}); }); }
+    doc.querySelectorAll(".gm-doc-arrow").forEach(function(a){ a.addEventListener("click",function(){ show(cur+parseInt(a.dataset.dir,10)); }); });
+    show(0);
   }
   document.querySelectorAll(".pl-open").forEach(function(b){ b.addEventListener("click",function(e){ e.stopPropagation(); openPlayer(b.dataset.pid); }); });
   modal.querySelector(".pl-close").addEventListener("click",closeModal);

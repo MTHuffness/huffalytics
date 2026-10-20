@@ -797,6 +797,126 @@
     .hfa .pl-log td.wk, .hfa .pl-log th:first-child { position: sticky; left: 0; background: #0d0d11; z-index: 1; }
     :root[data-theme="light"] .hfa .pl-log td.wk, :root[data-theme="light"] .hfa .pl-log th:first-child { background: #fff; }
   }
+
+  /* ---- The plan / report panel under the scoreboard ---- */
+  .gm-doc { position: relative; overflow: visible; }
+  .gm-doc::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; border-radius: 14px 14px 0 0; background: linear-gradient(90deg, var(--hfa-accent), transparent 70%); pointer-events: none; }
+  .gm-doc.st-both::before { background: linear-gradient(90deg, var(--hfa-good), var(--hfa-accent) 55%, transparent 90%); }
+  .gm-doc > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.9rem; padding: 1rem 1.1rem; }
+  .gm-doc > summary::-webkit-details-marker { display: none; }
+  .gm-doc-chev { display: inline-grid; place-items: center; flex: none; width: 2rem; height: 2rem; border-radius: 50%; background: var(--hfa-accent); color: #fff; box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.22), 0 6px 14px -6px rgba(255, 31, 47, 0.9); transition: transform 0.18s; }
+  .gm-doc[open] > summary .gm-doc-chev { transform: rotate(180deg); background: #fff; color: var(--hfa-accent); }
+  .gm-doc-main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+  .gm-doc-eyebrow { font-size: 0.64rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-accent); }
+  .gm-doc-lead { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; line-height: 1.3; color: var(--hfa-body); }
+  .gm-doc-chips { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0.3rem; flex: 0 1 auto; }
+  .gm-doc-open { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); margin-left: 0.3rem; }
+  .gm-doc[open] .gm-doc-open { display: none; }
+  .gm-doc-body { border-top: var(--hfa-hairline); padding: 0.7rem 1.1rem 1.2rem; }
+  .gm-doc-nav { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.9rem; }
+  .gm-doc-pills { display: flex; gap: 0.3rem; overflow-x: auto; scrollbar-width: none; flex: 1 1 auto; padding: 2px; }
+  .gm-doc-pills::-webkit-scrollbar { display: none; }
+  .gm-doc-pills button { flex: none; border: 1px solid rgba(128, 128, 128, 0.25); background: transparent; color: var(--hfa-muted); border-radius: 999px; padding: 0.3rem 0.85rem; font-size: 0.76rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
+  .gm-doc-pills button.active { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-arrow { flex: none; width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid rgba(128, 128, 128, 0.3); background: transparent; color: var(--hfa-body); font-size: 1.2rem; line-height: 1; cursor: pointer; }
+  .gm-doc-arrow:hover { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-pane { display: none; animation: gm-fade 0.18s ease-out; }
+  .gm-doc-pane.active { display: block; }
+  @keyframes gm-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  .gm-doc-hook { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1.2; color: var(--hfa-accent); margin-bottom: 0.4rem; }
+  .gm-doc-headline { font-size: 1rem; font-weight: 600; line-height: 1.45; margin: 0 0 0.7rem; }
+  .gm-doc-p { font-size: 0.9rem; line-height: 1.55; margin: 0 0 0.7rem; }
+  .gm-doc-note { font-size: 0.76rem; color: var(--hfa-muted); line-height: 1.45; margin: 0 0 0.6rem; }
+  .gm-doc-prose { font-size: 0.9rem; line-height: 1.6; max-width: 60rem; }
+  .gm-doc-prose h2 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 1rem 0 0.3rem; }
+  .gm-doc-prose h3 { font-size: 0.9rem; margin: 0.8rem 0 0.2rem; }
+  .gm-doc-prose p { margin: 0 0 0.6rem; }
+  .gm-doc-prose ul { padding-left: 1.2rem; }
+  .gm-doc-k { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 0.9rem 0 0.35rem; }
+  .gm-doc-box > .gm-doc-k:first-child, .gm-doc-col > .gm-doc-k:first-child { margin-top: 0; }
+  .gm-doc-verdicts { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.2rem 0 0.7rem; }
+  .gm-doc-verdicts.wrap .badge { white-space: normal; text-align: left; }
+  .gm-doc-verdicts .badge b { color: inherit; }
+  .gm-doc-vs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 0.4rem; }
+  .gm-doc-col { padding: 0.75rem 0.9rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); font-size: 0.9rem; line-height: 1.5; }
+  .gm-doc-col.plan { border-left: 3px solid var(--hfa-accent); }
+  .gm-doc-col.game { border-left: 3px solid var(--hfa-good); }
+  .gm-doc-col.game .gm-doc-k { color: var(--hfa-good); }
+  .gm-doc-col p, .gm-doc-box p { margin: 0 0 0.45rem; font-size: 0.88rem; line-height: 1.5; }
+  .gm-doc-col p:last-child, .gm-doc-box p:last-child { margin-bottom: 0; }
+  .gm-doc p.sub, .gm-doc .went { font-size: 0.8rem; color: var(--hfa-muted); line-height: 1.45; }
+  .gm-doc .went { margin-top: 0.2rem; }
+  .gm-doc-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .gm-doc-three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; }
+  .gm-doc-box { min-width: 0; padding: 0.7rem 0.85rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); }
+  .gm-doc-boxhead { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.4rem; font-size: 0.92rem; }
+  .gm-doc-boxhead b { color: var(--hfa-body); font-weight: 800; }
+  .gm-doc-ul { margin: 0; padding-left: 1.1rem; font-size: 0.86rem; line-height: 1.5; }
+  .gm-doc-ul li { margin-bottom: 0.3rem; }
+  .gm-doc-list { display: flex; flex-direction: column; gap: 0.45rem; }
+  .gm-doc-item { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.45; padding: 0.5rem 0.7rem; border-radius: 10px; background: var(--hfa-tint); border: var(--hfa-hairline); }
+  .gm-doc-item > div { min-width: 0; }
+  .gm-doc-item b { color: var(--hfa-body); }
+  .gm-doc-flag { flex: none; min-width: 5.2rem; text-align: center; border-radius: 6px; padding: 0.2rem 0.45rem; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); margin-top: 0.15rem; }
+  .gm-doc-flag.decisive, .gm-doc-flag.signal, .gm-doc-flag.yes, .gm-doc-flag.held { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-flag.contributed, .gm-doc-flag.mixed, .gm-doc-flag.partly { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .gm-doc-flag.minor, .gm-doc-flag.noise, .gm-doc-flag.no, .gm-doc-flag.broke { background: rgba(255, 31, 47, 0.16); color: var(--hfa-accent); }
+  .gm-doc-flag.defense { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .gm-doc-flag.offense { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-calls { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  .gm-call { min-width: 0; padding: 0.65rem 0.85rem 0.6rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); border-left: 3px solid var(--hfa-muted); }
+  .gm-call.over { border-left-color: var(--hfa-good); } .gm-call.under { border-left-color: var(--hfa-accent); }
+  .gm-call.hit { background: rgba(47, 212, 164, 0.06); } .gm-call.miss { background: rgba(255, 176, 32, 0.06); }
+  .gm-call-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.5rem; font-size: 0.92rem; }
+  .gm-call-side { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .gm-call.over .gm-call-side { color: var(--hfa-good); } .gm-call.under .gm-call-side { color: var(--hfa-accent); }
+  .gm-call .who { color: var(--hfa-body); font-weight: 800; }
+  .gm-call .bet { font-weight: 700; color: var(--hfa-accent); }
+  .gm-call .res { font-weight: 800; font-size: 0.8rem; margin-left: auto; }
+  .gm-call .res.hit { color: var(--hfa-good); } .gm-call .res.miss { color: var(--hfa-bad); } .gm-call .res.void { color: var(--hfa-muted); font-weight: 500; }
+  .gm-call-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem; margin: 0.35rem 0 0.2rem; }
+  .gm-call .prob { font-size: 0.7rem; font-weight: 700; color: var(--hfa-muted); border: 1px solid rgba(128, 128, 128, 0.3); border-radius: 999px; padding: 0.1rem 0.5rem; }
+  .gm-call .rungs { margin: 0.35rem 0 0.4rem; }
+  .gm-call .rung small { font-weight: 500; color: var(--hfa-muted); }
+  .gm-call p.why { font-size: 0.84rem; line-height: 1.45; margin: 0.3rem 0 0.2rem; color: var(--hfa-body); }
+  .gm-call p.ev { font-size: 0.74rem; line-height: 1.4; margin: 0 0 0.15rem; color: var(--hfa-muted); }
+  .gm-doc .legs { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.4rem; }
+  .gm-doc .leg { border-radius: 8px; padding: 0.2rem 0.5rem; font-size: 0.76rem; font-weight: 700; background: rgba(128, 128, 128, 0.14); }
+  .gm-doc .leg em { font-style: normal; font-weight: 500; color: var(--hfa-muted); }
+  .gm-doc .leg i { font-style: normal; font-weight: 800; }
+  .gm-doc .leg.hit { background: rgba(47, 212, 164, 0.16); } .gm-doc .leg.hit i { color: var(--hfa-good); }
+  .gm-doc .leg.miss { background: rgba(255, 176, 32, 0.16); } .gm-doc .leg.miss i { color: var(--hfa-bad); }
+  .gm-doc-gradehead { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+  .gm-grade { flex: none; display: flex; align-items: center; gap: 0.6rem; padding: 0.4rem 0.9rem 0.4rem 0.6rem; border-radius: 14px; border: 2px solid var(--hfa-muted); background: var(--hfa-tint); }
+  .gm-grade b { font-size: 2.6rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .gm-grade span { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); line-height: 1.3; }
+  .gm-grade.good { border-color: var(--hfa-good); } .gm-grade.good b { color: var(--hfa-good); }
+  .gm-grade.warn { border-color: var(--hfa-bad); } .gm-grade.warn b { color: var(--hfa-bad); }
+  .gm-grade.bad { border-color: var(--hfa-accent); } .gm-grade.bad b { color: var(--hfa-accent); }
+  .gm-doc-gradetext { flex: 1 1 20rem; min-width: 0; }
+  .gm-doc-gradetext .gm-doc-verdicts { margin-bottom: 0; }
+  .hfa .gm-doc-table { font-size: 0.8rem; }
+  .hfa .gm-doc-table th, .hfa .gm-doc-table td { padding: 0.25rem 0.4rem; }
+  .hfa .gm-doc-table b { color: var(--hfa-body); }
+  .hfa .gm-doc-table td.meter { width: 5rem; }
+  .hfa .gm-doc-table td.meter i { display: block; height: 4px; border-radius: 2px; background: var(--hfa-good); }
+  .hfa .gm-doc-table td.meter i.bad { background: var(--hfa-bad); }
+  .gm-doc-tl { position: relative; padding-left: 1rem; border-left: 2px solid rgba(128, 128, 128, 0.25); display: flex; flex-direction: column; gap: 0.7rem; }
+  .gm-doc-tp { position: relative; font-size: 0.88rem; line-height: 1.45; }
+  .gm-doc-tp::before { content: ""; position: absolute; left: -1.4rem; top: 0.45rem; width: 10px; height: 10px; border-radius: 50%; background: var(--hfa-accent); box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.25); }
+  .gm-doc-tp .clock { font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-accent); }
+  @media (max-width: 1100px) { .gm-doc-three { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 760px) {
+    .gm-doc > summary { padding: 0.85rem 16px; gap: 0.6rem; flex-wrap: wrap; }
+    .gm-doc-main { flex: 1 1 0; }
+    .gm-doc-lead { font-size: 0.98rem; }
+    .gm-doc-chips { justify-content: flex-start; flex: 0 0 100%; padding-left: 2.6rem; }
+    .gm-doc-body { padding: 0.6rem 16px 1rem; }
+    .gm-doc-hook { font-size: 1.2rem; }
+    .gm-doc-vs, .gm-doc-two, .gm-doc-three, .gm-doc-calls { grid-template-columns: 1fr; }
+    .gm-doc-arrow { display: none; }
+    .gm-doc-flag { min-width: 4.4rem; font-size: 0.56rem; }
+  }
   @media (prefers-reduced-motion: reduce) { #hfa-rain { opacity: calc(var(--hfa-rain) * 0.5); } }
 </style>
 
@@ -821,7 +941,7 @@
     <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
   </div>
   <main>
-<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#away" data-sec="away">DAL offense</a><a href="#home" data-sec="home">GB offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
+<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#doc-sec" data-sec="doc">Plan vs game</a><a href="#away" data-sec="away">DAL offense</a><a href="#home" data-sec="home">GB offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
 
 <div class="hfa-card hfa-hero hfa-sec gm-hero" id="hero" data-sec="hero" style="--gm-away: #002244; --gm-home: #203731;">
   <div class="gm-hero-top">
@@ -848,6 +968,508 @@
     <span class="gm-chip final"><i>final</i> <b>DAL 13 &ndash; 23 GB</b></span>
     <span class="gm-chip " title="Natural grass. Passing is the same on grass and turf; rushing runs about 3.5% higher on turf (+3.7 yards a team) and a catch gains a tenth of a yard more after it. Points, the closing lines and the engine show no surface effect, so it is not an engine input."><i>field</i> <b>grass</b></span><span class="gm-chip " title="Forecast for the kickoff window, as of Sun 3:02 PM Denver. Wind above 10 mph trims the passing projection."><i>forecast</i> <b>52°F · wind 10 mph (gusts 21)</b></span>
   </div>
+</div>
+
+<div class="hfa-sec" id="doc-sec" data-sec="doc">
+
+<details class="hfa-card gm-doc st-both" id="doc">
+  <summary class="gm-doc-bar">
+    <span class="gm-doc-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="gm-doc-main">
+      <span class="gm-doc-eyebrow">The plan against the game &middot; plan Sun Oct 18, 9:56 AM &middot; report Tue Oct 20, 12:06 PM</span>
+      <span class="gm-doc-lead">Love carves up a patched Dallas secondary. The Cowboys answer at the goal line.</span>
+    </span>
+    <span class="gm-doc-chips">
+      <span class="badge warn">script partly held</span>
+      <span class="badge good">5 hit</span><span class="badge bad">7 missed</span>
+      <span class="badge warn" title="Projection grade: team volume and yardage, player lines, and the market calls the projection implied">projection C &middot; 57</span>
+      <span class="gm-doc-open">open</span>
+    </span>
+  </summary>
+  <div class="gm-doc-body">
+    <div class="gm-doc-nav">
+      <button type="button" class="gm-doc-arrow" data-dir="-1" aria-label="Previous section">&#8249;</button>
+      <div class="gm-doc-pills" role="tablist"></div>
+      <button type="button" class="gm-doc-arrow" data-dir="1" aria-label="Next section">&#8250;</button>
+    </div>
+
+    
+    
+    <section class="gm-doc-pane" data-title="Plan vs game">
+      <div class="gm-doc-verdicts">
+        <span class="badge warn" title="Whether the game went the way the plan's script described, for the reasons it gave">script partly held</span>
+        <span class="badge mute">followed the favorite&#x27;s path</span>
+        <span class="badge bad" title="Both teams ran 140 plays; the league's figure for two teams was 121.5">pace: called average, played fast</span>
+        <span class="badge bad" title="DAL passed on 79% of its plays; its season rate entering the game was 65%">DAL: called balanced, played pass</span><span class="badge bad" title="GB passed on 63% of its plays; its season rate entering the game was 66%">GB: called pass, played balanced</span>
+      </div>
+      <div class="gm-doc-vs">
+        <div class="gm-doc-col plan"><div class="gm-doc-k">The plan said</div><p>A near pick&#x27;em with a fat total: Green Bay should move it at will on a Dallas defense with no pass rush, while Dallas&#x27;s yards come harder than its touchdowns.</p><p class="sub">Both offenses should move: Dallas against the league&#x27;s most generous field defense, Green Bay against a Dallas unit last in EPA allowed with no pass rush. The difference is where the yards convert — Green Bay holds between the 20s and folds inside them, so Dallas&#x27;s drives should be longer in yards and still end in points, while Green Bay scores more cheaply. Expect Dallas to lean on the run more than its season pass rate suggests, because Green Bay&#x27;s interior line is down to backups. Both defenses are bottom-two in accepted flags, which extends drives on each side and pushes the play count past the raw tempo numbers.</p></div>
+        <div class="gm-doc-col game"><div class="gm-doc-k">What happened</div><p>Green Bay 23, Dallas 13: the Packers covered as 1.5-point home dogs and the 53.5 total died by 17.5 points, because Dallas moved the ball for 77 plays and gave three scoring-position possessions back (two Prescott interceptions inside the GB 20, two turnovers on downs) while Green Bay turned five explosive throws and a 37-yard DPI into a 17-0 halftime lead.</p><p class="sub">The plan&#x27;s picture of Green Bay was broadly right and its picture of Dallas was wrong in the way that mattered. It correctly identified that GB has to throw, that Golden is the target-floor play with Reed and Moore out, and that Dallas can&#x27;t pressure — GB hit five explosives and led wire-to-wire. What it missed was the premise underneath every Dallas call: that a pick&#x27;em game would stay close enough for Dallas to run at the gutted GB interior. Dallas was down 7-0 at 4:46 of the first and 17-0 at the half, so the &#x27;grind&#x27; script never existed, which is why five of the seven misses were volume calls on the wrong side of a chase. The one Dallas lesson that is read, not bounce, is that this offense abandons the run instantly; the specific misses on Lamb/Pickens/Flournoy were all one mechanism firing at once.</p><p class="sub"><b>The script:</b> The game followed the plan&#x27;s favorite_path almost literally — Green Bay hit three-plus explosive throws over a Dallas secondary (Watson 27 and 28, Golden 37 and 21 and 21), built a 17-0 lead by halftime, and shortened the game with a 15-play/8:17 field-goal drive and a 30:07 time of possession. But two pieces of the stated mechanism broke: &#x27;protects Love&#x27; did not happen (3 sacks, 8 QB hits, 18.2% pressure, including Clark&#x27;s 10-yard sack at the GB 4), and the lead did not turn Lloyd into a checkdown outlet — Strong took that job (6 targets) and GB&#x27;s pass rate while leading was 60.3%, with a HIGHER second-half rate (66.7%). Checks confirm the two tempo/lean reads failed: pace was fast, not average (140 plays vs 121.5), Dallas&#x27;s lean was pass at 78.6% against a called &#x27;balanced&#x27;, and Green Bay&#x27;s was balanced at 62.9% against a called &#x27;pass&#x27;.</p></div>
+      </div>
+      
+      <div class="gm-doc-k">What the plan said would swing it</div>
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Cisse&#x27;s hip: Green Bay&#x27;s every-snap corner. Without him Valentine starts and Dallas&#x27;s outside receivers get the softer matchup.<div class="went"><b>Went:</b> Cisse played 69.2% of snaps despite the hip and intercepted Prescott at the GB 18 (Q2 2:00, -3.96 EPA) with 2 PDs — the factor resolved the opposite way the plan hedged, and his pick was one of the three drive-killers.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag minor">minor</span><div>Green Bay&#x27;s missing interior linemen — Hargrave and Ford both to IR — is the lane Dallas&#x27;s run game has not had all year.<div class="went"><b>Went:</b> Dallas never attacked the missing interior: 15 carries, 48 yards, 2.7 ypc up the middle, zero 10+ runs. The lane may have been there; it was not used after the first quarter.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Red-zone split: Green Bay gives up touchdowns on most trips, Dallas gives up a normal rate. Trips, not yards, decide the team totals.<div class="went"><b>Went:</b> Trips did decide the totals, but not as described: GB went 2-for-4 with two field goals (its own weakness, not Dallas&#x27;s), while Dallas&#x27;s 4 trips produced 2 TDs and its best chances died at the GB 3 and GB 18 before counting as finishes.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Both defenses are bottom-two in accepted flags; free first downs lengthen drives and add plays for both sides.<div class="went"><b>Went:</b> 22 accepted flags for 204 yards. The 37-yard DPI on Porter (Q2 1:01) set up the 17-0 touchdown; three roughing calls on GB in the fourth (15, 14, 7) extended Dallas&#x27;s two final drives, one of which scored at 0:52.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag minor">minor</span><div>If Green Bay leads by two scores it stops throwing — our week-4 review saw 30 attempts in exactly that spot.<div class="went"><b>Went:</b> Wrong direction: with a two-score lead Green Bay kept throwing — 60.3% pass while leading, 66.7% in the second half, 41 attempts against a 31.9 projection.</div></div></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">Each offense: expected &middot; happened</div>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>DAL</b><span class="badge bad">broke</span></div><p><b>Expected:</b> Around 32-35 attempts at a pass rate below their 64.9% season mark, 18-22 carries, and most of the point production from red-zone trips rather than big passing lines. Williams gets the short-yardage work at a 74-85% snap share.</p><p><b>Happened:</b> Expected 32-35 attempts below a 64.9% pass rate with 18-22 carries and points from red-zone trips; got 54 attempts at 72.7%, 15 carries, and 13 points on 4 trips with two giveaways short of them. Williams&#x27;s 73.1% snap share was just under the 74-85% band.</p></div><div class="gm-doc-box"><div class="gm-doc-boxhead"><b>GB</b><span class="badge warn">partly</span></div><p><b>Expected:</b> 30-34 attempts at a pass rate near 60%, two touchdown throws, and a committee backfield in which Lloyd&#x27;s value comes through the air if Green Bay leads. Golden and Watson should split 14-18 targets.</p><p><b>Happened:</b> Volume and distribution were close — 41 attempts at 62.9% pass, Golden and Watson 21 combined targets (called 14-18, high side) — but the two touchdown throws became one, and Lloyd&#x27;s air value never materialized (1 target, Strong took 6).</p></div><div class="gm-doc-box"><div class="gm-doc-boxhead"><b></b></div></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">For the next plan on these teams</div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="badge mute">DAL</span><div>Treat any Dallas call that requires a ground-game script as conditional on the first-quarter scoreboard. Trailing pass rate was 74.6% here and 75.9% in week 5 — this offense does not grind, so run-based unders on Prescott and overs on Williams need a lead or a tie to exist.</div></div><div class="gm-doc-item"><span class="badge mute">GB</span><div>Stop projecting Lloyd as the lead/checkdown back. Strong&#x27;s 11 carries and 6 targets on 54.7% of snaps against Lloyd&#x27;s 40% is a role observation, not a bounce, and Johnson is now a fourth option (5.3%).</div></div><div class="gm-doc-item"><span class="badge mute">GB</span><div>Do not react to the 1 passing touchdown. Love produced 276 yards, 5 explosives and 0.138 EPA/dropback; the touchdown shortfall came from the familiar red-zone stall (2-of-4, two short field goals) that the plan already identified — the pass-TD over is still live when GB gets more than four trips.</div></div><div class="gm-doc-item"><span class="badge mute">both</span><div>The &#x27;both defenses are flag-prone, drives get extended&#x27; factor was directionally right but the yardage came from roughing and DPI, which don&#x27;t persist. Next plan should lean only on the pre-snap counts (GB 2.6/game) and price the rest as variance.</div></div></div>
+      
+    </section>
+    
+
+    
+    
+    <section class="gm-doc-pane" data-title="The script">
+      <div class="gm-doc-verdicts">
+        <span class="badge mute" title="Plays and tempo">average pace</span>
+        <span class="badge acc" title="Season pass rate is 64.9% and they have thrown 40+ three times, but Green Bay&#x27;s interior front is gutted and its secondary is the stronger unit — this is the first week all season the run is the easier call for them.">DAL balanced</span><span class="badge acc" title="Green Bay runs at 3.05 yards a carry with the worst yards-before-contact in the dossier; against a defense 32nd in pass EPA allowed and 29th in pressure, the throw is the only efficient lane.">GB pass</span>
+        <span class="badge mute">medium confidence</span>
+      </div>
+      <p class="gm-doc-p">Both offenses should move: Dallas against the league&#x27;s most generous field defense, Green Bay against a Dallas unit last in EPA allowed with no pass rush. The difference is where the yards convert — Green Bay holds between the 20s and folds inside them, so Dallas&#x27;s drives should be longer in yards and still end in points, while Green Bay scores more cheaply. Expect Dallas to lean on the run more than its season pass rate suggests, because Green Bay&#x27;s interior line is down to backups. Both defenses are bottom-two in accepted flags, which extends drives on each side and pushes the play count past the raw tempo numbers.</p>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-k">If the favorite wins</div><p>Green Bay protects Love, hits two or three explosive throws over a Dallas secondary missing Durant and leaning on a 9th-percentile corner in Steward, and builds a lead that turns Lloyd into a checkdown outlet and shortens the second half. Final shape: 30-24 Packers with Love at two scores through the air.</p></div>
+        <div class="gm-doc-box"><div class="gm-doc-k">If the underdog wins</div><p>Dallas runs at the missing interior linemen, keeps the game to a possession, converts three or four red-zone trips into touchdowns against a defense 29th at its own 20, and wins the fourth quarter with Prescott on short throws. Final shape: 27-26 Cowboys with modest passing yardage and three Dallas touchdown drives.</p></div>
+      </div>
+      
+      <div class="gm-doc-prose"><h2>The read</h2>
+<p>This is a shootout with asymmetric shapes. Dallas's defense is last in EPA allowed, last in field EPA allowed (between the 20s), 32nd in rushing yards allowed per game and 29th in pressure generated — with Overshown out a fifth straight week and Durant out, Porter questionable. Green Bay gets the cleanest pocket and the softest field of any week this season, and Love has thrown exactly two touchdowns in all five games. Green Bay's own defense is the mirror image: 5th in field EPA allowed and 5th in passing yards allowed per game, but 29th in red-zone touchdown rate allowed (0.786) and 32nd in red-zone EPA. Dallas should find the yards slow and the trips profitable.</p>
+<h2>Why</h2>
+<p>The split at the 20 carries this plan. Dallas's passing yardage is the half Green Bay actually defends (6.35 yards per attempt allowed, 8th), which argues down on Prescott's yardage and on the receiving lines beneath him — and Dallas no longer needs 42 throws, because Green Bay's interior line is gutted (Hargrave to IR, Ford to IR, Campbell questionable, Wyatt limited). That is the same hole Atlanta ran through for 242 in week 3. Once Dallas reaches the 20, Green Bay's finishing rank hands the points over, and Javonte Williams has scored in four of five games at a 74-85% snap share.</p>
+<p>Green Bay's path is simpler: Dallas has allowed four or more explosive passes in four straight weeks and generated almost no pressure in any of them. Golden and Watson have held 7-12 and 8-11 target weeks with Reed and Moore both on IR; the WR3 job falls to a just-activated Savion Williams.</p>
+<h2>What would change it</h2>
+<p>Cisse's hip (Packers CB1, every snap last week) and Porter's ankle for Dallas — both decide how clean each passing game is. Green Bay leading comfortably is the known trap: our week-4 review showed this offense runs at 47% when it's ahead, which kills Love's volume. And if Dallas trails by two scores again, its carries collapse toward the teens as they did against Tampa.</p></div>
+    </section>
+    <section class="gm-doc-pane" data-title="Offenses">
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>DAL offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>A pass-first offense that has moved the ball every week (0.104 field EPA per play) and finished at the highest rate in this dossier — 78.9% of red-zone trips end in touchdowns. The run game is 3.81 yards a carry but its rush EPA has turned positive the last two weeks (+0.05, +0.096).</p>
+          <div class="gm-doc-k">How it scores</div><p>Prescott&#x27;s accuracy and chunk plays to Lamb and Pickens between the 20s, then Javonte Williams on the goal line — he has scored in four of five games, including three from inside the 10 at Houston.</p>
+          <div class="gm-doc-k">What stops it</div><p>A defense that can hold up between the 20s and keep the drives long; and their own script discipline — against Tampa they ran 13 times all night and the yardage turned into 16 points on two red-zone trips plus two Prescott interceptions in scoring range.</p>
+          <div class="gm-doc-k">This matchup</div><p>Green Bay is the one real pass defense Dallas has met: 8th in yards per attempt allowed, 5th in passing yards per game, 5th in field EPA allowed. What it cannot do is hold at its own 20 (29th in red-zone touchdown rate allowed, 32nd in red-zone EPA) or stop the run with Hargrave and Ford gone — Atlanta put 242 on the ground through that same interior in week 3.</p>
+          <div class="gm-doc-k">Injuries</div><p>Lamb (thigh) practiced in full and Jon Machota reported Thursday he is expected to play without limitations after the 57% snap share against Tampa — the single biggest usage question on this side. Drew Shelton is out but played one snap. On the defense Dallas faces: Hargrave (IR), Ford (IR) and Campbell (questionable) thin the interior; Banks and Monk are questionable on Green Bay&#x27;s own line but that is the other offense.</p>
+          <div class="gm-doc-k">Expect</div><p>Around 32-35 attempts at a pass rate below their 64.9% season mark, 18-22 carries, and most of the point production from red-zone trips rather than big passing lines. Williams gets the short-yardage work at a 74-85% snap share.</p>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>GB offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>A boom-bust passing team: 7.61 yards per attempt with a 60.5% completion rate, 2.6 pre-snap flags a game and the league&#x27;s worst yards-before-contact on the ground (1.84). Love has thrown exactly two touchdowns in every game this season.</p>
+          <div class="gm-doc-k">How it scores</div><p>Explosive throws to Watson and Golden — six 20-plus passes against Chicago in week 5 — plus Kraft and Lloyd underneath, and short-yardage packages built around Kraft.</p>
+          <div class="gm-doc-k">What stops it</div><p>Pressure. Four sacks and 32.6% pressure in week 1 wrecked the whole offense; three sacks in week 2 did the same. They also beat themselves pre-snap and have stalled in the red zone all year (0.538 touchdown rate, -0.171 EPA inside the 20).</p>
+          <div class="gm-doc-k">This matchup</div><p>Dallas cannot pressure anyone — 29th in pressure generated, zero sacks in two of five games — and is 32nd in pass EPA allowed with four or more explosive passes conceded in four straight weeks. Overshown&#x27;s absence leaves a linebacker level rated 45th and 26th percentile, which is where Kraft and the backs live. Dallas does defend the red zone at a roughly normal clip, so the finishing problem does not fully go away.</p>
+          <div class="gm-doc-k">Injuries</div><p>Reed (IR) and Moore (IR, Rotowire Saturday) are gone; Savion Williams was activated Saturday and is questionable, so WR3 snaps are unsettled behind Watson and Golden. Banks (knee/toe) and Monk (quad) were limited all week and are questionable — Tomlinson starts if Banks sits, which tempers confidence on protection and run efficiency even though it is not a line the model prices. Dallas&#x27;s Durant is out and Porter is questionable but on track to play per Jeremy Fowler Sunday morning.</p>
+          <div class="gm-doc-k">Expect</div><p>30-34 attempts at a pass rate near 60%, two touchdown throws, and a committee backfield in which Lloyd&#x27;s value comes through the air if Green Bay leads. Golden and Watson should split 14-18 targets.</p>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b> offense</b><span class="badge mute">low confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p></p>
+          <div class="gm-doc-k">How it scores</div><p></p>
+          <div class="gm-doc-k">What stops it</div><p></p>
+          <div class="gm-doc-k">This matchup</div><p></p>
+          <div class="gm-doc-k">Injuries</div><p></p>
+          <div class="gm-doc-k">Expect</div><p></p>
+        </div>
+        
+      </div>
+    </section>
+    <section class="gm-doc-pane" data-title="The calls">
+      <p class="gm-doc-note">Each call is one player, one market, one side of the line Kalshi quoted when the plan was written; graded off the box score, with the report's read of whether the reason given showed up. The rungs are the same call down the Kalshi ladder, Edge halfway to its last rung and Edge+ the last, at Kalshi's last pregame price.</p>
+      <div class="gm-doc-verdicts"><span class="badge mute">Normal <b class="up">5</b>&ndash;<b class="down">7</b></span><span class="badge mute">Edge <b class="up">9</b>&ndash;<b class="down">3</b></span><span class="badge mute">Edge+ <b class="up">10</b>&ndash;<b class="down">2</b></span></div>
+      <div class="gm-doc-calls">
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Jordan Love</b><span class="flat">GB</span>
+            <span class="bet">over 1.5 pass TDs</span>
+            <span class="res miss">&#10007; 1</span>
+            <span class="badge bad">missed · read partly held</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #32 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 63%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 63%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> over 1.5 pass TDs <small>64&cent;</small></span><span class="rung hit"><i>Edge / Edge+</i> 1+ pass TDs <small>90&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The mechanism half-showed: Love got 276 yards and five 20+ throws against no real pass rush from four, but GB reached the red zone only four times and Smack kicked three field goals; 1 pass TD on 41 attempts.</p>
+          <p class="why">He has thrown exactly two touchdowns in every game this season, and this is the weakest pass defense he has faced — no rush, a secondary down two corners&#x27; worth of bodies.</p>
+          <p class="ev">Love 2 pass TDs in each of weeks 1-5; DAL allows 0.371 pass EPA per dropback and 8.28 Y/A, with 0 sacks generated in two games and a 10.9% pressure rate.</p>
+          <p class="ev">vs #32 pass EPA allowed; engine 2.13 is above the line and the market prices the over near 63% — the mechanism is the five-for-five consistency, not the gap. pass_tds calls are 8-of-13 this season.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">MarShawn Lloyd</b><span class="flat">GB</span>
+            <span class="bet">over 59.5 rush+rec yds</span>
+            <span class="res miss">&#10007; 10</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #25 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 58%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 48%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal / Edge / Edge+</i> over 59.5 rush+rec yds <small>49&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Lloyd was not the back — 8 carries for 10 yards with 2 stuffs and 1 target on a 40% snap share, while Strong played 54.7% with 11 carries and 6 targets. The role premise, not the script, failed.</p>
+          <p class="why">Both halves of his line point up: Dallas is last in rushing yards allowed per game, and if Green Bay protects a lead he becomes the checkdown outlet, which is how he got his best game.</p>
+          <p class="ev">Week 4: 7 carries, 5 catches on 5 targets, 49 combined at a 55% snap share; week 5: 10 carries, 2 TDs. DAL allows 5.10 YPC and 168.4 rush yards per game.</p>
+          <p class="ev">vs #27 rush EPA allowed (#32 rush yards per game); engine 68.2 is above the line while the market sits near 49% — the receiving half is what the market is discounting.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Javonte Williams</b><span class="flat">DAL</span>
+            <span class="bet">to score</span>
+            <span class="res hit">&#10003; 1</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on EPA allowed entering the week (#1 toughest)">D #16 EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 54%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 64%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal / Edge / Edge+</i> to score <small>64&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Exactly the stated mechanism: Williams on the goal line, 1-yard TD up the middle at Q3 9:24 on Dallas&#x27;s only sustained scoring drive, from an 11-carry, 73.1%-snap workload.</p>
+          <p class="why">He owns the goal line at a near-80% snap share for an offense that finishes nearly four of five trips, and Green Bay is one of the softest defenses in the league once you reach its 20.</p>
+          <p class="ev">TDs in weeks 1, 3, 4 (three) and 5; DAL converts 78.9% of red-zone trips, GB allows 78.6% (29th) with 0.456 red-zone EPA allowed (32nd).</p>
+          <p class="ev">vs #16 EPA allowed; the market already prices him near 64% and the engine at 54% — this call rests on the finishing half of the split, not on his yardage.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Christian Watson</b><span class="flat">GB</span>
+            <span class="bet">to score</span>
+            <span class="res miss">&#10007; 0</span>
+            <span class="badge warn">read held · result didn&#x27;t</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on EPA allowed entering the week (#1 toughest)">D #32 EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 52%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 44%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal / Edge / Edge+</i> to score <small>44&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The vertical role arrived as described — 8 targets, 145 air yards, 27- and 28-yard chunks over the Dallas secondary — the touchdown simply went to Golden on a 9-yard slant (Q1 4:46). Mechanism right, outcome not.</p>
+          <p class="why">He is the vertical scorer on an offense that has to throw to move, against a defense that has given up chunk plays over the top four straight weeks and cannot get home with four.</p>
+          <p class="ev">5 receiving TDs in 5 games (2 vs MIN, 1 NYJ, 1 ATL, 2 CHI) on 7.3 projected targets; DAL has allowed 4+ explosive passes in weeks 2-5 and 8 at Houston.</p>
+          <p class="ev">vs #32 EPA allowed; engine gives him 0.72 scores against a market price near 43% — the clearest engine-market gap on the slate, and anytime_td calls are 8-of-12 this season.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Matthew Golden</b><span class="flat">GB</span>
+            <span class="bet">over 64.5 rec yds</span>
+            <span class="res hit">&#10003; 104</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #32 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 43%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 52%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> over 64.5 rec yds <small>53&cent;</small></span><span class="rung hit"><i>Edge</i> 50+ rec yds <small>66&cent;</small></span><span class="rung hit"><i>Edge+</i> 40+ rec yds <small>76&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 52.2% air-yard share on 13 targets for 104 yards with Reed and Moore out, exactly the target-floor argument; 203 air yards led both teams by a wide margin.</p>
+          <p class="why">With Reed and Moore both on injured reserve and the third receiver only activated Saturday, his target floor is the highest on the team in a game Green Bay has to throw to win.</p>
+          <p class="ev">7, 12, 12, 6, 12 targets in five weeks at a 77-88% snap share; 123 yards on 7 targets vs CHI in week 5.</p>
+          <p class="ev">vs #32 pass EPA allowed; engine 64.1 sits right on the line and the market has the over near 53% — the roster thinning behind him is what neither number has absorbed.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Javonte Williams</b><span class="flat">DAL</span>
+            <span class="bet">over 69.5 rush yds</span>
+            <span class="res miss">&#10007; 41</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">low</span>
+            <span class="badge good" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #27 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 39%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 46%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> over 69.5 rush yds <small>47&cent;</small></span><span class="rung miss"><i>Edge</i> 50+ rush yds <small>71&cent;</small></span><span class="rung hit"><i>Edge+</i> 40+ rush yds <small>82&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The &#x27;one-score script keeps Dallas&#x27;s carries where they were&#x27; premise never materialized — Dallas trailed on 71 of 77 snaps and gave him 11 carries for 41 at 3.7 ypc.</p>
+          <p class="why">Green Bay&#x27;s interior line lost two bodies to injured reserve this week, the same hole Atlanta ran through for a 242-yard afternoon, and a one-score script keeps Dallas&#x27;s carries where they were in September.</p>
+          <p class="ev">GB allowed 5.9 YPC and 5 explosive runs to ATL in week 3 with that front thinned; Hargrave and Ford both to IR Saturday, Campbell questionable, Wyatt limited. Williams: 19, 19, 12 carries the last three weeks.</p>
+          <p class="ev">vs #27 rush EPA allowed; engine 60.7 is under the line and the market has the over near 47% — our rule that projections under-respond to run-defense quality cuts in his favor here, but the carries only arrive if Dallas stays within a score.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">CeeDee Lamb</b><span class="flat">DAL</span>
+            <span class="bet">under 6.5 receptions</span>
+            <span class="res miss">&#10007; 9</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #10 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 78%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 54%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 6.5 receptions <small>54&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;10 receptions <small>87&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;13 receptions <small>97&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The call was built on the absence of a chase script; Dallas chased from the first quarter and Lamb saw 18 targets (41% air-yard share) for 9 catches. The volume mechanism the plan dismissed is precisely what happened.</p>
+          <p class="why">His line is priced off the Houston game, where he drew more than twenty looks in a blowout chase. Without that script, and against the stingiest coverage he has seen, the catch count comes back down.</p>
+          <p class="ev">5, 8, 7, 17, 2 receptions; targets of 8, 9, 8, 21, 5. Engine projects 7.1 targets and 4.9 catches.</p>
+          <p class="ev">vs #10 pass EPA allowed (#14 in WR production allowed); the engine is nearly two catches under the line and the market has the over at 47%. Our week-4 and week-5 reviews both lost reception calls on this player in the other direction — this is the fade of that same volatility.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Dak Prescott</b><span class="flat">DAL</span>
+            <span class="bet">under 274.5 pass yds</span>
+            <span class="res hit">&#10003; 258</span>
+            <span class="badge warn">hit · not for the reason given</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #10 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 76%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 48%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 274.5 pass yds <small>50&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;350 pass yds <small>86&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;400 pass yds <small>95&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The under hit at 258, but for none of the stated reasons: Prescott threw 54 times, not fewer, and Dallas ran 15 times, not more. The number was held down by a 6.9 aDOT and -3.1 cpoe (4.8 Y/A), i.e. depth and coverage.</p>
+          <p class="why">His last three big numbers all came from 40-plus attempt chase scripts. This is a near pick&#x27;em against the one secondary that has actually held people down, and Dallas finally has a run matchup worth using.</p>
+          <p class="ev">276, 335, 316 came on 40, 45 and 42 attempts; GB allows 6.35 Y/A (8th) and 199.4 passing yards per game (5th). Engine projects 33.6 attempts.</p>
+          <p class="ev">vs #10 pass EPA allowed; engine 231.5 sits far under the line while the market prices the over at a coin flip. Note our record on unders against top-10 defenses is 26-of-60 — this is a volume argument, not just a rank argument.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Jake Ferguson</b><span class="flat">DAL</span>
+            <span class="bet">under 24.5 rec yds</span>
+            <span class="res hit">&#10003; 13</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #10 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 76%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 52%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 24.5 rec yds <small>52&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;60 rec yds <small>92&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;90 rec yds <small>98&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Ferguson stayed a low-volume, short-area piece — 3 targets, 2-13, 53.8% snaps — even in a 54-attempt game, and Spann-Ford out-targeted him 5 to 3.</p>
+          <p class="why">His value this season is short touchdowns, not yardage, and he runs into the one position matchup Green Bay genuinely wins.</p>
+          <p class="ev">6, 43, 23, 11, 19 receiving yards; GB is 8th in fantasy points allowed to tight ends at 9.6 per game.</p>
+          <p class="ev">vs #10 pass EPA allowed; engine 13.6 is eleven yards under the line while the market sits near even — the one position where a stingy defense rank carries real weight.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">George Pickens</b><span class="flat">DAL</span>
+            <span class="bet">under 69.5 rec yds</span>
+            <span class="res miss">&#10007; 73</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">low</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #10 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 68%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 51%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 69.5 rec yds <small>52&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;120 rec yds <small>87&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;160 rec yds <small>96&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Lamb being healthy did not suppress him; Pickens got 11 targets and 115 air yards in the chase and cleared at 73, including a 21-yard deep ball at Q4 1:54.</p>
+          <p class="why">His two big games came with the alpha receiver hurt or absent from the field. Lamb is back to full practice, and Green Bay is the first defense this year that takes the field yards away.</p>
+          <p class="ev">28, 40, 82, 75, 130 — the 130 came with Lamb at a 57% snap share; GB allows 199.4 passing yards per game, 5th.</p>
+          <p class="ev">vs #10 pass EPA allowed; engine 57.1 is twelve under the line and the market has the over at 49%, so this is a small edge resting on Lamb&#x27;s return to full snaps.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Kaleb Johnson</b><span class="flat">GB</span>
+            <span class="bet">under 49.5 rush yds</span>
+            <span class="res hit">&#10003; -2</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #25 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 55%</span>
+            
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal / Edge / Edge+</i> under 49.5 rush yds</span></div>
+          <p class="why"><b>In the game:</b> The committee-squeeze read was right to the snap: Johnson played 5.3% of snaps, took one carry for -2, and was behind both Strong and Lloyd.</p>
+          <p class="why">His snap share has been falling inside a three-way committee, and a fourth back took carries and targets last week. The volume to clear this number is not his.</p>
+          <p class="ev">Snap shares 27%, 36%, 28%, 15%; 32, 6, 42, 26 rushing yards. Strong took 5 carries and 4 targets in week 5.</p>
+          <p class="ev">vs #27 rush EPA allowed — soft, which is why this is a volume call and not an efficiency one; no exchange price exists, so it is read against the engine&#x27;s 48.6.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Ryan Flournoy</b><span class="flat">DAL</span>
+            <span class="bet">under 24.5 rec yds</span>
+            <span class="res miss">&#10007; 40</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">low</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #10 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 37%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 41%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 24.5 rec yds <small>40&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;60 rec yds <small>81&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;90 rec yds <small>95&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The premise was &#x27;Dallas throws less than it has all season&#x27;; Dallas threw more than it has all season, and Flournoy ran 87.2% of snaps for 9 targets, 7-40 and the late touchdown.</p>
+          <p class="why">His projection is inflated by one long catch; as the third or fourth option in a game where Dallas throws less than it has all season, the floor games are the norm.</p>
+          <p class="ev">22, 23, 22, 37, 90 — three of five under this number; 4.4 projected targets at a 66-76% snap share.</p>
+          <p class="ev">vs #10 pass EPA allowed; this one disagrees with both sides — the engine has him at 34.5 and the market prices the over near 59%, both carried by the single 90-yard week.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Same-script legs">
+      <p class="gm-doc-note">Legs the same script produces together: they move as one, which is what a same-game parlay pays for.</p>
+      <div class="gm-doc-three">
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Dallas grinds, doesn&#x27;t air it out</b></div>
+          <div class="legs"><span class="leg hit">Dak Prescott <em>under 274.5 pass yds</em> <i>&#10003;</i></span><span class="leg miss">Javonte Williams <em>over 69.5 rush yds</em> <i>&#10007;</i></span><span class="leg hit">Javonte Williams <em>to score</em> <i>&#10003;</i></span></div>
+          <p class="sub">One script: Dallas runs at the two missing interior linemen, keeps the game close, and converts trips into touchdowns against a defense that folds at its 20. Every carry Williams takes is an attempt Prescott does not.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Love finds the end zone over a patched secondary</b></div>
+          <div class="legs"><span class="leg miss">Jordan Love <em>over 1.5 pass TDs</em> <i>&#10007;</i></span><span class="leg miss">Christian Watson <em>to score</em> <i>&#10007;</i></span><span class="leg hit">Matthew Golden <em>over 64.5 rec yds</em> <i>&#10003;</i></span></div>
+          <p class="sub">Green Bay has no run game, so the scoring is through the air against the league&#x27;s worst pass-EPA defense with no pressure. Watson&#x27;s scores and Golden&#x27;s yardage are the two ways Love&#x27;s touchdowns arrive.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>The yards go through Dallas&#x27;s receivers, not around them</b></div>
+          <div class="legs"><span class="leg miss">CeeDee Lamb <em>under 6.5 receptions</em> <i>&#10007;</i></span><span class="leg hit">Jake Ferguson <em>under 24.5 rec yds</em> <i>&#10003;</i></span><span class="leg miss">George Pickens <em>under 69.5 rec yds</em> <i>&#10007;</i></span></div>
+          <p class="sub">If Dallas is not chasing, there is no 40-attempt game to split, and Green Bay&#x27;s strength is precisely the field between the 20s. All three lines are priced off chase-script weeks.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    
+    
+
+    
+    <section class="gm-doc-pane" data-title="Projection grade">
+      <div class="gm-doc-gradehead">
+        <div class="gm-grade warn"><b>C</b><span>projection<br>grade &middot; 57</span></div>
+        <div class="gm-doc-gradetext">
+          
+          <div class="gm-doc-verdicts"><span class="badge mute">DAL 13 – GB 23</span><span class="badge mute">GB covered (DAL by 1.5)</span><span class="badge mute">Under 53.5 (36)</span><span class="badge mute">teams 52</span><span class="badge mute">player lines 20/35 in range</span><span class="badge mute">market calls 1/3</span></div>
+        </div>
+      </div>
+      
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>GB</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">26.0</td><td class="num"><b>23</b></td><td class="num flat">-3</td><td class="meter"><i style="width: 85%" class=""></i></td></tr><tr><td>Pass yds</td><td class="num flat">239.5</td><td class="num"><b>276.0</b></td><td class="num flat">+36.5</td><td class="meter"><i style="width: 76%" class=""></i></td></tr><tr><td>Rush yds</td><td class="num flat">110.3</td><td class="num"><b>57.0</b></td><td class="num down">-53.3</td><td class="meter"><i style="width: 41%" class="bad"></i></td></tr><tr><td>Pass att</td><td class="num flat">31.9</td><td class="num"><b>41</b></td><td class="num up">+9.1</td><td class="meter"><i style="width: 43%" class="bad"></i></td></tr><tr><td>Carries</td><td class="num flat">26.5</td><td class="num"><b>26</b></td><td class="num flat">-0.5</td><td class="meter"><i style="width: 96%" class=""></i></td></tr>
+          </tbody></table>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>DAL</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">27.5</td><td class="num"><b>13</b></td><td class="num down">-14.5</td><td class="meter"><i style="width: 28%" class="bad"></i></td></tr><tr><td>Pass yds</td><td class="num flat">231.5</td><td class="num"><b>258.0</b></td><td class="num flat">+26.5</td><td class="meter"><i style="width: 82%" class=""></i></td></tr><tr><td>Rush yds</td><td class="num flat">105.9</td><td class="num"><b>48.0</b></td><td class="num down">-57.9</td><td class="meter"><i style="width: 36%" class="bad"></i></td></tr><tr><td>Pass att</td><td class="num flat">33.6</td><td class="num"><b>54</b></td><td class="num up">+20.4</td><td class="meter"><i style="width: 0%" class="bad"></i></td></tr><tr><td>Carries</td><td class="num flat">26.6</td><td class="num"><b>15</b></td><td class="num down">-11.6</td><td class="meter"><i style="width: 17%" class="bad"></i></td></tr>
+          </tbody></table>
+        </div>
+        
+      </div>
+      <div class="gm-doc-verdicts"><span class="badge bad">Winner: DAL &#10007;</span><span class="badge bad">Spread: DAL -1.5 &#10007;</span><span class="badge good">Total: Under 53.5 (proj 53.5) &#10003;</span></div>
+      
+      
+      <div class="gm-doc-k">Why the projection missed &middot; what it got right</div>
+      <p class="gm-doc-p">The computed grade is C (0.571), and the split tells the story: player lines scored 0.767, team lines 0.524, market calls 0.333 (only the Under cashed). The team misses are almost entirely volume-and-script: the model built 62.1 Dallas plays at a 57.2% blended pass rate and got 77 plays at 72.7% pass with 15 carries, because Dallas trailed on 71 of 77 snaps from 4:46 of the first quarter onward. The points miss (27.5 projected, 13 actual) is not a yardage miss — Dallas got 258 passing yards and four red-zone trips — it is a finishing and turnover miss: 2 INTs at the GB 3 and GB 18, plus 0-for-2 on the two fourth downs inside the Green Bay 50 in the second half. Green Bay&#x27;s side graded well on points (26 proj / 23) and passing (239.5 / 276) and badly on the ground (110.3 / 57), which was the most predictable miss in the dossier: GB entered at 3.05 yards per carry with the worst YBC figure in the file.</p>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>DAL</b> &middot; 27.5 projected points, 13 scored, with 258 pass yards and 4 red-zone trips<div class="went">Turnovers in scoring position (INT at GB 3 Q2 14:23, INT at GB 18 Q2 2:00) and two failed fourth downs (Q4 13:33 at midfield, Q4 5:05 at the GB 14); field EPA was only -0.047 and red-zone EPA -0.305</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>DAL</b> &middot; 33.6 projected pass attempts vs 54; 26.6 carries vs 15<div class="went">Game script — GB led from Q1 4:46, Dallas trailing pass rate 74.6%, second-half pass rate 78.8%; but the week-5 &#x27;abandoned the run&#x27; tag says this team does not stay committed when behind</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>DAL</b> &middot; 105.9 projected rush yards vs 48 on 15 carries (3.2 ypc)<div class="went">Volume collapse plus no lane: zero explosive runs, 2.7 ypc up the middle; the blended 3.99 ypc was already below league and still too generous</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>GB</b> &middot; 110.3 projected rush yards vs 57 on 26 carries<div class="went">Efficiency, not volume — GB took its 26 carries (proj 26.5) and got -0.157 EPA/rush, 29.2% rush success, 0.4 ypc up the middle; season rate entering was 3.05 ypc</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>GB</b> &middot; 31.9 projected attempts vs 41; Love 276 yards on a 9.4 adot<div class="went">Pace (140 combined plays vs a 121.5 league pair) and a defense that could not take the deep ball away — 5 explosive passes, 4-of-11 deep for 113</div></div></div></div>
+      <div class="gm-doc-verdicts wrap"><span class="badge good">&#10003; The Under (projection 53.5 against a 53.5 total) was the one market call that landed, and it landed by 17.5.</span><span class="badge good">&#10003; GB points 26 projected / 23 actual — the shape of a Packers win on field goals was close to right.</span><span class="badge good">&#10003; Watson 66.1 rec yds projected / 64 actual, Kraft 35.3 / 37, Lamb 61.6 / 70 — the receiving yardage distribution held even though the target counts exploded.</span><span class="badge good">&#10003; Both sack-rate inputs were near reality: GB&#x27;s 3 sacks taken against a 2.1 projection, Dallas&#x27;s 1 against 1.9.</span></div>
+      
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Turning points">
+      <div class="gm-doc-tl">
+        <div class="gm-doc-tp"><div class="clock">Q1 08:58</div><div class="what"><span class="badge mute">GB</span> 3rd-and-13, Love deep middle to Watson for 27 (+3.47 EPA)<div class="went">Kept alive the opening 15-play, 105-yard touchdown drive; Green Bay converted 3rd-and-5, 3rd-and-13, 3rd-and-13 and 3rd-and-6 on that possession and never trailed afterward.</div></div></div><div class="gm-doc-tp"><div class="clock">Q1 01:53</div><div class="what"><span class="badge mute">GB</span> Love intercepted by Winters at the GB 42 (-4.50 EPA), return TD taken off on replay review<div class="went">Dallas&#x27;s one free possession of the night started at the GB 42 and produced nothing — the drive ended with the Prescott pick at the 3.</div></div></div><div class="gm-doc-tp"><div class="clock">Q2 14:23</div><div class="what"><span class="badge mute">DAL</span> 3rd-and-8, Prescott intercepted by E.Williams at the GB 3 (-4.30 EPA)<div class="went">First of three scoring-position giveaways; converts a 7-0 game into a continued shutout and hands GB the 15-play, 8:17 field-goal drive that followed.</div></div></div><div class="gm-doc-tp"><div class="clock">Q2 02:00</div><div class="what"><span class="badge mute">DAL</span> 1st-and-15 at the GB 28, Prescott intercepted by Cisse (-3.96 EPA)<div class="went">Dallas had just gotten 16 yards to Pickens and was in range; the pick with 2:00 left gave GB the ball back for the 17-0 drive.</div></div></div><div class="gm-doc-tp"><div class="clock">Q2 01:01</div><div class="what"><span class="badge mute">GB</span> DPI on Porter for 37 yards on an incompletion to Melton (+2.88 EPA), then Golden 21 to the DAL 2 and Love&#x27;s 1-yard TD at 0:25<div class="went">Free yards that never show in Love&#x27;s passing line turned a two-minute possession into a 17-0 lead and the game&#x27;s decisive margin.</div></div></div><div class="gm-doc-tp"><div class="clock">Q3 06:52</div><div class="what"><span class="badge mute">GB</span> 4th-and-3, Love to Kraft for 14 (+3.57 EPA)<div class="went">Came right after Dallas&#x27;s first touchdown cut it to 17-7; extended a 10-play drive into a 44-yard field goal and restored two scores.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="What decided it">
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Dallas&#x27;s turnovers in scoring position</b><div class="went">INT at the GB 3 (Q2 14:23, -4.30), INT at the GB 18 (Q2 2:00, -3.96); both on short throws to Lamb, whose target EPA for the night was -14.28 on 19 charted targets</div><div class="went"><b>Tell:</b> Week 5 vs TB carried the &#x27;turnovers&#x27; tag (2 giveaways) and GB&#x27;s defense entered with a 4.5% INT rate forced — the engine blended Dallas to 0.9 picks and got 2 on 54 attempts.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Green Bay&#x27;s explosive passing against a Dallas secondary that has allowed chunks all year</b><div class="went">5 passes of 20+ (27 and 28 to Watson, 37/21/21 to Golden), 4-of-11 deep for 113, 9.4 adot</div><div class="went"><b>Tell:</b> &#x27;Explosive passing&#x27; tagged in DAL&#x27;s weeks 1, 3 and 4 (8 allowed vs HOU); GB&#x27;s opp_defense yards/attempt input was 8.279, the highest number in the file.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Finishing split: Green Bay settled, Dallas never got there</b><div class="went">GB 4 red-zone trips, 2 TD, 2 FG, -0.003 RZ EPA; DAL 4 trips, 2 TD, 0 FG, -0.305 RZ EPA — and Dallas&#x27;s scoring chances died before the 20 twice</div><div class="went"><b>Tell:</b> GB&#x27;s own red-zone TD rate entering was 0.538 with -0.171 RZ EPA — a yards-without-touchdowns offense; the three Smack field goals (25, 44, 29) were the predictable form of its 23 points.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Dallas abandoning the run and living on a 6.9-aDOT passing game</b><div class="went">15 carries to 54 attempts, 72.7% pass rate vs a 64.9% season rate; 32 of 34 completions were short, cpoe -3.1, 4.8 yards per attempt</div><div class="went"><b>Tell:</b> The week-5 &#x27;abandoned the run&#x27; tag plus a 3.81 ypc season rate: once behind, this offense throws short and the yardage comes without points.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Penalty yards on both sides, mostly free</b><div class="went">22 accepted flags, 204 yards; GB&#x27;s 37-yard DPI set up the 17-0 TD, and three Q4 roughing-the-passer calls on GB (15, 14, 7) extended Dallas&#x27;s garbage drives</div><div class="went"><b>Tell:</b> Both units entered well above league flag rates (GB offense 5.0/game, DAL opp defense 3.8); GB&#x27;s 2.6 pre-snap flags per game is the only part of that likely to recur.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; DAL">
+      <div class="gm-doc-boxhead"><b>How DAL gets beaten</b><span class="flat">2-3 entering</span><span class="badge mute">high confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">run game &times;3</span><span class="badge bad">explosive passing &times;3</span><span class="badge bad">penalties &times;2</span><span class="badge bad">red zone defense &times;2</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Explosive passing over the top — no pass rush that gets home with four</b><div class="went">Week 1 NYG, week 3 BAL (4 allowed), week 4 HOU (8 allowed, 13.3 adot), week 5 TB; here GB hit 5 passes of 20+ and a 0.138 EPA/dropback despite GB&#x27;s own 23-of-41 night</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>The run game against its front</b><div class="went">&#x27;Run game&#x27; tagged weeks 1, 3 and 5 — NYG 4 explosive runs, BAL 6, TB 5; league-worst rushing yards allowed entering</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Its own turnovers, specifically in scoring territory</b><div class="went">2 giveaways vs TB in week 5; here INTs at the GB 3 and GB 18 worth -8.26 EPA combined, plus 0-for-2 on fourth downs inside the GB 50</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Abandoning the run once behind, which flattens the offense to short throws</b><div class="went">74.6% pass while trailing here, 15 carries, 6.9 adot, -0.148 EPA/dropback; week 5&#x27;s 75.9% trailing pass rate carried the same tag</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag both">both</span><div><b>Penalty volume on both units</b><div class="went">11 flags for 108 here including 3 pre-snap; weeks 1 (90 yds), 3 (88) and 4 (13 defensive flags, 90 yds) tagged penalties</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> Five weeks in, Dallas is a team that gives up the field — explosive passes every week and chunk runs against the front — and whose own offense produces yardage without converting it when it falls behind. The defense is not actually bad at its own 20 (GB got 2 FGs on 4 trips here; &#x27;red zone defense&#x27; tagged weeks 1 and 5), which is why opponents&#x27; scores come from drive length and explosives rather than short fields.</p>
+      <p class="gm-doc-p"><b>This week:</b> Green Bay executed exactly half the blueprint. It had the passing efficiency (7.611 season Y/A, 8.279 allowed by Dallas) and hit five explosives; it had no access to the run half — 26 carries for 57 yards, 0.4 ypc up the middle, one 10+ run, which was Love&#x27;s own scramble-ish keeper. The Dallas run-defense weakness went unexploited because Green Bay is the one offense in the file that cannot run.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> To cash the whole thing: an offense with aDOT near 9+ and a willing deep thrower (DAL allowed 4/11 deep for 113 here), plus either an above-league explosive-run rate or a pass rush of its own — Dallas&#x27;s giveaways came under 12.5% hit-or-sack pressure, so the picks were coverage (3 DBs with PDs, Cisse and E.Williams with INTs), not heat.</p>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; GB">
+      <div class="gm-doc-boxhead"><b>How GB gets beaten</b><span class="flat">3-2 entering</span><span class="badge mute">medium confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">third down &times;3</span><span class="badge bad">pre-snap penalties &times;3</span><span class="badge bad">turnovers &times;2</span><span class="badge bad">penalties &times;2</span><span class="badge bad">defensive penalties &times;2</span><span class="badge bad">red zone defense &times;2</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>No run game at all — the offense is one-dimensional by necessity</b><div class="went">Season 3.05 ypc, worst YBC in the dossier; here 26 carries, 57 yards, -0.157 EPA/rush, 29.2% rush success, Lloyd 8 for 10 with 2 stuffs</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Red-zone stalls — trips become field goals</b><div class="went">Week 1 MIN 1 TD on 4 trips (-1.031 RZ EPA), week 3 ATL 2-of-4 (-0.486); here 2-of-4 with 25- and 29-yard field goals, -0.003 RZ EPA</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Pre-snap and drive-killing penalties</b><div class="went">5, 4, 3, 5, 2 pre-snap flags weeks 1-5; here 11 for 96 including a delay of game at the DAL 2 (Q2 6:01, turning a goal-to-go into a 25-yard FG) and two offensive holds that erased runs</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>The run against its own front, now without Hargrave and Ford</b><div class="went">Week 3 ATL: 0.283 EPA/rush allowed, 5 explosive runs, 35 points; week 5 CHI still got 3 explosive runs in a 31-7 loss</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Pressure allowed when the protection cracks</b><div class="went">Week 1 MIN 32.6% pressure, 4 sacks; here 3 sacks and 8 QB hits (18.2%), including Clark&#x27;s 10-yard sack at the GB 4 (Q3 2:08)</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> Green Bay wins by throwing — explosives and third downs (11-of-19 here, breaking its own 3-week third-down failure tag) — and loses when the passing game gets interrupted, because there is no ground floor underneath it and the red zone turns drives into three points. Its defense&#x27;s real hole is the run, not the pass: it held Prescott to 4.8 yards per attempt on 54 throws.</p>
+      <p class="gm-doc-p"><b>This week:</b> Dallas never tried the run half of the blueprint — 15 carries, no explosive runs — and the pass half ran straight into Green Bay&#x27;s strength. Dallas&#x27;s red-zone and third-down work (5-of-15) was worse than Green Bay&#x27;s, so the &#x27;trips become field goals&#x27; weakness never mattered. The only piece Dallas cashed was penalty yards, and those were roughing calls in the fourth quarter, not a repeatable mechanism.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> To beat this defense you need above-league rush EPA and explosive-run rate (Atlanta&#x27;s week-3 profile), or the patience to stay under 60% pass while leading. To beat the offense you need a front that generates pressure with four — Minnesota&#x27;s 32.6% and Dallas&#x27;s 3 sacks here both came without heavy blitzing (327 blitz rate charted, 4.41 average rushers).</p>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Player lines">
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>CeeDee Lamb</b> <span class="flat">DAL</span> &middot; 18 targets (proj 7.1), 9-70, 0 TD, 41% air-yard share, -14.28 target EPA<div class="went">Full chase script from the first quarter; two of the throws to him were intercepted (GB 3, GB 18). Volume is repeatable in a trailing game; the efficiency was coverage (Cisse, E.Williams, Bullard with 6 combined PDs).</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Matthew Golden</b> <span class="flat">GB</span> &middot; 13 targets (proj 7.1), 6-104, 1 TD, 52.2% air-yard share<div class="went">With Reed and Moore out he is the unambiguous alpha and the vertical outlet — 203 air yards, catches of 37 and 21 and 21. The role, not the game state, drove it.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Pierre Strong</b> <span class="flat">GB</span> &middot; 11 carries 28 yards, 6 targets 5-39 (proj 1.4 carries, 1.3 targets), 54.7% snaps<div class="went">Took over the backfield outright — more carries than Lloyd (8) and Johnson (1) combined, plus the checkdown role the plan assigned to Lloyd. Role change, not script.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>MarShawn Lloyd</b> <span class="flat">GB</span> &middot; 8 carries 10 yards (-4.40 rush EPA, 2 stuffs), 1 target<div class="went">Lost the passing-down job to Strong and the yardage to a front-less run game; GB led all night and still would not feed him.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Christian Watson</b> <span class="flat">GB</span> &middot; 8 targets, 3-64 (proj 4.1-66.1), 145 air yards, no TD<div class="went">Pure vertical role — the 27- and 28-yard shots on 3rd-and-13 and 2nd-and-13. Yardage is boom-or-bust off 2-3 catches; the TD prop is a coin flip behind Golden.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Ryan Flournoy</b> <span class="flat">DAL</span> &middot; 9 targets, 7-40, 1 TD (proj 4.4-3.0-34.5), 87.2% snaps<div class="went">Near-full-time snaps and chase-script volume; the TD came on the 13-play garbage drive at Q4 0:52. Snap share is real, scoring equity is not.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Brevyn Spann-Ford</b> <span class="flat">DAL</span> &middot; 5 targets, 4-35 (proj 1.1-0.7-4.6), 46.2% snaps<div class="went">Out-produced Ferguson (3 targets, 2-13) on a near-even snap split; worth re-checking the TE hierarchy before next week&#x27;s lines.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Savion Williams</b> <span class="flat">GB</span> &middot; Unprojected: 4-4-32 receiving, 2 carries 9 yards, 53.3% snaps<div class="went">Activated off the questionable list and immediately took WR3 snaps plus gadget carries; his 15-yard third-down catch was the first explosive of the opening TD drive.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Dak Prescott</b> <span class="flat">DAL</span> &middot; 34-of-54, 258, 1 TD, 2 INT; 57 dropbacks, 7 QB hits, 6.9 aDOT, -3.1 cpoe, -0.163 EPA/dropback<div class="went">Volume from script, yardage capped by depth. The Under 274.5 cashed on 54 attempts — efficiency, not volume, did it.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Javonte Williams</b> <span class="flat">DAL</span> &middot; 11 carries 41 yards, 1-yard TD, 73.1% snaps, 2 targets<div class="went">Goal-line role intact (Q3 9:24 TD) but the carry floor evaporates in a two-score hole; his +2.39 rush EPA was the only efficient thing Dallas did on the ground.</div></div></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Traps">
+      <div class="gm-doc-three"><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>A gutted-interior-OL angle only pays if the script lets the opponent run. Dallas faced a Green Bay front missing Hargrave and Ford and ran 15 times for 48 yards because it trailed from 4:46 of the first quarter. Require a projected game inside a field goal before buying RB rush overs built on OL injuries.</b></p><p class="sub"><b>Trigger:</b> Pregame spread inside 3 AND the team&#x27;s trailing pass rate above 72% in any prior week.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>Target explosions on a short-aDOT alpha are not yardage. Lamb drew 18 targets and caught 9 for 70 (-14.28 EPA on his targets, two of them intercepted); his receiving-yards projection of 61.6 was nearly perfect while his reception and target lines were blown out.</b></p><p class="sub"><b>Trigger:</b> Team aDOT under 7.0 with a chase script: buy receptions/targets, fade yards-per-target.</p></div><div class="gm-doc-box"><span class="badge mute">Totals</span><p><b>Fast pace with bad finishing is an Under, not an Over. 140 combined plays (league pair 121.5) produced 36 points because of three field goals, three interceptions and two turnovers on downs. Check both red-zone TD rates before letting play volume drive a total.</b></p><p class="sub"><b>Trigger:</b> Both offenses under a 0.60 red-zone TD rate entering, or one offense below 3.2 ypc — volume stops converting.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>Pre-game RB committee splits in Green Bay are unusable. Strong (projected 1.4 carries, 1.3 targets) led the backfield with 11 carries and 6 targets; Lloyd got 8 for 10; Johnson got one carry for -2. Wait for inactives or skip the backfield entirely.</b></p><p class="sub"><b>Trigger:</b> Three or more backs with projected carries between 1 and 10 on the same team.</p></div><div class="gm-doc-box"><span class="badge mute">Every market</span><p><b>Penalty-yardage spikes are mostly not signal. Dallas&#x27;s 51 drawn yards came from three fourth-quarter roughing-the-passer calls on throwaway drives; only Green Bay&#x27;s pre-snap count (3 here, 2.6 per game season) is the kind of flag that persists.</b></p><p class="sub"><b>Trigger:</b> Separate pre-snap flags from roughing/DPI before pricing a &#x27;penalty-prone&#x27; team.</p></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="The story">
+      <div class="gm-doc-prose"><h2>The short version</h2>
+<p>Green Bay 23, Dallas 13: the home underdog covered a 1.5-point line and a 53.5 total finished 17.5 points short. Dallas ran 77 plays, threw 54 times and generated 258 passing yards, and still scored 13 — because the three possessions that reached Green Bay territory in the first half ended at the GB 3, the GB 18 and the half, and the two that reached it in the second half ended on downs. Green Bay, an offense that cannot run a step (26 carries, 57 yards, 0.4 ypc up the middle), scored on explosives and field goals and never trailed.</p>
+<h2>How it unfolded</h2>
+<p>The first two drives set the terms. Dallas went six plays for 19 and punted; Green Bay went 15 plays and 105 yards, converting 3rd-and-5, 3rd-and-13 (Watson, 27 yards, +3.47 EPA), 3rd-and-13 again and 3rd-and-6 for Golden's 9-yard touchdown at 4:46. Dallas got one gift — Winters picked Love at the GB 42 at 1:53, a return touchdown wiped out on review — and turned a start at the opponent's 42 into Prescott's interception at the GB 3 (Q2 14:23, -4.30 EPA). Green Bay then burned 8:17 off the clock for a 25-yard field goal, and after a third Dallas drive died on Cisse's pick at the GB 18 (Q2 2:00, -3.96), Love worked 39 yards in 1:27 — 37 of them on a pass-interference flag against Porter on an incompletion — and sneaked it in at 0:25. 17-0, and Green Bay's win probability never dipped below 37.8% all night.</p>
+<p>The second half was Dallas doing enough to stay on the field and not enough to score. A 4th-and-2 conversion to Lamb for 17 (+4.00) produced the only real touchdown drive; Green Bay answered with its own 4th-and-3 conversion to Kraft (+3.57) and a 44-yard field goal. From there Dallas went 0-for-2 on fourth downs — midfield at Q4 13:33, and 4th-and-11 at the GB 14 at 5:05 after an 18-play, 5:06 march that gained 43 yards. The 6-yard touchdown to Flournoy with 52 seconds left was the 13th point.</p>
+<h2>Why the game diverged from the projection</h2>
+<p>The grade is a C for a specific reason: the player distribution was fine (0.767) and the team volume was wrong (0.524). The engine blended Dallas to 62 plays at a 57.2% pass rate and got 77 at 72.7%, with 15 carries against a 26.6 projection — all of it downstream of trailing on 71 of 77 snaps. That isn't purely noise: the week-5 'abandoned the run' tag says this team dumps the ground game the moment it's behind, and the trailing pass rate (74.6%) matched that tag almost exactly.</p>
+<p>The points miss is a different animal. Dallas didn't fail to move — 258 passing yards, four red-zone trips — it failed to finish and it gave the ball away twice in scoring position under a 12.5% pressure rate. That is coverage, not pass rush: Cisse, Evan Williams and Bullard combined for six pass breakups and two picks, and Prescott's -3.1 cpoe on a 6.9 aDOT is a quarterback throwing short into a defense that was comfortable. Green Bay's rushing miss (110.3 projected, 57 actual) was the cleanest signal in the file: a 3.05-ypc team met its own ceiling again.</p>
+<h2>The plan against the game</h2>
+<p>The plan read Green Bay correctly and Dallas backwards. It saw the explosive-pass path over a secondary with no rush in front of it, and it named Golden as the target-floor play with Reed and Moore out — 13 targets, 104 yards, 52% of the air yards. What it could not have from the box score was a Dallas offense that would throw 54 times in a game it was supposed to grind, and five of its seven misses were volume calls priced on the absence of a chase script that arrived at 4:46 of the first quarter. The Prescott under cashed anyway, on depth and completion rate rather than on carries, and the Lloyd call failed for a reason nothing in the projection anticipated: Pierre Strong took the backfield.</p>
+<h2>Player by player</h2>
+<p>Lamb's 18 targets against a 7.1 projection is the headline, but his 70 receiving yards against 61.6 is the lesson — the targets went up 150% and the yards went up 14%, because his average target was short and two of them were intercepted (-14.28 EPA across his looks). Pickens cleared 69.5 at 73 on 11 targets, Flournoy went 7-40 and the late score on 87.2% of snaps, Spann-Ford out-targeted Ferguson 5-3. On the other side, Golden and Watson combined for 21 targets and 348 air yards, Kraft hit 37 yards on the number, and the backfield was Strong's: 11 carries, 6 targets, 54.7% of snaps against Lloyd's 40% and Johnson's single carry for -2 yards. Savion Williams, activated Saturday and unprojected, played 53% of snaps for 4-32 and two carries.</p>
+<h2>The defenses</h2>
+<p>Dallas's front actually showed up more than its inputs suggested — three sacks on Love (Quinnen Williams, Garcia, Clark's 10-yarder at the GB 4) and eight QB hits, an 18.2% pressure rate against a 3.4% opponent sack-rate input. What it could not do, again, was keep the top on: five 20+ passes, 4-of-11 deep for 113. Green Bay's defense did the opposite — no takeaway-free bend, just 4.8 yards per attempt allowed on 54 throws, six breakups, two picks, and a red zone that gave up two touchdowns but took the ball twice before Dallas got there. Charting is formation-only this season: Dallas faced a 35.5% blitz rate and 4.53 rushers, Green Bay 32.7% and 4.41 — neither defense needed exotic pressure.</p>
+<h2>What the model should take from this</h2>
+<p>Three things. First, volume projections on Dallas should be conditioned on the first-quarter scoreboard, not on the pregame spread; this offense's play count and pass rate swing 15 points on game state. Second, Green Bay's rushing inputs are not a matchup variable — 3.05 ypc entering, 2.19 here, worst YBC in the file — so a Packers rush projection near 110 yards should be shaded down against anyone. Third, red-zone and takeaway variance did the scoring work here: 140 combined plays produced 36 points. When both offenses carry sub-0.60 red-zone finishing and one defense forces picks at a 4.5% clip, pace is an argument for the under, not the over.</p></div>
+    </section>
+    
+    
+  </div>
+</details>
+
 </div>
 
 
@@ -1833,6 +2455,15 @@
       if(pick) pick.addEventListener("change",function(){ node.querySelectorAll(".pl-tl").forEach(function(t){ t.hidden=t.dataset.key!==pick.value; }); });
       modal.querySelector(".pl-dialog").scrollTop=0;
     }).catch(function(){ body.innerHTML='<div class="pl-loading">The player sheets could not be loaded.</div>'; });
+  }
+  // The plan / report panel: pills and arrows walk its sections.
+  var doc=document.querySelector(".gm-doc");
+  if(doc){
+    var panes=[].slice.call(doc.querySelectorAll(".gm-doc-pane")), pills=doc.querySelector(".gm-doc-pills"), cur=0;
+    panes.forEach(function(pn,i){ var b=document.createElement("button"); b.type="button"; b.textContent=pn.dataset.title; b.setAttribute("role","tab"); b.addEventListener("click",function(){ show(i); }); pills.appendChild(b); });
+    function show(i){ cur=(i+panes.length)%panes.length; panes.forEach(function(pn,k){ pn.classList.toggle("active",k===cur); }); pills.querySelectorAll("button").forEach(function(b,k){ b.classList.toggle("active",k===cur); if(k===cur&&b.scrollIntoView) b.scrollIntoView({block:"nearest",inline:"center"}); }); }
+    doc.querySelectorAll(".gm-doc-arrow").forEach(function(a){ a.addEventListener("click",function(){ show(cur+parseInt(a.dataset.dir,10)); }); });
+    show(0);
   }
   document.querySelectorAll(".pl-open").forEach(function(b){ b.addEventListener("click",function(e){ e.stopPropagation(); openPlayer(b.dataset.pid); }); });
   modal.querySelector(".pl-close").addEventListener("click",closeModal);

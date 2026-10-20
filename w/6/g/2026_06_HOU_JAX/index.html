@@ -797,6 +797,126 @@
     .hfa .pl-log td.wk, .hfa .pl-log th:first-child { position: sticky; left: 0; background: #0d0d11; z-index: 1; }
     :root[data-theme="light"] .hfa .pl-log td.wk, :root[data-theme="light"] .hfa .pl-log th:first-child { background: #fff; }
   }
+
+  /* ---- The plan / report panel under the scoreboard ---- */
+  .gm-doc { position: relative; overflow: visible; }
+  .gm-doc::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; border-radius: 14px 14px 0 0; background: linear-gradient(90deg, var(--hfa-accent), transparent 70%); pointer-events: none; }
+  .gm-doc.st-both::before { background: linear-gradient(90deg, var(--hfa-good), var(--hfa-accent) 55%, transparent 90%); }
+  .gm-doc > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.9rem; padding: 1rem 1.1rem; }
+  .gm-doc > summary::-webkit-details-marker { display: none; }
+  .gm-doc-chev { display: inline-grid; place-items: center; flex: none; width: 2rem; height: 2rem; border-radius: 50%; background: var(--hfa-accent); color: #fff; box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.22), 0 6px 14px -6px rgba(255, 31, 47, 0.9); transition: transform 0.18s; }
+  .gm-doc[open] > summary .gm-doc-chev { transform: rotate(180deg); background: #fff; color: var(--hfa-accent); }
+  .gm-doc-main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+  .gm-doc-eyebrow { font-size: 0.64rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-accent); }
+  .gm-doc-lead { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; line-height: 1.3; color: var(--hfa-body); }
+  .gm-doc-chips { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0.3rem; flex: 0 1 auto; }
+  .gm-doc-open { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); margin-left: 0.3rem; }
+  .gm-doc[open] .gm-doc-open { display: none; }
+  .gm-doc-body { border-top: var(--hfa-hairline); padding: 0.7rem 1.1rem 1.2rem; }
+  .gm-doc-nav { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.9rem; }
+  .gm-doc-pills { display: flex; gap: 0.3rem; overflow-x: auto; scrollbar-width: none; flex: 1 1 auto; padding: 2px; }
+  .gm-doc-pills::-webkit-scrollbar { display: none; }
+  .gm-doc-pills button { flex: none; border: 1px solid rgba(128, 128, 128, 0.25); background: transparent; color: var(--hfa-muted); border-radius: 999px; padding: 0.3rem 0.85rem; font-size: 0.76rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
+  .gm-doc-pills button.active { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-arrow { flex: none; width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid rgba(128, 128, 128, 0.3); background: transparent; color: var(--hfa-body); font-size: 1.2rem; line-height: 1; cursor: pointer; }
+  .gm-doc-arrow:hover { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-pane { display: none; animation: gm-fade 0.18s ease-out; }
+  .gm-doc-pane.active { display: block; }
+  @keyframes gm-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  .gm-doc-hook { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1.2; color: var(--hfa-accent); margin-bottom: 0.4rem; }
+  .gm-doc-headline { font-size: 1rem; font-weight: 600; line-height: 1.45; margin: 0 0 0.7rem; }
+  .gm-doc-p { font-size: 0.9rem; line-height: 1.55; margin: 0 0 0.7rem; }
+  .gm-doc-note { font-size: 0.76rem; color: var(--hfa-muted); line-height: 1.45; margin: 0 0 0.6rem; }
+  .gm-doc-prose { font-size: 0.9rem; line-height: 1.6; max-width: 60rem; }
+  .gm-doc-prose h2 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 1rem 0 0.3rem; }
+  .gm-doc-prose h3 { font-size: 0.9rem; margin: 0.8rem 0 0.2rem; }
+  .gm-doc-prose p { margin: 0 0 0.6rem; }
+  .gm-doc-prose ul { padding-left: 1.2rem; }
+  .gm-doc-k { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 0.9rem 0 0.35rem; }
+  .gm-doc-box > .gm-doc-k:first-child, .gm-doc-col > .gm-doc-k:first-child { margin-top: 0; }
+  .gm-doc-verdicts { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.2rem 0 0.7rem; }
+  .gm-doc-verdicts.wrap .badge { white-space: normal; text-align: left; }
+  .gm-doc-verdicts .badge b { color: inherit; }
+  .gm-doc-vs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 0.4rem; }
+  .gm-doc-col { padding: 0.75rem 0.9rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); font-size: 0.9rem; line-height: 1.5; }
+  .gm-doc-col.plan { border-left: 3px solid var(--hfa-accent); }
+  .gm-doc-col.game { border-left: 3px solid var(--hfa-good); }
+  .gm-doc-col.game .gm-doc-k { color: var(--hfa-good); }
+  .gm-doc-col p, .gm-doc-box p { margin: 0 0 0.45rem; font-size: 0.88rem; line-height: 1.5; }
+  .gm-doc-col p:last-child, .gm-doc-box p:last-child { margin-bottom: 0; }
+  .gm-doc p.sub, .gm-doc .went { font-size: 0.8rem; color: var(--hfa-muted); line-height: 1.45; }
+  .gm-doc .went { margin-top: 0.2rem; }
+  .gm-doc-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .gm-doc-three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; }
+  .gm-doc-box { min-width: 0; padding: 0.7rem 0.85rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); }
+  .gm-doc-boxhead { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.4rem; font-size: 0.92rem; }
+  .gm-doc-boxhead b { color: var(--hfa-body); font-weight: 800; }
+  .gm-doc-ul { margin: 0; padding-left: 1.1rem; font-size: 0.86rem; line-height: 1.5; }
+  .gm-doc-ul li { margin-bottom: 0.3rem; }
+  .gm-doc-list { display: flex; flex-direction: column; gap: 0.45rem; }
+  .gm-doc-item { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.45; padding: 0.5rem 0.7rem; border-radius: 10px; background: var(--hfa-tint); border: var(--hfa-hairline); }
+  .gm-doc-item > div { min-width: 0; }
+  .gm-doc-item b { color: var(--hfa-body); }
+  .gm-doc-flag { flex: none; min-width: 5.2rem; text-align: center; border-radius: 6px; padding: 0.2rem 0.45rem; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); margin-top: 0.15rem; }
+  .gm-doc-flag.decisive, .gm-doc-flag.signal, .gm-doc-flag.yes, .gm-doc-flag.held { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-flag.contributed, .gm-doc-flag.mixed, .gm-doc-flag.partly { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .gm-doc-flag.minor, .gm-doc-flag.noise, .gm-doc-flag.no, .gm-doc-flag.broke { background: rgba(255, 31, 47, 0.16); color: var(--hfa-accent); }
+  .gm-doc-flag.defense { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .gm-doc-flag.offense { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-calls { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  .gm-call { min-width: 0; padding: 0.65rem 0.85rem 0.6rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); border-left: 3px solid var(--hfa-muted); }
+  .gm-call.over { border-left-color: var(--hfa-good); } .gm-call.under { border-left-color: var(--hfa-accent); }
+  .gm-call.hit { background: rgba(47, 212, 164, 0.06); } .gm-call.miss { background: rgba(255, 176, 32, 0.06); }
+  .gm-call-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.5rem; font-size: 0.92rem; }
+  .gm-call-side { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .gm-call.over .gm-call-side { color: var(--hfa-good); } .gm-call.under .gm-call-side { color: var(--hfa-accent); }
+  .gm-call .who { color: var(--hfa-body); font-weight: 800; }
+  .gm-call .bet { font-weight: 700; color: var(--hfa-accent); }
+  .gm-call .res { font-weight: 800; font-size: 0.8rem; margin-left: auto; }
+  .gm-call .res.hit { color: var(--hfa-good); } .gm-call .res.miss { color: var(--hfa-bad); } .gm-call .res.void { color: var(--hfa-muted); font-weight: 500; }
+  .gm-call-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem; margin: 0.35rem 0 0.2rem; }
+  .gm-call .prob { font-size: 0.7rem; font-weight: 700; color: var(--hfa-muted); border: 1px solid rgba(128, 128, 128, 0.3); border-radius: 999px; padding: 0.1rem 0.5rem; }
+  .gm-call .rungs { margin: 0.35rem 0 0.4rem; }
+  .gm-call .rung small { font-weight: 500; color: var(--hfa-muted); }
+  .gm-call p.why { font-size: 0.84rem; line-height: 1.45; margin: 0.3rem 0 0.2rem; color: var(--hfa-body); }
+  .gm-call p.ev { font-size: 0.74rem; line-height: 1.4; margin: 0 0 0.15rem; color: var(--hfa-muted); }
+  .gm-doc .legs { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.4rem; }
+  .gm-doc .leg { border-radius: 8px; padding: 0.2rem 0.5rem; font-size: 0.76rem; font-weight: 700; background: rgba(128, 128, 128, 0.14); }
+  .gm-doc .leg em { font-style: normal; font-weight: 500; color: var(--hfa-muted); }
+  .gm-doc .leg i { font-style: normal; font-weight: 800; }
+  .gm-doc .leg.hit { background: rgba(47, 212, 164, 0.16); } .gm-doc .leg.hit i { color: var(--hfa-good); }
+  .gm-doc .leg.miss { background: rgba(255, 176, 32, 0.16); } .gm-doc .leg.miss i { color: var(--hfa-bad); }
+  .gm-doc-gradehead { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+  .gm-grade { flex: none; display: flex; align-items: center; gap: 0.6rem; padding: 0.4rem 0.9rem 0.4rem 0.6rem; border-radius: 14px; border: 2px solid var(--hfa-muted); background: var(--hfa-tint); }
+  .gm-grade b { font-size: 2.6rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .gm-grade span { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); line-height: 1.3; }
+  .gm-grade.good { border-color: var(--hfa-good); } .gm-grade.good b { color: var(--hfa-good); }
+  .gm-grade.warn { border-color: var(--hfa-bad); } .gm-grade.warn b { color: var(--hfa-bad); }
+  .gm-grade.bad { border-color: var(--hfa-accent); } .gm-grade.bad b { color: var(--hfa-accent); }
+  .gm-doc-gradetext { flex: 1 1 20rem; min-width: 0; }
+  .gm-doc-gradetext .gm-doc-verdicts { margin-bottom: 0; }
+  .hfa .gm-doc-table { font-size: 0.8rem; }
+  .hfa .gm-doc-table th, .hfa .gm-doc-table td { padding: 0.25rem 0.4rem; }
+  .hfa .gm-doc-table b { color: var(--hfa-body); }
+  .hfa .gm-doc-table td.meter { width: 5rem; }
+  .hfa .gm-doc-table td.meter i { display: block; height: 4px; border-radius: 2px; background: var(--hfa-good); }
+  .hfa .gm-doc-table td.meter i.bad { background: var(--hfa-bad); }
+  .gm-doc-tl { position: relative; padding-left: 1rem; border-left: 2px solid rgba(128, 128, 128, 0.25); display: flex; flex-direction: column; gap: 0.7rem; }
+  .gm-doc-tp { position: relative; font-size: 0.88rem; line-height: 1.45; }
+  .gm-doc-tp::before { content: ""; position: absolute; left: -1.4rem; top: 0.45rem; width: 10px; height: 10px; border-radius: 50%; background: var(--hfa-accent); box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.25); }
+  .gm-doc-tp .clock { font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-accent); }
+  @media (max-width: 1100px) { .gm-doc-three { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 760px) {
+    .gm-doc > summary { padding: 0.85rem 16px; gap: 0.6rem; flex-wrap: wrap; }
+    .gm-doc-main { flex: 1 1 0; }
+    .gm-doc-lead { font-size: 0.98rem; }
+    .gm-doc-chips { justify-content: flex-start; flex: 0 0 100%; padding-left: 2.6rem; }
+    .gm-doc-body { padding: 0.6rem 16px 1rem; }
+    .gm-doc-hook { font-size: 1.2rem; }
+    .gm-doc-vs, .gm-doc-two, .gm-doc-three, .gm-doc-calls { grid-template-columns: 1fr; }
+    .gm-doc-arrow { display: none; }
+    .gm-doc-flag { min-width: 4.4rem; font-size: 0.56rem; }
+  }
   @media (prefers-reduced-motion: reduce) { #hfa-rain { opacity: calc(var(--hfa-rain) * 0.5); } }
 </style>
 
@@ -821,7 +941,7 @@
     <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
   </div>
   <main>
-<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#away" data-sec="away">HOU offense</a><a href="#home" data-sec="home">JAX offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
+<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#doc-sec" data-sec="doc">Plan vs game</a><a href="#away" data-sec="away">HOU offense</a><a href="#home" data-sec="home">JAX offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
 
 <div class="hfa-card hfa-hero hfa-sec gm-hero" id="hero" data-sec="hero" style="--gm-away: #03202F; --gm-home: #006778;">
   <div class="gm-hero-top">
@@ -848,6 +968,457 @@
     <span class="gm-chip final"><i>final</i> <b>HOU 34 &ndash; 31 JAX</b></span>
     <span class="gm-chip " title="Forecast for the kickoff window, as of Sat 8:35 PM Denver. Wind above 10 mph trims the passing projection."><i>forecast</i> <b>54°F · wind 11 mph (gusts 25)</b></span>
   </div>
+</div>
+
+<div class="hfa-sec" id="doc-sec" data-sec="doc">
+
+<details class="hfa-card gm-doc st-both" id="doc">
+  <summary class="gm-doc-bar">
+    <span class="gm-doc-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="gm-doc-main">
+      <span class="gm-doc-eyebrow">The plan against the game &middot; plan Sat Oct 17, 9:43 AM &middot; report Tue Oct 20, 11:57 AM</span>
+      <span class="gm-doc-lead">Houston&#x27;s run game hits a brick wall and Stroud has to sling it all day</span>
+    </span>
+    <span class="gm-doc-chips">
+      <span class="badge warn">script partly held</span>
+      <span class="badge good">5 hit</span><span class="badge bad">5 missed</span>
+      <span class="badge warn" title="Projection grade: team volume and yardage, player lines, and the market calls the projection implied">projection C &middot; 56</span>
+      <span class="gm-doc-open">open</span>
+    </span>
+  </summary>
+  <div class="gm-doc-body">
+    <div class="gm-doc-nav">
+      <button type="button" class="gm-doc-arrow" data-dir="-1" aria-label="Previous section">&#8249;</button>
+      <div class="gm-doc-pills" role="tablist"></div>
+      <button type="button" class="gm-doc-arrow" data-dir="1" aria-label="Next section">&#8250;</button>
+    </div>
+
+    
+    
+    <section class="gm-doc-pane" data-title="Plan vs game">
+      <div class="gm-doc-verdicts">
+        <span class="badge warn" title="Whether the game went the way the plan's script described, for the reasons it gave">script partly held</span>
+        <span class="badge mute">followed the underdog&#x27;s path</span>
+        <span class="badge good" title="Both teams ran 127 plays; the league's figure for two teams was 121.5">pace: called average, played average</span>
+        <span class="badge bad" title="HOU passed on 58% of its plays; its season rate entering the game was 63%">HOU: called pass, played run</span><span class="badge bad" title="JAX passed on 60% of its plays; its season rate entering the game was 52%">JAX: called balanced, played pass</span>
+      </div>
+      <div class="gm-doc-vs">
+        <div class="gm-doc-col plan"><div class="gm-doc-k">The plan said</div><p>Jacksonville&#x27;s run-stuffing front forces Houston into dropbacks, and a Jaguars secondary that bleeds yardage turns a 42-point game into a passing-volume game.</p><p class="sub">Neither run game should function: Jacksonville is first in yards per carry allowed and Houston&#x27;s ground game has been negative by EPA every week, while Houston&#x27;s front is third in YPC allowed against a Jaguars team that wants to run. That pushes both offenses into dropbacks against two secondaries that concede yardage — Jacksonville 30th in passing yards allowed, Houston having allowed explosive passes in every game. Jacksonville&#x27;s edge is finishing: it is third in red-zone TD rate allowed and holds at its own 20, so Houston&#x27;s drives look like yardage and field goals. Expect a one-score game decided by whether Houston converts inside the 20 or Fairbairn does the scoring.</p></div>
+        <div class="gm-doc-col game"><div class="gm-doc-k">What happened</div><p>Houston won 34-31 as a 2.5-point dog and blew the 42.5 total out by 22.5 points: neither defense generated a single sack, both quarterbacks topped 300 yards, and the game turned on a Stroud red-zone interception that only bought Jacksonville a 60-yard field goal before Fairbairn&#x27;s 49-yarder at 0:03.</p><p class="sub">The plan correctly identified the mechanism that produced the points — two secondaries that concede yardage and two fronts that could not get home — and it correctly picked the underdog&#x27;s winners (Stroud over 300, Collins over, the explosive-play battle). What it got wrong was the premise underneath it: Jacksonville&#x27;s run defense was not a wall (Houston 114 on 25, 4.56 YPC), so Houston never had to abandon the run, and the lead script ran the opposite way from the one the plan built its volume caps on. Both lean checks failed for the same reason — Houston ran because it led, Jacksonville threw because it trailed. The red-zone thesis (trips into kicks) failed on a small-sample basis the dossier itself warns about: Houston went 3-for-5 with touchdowns, not three field goals.</p><p class="sub"><b>The script:</b> The underdog path&#x27;s conclusion came in almost word for word — Houston won the explosive-play battle (4 to Jacksonville&#x27;s 6 but at 42, 50, 34 and 21 on 3rd-and-11) with Collins and a complementary receiver, Noel, doing the damage — but the stated cause did not: Houston never abandoned the run, finishing at a 0.576 pass rate (checks: lean called &#x27;pass&#x27;, actual &#x27;run&#x27;) with 25 carries for 114. Stroud threw 34, not the 36-plus the path required. Pace held exactly as called (127 plays against a 121.5 league baseline, &#x27;average&#x27;), and the one-score finish arrived, but at 34-31 rather than the 24-20 the plan drew.</p></div>
+      </div>
+      
+      <div class="gm-doc-k">What the plan said would swing it</div>
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag decisive">decisive</span><div>Whether Jacksonville scores first and sits on a lead — that is what caps Lawrence&#x27;s attempts in the low 20s.<div class="went"><b>Went:</b> The opposite of the plan&#x27;s scenario: Houston scored first at Q1 5:15 and led for 2,699 of 3,600 seconds; Jacksonville ran 58 of 69 snaps trailing and Lawrence&#x27;s attempts went to 41, not the low 20s the plan feared.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag decisive">decisive</span><div>Houston&#x27;s protection against Hines-Allen and Walker with Jacksonville&#x27;s own tackle Anton Harrison on IR on the other side.<div class="went"><b>Went:</b> Houston&#x27;s protection was a non-issue — 0 sacks, 2 QB hits, 5.7% pressure on 35 dropbacks — and Stroud posted 0.373 EPA/dropback with 11.5 CPOE. That, not volume, is where the 312 yards came from.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Red-zone finishing: Jacksonville is third in touchdowns allowed per trip, so Houston trips can turn into kicks.<div class="went"><b>Went:</b> Jacksonville&#x27;s red-zone stinginess did not show: Houston went 3 TDs and a 25-yard FG on 5 trips, Jacksonville 3-for-4. Kicks still decided it, but from 60 and 49 yards, not from inside the 20.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Houston&#x27;s middle-of-field coverage without Pitre and with LB Kenneth Murray released — the Strange and checkdown lane.<div class="went"><b>Went:</b> The middle was open as described: Strange 5 of 7 for 44, Tuten 4 catches for 48 on -13 air yards with 61 YAC, Hunter&#x27;s 26-yard crosser at Q3 0:06 — Jacksonville piled up 153 YAC against a defense missing Pitre.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Marvin Harrison Jr.&#x27;s role in his second week as a Texan, which could thin the complementary target tree.<div class="went"><b>Went:</b> Harrison Jr. played 19% of snaps but drew 4 targets for 3-34, and Hutchinson fell to 3 targets for 10 yards — the thinning the plan flagged is exactly what sank its own U2.</div></div></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">Each offense: expected &middot; happened</div>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>HOU</b><span class="badge warn">partly</span></div><p><b>Expected:</b> Pass rate at or above 62%, Stroud in the 34-38 attempt range, Marks taking 15-18 carries for very little, and the yardage going to Collins plus the complementary wideouts rather than the tight end.</p><p><b>Happened:</b> Stroud&#x27;s 34 attempts landed in the range and the yardage went to Collins (74) and Noel (107) rather than the tight end, as expected — but the pass rate came in at 55.6%, not 62%+, and Marks&#x27; 15 carries went for 56 yards with Houston totaling 114 at 4.56 YPC. The &#x27;can&#x27;t run&#x27; premise broke.</p></div><div class="gm-doc-box"><div class="gm-doc-boxhead"><b>JAX</b><span class="badge warn">partly</span></div><p><b>Expected:</b> Roughly 27 carries at a modest clip, Lawrence in the 28-32 attempt range in a one-score game, with Strange working the vacated middle and Washington carrying the air-yards share.</p><p><b>Happened:</b> Carries (27 for 106, 3.93) and the target tree (Washington 40.7% air-yards share, Strange 7 targets) matched; Lawrence&#x27;s attempts blew past the 28-32 band to 41 because Jacksonville trailed wire to wire.</p></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">For the next plan on these teams</div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="badge mute">JAX</span><div>Stop treating the YPC-allowed rank as a wall. Houston ran left for 5.9 a carry and scored a 25-yard TD off left tackle; the front&#x27;s number is opponent-driven, and its pass rush (0 sacks here, &#x27;no pass rush&#x27; tagged in weeks 2 and 5) is the real, repeating weakness to build plans around.</div></div><div class="gm-doc-item"><span class="badge mute">JAX</span><div>Lawrence&#x27;s attempt band must be written as two numbers tied to the lead state, not one: 23 with a lead at Cincinnati, 41 trailing here. Any Jaguars receiving over should be conditioned on the script, not priced off the season average.</div></div><div class="gm-doc-item"><span class="badge mute">HOU</span><div>Do not plan on Houston &#x27;abandoning the run.&#x27; Its leading-state pass rate was 0.526 on 38 snaps; the 62.6% season figure is inflated by chase games in weeks 2 and 4. With a lead it is a balanced offense.</div></div><div class="gm-doc-item"><span class="badge mute">both</span><div>The red-zone-finishing swing factor should not be re-weighted off this game. Both teams finished far above their season rates on nine combined trips — that is the bounce, and the dossier&#x27;s own note says the rate barely persists within a season.</div></div></div>
+      
+    </section>
+    
+
+    
+    
+    <section class="gm-doc-pane" data-title="The script">
+      <div class="gm-doc-verdicts">
+        <span class="badge mute" title="Plays and tempo">average pace</span>
+        <span class="badge acc" title="Already a 62.6% pass-rate offense; facing the league&#x27;s stingiest run defense with its lead back ruled out, that number should climb, not fall.">HOU pass</span><span class="badge acc" title="Wants to run at a 52.1% pass rate, but Houston is third in yards per carry allowed, which drags the Jaguars back toward neutral on early downs.">JAX balanced</span>
+        <span class="badge mute">medium confidence</span>
+      </div>
+      <p class="gm-doc-p">Neither run game should function: Jacksonville is first in yards per carry allowed and Houston&#x27;s ground game has been negative by EPA every week, while Houston&#x27;s front is third in YPC allowed against a Jaguars team that wants to run. That pushes both offenses into dropbacks against two secondaries that concede yardage — Jacksonville 30th in passing yards allowed, Houston having allowed explosive passes in every game. Jacksonville&#x27;s edge is finishing: it is third in red-zone TD rate allowed and holds at its own 20, so Houston&#x27;s drives look like yardage and field goals. Expect a one-score game decided by whether Houston converts inside the 20 or Fairbairn does the scoring.</p>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-k">If the favorite wins</div><p>Jacksonville wins the early-down downs with Tuten grinding for modest yards, Lawrence hits two or three chunk throws against a Houston secondary that has allowed explosives every week, and the defense turns Houston trips into field goals. 23-17 with the Jaguars holding the ball late.</p></div>
+        <div class="gm-doc-box"><div class="gm-doc-k">If the underdog wins</div><p>Houston abandons the run early, Stroud throws 36-plus against the league&#x27;s most generous yardage secondary with Jacksonville&#x27;s corner room thinned, and the Texans win the explosive-play battle. 24-20 Houston, with Collins and the complementary receivers doing the damage.</p></div>
+      </div>
+      
+      <div class="gm-doc-prose"><h2>The read</h2>
+<p>A near-pick'em in London between two teams built to cancel each other's run games. Jacksonville leads the league in yards per carry allowed (2.93) and rushing yards allowed (63.8/gm), and Houston's offense has posted negative rush EPA in every single week (-0.795, -0.226, -0.282, and 3.38 YPC for the season). Houston's lead back is now Woody Marks with David Montgomery ruled out Thursday (groin). That combination points one way: Houston throws, at or above its 62.6% season pass rate, and the yards land on the perimeter. On the other side, Jacksonville is a 52.1% pass-rate team that wants to run — into a Houston front that is 3rd in YPC allowed (3.32) and 3rd in rushing yards allowed. Expect a low-possession game where both offenses move the ball between the 20s and settle for kicks: Jacksonville is 3rd in red-zone TD rate allowed (41.7%) and 3rd in red-zone EPA allowed.</p>
+<h2>Why</h2>
+<p>The Jaguars give up the yardage they don't give up points on: 30th in passing yards allowed per game (277.2), 25th in yards per attempt (7.79), with Montaric Brown ruled out (Rotowire, Friday), Jourdan Lewis limited with a hamstring and Jarrian Jones grading in the 6th percentile of corners. That is Stroud's lane, and it is why Houston's receiving volume is the cleanest side of this card. The mirror image: Houston lost LB Kenneth Murray (82% of snaps, released) and safety Jalen Pitre is out, which is the middle-of-field hole Dallas exploited in Week 4 — Brenton Strange has drawn eight targets in each of the last two weeks.</p>
+<h2>What would change it</h2>
+<p>If Jacksonville scores early and plays with a lead, Lawrence's attempts collapse toward the low 20s, as they did against Cincinnati, and the Jaguars' receiving overs die. If Houston's protection cracks — Jacksonville's edges got four sacks of Lawrence's opposite number early this year — Stroud's yardage comes down with it.</p></div>
+    </section>
+    <section class="gm-doc-pane" data-title="Offenses">
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>HOU offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>A pass-first offense (62.6% pass rate, 7.54 Y/A) with no ground game: 3.38 YPC and negative rush EPA in all five weeks (-0.795 vs CIN, -0.226 at IND, -0.282 vs DAL). Field EPA +0.043 but red-zone EPA -0.246 and a 52.9% red-zone TD rate.</p>
+          <div class="gm-doc-k">How it scores</div><p>Explosive throws — eight 20-plus passes against Dallas in Week 4 at a 13.3 aDOT — plus long, penalty-prone drives that often end in Fairbairn field goals.</p>
+          <div class="gm-doc-k">What stops it</div><p>Pressure and its own flags: 5.4 accepted penalties per game and 1.8 pre-snap, four sacks against Cincinnati with 0-for-4 in the red zone, and three stuffed short-yardage runs that week. When the run is dead, everything is a dropback.</p>
+          <div class="gm-doc-k">This matchup</div><p>The worst possible run matchup — Jacksonville is 1st in YPC allowed (2.93) and 1st in rush yards allowed per game — but the best available passing one: Jaguars are 30th in pass yards allowed per game (277.2) and 25th in YPA, with 12th-ranked pass EPA that rests on takeaways and red-zone stinginess rather than on stopping the ball between the 20s.</p>
+          <div class="gm-doc-k">Injuries</div><p>David Montgomery out (groin, ruled out Thursday per Rotowire) hands the backfield to Woody Marks, who played 85% of snaps in Week 5; Tank Dell out, Jayden Higgins on IR. Marvin Harrison Jr. is in his second week with the club after the trade. On the Jaguars&#x27; side, CB Montaric Brown is out and Jourdan Lewis was limited with a hamstring, thinning an already weak corner room.</p>
+          <div class="gm-doc-k">Expect</div><p>Pass rate at or above 62%, Stroud in the 34-38 attempt range, Marks taking 15-18 carries for very little, and the yardage going to Collins plus the complementary wideouts rather than the tight end.</p>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>JAX offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>A run-leaning, efficient offense: 52.1% pass rate, 8.21 Y/A, field EPA +0.108, and Tuten at 15-22 carries in every game. It shrinks when it leads — 23 attempts at Cincinnati, a 46.6% pass rate in that game.</p>
+          <div class="gm-doc-k">How it scores</div><p>Chunk throws off a short base (7.0 aDOT at CIN, +12.3 CPOE) plus red-zone rushing. Lawrence has 10 touchdown passes in five games on modest volume.</p>
+          <div class="gm-doc-k">What stops it</div><p>Its own protection and flags: four sacks and seven hits at Cincinnati, 5.2 penalties per game with 2.2 pre-snap, and a Week 5 red-zone collapse against Philadelphia (0 touchdowns on three trips, the &#x27;yards without touchdowns&#x27; profile).</p>
+          <div class="gm-doc-k">This matchup</div><p>Houston&#x27;s front is the problem — 3rd in rushing yards allowed per game and 3rd in YPC allowed (3.32), with Anderson (99th percentile among edges) and Hunter (93rd). What Houston does not do is cover the middle or prevent explosives: it has allowed 20-plus-yard passes in every game and gives up 256 pass yards per game (26th).</p>
+          <div class="gm-doc-k">Injuries</div><p>LT Anton Harrison is on IR after knee surgery (Rotowire, Tuesday) with Mekari and Mustipher also out — Walker Little slides in, and the model carries no line input, so treat it as pressure risk against Houston&#x27;s two premium edges, not a number. Houston is without safety Jalen Pitre and released LB Kenneth Murray (82% of snaps in Week 4); To&#x27;oTo&#x27;o is questionable.</p>
+          <div class="gm-doc-k">Expect</div><p>Roughly 27 carries at a modest clip, Lawrence in the 28-32 attempt range in a one-score game, with Strange working the vacated middle and Washington carrying the air-yards share.</p>
+        </div>
+        
+      </div>
+    </section>
+    <section class="gm-doc-pane" data-title="The calls">
+      <p class="gm-doc-note">Each call is one player, one market, one side of the line Kalshi quoted when the plan was written; graded off the box score, with the report's read of whether the reason given showed up. The rungs are the same call down the Kalshi ladder, Edge halfway to its last rung and Edge+ the last, at Kalshi's last pregame price.</p>
+      <div class="gm-doc-verdicts"><span class="badge mute">Normal <b class="up">5</b>&ndash;<b class="down">5</b></span><span class="badge mute">Edge <b class="up">9</b>&ndash;<b class="down">1</b></span><span class="badge mute">Edge+ <b class="up">9</b>&ndash;<b class="down">1</b></span></div>
+      <div class="gm-doc-calls">
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Xavier Hutchinson</b><span class="flat">HOU</span>
+            <span class="bet">over 1.5 receptions</span>
+            <span class="res hit">&#10003; 2</span>
+            <span class="badge good">hit · read partly held</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #12 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 82%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 51%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal / Edge / Edge+</i> over 1.5 receptions <small>52&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Hit on the number (2 receptions) but not on the mechanism — the dropback pile never arrived for him; he saw 3 targets on 54% snaps and his third-most-valuable touch was being the intended man on the Q4 3:59 end-zone pick.</p>
+          <p class="why">Same forced-dropback script, cheaper rung. He has caught at least three passes in every game of the season without once needing a big day.</p>
+          <p class="ev">Receptions of 3, 3, 3, 3, 4 across five weeks on target counts of 6, 9, 6, 5, 5.</p>
+          <p class="ev">vs #12 pass EPA allowed; the exchange prices this near a coin flip while the model has it heavily over. Risk is Marvin Harrison Jr.&#x27;s snap share in his second week here.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Xavier Hutchinson</b><span class="flat">HOU</span>
+            <span class="bet">over 14.5 rec yds</span>
+            <span class="res miss">&#10007; 10</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #12 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 82%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 51%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal / Edge / Edge+</i> over 14.5 rec yds <small>51&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Miss at 10 yards on 3 targets, 14 air yards, 0 YAC. Houston threw 34 times, not 40, and the complementary volume went to Noel (4 targets, 107) and Harrison (4 targets) instead.</p>
+          <p class="why">Houston can&#x27;t run here, so the dropbacks pile up and the complementary receivers eat. He has cleared this modest number in every game, with five or more targets in four of five.</p>
+          <p class="ev">Targets of 6, 9, 6, 5, 5; receiving yards of 32, 37, 51, 46, 65 — all five above the quoted number. Jacksonville allows 277.2 pass yards per game.</p>
+          <p class="ev">vs #12 pass EPA allowed, but #30 in pass yards and #25 in YPA allowed — the rank rests on red-zone and takeaway work, not on stopping yardage. The model&#x27;s own mean sits far above the exchange&#x27;s number, and that price is thin.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Brenton Strange</b><span class="flat">HOU</span>
+            <span class="bet">over 3.5 receptions</span>
+            <span class="res hit">&#10003; 5</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #23 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 62%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 56%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> over 3.5 receptions <small>56&cent;</small></span><span class="rung hit"><i>Edge</i> 3+ receptions <small>74&cent;</small></span><span class="rung hit"><i>Edge+</i> 2+ receptions <small>88&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Strange caught 5 of 7 for 44 working the middle exactly as described, on 76.1% of snaps — the one call whose reasoning and result matched cleanly, though the trailing script helped the volume.</p>
+          <p class="why">Houston&#x27;s middle of the field is thinned — a safety out and its most-used linebacker released — and that is exactly where this tight end lives on third down.</p>
+          <p class="ev">Eight targets in each of the last two weeks (7-95 vs CIN, 7-68 vs PHI) on 81-87% snap shares; HOU gave Lamb 21 targets underneath in Week 4 with its LB level short.</p>
+          <p class="ev">Team is JAX. vs #12 pass EPA allowed; Houston is 6th in fantasy points allowed to tight ends, which is the one positional number that carries — hence medium, not high. Model&#x27;s mean sits above the quoted number, the exchange&#x27;s below it.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">C.J. Stroud</b><span class="flat">HOU</span>
+            <span class="bet">over 249.5 pass yds</span>
+            <span class="res hit">&#10003; 312</span>
+            <span class="badge good">hit · read partly held</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #12 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 46%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 52%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> over 249.5 pass yds <small>54&cent;</small></span><span class="rung hit"><i>Edge</i> 200+ pass yds <small>79&cent;</small></span><span class="rung hit"><i>Edge+</i> 175+ pass yds <small>87&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Hit big at 312, but on 34 attempts and 9.2 yards per attempt, not on forced volume: the 50 to Noel and 42 to Collins did the work while Houston ran 25 times for 114 against the defense that was supposed to make it throw.</p>
+          <p class="why">The Jaguars take the run away better than anyone, which turns Houston&#x27;s carries into throws. The same defense surrenders more passing yardage per game than any but one.</p>
+          <p class="ev">HOU 3.38 YPC and negative rush EPA every week; JAX allows 2.93 YPC (1st) and 277.2 pass yards (30th). Stroud: 38, 55, 27, 31, 34 attempts, 274/353/167/347/261 yards.</p>
+          <p class="ev">vs #12 pass EPA allowed; the yardage ranks (25th YPA, 30th yards) are the ones that decide this market. Caution: passing-yards calls are our weakest market this season at 45%, so this is medium, not high.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Nico Collins</b><span class="flat">HOU</span>
+            <span class="bet">over 69.5 rec yds</span>
+            <span class="res hit">&#10003; 74</span>
+            <span class="badge good">hit · read partly held</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #12 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 28%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 55%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> over 69.5 rec yds <small>55&cent;</small></span><span class="rung hit"><i>Edge</i> 50+ rec yds <small>73&cent;</small></span><span class="rung hit"><i>Edge+</i> 40+ rec yds <small>81&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 74 yards clears, but on 5 targets, not the 35-plus-throw script — 73 of them air yards on the 42-yarder at Q1 6:50 and the 21-yard third-and-11 at Q4 7:46, plus 19 DPI yards drawn off Jar.Jones that never hit his line.</p>
+          <p class="why">Undisputed alpha on an offense about to be forced into 35-plus throws, against a corner room missing one starter with another limited all week.</p>
+          <p class="ev">7-10 targets in all three games played: 75, 118, 56 yards. JAX: Montaric Brown out (Rotowire, Friday), Jourdan Lewis limited (hamstring), Jarrian Jones 6th percentile among corners. Collins&#x27; practice limitation is listed as rest, not injury.</p>
+          <p class="ev">vs #12 pass EPA allowed but #30 in pass yards allowed. The model&#x27;s share model has him well under this number; the read is that his target count, not his efficiency, has been understated all year.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Dalton Schultz</b><span class="flat">HOU</span>
+            <span class="bet">under 3.5 receptions</span>
+            <span class="res miss">&#10007; 4</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #12 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 64%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 54%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 3.5 receptions <small>54&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;7 receptions <small>91&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;9 receptions <small>97&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Miss: Schultz led Houston in targets with 6, catching 4 for 33, with Collins healthy and Harrison on the field. He was the designed outlet against a 41% blitz rate, not a four-target afterthought.</p>
+          <p class="why">His one big game came with the alpha receiver out. With Collins healthy and another receiver added by trade, he is back to a four-target checkdown role against a defense stingy to tight ends.</p>
+          <p class="ev">Targets since Collins returned: 2, 4. Catches of 4, 12, 3, 2, 3 across the season; snap share 52% in Week 5. JAX is 7th in fantasy points allowed to tight ends.</p>
+          <p class="ev">vs #12 pass EPA allowed, #7 vs tight ends — the one positional allowance that carries predictive weight. Model&#x27;s mean is under the quoted number while the exchange prices it near even.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Bhayshul Tuten</b><span class="flat">JAX</span>
+            <span class="bet">under 64.5 rush yds</span>
+            <span class="res hit">&#10003; 39</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">efficiency</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #11 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 60%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 55%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 64.5 rush yds <small>55&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;100 rush yds <small>84&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;130 rush yds <small>95&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Hit at 39 yards: 12 carries at 3.25 YPC, -1.10 rush EPA, no 10-plus run, and a rushing TD erased by Strange&#x27;s hold at Q2 14:12. The carry share also leaked — Rodriguez took 11 for 55.</p>
+          <p class="why">His carry count is safe; his yards are not. Houston&#x27;s front is one of the three best at limiting yards per carry, and he has not exceeded this range in any game this season.</p>
+          <p class="ev">Rushing yards of 66, 65, 73, 73, 72 on 15-22 carries — never clear of a 73-yard ceiling. HOU allows 3.32 YPC (3rd) and 78.4 rush yards per game (3rd); JAX&#x27;s own YBC/carry is 1.85 vs a 2.54 league mark.</p>
+          <p class="ev">vs #11 rush EPA allowed — mid band, where our unders have hit 60% this season. Labelled an efficiency call: the volume is the part that could beat it if Jacksonville leads late.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Woody Marks</b><span class="flat">HOU</span>
+            <span class="bet">under 69.5 rush+rec yds</span>
+            <span class="res miss">&#10007; 81</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #3 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 59%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 56%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 69.5 rush+rec yds <small>57&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;95 rush+rec yds <small>81&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;120 rush+rec yds <small>94&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Miss at 81 scrimmage yards. The chase script the plan doubted never materialized (Houston led throughout) yet Marks still caught the 19-yarder on 3rd-and-2 at Q4 1:04, and the ground yards came because the run matchup read was wrong.</p>
+          <p class="why">A back who inherits the job on a team whose run game has lost ground every week, running into the stingiest front in football per carry. The receiving work needs a chase script that a one-score game may not give.</p>
+          <p class="ev">HOU 3.38 YPC, rush EPA negative all five weeks; JAX allows 2.93 YPC and 63.8 rush yards per game, both 1st. Marks: 42, 8, 15, 22, 62 rushing yards; 1, 5, 1, 0, 4 catches.</p>
+          <p class="ev">vs #3 rush EPA allowed. Our Week 4 review of this offense concluded to fade Houston RB rushing overs until the unit posts positive rush EPA. Model&#x27;s mean already sits well under the quoted number; unders vs top-10 defenses are our weakest bucket (43%), so this is medium.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Woody Marks</b><span class="flat">HOU</span>
+            <span class="bet">under 49.5 rush yds</span>
+            <span class="res miss">&#10007; 56</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #3 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 53%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 56%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 49.5 rush yds <small>57&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;80 rush yds <small>86&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;110 rush yds <small>97&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Miss at 56 on 15 carries (3.73). The &#x27;wall&#x27; gave up 4.56 YPC to Houston overall, with 65 yards on 11 carries to the left side. His efficiency was poor (-2.39 rush EPA) but the volume carried him over.</p>
+          <p class="why">The lead job is his, but the carries come against a wall. Our models consistently give backs too much credit against elite run defenses, and this offense has never run well regardless of opponent.</p>
+          <p class="ev">HOU: zero 10-plus runs in three of five weeks, 3.38 YPC season. JAX allows a league-low 2.93 YPC on a 5-game sample. Marks has topped this number once all year.</p>
+          <p class="ev">vs #3 rush EPA allowed and #1 in YPC allowed. The model&#x27;s mean is essentially at the quoted number, so the whole edge is the matchup plus the Week 4 lesson on this run game.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">C.J. Stroud</b><span class="flat">HOU</span>
+            <span class="bet">under 0.5 INTs</span>
+            <span class="res miss">&#10007; 1</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">low</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #12 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 46%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 52%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 0.5 INTs <small>53&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;2 INTs <small>86&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;3 INTs <small>97&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Miss, and in the state the plan ruled out: Stroud threw the pick while LEADING 31-28 at Q4 3:59 from the JAX 4, intended for Hutchinson — a red-zone throw, not chase-mode volume.</p>
+          <p class="why">This is a fewer-picks call. He has not thrown one all season, and a one-score game means no late chase-mode volume spike — the situation that actually produces interceptions.</p>
+          <p class="ev">0 interceptions on 185 attempts across five games; JAX has generated takeaways but its pass EPA rank leans on red-zone defense. Spread is 2.5, so neither side projects to be throwing from two scores down.</p>
+          <p class="ev">vs #12 pass EPA allowed. The model&#x27;s rate-based mean sits above the quoted rung; our own research says that number overstates 1-plus interceptions by three to four points because it over-projects attempts.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Same-script legs">
+      <p class="gm-doc-note">Legs the same script produces together: they move as one, which is what a same-game parlay pays for.</p>
+      <div class="gm-doc-three">
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Houston can&#x27;t run, so it throws</b></div>
+          <div class="legs"><span class="leg hit">C.J. Stroud <em>over 249.5 pass yds</em> <i>&#10003;</i></span><span class="leg miss">Woody Marks <em>under 69.5 rush+rec yds</em> <i>&#10007;</i></span><span class="leg miss">Xavier Hutchinson <em>over 14.5 rec yds</em> <i>&#10007;</i></span></div>
+          <p class="sub">One mechanism drives all three: the league&#x27;s best run defense kills the Texans&#x27; carries, the dropbacks climb, and the yardage flows to a secondary that gives up more than almost anyone.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Both ground games stall</b></div>
+          <div class="legs"><span class="leg hit">Bhayshul Tuten <em>under 64.5 rush yds</em> <i>&#10003;</i></span><span class="leg miss">Woody Marks <em>under 49.5 rush yds</em> <i>&#10007;</i></span></div>
+          <p class="sub">Two of the three best fronts at limiting yards per carry meet two offenses whose yards-before-contact numbers are both below league average.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>The middle of Houston&#x27;s defense is open</b></div>
+          <div class="legs"><span class="leg hit">Brenton Strange <em>over 3.5 receptions</em> <i>&#10003;</i></span><span class="leg hit">Bhayshul Tuten <em>under 64.5 rush yds</em> <i>&#10003;</i></span></div>
+          <p class="sub">If the Jaguars can&#x27;t get push on the ground against Houston&#x27;s front, the answer is the short middle, where a missing safety and a released linebacker leave the tight end as the outlet.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    
+    
+
+    
+    <section class="gm-doc-pane" data-title="Projection grade">
+      <div class="gm-doc-gradehead">
+        <div class="gm-grade warn"><b>C</b><span>projection<br>grade &middot; 56</span></div>
+        <div class="gm-doc-gradetext">
+          
+          <div class="gm-doc-verdicts"><span class="badge mute">HOU 34 – JAX 31</span><span class="badge mute">HOU covered (JAX by 2.5)</span><span class="badge mute">Over 42.5 (65)</span><span class="badge mute">teams 65</span><span class="badge mute">player lines 30/50 in range</span><span class="badge mute">market calls 1/3</span></div>
+        </div>
+      </div>
+      
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>HOU</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">20.0</td><td class="num"><b>34</b></td><td class="num up">+14</td><td class="meter"><i style="width: 30%" class="bad"></i></td></tr><tr><td>Pass yds</td><td class="num flat">248.1</td><td class="num"><b>312.0</b></td><td class="num flat">+63.9</td><td class="meter"><i style="width: 57%" class=""></i></td></tr><tr><td>Rush yds</td><td class="num flat">84.9</td><td class="num"><b>114.0</b></td><td class="num flat">+29.1</td><td class="meter"><i style="width: 68%" class=""></i></td></tr><tr><td>Pass att</td><td class="num flat">33.8</td><td class="num"><b>34</b></td><td class="num flat">+0.2</td><td class="meter"><i style="width: 99%" class=""></i></td></tr><tr><td>Carries</td><td class="num flat">24.5</td><td class="num"><b>25</b></td><td class="num flat">+0.5</td><td class="meter"><i style="width: 96%" class=""></i></td></tr>
+          </tbody></table>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>JAX</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">22.5</td><td class="num"><b>31</b></td><td class="num flat">+8.5</td><td class="meter"><i style="width: 57%" class=""></i></td></tr><tr><td>Pass yds</td><td class="num flat">231.5</td><td class="num"><b>306.0</b></td><td class="num flat">+74.5</td><td class="meter"><i style="width: 50%" class=""></i></td></tr><tr><td>Rush yds</td><td class="num flat">100.3</td><td class="num"><b>106.0</b></td><td class="num flat">+5.7</td><td class="meter"><i style="width: 94%" class=""></i></td></tr><tr><td>Pass att</td><td class="num flat">31.5</td><td class="num"><b>41</b></td><td class="num up">+9.5</td><td class="meter"><i style="width: 41%" class="bad"></i></td></tr><tr><td>Carries</td><td class="num flat">26.3</td><td class="num"><b>27</b></td><td class="num flat">+0.7</td><td class="meter"><i style="width: 95%" class=""></i></td></tr>
+          </tbody></table>
+        </div>
+        
+      </div>
+      <div class="gm-doc-verdicts"><span class="badge bad">Winner: JAX &#10007;</span><span class="badge good">Spread: HOU +2.5 &#10003;</span><span class="badge bad">Total: Under 42.5 (proj 42.5) &#10007;</span></div>
+      
+      
+      <div class="gm-doc-k">Why the projection missed &middot; what it got right</div>
+      <p class="gm-doc-p">Grade C (0.56), and the shape of the miss is clean: the engine nailed volume and missed efficiency entirely. HOU pass attempts (34 vs 33.8) and carries (25 vs 24.5) were essentially exact, JAX carries (27 vs 26.3) likewise, but both team totals blew out — HOU 34 on a projected 20, JAX 31 on 22.5 — because 65 points arrived on 127 plays with zero sacks between them. The sack projection (2.2 HOU, 2.4 JAX) and the implied pressure environment were the single biggest input failure: actual pressure rates were 5.7% (HOU) and 7.0% (JAX) against a 14.8–15.9% league figure, which let both offenses run 0.37 and 0.27 EPA per dropback. The one big volume miss, JAX&#x27;s 41 attempts versus 31.5, is pure game state: Jacksonville ran 58 of its 69 plays trailing and never led for more than 47 seconds. The market score (0.333) reflects the obvious: side wrong, total wrong, only the spread call cashed by default.</p>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>HOU</b> &middot; 20 projected points, 34 actual; 312 pass yards on the projected 33.8 attempts<div class="went">Efficiency, not volume — Stroud took zero sacks on 35 dropbacks with 11.5 CPOE, hit 4 explosive passes (42 to Collins, 50 and 34 to Noel), and Houston finished 3 TDs and a FG on 5 red-zone trips against a defense the engine blended at .572 RZ TD rate allowed.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>HOU</b> &middot; 114 rush yards on 25 carries (4.56 YPC) against a front the engine blended to 3.47 YPC<div class="went">The run matchup read was wrong at the gap level: 11 carries left for 65 (5.9 YPC) including Jawhar Jordan&#x27;s 25-yard TD off left tackle at Q3 0:58. Middle runs did stall (4 for 9).</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>JAX</b> &middot; 41 pass attempts versus 31.5 projected<div class="went">Game script — JAX trailed on 58 of 69 snaps (0.621 pass rate trailing) after Houston scored first and never trailed. The blended 0.562 pass rate assumed a neutral-or-leading Jacksonville.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>JAX</b> &middot; 306 pass yards and 4 passing TDs on a 1.6 pass-TD projection<div class="went">No pass rush plus YAC: 153 YAC, Tuten&#x27;s two short TDs (27-yard catch at Q2 6:56 with -13 total air yards on his 4 targets), Hunter&#x27;s 7-yard TD. Houston&#x27;s defense has allowed 20+ yard passes in every game this season (wk1 6, wk2 4, wk3 4, wk4 4) — this is the recurring part.</div></div></div></div>
+      <div class="gm-doc-verdicts wrap"><span class="badge good">&#10003; HOU pass attempts 34 vs 33.8 and carries 25 vs 24.5 — dead on.</span><span class="badge good">&#10003; JAX carries 27 vs 26.3 and rush yards 106 vs 100.3.</span><span class="badge good">&#10003; Woody Marks&#x27; workload: 15 carries vs 16 projected, 77.8% snap share with Montgomery out.</span><span class="badge good">&#10003; Parker Washington&#x27;s receiving yards (64 vs 59.8) and Brenton Strange&#x27;s (44 vs 40.4) — both target-tree reads held even with the volume spike around them.</span></div>
+      
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Turning points">
+      <div class="gm-doc-tl">
+        <div class="gm-doc-tp"><div class="clock">Q2 13:24</div><div class="what"><span class="badge mute">JAX</span> Lawrence intercepted by Bullock at the goal line, intended for Meyers on 3rd-and-5 (EPA -4.82)<div class="went">Ended a 15-play, 69-yard, 6:55 drive with nothing. Jacksonville&#x27;s only sustained early possession produced zero points and a touchback; HOU stayed ahead and stayed in control of the script for the rest of the day.</div></div></div><div class="gm-doc-tp"><div class="clock">Q2 00:48</div><div class="what"><span class="badge mute">HOU</span> Stroud deep middle to Noel for 50 to the JAX 13 (EPA +3.26)<div class="went">Houston had just fallen behind 14-10 with 55 seconds left; four plays and 51 yards later it led 17-14 at the half. The lead it took there it never gave back in regulation.</div></div></div><div class="gm-doc-tp"><div class="clock">Q3 01:02</div><div class="what"><span class="badge mute">HOU</span> DPI on Jar.Jones, 19 yards, on an incompletion deep right to Collins (EPA +2.43)<div class="went">Free yards that never show as passing yards. The very next snap was Jordan&#x27;s 25-yard TD run off left tackle, restoring a two-score lead at 31-21 right after JAX had cut it to three.</div></div></div><div class="gm-doc-tp"><div class="clock">Q4 03:59</div><div class="what"><span class="badge mute">HOU</span> Stroud intercepted in the end zone by Travis Hunter, intended for Hutchinson on 2nd-and-4 from the 4 (EPA -6.02, WPA -0.241)<div class="went">A 13-play, 78-yard, 7:33 drive that should have ended the game ended with a touchback. It was the game&#x27;s largest single win-probability swing and the only reason Jacksonville got the ball back with a chance.</div></div></div><div class="gm-doc-tp"><div class="clock">Q4 02:00</div><div class="what"><span class="badge mute">JAX</span> Cam Little 60-yard field goal, good, 31-31<div class="went">Six plays, 38 yards and a kick from the edge of the map tied it — the drive gained only 38 yards and would have been a punt for most teams.</div></div></div><div class="gm-doc-tp"><div class="clock">Q4 01:04</div><div class="what"><span class="badge mute">HOU</span> Stroud to Marks for 19 on 3rd-and-2, out of bounds at the JAX 41 (EPA +1.45, WPA +0.151)<div class="went">Converted the only third down of the winning drive and stopped the clock; Fairbairn&#x27;s 49-yarder at 0:03 followed.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="What decided it">
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Neither defense could rush the passer</b><div class="went">Zero sacks in the game. HOU pressure (sack or hit) 5.7% on 35 dropbacks, JAX 7.0% on 43 — against a 15.9% league rate. Stroud 0.373 EPA/dropback, Lawrence 0.268.</div><div class="went"><b>Tell:</b> JAX carried the &#x27;no pass rush&#x27; tag in two of five weeks (wk2 DEN, wk5 PHI, where it allowed one sack on 62 plays); HOU allowed &#x27;no pass rush&#x27; in wk1 and generated 0.094 pressure rate that day. Both engine pressure inputs sat at or near league (HOU def 16.0%, JAX def 17.5%) — the game played far below both.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Explosive passing, both directions</b><div class="went">HOU 4 passes of 20+, JAX 6. Houston&#x27;s four were worth 42, 50, 34 and 21 yards on third-and-11; Jacksonville&#x27;s included 24, 27, 27, 22, 28 and 26.</div><div class="went"><b>Tell:</b> Houston&#x27;s defense allowed 20+ yard passes in all five prior weeks; Jacksonville was tagged &#x27;explosive passing&#x27; allowed in weeks 2 and 3. Two defenses that both give up chunks is a total signal the 42.5 ignored.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag no" title="Not visible before kickoff">in-game only</span><div><b>Red-zone finishing beat the model&#x27;s shrunk rates</b><div class="went">HOU 3 TDs and a FG on 5 trips (0.138 RZ EPA/play), JAX 3 TDs on 4 trips (0.611 RZ success). The engine blended both near the .57 league constant and the market priced a 42.5 game.</div><div class="went"><b>Tell:</b> Nothing pointed here — JAX had 0 RZ TDs on 3 trips in wk5 and HOU went 0-for-4 in wk2. Red-zone rates are the least persistent input in the dossier; this was the bounce going the other way.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag no" title="Not visible before kickoff">in-game only</span><div><b>Script: Houston scored first and led 2,699 of 3,600 seconds</b><div class="went">HOU pass rate while leading 0.526 on 38 plays; JAX ran 58 of 69 snaps trailing at a 0.621 pass rate. Checks show HOU&#x27;s actual lean &#x27;run&#x27; (0.576 vs 0.626 season) and JAX &#x27;pass&#x27; (0.603 vs 0.521).</div><div class="went"><b>Tell:</b> The pre-game read had it inverted — a JAX lead was the stated cap on Lawrence&#x27;s attempts. The tell would have been Houston&#x27;s opening-quarter 62-yard TD drive.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Free yards and nullified ones</b><div class="went">HOU drew 36 DPI yards (17 at Q2 0:20 setting up the Moreau TD, 19 at Q3 1:02 setting up Jordan&#x27;s TD run) on top of 46 drawn penalty yards. JAX had a Tuten rushing TD wiped by a Strange hold at Q2 14:12 and another hold at Q2 10:24 on its own drives.</div><div class="went"><b>Tell:</b> JAX&#x27;s defense was the league&#x27;s worst DPI unit by the engine inputs (10.6 DPI yards allowed per game vs 6.45 league) and was tagged for penalties/pre-snap penalties in two of five weeks.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; HOU">
+      <div class="gm-doc-boxhead"><b>How HOU gets beaten</b><span class="flat">1-4 entering</span><span class="badge mute">high confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">penalties &times;4</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Explosive passes allowed, every single week</b><div class="went">wk1 BUF 6 of 20+ and 0.558 EPA/dropback allowed; wk2 CIN 4; wk3 IND 4; wk4 DAL 4; this week JAX 6 and 4 passing TDs on 306 yards</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>No pass rush when the opponent protects</b><div class="went">0 sacks and 3 QB hits on 43 JAX dropbacks (7.0%); wk1 allowed 0.094 pressure rate and 36 points. When it does get home (wk2 25.0%, wk5 17.1%) it holds opponents to 20 and 3.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Short middle and back-out-of-the-backfield coverage</b><div class="went">JAX put up 153 YAC; Tuten caught 4 for 48 and two TDs on -13 air yards; Hunter&#x27;s 26-yard crosser at Q3 0:06; Strange 5 of 7 for 44 — with Pitre out and Al-Shaair dinged on the Tuten TD at Q2 6:56</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Its own penalties, every week</b><div class="went">&#x27;penalties&#x27; tagged in 4 of 5 prior weeks (wk1 106 yds, wk2 83, wk4 90, wk5 95); 6 for 40 here with 4 pre-snap, including Ersery&#x27;s false start at Q2 0:20 and T.Brown&#x27;s at Q3 9:26</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Red-zone giveaways</b><div class="went">Stroud&#x27;s end-zone INT at Q4 3:59 (EPA -6.02) from the JAX 4; wk2 at CIN 0 TDs on 4 trips with -1.53 RZ EPA/play</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> Houston&#x27;s defense is a yardage sieve that survives on takeaways and red-zone stops (the wk1 and wk4 &#x27;bend don&#x27;t break&#x27; / &#x27;red zone defense&#x27; tags): it has allowed 20+ yard passes in six straight games, and its season is decided by whether the front generates pressure. The offense&#x27;s own drive-killers — pre-snap flags and the occasional red-zone turnover — are the self-inflicted half.</p>
+      <p class="gm-doc-p"><b>This week:</b> Jacksonville had exactly the profile (8.21 YPA entering, 0.108 field EPA/play) and executed it: 6 explosive passes, 0.268 EPA/dropback, 306 yards, four TDs — and still lost because Houston&#x27;s own offense scored 34 and because Lawrence&#x27;s goal-line INT cost a full drive.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> A quarterback who can hold the ball (Houston&#x27;s pressure rate collapses when the tackles hold up), a receiving back or tight end who wins YAC underneath, and at least two legitimate deep threats. An opponent with no vertical element gets bend-don&#x27;t-break instead (TEN, wk5: one explosive pass, 3 points).</p>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; JAX">
+      <div class="gm-doc-boxhead"><b>How JAX gets beaten</b><span class="flat">4-1 entering</span><span class="badge mute">medium confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">explosive passing &times;2</span><span class="badge bad">no pass rush &times;2</span><span class="badge bad">penalties &times;2</span><span class="badge bad">pre-snap penalties &times;2</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>No pass rush, recurring</b><div class="went">Tagged wk2 (0 sacks allowed to DEN) and wk5 (1 sack vs PHI); here 0 sacks and 2 QB hits on 35 Stroud dropbacks (5.7%), with Travon Walker on 78.9% of snaps and no production</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Explosive passing against a thinned corner room</b><div class="went">Tagged wk2 (5 allowed) and wk3 (5); here 4 of 20+ including 42 to Collins over Hunter at Q1 6:50 and 50 to Noel at Q2 0:48, with Montaric Brown out and Jaylon Jones questionable</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Interference and holding yards that extend drives</b><div class="went">Engine input 10.6 DPI yards allowed per game (league 6.45); gave up 36 DPI yards here (T.Hunter 17, Jar.Jones 19) plus an illegal-use-of-hands at Q2 5:43 — three HOU scoring drives touched one of those flags</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>The run was not actually taken away</b><div class="went">A front the engine blended to 3.47 YPC allowed gave up 114 on 25 (4.56), 65 on 11 carries left including Jordan&#x27;s 25-yard TD at Q3 0:58; wk2 DEN posted 4 explosive runs against it</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Its own offensive holding and red-zone stalls</b><div class="went">Strange&#x27;s hold wiped a Tuten rushing TD at Q2 14:12, Pregnon&#x27;s hold at Q2 10:24; wk5 vs PHI 0 TDs on 3 red-zone trips with -0.599 RZ EPA/play; the goal-line INT at Q2 13:24 here</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> Jacksonville&#x27;s defensive reputation rests on takeaways and red-zone stinginess, not on stopping the ball: its field EPA allowed has been positive in two of five weeks and it does not pressure the quarterback without help. The offense wins when it stays on schedule and loses drives to holding and to short-field failures.</p>
+      <p class="gm-doc-p"><b>This week:</b> Houston had the profile (7.54 YPA entering, &#x27;own explosive passing&#x27; tagged in three of five weeks) and cashed it without needing to abandon the run — a cleaner version of the blueprint than the model expected, because the run game that was supposed to be dead produced 4.56 YPC.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> A quarterback with time (JAX will not manufacture pressure on four), two receivers who can win downfield against a depleted corner room, and the discipline to take the free interference yards. A ball-control team without vertical shots gets the week-3 NE treatment instead.</p>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Player lines">
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Jaylin Noel</b> <span class="flat">HOU</span> &middot; 4 targets, 4 rec, 107 yds, 1 TD vs 34.1 projected rec yds<div class="went">Two explosives (34 at Q2 6:41, 50 at Q2 0:48) plus the 13-yard third-and-10 TD at Q3 9:26 on only 49.2% snaps; 61 air yards, 46 YAC, 23.6% air-yards share.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Nico Collins</b> <span class="flat">HOU</span> &middot; 5 targets, 3 rec, 74 yds (73 air yards, 28.3% air-yards share)<div class="went">Still the downfield alpha — the 42-yarder at Q1 6:50 and the 21-yard conversion on 3rd-and-11 at Q4 7:46, plus 19 DPI yards drawn that don&#x27;t show in his line.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Woody Marks</b> <span class="flat">HOU</span> &middot; 15 carries, 56 yds, 3 targets, 2-25; 77.8% snaps<div class="went">Workload held with Montgomery out, but rush EPA was -2.39 — the yardage came without efficiency, and the 19-yard catch on 3rd-and-2 at Q4 1:04 was the only high-value touch.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Jawhar Jordan</b> <span class="flat">HOU</span> &middot; 6 carries, 43 yds, 1 TD on 22.2% snaps — unprojected<div class="went">Complementary back with the explosive run (25-yard TD left tackle, Q3 0:58). A real second body in a backfield the model treated as Marks-only.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Xavier Hutchinson</b> <span class="flat">HOU</span> &middot; 3 targets, 2 rec, 10 yds, -5.84 receiving EPA (incl. the end-zone INT target)<div class="went">Role thinned: Harrison Jr. drew 4 targets in his second week and Noel&#x27;s snaps produced; Houston&#x27;s leading when it mattered kept the volume low.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Trevor Lawrence</b> <span class="flat">JAX</span> &middot; 41 att, 24-306, 4 TD, 1 INT, 0 sacks, -5.0 CPOE<div class="went">Volume from trailing all game; the TDs came on short throws (Tuten 27 and 2, Boerkircher 1, Hunter 7) with 153 team YAC. Negative CPOE on 9.2 aDOT — the production was situation and YAC, not accuracy.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Chris Rodriguez Jr.</b> <span class="flat">JAX</span> &middot; 11 carries, 55 yds vs 4.9 projected carries<div class="went">Real timeshare — Tuten at 57.7% snaps, Rodriguez 29.6%, and Rodriguez outgained him per carry (5.0 vs 3.25).</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Bhayshul Tuten</b> <span class="flat">JAX</span> &middot; 12 carries 39 yds, 4 rec 48 yds, 2 receiving TDs<div class="went">Rushing capped (-1.10 rush EPA, no 10+ runs, a TD run wiped by a hold at Q2 14:12), but he was the goal-line and screen answer — -13 air yards, 61 YAC on 4 catches.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Parker Washington</b> <span class="flat">JAX</span> &middot; 11 targets, 4 rec, 64 yds, 153 air yards (40.7% share)<div class="went">Carries the air-yards load as projected but converted 4 of 11 — a volume play whose yardage depends on deep completion luck (JAX 4-of-9 deep).</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Travis Hunter</b> <span class="flat">JAX</span> &middot; 4 rec, 59 yds, 1 TD on 12.7% offensive snaps (projected 2.8 rec yds)<div class="went">Two-way usage produced 37 YAC and the 7-yard TD at Q4 11:30 plus a 26-yard crosser — but on a snap share that cannot be projected into volume.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Dalton Schultz</b> <span class="flat">HOU</span> &middot; 6 targets (team high), 4 rec, 33 yds<div class="went">Not the four-target afterthought the downgrade assumed; he was the primary underneath outlet against a 37–41% blitz environment.</div></div></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Traps">
+      <div class="gm-doc-three"><div class="gm-doc-box"><span class="badge mute">Totals</span><p><b>When both defenses carry a &#x27;no pass rush&#x27; tag or a sub-12% season pressure rate and both have allowed explosive passes in multiple weeks, a total in the low 40s is a gift. Here it was 42.5 against 65 actual with zero sacks in 78 dropbacks.</b></p><p class="sub"><b>Trigger:</b> Both teams&#x27; season pressure rate (sack-or-hit) at or below league and both tagged &#x27;explosive passing&#x27; allowed in the season context.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>Lawrence&#x27;s attempt total is a pure script variable, not a projection: 23 attempts at Cincinnati with a lead, 41 here after trailing on 58 of 69 snaps. Bet his volume overs only when the game plan expects Jacksonville behind.</b></p><p class="sub"><b>Trigger:</b> JAX as a home favorite with a run lean in the engine inputs — fade the attempts; JAX trailing by a score or more at any point — the attempts spike to 40+.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>Run-defense YPC ranks built on five opponents are not a wall. The engine blended 3.47 YPC for Houston against the &#x27;best&#x27; front in football; Houston ran 4.56 and scored on a 25-yard run off left tackle. Don&#x27;t shade an RB under on rank alone — check run-location splits and whether the defense has faced a gap-scheme team.</b></p><p class="sub"><b>Trigger:</b> An RB under priced primarily off an opponent&#x27;s sub-3.2 YPC allowed, with fewer than six games of sample.</p></div><div class="gm-doc-box"><span class="badge mute">Totals</span><p><b>Red-zone TD-rate ranks are the least persistent input in the dossier. Jacksonville was sold as third in TDs allowed per trip; Houston went 3-for-5 and Jacksonville itself went 3-for-4 a week after going 0-for-3 against Philadelphia.</b></p><p class="sub"><b>Trigger:</b> Any total or team-total thesis whose main leg is &#x27;this defense turns trips into field goals&#x27; — require field EPA allowed to agree before leaning on it.</p></div><div class="gm-doc-box"><span class="badge mute">Sides</span><p><b>A 1-4 record can hide a positive-EPA offense. Houston entered with four single-score losses, 0.043 field EPA/play and &#x27;own explosive passing&#x27; tagged in three of five weeks; it was a live dog at +2.5 on the road at Wembley.</b></p><p class="sub"><b>Trigger:</b> Team with a losing record, positive season field EPA/play, and multiple losses by a score or less, priced as a short road dog.</p></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="The story">
+      <div class="gm-doc-prose"><h2>The short version</h2>
+<p>Houston won 34-31 at Wembley as a 2.5-point underdog, and the 42.5 total was never in the conversation: 65 points, 127 plays, 618 passing yards between the two quarterbacks and not one sack in 78 dropbacks. The projection had 20-22.5 and a one-score grind; it got the volume almost exactly right (HOU 34 attempts and 25 carries against 33.8 and 24.5) and the efficiency almost entirely wrong. Houston never trailed by more than four, led for 2,699 of 3,600 seconds, survived its own goal-line interception with four minutes left, and won on Ka'imi Fairbairn's 49-yarder at 0:03 after Cam Little had tied it from 60.</p>
+<h2>How it unfolded</h2>
+<p>Jacksonville's first three possessions produced a punt, a failed fourth-and-3 at the Houston 37 (Q1 8:21, -2.35 EPA), and — after a 15-play, 69-yard, 6:55 march — a Trevor Lawrence interception at the goal line by Calen Bullock at Q2 13:24, the second-biggest swing of the day at -4.82 EPA. That is 25 plays and zero points from the team the market made favorite. Houston, meanwhile, needed five plays and 62 yards to score, Stroud's 42-yarder to Collins at Q1 6:50 doing most of it.</p>
+<p>The second quarter turned into a shootout nobody projected: Tuten's 27-yard catch-and-run TD, a Fairbairn 25-yarder, Tuten again from two, then Houston's four-play, 51-yard answer in 47 seconds built on Noel's 50-yard catch down the middle — 17-14 at the break. Houston opened the third with an 11-play, 65-yard drive capped by Noel's 13-yard touchdown on third-and-10, and after Jacksonville cut it to three, the Texans drew 19 DPI yards from Jarrian Jones at Q3 1:02 and immediately ran Jawhar Jordan 25 yards off left tackle for the touchdown that made it 31-21.</p>
+<p>Jacksonville got back within three on Travis Hunter's seven-yard score at Q4 11:30, Houston ate 7:33 off the clock on a 13-play drive, and then Stroud threw the game's biggest play backwards — an end-zone interception to Hunter from the four-yard line at Q4 3:59, -6.02 EPA and -0.241 WPA. Jacksonville moved 38 yards and kicked from 60. Houston answered with Marks' 19-yard catch on third-and-2 and the winning kick.</p>
+<h2>Why the game diverged from the projection</h2>
+<p>Two inputs failed. The first is pressure: the engine blended sack rates of 6.2% and 7.1% and projected better than two sacks a side. Actual pressure (sack or hit) came in at 5.7% for Houston's rush and 7.0% for Jacksonville's, roughly a third of the 15.9% league rate, and both quarterbacks played clean — Stroud at 0.373 EPA per dropback with 11.5 CPOE, Lawrence at 0.268 despite -5.0 CPOE because his receivers produced 153 yards after catch. The second is the run matchup. Jacksonville's 2.93 YPC allowed was the keystone of the pre-game read; Houston ran 25 times for 114 (4.56), with 65 of those yards on 11 left-side carries.</p>
+<p>Jacksonville's one big volume miss — 41 attempts against 31.5 — is game state and nothing else: 58 of 69 snaps trailing, a 0.621 pass rate in that state. That is noise the model should not chase. Houston's point total is mixed: the yardage was earned, but 3 touchdowns on 5 red-zone trips against a defense the engine shrunk to .572 was the small-sample coin landing heads.</p>
+<h2>The plan against the game</h2>
+<p>The plan's headline mechanism — two yardage-conceding secondaries, neither front getting home — is exactly the game that was played, and its underdog path named the winners correctly down to "Collins and the complementary receivers." But it got there backwards. It assumed Jacksonville's front would dictate and Jacksonville would hold the lead; instead Houston scored first, ran the ball well, and threw only 34 times, which is why both lean checks failed in opposite directions and why the Marks unders and the Hutchinson yardage over all lost on the same broken premise. Pace was called perfectly.</p>
+<h2>Player by player</h2>
+<p>Noel is the headline and the caution: 4-for-4, 107 yards and a touchdown on 49% of snaps, with 61 air yards and 46 YAC. Two explosives on four targets is not a repeatable projection, but a 23.6% air-yards share at half the snaps is a role worth tracking. Collins remains the alpha without the target volume — 5 looks, 73 air yards, plus 19 DPI yards drawn that never appear in his line. Schultz led the team in targets with six, which is the direct refutation of the pre-game read on him. Hutchinson collapsed to three targets with Harrison Jr. drawing four on 19% of snaps.</p>
+<p>For Jacksonville, the backfield split is the actionable item: Tuten 57.7% of snaps, Chris Rodriguez 29.6% and 11 carries for 55 — more productive per carry than the starter. Tuten's value was entirely receiving (4 catches, 48 yards, two touchdowns, -13 air yards). Washington carried 40.7% of the air yards for four catches on eleven targets; that is a volume play whose yardage lives or dies on deep completion rate.</p>
+<h2>The defenses</h2>
+<p>Charting here is box and blitz only — no coverage shells. Jacksonville blitzed 41% and rushed 4.59 on average without producing a hit that mattered; Travon Walker played 79% of snaps for nothing in the box score. Houston blitzed 37% at an average of 4.49 rushers and also recorded zero sacks. Both defenses defended the field badly (HOU allowed 0.192 EPA/play between the 20s, JAX 0.308) and neither got the compensating takeaway volume beyond one each. Houston's secondary has now allowed 20-plus-yard passes in six straight games; Jacksonville's corner room, missing Montaric Brown with Jaylon Jones limited, gave up two 40-plus completions and 36 DPI yards.</p>
+<h2>What the model should take from this</h2>
+<p>The engine's volume machinery is working. Its efficiency environment is not sensitive enough to pass-rush quality. Two teams with recurring "no pass rush" tags and recurring explosive-pass allowances met, and the blend still produced a 42.5-equivalent number. That is a total-side edge sitting in the season-context tags. Second, the red-zone constant did what the dossier says it does — nothing predictive — so the finishing swing should not be re-weighted off nine trips. Third, Houston's 62.6% season pass rate is a chase-game artifact; its leading-state rate is 52.6%, and that distinction should enter the lean before any Texans prop is written.</p></div>
+    </section>
+    
+    
+  </div>
+</details>
+
 </div>
 
 
@@ -1801,6 +2372,15 @@
       if(pick) pick.addEventListener("change",function(){ node.querySelectorAll(".pl-tl").forEach(function(t){ t.hidden=t.dataset.key!==pick.value; }); });
       modal.querySelector(".pl-dialog").scrollTop=0;
     }).catch(function(){ body.innerHTML='<div class="pl-loading">The player sheets could not be loaded.</div>'; });
+  }
+  // The plan / report panel: pills and arrows walk its sections.
+  var doc=document.querySelector(".gm-doc");
+  if(doc){
+    var panes=[].slice.call(doc.querySelectorAll(".gm-doc-pane")), pills=doc.querySelector(".gm-doc-pills"), cur=0;
+    panes.forEach(function(pn,i){ var b=document.createElement("button"); b.type="button"; b.textContent=pn.dataset.title; b.setAttribute("role","tab"); b.addEventListener("click",function(){ show(i); }); pills.appendChild(b); });
+    function show(i){ cur=(i+panes.length)%panes.length; panes.forEach(function(pn,k){ pn.classList.toggle("active",k===cur); }); pills.querySelectorAll("button").forEach(function(b,k){ b.classList.toggle("active",k===cur); if(k===cur&&b.scrollIntoView) b.scrollIntoView({block:"nearest",inline:"center"}); }); }
+    doc.querySelectorAll(".gm-doc-arrow").forEach(function(a){ a.addEventListener("click",function(){ show(cur+parseInt(a.dataset.dir,10)); }); });
+    show(0);
   }
   document.querySelectorAll(".pl-open").forEach(function(b){ b.addEventListener("click",function(e){ e.stopPropagation(); openPlayer(b.dataset.pid); }); });
   modal.querySelector(".pl-close").addEventListener("click",closeModal);

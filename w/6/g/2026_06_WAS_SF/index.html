@@ -797,6 +797,126 @@
     .hfa .pl-log td.wk, .hfa .pl-log th:first-child { position: sticky; left: 0; background: #0d0d11; z-index: 1; }
     :root[data-theme="light"] .hfa .pl-log td.wk, :root[data-theme="light"] .hfa .pl-log th:first-child { background: #fff; }
   }
+
+  /* ---- The plan / report panel under the scoreboard ---- */
+  .gm-doc { position: relative; overflow: visible; }
+  .gm-doc::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; border-radius: 14px 14px 0 0; background: linear-gradient(90deg, var(--hfa-accent), transparent 70%); pointer-events: none; }
+  .gm-doc.st-both::before { background: linear-gradient(90deg, var(--hfa-good), var(--hfa-accent) 55%, transparent 90%); }
+  .gm-doc > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.9rem; padding: 1rem 1.1rem; }
+  .gm-doc > summary::-webkit-details-marker { display: none; }
+  .gm-doc-chev { display: inline-grid; place-items: center; flex: none; width: 2rem; height: 2rem; border-radius: 50%; background: var(--hfa-accent); color: #fff; box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.22), 0 6px 14px -6px rgba(255, 31, 47, 0.9); transition: transform 0.18s; }
+  .gm-doc[open] > summary .gm-doc-chev { transform: rotate(180deg); background: #fff; color: var(--hfa-accent); }
+  .gm-doc-main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+  .gm-doc-eyebrow { font-size: 0.64rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-accent); }
+  .gm-doc-lead { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; line-height: 1.3; color: var(--hfa-body); }
+  .gm-doc-chips { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0.3rem; flex: 0 1 auto; }
+  .gm-doc-open { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); margin-left: 0.3rem; }
+  .gm-doc[open] .gm-doc-open { display: none; }
+  .gm-doc-body { border-top: var(--hfa-hairline); padding: 0.7rem 1.1rem 1.2rem; }
+  .gm-doc-nav { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.9rem; }
+  .gm-doc-pills { display: flex; gap: 0.3rem; overflow-x: auto; scrollbar-width: none; flex: 1 1 auto; padding: 2px; }
+  .gm-doc-pills::-webkit-scrollbar { display: none; }
+  .gm-doc-pills button { flex: none; border: 1px solid rgba(128, 128, 128, 0.25); background: transparent; color: var(--hfa-muted); border-radius: 999px; padding: 0.3rem 0.85rem; font-size: 0.76rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
+  .gm-doc-pills button.active { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-arrow { flex: none; width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid rgba(128, 128, 128, 0.3); background: transparent; color: var(--hfa-body); font-size: 1.2rem; line-height: 1; cursor: pointer; }
+  .gm-doc-arrow:hover { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-pane { display: none; animation: gm-fade 0.18s ease-out; }
+  .gm-doc-pane.active { display: block; }
+  @keyframes gm-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  .gm-doc-hook { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1.2; color: var(--hfa-accent); margin-bottom: 0.4rem; }
+  .gm-doc-headline { font-size: 1rem; font-weight: 600; line-height: 1.45; margin: 0 0 0.7rem; }
+  .gm-doc-p { font-size: 0.9rem; line-height: 1.55; margin: 0 0 0.7rem; }
+  .gm-doc-note { font-size: 0.76rem; color: var(--hfa-muted); line-height: 1.45; margin: 0 0 0.6rem; }
+  .gm-doc-prose { font-size: 0.9rem; line-height: 1.6; max-width: 60rem; }
+  .gm-doc-prose h2 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 1rem 0 0.3rem; }
+  .gm-doc-prose h3 { font-size: 0.9rem; margin: 0.8rem 0 0.2rem; }
+  .gm-doc-prose p { margin: 0 0 0.6rem; }
+  .gm-doc-prose ul { padding-left: 1.2rem; }
+  .gm-doc-k { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 0.9rem 0 0.35rem; }
+  .gm-doc-box > .gm-doc-k:first-child, .gm-doc-col > .gm-doc-k:first-child { margin-top: 0; }
+  .gm-doc-verdicts { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.2rem 0 0.7rem; }
+  .gm-doc-verdicts.wrap .badge { white-space: normal; text-align: left; }
+  .gm-doc-verdicts .badge b { color: inherit; }
+  .gm-doc-vs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 0.4rem; }
+  .gm-doc-col { padding: 0.75rem 0.9rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); font-size: 0.9rem; line-height: 1.5; }
+  .gm-doc-col.plan { border-left: 3px solid var(--hfa-accent); }
+  .gm-doc-col.game { border-left: 3px solid var(--hfa-good); }
+  .gm-doc-col.game .gm-doc-k { color: var(--hfa-good); }
+  .gm-doc-col p, .gm-doc-box p { margin: 0 0 0.45rem; font-size: 0.88rem; line-height: 1.5; }
+  .gm-doc-col p:last-child, .gm-doc-box p:last-child { margin-bottom: 0; }
+  .gm-doc p.sub, .gm-doc .went { font-size: 0.8rem; color: var(--hfa-muted); line-height: 1.45; }
+  .gm-doc .went { margin-top: 0.2rem; }
+  .gm-doc-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .gm-doc-three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; }
+  .gm-doc-box { min-width: 0; padding: 0.7rem 0.85rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); }
+  .gm-doc-boxhead { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.4rem; font-size: 0.92rem; }
+  .gm-doc-boxhead b { color: var(--hfa-body); font-weight: 800; }
+  .gm-doc-ul { margin: 0; padding-left: 1.1rem; font-size: 0.86rem; line-height: 1.5; }
+  .gm-doc-ul li { margin-bottom: 0.3rem; }
+  .gm-doc-list { display: flex; flex-direction: column; gap: 0.45rem; }
+  .gm-doc-item { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.45; padding: 0.5rem 0.7rem; border-radius: 10px; background: var(--hfa-tint); border: var(--hfa-hairline); }
+  .gm-doc-item > div { min-width: 0; }
+  .gm-doc-item b { color: var(--hfa-body); }
+  .gm-doc-flag { flex: none; min-width: 5.2rem; text-align: center; border-radius: 6px; padding: 0.2rem 0.45rem; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); margin-top: 0.15rem; }
+  .gm-doc-flag.decisive, .gm-doc-flag.signal, .gm-doc-flag.yes, .gm-doc-flag.held { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-flag.contributed, .gm-doc-flag.mixed, .gm-doc-flag.partly { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .gm-doc-flag.minor, .gm-doc-flag.noise, .gm-doc-flag.no, .gm-doc-flag.broke { background: rgba(255, 31, 47, 0.16); color: var(--hfa-accent); }
+  .gm-doc-flag.defense { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .gm-doc-flag.offense { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-calls { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  .gm-call { min-width: 0; padding: 0.65rem 0.85rem 0.6rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); border-left: 3px solid var(--hfa-muted); }
+  .gm-call.over { border-left-color: var(--hfa-good); } .gm-call.under { border-left-color: var(--hfa-accent); }
+  .gm-call.hit { background: rgba(47, 212, 164, 0.06); } .gm-call.miss { background: rgba(255, 176, 32, 0.06); }
+  .gm-call-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.5rem; font-size: 0.92rem; }
+  .gm-call-side { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .gm-call.over .gm-call-side { color: var(--hfa-good); } .gm-call.under .gm-call-side { color: var(--hfa-accent); }
+  .gm-call .who { color: var(--hfa-body); font-weight: 800; }
+  .gm-call .bet { font-weight: 700; color: var(--hfa-accent); }
+  .gm-call .res { font-weight: 800; font-size: 0.8rem; margin-left: auto; }
+  .gm-call .res.hit { color: var(--hfa-good); } .gm-call .res.miss { color: var(--hfa-bad); } .gm-call .res.void { color: var(--hfa-muted); font-weight: 500; }
+  .gm-call-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem; margin: 0.35rem 0 0.2rem; }
+  .gm-call .prob { font-size: 0.7rem; font-weight: 700; color: var(--hfa-muted); border: 1px solid rgba(128, 128, 128, 0.3); border-radius: 999px; padding: 0.1rem 0.5rem; }
+  .gm-call .rungs { margin: 0.35rem 0 0.4rem; }
+  .gm-call .rung small { font-weight: 500; color: var(--hfa-muted); }
+  .gm-call p.why { font-size: 0.84rem; line-height: 1.45; margin: 0.3rem 0 0.2rem; color: var(--hfa-body); }
+  .gm-call p.ev { font-size: 0.74rem; line-height: 1.4; margin: 0 0 0.15rem; color: var(--hfa-muted); }
+  .gm-doc .legs { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.4rem; }
+  .gm-doc .leg { border-radius: 8px; padding: 0.2rem 0.5rem; font-size: 0.76rem; font-weight: 700; background: rgba(128, 128, 128, 0.14); }
+  .gm-doc .leg em { font-style: normal; font-weight: 500; color: var(--hfa-muted); }
+  .gm-doc .leg i { font-style: normal; font-weight: 800; }
+  .gm-doc .leg.hit { background: rgba(47, 212, 164, 0.16); } .gm-doc .leg.hit i { color: var(--hfa-good); }
+  .gm-doc .leg.miss { background: rgba(255, 176, 32, 0.16); } .gm-doc .leg.miss i { color: var(--hfa-bad); }
+  .gm-doc-gradehead { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+  .gm-grade { flex: none; display: flex; align-items: center; gap: 0.6rem; padding: 0.4rem 0.9rem 0.4rem 0.6rem; border-radius: 14px; border: 2px solid var(--hfa-muted); background: var(--hfa-tint); }
+  .gm-grade b { font-size: 2.6rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .gm-grade span { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); line-height: 1.3; }
+  .gm-grade.good { border-color: var(--hfa-good); } .gm-grade.good b { color: var(--hfa-good); }
+  .gm-grade.warn { border-color: var(--hfa-bad); } .gm-grade.warn b { color: var(--hfa-bad); }
+  .gm-grade.bad { border-color: var(--hfa-accent); } .gm-grade.bad b { color: var(--hfa-accent); }
+  .gm-doc-gradetext { flex: 1 1 20rem; min-width: 0; }
+  .gm-doc-gradetext .gm-doc-verdicts { margin-bottom: 0; }
+  .hfa .gm-doc-table { font-size: 0.8rem; }
+  .hfa .gm-doc-table th, .hfa .gm-doc-table td { padding: 0.25rem 0.4rem; }
+  .hfa .gm-doc-table b { color: var(--hfa-body); }
+  .hfa .gm-doc-table td.meter { width: 5rem; }
+  .hfa .gm-doc-table td.meter i { display: block; height: 4px; border-radius: 2px; background: var(--hfa-good); }
+  .hfa .gm-doc-table td.meter i.bad { background: var(--hfa-bad); }
+  .gm-doc-tl { position: relative; padding-left: 1rem; border-left: 2px solid rgba(128, 128, 128, 0.25); display: flex; flex-direction: column; gap: 0.7rem; }
+  .gm-doc-tp { position: relative; font-size: 0.88rem; line-height: 1.45; }
+  .gm-doc-tp::before { content: ""; position: absolute; left: -1.4rem; top: 0.45rem; width: 10px; height: 10px; border-radius: 50%; background: var(--hfa-accent); box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.25); }
+  .gm-doc-tp .clock { font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-accent); }
+  @media (max-width: 1100px) { .gm-doc-three { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 760px) {
+    .gm-doc > summary { padding: 0.85rem 16px; gap: 0.6rem; flex-wrap: wrap; }
+    .gm-doc-main { flex: 1 1 0; }
+    .gm-doc-lead { font-size: 0.98rem; }
+    .gm-doc-chips { justify-content: flex-start; flex: 0 0 100%; padding-left: 2.6rem; }
+    .gm-doc-body { padding: 0.6rem 16px 1rem; }
+    .gm-doc-hook { font-size: 1.2rem; }
+    .gm-doc-vs, .gm-doc-two, .gm-doc-three, .gm-doc-calls { grid-template-columns: 1fr; }
+    .gm-doc-arrow { display: none; }
+    .gm-doc-flag { min-width: 4.4rem; font-size: 0.56rem; }
+  }
   @media (prefers-reduced-motion: reduce) { #hfa-rain { opacity: calc(var(--hfa-rain) * 0.5); } }
 </style>
 
@@ -821,7 +941,7 @@
     <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
   </div>
   <main>
-<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#away" data-sec="away">WAS offense</a><a href="#home" data-sec="home">SF offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
+<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#doc-sec" data-sec="doc">Plan vs game</a><a href="#away" data-sec="away">WAS offense</a><a href="#home" data-sec="home">SF offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
 
 <div class="hfa-card hfa-hero hfa-sec gm-hero" id="hero" data-sec="hero" style="--gm-away: #5A1414; --gm-home: #AA0000;">
   <div class="gm-hero-top">
@@ -848,6 +968,481 @@
     <span class="gm-chip final"><i>final</i> <b>WAS 17 &ndash; 23 SF</b></span>
     <span class="gm-chip " title="Natural grass. Passing is the same on grass and turf; rushing runs about 3.5% higher on turf (+3.7 yards a team) and a catch gains a tenth of a yard more after it. Points, the closing lines and the engine show no surface effect, so it is not an engine input."><i>field</i> <b>grass</b></span><span class="gm-chip " title="Forecast for the kickoff window, as of Mon 4:55 PM Denver. Wind above 10 mph trims the passing projection."><i>forecast</i> <b>59°F · wind 9 mph</b></span>
   </div>
+</div>
+
+<div class="hfa-sec" id="doc-sec" data-sec="doc">
+
+<details class="hfa-card gm-doc st-both" id="doc">
+  <summary class="gm-doc-bar">
+    <span class="gm-doc-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="gm-doc-main">
+      <span class="gm-doc-eyebrow">The plan against the game &middot; plan Sun Oct 18, 9:28 AM &middot; report Tue Oct 20, 10:52 AM</span>
+      <span class="gm-doc-lead">Daniels escapes a Niners front with no Bosa. Kittle eats near the goal line.</span>
+    </span>
+    <span class="gm-doc-chips">
+      <span class="badge warn">script partly held</span>
+      <span class="badge good">4 hit</span><span class="badge bad">7 missed</span>
+      <span class="badge good" title="Projection grade: team volume and yardage, player lines, and the market calls the projection implied">projection B &middot; 69</span>
+      <span class="gm-doc-open">open</span>
+    </span>
+  </summary>
+  <div class="gm-doc-body">
+    <div class="gm-doc-nav">
+      <button type="button" class="gm-doc-arrow" data-dir="-1" aria-label="Previous section">&#8249;</button>
+      <div class="gm-doc-pills" role="tablist"></div>
+      <button type="button" class="gm-doc-arrow" data-dir="1" aria-label="Next section">&#8250;</button>
+    </div>
+
+    
+    
+    <section class="gm-doc-pane" data-title="Plan vs game">
+      <div class="gm-doc-verdicts">
+        <span class="badge warn" title="Whether the game went the way the plan's script described, for the reasons it gave">script partly held</span>
+        <span class="badge mute">followed the favorite&#x27;s path</span>
+        <span class="badge good" title="Both teams ran 121 plays; the league's figure for two teams was 121.5">pace: called average, played average</span>
+        <span class="badge good" title="SF passed on 52% of its plays; its season rate entering the game was 51%">SF: called balanced, played balanced</span><span class="badge good" title="WAS passed on 72% of its plays; its season rate entering the game was 54%">WAS: called pass, played pass</span>
+      </div>
+      <div class="gm-doc-vs">
+        <div class="gm-doc-col plan"><div class="gm-doc-k">The plan said</div><p>San Francisco should win this through the air and inside the 20 while Washington&#x27;s run game gets walled off — and Jayden Daniels&#x27; legs are the one Commanders lever that pays either way.</p><p class="sub">San Francisco should lead early and often, with its scoring coming from short fields and red-zone finishing rather than a long-yardage avalanche — its plays-per-game is the lowest in the dossier. Washington can move the ball between the 20s against a bend defense but has been stalling inside it all year, and its pre-snap penalties keep creating the long downs this secondary eats. Expect the Commanders&#x27; pass rate to climb past 65% once they trail, with a meaningful chunk of their yardage coming on Daniels scrambles against a 49ers edge rotation missing Bosa, Height and Greenlaw. Washington&#x27;s rushing attack, with Croskey-Merritt out, is the likeliest thing in this game to go nowhere.</p></div>
+        <div class="gm-doc-col game"><div class="gm-doc-k">What happened</div><p>San Francisco led wire to wire, went up 20-3 by halftime and then stopped scoring, and Washington&#x27;s two-touchdown fourth-quarter chase got it to 23-17 — SF won but failed to cover the 7.5, and 40 points landed well under the 51.5, exactly as the model&#x27;s three market calls said. The projection&#x27;s team shapes broke in one direction: Washington threw 40 times for 300 yards and ran 17 times for 53, the mirror image of the 32.5/27.5 split it was given.</p><p class="sub">The plan read the shape of the game almost perfectly: SF leading early on passing and red-zone finishing, Washington&#x27;s ground game going nowhere, pass rate climbing past 65% once behind, average pace. Where it broke was the single mechanism it leaned on hardest for Washington — Daniels&#x27; legs against a Bosa-less edge — which inverted completely: SF&#x27;s front generated 28.9% sack-or-hit and Daniels ran four times for ten yards while throwing for 300, the exact opposite of the U1/D6 pairing. The second miss was directional on penalties: the plan expected WAS pre-snap flags against a clean SF, and got one WAS pre-snap flag against 11 SF accepted penalties for 88 yards. The scramble inversion is a real read (pressure, not script, killed it); the penalty inversion is almost certainly the bounce given SF&#x27;s 1.8 flags-per-game input.</p><p class="sub"><b>The script:</b> The favorite path is on the page: SF stayed balanced (checks: 51.7% pass rate vs a 0.511 season rate, &#x27;balanced&#x27; held), McCaffrey and Juszczyk held the clock on a 16-play, 6:13 drive to end the half, three of four red-zone trips became touchdowns, and the margin reached two scores by the 6:01 mark of Q3. Washington&#x27;s lean held too — 72.1% pass rate against a 53.7% season rate — and pace landed at 121 plays against a 121.5 league figure. What did not hold is the stated engine of Washington&#x27;s side: its yardage was supposed to come from Daniels scrambles, and instead came from 300 passing yards while he was sacked four times, and the &#x27;margin gets to two scores and the attempts come down&#x27; ending nearly produced a cover for the dog at the SF 17 with 2:00 left.</p></div>
+      </div>
+      
+      <div class="gm-doc-k">What the plan said would swing it</div>
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag decisive">decisive</span><div>Mike Evans&#x27; status — DNP all week with ribs and an Achilles; without him Kittle and the backs absorb nearly all of SF&#x27;s targets.<div class="went"><b>Went:</b> Evans dressed, played 40.3% of snaps, and produced 94 yards on 5 targets with a 39.4% air-yards share — the 24-yard conversion on the opening drive and the 54-yarder at 8:43 of Q1 set up SF&#x27;s first 13 points.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Washington&#x27;s pre-snap flags (3.0 a game vs a 1.55 league rate) against a 49ers defense that commits the second-fewest penalties in football.<div class="went"><b>Went:</b> It ran the other way: WAS committed one pre-snap flag of its seven (66 yards), while SF took 11 for 88 including three pre-snap, roughing the passer on WAS&#x27;s TD drive (Q4 9:53), illegal contact negating an 11-yard sack (Q4 3:01) and delay plus fair-catch interference on the 1:00 punt.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag decisive">decisive</span><div>Red-zone split: Washington concedes touchdowns on 82.4% of trips, San Francisco scores them on 83.3% of its own.<div class="went"><b>Went:</b> The split held exactly as written: SF 3 TD and a FG on 4 trips (+0.253 EPA inside the 20), WAS 2 TD on 4 trips with two turnovers on downs and -0.408 EPA — the 6-point margin is that gap.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Daniels&#x27; scrambles against an edge group without Bosa, Height and Greenlaw — the Commanders&#x27; most reliable yardage source.<div class="went"><b>Went:</b> The lever never existed: 3 scrambles for 11 yards against 4 sacks for -39 and 9 QB hits, a 28.9% pressure rate from an edge/interior rotation missing Bosa. Its absence is a chunk of why WAS needed fourth downs.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag minor">minor</span><div>Takeaways: Washington&#x27;s only route to 20+ in two of its wins was short fields off turnovers.<div class="went"><b>Went:</b> Washington got the one takeaway the plan asked for — Luvu on McCaffrey&#x27;s fumble at the WAS 19, Q2 9:11 — and promptly went four plays, 8 yards, punt. No short field was converted.</div></div></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">Each offense: expected &middot; happened</div>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>SF</b><span class="badge good">held</span></div><p><b>Expected:</b> Pass rate near 52-56%, 28-33 attempts, McCaffrey 13-16 carries at a pedestrian clip plus 4-6 targets, and Kittle as the leading target with the receiver room gutted. The points arrive as touchdowns rather than field goals.</p><p><b>Happened:</b> 54.8% dropback rate (within the 52-56% call), 29 attempts (28-33), McCaffrey 16 carries at 4.0 ypc, Kittle the leading target at 8. Only the McCaffrey target count (10, not 4-6) and the form of the scoring (two McCaffrey goal-line runs rather than through the air) diverged.</p></div><div class="gm-doc-box"><div class="gm-doc-boxhead"><b>WAS</b><span class="badge warn">partly</span></div><p><b>Expected:</b> 32-36 attempts with the pass rate climbing past 65% once behind, 9-12 Daniels carries including scrambles, White in the 10-13 carry range for modest yardage, and target volume spread McLaurin/Diggs/Williams/Okonkwo with little separation.</p><p><b>Happened:</b> The pass rate call nailed it (70.3%, past 65%) but the attempts overshot (40 vs 32-36), Daniels had 4 carries not 9-12, and White got 7 carries not 10-13. The target spread was right — Okonkwo 7, Diggs 7, Burks 6, Williams 4 — though McLaurin&#x27;s first-quarter injury, not design, caused the distribution.</p></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">For the next plan on these teams</div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="badge mute">WAS</span><div>Price Daniels&#x27; rushing off the opponent&#x27;s realized pressure, not the opponent&#x27;s missing edge rusher. With 4 sacks and 9 hits he had 4 carries and 10 yards, and his passing volume absorbed everything — the two props are inversely linked, so a plan should not take the over on both legs&#x27; logic at once.</div></div><div class="gm-doc-item"><span class="badge mute">WAS</span><div>The trailing profile is now specific: ~70% pass rate, ~40 attempts, carries near 17, pass-catchers spread four deep. Project the team&#x27;s pass-catcher yardage upward and its touchdown props downward — four red-zone trips produced two touchdowns and two turnovers on downs, and that finishing gap has now appeared in three of six weeks.</div></div><div class="gm-doc-item"><span class="badge mute">SF</span><div>Stop treating &#x27;no pass rush&#x27; as given. Without Bosa the front still produced a 28.9% sack-or-hit rate with Odighizuwa, Williams, Halton, Height and White sharing it — the week 3-4 tag was two games of opponents getting the ball out, not a structural hole.</div></div><div class="gm-doc-item"><span class="badge mute">SF</span><div>Do not over-react to the 11 penalties for 88 yards; the season input is 1.8 flags a game and the pre-snap subset was 3. Note it as variance, but the second-half shutdown (19 plays, -0.219 EPA, three punts) with a 20-3 lead is the thing worth carrying — it is why a dog covered a 7.5.</div></div></div>
+      
+    </section>
+    
+
+    
+    
+    <section class="gm-doc-pane" data-title="The script">
+      <div class="gm-doc-verdicts">
+        <span class="badge mute" title="Plays and tempo">average pace</span>
+        <span class="badge acc" title="Their own tendency is run-lean when ahead (46% pass rate in week 4), but Washington&#x27;s front is the one unit that stops backs, and with Deebo out and Evans doubtful the easy yards are Kittle and checkdowns, not carries.">SF balanced</span><span class="badge acc" title="Above their 53.7% season pass rate: a touchdown-plus deficit plus their lead back out pushes them toward the 67-72% rates they ran while trailing in weeks 4 and 5.">WAS pass</span>
+        <span class="badge mute">medium confidence</span>
+      </div>
+      <p class="gm-doc-p">San Francisco should lead early and often, with its scoring coming from short fields and red-zone finishing rather than a long-yardage avalanche — its plays-per-game is the lowest in the dossier. Washington can move the ball between the 20s against a bend defense but has been stalling inside it all year, and its pre-snap penalties keep creating the long downs this secondary eats. Expect the Commanders&#x27; pass rate to climb past 65% once they trail, with a meaningful chunk of their yardage coming on Daniels scrambles against a 49ers edge rotation missing Bosa, Height and Greenlaw. Washington&#x27;s rushing attack, with Croskey-Merritt out, is the likeliest thing in this game to go nowhere.</p>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-k">If the favorite wins</div><p>SF stays balanced early, lets McCaffrey and Juszczyk hold the clock, and converts three or four red-zone trips into touchdowns against the league&#x27;s worst finishing defense. Kittle and the backfield soak up the targets a gutted receiver room leaves behind; the margin gets to two scores by the third quarter and the attempts come down.</p></div>
+        <div class="gm-doc-box"><div class="gm-doc-k">If the underdog wins</div><p>Washington keeps it clean — no false starts, no drive-killers — and Daniels&#x27; legs turn third-and-long into first downs against a front with no closer. A takeaway or two (the formula from week 3 against Seattle) buys the short fields its offense has needed all season to reach 20+, and a 7.5-point dog hangs around into the fourth.</p></div>
+      </div>
+      
+      <div class="gm-doc-prose"><h2>The read</h2>
+<p>San Francisco by a touchdown-plus is the right shape, but the paths to each side's points are narrow and specific. Washington's defense has one real strength — it holds the run (9th in rush EPA allowed, 2nd in fantasy points allowed to backs, 3.91 yards a carry) — and one glaring hole: it gives up a touchdown on 82.4% of opponent red-zone trips, 31st in the league, and ranks 30th against tight ends and 29th in pass yards allowed. San Francisco finishes at an 83.3% clip inside the 20 and is the league's most efficient red-zone offense. That collision, not yardage, is where the 30 implied points come from. Washington, chasing with its lead back out, meets a defense ranked 3rd in EPA allowed, 3rd in yards per attempt and 3rd in pass success allowed — but with no pass rush left (Bosa out a fourth straight week, Height did not practice, Greenlaw suspended). That is the exact profile that turns Jayden Daniels into a runner.</p>
+<h2>Why</h2>
+<p>SF's receiver room is down to Kittle, McCaffrey, Cooks, Cowing and Watkins; Deebo is out, Evans did not practice all week. So the target tree concentrates on Kittle (92% of snaps in each of the last two weeks) against the league's 30th-ranked tight-end defense, and short-field throws become the scoring mechanism because Washington's front takes away the goal-line run. On the other side, Washington's own offense has negative rush EPA in all five games and leads the league in pre-snap flags (3.0 a game against a 1.55 league rate) — long downs against a secondary that does not allow completions. Daniels' answer all season has been to run: 9 for 103 and two scores in week 5, 7 for 69 in week 2.</p>
+<h2>What would change it</h2>
+<p>Evans and Diggs are both game-time decisions; Kirk may be activated. If Washington wins the turnover battle the way it did against Seattle in week 3, this becomes a one-score game and the under-script calls break.</p></div>
+    </section>
+    <section class="gm-doc-pane" data-title="Offenses">
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>SF offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>The most efficient offense in the dossier on a small number of snaps: 8.42 yards per attempt, 0.143 field EPA per play, 69% completions, and only 56.8 plays a game. It scores in three plays, not twelve.</p>
+          <div class="gm-doc-k">How it scores</div><p>Explosive passing on low volume (5 and 6 passes of 20+ in weeks 2 and 3) plus near-perfect red-zone finishing — 83.3% touchdowns per trip, with McCaffrey at the goal line and Kittle as the short-field target.</p>
+          <div class="gm-doc-k">What stops it</div><p>Their own run game is not the efficiency engine the yardage implies (negative rush EPA in weeks 2-5), and the offense is leveraged to a couple of chunk throws — take away YAC and they stall, as they did for 34 minutes against Denver in week 4.</p>
+          <div class="gm-doc-k">This matchup</div><p>Washington stops the run (9th in rush EPA allowed, 2nd in fantasy points to backs, 8th in rush yards allowed) and gives up everything else: 29th in pass yards allowed, 30th against tight ends, 31st in red-zone touchdown rate conceded. This is a passing and finishing game for San Francisco, not a ground game.</p>
+          <div class="gm-doc-k">Injuries</div><p>Deebo Samuel out (hamstring), Mike Evans questionable after not practicing all week with ribs and an Achilles — RotoBaller on Saturday had him &#x27;on the wrong side of questionable&#x27;; Robinson, Pearsall, Stribling and Kirk all on IR (Kirk may be activated per Shanahan Saturday), and KhaDarel Hodge was released after a 56% snap game in week 3. That leaves Kittle, McCaffrey and Cooks/Cowing/Watkins. Washington&#x27;s defense is without Chenal and Omenihu with Kinlaw and Chaisson not practicing — less interior push on an already-quiet rush.</p>
+          <div class="gm-doc-k">Expect</div><p>Pass rate near 52-56%, 28-33 attempts, McCaffrey 13-16 carries at a pedestrian clip plus 4-6 targets, and Kittle as the leading target with the receiver room gutted. The points arrive as touchdowns rather than field goals.</p>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>WAS offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>A volume offense that does not finish: 64 plays a game, 6.08 yards per attempt, 58.6% completions, negative rush EPA in all five games, and a league-worst pre-snap penalty rate (3.0 a game vs 1.55 league).</p>
+          <div class="gm-doc-k">How it scores</div><p>Daniels&#x27; legs and short fields. He ran 9 times for 103 and two touchdowns in week 5; the week-3 win over Seattle came off three takeaways, not offense.</p>
+          <div class="gm-doc-k">What stops it</div><p>Third down and their own flags — 5-of-15, 8-of-15, 3-of-14, 2-of-16 across the first four weeks, with an 87-yard touchdown wiped out by an illegal shift in week 4. The run game has never produced positive EPA.</p>
+          <div class="gm-doc-k">This matchup</div><p>San Francisco is 3rd in EPA allowed, 3rd in yards per attempt, 3rd in pass success allowed and 7th in rush EPA allowed — and commits the second-fewest penalties in the league, so none of the free yards Washington has been handed elsewhere show up here. What SF does not do is rush the passer: 18th in pressure generated, with Bosa out a fourth straight game, Height not practicing and Judon released. Upton Stout (2nd percentile in his group) is the one chartable coverage hole, and he&#x27;s questionable.</p>
+          <div class="gm-doc-k">Injuries</div><p>Croskey-Merritt out (groin) hands the backfield to White and Ekeler; Mariota out, so Kaliakmanis is the backup. McLaurin (hamstring) and Burks (shoulder) carry no designation and will play; Diggs is questionable but practiced limited Friday and Saturday and is trending to go. Laremy Tunsil is on IR at tackle — not in any projection, and a reason to temper any efficiency read on this offense&#x27;s protection.</p>
+          <div class="gm-doc-k">Expect</div><p>32-36 attempts with the pass rate climbing past 65% once behind, 9-12 Daniels carries including scrambles, White in the 10-13 carry range for modest yardage, and target volume spread McLaurin/Diggs/Williams/Okonkwo with little separation.</p>
+        </div>
+        
+      </div>
+    </section>
+    <section class="gm-doc-pane" data-title="The calls">
+      <p class="gm-doc-note">Each call is one player, one market, one side of the line Kalshi quoted when the plan was written; graded off the box score, with the report's read of whether the reason given showed up. The rungs are the same call down the Kalshi ladder, Edge halfway to its last rung and Edge+ the last, at Kalshi's last pregame price.</p>
+      <div class="gm-doc-verdicts"><span class="badge mute">Normal <b class="up">4</b>&ndash;<b class="down">7</b></span><span class="badge mute">Edge <b class="up">6</b>&ndash;<b class="down">5</b></span><span class="badge mute">Edge+ <b class="up">9</b>&ndash;<b class="down">2</b></span></div>
+      <div class="gm-doc-calls">
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Jayden Daniels</b><span class="flat">WAS</span>
+            <span class="bet">over 39.5 rush yds</span>
+            <span class="res miss">&#10007; 10</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">high</span>
+            <span class="badge bad" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #7 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 74%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 48%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> over 39.5 rush yds <small>50&cent;</small></span><span class="rung miss"><i>Edge</i> 25+ rush yds <small>74&cent;</small></span><span class="rung miss"><i>Edge+</i> 15+ rush yds <small>88&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Miss at 10 rush yards. The stated mechanism — open scramble lanes without Bosa — never appeared: SF got to him on 28.9% of dropbacks and he took 4 sacks; he also was not the short-yardage runner (McNichols took 5 carries).</p>
+          <p class="why">No Bosa, no Greenlaw and a thin edge rotation means open scramble lanes, and with their lead back out he is the short-yardage runner they trust while chasing points.</p>
+          <p class="ev">Week 5 vs NYG: 9 carries, 103 yards, 2 rushing TDs; week 2 at DAL 7 for 69 before exiting. SF generates pressure at the 18th rate and Bosa misses a fourth straight game; Height did not practice, Greenlaw suspended.</p>
+          <p class="ev">vs #7 rush EPA allowed — that rank is built on designed runs by backs, not quarterback scrambles, and the defenders who made it are the ones missing. The model is far above the line; the exchange prices it near a coin flip.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Antonio Williams</b><span class="flat">WAS</span>
+            <span class="bet">over 1.5 receptions</span>
+            <span class="res hit">&#10003; 3</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #9 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 69%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 60%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal / Edge / Edge+</i> over 1.5 receptions <small>66&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Hit at 3 receptions on 4 targets with a 67.2% snap share, exactly the trailing-script underneath role the plan described, including the 23-yard conversion at Q4 9:53 that set up the touchdown.</p>
+          <p class="why">A touchdown-plus deficit pushes Washington into the throwing rate it ran in weeks 4 and 5, and he has held a two-thirds snap share through both of those games as the underneath option.</p>
+          <p class="ev">Snap share 69% (wk4) and 68% (wk5); 8 targets vs IND, 3-of-3 vs NYG. WAS trailing pass rates: 71.8% (wk4), 67.1% allowed-state in wk5. Engine has him near three catches against a line of one and a half.</p>
+          <p class="ev">vs #9 pass EPA allowed — the call is volume in a forced script, not efficiency; the exchange sits under the model&#x27;s catch count.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">George Kittle</b><span class="flat">SF</span>
+            <span class="bet">to score</span>
+            <span class="res hit">&#10003; 1</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on EPA allowed entering the week (#1 toughest)">D #23 EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 39%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 46%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal / Edge / Edge+</i> to score <small>46&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Hit — 11-yard touchdown on the opening drive, 8 targets and an 88.7% snap share as the short-field target with the receiver room thin, the mechanism as written.</p>
+          <p class="why">Washington gives up touchdowns on nearly every trip inside its 20 and is among the softest in the league against tight ends; with the receiver room gutted he is the short-field target.</p>
+          <p class="ev">Kittle: 4 TDs in weeks 2-4 on 92% and 91% snap shares; WAS allows 82.4% red-zone TD rate (31st) and 22.2 fantasy points a game to TEs (30th). SF converts 83.3% of its own trips.</p>
+          <p class="ev">vs #23 EPA allowed and #31 red-zone TD rate allowed. This rests on the finishing half of the split, not on yardage; anytime_td calls are 8-for-12 on the season.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Jayden Daniels</b><span class="flat">WAS</span>
+            <span class="bet">to score</span>
+            <span class="res miss">&#10007; 0</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">low</span>
+            <span class="badge bad" title="The opposing defense's league rank on EPA allowed entering the week (#1 toughest)">D #3 EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 38%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 26%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal / Edge / Edge+</i> to score <small>28&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Miss. He took 4 carries all game and neither WAS touchdown was his; both goal-line looks the plan imagined belonged to SF, and WAS&#x27;s scores came on 1- and 9-yard throws.</p>
+          <p class="why">With their starting back out, the short-yardage runner in this offense is the quarterback — he took both goal-line scores himself last week.</p>
+          <p class="ev">2 rushing TDs in week 5 on 9 carries; White has one rushing TD in four games and Ekeler is the passing-down back. WAS projected for roughly 27 carries.</p>
+          <p class="ev">vs #3 EPA allowed and #10 red-zone TD rate allowed — the rank binds on efficiency, so this is purely a who-gets-the-carry read; the exchange is well below the model.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Brock Purdy</b><span class="flat">SF</span>
+            <span class="bet">over 2.5 pass TDs</span>
+            <span class="res miss">&#10007; 1</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">efficiency</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #22 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 35%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 40%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> over 2.5 pass TDs <small>39&cent;</small></span><span class="rung miss"><i>Edge</i> 2+ pass TDs <small>68&cent;</small></span><span class="rung hit"><i>Edge+</i> 1+ pass TDs <small>92&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Miss at 1 pass TD. SF did finish (3/4 red zone) but did it on the ground — McCaffrey twice from the 1 on left guard — which directly contradicts the &#x27;the scores have to come through the air&#x27; reasoning against a run-stopping front.</p>
+          <p class="why">San Francisco finishes almost everything inside the 20 and Washington concedes it; with the Commanders&#x27; front built to stop the run, the scores have to come through the air.</p>
+          <p class="ev">SF red-zone TD rate 83.3% (5-of-5 wk2, 3-of-3 wk3, 3-of-3 wk5); WAS allows 82.4% per trip, 31st, and has conceded only two rushing TDs all year with the 8th-fewest rush yards. SF implied 30 points.</p>
+          <p class="ev">vs #22 pass EPA allowed. An efficiency call and labeled as such — the weaker kind — but pass_tds calls are 8-for-13 this season and the exchange prices it below the model on the finishing split.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Rachaad White</b><span class="flat">WAS</span>
+            <span class="bet">under 49.5 rush yds</span>
+            <span class="res hit">&#10003; 27</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #7 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 71%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 55%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 49.5 rush yds <small>58&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;60 rush yds <small>69&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;70 rush yds <small>78&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Hit at 27 rush yards. Exactly the mechanism: 7 carries for -0.25 rush EPA against a front that gave nothing, and the chasing script turned his work into 4 receptions for 30 and a receiving touchdown.</p>
+          <p class="why">He inherits the lead role but meets the one front that smothers backs, and a chasing script turns his touches into checkdowns instead of carries.</p>
+          <p class="ev">White&#x27;s season high is 43 yards on 7-8 carries a game; SF allows 3.67 yards a carry and 97.6 rush yards a game. WAS has negative rush EPA in all five games.</p>
+          <p class="ev">vs #7 rush EPA allowed. The model is well under the line while the exchange sits near even — note our unders against top-10 defenses are the weakest bucket this season (43%), so this is sized accordingly.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Christian McCaffrey</b><span class="flat">SF</span>
+            <span class="bet">under 99.5 rush+rec yds</span>
+            <span class="res miss">&#10007; 117</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #9 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 68%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 44%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 99.5 rush+rec yds <small>42&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;125 rush+rec yds <small>66&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;150 rush+rec yds <small>83&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Miss at 117. Washington&#x27;s front did not smother him (16 carries, 64 yards, +5.41 rush EPA) and his receiving work was not checkdown-sized — 10 targets, 9 catches, 53 yards, 46 of it YAC.</p>
+          <p class="why">Washington&#x27;s front is its one good unit, and San Francisco still gives away a handful of carries a week; his receiving work has been checkdown-sized all season.</p>
+          <p class="ev">Rushing by week: 68, 23, 75, 52, 68 — never past 75. Black has taken 6 carries in each of the last two games. WAS allows the 2nd-fewest fantasy points to backs and the 8th-fewest rush yards.</p>
+          <p class="ev">vs #9 rush EPA allowed. The exchange implies a comfortable over; the model is a dozen yards under the line. Same top-10 caveat as above.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Mike Evans</b><span class="flat">SF</span>
+            <span class="bet">under 69.5 rec yds</span>
+            <span class="res miss">&#10007; 94</span>
+            <span class="badge warn">read held · result didn&#x27;t</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">low</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #22 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 50%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 49%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 69.5 rec yds <small>57&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;120 rec yds <small>91&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;160 rec yds <small>98&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Miss at 94 yards, but the reasoning held: he played a snap count (40.3%) and saw only 5 targets. The number died to two deep shots (54 and 24) worth 99 air yards, not to volume.</p>
+          <p class="why">Ribs and an Achilles kept him off the practice field all week and he is a game-time decision; even if he dresses, he plays on a snap count.</p>
+          <p class="ev">FantasyPros early Sunday: questionable, unable to practice through Friday. RotoBaller Saturday cited Larry Krueger that he looks &#x27;on the wrong side of questionable&#x27;. He played 33% of snaps the last time he suited up hurt (week 3).</p>
+          <p class="ev">vs #22 pass EPA allowed — a soft matchup he may not be healthy enough to use. The exchange prices him as a full-go starter. Void risk if he is ruled inactive.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Chig Okonkwo</b><span class="flat">WAS</span>
+            <span class="bet">under 24.5 rec yds</span>
+            <span class="res miss">&#10007; 69</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #9 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 49%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 50%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 24.5 rec yds <small>51&cent;</small></span><span class="rung miss"><i>Edge</i> &lt;50 rec yds <small>83&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;80 rec yds <small>97&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Miss at 69. He was targeted 7 times and caught all 7 on a 76.1% snap share — SF neither limited the tight end nor did WAS rotate him out; 34 YAC says he was the pressure valve all night.</p>
+          <p class="why">San Francisco is one of the stingiest defenses in football against tight ends and Washington still rotates three of them through the formation.</p>
+          <p class="ev">SF allows 8.16 fantasy points a game to TEs (4th) and ranks 3rd in pass success allowed. Okonkwo: 16, 5 and 60 yards in three games; Bates and Sinnott still take snaps.</p>
+          <p class="ev">vs #9 pass EPA allowed and #4 in points allowed to tight ends — the one position where points-allowed-to-position carries real signal. Model and exchange both sit roughly at the line, so this is the matchup breaking the tie.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Brock Purdy</b><span class="flat">SF</span>
+            <span class="bet">under 0.5 INTs</span>
+            <span class="res hit">&#10003; 0</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #22 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 48%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 54%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 0.5 INTs <small>58&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;2 INTs <small>87&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;3 INTs <small>97&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Hit. Purdy threw 29 times, led from 10:58 of the first quarter onward, and the attempts came down to 19 second-half plays — exactly the lead-protecting profile the call described.</p>
+          <p class="why">A home favorite of more than a touchdown throws fewer risky balls late — the attempts come down with a lead, and that is where picks live.</p>
+          <p class="ev">SF implied 30 points, -470 on the moneyline; Purdy has 2 INTs in five games and SF&#x27;s offensive INT rate is 1.4% against a Washington defense generating 1.6%.</p>
+          <p class="ev">vs #22 pass EPA allowed. This is a script call on volume: the 1+ interception rung is the model&#x27;s weakest number and runs 3-4 points high on a typical quarterback, most of all for big favorites.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Jayden Daniels</b><span class="flat">WAS</span>
+            <span class="bet">under 199.5 pass yds</span>
+            <span class="res miss">&#10007; 300</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #9 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 46%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 45%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 199.5 pass yds <small>44&cent;</small></span><span class="rung miss"><i>Edge</i> &lt;275 pass yds <small>83&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;350 pass yds <small>98&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Miss at 300. Both halves of the mechanism failed: WAS completed 29 of 40 with +17.6 CPOE against the &#x27;hardest secondary to complete against,&#x27; and the scrambles that were supposed to eat dropbacks produced 11 yards.</p>
+          <p class="why">This secondary is the hardest in the league to complete against efficiently, and his own answer to a quiet pass rush is to take off — scrambles that eat into dropbacks.</p>
+          <p class="ev">SF allows 6.06 yards per attempt (3rd), ranks 3rd in pass success allowed and 5th in QB production allowed. Daniels: 164 at PHI, 199 vs NYG; WAS&#x27;s own mark is 6.08 Y/A on 58.6% completions.</p>
+          <p class="ev">vs #9 pass EPA allowed. Both the model and the exchange sit above the line; what the blend misses is that his rushing volume comes out of his attempt count in exactly this matchup.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Same-script legs">
+      <p class="gm-doc-note">Legs the same script produces together: they move as one, which is what a same-game parlay pays for.</p>
+      <div class="gm-doc-three">
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Daniels runs, Washington&#x27;s ground game doesn&#x27;t</b></div>
+          <div class="legs"><span class="leg miss">Jayden Daniels <em>over 39.5 rush yds</em> <i>&#10007;</i></span><span class="leg miss">Jayden Daniels <em>under 199.5 pass yds</em> <i>&#10007;</i></span><span class="leg hit">Rachaad White <em>under 49.5 rush yds</em> <i>&#10003;</i></span></div>
+          <p class="sub">One mechanism: a 49ers front that holds the run but cannot finish a rush. Daniels escapes for yardage that never shows up as passing yards, which simultaneously caps his attempts and takes carries away from a back already facing a top-10 run defense.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Niners finish in the red zone</b></div>
+          <div class="legs"><span class="leg hit">George Kittle <em>to score</em> <i>&#10003;</i></span><span class="leg miss">Brock Purdy <em>over 2.5 pass TDs</em> <i>&#10007;</i></span><span class="leg hit">Brock Purdy <em>under 0.5 INTs</em> <i>&#10003;</i></span></div>
+          <p class="sub">Washington concedes a touchdown on better than four of five trips inside its 20 and is 30th against tight ends; with the receiver room gutted those scores funnel to Kittle. The same comfortable scoreboard that produces the touchdowns is the one that keeps Purdy from forcing throws late.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Both backfields squeezed</b></div>
+          <div class="legs"><span class="leg miss">Christian McCaffrey <em>under 99.5 rush+rec yds</em> <i>&#10007;</i></span><span class="leg hit">Rachaad White <em>under 49.5 rush yds</em> <i>&#10003;</i></span></div>
+          <p class="sub">The two fronts in this game are each better against the run than anything else they do — SF 7th and WAS 9th in rush EPA allowed, with WAS also 2nd in production allowed to backs. Both lead backs are priced off volume the matchup does not reward.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    
+    
+
+    
+    <section class="gm-doc-pane" data-title="Projection grade">
+      <div class="gm-doc-gradehead">
+        <div class="gm-grade good"><b>B</b><span>projection<br>grade &middot; 69</span></div>
+        <div class="gm-doc-gradetext">
+          
+          <div class="gm-doc-verdicts"><span class="badge mute">WAS 17 – SF 23</span><span class="badge mute">WAS covered (SF by 7.5)</span><span class="badge mute">Under 51.5 (40)</span><span class="badge mute">teams 63</span><span class="badge mute">player lines 29/46 in range</span><span class="badge mute">market calls 3/3</span></div>
+        </div>
+      </div>
+      
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>SF</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">29.5</td><td class="num"><b>23</b></td><td class="num flat">-6.5</td><td class="meter"><i style="width: 68%" class=""></i></td></tr><tr><td>Pass yds</td><td class="num flat">239.5</td><td class="num"><b>264.0</b></td><td class="num flat">+24.5</td><td class="meter"><i style="width: 84%" class=""></i></td></tr><tr><td>Rush yds</td><td class="num flat">107.3</td><td class="num"><b>126.0</b></td><td class="num flat">+18.7</td><td class="meter"><i style="width: 79%" class=""></i></td></tr><tr><td>Pass att</td><td class="num flat">32.4</td><td class="num"><b>29</b></td><td class="num flat">-3.4</td><td class="meter"><i style="width: 79%" class=""></i></td></tr><tr><td>Carries</td><td class="num flat">26.5</td><td class="num"><b>29</b></td><td class="num flat">+2.5</td><td class="meter"><i style="width: 82%" class=""></i></td></tr>
+          </tbody></table>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>WAS</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">22.0</td><td class="num"><b>17</b></td><td class="num flat">-5</td><td class="meter"><i style="width: 75%" class=""></i></td></tr><tr><td>Pass yds</td><td class="num flat">210.9</td><td class="num"><b>300.0</b></td><td class="num up">+89.1</td><td class="meter"><i style="width: 41%" class="bad"></i></td></tr><tr><td>Rush yds</td><td class="num flat">114.9</td><td class="num"><b>53.0</b></td><td class="num down">-61.9</td><td class="meter"><i style="width: 31%" class="bad"></i></td></tr><tr><td>Pass att</td><td class="num flat">32.5</td><td class="num"><b>40</b></td><td class="num flat">+7.5</td><td class="meter"><i style="width: 53%" class=""></i></td></tr><tr><td>Carries</td><td class="num flat">27.5</td><td class="num"><b>17</b></td><td class="num down">-10.5</td><td class="meter"><i style="width: 25%" class="bad"></i></td></tr>
+          </tbody></table>
+        </div>
+        
+      </div>
+      <div class="gm-doc-verdicts"><span class="badge good">Winner: SF &#10003;</span><span class="badge good">Spread: WAS +7.5 &#10003;</span><span class="badge good">Total: Under 51.5 (proj 51.5) &#10003;</span></div>
+      
+      
+      <div class="gm-doc-k">Why the projection missed &middot; what it got right</div>
+      <p class="gm-doc-p">The grade of 0.694 (B) is carried almost entirely by the market layer — winner SF, WAS +7.5, under 51.5 all cashed (market_score 1.0) — while the team layer (0.626) was dragged down by three &#x27;big&#x27; flags, all on Washington: pass yards 300 vs 210.9, rush yards 53 vs 114.9, carries 17 vs 27.5. The engine blended Washington to a 55.8% pass rate and 62.3 plays; Washington ran 64 plays at a 70.3% pass rate, having trailed for every single snap of the game (0 plays leading, 0 tied). San Francisco&#x27;s side of the projection was close to clean — 29 attempts vs 32.4, 264 pass yards vs 239.5, 126 rush yards vs 107.3, 29 carries vs 26.5 — and only the 29.5 points missed, by 6.5, because SF scored nothing after the 6:01 mark of the third quarter. Player score 0.606 (29 of 46 lines) is the same story: the Washington pass-catcher lines all blew through their projections on volume the model never gave them, and Daniels&#x27; projected 66.7 rush yards became 10.</p>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>WAS</b> &middot; Carries 17 vs 27.5 projected, rush yards 53 vs 114.9<div class="went">Game script plus a dead run game: every WAS snap came while trailing, and the 15 designed runs produced -0.175 EPA/rush with zero 10+ gains; the engine&#x27;s blended 4.17 ypc never got a chance to show, and the one explosive run (McNichols&#x27; 31-yard TD, Q4 4:19) was wiped by a face mask.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>WAS</b> &middot; Pass yards 300 vs 210.9, attempts 40 vs 32.5<div class="went">Volume shift from the deficit (70.3% pass rate vs a 53.7% season rate) compounded by efficiency — 29/40 with CPOE +17.6 and 5/9 on deep balls, against a secondary the model had rated as hard to complete against (opponent allowed Y/A 6.06 entering).</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>WAS</b> &middot; Daniels rush yards 10 vs 66.7, carries 4 vs 11.1<div class="went">Pressure, not script: SF&#x27;s front without Bosa still put him under duress on 28.9% of dropbacks (4 sacks, 9 QB hits), so scramble opportunities became sacks — 3 scrambles for 11 yards against sacks of -6, -3, -12 and -18.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>SF</b> &middot; Points 23 vs 29.5 despite out-gaining the projection<div class="went">Finishing was fine (3 TD and a FG on 4 red-zone trips, RZ EPA +0.253); drive count was the issue — a McCaffrey fumble at the WAS 21 (Q2 9:11, -4.36 EPA), 11 accepted penalties for 88 yards, and three second-half possessions totalling 19 plays at -0.219 EPA/play.</div></div></div></div>
+      <div class="gm-doc-verdicts wrap"><span class="badge good">&#10003; All three market calls: SF to win, WAS +7.5 to cover, under 51.5 (projected total 51.5, actual 40).</span><span class="badge good">&#10003; San Francisco&#x27;s volume profile almost exactly: 29 attempts, 29 carries, 62 plays against 32.4/26.5/60.6, and Purdy&#x27;s 5 carries against 5.2.</span><span class="badge good">&#10003; Kittle&#x27;s 5 receptions on the nose and the tight end as SF&#x27;s leading target; Antonio Williams&#x27; 3 catches on 4 targets against 2.9/4.2.</span><span class="badge good">&#10003; The low team total for Washington relative to its yardage — 22 projected points, 17 actual, with the ball moved far better than the scoreboard suggests.</span></div>
+      
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Turning points">
+      <div class="gm-doc-tl">
+        <div class="gm-doc-tp"><div class="clock">Q1 08:43</div><div class="what"><span class="badge mute">SF</span> Purdy deep right to Mike Evans for 54 to the WAS 18 (EPA +3.46)<div class="went">Evans was a DNP-all-week ribs question and played only 40% of snaps, but his second explosive of the quarter set up the McCaffrey goal-line score that made it 13-3 and established SF&#x27;s lead for all 3,358 seconds it held one.</div></div></div><div class="gm-doc-tp"><div class="clock">Q1 05:42</div><div class="what"><span class="badge mute">SF</span> 4th-and-3 at the WAS 11, Purdy scrambles left tackle for 7 (EPA +3.10)<div class="went">A field goal there makes it 10-3; instead SF kept the drive and scored, the first of two SF fourth-down conversions (2-for-2) against Washington&#x27;s 1-for-4.</div></div></div><div class="gm-doc-tp"><div class="clock">Q2 09:11</div><div class="what"><span class="badge mute">SF</span> McCaffrey catch-and-fumble at the WAS 21, recovered by Luvu (EPA -4.36)<div class="went">The game&#x27;s only turnover and the one time Washington&#x27;s week-3 &#x27;takeaway&#x27; formula appeared — and WAS went four-and-out from its own 19, converting a 7-point swing into nothing.</div></div></div><div class="gm-doc-tp"><div class="clock">Q2 00:18</div><div class="what"><span class="badge mute">SF</span> McCaffrey 1-yard TD capping a 16-play, 89-yard, 6:13 drive<div class="went">Survived two offensive holdings (2:35 wiping a 17-yard McCaffrey run, 1:18) and a 4th-and-1 sneak conversion; made it 20-3 and put the game out of one-score range for two and a half quarters.</div></div></div><div class="gm-doc-tp"><div class="clock">Q4 04:19</div><div class="what"><span class="badge mute">WAS</span> McNichols&#x27; 31-yard touchdown run nullified by a Chris Paul face mask<div class="went">Washington&#x27;s only explosive run of the night and its chance to tie; instead the drive continued and died on downs at the SF 17.</div></div></div><div class="gm-doc-tp"><div class="clock">Q4 02:00</div><div class="what"><span class="badge mute">WAS</span> 4th-and-3 at the SF 17, Daniels incomplete deep right to Burks (EPA -3.0, WPA -0.221)<div class="went">The biggest win-probability play of the game. A 14-play, 71-yard drive that had already lived on an illegal-contact bailout of a sack ended with no points; SF never had to score again.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="What decided it">
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>San Francisco&#x27;s explosive passing against a Washington secondary that gives up chunks every week</b><div class="went">4 passes of 20+ (Evans 54 and 24, Kittle 35, Watkins 22) accounted for 135 yards and three of SF&#x27;s four scoring drives&#x27; key plays; Purdy 4/7 on deep throws for 135.</div><div class="went"><b>Tell:</b> WAS allowed 4 explosive passes in week 2 (DAL), week 3 (SEA) and week 5 (NYG) — &#x27;explosive passing&#x27; and &#x27;own explosive passing&#x27; tags — with defensive dropback EPA allowed of +0.166, +0.462, +0.141, +0.244.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>The red-zone split, both directions</b><div class="went">SF 4 trips, 3 TD + 1 FG, +0.253 EPA/play inside the 20; WAS 4 trips, 2 TD, 0 FG and two turnovers on downs, -0.408 EPA/play inside the 20 against +0.083 between them.</div><div class="went"><b>Tell:</b> WAS carried the &#x27;red zone defense&#x27; tag in four of five prior weeks (opponents 0.75, 0.80, 1.00, 1.00 TD/trip) and its own finishing had been 0/2 in week 4 and 0/1 in week 5; SF entered at 0.833 TD/trip with +0.425 RZ EPA.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Washington&#x27;s run game produced nothing, forcing one-dimensional football</b><div class="went">15 designed runs, -0.175 EPA/rush, 0 explosive runs, 0.8 ypc up the middle on 4 carries; the lone big run (31-yard TD) was erased by penalty.</div><div class="went"><b>Tell:</b> Croskey-Merritt out, White inheriting the role, SF allowing 3.91 ypc and the engine blending WAS to 4.17 ypc — below the 4.36 league rate.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag no" title="Not visible before kickoff">in-game only</span><div><b>San Francisco&#x27;s pass rush showed up without Bosa</b><div class="went">4 sacks and 9 QB hits on 45 Daniels dropbacks (28.9% sack-or-hit), including -12 (Williams, Q3 12:55) and -18 (Q4 0:06) that ended possessions.</div><div class="went"><b>Tell:</b> The opposite was the pre-game read: SF carried &#x27;no pass rush&#x27; tags in weeks 3 and 4, with 0.094 and 0.045 pressure rates generated and Bosa out a fourth straight game.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag no" title="Not visible before kickoff">in-game only</span><div><b>SF&#x27;s own penalties and a dormant second half kept the dog within a score</b><div class="went">11 flags for 88 yards (season rate 1.8 offensive flags/game), including a roughing-the-passer on WAS&#x27;s TD drive (Q4 9:53), illegal contact that negated an 11-yard sack (Q4 3:01), and delay of game plus fair-catch interference on the 1:00 punt; SF ran 19 second-half plays at -0.219 EPA.</div><div class="went"><b>Tell:</b> Engine inputs said SF was the cleanest offense in the dossier (1.8 flags, 0.6 pre-snap); its actual week logs (7, 7, 8 flags in weeks 2, 3, 5) told a noisier story.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; WAS">
+      <div class="gm-doc-boxhead"><b>How WAS gets beaten</b><span class="flat">1-3 entering</span><span class="badge mute">high confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">pre-snap penalties &times;4</span><span class="badge bad">red zone defense &times;4</span><span class="badge bad">third down &times;2</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Explosive passing over the top</b><div class="went">4 passes of 20+ allowed this week; 4 in week 2 (DAL, +0.462 dropback EPA allowed), 4 in week 3 (SEA), 4 in week 5 (NYG, +0.244) — four straight games of four-plus chunks.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Red-zone defense: trips become touchdowns</b><div class="went">&#x27;red zone defense&#x27; tag in weeks 2, 3, 4 and 5 — opponents 3/4, 4/5, 3/3, 3/3 on trips; this week SF 3/4 with +0.253 EPA/play inside the 20.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Its own finishing inside the 20</b><div class="went">This game 2 TD on 4 trips with two turnovers on downs and -0.408 RZ EPA; week 4 0/2 (-0.936), week 5 0/1 (-0.123). Field EPA was positive (+0.083) — movement without points.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Pass protection under duress</b><div class="went">4 sacks, 9 hits, 20% team pressure rate here; 5 sacks allowed in week 5, 25.7% pressure faced in week 3, 24.4% in week 4. The quarterback&#x27;s legs stop being a weapon when the rush gets home (3 scrambles, 11 yards).</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Drive-killing flags</b><div class="went">&#x27;pre-snap penalties&#x27; tag in four of five prior weeks (3.0/game vs a 1.55 league rate); this game only 1 pre-snap flag, but 7 for 66 yards overall including the face mask that erased a 31-yard touchdown run.</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> Washington moves the ball between the 20s and does not finish, while its defense bends on the field and then concedes the touchdown at the goal line. The offense is a throw-first, chunk-plus-checkdown unit the moment it trails, and it trails almost immediately.</p>
+      <p class="gm-doc-p"><b>This week:</b> San Francisco tried exactly the right thing and had the efficiency: 8.42 Y/A season-to-date, +0.143 field EPA and 0.833 RZ TD rate entering, and it converted that into 4 explosive passes and 3 RZ touchdowns on limited volume (29 attempts, 62 plays). It never needed the run game as a primary lever — McCaffrey&#x27;s 16 carries for 64 were clock, not creation, though they produced +5.41 rush EPA at the goal line.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> A quarterback who will throw past the sticks (adot near 8-9 with a deep-ball hit rate above 50%) and a red-zone offense that scores rather than kicks; you do not need a running game or a big play count — SF won on 62 plays and 390 total yards.</p>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; SF">
+      <div class="gm-doc-boxhead"><b>How SF gets beaten</b><span class="flat">5-0 entering</span><span class="badge mute">medium confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">no pass rush &times;2</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>No pass rush in most weeks — though not this one</b><div class="went">&#x27;no pass rush&#x27; recurring (weeks 3 and 4): 0.094 and 0.045 pressure generated, ARI running 85 plays at +0.095 field EPA. This week the front produced 28.9% sack-or-hit on Daniels without Bosa, so the tag did not apply.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Bend-don&#x27;t-break between the 20s</b><div class="went">WAS posted +0.083 field EPA and 300 pass yards here while being held to 17; week 3 ARI 66 field plays at +0.095, week 4 DEN 65 at +0.009. The yards are available; the points are not.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Its own penalty volume</b><div class="went">11 flags for 88 yards this week (3 pre-snap); 7 for 78 in week 2, 7 for 69 in week 3, 8 for 70 in week 5 — two holdings negated a 17-yard McCaffrey run and a completion on the same drive, and a roughing-the-passer gifted 9 yards on WAS&#x27;s touchdown drive.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Turnovers and giveaways in plus territory</b><div class="went">McCaffrey&#x27;s fumble at the WAS 21 (Q2 9:11, -4.36 EPA); 2 turnovers in week 5 at SEA, 1 in week 1 — SF&#x27;s close games (36-30, 32-29, 23-17) all feature give-backs.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Second-half dormancy with a lead</b><div class="went">19 second-half plays at -0.219 EPA, three punts and a 9-yard sack; the 20-3 lead became 23-17 with SF scoring nothing in the fourth quarter.</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> San Francisco builds a lead with a small number of efficient possessions, then stops pressing — it is 5-1 ATS-ish in result but has let week 3 (36-30), week 5 (32-29) and now this game get to one score late. The route back in is volume plus the flags SF hands you, not stopping its offense.</p>
+      <p class="gm-doc-p"><b>This week:</b> Washington tried and had partial efficiency: +17.6 CPOE, 4 explosive passes, two touchdown drives of 56 and 66 yards in the second half. What it lacked was the finishing (2/4 in the red zone, 1-for-4 on fourth down) and any run game to make the clock work for it.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> To actually cash this you need a pass offense that can stay on schedule for 12-14 play drives (WAS&#x27;s 3-of-13 on third down is why it needed fourth downs), a red-zone TD rate near league average, and a pass rush — SF only allowed 2 sacks and 8.8% pressure, so the lead-protecting offense is rarely forced into mistakes.</p>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Player lines">
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Jayden Daniels</b> <span class="flat">WAS</span> &middot; 29/40, 300 pass yds, 2 TD, 0 INT; 4 carries, 10 rush yds (proj 210.9 pass, 66.7 rush)<div class="went">Volume from a wire-to-wire deficit (70.3% pass rate) plus genuine accuracy (+17.6 CPOE, 5/9 deep), but 4 sacks and 9 hits erased the designed/scramble rushing the model projected.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Chig Okonkwo</b> <span class="flat">WAS</span> &middot; 7 targets, 7 rec, 69 yds (proj 3.5/25.5)<div class="went">76% snap share and the underneath answer to pressure — 34 of his 69 yards were YAC; he was the chain-mover on both second-half touchdown drives.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Treylon Burks</b> <span class="flat">WAS</span> &middot; 6 targets, 4 rec, 66 yds (proj 1.8/20.2), 28.1% air-yards share<div class="went">Became the field-stretcher with McLaurin lost on the first-quarter sack (10.4% snap share); 75 air yards is a role, not a fluke, but his EPA was only +0.14 and he dropped the 4th-and-3 shot at 2:00.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Terry McLaurin</b> <span class="flat">WAS</span> &middot; 1 target, 1 rec, 27 yds, 10.4% snaps<div class="went">Injured on the Q1 2:16 sack; everything after is unprojectable, and his absence is what inflated Burks/Antonio Williams/Okonkwo.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Christian McCaffrey</b> <span class="flat">SF</span> &middot; 16 carries, 64 yds, 2 TD; 10 targets, 9 rec, 53 yds (proj 13.1/59.5 and 5.7/25.9)<div class="went">Target volume well above projection with a gutted receiver room — 10 of SF&#x27;s 30 attempts — and both goal-line scores on left guard; receiving EPA was -6.03 because of the fumble, not the usage.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Mike Evans</b> <span class="flat">SF</span> &middot; 5 targets, 3 rec, 94 yds on 40.3% snaps, 39.4% air-yards share<div class="went">DNP all week, played a snap count, and still produced the two biggest plays of the first quarter — low-volume, high-aDOT usage is exactly the profile where yardage props beat reception props.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>George Kittle</b> <span class="flat">SF</span> &middot; 8 targets, 5 rec, 69 yds, 1 TD, 88.7% snaps<div class="went">Team-leading target share against a defense tagged for red-zone concessions in four of five weeks; the 11-yard TD came on the opening drive and the 35-yarder set up the third-quarter field goal.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Rachaad White</b> <span class="flat">WAS</span> &middot; 7 carries, 27 rush yds; 5 targets, 4 rec, 30 yds, 1 rec TD<div class="went">Script converted his projected carries into targets — the receiving touchdown came from 9 yards out while chasing; -0.25 rush EPA on his carries confirms the ground role was worthless.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Jeremy McNichols</b> <span class="flat">WAS</span> &middot; 5 carries, 13 yds (unprojected, 17.9% snaps)<div class="went">Activated off the questionable list and took real short-yardage work, including the 31-yard TD run wiped by a face mask — a reminder that late-week activations siphon the projected back&#x27;s goal-line value.</div></div></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Traps">
+      <div class="gm-doc-three"><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>When a team&#x27;s engine-blended carry total assumes neutral script but the market has it as a 7+ point dog with a replacement lead back, cut carries toward 17-20 and add 6-8 attempts: WAS went 17/40 against a projected 27.5/32.5 and played 64 of 64 snaps trailing.</b></p><p class="sub"><b>Trigger:</b> Dog of 7+ whose rushing offense is below league ypc and whose starting back is ruled out.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>Mobile-QB rushing props die to pressure, not just to script. Daniels ran 4 times for 10 with 3 scrambles for 11 while taking 4 sacks and 9 hits — the scramble yards became sack yards. Check the opponent&#x27;s pressure rate from its recent personnel, not its season tag.</b></p><p class="sub"><b>Trigger:</b> QB rush-yard over priced off scramble volume against a front missing its star edge — if the interior (here Odighizuwa, Halton, Williams) is intact, the lanes close anyway.</p></div><div class="gm-doc-box"><span class="badge mute">Every market</span><p><b>&#x27;No pass rush&#x27; is the least sticky defensive tag in the dossier. SF carried it in weeks 3 and 4 at 0.094 and 0.045 pressure generated and then posted 28.9% sack-or-hit without Bosa.</b></p><p class="sub"><b>Trigger:</b> Any plan leaning on an opponent&#x27;s two-week pressure drought; demand three-plus weeks and a personnel reason before pricing it.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>Yards without touchdowns: WAS put up 300 passing yards, 353 total and 17 points with four red-zone trips. Receiving-yard overs cash while the team total and TD props lag.</b></p><p class="sub"><b>Trigger:</b> Offense with positive field EPA, negative red-zone EPA and a red-zone TD rate under 0.5 across multiple weeks — buy yardage, fade touchdowns and the team total.</p></div><div class="gm-doc-box"><span class="badge mute">Sides</span><p><b>Big early leads from this SF team compress: it has produced -0.219 second-half EPA and 7-11 flags a game in four of six weeks. The under can win while the dog covers — 40 points, a 6-point margin on a 7.5 line.</b></p><p class="sub"><b>Trigger:</b> SF (or a similar low-play, lead-protecting offense) laying 7+ with a double-digit halftime lead.</p></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="The story">
+      <div class="gm-doc-prose"><h2>The short version</h2>
+<p>San Francisco scored on its first possession, led for every second after 10:58 of the first quarter, built it to 20-3 by halftime and then produced nothing after the 6:01 mark of the third. Washington out-threw its projection by 89 yards, scored twice in the second half and died twice inside the SF 20 — turnover on downs at the 13 in the second quarter, turnover on downs at the 17 with 2:00 left. Final 23-17: SF wins, SF doesn't cover 7.5, 40 points stays well under 51.5. The model's three market calls all hit; the player and team layers took their damage entirely on the Washington side of the ledger.</p>
+<h2>How it unfolded</h2>
+<p>SF's first two drives were 64 and 77 yards and were essentially two plays: Purdy to Mike Evans for 24 on 3rd-and-4, then Purdy to Evans for 54 to the WAS 18. Evans, a DNP all week with ribs, played 40% of the snaps and finished with 94 yards on five targets and a 39.4% air-yards share. The second drive survived because Purdy scrambled seven yards on 4th-and-3 at the WAS 11 (+3.10 EPA) — SF went 2-for-2 on fourth down, Washington 1-for-4. Washington's only answer in the half was a 27-yard McLaurin catch into a 51-yard field goal, and McLaurin was then lost on a Q1 2:16 sack.</p>
+<p>Washington got its break — Luvu recovered a McCaffrey catch-fumble at the WAS 19, a -4.36 EPA play that took seven points off SF's board — and went four plays, eight yards, punt. SF answered with a 16-play, 89-yard, 6:13 drive that absorbed two offensive holdings and a 4th-and-1 sneak to make it 20-3 with eighteen seconds left in the half.</p>
+<p>The second half was all Washington in possession and all stalemate in result. A 12-play, 56-yard drive with a converted 4th-and-5 to Diggs made it 23-10; an 11-play, 66-yard drive capped by a 9-yard throw to White made it 23-17 with 9:22 left. Then the two plays that settled it: McNichols' 31-yard touchdown run erased by a Chris Paul face mask at 4:19, and Daniels' incompletion to Burks on 4th-and-3 from the SF 17 at 2:00 — a 0.221 win-probability swing, the largest of the night.</p>
+<h2>Why the game diverged from the projection</h2>
+<p>The engine blended Washington to 62.3 plays at a 55.8% pass rate — 32.5 attempts, 27.5 carries, 114.9 rush yards. Washington ran 64 plays at 70.3% passing with 17 carries for 53 yards. Every one of those 64 snaps came while trailing; the <code>pass_rate_by_state</code> table has zero plays tied or leading. Part of that is pure script, but part is real: the 15 designed runs produced -0.175 EPA/rush with no 10+ gain, 0.8 yards a carry up the middle, and the one explosive run came back on a flag.</p>
+<p>The pass-yard overshoot is the same mechanism twice over — volume plus efficiency. Daniels went 29-of-40 with +17.6 CPOE and 5-of-9 on deep balls against a secondary the inputs had rated as the hardest in the matchup to complete against. What did not happen was the quarterback run game: SF's front, without Bosa, hit him on 28.9% of dropbacks and took four sacks for -39 yards. The 66.7 projected rush yards became 10. San Francisco's own projection was essentially clean — 29 attempts, 29 carries, 62 plays, 390 yards — and missed only on points, because the fumble and three dead second-half drives cost it possessions, not efficiency.</p>
+<h2>The plan against the game</h2>
+<p>The plan's shape was right and one of its mechanisms was exactly backwards. SF leading early on passing and red-zone finishing, Washington walled off on the ground, the Commanders' pass rate climbing past 65%, average pace — all of that landed (checks: 121 plays vs 121.5 league, both leans held). But the plan's single highest-confidence lever, Daniels' legs against a thin edge rotation, inverted: the pressure arrived, the scrambles didn't, and the yardage the plan expected on the ground arrived through the air instead, breaking both U1 and D6 at once. The penalty read inverted too — one Washington pre-snap flag against eleven San Francisco penalties for 88 yards — but that one looks like the bounce, not the read.</p>
+<h2>Player by player</h2>
+<p>Okonkwo caught all seven of his targets for 69 yards on a 76% snap share; 34 of those yards were YAC, which is what a pressure valve looks like. Burks inherited McLaurin's field-stretching work (75 air yards, 28.1% share) and produced 66 yards and the fourth-down incompletion that ended it. Antonio Williams was the cleanest projection in the game — 3 catches on 4 targets against 2.9 and 4.2. White's projected carries became targets: 7 for 27 on the ground, 4 catches for 30 and the touchdown.</p>
+<p>For SF, McCaffrey was the usage story — 16 carries for 64 with both goal-line scores on left guard, plus ten targets and nine catches for 53. Kittle drew a team-high eight targets on 88.7% of snaps. Evans' line is the lesson in low-volume, high-aDOT roles: five targets on a snap count, 94 yards.</p>
+<h2>The defenses</h2>
+<p>Charting for pressures and coverage hasn't landed, so read the proxies. San Francisco's front, supposedly rushless, generated four sacks and nine hits with Odighizuwa, Mykel Williams, Halton, Height and White sharing it — Washington's 89% shotgun rate and 7.8 aDOT say a quarterback getting the ball out and still getting hit. Washington's front held: SF managed 4.3 yards a carry with no explosive runs and put only three hits on Purdy. Both secondaries gave up four 20+ passes. The difference was at the goal line — SF 3-for-4 with +0.253 EPA inside the 20, Washington 2-for-4 with -0.408 while posting +0.083 between the 20s.</p>
+<h2>The blueprint</h2>
+<p>Washington's is now four weeks deep and loud: explosive passes over the top (four allowed in each of weeks 2, 3, 5 and here) and touchdowns conceded on trips inside the 20 (the <code>red zone defense</code> tag in four of five prior games). San Francisco had exactly the profile to cash it — 8.42 Y/A, +0.143 field EPA, 0.833 red-zone TD rate — and did, on 62 plays. On the other side, Washington's own failure is finishing, not movement: positive field EPA, negative red-zone EPA, 3-of-13 on third down.</p>
+<p>San Francisco gets beaten the way Arizona and Seattle nearly beat it: take the yards between the 20s against a bend defense, collect its penalties, and survive until the lead-protecting offense goes dormant. Washington had the passing efficiency to try it and did, but it needed one more red-zone touchdown and one more third down, and it has neither the finishing rate nor the run game to buy them.</p>
+<h2>What the model should take from this</h2>
+<p>When a sub-league-average rushing offense is a 7+ point dog with its lead back out, the blended carry figure is fiction — cut toward 17-20 and move the attempts up. Mobile-QB rush props should be priced off realized pressure, not off the missing edge rusher: the scramble yards and the sack yards are the same budget. And 'no pass rush' is the least persistent tag in this dossier — two weeks of it bought SF a reputation it demolished in one game.</p></div>
+    </section>
+    
+    
+  </div>
+</details>
+
 </div>
 
 
@@ -1958,6 +2553,15 @@
       if(pick) pick.addEventListener("change",function(){ node.querySelectorAll(".pl-tl").forEach(function(t){ t.hidden=t.dataset.key!==pick.value; }); });
       modal.querySelector(".pl-dialog").scrollTop=0;
     }).catch(function(){ body.innerHTML='<div class="pl-loading">The player sheets could not be loaded.</div>'; });
+  }
+  // The plan / report panel: pills and arrows walk its sections.
+  var doc=document.querySelector(".gm-doc");
+  if(doc){
+    var panes=[].slice.call(doc.querySelectorAll(".gm-doc-pane")), pills=doc.querySelector(".gm-doc-pills"), cur=0;
+    panes.forEach(function(pn,i){ var b=document.createElement("button"); b.type="button"; b.textContent=pn.dataset.title; b.setAttribute("role","tab"); b.addEventListener("click",function(){ show(i); }); pills.appendChild(b); });
+    function show(i){ cur=(i+panes.length)%panes.length; panes.forEach(function(pn,k){ pn.classList.toggle("active",k===cur); }); pills.querySelectorAll("button").forEach(function(b,k){ b.classList.toggle("active",k===cur); if(k===cur&&b.scrollIntoView) b.scrollIntoView({block:"nearest",inline:"center"}); }); }
+    doc.querySelectorAll(".gm-doc-arrow").forEach(function(a){ a.addEventListener("click",function(){ show(cur+parseInt(a.dataset.dir,10)); }); });
+    show(0);
   }
   document.querySelectorAll(".pl-open").forEach(function(b){ b.addEventListener("click",function(e){ e.stopPropagation(); openPlayer(b.dataset.pid); }); });
   modal.querySelector(".pl-close").addEventListener("click",closeModal);

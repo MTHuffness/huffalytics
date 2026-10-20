@@ -797,6 +797,126 @@
     .hfa .pl-log td.wk, .hfa .pl-log th:first-child { position: sticky; left: 0; background: #0d0d11; z-index: 1; }
     :root[data-theme="light"] .hfa .pl-log td.wk, :root[data-theme="light"] .hfa .pl-log th:first-child { background: #fff; }
   }
+
+  /* ---- The plan / report panel under the scoreboard ---- */
+  .gm-doc { position: relative; overflow: visible; }
+  .gm-doc::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; border-radius: 14px 14px 0 0; background: linear-gradient(90deg, var(--hfa-accent), transparent 70%); pointer-events: none; }
+  .gm-doc.st-both::before { background: linear-gradient(90deg, var(--hfa-good), var(--hfa-accent) 55%, transparent 90%); }
+  .gm-doc > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.9rem; padding: 1rem 1.1rem; }
+  .gm-doc > summary::-webkit-details-marker { display: none; }
+  .gm-doc-chev { display: inline-grid; place-items: center; flex: none; width: 2rem; height: 2rem; border-radius: 50%; background: var(--hfa-accent); color: #fff; box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.22), 0 6px 14px -6px rgba(255, 31, 47, 0.9); transition: transform 0.18s; }
+  .gm-doc[open] > summary .gm-doc-chev { transform: rotate(180deg); background: #fff; color: var(--hfa-accent); }
+  .gm-doc-main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+  .gm-doc-eyebrow { font-size: 0.64rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-accent); }
+  .gm-doc-lead { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; line-height: 1.3; color: var(--hfa-body); }
+  .gm-doc-chips { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0.3rem; flex: 0 1 auto; }
+  .gm-doc-open { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); margin-left: 0.3rem; }
+  .gm-doc[open] .gm-doc-open { display: none; }
+  .gm-doc-body { border-top: var(--hfa-hairline); padding: 0.7rem 1.1rem 1.2rem; }
+  .gm-doc-nav { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.9rem; }
+  .gm-doc-pills { display: flex; gap: 0.3rem; overflow-x: auto; scrollbar-width: none; flex: 1 1 auto; padding: 2px; }
+  .gm-doc-pills::-webkit-scrollbar { display: none; }
+  .gm-doc-pills button { flex: none; border: 1px solid rgba(128, 128, 128, 0.25); background: transparent; color: var(--hfa-muted); border-radius: 999px; padding: 0.3rem 0.85rem; font-size: 0.76rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
+  .gm-doc-pills button.active { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-arrow { flex: none; width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid rgba(128, 128, 128, 0.3); background: transparent; color: var(--hfa-body); font-size: 1.2rem; line-height: 1; cursor: pointer; }
+  .gm-doc-arrow:hover { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-pane { display: none; animation: gm-fade 0.18s ease-out; }
+  .gm-doc-pane.active { display: block; }
+  @keyframes gm-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  .gm-doc-hook { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1.2; color: var(--hfa-accent); margin-bottom: 0.4rem; }
+  .gm-doc-headline { font-size: 1rem; font-weight: 600; line-height: 1.45; margin: 0 0 0.7rem; }
+  .gm-doc-p { font-size: 0.9rem; line-height: 1.55; margin: 0 0 0.7rem; }
+  .gm-doc-note { font-size: 0.76rem; color: var(--hfa-muted); line-height: 1.45; margin: 0 0 0.6rem; }
+  .gm-doc-prose { font-size: 0.9rem; line-height: 1.6; max-width: 60rem; }
+  .gm-doc-prose h2 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 1rem 0 0.3rem; }
+  .gm-doc-prose h3 { font-size: 0.9rem; margin: 0.8rem 0 0.2rem; }
+  .gm-doc-prose p { margin: 0 0 0.6rem; }
+  .gm-doc-prose ul { padding-left: 1.2rem; }
+  .gm-doc-k { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 0.9rem 0 0.35rem; }
+  .gm-doc-box > .gm-doc-k:first-child, .gm-doc-col > .gm-doc-k:first-child { margin-top: 0; }
+  .gm-doc-verdicts { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.2rem 0 0.7rem; }
+  .gm-doc-verdicts.wrap .badge { white-space: normal; text-align: left; }
+  .gm-doc-verdicts .badge b { color: inherit; }
+  .gm-doc-vs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 0.4rem; }
+  .gm-doc-col { padding: 0.75rem 0.9rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); font-size: 0.9rem; line-height: 1.5; }
+  .gm-doc-col.plan { border-left: 3px solid var(--hfa-accent); }
+  .gm-doc-col.game { border-left: 3px solid var(--hfa-good); }
+  .gm-doc-col.game .gm-doc-k { color: var(--hfa-good); }
+  .gm-doc-col p, .gm-doc-box p { margin: 0 0 0.45rem; font-size: 0.88rem; line-height: 1.5; }
+  .gm-doc-col p:last-child, .gm-doc-box p:last-child { margin-bottom: 0; }
+  .gm-doc p.sub, .gm-doc .went { font-size: 0.8rem; color: var(--hfa-muted); line-height: 1.45; }
+  .gm-doc .went { margin-top: 0.2rem; }
+  .gm-doc-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .gm-doc-three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; }
+  .gm-doc-box { min-width: 0; padding: 0.7rem 0.85rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); }
+  .gm-doc-boxhead { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.4rem; font-size: 0.92rem; }
+  .gm-doc-boxhead b { color: var(--hfa-body); font-weight: 800; }
+  .gm-doc-ul { margin: 0; padding-left: 1.1rem; font-size: 0.86rem; line-height: 1.5; }
+  .gm-doc-ul li { margin-bottom: 0.3rem; }
+  .gm-doc-list { display: flex; flex-direction: column; gap: 0.45rem; }
+  .gm-doc-item { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.45; padding: 0.5rem 0.7rem; border-radius: 10px; background: var(--hfa-tint); border: var(--hfa-hairline); }
+  .gm-doc-item > div { min-width: 0; }
+  .gm-doc-item b { color: var(--hfa-body); }
+  .gm-doc-flag { flex: none; min-width: 5.2rem; text-align: center; border-radius: 6px; padding: 0.2rem 0.45rem; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); margin-top: 0.15rem; }
+  .gm-doc-flag.decisive, .gm-doc-flag.signal, .gm-doc-flag.yes, .gm-doc-flag.held { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-flag.contributed, .gm-doc-flag.mixed, .gm-doc-flag.partly { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .gm-doc-flag.minor, .gm-doc-flag.noise, .gm-doc-flag.no, .gm-doc-flag.broke { background: rgba(255, 31, 47, 0.16); color: var(--hfa-accent); }
+  .gm-doc-flag.defense { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .gm-doc-flag.offense { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-calls { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  .gm-call { min-width: 0; padding: 0.65rem 0.85rem 0.6rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); border-left: 3px solid var(--hfa-muted); }
+  .gm-call.over { border-left-color: var(--hfa-good); } .gm-call.under { border-left-color: var(--hfa-accent); }
+  .gm-call.hit { background: rgba(47, 212, 164, 0.06); } .gm-call.miss { background: rgba(255, 176, 32, 0.06); }
+  .gm-call-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.5rem; font-size: 0.92rem; }
+  .gm-call-side { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .gm-call.over .gm-call-side { color: var(--hfa-good); } .gm-call.under .gm-call-side { color: var(--hfa-accent); }
+  .gm-call .who { color: var(--hfa-body); font-weight: 800; }
+  .gm-call .bet { font-weight: 700; color: var(--hfa-accent); }
+  .gm-call .res { font-weight: 800; font-size: 0.8rem; margin-left: auto; }
+  .gm-call .res.hit { color: var(--hfa-good); } .gm-call .res.miss { color: var(--hfa-bad); } .gm-call .res.void { color: var(--hfa-muted); font-weight: 500; }
+  .gm-call-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem; margin: 0.35rem 0 0.2rem; }
+  .gm-call .prob { font-size: 0.7rem; font-weight: 700; color: var(--hfa-muted); border: 1px solid rgba(128, 128, 128, 0.3); border-radius: 999px; padding: 0.1rem 0.5rem; }
+  .gm-call .rungs { margin: 0.35rem 0 0.4rem; }
+  .gm-call .rung small { font-weight: 500; color: var(--hfa-muted); }
+  .gm-call p.why { font-size: 0.84rem; line-height: 1.45; margin: 0.3rem 0 0.2rem; color: var(--hfa-body); }
+  .gm-call p.ev { font-size: 0.74rem; line-height: 1.4; margin: 0 0 0.15rem; color: var(--hfa-muted); }
+  .gm-doc .legs { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.4rem; }
+  .gm-doc .leg { border-radius: 8px; padding: 0.2rem 0.5rem; font-size: 0.76rem; font-weight: 700; background: rgba(128, 128, 128, 0.14); }
+  .gm-doc .leg em { font-style: normal; font-weight: 500; color: var(--hfa-muted); }
+  .gm-doc .leg i { font-style: normal; font-weight: 800; }
+  .gm-doc .leg.hit { background: rgba(47, 212, 164, 0.16); } .gm-doc .leg.hit i { color: var(--hfa-good); }
+  .gm-doc .leg.miss { background: rgba(255, 176, 32, 0.16); } .gm-doc .leg.miss i { color: var(--hfa-bad); }
+  .gm-doc-gradehead { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+  .gm-grade { flex: none; display: flex; align-items: center; gap: 0.6rem; padding: 0.4rem 0.9rem 0.4rem 0.6rem; border-radius: 14px; border: 2px solid var(--hfa-muted); background: var(--hfa-tint); }
+  .gm-grade b { font-size: 2.6rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .gm-grade span { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); line-height: 1.3; }
+  .gm-grade.good { border-color: var(--hfa-good); } .gm-grade.good b { color: var(--hfa-good); }
+  .gm-grade.warn { border-color: var(--hfa-bad); } .gm-grade.warn b { color: var(--hfa-bad); }
+  .gm-grade.bad { border-color: var(--hfa-accent); } .gm-grade.bad b { color: var(--hfa-accent); }
+  .gm-doc-gradetext { flex: 1 1 20rem; min-width: 0; }
+  .gm-doc-gradetext .gm-doc-verdicts { margin-bottom: 0; }
+  .hfa .gm-doc-table { font-size: 0.8rem; }
+  .hfa .gm-doc-table th, .hfa .gm-doc-table td { padding: 0.25rem 0.4rem; }
+  .hfa .gm-doc-table b { color: var(--hfa-body); }
+  .hfa .gm-doc-table td.meter { width: 5rem; }
+  .hfa .gm-doc-table td.meter i { display: block; height: 4px; border-radius: 2px; background: var(--hfa-good); }
+  .hfa .gm-doc-table td.meter i.bad { background: var(--hfa-bad); }
+  .gm-doc-tl { position: relative; padding-left: 1rem; border-left: 2px solid rgba(128, 128, 128, 0.25); display: flex; flex-direction: column; gap: 0.7rem; }
+  .gm-doc-tp { position: relative; font-size: 0.88rem; line-height: 1.45; }
+  .gm-doc-tp::before { content: ""; position: absolute; left: -1.4rem; top: 0.45rem; width: 10px; height: 10px; border-radius: 50%; background: var(--hfa-accent); box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.25); }
+  .gm-doc-tp .clock { font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-accent); }
+  @media (max-width: 1100px) { .gm-doc-three { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 760px) {
+    .gm-doc > summary { padding: 0.85rem 16px; gap: 0.6rem; flex-wrap: wrap; }
+    .gm-doc-main { flex: 1 1 0; }
+    .gm-doc-lead { font-size: 0.98rem; }
+    .gm-doc-chips { justify-content: flex-start; flex: 0 0 100%; padding-left: 2.6rem; }
+    .gm-doc-body { padding: 0.6rem 16px 1rem; }
+    .gm-doc-hook { font-size: 1.2rem; }
+    .gm-doc-vs, .gm-doc-two, .gm-doc-three, .gm-doc-calls { grid-template-columns: 1fr; }
+    .gm-doc-arrow { display: none; }
+    .gm-doc-flag { min-width: 4.4rem; font-size: 0.56rem; }
+  }
   @media (prefers-reduced-motion: reduce) { #hfa-rain { opacity: calc(var(--hfa-rain) * 0.5); } }
 </style>
 
@@ -821,7 +941,7 @@
     <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
   </div>
   <main>
-<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#away" data-sec="away">NO offense</a><a href="#home" data-sec="home">NYG offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
+<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#doc-sec" data-sec="doc">Plan vs game</a><a href="#away" data-sec="away">NO offense</a><a href="#home" data-sec="home">NYG offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
 
 <div class="hfa-card hfa-hero hfa-sec gm-hero" id="hero" data-sec="hero" style="--gm-away: #D3BC8D; --gm-home: #0B2265;">
   <div class="gm-hero-top">
@@ -848,6 +968,454 @@
     <span class="gm-chip final"><i>final</i> <b>NO 34 &ndash; 27 NYG</b></span>
     <span class="gm-chip " title="Artificial turf. Passing is the same on grass and turf; rushing runs about 3.5% higher on turf (+3.7 yards a team) and a catch gains a tenth of a yard more after it. Points, the closing lines and the engine show no surface effect, so it is not an engine input."><i>field</i> <b>turf</b></span><span class="gm-chip " title="Forecast for the kickoff window, as of Sun 10:03 AM Denver. Wind above 10 mph trims the passing projection."><i>forecast</i> <b>58°F · wind 5 mph</b></span>
   </div>
+</div>
+
+<div class="hfa-sec" id="doc-sec" data-sec="doc">
+
+<details class="hfa-card gm-doc st-both" id="doc">
+  <summary class="gm-doc-bar">
+    <span class="gm-doc-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="gm-doc-main">
+      <span class="gm-doc-eyebrow">The plan against the game &middot; plan Sun Oct 18, 9:59 AM &middot; report Tue Oct 20, 12:09 PM</span>
+      <span class="gm-doc-lead">Olave carries a broken-handed Shough. Skattebo loses his backfield to Najee.</span>
+    </span>
+    <span class="gm-doc-chips">
+      <span class="badge bad">script broke</span>
+      <span class="badge good">3 hit</span><span class="badge bad">6 missed</span><span class="badge mute">1 void</span>
+      <span class="badge bad" title="Projection grade: team volume and yardage, player lines, and the market calls the projection implied">projection F &middot; 41</span>
+      <span class="gm-doc-open">open</span>
+    </span>
+  </summary>
+  <div class="gm-doc-body">
+    <div class="gm-doc-nav">
+      <button type="button" class="gm-doc-arrow" data-dir="-1" aria-label="Previous section">&#8249;</button>
+      <div class="gm-doc-pills" role="tablist"></div>
+      <button type="button" class="gm-doc-arrow" data-dir="1" aria-label="Next section">&#8250;</button>
+    </div>
+
+    
+    
+    <section class="gm-doc-pane" data-title="Plan vs game">
+      <div class="gm-doc-verdicts">
+        <span class="badge bad" title="Whether the game went the way the plan's script described, for the reasons it gave">script broke</span>
+        <span class="badge mute">followed the favorite&#x27;s path</span>
+        <span class="badge bad" title="Both teams ran 140 plays; the league's figure for two teams was 121.5">pace: called average, played fast</span>
+        <span class="badge bad" title="NO passed on 44% of its plays; its season rate entering the game was 65%">NO: called pass, played run</span><span class="badge bad" title="NYG passed on 72% of its plays; its season rate entering the game was 55%">NYG: called run, played pass</span>
+      </div>
+      <div class="gm-doc-vs">
+        <div class="gm-doc-col plan"><div class="gm-doc-k">The plan said</div><p>A near pick&#x27;em between two flawed teams: the Giants want to run at the league&#x27;s softest run front, the Saints have to throw it with a quarterback playing on a broken hand. The backfield shake-up in New York is the biggest lever on the card.</p><p class="sub">A coin-flip game between a 1-4 team that cannot run and a 3-1-1 team that wants to. New York should lean on the ground early against a Saints front missing two starting linebackers and ranked near the bottom in rush success allowed, chewing clock and capping Jameis Winston&#x27;s attempts. New Orleans answers the only way it can — short, high-volume passing at a Giants secondary down three defensive backs and prone to downfield flags. Both offenses move the ball and stall: New Orleans holds inside its own 20 and New York has settled for field goals in three of five games. Expect a possession game decided by which quarterback gives it away.</p></div>
+        <div class="gm-doc-col game"><div class="gm-doc-k">What happened</div><p>New Orleans 34, New York 27 — the Saints covered as 1.5-point favorites and the game sailed over 46.5 (61 points), but almost nothing about the projection&#x27;s shape held: NO ran it 38 times for 175 and threw for just 144 while the Giants were forced into 47 attempts, 395 passing yards and three turnovers that turned a 10-10 game into 34-10.</p><p class="sub">The plan read the matchup&#x27;s static facts correctly — no Giants pass rush, Giants pre-snap flags, a Saints front that gets run through — and then got the direction of the game exactly backwards. It expected New York to grind on the ground and cap Winston&#x27;s attempts while New Orleans threw 35-40 times; the Giants threw 47 and ran 20, the Saints ran 38 and threw 30. The one path it drew that had a chance, the underdog path (NO early score, chasing Giants, Olave volume), inverted too: New Orleans was the favorite and won by running. Most of the call misses trace to that one inverted lean rather than to independent bad reads, though the Harris call was a reported-start that was never a role.</p><p class="sub"><b>The script:</b> The favorite won, but not the plan&#x27;s favorite — New Orleans was laid 1.5 and the plan&#x27;s &#x27;favorite_path&#x27; was written for New York. Checks say both leans failed: NO called pass, played run at a 44.1% pass rate against a 64.8% season rate; NYG called run, played pass at 72.2% against 54.8%. Pace was called average and came in fast (140 plays vs 121.5 league), which is why 46.5 went over by 14.5. The plan&#x27;s core expectation — &#x27;both offenses move the ball and stall&#x27; — broke in the one place it mattered: NO went 3-for-3 in the red zone on 9 snaps at +0.662 EPA.</p></div>
+      </div>
+      
+      <div class="gm-doc-k">What the plan said would swing it</div>
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag minor">minor</span><div>Najee Harris starting and a four-man committee (ESPN, Sunday) — the single biggest change to Giants backfield volume.<div class="went"><b>Went:</b> Harris did start-level nothing: 4 carries, 2 yards, 14.3% snaps, with Tracy (6 carries, 2 rec for 27, the 17-yard TD catch and the 5-yard TD run) and Singletary (4 carries, 1-19) taking the work. The backfield shake-up was real but the lever moved almost no volume because the Giants ran only 20 times.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Shough playing with two broken bones in his left hand (Schefter, Sunday); he threw two picks and 96 yards in Week 5.<div class="went"><b>Went:</b> The hand did not produce turnovers — Shough threw 0 INTs on 30 attempts with 3 TDs — but it showed in accuracy: CPOE -17.2, 16/30, adot 6.1, 2/5 deep. He was limited, not dangerous, which is partly why New Orleans stopped throwing.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag minor">minor</span><div>Giants down Adebo, Hood and Nubin in the secondary — free yards and flags for Olave and Vele.<div class="went"><b>Went:</b> The depleted secondary conceded 7 explosive passes and 395 yards, but to the Giants&#x27; own receivers in garbage time. The Saints&#x27; side of it — the free-yards-and-flags read for Olave and Vele — never happened: NO drew 0 DPI yards and Olave went 4-43.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag decisive">decisive</span><div>Elliss and Jennings out again for New Orleans: the same front-seven hole Atlanta ran through for 205 yards.<div class="went"><b>Went:</b> The front-seven hole was the game. New Orleans ran 38 times for 175 with 5 runs of 10+ against the unit the plan flagged — except it was the Saints&#x27; offense exploiting the Giants&#x27; front, the mirror image of the factor as written, and it is what turned a 10-10 half into 27-10.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Andrew Thomas and Jermaine Eluemunor both questionable; two missing tackles changes the Giants&#x27; run efficiency and Winston&#x27;s time.<div class="went"><b>Went:</b> Winston was sacked 4 times with a 30% pressure rate on 30 dropbacks against a Saints front missing two linebackers, and A.Thomas was flagged for a false start at Q3 11:23. The tackles did not hold up; the run efficiency read (20 carries, 84 yards) collapsed with it.</div></div></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">Each offense: expected &middot; happened</div>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>NO</b><span class="badge bad">broke</span></div><p><b>Expected:</b> Pass rate 62-68%, 35-40 attempts, Olave at 9-12 targets, Vele 6-8, Johnson 4-6, and under 95 rushing yards split three ways. Yards between the 20s, points via field goals as often as touchdowns.</p><p><b>Happened:</b> Expected 62-68% pass and 35-40 attempts with under 95 rush yards; actual 45.1% pass, 30 attempts, 38 carries for 175. Olave got 7 targets, not 9-12, and the points came via three red-zone touchdowns rather than field goals — the opposite of the &#x27;yards between the 20s, points via field goals&#x27; read (field EPA -0.161, RZ EPA +0.662).</p></div><div class="gm-doc-box"><div class="gm-doc-boxhead"><b>NYG</b><span class="badge bad">broke</span></div><p><b>Expected:</b> Pass rate near .50-.55, 28-32 attempts, 28-30 carries split between Harris and Skattebo with Tracy and Singletary active, Likely at 8-11 targets and Nabers 7-9. Field position and field goals as much as touchdowns.</p><p><b>Happened:</b> Expected .50-.55 pass on 28-32 attempts and 28-30 carries; actual 70% pass, 47 attempts, 20 carries. Likely did land at 11 targets within the 8-11 band and Nabers blew past 7-9 with 15, but the shape — field position and field goals off a run game — never existed after the Q2 kickoff fumble.</p></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">For the next plan on these teams</div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="badge mute">NO</span><div>Stop treating the 64.8% season pass rate as near-fixed. Given a lead and a bottom-tier run front, this staff dropped to 30% pass while leading and 29.7% in the second half — the lean is lead-contingent, and the blended 59% should shade toward the run whenever the Saints are favored or projected ahead.</div></div><div class="gm-doc-item"><span class="badge mute">NO</span><div>Price the red-zone split in the direction the engine inputs say: 73.3% TD rate and +0.123 RZ EPA against -0.108 field EPA entering, 3-for-3 here on 9 snaps. This is a team that converts the little it generates; its team total beats its yardage profile. (Two games&#x27; worth of finishing, so size it modestly.)</div></div><div class="gm-doc-item"><span class="badge mute">NYG</span><div>A beat-reported &#x27;start&#x27; is not a role. Harris got 14.3% of snaps and 4 carries; the backfield split four ways, and in any trailing script the Giants&#x27; RB volume evaporates (20 carries total). Projected RB rush-yard lines need to be conditioned on the Giants holding a lead, which they did for only 1,222 seconds all game.</div></div><div class="gm-doc-item"><span class="badge mute">both</span><div>The kickoff-return fumble at Q2 1:18 (-4.28 EPA, -0.133 WPA) and McCarthy&#x27;s 6-for-6 deep ball were the bounce, not the read — do not carry either forward. The pass-rush imbalance (Shough 0 sacks on 32 dropbacks vs Winston 4 on 30) is the read, and it matched both teams&#x27; season rates.</div></div></div>
+      
+    </section>
+    
+
+    
+    
+    <section class="gm-doc-pane" data-title="The script">
+      <div class="gm-doc-verdicts">
+        <span class="badge mute" title="Plays and tempo">average pace</span>
+        <span class="badge acc" title="Dead ground game (3.53 a carry, 2.0 before contact) and a three-man committee; they have thrown on 64.8% of snaps and will be at or above that unless they lead.">NO pass</span><span class="badge acc" title="Their one clear matchup edge is the Saints&#x27; run front, and this staff drops to a .380 pass rate the moment it leads, as it did in Week 3.">NYG run</span>
+        <span class="badge mute">medium confidence</span>
+      </div>
+      <p class="gm-doc-p">A coin-flip game between a 1-4 team that cannot run and a 3-1-1 team that wants to. New York should lean on the ground early against a Saints front missing two starting linebackers and ranked near the bottom in rush success allowed, chewing clock and capping Jameis Winston&#x27;s attempts. New Orleans answers the only way it can — short, high-volume passing at a Giants secondary down three defensive backs and prone to downfield flags. Both offenses move the ball and stall: New Orleans holds inside its own 20 and New York has settled for field goals in three of five games. Expect a possession game decided by which quarterback gives it away.</p>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-k">If the favorite wins</div><p>New York hands it to Harris and Skattebo behind a line that gets Andrew Thomas back, controls the ball, and lets Likely and Nabers work the middle on early downs. Winston throws 26-30 times, the Giants win low-20s to high-teens, and the game stays near the number.</p></div>
+        <div class="gm-doc-box"><div class="gm-doc-k">If the underdog wins</div><p>New Orleans gets an early score, forces the Giants to throw, and Shough stacks 38-plus attempts with Olave at double-digit targets, moving the ball between the 20s and living off Giants pass-interference calls. Saints win 27-24 with Shough over 270.</p></div>
+      </div>
+      
+      <div class="gm-doc-prose"><h2>The read</h2>
+<p>Two teams that move the ball and don't finish, separated by a point and a half. New York's path is the ground: New Orleans has allowed 148.8 rush yards a game (30th), 4.86 a carry (26th) and ranks 31st in rush success allowed, with Kaden Elliss (95% of snaps) and Anfernee Jennings out for a third straight week — the exact front-seven hole Atlanta ran for 205 yards through in Week 4. New Orleans' path is volume passing: 3.53 yards a carry and 2.0 before contact on the season, so the ground is dead whatever the Giants' front allows, and Tyler Shough is already second in the NFL in attempts. Expect New York's pass rate to sit under its .548 season mark if it leads, and New Orleans' over its .648 if it trails.</p>
+<h2>Why</h2>
+<p>The Giants' secondary is the matchup: Adebo on IR, Colton Hood (89% of snaps last game) out with a concussion, Tyler Nubin out, Greg Newsome limited, and a unit that gives up 17.4 DPI yards a game (31st) — free first downs that lengthen Saints drives without showing up as yardage. That is a volume argument for Chris Olave (10.8 targets a game) and Devaughn Vele, not an efficiency one. On the other side, Theo Johnson is ruled out, handing tight end snaps to Isaiah Likely, who has drawn 25 targets in two weeks. The caution is the backfield: ESPN reported Sunday morning that Najee Harris starts and that a four-man committee follows Cam Skattebo's fumbling, which the projection has not absorbed.</p>
+<p>Finishing splits the two: New Orleans holds inside its own 20 (5th in red-zone EPA allowed) while surrendering the field (30th between the 20s). That points at yardage over touchdowns on Giants pass-catchers and keeps the total honest.</p>
+<h2>What would change it</h2>
+<p>If the Giants' backfield reverts to Skattebo as the workhorse, the Harris call and the Skattebo fade both die. An early two-score Saints deficit turns this into a 45-attempt Shough game and lifts every New Orleans receiving line; an early Giants deficit kills the run script entirely.</p></div>
+    </section>
+    <section class="gm-doc-pane" data-title="Offenses">
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>NO offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>A volume short-passing offense: 66 plays a game, a 64.8% pass rate, 6.34 yards an attempt and 66.8% completions, with a run game that has produced 3.53 a carry and 2.0 yards before contact. They have scored 24-30 in three of five and lost four.</p>
+          <div class="gm-doc-k">How it scores</div><p>Drive length and the red zone — 73.3% touchdowns per trip, best-in-class finishing, with Shough sneaks and Kamara short scores. Explosive passing to Olave (182, 107, 116-yard games) supplies the chunks.</p>
+          <div class="gm-doc-k">What stops it</div><p>Pressure converted into giveaways: three turnovers at Detroit, five against Las Vegas, two more against Minnesota, with field EPA negative in four of five weeks. When a front gets home on four, the ball comes out.</p>
+          <div class="gm-doc-k">This matchup</div><p>New York generates pressure at a 13.0% rate (23rd) and has one healthy premium rusher in Abdul Carter (calf, expected to play per Rapoport Sunday) with Burns and Golston on IR — that is the softest pass rush Shough has met since Week 2. The secondary is missing Adebo, Hood and Nubin and leads the league in DPI yards conceded (17.4, 31st). What New York does do is hold at its 20: 5th in red-zone EPA allowed, which turns drives into field goals.</p>
+          <div class="gm-doc-k">Injuries</div><p>Olave (illness) and Kamara (back) both confirmed active Sunday morning. Shough is playing through two broken bones in his left hand (Schefter). Kelvin Banks and Travis Etienne remain on IR — the tackle&#x27;s absence is not in the projection and tempers any efficiency read on this line. On the Giants&#x27; side, three defensive backs are out or IR.</p>
+          <div class="gm-doc-k">Expect</div><p>Pass rate 62-68%, 35-40 attempts, Olave at 9-12 targets, Vele 6-8, Johnson 4-6, and under 95 rushing yards split three ways. Yards between the 20s, points via field goals as often as touchdowns.</p>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>NYG offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>A run-leaning, penalty-prone offense (4.8 flags, 3.4 pre-snap per game) at 3.71 yards a carry and 6.36 an attempt, that has swung between 6 points and 36 depending on whether Winston takes shots. Week 5 was 88 plays and 54 attempts in an overtime tie.</p>
+          <div class="gm-doc-k">How it scores</div><p>Early-down runs to stay on schedule, then Nabers and Likely — the two of them took 68% of the air yards in Week 4 and 33 targets in Week 5. Red-zone trips have produced touchdowns in the two games the deep game worked.</p>
+          <div class="gm-doc-k">What stops it</div><p>Interior blocking and their own flags: 0-for-4 on red-zone touchdowns across Weeks 2-3, 3.1 a carry against Arizona, and holds that wiped a touchdown run in Week 3. Protection has leaked at a 7.2% sack rate.</p>
+          <div class="gm-doc-k">This matchup</div><p>New Orleans is 26th in rush EPA allowed, 31st in rush success allowed, 30th in yards per carry and dead last in points allowed to running backs, with Elliss and Jennings out for a third week. They do hold at their own 20 (6th in red-zone EPA allowed), so the yards should arrive more readily than the touchdowns.</p>
+          <div class="gm-doc-k">Injuries</div><p>Theo Johnson (neck) ruled out — his 48% of snaps go to Likely and depth bodies. Andrew Thomas (groin) expected to play per Rapoport Sunday; Eluemunor (calf) questionable, and two shaky tackles is a real risk to the run-efficiency read even though it is not in the projection. Harris is reported to start ahead of Skattebo.</p>
+          <div class="gm-doc-k">Expect</div><p>Pass rate near .50-.55, 28-32 attempts, 28-30 carries split between Harris and Skattebo with Tracy and Singletary active, Likely at 8-11 targets and Nabers 7-9. Field position and field goals as much as touchdowns.</p>
+        </div>
+        
+      </div>
+    </section>
+    <section class="gm-doc-pane" data-title="The calls">
+      <p class="gm-doc-note">Each call is one player, one market, one side of the line Kalshi quoted when the plan was written; graded off the box score, with the report's read of whether the reason given showed up. The rungs are the same call down the Kalshi ladder, Edge halfway to its last rung and Edge+ the last, at Kalshi's last pregame price.</p>
+      <div class="gm-doc-verdicts"><span class="badge mute">Normal <b class="up">3</b>&ndash;<b class="down">6</b></span><span class="badge mute">Edge <b class="up">4</b>&ndash;<b class="down">5</b></span><span class="badge mute">Edge+ <b class="up">7</b>&ndash;<b class="down">2</b></span></div>
+      <div class="gm-doc-calls">
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Devaughn Vele</b><span class="flat">NO</span>
+            <span class="bet">over 3.5 receptions</span>
+            <span class="res miss">&#10007; 3</span>
+            <span class="badge warn">read held · result didn&#x27;t</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">low</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #16 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 59%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 58%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> over 3.5 receptions <small>60&cent;</small></span><span class="rung hit"><i>Edge</i> 3+ receptions <small>77&cent;</small></span><span class="rung hit"><i>Edge+</i> 2+ receptions <small>89&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Mechanism was volume from a pass-heavy script; Vele played 91.7% of snaps and got exactly 6 targets (the engine&#x27;s number) for 3-42. The pass volume never came — 30 attempts, not 35-plus — so the call missed by one reception with its reasoning intact-but-unfed.</p>
+          <p class="why">A full-time perimeter role in an offense that throws 35-plus times with no run game to fall back on. Volume, not efficiency — his yards per catch is modest.</p>
+          <p class="ev">Snap share 88-96% in all five games, targets of 9, 7, 6, 9, 6 and at least three catches every week.</p>
+          <p class="ev">vs #16 pass EPA allowed. Engine is above the line and Kalshi agrees at roughly 58%; the price is short, so this is a parlay leg rather than a standalone.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Chris Olave</b><span class="flat">NO</span>
+            <span class="bet">over 4.5 receptions</span>
+            <span class="res miss">&#10007; 4</span>
+            <span class="badge bad">missed · read partly held</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #16 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 50%</span>
+            
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal / Edge / Edge+</i> over 4.5 receptions</span></div>
+          <p class="why"><b>In the game:</b> Olave drew 7 targets on a 58.3% snap share and caught 4; the target-tree read was right (projection had 7.2) but the premise of a 35-40 attempt chase game was not, and his 43 yards came on 53 air yards with 6 YAC.</p>
+          <p class="why">He is the whole target tree on a team that has to throw, and the Giants are down three defensive backs. Confirmed active Sunday morning after an illness week.</p>
+          <p class="ev">Targets of 13, 10, 13, 12 and 6 with receptions of 10, 8, 9, 8, 4; snap share 84-91% every week. Shough is second in the NFL in attempts.</p>
+          <p class="ev">vs #16 pass EPA allowed. The engine&#x27;s mean sits just above the line and Kalshi has not quoted this market, so the call stands on the engine alone; the engine&#x27;s 7.4 projected targets is well under his 10.8 season rate.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Najee Harris</b><span class="flat">NYG</span>
+            <span class="bet">over 24.5 rush yds</span>
+            <span class="res miss">&#10007; 2</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #26 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 49%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 57%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal / Edge / Edge+</i> over 24.5 rush yds <small>67&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> He started in name only: 4 carries, 2 yards, -2.99 rushing EPA, 14.3% snaps, with 1 stuff. The &#x27;softest run front&#x27; was there — NO allowed 4.2 ypc up the middle to its own backs&#x27; mirror — but the Giants trailed and abandoned the run, and the committee went to Tracy and Singletary.</p>
+          <p class="why">He is reported to start Sunday after the lead back&#x27;s fumbling, and he runs into the softest run front he will see this year. Pure volume call, not an efficiency one.</p>
+          <p class="ev">ESPN&#x27;s Fowler and Raanan, Sunday morning: Harris starting, Skattebo demoted into a committee. Saints allow 148.8 rush yards a game and rank last in points allowed to backs; Harris went 9-52 in Week 3 in a lead script.</p>
+          <p class="ev">vs #26 rush EPA allowed. Engine mean sits right on the line; Kalshi has the over near 57%, and neither has absorbed the Sunday-morning start news. Rushing overs are the model&#x27;s best market this year.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Isaiah Likely</b><span class="flat">NYG</span>
+            <span class="bet">over 5.5 receptions</span>
+            <span class="res hit">&#10003; 6</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #25 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 49%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 46%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> over 5.5 receptions <small>47&cent;</small></span><span class="rung hit"><i>Edge</i> 4+ receptions <small>77&cent;</small></span><span class="rung hit"><i>Edge+</i> 3+ receptions <small>88&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Exactly as drawn: with the second tight end out Likely played 90.9% of snaps, drew 11-12 targets and caught 6 for 99 and a touchdown. The only deviation is that it came in a 47-attempt game, not the low-attempt day the plan expected.</p>
+          <p class="why">The second tight end is ruled out, handing him the room outright, and he has been the short-area hub for two straight weeks against a defense that concedes the middle of the field.</p>
+          <p class="ev">13 and 12 targets the last two weeks, 11 catches in Week 5, snap share 80%+; Theo Johnson (48% of snaps) out. New Orleans allows 16.7 fantasy points a game to tight ends (26th).</p>
+          <p class="ev">vs #25 pass EPA allowed. Engine is a touch above the line, Kalshi prices the over slightly under even — the market is not crediting the vacated tight end snaps.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Chris Olave</b><span class="flat">NO</span>
+            <span class="bet">over 79.5 rec yds</span>
+            <span class="res miss">&#10007; 43</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #16 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 43%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 49%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> over 79.5 rec yds <small>50&cent;</small></span><span class="rung miss"><i>Edge</i> 60+ rec yds <small>68&cent;</small></span><span class="rung hit"><i>Edge+</i> 40+ rec yds <small>84&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The chasing script that was supposed to feed it never arrived — NO led for 1,651 of the game&#x27;s seconds and threw 30 times. Olave&#x27;s 43 yards on 7 targets with a 28.8% air-yards share; the one touchdown (Q4 11:36, 18 yards) came off a Blackmon interception return to the 21.</p>
+          <p class="why">A chasing script and a secondary missing three starters is how he has posted his big weeks. The Giants give up the field between the 20s even as they hold at their goal line.</p>
+          <p class="ev">182, 86, 107 and 116-yard games before a 46-yard week against Minnesota; 37-50% of New Orleans air yards every week. Giants are 30th in EPA allowed between the 20s and 31st in DPI yards given up.</p>
+          <p class="ev">vs #16 pass EPA allowed. Engine sits a shade under the line and Kalshi is near even — the call rests on the Giants&#x27; injured secondary, which neither number weights.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Bryce Lance</b><span class="flat">NO</span>
+            <span class="bet">under 14.5 rec yds</span>
+            <span class="res hit">&#10003; 9</span>
+            <span class="badge good">hit · read partly held</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #16 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 88%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 55%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 14.5 rec yds <small>56&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;40 rec yds <small>88&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;60 rec yds <small>96&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The call hit at 9 yards, but not for the reason given: Lance played 50% of snaps and drew 4 targets — more than Johnson and Fant combined — including the 4th-and-2 touchdown at Q2 0:05. Volume arrived; the yards (25 air yards, 4 YAC) did not.</p>
+          <p class="why">Snap share without targets: his routes have produced almost nothing for a month and his playing time fell off a cliff last week. The targets belong to Olave, Vele and the tight end.</p>
+          <p class="ev">0, 7 and 0 receiving yards the last three weeks on eight targets; snap share dropped from 85% to 42% in Week 5.</p>
+          <p class="ev">vs #16 pass EPA allowed. The engine has him at a fraction of this line while Kalshi prices the over near 46% — the exchange&#x27;s player prices are thin here and this is the widest gap on the card.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Juwan Johnson</b><span class="flat">NO</span>
+            <span class="bet">under 4.5 receptions</span>
+            <span class="res hit">&#10003; 0</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #16 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 70%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 57%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 4.5 receptions <small>58&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;8 receptions <small>93&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;11 receptions</span></div>
+          <p class="why"><b>In the game:</b> Zero catches on 2 targets at a 58.3% snap share with Fant (58.3%) and Delp (43.1%) splitting the room — the snap-share-erosion mechanism was exactly right, and the receiving EPA of -1.88 confirms he was a dead target.</p>
+          <p class="why">His snap share has slipped as the other tight end has returned to a full-time role, and the catches cluster only when New Orleans is trailing by multiple scores.</p>
+          <p class="ev">Snaps of 84%, 53%, 62%, 78%, 64%; four catches or fewer in three of five games, with Noah Fant up to 67% of snaps in Week 5.</p>
+          <p class="ev">vs #16 pass EPA allowed. Engine is well under the line, Kalshi has the over at about 43% — both sides point the same way, and the read is the tight-end split, not the matchup.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Kendre Miller</b><span class="flat">NO</span>
+            <span class="bet">under 34.5 rush yds</span>
+            <span class="res miss">&#10007; 70</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">low</span>
+            <span class="badge mute" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #22 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 55%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 49%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 34.5 rush yds <small>50&cent;</small></span><span class="rung miss"><i>Edge</i> &lt;70 rush yds <small>87&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;100 rush yds <small>98&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The stated premise — &#x27;New Orleans only gets to 20-plus carries in a game it leads, which is not the likely shape here&#x27; — is precisely the shape that happened. Miller got 20 carries for 70 at a 44.4% snap share while the Saints killed clock; the logic was sound, the script call was wrong.</p>
+          <p class="why">Three backs share a run game that cannot run, and Kamara is confirmed active. New Orleans only gets to 20-plus carries in a game it leads, which is not the likely shape here.</p>
+          <p class="ev">30, 14, 9 and 30 rushing yards across four appearances on a 19-31% snap share; the offense has averaged 3.53 a carry with 2.0 yards before contact.</p>
+          <p class="ev">vs #26 rush EPA allowed — the soft rank favors the over, so this rests purely on the committee split and a pass-leaning script. Engine is just under the line, Kalshi near even.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Jameis Winston</b><span class="flat">NYG</span>
+            <span class="bet">under 0.5 INTs</span>
+            <span class="res miss">&#10007; 2</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">low</span>
+            <span class="badge good" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #25 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 41%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 43%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 0.5 INTs <small>43&cent;</small></span><span class="rung miss"><i>Edge</i> &lt;2 INTs <small>79&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;3 INTs <small>94&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The script call was inverted: Winston threw 26 times in 30 dropbacks while trailing, not fewer in a run-leaning lead, and gave up two picks worth -5.40 and -5.58 EPA to Emerson and Blackmon. &#x27;New Orleans has forced almost nothing all season&#x27; was also wrong on the day — three takeaways.</p>
+          <p class="why">This is a script call: a favorite leaning on the run throws fewer times than projected, and New Orleans has forced almost nothing all season. Fewer attempts, fewer chances to give it away.</p>
+          <p class="ev">Saints have forced 1, 1, 0, 0 and 2 turnovers in five games; the Giants threw just 22 times in their Week 3 lead script and ran at a .380 pass rate while ahead.</p>
+          <p class="ev">vs #25 pass EPA allowed. Engine has him near a pick a game and Kalshi prices 1+ at 57%; our own study says the 1+ rung is overstated by three to four points on a typical quarterback, more for favorites.</p>
+        </div>
+        
+        <div class="gm-call under void">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Cam Skattebo</b><span class="flat">NYG</span>
+            <span class="bet">under 79.5 rush+rec yds</span>
+            <span class="res void">did not play</span>
+            
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #26 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 40%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 66%</span>
+          </div>
+          <div class="rungs"><span class="rung void"><i>Normal</i> under 79.5 rush+rec yds <small>77&cent;</small></span><span class="rung void"><i>Edge</i> &lt;105 rush+rec yds <small>92&cent;</small></span><span class="rung void"><i>Edge+</i> &lt;130 rush+rec yds <small>97&cent;</small></span></div>
+          
+          <p class="why">The Giants are shaking up the backfield after his fumbling, with Harris starting and two more backs active. Touches, not yards per touch, are what this call is about.</p>
+          <p class="ev">Four fumbles in five games at 3.6 a carry; carries already down to 13 in Week 5, and one target in Week 4. ESPN reported Sunday a four-man committee.</p>
+          <p class="ev">vs #26 rush EPA allowed — a soft front that argues the other way, which is why this is a volume call only. The engine is far above the line; Kalshi prices the over near a third, and the Sunday news backs the market.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Same-script legs">
+      <p class="gm-doc-note">Legs the same script produces together: they move as one, which is what a same-game parlay pays for.</p>
+      <div class="gm-doc-three">
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Giants grind it with a new lead back</b></div>
+          <div class="legs"><span class="leg miss">Najee Harris <em>over 24.5 rush yds</em> <i>&#10007;</i></span><span class="leg void">Cam Skattebo <em>under 79.5 rush+rec yds</em> <i>&ndash;</i></span><span class="leg hit">Isaiah Likely <em>over 5.5 receptions</em> <i>&#10003;</i></span></div>
+          <p class="sub">One script: New York leans on the run against the league&#x27;s softest run front, the carries split away from Skattebo toward Harris, and with the second tight end out Likely absorbs the short passing game in a lower-attempt day.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Saints throw it, and only three men catch it</b></div>
+          <div class="legs"><span class="leg miss">Chris Olave <em>over 4.5 receptions</em> <i>&#10007;</i></span><span class="leg miss">Devaughn Vele <em>over 3.5 receptions</em> <i>&#10007;</i></span><span class="leg hit">Bryce Lance <em>under 14.5 rec yds</em> <i>&#10003;</i></span></div>
+          <p class="sub">A 35-40 attempt New Orleans day concentrates on the two full-time receivers against a secondary missing three defensive backs; the same concentration is what leaves the fourth option with nothing.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    
+    
+
+    
+    <section class="gm-doc-pane" data-title="Projection grade">
+      <div class="gm-doc-gradehead">
+        <div class="gm-grade bad"><b>F</b><span>projection<br>grade &middot; 41</span></div>
+        <div class="gm-doc-gradetext">
+          
+          <div class="gm-doc-verdicts"><span class="badge mute">NO 34 – NYG 27</span><span class="badge mute">NO covered (NO by 1.5)</span><span class="badge mute">Over 46.5 (61)</span><span class="badge mute">teams 40</span><span class="badge mute">player lines 19/36 in range</span><span class="badge mute">market calls 2/3</span></div>
+        </div>
+      </div>
+      
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>NO</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">24.0</td><td class="num"><b>34</b></td><td class="num up">+10</td><td class="meter"><i style="width: 50%" class="bad"></i></td></tr><tr><td>Pass yds</td><td class="num flat">228.1</td><td class="num"><b>144.0</b></td><td class="num down">-84.1</td><td class="meter"><i style="width: 44%" class="bad"></i></td></tr><tr><td>Rush yds</td><td class="num flat">104.0</td><td class="num"><b>175.0</b></td><td class="num up">+71</td><td class="meter"><i style="width: 21%" class="bad"></i></td></tr><tr><td>Pass att</td><td class="num flat">34.2</td><td class="num"><b>30</b></td><td class="num flat">-4.2</td><td class="meter"><i style="width: 74%" class=""></i></td></tr><tr><td>Carries</td><td class="num flat">25.2</td><td class="num"><b>38</b></td><td class="num up">+12.8</td><td class="meter"><i style="width: 9%" class="bad"></i></td></tr>
+          </tbody></table>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>NYG</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">22.5</td><td class="num"><b>27</b></td><td class="num flat">+4.5</td><td class="meter"><i style="width: 78%" class=""></i></td></tr><tr><td>Pass yds</td><td class="num flat">220.1</td><td class="num"><b>395.0</b></td><td class="num up">+174.9</td><td class="meter"><i style="width: 0%" class="bad"></i></td></tr><tr><td>Rush yds</td><td class="num flat">125.2</td><td class="num"><b>84.0</b></td><td class="num flat">-41.2</td><td class="meter"><i style="width: 54%" class=""></i></td></tr><tr><td>Pass att</td><td class="num flat">31.7</td><td class="num"><b>47</b></td><td class="num up">+15.3</td><td class="meter"><i style="width: 4%" class="bad"></i></td></tr><tr><td>Carries</td><td class="num flat">28.6</td><td class="num"><b>20</b></td><td class="num down">-8.6</td><td class="meter"><i style="width: 39%" class="bad"></i></td></tr>
+          </tbody></table>
+        </div>
+        
+      </div>
+      <div class="gm-doc-verdicts"><span class="badge good">Winner: NO &#10003;</span><span class="badge good">Spread: NO -1.5 &#10003;</span><span class="badge bad">Total: Under 46.5 (proj 46.5) &#10007;</span></div>
+      
+      
+      <div class="gm-doc-k">Why the projection missed &middot; what it got right</div>
+      <p class="gm-doc-p">The grade is an F (0.406) despite the model going 2-of-3 on calls (winner and spread right, Under wrong), because every volume input inverted. The engine blended NO to a 59% pass rate off a 64.8% season rate; the Saints threw on 45.1% of snaps and on only 30% once leading, running 38 times for 175 yards against a projected 25.2/104. The Giants were blended to 28.6 carries and 31.7 attempts; they ran 20 times and dropped back 49, because they trailed by 14-plus from Q3 12:31 onward and had 38 of 70 snaps in a trailing state (78.9% pass). NYG pass yards missed by +174.9 and pass attempts by +15.3 — both pure game-state consequences, amplified by McCarthy&#x27;s 6-for-6 on deep balls in garbage time. The team-total side was closer than the shape: NO 24 projected / 34 actual, NYG 22.5 / 27, but the 61-point total blew through a 46.5 number the model matched exactly.</p>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>NO</b> &middot; 38 carries / 175 rush yards against 25.2 / 104, with only 30 pass attempts against 34.2<div class="went">Game script. NO led for 1,651 seconds and ran a 30% pass rate while leading (30 plays); second-half pass rate was 29.7% against 61.8% in the first half. Early-down pass rate 34.5% vs 49.8% expected — the most run-heavy posture of their season against a 64.8% season rate.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>NO</b> &middot; Shough 144 pass yards on 16/30 against 228.1 projected<div class="went">Efficiency plus volume: adot 6.1, CPOE -17.2, 2/5 deep. Yet EPA/dropback was +0.109 and he took zero sacks on 32 dropbacks against a 5.9% blended sack rate — the Giants&#x27; &#x27;no pass rush&#x27; tag (3 of 5 weeks) showed up exactly as the inputs said; the yards simply weren&#x27;t needed.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>NYG</b> &middot; 47 attempts / 395 pass yards vs 31.7 / 220.1; 20 carries vs 28.6<div class="went">Game script and a QB change. Trailing 38 snaps at 78.9% pass; McCarthy entered and went 21 dropbacks, adot 14.8, 6/6 deep, with 25 garbage-time plays. The run game that was supposed to carry them produced 84 yards on 20 carries (Harris 4 for 2).</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>NYG</b> &middot; 5 sacks taken against 2.3 projected, Winston pressured on 30% of dropbacks<div class="went">Pressure. The blended sack rate (6.8%) understated what a NO front playing without Elliss and Jennings still generated on obvious passing downs — three of the sacks came on 2nd/3rd-and-long in the first half.</div></div></div></div>
+      <div class="gm-doc-verdicts wrap"><span class="badge good">&#10003; Side and spread: NO by 1.5 projected, NO by 7 actual — the favorite path, if not the mechanism.</span><span class="badge good">&#10003; NO team total within 10 and NYG within 4.5 points of a 22.5 projection.</span><span class="badge good">&#10003; Olave targets (7.2 proj / 7 actual) and Vele&#x27;s full line (6 targets proj and actual, 45.1 / 42 rec yds) — the target tree was read correctly even though the pass volume wasn&#x27;t.</span><span class="badge good">&#10003; Kamara receptions (2.1 / 2) and Likely receptions (5.8 / 6).</span><span class="badge good">&#10003; INT rate on the Giants side: 0.9 projected, 3 giveaways actual — the direction was right even if the plan bet against it.</span></div>
+      
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Turning points">
+      <div class="gm-doc-tl">
+        <div class="gm-doc-tp"><div class="clock">Q2 01:18</div><div class="what"><span class="badge mute">NO</span> Charlie Jones fumbles the kickoff return at the NYG 27, recovered by NO&#x27;s O.Delp at the 28 (EPA -4.28, WPA -0.133)<div class="went">The single largest WP swing of the game. NYG led 10-3 with 78 seconds left; the turnover handed New Orleans a free possession inside the 30.</div></div></div><div class="gm-doc-tp"><div class="clock">Q2 00:05</div><div class="what"><span class="badge mute">NO</span> 4th-and-2 at the 2: Shough to B.Lance for the touchdown (EPA +4.09, WPA +0.146)<div class="went">Converted the gifted field position into a tie game at the half after Miller had been stuffed for -1 on 3rd-and-1. 10-10 instead of 10-3 changed the entire second-half posture.</div></div></div><div class="gm-doc-tp"><div class="clock">Q3 12:31</div><div class="what"><span class="badge mute">NO</span> Shough short right to Kamara for 31 yards, TOUCHDOWN (EPA +3.61, WPA +0.148)<div class="went">Seven plays, 69 yards out of halftime on a tied game. From here NO never trailed and immediately went run-first: 29.7% pass rate in the second half.</div></div></div><div class="gm-doc-tp"><div class="clock">Q3 04:23</div><div class="what"><span class="badge mute">NYG</span> Winston intercepted by M.Emerson intended for Nabers at the NO 26 (EPA -5.40)<div class="went">Down 24-10 with the ball at midfield in no-huddle; the pick set up Carlson&#x27;s 51-yard field goal and made it 27-10.</div></div></div><div class="gm-doc-tp"><div class="clock">Q4 12:28</div><div class="what"><span class="badge mute">NYG</span> Winston intercepted by J.Blackmon, returned to the NYG 21 (EPA -5.58)<div class="went">Two plays later Shough hit Olave for an 18-yard touchdown and 34-10. That is the margin: the Giants outscored NO 17-0 after it.</div></div></div><div class="gm-doc-tp"><div class="clock">Q4 00:12</div><div class="what"><span class="badge mute">NYG</span> 4th-and-1 at the NO 14, McCarthy incomplete to Likely (EPA -2.58, WPA -0.092)<div class="went">The comeback died 14 yards short; without it the 61-point total and the 7-point margin both look very different for sides and totals bettors.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="What decided it">
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Turnover margin on short fields</b><div class="went">NYG 3 turnovers (kick fumble at their own 27, two Winston picks at NO 26 and NYG 42) to NO&#x27;s 1 (a Donaldson fumble at 34-10 with WPA 0.000). Emerson had 2 INTs and 4 PDs, Blackmon 1.</div><div class="went"><b>Tell:</b> NYG carried the &#x27;turnovers&#x27; tag in weeks 4 and 5 (3 and 2 giveaways); NO&#x27;s defense had forced takeaways in only two games, but NYG&#x27;s own giveaway rate was the live side of the matchup.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag no" title="Not visible before kickoff">in-game only</span><div><b>New Orleans abandoning the pass once ahead — and the run actually working</b><div class="went">38 carries, 175 yards, 5 explosive runs of 10+; run right 10 for 54 (5.4 ypc), middle 15 for 63. Pass rate while leading 30% on 30 snaps; time of possession 30:56.</div><div class="went"><b>Tell:</b> Nothing pointed this way: NO entered at 3.53 ypc and 2.0 YBC, dead last-ish, and 64.8% pass. The blended 4.12 ypc was generous already. This was the matchup (NYG allowed 4.86 ypc, &#x27;run game&#x27; tag in weeks 2 and 4) meeting a lead, not a known NO trait.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Giants pressure allowed without a Giants pass rush in return</b><div class="went">Winston sacked 4 times, 30% pressure rate, -0.40 EPA/dropback; Shough sacked 0 times on 32 dropbacks, 3.1% pressure rate, against a 48.6% blitz rate faced.</div><div class="went"><b>Tell:</b> NYG engine inputs: 7.2% sack rate taken (above league 6.4%), 18.1% pressure allowed, and &#x27;no pass rush&#x27; tagged in weeks 1, 2 and 3 with 12.8% pressure generated. Both halves of that were in the dossier.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Red-zone finishing</b><div class="went">NO 3 trips, 3 touchdowns, +0.662 EPA/play inside the 20 while posting -0.161 field EPA/play. NYG 4 trips, 2 TDs, 1 FG, -0.044 red-zone EPA on 0.0 field EPA.</div><div class="went"><b>Tell:</b> NO entered at a 73.3% red-zone TD rate with +0.123 RZ EPA against -0.108 field EPA — a team that finishes the little it gets. The pre-game plan expected the opposite (field goals), which was the wrong half of the split.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Giants pre-snap penalties in scoring position</b><div class="went">10 flags, 73 yards, 5 pre-snap — two consecutive false starts at Q3 11:23 pushed first-and-10 from the 16 to the 11 (backward), and false starts at Q4 3:29 and Q4 2:56 stalled comeback drives into a field goal and a sack.</div><div class="went"><b>Tell:</b> NYG at 3.4 pre-snap flags/game vs a 1.55 league offensive rate, with the &#x27;pre-snap penalties&#x27; tag in weeks 1, 3 and 5. Pre-snap is the one penalty category that faintly persists.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; NO">
+      <div class="gm-doc-boxhead"><b>How NO gets beaten</b><span class="flat">1-4 entering</span><span class="badge mute">medium confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">run game &times;3</span><span class="badge bad">turnovers &times;3</span><span class="badge bad">pre-snap penalties &times;3</span><span class="badge bad">red zone defense &times;2</span><span class="badge bad">explosive passing &times;2</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>The run game against their front</b><div class="went">&#x27;run game&#x27; tag in weeks 1, 2 and 4; ATL in week 4 produced +0.366 rush EPA and 4 explosive runs in a 45-24 rout; DET week 1 had 7 explosive rushes. Season: 5.19 ypc and 3.23 YBC/carry allowed, both well above league.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Explosive passing when the game opens up</b><div class="went">NYG hit 7 passes of 20+ here, including 49 to C.Jones (Q4 5:54) and 46 to Nabers (Q4 3:29); week 3 LV and week 4 ATL both carried the &#x27;explosive passing&#x27; tag with 2 and 5 of them.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Their own giveaways</b><div class="went">&#x27;turnovers&#x27; tagged weeks 1, 3 and 5 — 3, 4 and 2 turnovers. Here only 1 (Donaldson fumble, Q4 9:40), which is why they won.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Field-level offensive inefficiency between the 20s</b><div class="went">-0.161 field EPA/play on 62 snaps here; season field EPA -0.108, 15 third downs for 4 conversions (26.7%). They scored 34 on 0.338 success rate.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Pre-snap flags</b><div class="went">2.8 pre-snap/game entering, tagged weeks 2, 4 and 5; here 7 flags/52 yards with holdings on consecutive first-quarter snaps (Q1 4:23 and 3:59) that killed a drive.</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> A defense that gets run on and gives up chunk throws, attached to an offense that doesn&#x27;t move the ball well between the 20s but finishes in the red zone (73.3% TD rate entering, 3-for-3 here). You beat them by staying on schedule and not giving the ball away; they beat themselves when they turn it over, and this week they didn&#x27;t.</p>
+      <p class="gm-doc-p"><b>This week:</b> NYG had the explosive-pass profile to exploit it (3 weeks tagged, 5 of 20+ in week 4, 4 in week 5) and did — 7 explosives, 395 yards, 10.0 adot — but 25 of those snaps were garbage time and three giveaways erased the damage. The run half of the blueprint, which the matchup screamed for, never got a chance: 20 carries, Harris 4-for-2, Skattebo inactive.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> A ground game with rush EPA near zero or better and an explosive-run rate above 2.3/game to punish the front, plus a quarterback who protects the ball — NO&#x27;s defense generated 3 takeaways here but only 4 in five prior games, so the giveaways have to be opponent-supplied.</p>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; NYG">
+      <div class="gm-doc-boxhead"><b>How NYG gets beaten</b><span class="flat">3-1 entering</span><span class="badge mute">medium confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">explosive passing &times;3</span><span class="badge bad">no pass rush &times;3</span><span class="badge bad">pre-snap penalties &times;3</span><span class="badge bad">penalties &times;2</span><span class="badge bad">red zone defense &times;2</span><span class="badge bad">run game &times;2</span><span class="badge bad">third down &times;2</span><span class="badge bad">turnovers &times;2</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>No pass rush</b><div class="went">&#x27;no pass rush&#x27; tagged weeks 1, 2 and 3; 12.8% pressure generated on the season; here Shough faced 1 QB hit on 32 dropbacks (3.1%) and took zero sacks despite a 48.6% blitz rate against him.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>The run against their front, once an opponent commits</b><div class="went">4.86 ypc and 3.0 YBC/carry allowed; &#x27;run game&#x27; tagged weeks 2 and 4 (LA had 6 explosive rushes). NO ran 38 times for 175 with 5 runs of 10+, 5.4 ypc to the right side.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Their own turnovers</b><div class="went">&#x27;turnovers&#x27; weeks 4 and 5 (3 and 2); here 3 — a kick-return fumble at their own 27 (Q2 1:18) and two Winston picks worth -5.40 and -5.58 EPA.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Pre-snap penalties and overall flags</b><div class="went">4.8 flags/game and 3.4 pre-snap entering, tagged weeks 1, 3 and 5; here 10 for 73 with 5 pre-snap, including back-to-back false starts at Q3 11:23 and two more on fourth-quarter scoring drives.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Third down</b><div class="went">&#x27;third down&#x27; weeks 2 and 3; here 4-for-14 (28.6%) with three first-half sacks coming on 2nd-and-7, 3rd-and-7 and 3rd-and-16.</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> A team that can move the ball in chunks but cannot stay on schedule — penalties and sacks put it behind the sticks, third down fails, and the giveaways come in bunches. Defensively it neither rushes the passer nor holds up against the run, so it needs opponent mistakes to get off the field.</p>
+      <p class="gm-doc-p"><b>This week:</b> NO had no business running for 175 (3.53 ypc, 2.0 YBC entering) but the Giants&#x27; front gave it up anyway — this is the clearest version yet that the run blueprint cashes even for an offense without the rushing efficiency to deserve it. The pass-rush hole was equally confirmed: zero sacks allowed by a Saints line facing a near-50% blitz rate.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> Almost nothing exotic: a willingness to run and a lead. A future opponent needs only a competent run game plus a quarterback who can hold the ball — the Giants&#x27; 12.8% pressure rate means dropbacks are safe. Add a defense capable of forcing two giveaways and the margin arrives on its own.</p>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Player lines">
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Kendre Miller</b> <span class="flat">NO</span> &middot; 20 carries, 70 rush yards vs 8.1 / 26.5 projected<div class="went">Became the clock-killing back once NO led: -4.11 rushing EPA on 20 carries means the yards came from volume, not efficiency, at a 44.4% snap share.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Alvin Kamara</b> <span class="flat">NO</span> &middot; 7 carries 34 yards, 4 targets, 2 rec 35 yards, 1 TD; 26.4% snap share<div class="went">Back-designated questionable and used in a sharply limited role, but the 31-yard screen-ish catch at Q3 12:31 (+3.61 EPA) carried his line. Touch-light, leverage-heavy.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Malik Nabers</b> <span class="flat">NYG</span> &middot; 15 targets (16 charted), 12-165 vs 8.4 / 65.0 projected, no TD<div class="went">Comeback volume: 33.8% air-yards share, 46-yard catch at Q4 3:29. The target share is real, the yardage was script.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Isaiah Likely</b> <span class="flat">NYG</span> &middot; 11 targets, 6-99-1 vs 8.3 / 51.2; 90.9% snap share<div class="went">With Theo Johnson out he was the full-time tight end and the hub — receptions hit the projection exactly; yards came from the McCarthy deep shots (24-yard TD Q4 5:11, 20 yards Q4 0:40). His receiving EPA was -1.38 despite the line.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Najee Harris</b> <span class="flat">NYG</span> &middot; 4 carries, 2 yards, 14.3% snap share<div class="went">The reported start never materialized as volume; Tracy (6 carries, 3 targets, 37.7% snaps) and Singletary (4 carries, 40.3% snaps) split the backfield, and the Giants abandoned the run entirely when trailing.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>J.J. McCarthy</b> <span class="flat">NYG</span> &middot; 21 dropbacks, adot 14.8, CPOE +5.7, 6/6 deep, 2 pass TDs + a 28-yard scramble<div class="went">Relief in a two-score hole against a defense in prevent; the deep efficiency is unrepeatable but the role change matters for next week&#x27;s projection.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Juwan Johnson</b> <span class="flat">NO</span> &middot; 2 targets, 0 catches vs 4.8 / 3.3 projected; 58.3% snaps<div class="went">Snaps without targets in a 30-attempt game — the tight-end room (Fant, Delp both at 43-58% snaps) is split and the volume isn&#x27;t there.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Tyler Shough</b> <span class="flat">NO</span> &middot; 16/30, 144 yards, 3 pass TDs, 0 INT, 0 sacks, 2 scrambles for 34<div class="went">Zero pressure (3.1% hit rate) against a 48.6% blitz rate; CPOE -17.2 with adot 6.1. The touchdowns came from red-zone finishing and one 31-yard YAC play, not volume. His 25-yard scramble (Q2 1:11) set up the tying TD.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Charlie Jones</b> <span class="flat">NYG</span> &middot; unprojected: 3 targets, 2-66, plus the Q2 1:18 kickoff fumble<div class="went">26% snap share with a 49-yard catch in garbage time and the game&#x27;s biggest WP swing on special teams. Volume is not bankable.</div></div></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Traps">
+      <div class="gm-doc-three"><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>When a heavy-pass team with a dead ground game draws a bottom-five run front, the engine&#x27;s blended pass rate is the wrong input the moment that team leads. NO entered at 64.8% pass and played the game at 45.1% (30% while leading). Fade the QB passing-yardage over and the RB-committee unders in that spot.</b></p><p class="sub"><b>Trigger:</b> Blended pass rate 5+ points below the team&#x27;s season rate, opponent allowing 4.8+ ypc, and the team favored or in a close spread.</p></div><div class="gm-doc-box"><span class="badge mute">Totals</span><p><b>Garbage-time passing yardage is real money for the trailing quarterback and for the total. NYG had 25 garbage-time snaps, McCarthy went 6/6 on deep balls and the last three drives produced 73, 79 and 57 yards. The side was never in doubt (WP min 0.000) while the total went over by 14.5.</b></p><p class="sub"><b>Trigger:</b> A backup or change-of-pace QB entering down 24 with 12+ minutes left against a defense that just stopped rushing the passer.</p></div><div class="gm-doc-box"><span class="badge mute">Totals</span><p><b>Read the red-zone split in the right direction. The pre-game read had NO as a yards-without-touchdowns team; the engine inputs said the opposite (73.3% TD rate, +0.123 RZ EPA against -0.108 field EPA). NO went 3-for-3 inside the 20 on -0.161 field EPA — a team total that beat its projection by 10 on 0.338 success rate.</b></p><p class="sub"><b>Trigger:</b> Field EPA below league while red-zone EPA is above it: back the team total and anytime-TD props, fade the yardage props.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>Pre-snap penalty rate is the one flag category worth pricing, and it bites in scoring position. NYG&#x27;s 3.4/game became 5 here, including consecutive false starts that moved first down backwards at their own 16 and two that stalled fourth-quarter drives into a field goal.</b></p><p class="sub"><b>Trigger:</b> Offense at 3+ pre-snap flags/game entering, in a no-huddle comeback script — shade kicker-points over and the offense&#x27;s goal-line TD props down.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>A projection can be right on the side, right on both team totals&#x27; direction, and still be a failure — the shape is where props live. 2-of-3 calls, F grade, 19 of 36 player lines.</b></p><p class="sub"><b>Trigger:</b> Any game where the model&#x27;s carries and attempts projections for both teams point opposite to the likely script; grade the volume before trusting the player lines.</p></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="The story">
+      <div class="gm-doc-prose"><h2>The short version</h2>
+<p>New Orleans won 34-27 as a 1.5-point favorite and the game went over 46.5 by fourteen and a half points, and the projection still earned an F. The reason is that everything about the shape inverted. The model had the Saints throwing 34 times and running 25; they ran 38 times for 175 yards and threw for 144. It had the Giants running 29 times for 125; they ran 20 for 84 and dropped back 49. The side was right and the mechanism was unrecognizable.</p>
+<h2>How it unfolded</h2>
+<p>New York took the opening quarter on the back of a 12-play, 93-yard drive out of its own 7, converting a 4th-and-1 with a Winston quarterback sneak at 8:09 and hitting Likely for 24 before Tracy's 17-yard touchdown catch. Then the Giants' offense stopped functioning: four straight possessions of -6, 16, 29 and -5 net yards with three Winston sacks sprinkled through them, the pass rush the Saints weren't supposed to have arriving on 2nd-and-7 and 3rd-and-7 at the NYG 33.</p>
+<p>The half turned on special teams. With 1:18 left and New York up 10-3, Charlie Jones fumbled the kickoff at the 27 and New Orleans recovered at the 28 — a 13-point WP swing. Shough scrambled 25 yards to the 3 on the next snap, Miller was stuffed for -1 on 3rd-and-1, and Shough found Lance on 4th-and-2 with five seconds left. Tied at the half, 10-10.</p>
+<p>Out of the break New Orleans went seven plays and 69 yards, finished by a 31-yard catch-and-run to Kamara. From there the game was a sequence of Giants self-destruction: Winston intercepted by Emerson at the NO 26 (Q3 4:23), Winston intercepted by Blackmon and returned to the NYG 21 (Q4 12:28, which became an Olave touchdown two snaps later), McCarthy intercepted by Emerson at 10:27. 34-10, win probability at zero.</p>
+<p>The last twelve minutes were a different game entirely and the reason the total cashed. McCarthy, 6-for-6 on deep throws with a 14.8 adot, pushed drives of 45, 73, 79 and 57 yards. The Giants scored 17 straight and got to 4th-and-1 at the NO 14 with twelve seconds left before an incompletion to Likely ended it.</p>
+<h2>Why the game diverged from the projection</h2>
+<p>The engine blended New Orleans to a 59% pass rate off a 64.8% season rate and gave them 4.12 yards a carry. What it could not model was a Saints team that, once it had the lead, threw on 30% of 30 snaps and leaned on an early-down pass rate of 34.5% against a 49.8% expectation. That is the most run-heavy posture of their season, and it worked: five rushes of 10-plus, 5.4 yards a carry to the right side, a 30:56 time of possession.</p>
+<p>The mirror is the Giants. Blended to 28.6 carries, they got 38 of 70 snaps in a trailing state and threw on 78.9% of them. The 174.9-yard passing miss and the 15.3-attempt miss are one fact wearing two hats, compounded by a quarterback change that handed 21 dropbacks to a passer with a 14.8 air-depth who went 6-for-6 deep. That is noise. What was not noise: five sacks taken against 2.3 projected, Winston pressured on 30% of dropbacks while Shough faced one QB hit on 32 dropbacks against a 48.6% blitz rate. The pass-rush differential was in the inputs — NYG 12.8% pressure generated, 'no pass rush' tagged three times — and the model underweighted it.</p>
+<h2>The plan against the game</h2>
+<p>The plan got the static facts right and the direction wrong. It correctly identified the Saints' missing linebackers as the hole to run through and correctly identified the Giants as unable to rush the passer; it then assigned those facts to the wrong offenses. Both leans failed by wide margins: New Orleans called for pass played at 44.1%, New York called for run played at 72.2%, and pace called average came in fast at 140 plays. The most instructive miss is D3 — the plan's own reasoning said Miller only gets 20 carries in a game New Orleans leads, which is exactly the game that happened. And the U3 Harris call was a Sunday beat report that produced 14.3% of snaps.</p>
+<h2>Player by player</h2>
+<p>Nabers went 12-165 on 15 targets against a 65-yard projection, a 3.4x miss that was two-thirds comeback volume and one-third genuine target dominance (33.8% air-yards share). Likely hit his receptions projection exactly — 5.8 for 6 — while beating his yardage by 48 on throws McCarthy made in a two-score hole; his receiving EPA was -1.38 despite the box score. Miller's 20 carries for 70 came with -4.11 rushing EPA, pure clock-killing volume. Harris: 4 carries, 2 yards, 14.3% snaps. Juwan Johnson: 2 targets, zero catches on a 58.3% snap share, with Fant and Delp splitting the rest of the room — that one is a role read, not a bounce. Kamara at 26.4% snaps turned 11 touches into a 31-yard touchdown and 69 yards; the usage is low and the leverage is high.</p>
+<h2>The defenses</h2>
+<p>New Orleans forced three takeaways with Emerson (2 INTs, 4 PDs) and Blackmon, which they had not done all year, and gave up 7 explosive passes and 395 yards — the same bend-and-break pattern the week 3 and week 4 tags flagged, except the breaks came after the game was decided. The Giants' front produced nothing: zero sacks, one hit, a defense that got run on for 175 after being run on in weeks 2 and 4. Charting this season does not include coverage shells, so I'll stay on the proxies: a 48.6% blitz rate against New Orleans that generated a 3.1% hit rate is a blitz that isn't getting home.</p>
+<h2>What the model should take from this</h2>
+<p>Two real reads. First, New Orleans' pass rate is lead-contingent in a way the blend does not capture — shade it toward the run whenever they are favored. Second, their red-zone split points the right way: 73.3% TD rate and positive red-zone EPA against negative field EPA entering, 3-for-3 on nine snaps here. That is a team whose points beat its yards, which matters for team totals and anytime-TD props much more than for yardage lines.</p>
+<p>Two things to leave alone. The kickoff fumble (-4.28 EPA, the game's largest WP swing) is special-teams variance. McCarthy's 6-for-6 deep in prevent coverage is garbage time. Neither should move a number next week — but the 25 garbage-time snaps that produced them are a reminder that a total can cash entirely after the side is dead.</p></div>
+    </section>
+    
+    
+  </div>
+</details>
+
 </div>
 
 
@@ -1838,6 +2406,15 @@
       if(pick) pick.addEventListener("change",function(){ node.querySelectorAll(".pl-tl").forEach(function(t){ t.hidden=t.dataset.key!==pick.value; }); });
       modal.querySelector(".pl-dialog").scrollTop=0;
     }).catch(function(){ body.innerHTML='<div class="pl-loading">The player sheets could not be loaded.</div>'; });
+  }
+  // The plan / report panel: pills and arrows walk its sections.
+  var doc=document.querySelector(".gm-doc");
+  if(doc){
+    var panes=[].slice.call(doc.querySelectorAll(".gm-doc-pane")), pills=doc.querySelector(".gm-doc-pills"), cur=0;
+    panes.forEach(function(pn,i){ var b=document.createElement("button"); b.type="button"; b.textContent=pn.dataset.title; b.setAttribute("role","tab"); b.addEventListener("click",function(){ show(i); }); pills.appendChild(b); });
+    function show(i){ cur=(i+panes.length)%panes.length; panes.forEach(function(pn,k){ pn.classList.toggle("active",k===cur); }); pills.querySelectorAll("button").forEach(function(b,k){ b.classList.toggle("active",k===cur); if(k===cur&&b.scrollIntoView) b.scrollIntoView({block:"nearest",inline:"center"}); }); }
+    doc.querySelectorAll(".gm-doc-arrow").forEach(function(a){ a.addEventListener("click",function(){ show(cur+parseInt(a.dataset.dir,10)); }); });
+    show(0);
   }
   document.querySelectorAll(".pl-open").forEach(function(b){ b.addEventListener("click",function(e){ e.stopPropagation(); openPlayer(b.dataset.pid); }); });
   modal.querySelector(".pl-close").addEventListener("click",closeModal);

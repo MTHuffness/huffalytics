@@ -797,6 +797,126 @@
     .hfa .pl-log td.wk, .hfa .pl-log th:first-child { position: sticky; left: 0; background: #0d0d11; z-index: 1; }
     :root[data-theme="light"] .hfa .pl-log td.wk, :root[data-theme="light"] .hfa .pl-log th:first-child { background: #fff; }
   }
+
+  /* ---- The plan / report panel under the scoreboard ---- */
+  .gm-doc { position: relative; overflow: visible; }
+  .gm-doc::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; border-radius: 14px 14px 0 0; background: linear-gradient(90deg, var(--hfa-accent), transparent 70%); pointer-events: none; }
+  .gm-doc.st-both::before { background: linear-gradient(90deg, var(--hfa-good), var(--hfa-accent) 55%, transparent 90%); }
+  .gm-doc > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.9rem; padding: 1rem 1.1rem; }
+  .gm-doc > summary::-webkit-details-marker { display: none; }
+  .gm-doc-chev { display: inline-grid; place-items: center; flex: none; width: 2rem; height: 2rem; border-radius: 50%; background: var(--hfa-accent); color: #fff; box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.22), 0 6px 14px -6px rgba(255, 31, 47, 0.9); transition: transform 0.18s; }
+  .gm-doc[open] > summary .gm-doc-chev { transform: rotate(180deg); background: #fff; color: var(--hfa-accent); }
+  .gm-doc-main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+  .gm-doc-eyebrow { font-size: 0.64rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-accent); }
+  .gm-doc-lead { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; line-height: 1.3; color: var(--hfa-body); }
+  .gm-doc-chips { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0.3rem; flex: 0 1 auto; }
+  .gm-doc-open { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); margin-left: 0.3rem; }
+  .gm-doc[open] .gm-doc-open { display: none; }
+  .gm-doc-body { border-top: var(--hfa-hairline); padding: 0.7rem 1.1rem 1.2rem; }
+  .gm-doc-nav { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.9rem; }
+  .gm-doc-pills { display: flex; gap: 0.3rem; overflow-x: auto; scrollbar-width: none; flex: 1 1 auto; padding: 2px; }
+  .gm-doc-pills::-webkit-scrollbar { display: none; }
+  .gm-doc-pills button { flex: none; border: 1px solid rgba(128, 128, 128, 0.25); background: transparent; color: var(--hfa-muted); border-radius: 999px; padding: 0.3rem 0.85rem; font-size: 0.76rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
+  .gm-doc-pills button.active { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-arrow { flex: none; width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid rgba(128, 128, 128, 0.3); background: transparent; color: var(--hfa-body); font-size: 1.2rem; line-height: 1; cursor: pointer; }
+  .gm-doc-arrow:hover { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-pane { display: none; animation: gm-fade 0.18s ease-out; }
+  .gm-doc-pane.active { display: block; }
+  @keyframes gm-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  .gm-doc-hook { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1.2; color: var(--hfa-accent); margin-bottom: 0.4rem; }
+  .gm-doc-headline { font-size: 1rem; font-weight: 600; line-height: 1.45; margin: 0 0 0.7rem; }
+  .gm-doc-p { font-size: 0.9rem; line-height: 1.55; margin: 0 0 0.7rem; }
+  .gm-doc-note { font-size: 0.76rem; color: var(--hfa-muted); line-height: 1.45; margin: 0 0 0.6rem; }
+  .gm-doc-prose { font-size: 0.9rem; line-height: 1.6; max-width: 60rem; }
+  .gm-doc-prose h2 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 1rem 0 0.3rem; }
+  .gm-doc-prose h3 { font-size: 0.9rem; margin: 0.8rem 0 0.2rem; }
+  .gm-doc-prose p { margin: 0 0 0.6rem; }
+  .gm-doc-prose ul { padding-left: 1.2rem; }
+  .gm-doc-k { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 0.9rem 0 0.35rem; }
+  .gm-doc-box > .gm-doc-k:first-child, .gm-doc-col > .gm-doc-k:first-child { margin-top: 0; }
+  .gm-doc-verdicts { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.2rem 0 0.7rem; }
+  .gm-doc-verdicts.wrap .badge { white-space: normal; text-align: left; }
+  .gm-doc-verdicts .badge b { color: inherit; }
+  .gm-doc-vs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 0.4rem; }
+  .gm-doc-col { padding: 0.75rem 0.9rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); font-size: 0.9rem; line-height: 1.5; }
+  .gm-doc-col.plan { border-left: 3px solid var(--hfa-accent); }
+  .gm-doc-col.game { border-left: 3px solid var(--hfa-good); }
+  .gm-doc-col.game .gm-doc-k { color: var(--hfa-good); }
+  .gm-doc-col p, .gm-doc-box p { margin: 0 0 0.45rem; font-size: 0.88rem; line-height: 1.5; }
+  .gm-doc-col p:last-child, .gm-doc-box p:last-child { margin-bottom: 0; }
+  .gm-doc p.sub, .gm-doc .went { font-size: 0.8rem; color: var(--hfa-muted); line-height: 1.45; }
+  .gm-doc .went { margin-top: 0.2rem; }
+  .gm-doc-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .gm-doc-three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; }
+  .gm-doc-box { min-width: 0; padding: 0.7rem 0.85rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); }
+  .gm-doc-boxhead { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.4rem; font-size: 0.92rem; }
+  .gm-doc-boxhead b { color: var(--hfa-body); font-weight: 800; }
+  .gm-doc-ul { margin: 0; padding-left: 1.1rem; font-size: 0.86rem; line-height: 1.5; }
+  .gm-doc-ul li { margin-bottom: 0.3rem; }
+  .gm-doc-list { display: flex; flex-direction: column; gap: 0.45rem; }
+  .gm-doc-item { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.45; padding: 0.5rem 0.7rem; border-radius: 10px; background: var(--hfa-tint); border: var(--hfa-hairline); }
+  .gm-doc-item > div { min-width: 0; }
+  .gm-doc-item b { color: var(--hfa-body); }
+  .gm-doc-flag { flex: none; min-width: 5.2rem; text-align: center; border-radius: 6px; padding: 0.2rem 0.45rem; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); margin-top: 0.15rem; }
+  .gm-doc-flag.decisive, .gm-doc-flag.signal, .gm-doc-flag.yes, .gm-doc-flag.held { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-flag.contributed, .gm-doc-flag.mixed, .gm-doc-flag.partly { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .gm-doc-flag.minor, .gm-doc-flag.noise, .gm-doc-flag.no, .gm-doc-flag.broke { background: rgba(255, 31, 47, 0.16); color: var(--hfa-accent); }
+  .gm-doc-flag.defense { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .gm-doc-flag.offense { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-calls { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  .gm-call { min-width: 0; padding: 0.65rem 0.85rem 0.6rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); border-left: 3px solid var(--hfa-muted); }
+  .gm-call.over { border-left-color: var(--hfa-good); } .gm-call.under { border-left-color: var(--hfa-accent); }
+  .gm-call.hit { background: rgba(47, 212, 164, 0.06); } .gm-call.miss { background: rgba(255, 176, 32, 0.06); }
+  .gm-call-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.5rem; font-size: 0.92rem; }
+  .gm-call-side { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .gm-call.over .gm-call-side { color: var(--hfa-good); } .gm-call.under .gm-call-side { color: var(--hfa-accent); }
+  .gm-call .who { color: var(--hfa-body); font-weight: 800; }
+  .gm-call .bet { font-weight: 700; color: var(--hfa-accent); }
+  .gm-call .res { font-weight: 800; font-size: 0.8rem; margin-left: auto; }
+  .gm-call .res.hit { color: var(--hfa-good); } .gm-call .res.miss { color: var(--hfa-bad); } .gm-call .res.void { color: var(--hfa-muted); font-weight: 500; }
+  .gm-call-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem; margin: 0.35rem 0 0.2rem; }
+  .gm-call .prob { font-size: 0.7rem; font-weight: 700; color: var(--hfa-muted); border: 1px solid rgba(128, 128, 128, 0.3); border-radius: 999px; padding: 0.1rem 0.5rem; }
+  .gm-call .rungs { margin: 0.35rem 0 0.4rem; }
+  .gm-call .rung small { font-weight: 500; color: var(--hfa-muted); }
+  .gm-call p.why { font-size: 0.84rem; line-height: 1.45; margin: 0.3rem 0 0.2rem; color: var(--hfa-body); }
+  .gm-call p.ev { font-size: 0.74rem; line-height: 1.4; margin: 0 0 0.15rem; color: var(--hfa-muted); }
+  .gm-doc .legs { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.4rem; }
+  .gm-doc .leg { border-radius: 8px; padding: 0.2rem 0.5rem; font-size: 0.76rem; font-weight: 700; background: rgba(128, 128, 128, 0.14); }
+  .gm-doc .leg em { font-style: normal; font-weight: 500; color: var(--hfa-muted); }
+  .gm-doc .leg i { font-style: normal; font-weight: 800; }
+  .gm-doc .leg.hit { background: rgba(47, 212, 164, 0.16); } .gm-doc .leg.hit i { color: var(--hfa-good); }
+  .gm-doc .leg.miss { background: rgba(255, 176, 32, 0.16); } .gm-doc .leg.miss i { color: var(--hfa-bad); }
+  .gm-doc-gradehead { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+  .gm-grade { flex: none; display: flex; align-items: center; gap: 0.6rem; padding: 0.4rem 0.9rem 0.4rem 0.6rem; border-radius: 14px; border: 2px solid var(--hfa-muted); background: var(--hfa-tint); }
+  .gm-grade b { font-size: 2.6rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .gm-grade span { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); line-height: 1.3; }
+  .gm-grade.good { border-color: var(--hfa-good); } .gm-grade.good b { color: var(--hfa-good); }
+  .gm-grade.warn { border-color: var(--hfa-bad); } .gm-grade.warn b { color: var(--hfa-bad); }
+  .gm-grade.bad { border-color: var(--hfa-accent); } .gm-grade.bad b { color: var(--hfa-accent); }
+  .gm-doc-gradetext { flex: 1 1 20rem; min-width: 0; }
+  .gm-doc-gradetext .gm-doc-verdicts { margin-bottom: 0; }
+  .hfa .gm-doc-table { font-size: 0.8rem; }
+  .hfa .gm-doc-table th, .hfa .gm-doc-table td { padding: 0.25rem 0.4rem; }
+  .hfa .gm-doc-table b { color: var(--hfa-body); }
+  .hfa .gm-doc-table td.meter { width: 5rem; }
+  .hfa .gm-doc-table td.meter i { display: block; height: 4px; border-radius: 2px; background: var(--hfa-good); }
+  .hfa .gm-doc-table td.meter i.bad { background: var(--hfa-bad); }
+  .gm-doc-tl { position: relative; padding-left: 1rem; border-left: 2px solid rgba(128, 128, 128, 0.25); display: flex; flex-direction: column; gap: 0.7rem; }
+  .gm-doc-tp { position: relative; font-size: 0.88rem; line-height: 1.45; }
+  .gm-doc-tp::before { content: ""; position: absolute; left: -1.4rem; top: 0.45rem; width: 10px; height: 10px; border-radius: 50%; background: var(--hfa-accent); box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.25); }
+  .gm-doc-tp .clock { font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-accent); }
+  @media (max-width: 1100px) { .gm-doc-three { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 760px) {
+    .gm-doc > summary { padding: 0.85rem 16px; gap: 0.6rem; flex-wrap: wrap; }
+    .gm-doc-main { flex: 1 1 0; }
+    .gm-doc-lead { font-size: 0.98rem; }
+    .gm-doc-chips { justify-content: flex-start; flex: 0 0 100%; padding-left: 2.6rem; }
+    .gm-doc-body { padding: 0.6rem 16px 1rem; }
+    .gm-doc-hook { font-size: 1.2rem; }
+    .gm-doc-vs, .gm-doc-two, .gm-doc-three, .gm-doc-calls { grid-template-columns: 1fr; }
+    .gm-doc-arrow { display: none; }
+    .gm-doc-flag { min-width: 4.4rem; font-size: 0.56rem; }
+  }
   @media (prefers-reduced-motion: reduce) { #hfa-rain { opacity: calc(var(--hfa-rain) * 0.5); } }
 </style>
 
@@ -821,7 +941,7 @@
     <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
   </div>
   <main>
-<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#away" data-sec="away">SEA offense</a><a href="#home" data-sec="home">DEN offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
+<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#doc-sec" data-sec="doc">Plan vs game</a><a href="#away" data-sec="away">SEA offense</a><a href="#home" data-sec="home">DEN offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
 
 <div class="hfa-card hfa-hero hfa-sec gm-hero" id="hero" data-sec="hero" style="--gm-away: #002244; --gm-home: #002244;">
   <div class="gm-hero-top">
@@ -848,6 +968,435 @@
     <span class="gm-chip final"><i>final</i> <b>SEA 14 &ndash; 17 DEN</b></span>
     <span class="gm-chip " title="Natural grass. Passing is the same on grass and turf; rushing runs about 3.5% higher on turf (+3.7 yards a team) and a catch gains a tenth of a yard more after it. Points, the closing lines and the engine show no surface effect, so it is not an engine input."><i>field</i> <b>grass</b></span><span class="gm-chip " title="Forecast for the kickoff window, as of Thu 11:16 AM Denver. Wind above 10 mph trims the passing projection."><i>forecast</i> <b>45°F · wind 4 mph</b></span>
   </div>
+</div>
+
+<div class="hfa-sec" id="doc-sec" data-sec="doc">
+
+<details class="hfa-card gm-doc st-both" id="doc">
+  <summary class="gm-doc-bar">
+    <span class="gm-doc-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="gm-doc-main">
+      <span class="gm-doc-eyebrow">The plan against the game &middot; plan Thu Oct 15, 11:29 AM &middot; report Tue Oct 20, 12:01 PM</span>
+      <span class="gm-doc-lead">Seattle&#x27;s front buries Denver&#x27;s run. Nix throws short all night and nowhere.</span>
+    </span>
+    <span class="gm-doc-chips">
+      <span class="badge warn">script partly held</span>
+      <span class="badge good">6 hit</span><span class="badge bad">3 missed</span>
+      <span class="badge warn" title="Projection grade: team volume and yardage, player lines, and the market calls the projection implied">projection C &middot; 57</span>
+      <span class="gm-doc-open">open</span>
+    </span>
+  </summary>
+  <div class="gm-doc-body">
+    <div class="gm-doc-nav">
+      <button type="button" class="gm-doc-arrow" data-dir="-1" aria-label="Previous section">&#8249;</button>
+      <div class="gm-doc-pills" role="tablist"></div>
+      <button type="button" class="gm-doc-arrow" data-dir="1" aria-label="Next section">&#8250;</button>
+    </div>
+
+    
+    
+    <section class="gm-doc-pane" data-title="Plan vs game">
+      <div class="gm-doc-verdicts">
+        <span class="badge warn" title="Whether the game went the way the plan's script described, for the reasons it gave">script partly held</span>
+        <span class="badge mute">followed the underdog&#x27;s path</span>
+        <span class="badge bad" title="Both teams ran 139 plays; the league's figure for two teams was 121.5">pace: called slow, played fast</span>
+        <span class="badge bad" title="SEA passed on 68% of its plays; its season rate entering the game was 53%">SEA: called run, played pass</span><span class="badge bad" title="DEN passed on 51% of its plays; its season rate entering the game was 58%">DEN: called pass, played run</span>
+      </div>
+      <div class="gm-doc-vs">
+        <div class="gm-doc-col plan"><div class="gm-doc-k">The plan said</div><p>Seattle grinds on the league&#x27;s softest run front while Denver checks down into a wall; the lever is whether Denver can even reach the red zone, where Seattle breaks.</p><p class="sub">Expect a slow, possession-poor game in the low 40s. Seattle leans on the run because Denver&#x27;s front is the softest unit on the field, builds a one-score lead, and asks Darnold for 30-ish attempts at a high yards-per-attempt against a secondary without Surtain and Hufanga. Denver moves underneath, converts third downs, and then runs out of field: Seattle has allowed the fewest yards per attempt in the league and the best between-the-20s EPA. Denver&#x27;s scoring comes in bursts if it reaches the red zone, where Seattle has been the league&#x27;s softest finisher.</p></div>
+        <div class="gm-doc-col game"><div class="gm-doc-k">What happened</div><p>Denver 17, Seattle 14 in overtime: the Broncos covered as 2.5-point home dogs and the game stayed under 40.5 despite 139 plays, because Seattle ran 82 snaps for one red-zone trip and handed the ball over three times — the last, Darnold&#x27;s overtime interception at the Seattle 43, set up Lutz&#x27;s winning 53-yarder.</p><p class="sub">The plan read the two defenses correctly and all three Denver-side unders cashed with their mechanisms intact — Nix was capped at 107, Waddle and Sutton combined for 43 on their air-yard shares, and Dobbins was stuffed at 2.4 a carry. What it got wrong was the script that connected the Seattle calls: it assumed Seattle builds a lead and runs, and Seattle never led after Q1, so Wilson&#x27;s carries and Holani&#x27;s touches never came while Darnold threw 51 times. That inverted both leans and the pace call (139 plays, not slow), and turned the Kupp under into a loss on a script-driven 10 targets. The underdog path it wrote — Darnold giveaways, a short field, Denver finishing its red-zone trips, final score near 20-19 — is almost exactly the game that happened, so the misses were the script branch, not the read.</p><p class="sub"><b>The script:</b> The underdog path as written: Darnold gave it away three times (fumble forced at the DEN 30 in Q2, interceptions at the DEN 39 at Q4 1:31 and at the SEA 43 in OT), Denver converted both of its red-zone trips into touchdowns against the league&#x27;s softest goal-line defense, and Seattle was made to throw — 51 attempts, 71.4% pass rate while trailing. But the mechanisms around it broke: checks has pace &#x27;fast&#x27; (139 plays against 121.5 league) rather than slow, Seattle&#x27;s lean inverted (68.3% pass against a 52.9% season rate) and Denver&#x27;s inverted the other way (50.9% pass against 58.5%) because the Broncos led for 2,573 seconds. Denver&#x27;s short fields produced punts twice; only the OT turnover converted, and into a 53-yard kick rather than the red-zone burst the path described.</p></div>
+      </div>
+      
+      <div class="gm-doc-k">What the plan said would swing it</div>
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Riley Moss&#x27;s status — questionable after a limited Wednesday; without him Denver starts its third and fourth corners.<div class="went"><b>Went:</b> Seattle threw for 278 and JSN went for 134 on 16 targets against Barron (5-8, 67 allowed) and Brandon Jones (5-6, 78, three missed tackles) — the depleted secondary did leak yards. It also produced both interceptions, from McMillian and Abrams-Draine, which is the opposite of the plan&#x27;s framing.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag decisive">decisive</span><div>Darnold&#x27;s giveaways: four turnovers in week 5, three at Washington — the quickest way Denver gets a short field.<div class="went"><b>Went:</b> Three Seattle giveaways to Denver&#x27;s zero; the OT interception at the SEA 43 gave Denver the only field position it needed for Lutz&#x27;s 53-yarder, and the Q4 1:31 pick was the largest WP swing of the night (-0.352).</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag decisive">decisive</span><div>Denver reaching the red zone at all: Seattle holds the field and then concedes touchdowns on 78% of trips inside its 20.<div class="went"><b>Went:</b> Denver reached the red zone exactly twice and scored touchdowns both times (+0.544 EPA on five snaps inside the 20) — 14 of its 17 points. Seattle, with 82 plays, got one trip.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag minor">minor</span><div>Denver&#x27;s pre-snap flags (3.0 a game) putting Nix in long down-and-distance against a top-three pressure defense.<div class="went"><b>Went:</b> Denver had 3 pre-snap flags (two encroachments, a delay of game) and Bolles&#x27;s holding helped end the half, but none of it put Nix into a drive-killing hole; its 8 flags cost only 42 yards while it drew 45.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag minor">minor</span><div>Seattle LB Drake Thomas out, which softens the run front&#x27;s depth on a short week.<div class="went"><b>Went:</b> Seattle&#x27;s front without Thomas held Denver to 74 rushing yards on 28 carries (2.64 YPC, one 10+ run) — the depth concern never showed.</div></div></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">Each offense: expected &middot; happened</div>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>SEA</b><span class="badge bad">broke</span></div><p><b>Expected:</b> Pass rate around 50-54%, 29-32 Darnold attempts, 27-30 carries with Wilson at 18-21 of them, JSN at 9-11 targets and the bulk of the air yards, and the rest of the room on scraps in a leading script.</p><p><b>Happened:</b> Expected 50-54% pass, 29-32 attempts, 27-30 carries with Wilson at 18-21: actual 68.3% pass, 51 attempts, 26 carries, Wilson 14. Only the JSN piece overshot in the right direction (16 targets, 43.5% air-yards share).</p></div><div class="gm-doc-box"><div class="gm-doc-boxhead"><b>DEN</b><span class="badge warn">partly</span></div><p><b>Expected:</b> Pass rate near 60% and climbing if Denver trails, 31-35 attempts at a sub-6 aDOT with heavy YAC, 20-24 carries for under 4.0 a pop, Harvey as the checkdown outlet and points landing under the implied 19 unless the red-zone edge shows up.</p><p><b>Happened:</b> The efficiency read was exact — sub-6 aDOT (3.0), heavy YAC (87), carries under 4.0 (2.64), points under 19 (17) — but the volume shape inverted: 50.8% pass on 27 attempts and 28 carries, because Denver led rather than trailed, and Harvey was a 4-target outlet rather than a featured one.</p></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">For the next plan on these teams</div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="badge mute">SEA</span><div>Stop conditioning Seattle prop calls on a leading script. In six games it has led for meaningful stretches rarely, and its pass rate while trailing (71.4% here, 71.2% at WAS) is the operative number. Build backfield lines off a neutral-or-trailing branch and weight the WR1 accordingly.</div></div><div class="gm-doc-item"><span class="badge mute">SEA</span><div>The RB room is a true committee: Wilson 14 carries on a 31.8% snap share, Holani 5 carries on 57.6%, Velus Jones 4 unprojected carries. Any 18-21 carry assumption for one back needs evidence the snap share supports it.</div></div><div class="gm-doc-item"><span class="badge mute">DEN</span><div>Treat Denver as a run-lean team whenever it is not trailing — 50.8% pass here against a 58.5% season rate, 40.9% early-down pass against a 47.1% expectation. The season pass rate is inflated by chase scripts in weeks 1 and 4.</div></div><div class="gm-doc-item"><span class="badge mute">both</span><div>Do not over-correct on the finishing numbers. Seattle&#x27;s one red-zone trip on 82 plays and Denver&#x27;s 2-for-2 are tiny samples driven by a missed 47-yarder, a fumble at the 30 and two picks; the drive-level read (Seattle moves, Seattle gives it back) is the durable part, the trip counts are the bounce.</div></div></div>
+      
+    </section>
+    
+
+    
+    
+    <section class="gm-doc-pane" data-title="The script">
+      <div class="gm-doc-verdicts">
+        <span class="badge mute" title="Plays and tempo">slow pace</span>
+        <span class="badge acc" title="Seattle&#x27;s pass rate is 52.9% against a 55.8% league rate and it goes run-heavy with any lead; Denver&#x27;s run defense (24th in rush EPA, 29th in rush yards allowed) is the only soft spot in this game.">SEA run</span><span class="badge acc" title="Denver is already at a 58.5% pass rate and faces the league&#x27;s top rush-EPA defense; the ground game at 3.62 YPC will not be the plan for long, even at home.">DEN pass</span>
+        <span class="badge mute">medium confidence</span>
+      </div>
+      <p class="gm-doc-p">Expect a slow, possession-poor game in the low 40s. Seattle leans on the run because Denver&#x27;s front is the softest unit on the field, builds a one-score lead, and asks Darnold for 30-ish attempts at a high yards-per-attempt against a secondary without Surtain and Hufanga. Denver moves underneath, converts third downs, and then runs out of field: Seattle has allowed the fewest yards per attempt in the league and the best between-the-20s EPA. Denver&#x27;s scoring comes in bursts if it reaches the red zone, where Seattle has been the league&#x27;s softest finisher.</p>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-k">If the favorite wins</div><p>Seattle runs 28-30 times, Wilson carries 18-21, JSN takes his usual third of the targets against backup corners, and the lead lets the front pin Nix into third-and-long. 23-16 with Denver kicking twice.</p></div>
+        <div class="gm-doc-box"><div class="gm-doc-k">If the underdog wins</div><p>Denver forces a Darnold giveaway or two — he has five picks in three starts — gets a short field, converts a red-zone trip against the league&#x27;s 28th-ranked red-zone defense, and makes Seattle throw. Then Harvey&#x27;s checkdowns and Nix&#x27;s attempts climb and the game ends 20-19 either way.</p></div>
+      </div>
+      
+      <div class="gm-doc-prose"><h2>The read</h2>
+<p>A low-total Thursday grind that both season profiles support: Seattle 59.0 plays a game, Denver 57.4, both under the 60.8 league mark, and a 40.5 total with Seattle at 21.5. Seattle's run game is bad (3.81 YPC, negative rush EPA in all five weeks) but it meets the one front that cannot stop it — Denver allows 4.71 YPC (25th), 145.2 rush yards a game (29th) and ranks 24th in rush EPA allowed. Denver's offense meets the opposite: Seattle is 1st in rush EPA allowed, 1st in yards per attempt allowed (5.45), 2nd in pass EPA and 1st in field (between-the-20s) EPA allowed at -0.244. Nix's offense lives on a 4.3-5.4 aDOT and YAC; that profile moves chains and dies at midfield.</p>
+<h2>Why</h2>
+<p>The split at the 20 is the whole game. Seattle gives up almost nothing on the field and then collapses inside its 20: 77.8% of opponent red-zone trips become touchdowns (28th) with +0.397 EPA allowed there (31st). So Denver's 19 implied points are a trips question — few drives, but the ones that arrive finish. Denver's own red-zone defense is the reverse (50% allowed, 6th), which argues for Seattle yardage over Seattle touchdown calls. On the other side, Denver's secondary is gutted: Surtain ruled out Wednesday (Rotowire), Hufanga out multiple weeks (ESPN via Rotowire, Wed), Moss questionable after a limited Wednesday. That is the specific reason Seattle's passing numbers survive a #6 pass-EPA rank.</p>
+<h2>What would change it</h2>
+<p>Moss's designation — if he plays, Denver's outside coverage is far less thin. Seattle's turnover habit (4 giveaways in week 5, 3 at Washington in week 3) is the fastest route to a Denver lead and a flipped script, in which case Harvey's checkdown volume and Nix's attempts spike and Wilson's carries shrink. Denver's pre-snap flags (3.0 a game, 2nd-worst habit on this card) push it into the long-down passing it cannot win. Note Kalshi is the market here and its player prices are thin.</p></div>
+    </section>
+    <section class="gm-doc-pane" data-title="Offenses">
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>SEA offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>A concentrated, explosive passing game bolted to a dead run game: 8.10 yards per attempt but 3.81 YPC with negative rush EPA in all five weeks, and a field EPA of -0.134 that says the yards come in chunks, not drives.</p>
+          <div class="gm-doc-k">How it scores</div><p>Jaxon Smith-Njigba, who has 37-583-7 on 50 targets in five games and routinely takes half the air yards, plus short fields off takeaways (14 points off Charger giveaways in week 4) and Wilson&#x27;s goal-line work.</p>
+          <div class="gm-doc-k">What stops it</div><p>Interior pressure and fronts that hold under 3.8 YPC: Washington held the run to 2.4 a carry in week 3 and forced a 70% pass rate and three turnovers; San Francisco took five sacks and four giveaways in week 5. Third down (recurring tag, three weeks) and pre-snap penalties (2.8 a game) end drives.</p>
+          <div class="gm-doc-k">This matchup</div><p>Denver pressures at 18.4% (7th) but cannot stop the run — 4.71 YPC, 145.2 rushing yards a game, 24th in rush EPA. Its pass defense ranks 6th in EPA, but Surtain and Hufanga are out and Moss is questionable, which is the reason that rank should not bind here. Denver&#x27;s red-zone defense is real (50% TDs allowed, 6th), so expect yards and field goals more than a touchdown pileup.</p>
+          <div class="gm-doc-k">Injuries</div><p>Charbonnet out (ruled out Wednesday), Price on IR — Wilson is the clear lead back with Holani behind him, as he has been for three weeks. JSN practiced fully and carries no designation (Rotowire, Wed). Lock is cleared as the backup. Guard Anthony Bradford remains on IR, a quiet tax on the run game and protection. On the other side, Denver is without Surtain (ankle), Hufanga (ankle, multi-week) and possibly Moss.</p>
+          <div class="gm-doc-k">Expect</div><p>Pass rate around 50-54%, 29-32 Darnold attempts, 27-30 carries with Wilson at 18-21 of them, JSN at 9-11 targets and the bulk of the air yards, and the rest of the room on scraps in a leading script.</p>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>DEN offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>A low-aDOT, YAC-dependent offense: 5.82 yards per attempt, 59.9% completions, 3.62 YPC, and a field EPA of -0.062. It moves the ball in short chunks and converts trips at a 64.3% red-zone clip when it gets there.</p>
+          <div class="gm-doc-k">How it scores</div><p>Third-down volume (8-of-17 at San Francisco), red-zone finishing, Waddle or Engram on the rare downfield shot, and non-offensive help — the week-3 win over the Rams included a 66-yard pick-six and two two-point plays.</p>
+          <div class="gm-doc-k">What stops it</div><p>Four-man pressure and coverage that takes away the short middle. Kansas City&#x27;s 21.2% pressure rate held Denver to 10 points in week 1; San Francisco&#x27;s coverage turned 296 yards and 66 plays into one red-zone trip and 14 points. Pre-snap flags (3.0 a game) compound it.</p>
+          <div class="gm-doc-k">This matchup</div><p>The worst possible draw between the 20s: Seattle is 1st in rush EPA allowed, 1st in yards per attempt allowed, 2nd in pass EPA allowed, 2nd in passing yards allowed per game and 3rd in pressure generated. The one opening is at the goal line — Seattle has allowed touchdowns on 77.8% of red-zone trips (28th) with +0.397 EPA inside its 20 (31st). So Denver&#x27;s path is few drives, finished.</p>
+          <div class="gm-doc-k">Injuries</div><p>Coleman (IR) and Bryant (IR) are gone from the skill group; the backfield is Dobbins on early downs with Harvey as the receiving back. Three offensive linemen are on IR or PUP and Powers is full after a biceps issue — depth that quietly raises the pressure risk against Seattle&#x27;s front. Seattle is without LB Drake Thomas (73% of snaps), with Tyrice Knight expected to start — a small break for Denver&#x27;s inside run game.</p>
+          <div class="gm-doc-k">Expect</div><p>Pass rate near 60% and climbing if Denver trails, 31-35 attempts at a sub-6 aDOT with heavy YAC, 20-24 carries for under 4.0 a pop, Harvey as the checkdown outlet and points landing under the implied 19 unless the red-zone edge shows up.</p>
+        </div>
+        
+      </div>
+    </section>
+    <section class="gm-doc-pane" data-title="The calls">
+      <p class="gm-doc-note">Each call is one player, one market, one side of the line Kalshi quoted when the plan was written; graded off the box score, with the report's read of whether the reason given showed up. The rungs are the same call down the Kalshi ladder, Edge halfway to its last rung and Edge+ the last, at Kalshi's last pregame price.</p>
+      <div class="gm-doc-verdicts"><span class="badge mute">Normal <b class="up">6</b>&ndash;<b class="down">3</b></span><span class="badge mute">Edge <b class="up">7</b>&ndash;<b class="down">2</b></span><span class="badge mute">Edge+ <b class="up">8</b>&ndash;<b class="down">1</b></span></div>
+      <div class="gm-doc-calls">
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">George Holani</b><span class="flat">SEA</span>
+            <span class="bet">over 29.5 rush+rec yds</span>
+            <span class="res miss">&#10007; 20</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">low</span>
+            <span class="badge good" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #24 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 57%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 46%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal / Edge / Edge+</i> over 29.5 rush+rec yds <small>46&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Holani played 57.6% of snaps but took only 5 carries for 20 and drew zero targets on 51 pass attempts; the checkdown half of the mechanism simply does not exist in this offense, and Velus Jones took 4 carries off the top.</p>
+          <p class="why">The clear RB2 in a two-man room with Charbonnet still out, and his touches come as both carries against a soft front and checkdowns when the pocket gets squeezed.</p>
+          <p class="ev">8 touches in week 5 (4 carries, 4 catches, 24 yards receiving) and 8 in week 4; 36-41% snaps in four of five weeks; five catches at Washington in a trailing script.</p>
+          <p class="ev">vs #24 rush EPA allowed; the engine&#x27;s combined mean is comfortably above the line while Kalshi prices the over under even money — the gap is the engine&#x27;s, and Kalshi&#x27;s volume here is thin.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Sam Darnold</b><span class="flat">SEA</span>
+            <span class="bet">over 224.5 pass yds</span>
+            <span class="res hit">&#10003; 278</span>
+            <span class="badge warn">hit · not for the reason given</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">efficiency</span><span class="badge mute">low</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #6 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 47%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 50%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> over 224.5 pass yds <small>50&cent;</small></span><span class="rung hit"><i>Edge</i> 175+ pass yds <small>78&cent;</small></span><span class="rung hit"><i>Edge+</i> 150+ pass yds <small>88&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Hit at 278, but on 51 attempts at 5.45 per throw with -4.6 CPOE and 2-of-8 deep — the opposite of the stated efficiency mechanism, which required the attempt base to stay near 30.</p>
+          <p class="why">Seattle throws at the highest yards-per-attempt in this game and draws a secondary down two starters. This is an efficiency call, so it needs the attempt base to hold near 30.</p>
+          <p class="ev">8.10 yards per attempt on the season; 379 yards at Washington, 195 on 29 attempts against San Francisco; Denver allows 220.4 passing yards a game (9th) with Surtain and Hufanga out.</p>
+          <p class="ev">vs #6 pass EPA allowed — justified only by the missing starters; engine mean is level with the line and Kalshi is marginally above it. Passing overs against top-tier pass defenses are 1-of-3 on the record, so size it small.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Jaxon Smith-Njigba</b><span class="flat">SEA</span>
+            <span class="bet">over 89.5 rec yds</span>
+            <span class="res hit">&#10003; 134</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #6 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 45%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 54%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> over 89.5 rec yds <small>55&cent;</small></span><span class="rung hit"><i>Edge</i> 70+ rec yds <small>70&cent;</small></span><span class="rung hit"><i>Edge+</i> 50+ rec yds <small>85&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 16 targets, 183 air yards, 43.5% of the team&#x27;s air yards, 12-134 against backup corners — the concentration-plus-depleted-secondary mechanism is precisely what produced the number, even allowing that trailing script added targets.</p>
+          <p class="why">Denver&#x27;s top corner and its ballhawk safety are both out and the next corner is questionable. Seattle routes roughly half its air yards to one man regardless of script.</p>
+          <p class="ev">37-583-7 on 50 targets in five games, 84-90% snaps; Surtain ruled out and Hufanga out multiple weeks (Rotowire, Wed Oct 14), Moss limited Wednesday.</p>
+          <p class="ev">vs #6 pass EPA allowed — the rank is pre-attrition and does not bind with two starters out. Engine mean is a touch above the line, Kalshi&#x27;s over price is the shorter of the two.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Emanuel Wilson</b><span class="flat">SEA</span>
+            <span class="bet">over 64.5 rush yds</span>
+            <span class="res miss">&#10007; 52</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #24 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 44%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 54%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> over 64.5 rush yds <small>54&cent;</small></span><span class="rung hit"><i>Edge</i> 50+ rush yds <small>70&cent;</small></span><span class="rung hit"><i>Edge+</i> 40+ rush yds <small>80&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Wilson got 14 carries for 52 at 3.7 a pop; the stated driver — a one-score lead turning into handoffs — never occurred, as Seattle led for 519 seconds and trailed on 63 of 82 snaps.</p>
+          <p class="why">He is the whole backfield with Charbonnet and Price out, and he meets the softest run front Seattle has seen. A one-score lead on a short week turns into handoffs.</p>
+          <p class="ev">20, 21 and 21 carries the last three weeks at 59-60% snaps; Denver allows 4.71 YPC and 145.2 rush yards a game and the week-4 review had this exact mechanism hit at 21-81.</p>
+          <p class="ev">vs #24 rush EPA allowed; engine mean sits just above the line and Kalshi is slightly above the engine, so this leans on the volume floor, not a yards-per-carry spike. Rushing overs are 56% on the plans&#x27; record.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Jaylen Waddle</b><span class="flat">DEN</span>
+            <span class="bet">under 49.5 rec yds</span>
+            <span class="res hit">&#10003; 24</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #2 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 65%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 55%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 49.5 rec yds <small>55&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;90 rec yds <small>88&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;120 rec yds <small>97&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 7 targets and 49 air yards (50.5% team share) turned into 4-24 with -2.2 EPA — quarterback-capped yardage exactly as described.</p>
+          <p class="why">His yardage is quarterback-capped: the targets arrive, the air yards do not. Seattle&#x27;s corners and safeties have allowed the fewest receiver yards in the league on a per-game basis.</p>
+          <p class="ev">Since the 138-yard outlier in week 2 with Mims out: 10, 35 and 19 yards on 7, 6 and 5 targets; Seattle is 3rd in fantasy points allowed to receivers and 2nd in passing yards allowed.</p>
+          <p class="ev">vs #2 pass EPA allowed; the engine&#x27;s mean is well under the line and Kalshi&#x27;s over price is richer than the engine&#x27;s — we side with the engine here. The same call hit in week 4 on the same mechanism.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Courtland Sutton</b><span class="flat">DEN</span>
+            <span class="bet">under 34.5 rec yds</span>
+            <span class="res hit">&#10003; 19</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #2 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 57%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 56%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 34.5 rec yds <small>55&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;70 rec yds <small>88&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;100 rec yds <small>97&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 3 targets, 30 air yards, 2-19; Nix went 0-for-3 deep including the incompletion to Sutton at Q3 2:00, and the deep attempts never landed.</p>
+          <p class="why">He is the air-yards target on an offense whose quarterback misses deep, and he draws Seattle&#x27;s best cover corner and a safety group that has erased the deep middle.</p>
+          <p class="ev">4, 18 and 46 yards in three of the last four; 1-of-6 deep by Nix at San Francisco; Seattle has allowed zero or few explosive passes in most weeks and ranks 1st in YPA allowed.</p>
+          <p class="ev">vs #2 pass EPA allowed; the engine&#x27;s mean is below the line and Kalshi agrees direction-wise, so the edge is modest — the mechanism is Nix&#x27;s depth accuracy, not a role change.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Bo Nix</b><span class="flat">DEN</span>
+            <span class="bet">under 199.5 pass yds</span>
+            <span class="res hit">&#10003; 107</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #2 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 54%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 52%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 199.5 pass yds <small>54&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;275 pass yds <small>87&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;325 pass yds <small>97&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 107 yards on 27 attempts at a 3.0 aDOT, -0.208 EPA/dropback; Denver&#x27;s two longest drives needed a 15-yard face mask and a 20-yard DPI to sustain.</p>
+          <p class="why">A short-area passing game meets the league&#x27;s stingiest unit between the 20s. Yards come after the catch, and this secondary tackles and squeezes the field better than anyone he has faced.</p>
+          <p class="ev">Nix at 5.82 yards per attempt with a 4.3-5.4 aDOT; Seattle allows 5.45 YPA (1st), 166.8 passing yards a game (2nd) and pressures at 22.3% (3rd); Nix went 123 and 186 in two of his last three.</p>
+          <p class="ev">vs #2 pass EPA allowed; the engine&#x27;s mean already sits below the line and Kalshi sits a shade above the engine — the read is that even the engine&#x27;s number is generous against this front-plus-coverage combination.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Cooper Kupp</b><span class="flat">SEA</span>
+            <span class="bet">under 24.5 rec yds</span>
+            <span class="res miss">&#10007; 50</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">low</span>
+            <span class="badge bad" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #6 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 52%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 55%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 24.5 rec yds <small>55&cent;</small></span><span class="rung miss"><i>Edge</i> &lt;50 rec yds <small>84&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;80 rec yds <small>97&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Kupp saw 10 targets for 50 yards; the call was a volume fade predicated on a run-heavy, shortened game, and Seattle ran 82 plays throwing two-thirds of the time. The target rank held (4th in air-yards share at 18.3%), the game shape did not.</p>
+          <p class="why">Fourth in line for air yards on an offense that funnels everything to one receiver, in a game plan built to run and shorten the night.</p>
+          <p class="ev">3, 2, 5, 2 and 3 targets in five games for 35, 20, 46, 13 and 15 yards; Seattle&#x27;s pass rate is 52.9% and falls with any lead.</p>
+          <p class="ev">vs #6 pass EPA allowed; the engine&#x27;s mean is just under the line and Kalshi is under it too — a volume read on the smallest piece of a concentrated target tree.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">J.K. Dobbins</b><span class="flat">DEN</span>
+            <span class="bet">under 49.5 rush yds</span>
+            <span class="res hit">&#10003; 41</span>
+            <span class="badge good">hit · read partly held</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #1 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 47%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 52%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 49.5 rush yds <small>53&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;90 rush yds <small>88&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;120 rush yds <small>98&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The efficiency half held emphatically — 2.4 YPC, -4.75 rushing EPA, one stuff — but the volume logic (&#x27;if Denver trails, the carries go too&#x27;) inverted: Denver led and gave him 17 carries, three above projection, and he still missed the line.</p>
+          <p class="why">The best run defense in football against a back averaging under 4.0 a carry all season. If Denver trails, the carries go too — this is the most dependable shape of call on the board.</p>
+          <p class="ev">Dobbins at 36, 36, 49, 40 and 68 yards; Seattle allows 3.69 YPC, 100.4 rush yards a game and ranks 1st in rush EPA and 3rd in rush success allowed.</p>
+          <p class="ev">vs #1 rush EPA allowed; the engine projects above the line, which is the regression-to-league blend our studies say under-responds to elite run defenses — Kalshi prices the over below the engine and is nearer right.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Same-script legs">
+      <p class="gm-doc-note">Legs the same script produces together: they move as one, which is what a same-game parlay pays for.</p>
+      <div class="gm-doc-three">
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Seattle grinds, Denver stalls</b></div>
+          <div class="legs"><span class="leg miss">Emanuel Wilson <em>over 64.5 rush yds</em> <i>&#10007;</i></span><span class="leg hit">J.K. Dobbins <em>under 49.5 rush yds</em> <i>&#10003;</i></span><span class="leg hit">Bo Nix <em>under 199.5 pass yds</em> <i>&#10003;</i></span></div>
+          <p class="sub">One script: Seattle runs at the league&#x27;s weakest front, takes the lead, and Denver&#x27;s short passing game gets squeezed by the best between-the-20s defense in football while its own run game never starts.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Denver&#x27;s passing tree capped</b></div>
+          <div class="legs"><span class="leg hit">Bo Nix <em>under 199.5 pass yds</em> <i>&#10003;</i></span><span class="leg hit">Jaylen Waddle <em>under 49.5 rec yds</em> <i>&#10003;</i></span><span class="leg hit">Courtland Sutton <em>under 34.5 rec yds</em> <i>&#10003;</i></span></div>
+          <p class="sub">If the team yardage lands under, the two receivers who carry the air yards are where the shortfall shows; both have already been held under 20 in multiple weeks by far worse coverage.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Seattle&#x27;s passing concentration</b></div>
+          <div class="legs"><span class="leg hit">Jaxon Smith-Njigba <em>over 89.5 rec yds</em> <i>&#10003;</i></span><span class="leg hit">Sam Darnold <em>over 224.5 pass yds</em> <i>&#10003;</i></span></div>
+          <p class="sub">Same mechanism twice: with Denver&#x27;s top corner and ballhawk safety out, Seattle&#x27;s yardage comes through one man, so the quarterback&#x27;s total and his receiver&#x27;s total rise together.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    
+    
+
+    
+    <section class="gm-doc-pane" data-title="Projection grade">
+      <div class="gm-doc-gradehead">
+        <div class="gm-grade warn"><b>C</b><span>projection<br>grade &middot; 57</span></div>
+        <div class="gm-doc-gradetext">
+          
+          <div class="gm-doc-verdicts"><span class="badge mute">SEA 14 – DEN 17</span><span class="badge mute">DEN covered (SEA by 2.5)</span><span class="badge mute">Under 40.5 (31)</span><span class="badge mute">teams 69</span><span class="badge mute">player lines 23/40 in range</span><span class="badge mute">market calls 1/3</span></div>
+        </div>
+      </div>
+      
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>DEN</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">19.0</td><td class="num"><b>17</b></td><td class="num flat">-2</td><td class="meter"><i style="width: 90%" class=""></i></td></tr><tr><td>Pass yds</td><td class="num flat">198.3</td><td class="num"><b>107.0</b></td><td class="num down">-91.3</td><td class="meter"><i style="width: 39%" class="bad"></i></td></tr><tr><td>Rush yds</td><td class="num flat">93.9</td><td class="num"><b>74.0</b></td><td class="num flat">-19.9</td><td class="meter"><i style="width: 78%" class=""></i></td></tr><tr><td>Pass att</td><td class="num flat">31.6</td><td class="num"><b>27</b></td><td class="num flat">-4.6</td><td class="meter"><i style="width: 71%" class=""></i></td></tr><tr><td>Carries</td><td class="num flat">26.1</td><td class="num"><b>28</b></td><td class="num flat">+1.9</td><td class="meter"><i style="width: 86%" class=""></i></td></tr>
+          </tbody></table>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>SEA</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">21.5</td><td class="num"><b>14</b></td><td class="num flat">-7.5</td><td class="meter"><i style="width: 62%" class=""></i></td></tr><tr><td>Pass yds</td><td class="num flat">225.2</td><td class="num"><b>278.0</b></td><td class="num flat">+52.8</td><td class="meter"><i style="width: 65%" class=""></i></td></tr><tr><td>Rush yds</td><td class="num flat">112.2</td><td class="num"><b>113.0</b></td><td class="num flat">+0.8</td><td class="meter"><i style="width: 99%" class=""></i></td></tr><tr><td>Pass att</td><td class="num flat">31.2</td><td class="num"><b>51</b></td><td class="num up">+19.8</td><td class="meter"><i style="width: 0%" class="bad"></i></td></tr><tr><td>Carries</td><td class="num flat">28.2</td><td class="num"><b>26</b></td><td class="num flat">-2.2</td><td class="meter"><i style="width: 84%" class=""></i></td></tr>
+          </tbody></table>
+        </div>
+        
+      </div>
+      <div class="gm-doc-verdicts"><span class="badge bad">Winner: SEA &#10007;</span><span class="badge bad">Spread: SEA -2.5 &#10007;</span><span class="badge good">Total: Under 40.5 (proj 40.5) &#10003;</span></div>
+      
+      
+      <div class="gm-doc-k">Why the projection missed &middot; what it got right</div>
+      <p class="gm-doc-p">A C (0.573): the team-level shape was decent (0.692) but the two volume assumptions that drive everything were wrong in opposite directions. Seattle&#x27;s 51 pass attempts against a projected 31.2 is the single biggest input miss and it cascades — Darnold&#x27;s yardage, JSN&#x27;s 16 targets, Kupp&#x27;s 10 targets and Horton&#x27;s 5 all flow from it, and the engine had blended Seattle to a 54.3% pass rate off a 52.9% season rate. Denver&#x27;s 107 passing yards against 198.3 is the other big one, and that is less noise: Nix threw at a 3.0 aDOT, went 0-for-3 deep, and the engine&#x27;s blended 6.27 Y/A was already generous against a Seattle unit allowing 5.45. Points were close on both sides (DEN 17 vs 19.0, SEA 14 vs 21.5) and Seattle&#x27;s rushing yardage was nearly exact at 113 vs 112.2. The market calls split: side wrong, total right, 23 of 40 player lines graded hit.</p>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>SEA</b> &middot; 51 pass attempts and 82 plays against 31.2 and 61.8 projected<div class="went">Game script plus overtime: Seattle never led after the first quarter (519 seconds led all night), ran 63 of 82 snaps trailing at a 71.4% pass rate, and the OT possession added snaps. Early-down pass rate (60.9%) actually ran *below* expected (67.6%), so this was situation, not philosophy.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>SEA</b> &middot; 14 points on 21.5 projected despite 391 yards of offense<div class="went">Finishing and giveaways, not movement: one red-zone trip on 82 plays, three turnovers, a missed 47-yard field goal, and 5 sacks for -42 on third downs. Field EPA -0.135 says the yards were empty; the one RZ trip was a touchdown.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>DEN</b> &middot; 107 passing yards on 198.3 projected<div class="went">Efficiency and depth: 3.0 aDOT, 0/3 deep, -0.208 EPA/dropback, and only 27 attempts because Denver led for 2,573 seconds and ran 28 times. Nix&#x27;s 5.82 Y/A season rate against Seattle&#x27;s 5.45 allowed already pointed under the blend.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>DEN</b> &middot; Pass rate 50.8% against a 58.5% season rate and a 56.3% blend<div class="went">Leading script: Denver&#x27;s early-down pass rate was 40.9% against a 47.1% expectation; it was ahead from Q2 on and fed Dobbins 17 carries at 2.4 a pop rather than throw.</div></div></div></div>
+      <div class="gm-doc-verdicts wrap"><span class="badge good">&#10003; Total: projected 40.5, actual 31 — the under cashed even with 139 plays and overtime.</span><span class="badge good">&#10003; Denver points: 19.0 projected, 17 actual.</span><span class="badge good">&#10003; Seattle rushing yards: 112.2 projected, 113 actual, and Wilson&#x27;s 51.6 projected rush yards against 52 actual.</span><span class="badge good">&#10003; Holani&#x27;s 5 carries exactly, Barner 3 catches on 3.2, Harvey 4 targets on 4.3, Waddle 4 catches on 4.3.</span><span class="badge good">&#10003; Denver&#x27;s interception rate edge: the engine had DEN defense at a 4.6% INT rate generated; the Broncos took two of Darnold&#x27;s throws.</span></div>
+      
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Turning points">
+      <div class="gm-doc-tl">
+        <div class="gm-doc-tp"><div class="clock">Q1 03:46</div><div class="what"><span class="badge mute">DEN</span> 4th-and-3 from midfield, Badie up the middle for 6 (+2.9 EPA, +.091 WP)<div class="went">Kept alive the 17-play, 79-yard, 8:39 drive that produced the Dobbins touchdown and flipped the game&#x27;s only lead change; Denver&#x27;s other 22 drives produced three points of offense.</div></div></div><div class="gm-doc-tp"><div class="clock">Q2 09:07</div><div class="what"><span class="badge mute">SEA</span> Byron Murphy face mask, 15 yards, on a 3rd-and-10 completion (+2.57 EPA for DEN)<div class="went">Free first down on what became Denver&#x27;s second touchdown drive; paired with Witherspoon&#x27;s 20-yard DPI at 5:23, 35 penalty yards built the 14-3 lead.</div></div></div><div class="gm-doc-tp"><div class="clock">Q2 02:34</div><div class="what"><span class="badge mute">SEA</span> Shaheed fumble forced by Bonitto at the DEN 30, recovered by Strnad (-4.13 EPA)<div class="went">Seattle&#x27;s only scoring threat of the half ended inside field-goal range down 11; it is also the first of three giveaways that defined the night.</div></div></div><div class="gm-doc-tp"><div class="clock">Q3 08:34</div><div class="what"><span class="badge mute">SEA</span> Myers misses a 47-yard field goal after the 42-yard Shaheed catch (+3.46 EPA)<div class="went">The best drive of Seattle&#x27;s middle quarters — 55 yards — produced nothing; three more points there and the overtime field goal is a tie, not a loss.</div></div></div><div class="gm-doc-tp"><div class="clock">Q4 01:31</div><div class="what"><span class="badge mute">SEA</span> 3rd-and-1 at the DEN 39, Darnold intercepted by Abrams-Draine (-3.84 EPA, -.352 WP)<div class="went">Biggest WP swing of the game: Seattle threw on a one-yard down from field-goal range trailing by three and gave it away. Shaheed&#x27;s 31-yard punt return bailed them into the tying kick.</div></div></div><div class="gm-doc-tp"><div class="clock">OT1 07:17</div><div class="what"><span class="badge mute">SEA</span> 3rd-and-7, Darnold intercepted by McMillian at the SEA 43<div class="went">Handed Denver a short field in sudden-change OT; three plays and eight yards later Lutz hit from 53 for the game.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="What decided it">
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Seattle&#x27;s three giveaways against Denver&#x27;s zero</b><div class="went">Shaheed fumble at the DEN 30 (Q2 2:34), Darnold INTs at the DEN 39 (Q4 1:31) and the SEA 43 (OT 7:17); Denver&#x27;s winning drive started on the Seattle side of the field and gained eight yards.</div><div class="went"><b>Tell:</b> Seattle tagged for turnovers in weeks 3 and 5 (three at WAS, four vs SF) and carrying a 3.4% INT rate against a Denver defense generating 4.6%.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Seattle&#x27;s inability to reach the red zone — yards without touchdowns</b><div class="went">82 plays, 391 yards, one red-zone trip (a touchdown) and 14 points; field EPA -0.135, 7-of-17 on third down, 5 sacks for 42 lost yards, a missed 47-yarder.</div><div class="went"><b>Tell:</b> Seattle&#x27;s season field EPA was -0.134 entering the game and its third-down failures were tagged in three of five prior weeks; the volume was always likely to outrun the scoring.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Denver&#x27;s pass rush without needing exotic looks</b><div class="went">5 sacks and 15 QB hits, 26.8% pressure (sack-or-hit), four of the five sacks on third down; Robinson 4 pressures, Roach 4, at a 33.3% blitz rate per charting — pressure came from a four-man front plus occasional extra.</div><div class="went"><b>Tell:</b> Seattle allowed pressure in weeks 4 (30.8%) and 5 (22.9%, 5 sacks); Denver&#x27;s defense entered generating 22.3% pressure, well above the 14.8% league rate.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Seattle&#x27;s defensive penalties fueling Denver&#x27;s only sustained drives</b><div class="went">Murphy 15-yard face mask on 3rd-and-10 and Witherspoon 20-yard DPI inside the two-minute drive; Denver drew 45 penalty yards including 20 DPI, and scored both touchdowns on those two possessions.</div><div class="went"><b>Tell:</b> Seattle tagged for defensive penalties in weeks 1 and 4 (64 and 90 yards drawn by opponents); Denver entered drawing 13.6 DPI yards a game against a 6.45 league rate.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Denver&#x27;s offense contributing almost nothing after the first half</b><div class="went">Second-half EPA/play -0.561, 3-of-14 on third down for the game, drives of -10, 2, 3, 4 and 9 yards; the game only stayed close because Seattle kept giving it back.</div><div class="went"><b>Tell:</b> Nix&#x27;s 5.82 season Y/A and 3-4 aDOT against the league&#x27;s stingiest between-the-20s defense — exactly the mismatch the engine&#x27;s 6.27 blended Y/A underrated.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; SEA">
+      <div class="gm-doc-boxhead"><b>How SEA gets beaten</b><span class="flat">3-2 entering</span><span class="badge mute">high confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">third down &times;3</span><span class="badge bad">penalties &times;2</span><span class="badge bad">pre-snap penalties &times;2</span><span class="badge bad">defensive penalties &times;2</span><span class="badge bad">turnovers &times;2</span><span class="badge bad">pressure allowed &times;2</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Its own quarterback&#x27;s giveaways under pressure</b><div class="went">Three turnovers here (two Darnold INTs, both on third down); four turnovers in week 5 vs SF, three in week 3 at WAS — turnovers tagged twice and now a third time.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Pressure allowed on obvious passing downs</b><div class="went">5 sacks and 15 hits, 26.8% pressure here; 30.8% pressure allowed in week 4 (LAC), 22.9% and 5 sacks in week 5 (SF). Four sacks came on third down and killed drives at the DEN 29, SEA 33 and DEN 46.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Third down</b><div class="went">7-of-17 here; 2-of-12 week 1, 3-of-12 week 4, 3-of-12 week 5 — tagged in three prior weeks.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Red-zone defense — it holds the field and concedes at the goal line</b><div class="went">Denver 2-for-2 on trips here with +0.544 EPA inside the 20 while gaining 181 total yards; week 4 LAC 2-for-2 (+0.924), week 5 SF 3-for-3 (+0.794); season opponent red-zone TD rate 77.8%.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag both">both</span><div><b>Flags on both sides of the ball</b><div class="went">7 for 75 here including a 15-yard face mask and a 20-yard DPI on Denver&#x27;s two touchdown drives; 150 penalty yards in week 4, 98 in week 1 with 7 pre-snap.</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> Seattle&#x27;s defense is genuinely elite between the 20s (Denver: -0.174 field EPA, 3-of-14 third downs, 74 rush yards on 28 carries) and its offense moves the ball, but it leaks points through self-inflicted events — sacks on third down, turnovers, defensive flags that gift first downs, and a goal-line defense that concedes touchdowns on nearly every trip it allows. You beat Seattle without outplaying it.</p>
+      <p class="gm-doc-p"><b>This week:</b> Denver tried exactly that and had just enough: a pass rush that produced 26.8% pressure with Robinson and Roach winning individually, two cornerbacks (McMillian, Abrams-Draine) who took the ball away, and an offense efficient enough to convert its only two red-zone trips. What Denver could not do was generate field position on its own — it gained 181 yards all game and needed penalties and a turnover to find points.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> A four-man rush that pressures above ~22% without blitzing (Seattle&#x27;s protection cracks when it can&#x27;t slide), corners who punish Darnold&#x27;s short-left throws, and the ability to finish the rare trip inside the 20 — because you will get few of them.</p>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; DEN">
+      <div class="gm-doc-boxhead"><b>How DEN gets beaten</b><span class="flat">3-2 entering</span><span class="badge mute">medium confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">run game &times;3</span><span class="badge bad">pre-snap penalties &times;3</span><span class="badge bad">third down &times;2</span><span class="badge bad">explosive passing &times;2</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>The run game against its front</b><div class="went">Tagged in weeks 1 (KC, 4 explosive runs), 2 (JAX) and 4 (SF, 5 explosive runs, 0.095 field EPA allowed); Seattle got 113 on 26 carries (4.35) with 3 runs of 10+ here, left side 4.5 YPC.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Explosive passing when the secondary is thinned</b><div class="went">6 explosive passes allowed in week 3 (LA), 2 in week 4; here Barron allowed 5-of-8 for 67 and Brandon Jones 5-of-6 for 78 with 3 missed tackles, including the 32-yard JSN strike at Q4 2:42.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Its own offense cannot sustain — third down and field efficiency</b><div class="went">3-of-14 here (-0.174 field EPA), 1-of-13 in week 5, 2-of-12 in week 1; aDOT 3.0 with 0/3 deep means every drive needs four or five conversions.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Pre-snap penalties</b><div class="went">3 pre-snap flags here (encroachment x2, delay of game) on top of Bolles&#x27;s holding that ended the half; tagged for pre-snap flags in weeks 2, 4 and 5 at 3.0 a game against a 1.55 offensive league rate.</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> Denver is a bend-don&#x27;t-break defense (week 3: five LA red-zone trips, one touchdown) with a soft run front, married to an offense that lives on 3-to-5 yard throws and converts a third of its third downs. Opponents move the ball on the ground and in chunks through a secondary missing Surtain and Hufanga; what they usually don&#x27;t do is finish, and Denver&#x27;s offense cannot run away with anything.</p>
+      <p class="gm-doc-p"><b>This week:</b> Seattle had the chunk plays (42 to Shaheed, 32 to JSN, 3 explosive runs) and the efficiency between the 20s to execute the blueprint, but abandoned the run after falling behind — 26 carries at 4.35 while throwing 51 times at 5.45 per attempt — and then converted the field position into one red-zone trip. That&#x27;s the trap: Denver looked exploitable and the yardage came, the points did not.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> A rushing attack above league rush EPA with an explosive-run rate at or above 2.3 a game that will keep handing off while behind, plus a quarterback who protects the ball — Denver&#x27;s defense has no way to stop a methodical drive but every way to end one with a takeaway or a sack on third-and-long.</p>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Player lines">
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Sam Darnold</b> <span class="flat">SEA</span> &middot; 51 att / 27 comp / 278 yds / 0 TD / 2 INT, 5 sacks, 15 QB hits<div class="went">Projected 31.2 attempts; trailing 63 of 82 snaps plus overtime drove volume. Efficiency was poor — 5.45 Y/A, -4.6 CPOE, 2-for-8 deep, -0.085 EPA/dropback and 35.1% pressure faced.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Jaxon Smith-Njigba</b> <span class="flat">SEA</span> &middot; 16 targets, 12-134, 0 TD, 91.8% snaps, 43.5% air-yards share<div class="went">Projected 9 targets; with Surtain and Hufanga out he saw a third more volume than modeled and still took 183 of Seattle&#x27;s air yards. The yardage mechanism (concentration vs backup corners) was real even before the script inflated it.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Cooper Kupp</b> <span class="flat">SEA</span> &middot; 10 targets, 5-50<div class="went">Projected 3.4 targets. Pure script: his volume arrived in the trailing second half (17-yard catch at Q4 0:25 on the tying drive). -0.11 receiving EPA says the efficiency wasn&#x27;t there.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Emanuel Wilson</b> <span class="flat">SEA</span> &middot; 14 carries, 52 yards, 1 target, 31.8% snap share<div class="went">Rushing yards nailed (51.6 proj) but the carry count fell short of the 18-21 the plan wanted because Seattle trailed wire to wire. The low snap share with 14 carries is the number to note — he is a committee back, not a bellcow, even with Charbonnet out.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>George Holani</b> <span class="flat">SEA</span> &middot; 5 carries, 20 yards, 1 rush TD, 0 targets, 57.6% snaps<div class="went">High snap share, no passing-game usage on 51 attempts — the checkdown role the market priced does not exist. He did take the goal-line carry at Q4 5:47.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Rashid Shaheed</b> <span class="flat">SEA</span> &middot; 9 targets, 5-66, 1 lost fumble, 31-yard punt return, 45.9% snaps<div class="went">The 42-yard catch at Q3 10:52 carried the line; the Bonitto-forced fumble at the DEN 30 cost -4.13 EPA. Boom-or-bust deep role on under half the snaps.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Bo Nix</b> <span class="flat">DEN</span> &middot; 17-27, 107 yards, 0 TD, 0 INT, 3.0 aDOT, 0/3 deep<div class="went">Denver led from Q2 and ran 28 times; the throws that came were all short, -0.208 EPA/dropback against the best coverage unit he has faced. Repeatable against good secondaries.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>J.K. Dobbins</b> <span class="flat">DEN</span> &middot; 17 carries, 41 yards, 1 TD, 3 catches for 5<div class="went">More carries than projected (14.2) because Denver led, but 2.4 a carry and -4.75 rushing EPA against the league&#x27;s top run defense. Touchdown came from the 4 on the long opening drive.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>RJ Harvey</b> <span class="flat">DEN</span> &middot; 6 carries, 25 yards, 1 TD, 4 targets, 3-31, +2.34 rush EPA, 40% snaps<div class="went">The efficient half of the backfield — 38 YAC on negative air yards, the direct-snap score at Q2 5:19 — on fewer than half the snaps. Usage, not talent, caps him.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Jaylen Waddle</b> <span class="flat">DEN</span> &middot; 7 targets, 4-24, -2.2 receiving EPA<div class="went">Team-leading 50.5% air-yards share and still 24 yards: the quarterback caps the ceiling, not the coverage. Held under 50 again.</div></div></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Traps">
+      <div class="gm-doc-three"><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>A run-lean projection is a script assumption, not a tendency. Seattle entered at a 52.9% pass rate and threw on 68.3% of snaps because it never led for more than 519 seconds — but its early-down pass rate (60.9%) was actually below expected. Before buying rush-volume props, ask what happens if the team trails by 11 at the half.</b></p><p class="sub"><b>Trigger:</b> Any RB rush-yard over whose stated mechanism includes &#x27;the lead turns into handoffs,&#x27; on a team that is not a clear favorite by a touchdown.</p></div><div class="gm-doc-box"><span class="badge mute">Totals</span><p><b>Play volume does not equal points when neither offense clears the 20. 139 plays and overtime produced 31 points because Seattle got one red-zone trip on 82 snaps and Denver gained 181 yards. Totals that depend on pace are vulnerable to teams with negative field EPA on both sides.</b></p><p class="sub"><b>Trigger:</b> Both offenses below 0.00 season field EPA/play and at least one defense allowing fewer than 5.6 yards per attempt — take the under regardless of projected pace.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>Concentration beats volume for receiver props. JSN&#x27;s 43.5% air-yards share held no matter the script and produced 16 targets and 134 yards; the RB2 with a 57.6% snap share got zero targets on 51 attempts. Pay for target share, not for &#x27;he&#x27;ll catch checkdowns.&#x27;</b></p><p class="sub"><b>Trigger:</b> A WR at or above a 35% air-yards share facing a secondary down two starters — the over survives both scripts; an RB2 receiving over needs charted targets, not projected ones.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>A quarterback with a sub-4.0 aDOT against a top-tier coverage unit is a yardage under even when volume looks safe. Nix&#x27;s 27 attempts produced 107 yards on 3.0 aDOT with 0/3 deep; the engine&#x27;s 6.27 blended Y/A was 2.3 yards too generous.</b></p><p class="sub"><b>Trigger:</b> QB season aDOT under 5.0 versus a defense allowing under 5.6 Y/A — fade the passing yardage line even if the attempt projection holds.</p></div><div class="gm-doc-box"><span class="badge mute">Every market</span><p><b>Seattle&#x27;s defense is worth laying points against between the 20s and worth fading at the goal line. Opponents are now 7-for-7 on red-zone trips across weeks 4, 5 and 6 with +0.54 to +0.92 EPA inside the 20, while the field defense ranks among the league&#x27;s best.</b></p><p class="sub"><b>Trigger:</b> Opposing anytime-TD props and team-total overs for offenses that project under 3 red-zone trips — the trips convert, so the scoring comes in TDs not FGs, but the trip count caps the total.</p></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="The story">
+      <div class="gm-doc-prose"><h2>The short version</h2>
+<p>Seattle ran 82 plays to Denver's 59, out-gained the Broncos by more than 200 yards, and lost in overtime because it reached the red zone once. Three giveaways — Shaheed's fumble at the Denver 30, Darnold's interception on 3rd-and-1 inside field-goal range at 1:31, and the overtime pick that handed Denver the ball at the Seattle 43 — plus a missed 47-yard field goal and five sacks for 42 yards made 391 yards worth fourteen points. Denver covered as a 2.5-point home underdog and the total stayed under 40.5 despite 139 plays and an extra period.</p>
+<h2>How it unfolded</h2>
+<p>Seattle opened by moving the ball and immediately paying for it: back-to-back Darnold sacks by McMillian and Robinson at Q1 11:31 and 10:49 cost -3.8 EPA and turned a drive into a punt, and the second possession ended in a 55-yard Myers kick. Denver's answer was the game's only real sustained drive — 17 plays, 79 yards, 8:39, kept alive by Badie's six-yard fourth-down run at the 48 (+2.9 EPA) and an Engram conversion on 3rd-and-8 — and Dobbins scored from the four.</p>
+<p>The second touchdown was gifted. On 3rd-and-10 from the Denver 21, Byron Murphy's face mask turned an eight-yard completion into a 23-yard gain, and Witherspoon's 20-yard DPI at 5:19 put the Broncos at the goal line for Harvey's direct-snap score. Thirty-five of the drive's 44 yards came from Seattle's secondary. Seattle answered by driving to the Denver 30 and having Bonitto punch the ball out of Shaheed's hands.</p>
+<p>The second half was Denver doing essentially nothing — drives of 9, 4, 3, 23, -10 and 2 yards, -0.561 EPA per play — and Seattle failing to convert the field it owned. Shaheed's 42-yard catch set up the missed 47-yarder; sacks by Elliss and the Allen/Bonitto pair ended two more possessions. The 12-play, 66-yard touchdown drive at Q4 9:18, capped by Holani and a two-point conversion to Shaheed, made it 14-11, and after the Abrams-Draine interception Shaheed's 31-yard punt return set up Myers's 34-yard tie at :07. In overtime McMillian picked Darnold at the Seattle 43 and Lutz hit from 53.</p>
+<h2>Why the game diverged from the projection</h2>
+<p>Two volume assumptions broke. Seattle was modeled for 31.2 attempts on a 54.3% blended pass rate; it threw 51 times at a 68.3% rate because it trailed on 63 of 82 snaps and played overtime. That is script, not philosophy — its early-down pass rate (60.9%) was below the expected 67.6%. Denver was modeled for 31.6 attempts and 198 passing yards and threw 27 for 107, because it led for 2,573 seconds and because Nix's 3.0 aDOT and 0-for-3 deep line are what his 5.82 season Y/A looks like against a defense allowing 5.45. That one is signal: the engine's 6.27 blended yards per attempt was too kind to a short-area passer.</p>
+<p>The points, though, were close on both sides (DEN 17 vs 19.0, SEA 14 vs 21.5) and the total projection of 40.5 beat the market's own number. Seattle's shortfall is a finishing story, not a movement story — field EPA -0.135, one red-zone trip, a 0.728 EPA/play inside the 20 when it finally got there.</p>
+<h2>The plan against the game</h2>
+<p>The plan's Denver side was close to perfect and for the stated reasons: Nix capped at 107, Waddle and Sutton combined for 43 on their air-yard shares, Dobbins at 2.4 a carry. Its Seattle side rested on a lead that never came, so the run-lean call inverted (68.3% pass), the pace call inverted (139 plays against a 121.5 league baseline), Wilson's and Holani's touches never arrived, and the Kupp volume fade died in a 51-attempt game. Most tellingly, the underdog path it wrote — Darnold gives it away, Denver gets a short field, converts its red-zone trips, final near 20-19 — is the game that was played. The plan saw the losing branch; it just bet the other one.</p>
+<h2>Player by player</h2>
+<p>Smith-Njigba is the durable lesson: 16 targets, 183 air yards, 43.5% of the team's air-yard share, 12-134 with no touchdown. The concentration survives any script. Kupp's 10 targets and Horton's five are the opposite — pure chase volume, with -0.11 and -2.95 receiving EPA respectively. Wilson hit his projected rushing yardage almost exactly (52 on 51.6) but on a 31.8% snap share; Holani played 57.6% of snaps, took five carries, drew zero targets on 51 attempts and still scored. That backfield is a committee with unpredictable touch distribution, and Velus Jones's four unprojected carries make it worse. For Denver, Harvey was the efficient back (+2.34 rush EPA, 38 YAC on negative air yards) at 40% of snaps while Dobbins ground out 17 carries for -4.75 EPA.</p>
+<h2>The defenses</h2>
+<p>Seattle's front and coverage were the better unit all night: 74 Denver rushing yards on 28 carries, 3-of-14 on third down, -0.174 field EPA, Emmanwori with a sack and three pressures, Ernest Jones with nine tackles and a sack. It gave up points only where it has all season — at the goal line and through its own flags. Denver's pass rush won without exotics: 33.3% blitz rate per charting, 6.24-man boxes, and Robinson and Roach generating four pressures each, with four of five sacks on third down. Its corners, down Surtain and Hufanga, allowed yards (Barron 67, Brandon Jones 78 with three missed tackles) but produced the two interceptions that decided it.</p>
+<h2>What the model should take from this</h2>
+<p>Seattle's trailing-script pass rate is the operative input, not its season rate. Denver should be modeled run-lean whenever it is not behind. And the engine's yards-per-attempt blend needs more weight on quarterback aDOT when facing top-tier coverage: a 3-to-4 aDOT passer against a sub-5.6 Y/A defense is a structural under, not a variance play. The red-zone split — Seattle's opponents now 7-for-7 over three weeks — is worth tracking but not yet worth a model constant; the trip counts that produce it are small-sample noise.</p></div>
+    </section>
+    
+    
+  </div>
+</details>
+
 </div>
 
 
@@ -1742,6 +2291,15 @@
       if(pick) pick.addEventListener("change",function(){ node.querySelectorAll(".pl-tl").forEach(function(t){ t.hidden=t.dataset.key!==pick.value; }); });
       modal.querySelector(".pl-dialog").scrollTop=0;
     }).catch(function(){ body.innerHTML='<div class="pl-loading">The player sheets could not be loaded.</div>'; });
+  }
+  // The plan / report panel: pills and arrows walk its sections.
+  var doc=document.querySelector(".gm-doc");
+  if(doc){
+    var panes=[].slice.call(doc.querySelectorAll(".gm-doc-pane")), pills=doc.querySelector(".gm-doc-pills"), cur=0;
+    panes.forEach(function(pn,i){ var b=document.createElement("button"); b.type="button"; b.textContent=pn.dataset.title; b.setAttribute("role","tab"); b.addEventListener("click",function(){ show(i); }); pills.appendChild(b); });
+    function show(i){ cur=(i+panes.length)%panes.length; panes.forEach(function(pn,k){ pn.classList.toggle("active",k===cur); }); pills.querySelectorAll("button").forEach(function(b,k){ b.classList.toggle("active",k===cur); if(k===cur&&b.scrollIntoView) b.scrollIntoView({block:"nearest",inline:"center"}); }); }
+    doc.querySelectorAll(".gm-doc-arrow").forEach(function(a){ a.addEventListener("click",function(){ show(cur+parseInt(a.dataset.dir,10)); }); });
+    show(0);
   }
   document.querySelectorAll(".pl-open").forEach(function(b){ b.addEventListener("click",function(e){ e.stopPropagation(); openPlayer(b.dataset.pid); }); });
   modal.querySelector(".pl-close").addEventListener("click",closeModal);

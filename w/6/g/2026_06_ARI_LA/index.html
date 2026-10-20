@@ -797,6 +797,126 @@
     .hfa .pl-log td.wk, .hfa .pl-log th:first-child { position: sticky; left: 0; background: #0d0d11; z-index: 1; }
     :root[data-theme="light"] .hfa .pl-log td.wk, :root[data-theme="light"] .hfa .pl-log th:first-child { background: #fff; }
   }
+
+  /* ---- The plan / report panel under the scoreboard ---- */
+  .gm-doc { position: relative; overflow: visible; }
+  .gm-doc::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; border-radius: 14px 14px 0 0; background: linear-gradient(90deg, var(--hfa-accent), transparent 70%); pointer-events: none; }
+  .gm-doc.st-both::before { background: linear-gradient(90deg, var(--hfa-good), var(--hfa-accent) 55%, transparent 90%); }
+  .gm-doc > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 0.9rem; padding: 1rem 1.1rem; }
+  .gm-doc > summary::-webkit-details-marker { display: none; }
+  .gm-doc-chev { display: inline-grid; place-items: center; flex: none; width: 2rem; height: 2rem; border-radius: 50%; background: var(--hfa-accent); color: #fff; box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.22), 0 6px 14px -6px rgba(255, 31, 47, 0.9); transition: transform 0.18s; }
+  .gm-doc[open] > summary .gm-doc-chev { transform: rotate(180deg); background: #fff; color: var(--hfa-accent); }
+  .gm-doc-main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+  .gm-doc-eyebrow { font-size: 0.64rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-accent); }
+  .gm-doc-lead { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; line-height: 1.3; color: var(--hfa-body); }
+  .gm-doc-chips { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0.3rem; flex: 0 1 auto; }
+  .gm-doc-open { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); margin-left: 0.3rem; }
+  .gm-doc[open] .gm-doc-open { display: none; }
+  .gm-doc-body { border-top: var(--hfa-hairline); padding: 0.7rem 1.1rem 1.2rem; }
+  .gm-doc-nav { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.9rem; }
+  .gm-doc-pills { display: flex; gap: 0.3rem; overflow-x: auto; scrollbar-width: none; flex: 1 1 auto; padding: 2px; }
+  .gm-doc-pills::-webkit-scrollbar { display: none; }
+  .gm-doc-pills button { flex: none; border: 1px solid rgba(128, 128, 128, 0.25); background: transparent; color: var(--hfa-muted); border-radius: 999px; padding: 0.3rem 0.85rem; font-size: 0.76rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
+  .gm-doc-pills button.active { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-arrow { flex: none; width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid rgba(128, 128, 128, 0.3); background: transparent; color: var(--hfa-body); font-size: 1.2rem; line-height: 1; cursor: pointer; }
+  .gm-doc-arrow:hover { background: var(--hfa-accent); border-color: var(--hfa-accent); color: #fff; }
+  .gm-doc-pane { display: none; animation: gm-fade 0.18s ease-out; }
+  .gm-doc-pane.active { display: block; }
+  @keyframes gm-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  .gm-doc-hook { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1.2; color: var(--hfa-accent); margin-bottom: 0.4rem; }
+  .gm-doc-headline { font-size: 1rem; font-weight: 600; line-height: 1.45; margin: 0 0 0.7rem; }
+  .gm-doc-p { font-size: 0.9rem; line-height: 1.55; margin: 0 0 0.7rem; }
+  .gm-doc-note { font-size: 0.76rem; color: var(--hfa-muted); line-height: 1.45; margin: 0 0 0.6rem; }
+  .gm-doc-prose { font-size: 0.9rem; line-height: 1.6; max-width: 60rem; }
+  .gm-doc-prose h2 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 1rem 0 0.3rem; }
+  .gm-doc-prose h3 { font-size: 0.9rem; margin: 0.8rem 0 0.2rem; }
+  .gm-doc-prose p { margin: 0 0 0.6rem; }
+  .gm-doc-prose ul { padding-left: 1.2rem; }
+  .gm-doc-k { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 0.9rem 0 0.35rem; }
+  .gm-doc-box > .gm-doc-k:first-child, .gm-doc-col > .gm-doc-k:first-child { margin-top: 0; }
+  .gm-doc-verdicts { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.2rem 0 0.7rem; }
+  .gm-doc-verdicts.wrap .badge { white-space: normal; text-align: left; }
+  .gm-doc-verdicts .badge b { color: inherit; }
+  .gm-doc-vs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 0.4rem; }
+  .gm-doc-col { padding: 0.75rem 0.9rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); font-size: 0.9rem; line-height: 1.5; }
+  .gm-doc-col.plan { border-left: 3px solid var(--hfa-accent); }
+  .gm-doc-col.game { border-left: 3px solid var(--hfa-good); }
+  .gm-doc-col.game .gm-doc-k { color: var(--hfa-good); }
+  .gm-doc-col p, .gm-doc-box p { margin: 0 0 0.45rem; font-size: 0.88rem; line-height: 1.5; }
+  .gm-doc-col p:last-child, .gm-doc-box p:last-child { margin-bottom: 0; }
+  .gm-doc p.sub, .gm-doc .went { font-size: 0.8rem; color: var(--hfa-muted); line-height: 1.45; }
+  .gm-doc .went { margin-top: 0.2rem; }
+  .gm-doc-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .gm-doc-three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; }
+  .gm-doc-box { min-width: 0; padding: 0.7rem 0.85rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); }
+  .gm-doc-boxhead { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.4rem; font-size: 0.92rem; }
+  .gm-doc-boxhead b { color: var(--hfa-body); font-weight: 800; }
+  .gm-doc-ul { margin: 0; padding-left: 1.1rem; font-size: 0.86rem; line-height: 1.5; }
+  .gm-doc-ul li { margin-bottom: 0.3rem; }
+  .gm-doc-list { display: flex; flex-direction: column; gap: 0.45rem; }
+  .gm-doc-item { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.45; padding: 0.5rem 0.7rem; border-radius: 10px; background: var(--hfa-tint); border: var(--hfa-hairline); }
+  .gm-doc-item > div { min-width: 0; }
+  .gm-doc-item b { color: var(--hfa-body); }
+  .gm-doc-flag { flex: none; min-width: 5.2rem; text-align: center; border-radius: 6px; padding: 0.2rem 0.45rem; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); margin-top: 0.15rem; }
+  .gm-doc-flag.decisive, .gm-doc-flag.signal, .gm-doc-flag.yes, .gm-doc-flag.held { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-flag.contributed, .gm-doc-flag.mixed, .gm-doc-flag.partly { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .gm-doc-flag.minor, .gm-doc-flag.noise, .gm-doc-flag.no, .gm-doc-flag.broke { background: rgba(255, 31, 47, 0.16); color: var(--hfa-accent); }
+  .gm-doc-flag.defense { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .gm-doc-flag.offense { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .gm-doc-calls { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  .gm-call { min-width: 0; padding: 0.65rem 0.85rem 0.6rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); border-left: 3px solid var(--hfa-muted); }
+  .gm-call.over { border-left-color: var(--hfa-good); } .gm-call.under { border-left-color: var(--hfa-accent); }
+  .gm-call.hit { background: rgba(47, 212, 164, 0.06); } .gm-call.miss { background: rgba(255, 176, 32, 0.06); }
+  .gm-call-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.5rem; font-size: 0.92rem; }
+  .gm-call-side { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .gm-call.over .gm-call-side { color: var(--hfa-good); } .gm-call.under .gm-call-side { color: var(--hfa-accent); }
+  .gm-call .who { color: var(--hfa-body); font-weight: 800; }
+  .gm-call .bet { font-weight: 700; color: var(--hfa-accent); }
+  .gm-call .res { font-weight: 800; font-size: 0.8rem; margin-left: auto; }
+  .gm-call .res.hit { color: var(--hfa-good); } .gm-call .res.miss { color: var(--hfa-bad); } .gm-call .res.void { color: var(--hfa-muted); font-weight: 500; }
+  .gm-call-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem; margin: 0.35rem 0 0.2rem; }
+  .gm-call .prob { font-size: 0.7rem; font-weight: 700; color: var(--hfa-muted); border: 1px solid rgba(128, 128, 128, 0.3); border-radius: 999px; padding: 0.1rem 0.5rem; }
+  .gm-call .rungs { margin: 0.35rem 0 0.4rem; }
+  .gm-call .rung small { font-weight: 500; color: var(--hfa-muted); }
+  .gm-call p.why { font-size: 0.84rem; line-height: 1.45; margin: 0.3rem 0 0.2rem; color: var(--hfa-body); }
+  .gm-call p.ev { font-size: 0.74rem; line-height: 1.4; margin: 0 0 0.15rem; color: var(--hfa-muted); }
+  .gm-doc .legs { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.4rem; }
+  .gm-doc .leg { border-radius: 8px; padding: 0.2rem 0.5rem; font-size: 0.76rem; font-weight: 700; background: rgba(128, 128, 128, 0.14); }
+  .gm-doc .leg em { font-style: normal; font-weight: 500; color: var(--hfa-muted); }
+  .gm-doc .leg i { font-style: normal; font-weight: 800; }
+  .gm-doc .leg.hit { background: rgba(47, 212, 164, 0.16); } .gm-doc .leg.hit i { color: var(--hfa-good); }
+  .gm-doc .leg.miss { background: rgba(255, 176, 32, 0.16); } .gm-doc .leg.miss i { color: var(--hfa-bad); }
+  .gm-doc-gradehead { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+  .gm-grade { flex: none; display: flex; align-items: center; gap: 0.6rem; padding: 0.4rem 0.9rem 0.4rem 0.6rem; border-radius: 14px; border: 2px solid var(--hfa-muted); background: var(--hfa-tint); }
+  .gm-grade b { font-size: 2.6rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .gm-grade span { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); line-height: 1.3; }
+  .gm-grade.good { border-color: var(--hfa-good); } .gm-grade.good b { color: var(--hfa-good); }
+  .gm-grade.warn { border-color: var(--hfa-bad); } .gm-grade.warn b { color: var(--hfa-bad); }
+  .gm-grade.bad { border-color: var(--hfa-accent); } .gm-grade.bad b { color: var(--hfa-accent); }
+  .gm-doc-gradetext { flex: 1 1 20rem; min-width: 0; }
+  .gm-doc-gradetext .gm-doc-verdicts { margin-bottom: 0; }
+  .hfa .gm-doc-table { font-size: 0.8rem; }
+  .hfa .gm-doc-table th, .hfa .gm-doc-table td { padding: 0.25rem 0.4rem; }
+  .hfa .gm-doc-table b { color: var(--hfa-body); }
+  .hfa .gm-doc-table td.meter { width: 5rem; }
+  .hfa .gm-doc-table td.meter i { display: block; height: 4px; border-radius: 2px; background: var(--hfa-good); }
+  .hfa .gm-doc-table td.meter i.bad { background: var(--hfa-bad); }
+  .gm-doc-tl { position: relative; padding-left: 1rem; border-left: 2px solid rgba(128, 128, 128, 0.25); display: flex; flex-direction: column; gap: 0.7rem; }
+  .gm-doc-tp { position: relative; font-size: 0.88rem; line-height: 1.45; }
+  .gm-doc-tp::before { content: ""; position: absolute; left: -1.4rem; top: 0.45rem; width: 10px; height: 10px; border-radius: 50%; background: var(--hfa-accent); box-shadow: 0 0 0 3px rgba(255, 31, 47, 0.25); }
+  .gm-doc-tp .clock { font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-accent); }
+  @media (max-width: 1100px) { .gm-doc-three { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 760px) {
+    .gm-doc > summary { padding: 0.85rem 16px; gap: 0.6rem; flex-wrap: wrap; }
+    .gm-doc-main { flex: 1 1 0; }
+    .gm-doc-lead { font-size: 0.98rem; }
+    .gm-doc-chips { justify-content: flex-start; flex: 0 0 100%; padding-left: 2.6rem; }
+    .gm-doc-body { padding: 0.6rem 16px 1rem; }
+    .gm-doc-hook { font-size: 1.2rem; }
+    .gm-doc-vs, .gm-doc-two, .gm-doc-three, .gm-doc-calls { grid-template-columns: 1fr; }
+    .gm-doc-arrow { display: none; }
+    .gm-doc-flag { min-width: 4.4rem; font-size: 0.56rem; }
+  }
   @media (prefers-reduced-motion: reduce) { #hfa-rain { opacity: calc(var(--hfa-rain) * 0.5); } }
 </style>
 
@@ -821,7 +941,7 @@
     <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
   </div>
   <main>
-<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#away" data-sec="away">ARI offense</a><a href="#home" data-sec="home">LA offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
+<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#doc-sec" data-sec="doc">Plan vs game</a><a href="#away" data-sec="away">ARI offense</a><a href="#home" data-sec="home">LA offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="/w/6/">Week 6 board</a></nav>
 
 <div class="hfa-card hfa-hero hfa-sec gm-hero" id="hero" data-sec="hero" style="--gm-away: #97233F; --gm-home: #003594;">
   <div class="gm-hero-top">
@@ -848,6 +968,478 @@
     <span class="gm-chip final"><i>final</i> <b>ARI 18 &ndash; 16 LA</b></span>
     <span class="gm-chip " title="Artificial turf. Passing is the same on grass and turf; rushing runs about 3.5% higher on turf (+3.7 yards a team) and a catch gains a tenth of a yard more after it. Points, the closing lines and the engine show no surface effect, so it is not an engine input."><i>field</i> <b>turf</b></span><span class="gm-chip " title="Played under a roof: the weather outside does not reach the field."><i>roof</i> <b>dome</b></span>
   </div>
+</div>
+
+<div class="hfa-sec" id="doc-sec" data-sec="doc">
+
+<details class="hfa-card gm-doc st-both" id="doc">
+  <summary class="gm-doc-bar">
+    <span class="gm-doc-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="gm-doc-main">
+      <span class="gm-doc-eyebrow">The plan against the game &middot; plan Sun Oct 18, 9:24 AM &middot; report Tue Oct 20, 10:47 AM</span>
+      <span class="gm-doc-lead">Stafford picks apart a secondary with nothing left. Arizona dinks and chases.</span>
+    </span>
+    <span class="gm-doc-chips">
+      <span class="badge warn">script partly held</span>
+      <span class="badge good">6 hit</span><span class="badge bad">5 missed</span>
+      <span class="badge good" title="Projection grade: team volume and yardage, player lines, and the market calls the projection implied">projection B &middot; 75</span>
+      <span class="gm-doc-open">open</span>
+    </span>
+  </summary>
+  <div class="gm-doc-body">
+    <div class="gm-doc-nav">
+      <button type="button" class="gm-doc-arrow" data-dir="-1" aria-label="Previous section">&#8249;</button>
+      <div class="gm-doc-pills" role="tablist"></div>
+      <button type="button" class="gm-doc-arrow" data-dir="1" aria-label="Next section">&#8250;</button>
+    </div>
+
+    
+    
+    <section class="gm-doc-pane" data-title="Plan vs game">
+      <div class="gm-doc-verdicts">
+        <span class="badge warn" title="Whether the game went the way the plan's script described, for the reasons it gave">script partly held</span>
+        <span class="badge mute">followed the underdog&#x27;s path</span>
+        <span class="badge bad" title="Both teams ran 126 plays; the league's figure for two teams was 121.5">pace: called fast, played average</span>
+        <span class="badge bad" title="LA passed on 64% of its plays; its season rate entering the game was 64%">LA: called pass, played balanced</span><span class="badge bad" title="ARI passed on 50% of its plays; its season rate entering the game was 63%">ARI: called pass, played run</span>
+      </div>
+      <div class="gm-doc-vs">
+        <div class="gm-doc-col plan"><div class="gm-doc-k">The plan said</div><p>Arizona can stop the run and nothing else, so the Rams throw from in front; the lever is whether Stafford&#x27;s 50-attempt pace survives a two-score lead.</p><p class="sub">Los Angeles should control this through the air from the opening quarter: Arizona cannot generate pressure at a league rate and ranks 31st in pass EPA allowed, which is the one thing the Rams do best. Arizona&#x27;s counter — a short, high-volume passing game — meets the league&#x27;s stingiest yards-per-attempt defense, so the Cardinals should move the chains in small pieces and stall. Expect a lot of snaps: both offenses are above the league play rate and the trailing team will push tempo. The Rams&#x27; points arrive as touchdowns more than field goals here, because Arizona surrenders scores on nearly 70% of red-zone trips.</p></div>
+        <div class="gm-doc-col game"><div class="gm-doc-k">What happened</div><p>Arizona won 18-16 at SoFi on five Cade Ryland field goals and a last-second 43-yarder, covering +12.5 and cashing the under by 17.5 — the Rams never led by more than three, lost the possession battle 34:52 to 25:08, and the projection&#x27;s only big team-level error was 32 implied points for a Los Angeles offense that ran 57 plays under pressure.</p><p class="sub">The plan found the correct path — it wrote the underdog route almost exactly (long dink drives, time of possession, Rams giveaways) and then bet against it, leaning on a 50-attempt Stafford script that required Los Angeles to be in front. It also flagged the thing that actually broke the Rams: S4&#x27;s note that Quessenberry at left tackle was the hidden risk to every passing call, which turned into 3 sacks and 7 hits. What it missed was the clause it wrote itself — Arizona won precisely by stacking Ryland field goals rather than touchdowns, so the underdog cashed while failing the plan&#x27;s stated requirement. The call record (6-5) is better than the parlay record suggests: the &#x27;Arizona dinks and stalls&#x27; trio swept on exactly the mechanism it described, and the Rams trio died on volume, not on reads.</p><p class="sub"><b>The script:</b> Arizona ran the underdog path as written — 72 plays, 34:52 of possession, drives of 15 and 14 plays, one turnover after the first quarter and three Rams drives killed inside Arizona territory (4th-and-1 stuff at Q3 2:44, the Higbee strip at Q4 8:05, 4th-and-8 at Q4 3:23). But the plan said Arizona had to finish with touchdowns rather than Ryland field goals; they went 0-for-5 in the red zone and won anyway. The checks confirm the two mechanical misses: pace came in average (126 plays vs 121.5 league) rather than fast, and Arizona&#x27;s lean was run (50.0% pass vs a 62.9% season rate), which is the whole reason Stafford only got 33 attempts.</p></div>
+      </div>
+      
+      <div class="gm-doc-k">What the plan said would swing it</div>
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag minor">minor</span><div>Does Los Angeles keep throwing with a lead? They passed 60.5% while ahead at Denver — that is the whole volume case.<div class="went"><b>Went:</b> The lever never existed: LA ran 3 snaps while leading (all passes) and 41 while trailing. Largest Rams lead was 3 points, so the &#x27;does the lead convert them to handoffs&#x27; question was moot.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag contributed">contributed</span><div>Budda Baker and Zaven Collins both questionable for Arizona; Collins is their best-rated linebacker by a distance.<div class="went"><b>Went:</b> Baker played 80.6% of snaps, posted 2 TFL and the Q2 6:48 sack that killed a Rams drive at their own 15; the questionable tag was &#x27;resting player&#x27; and the defense&#x27;s blitz-heavy plan (37.8%) ran through him.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag decisive">decisive</span><div>Rams giveaways: two turnovers in four of five games, and the one route back for Arizona.<div class="went"><b>Went:</b> One giveaway but at maximum cost — Simon&#x27;s strip of Higbee at the ARI 22 (-4.27 EPA) with LA trailing 15-9, plus two turnovers on downs. In a two-point game those three empty trips inside the ARI 30 are the margin.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag decisive">decisive</span><div>Alaric Jackson&#x27;s one-game suspension puts Quessenberry at left tackle — pressure on Stafford is the hidden risk to the passing calls.<div class="went"><b>Went:</b> The hidden risk cashed: 3 sacks, 7 QB hits, 27% pressure rate against a 15.4% season figure, including a Q4 strip-sack for -11 that created 2nd-and-21 on the drive that ended in the fumble. This single-handedly cut Stafford&#x27;s volume and killed U5.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag minor">minor</span><div>Love ruled out leaves Allgeier alone, but a chasing script caps what that role is worth.<div class="went"><b>Went:</b> Allgeier got 18 carries, not the capped chasing-script role — but produced 38 yards and 4 stuffs, and the backfield value went to Bam Knight (15-80). The factor was framed around a script that never happened.</div></div></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">Each offense: expected &middot; happened</div>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>LA</b><span class="badge warn">partly</span></div><p><b>Expected:</b> 36-42 attempts, a pass rate near 65% even in front, Nacua at 10-13 targets, Higbee 5-7, Williams 18-22 touches split between carries and checkdowns, and the points arriving as touchdowns rather than field goals.</p><p><b>Happened:</b> The lean held (63.2% pass rate, 64.4% on early downs, checks say balanced against its own 63.8% season rate) but every quantity came in low: 33 attempts not 36-42, Nacua 7 targets not 10-13, Higbee 4 not 5-7, Williams 16 touches not 18-22. Points did arrive as touchdowns (2 TD, 1 FG) — there just weren&#x27;t enough drives.</p></div><div class="gm-doc-box"><div class="gm-doc-boxhead"><b>ARI</b><span class="badge warn">partly</span></div><p><b>Expected:</b> 38-42 attempts at a low aDOT, McBride 10-12 targets, Wilson 7-9, Bourne and Brooks splitting the rest, Allgeier 12-15 carries with 2-4 targets, and points that require near-perfect red-zone work to reach the implied 19.5.</p><p><b>Happened:</b> The target tree was right — McBride 9, Wilson 7, Bourne and Brooks 11 between them, aDOT 5.3 — but the volume premise inverted: 35 attempts against 38-42 expected and 36 carries, and Allgeier took 18 carries instead of 12-15. The &#x27;near-perfect red-zone work&#x27; caveat was prophetic in reverse: 0-for-5 and still 18 points.</p></div>
+      </div>
+      
+      
+      <div class="gm-doc-k">For the next plan on these teams</div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="badge mute">ARI</span><div>Model Arizona&#x27;s pass rate off game state, not the season rate. At 62.9% entering, they threw 48.6% here and only 44% while trailing because the deficit was one score; the chasing-volume assumption behind the QB, TE and WR calls is only valid when the projected margin is two scores by halftime.</div></div><div class="gm-doc-item"><span class="badge mute">ARI</span><div>The backfield is not Allgeier&#x27;s alone with Love out. Bam Knight took 15 carries for 80 and the only explosive run; treat it as a true committee until a week shows otherwise, and price Allgeier&#x27;s yardage off 2.1 YBC/carry rather than his carry count.</div></div><div class="gm-doc-item"><span class="badge mute">LA</span><div>Stafford&#x27;s attempt projection should be conditioned on opponent possession, not on his three-week attempt pace. 57 team plays against a 72-play opponent is the volume ceiling, and the plan&#x27;s S4 pressure note should be promoted from &#x27;hidden risk&#x27; to a direct haircut on attempts and yards when the tackle group is patched.</div></div><div class="gm-doc-item"><span class="badge mute">both</span><div>Do not react to the red-zone split from this one game. Arizona&#x27;s 0-for-5 and the Rams&#x27; 0 TDs allowed on 5 trips both run against each team&#x27;s five-week rates (ARI 0.60 offensive, LA allowing 0.80-1.00 in weeks 3 and 5) — that was the bounce, and the next plan should keep the league-constant touchdown split.</div></div></div>
+      
+    </section>
+    
+
+    
+    
+    <section class="gm-doc-pane" data-title="The script">
+      <div class="gm-doc-verdicts">
+        <span class="badge mute" title="Plays and tempo">fast pace</span>
+        <span class="badge acc" title="Already a 63.8% pass team at 70.8 plays; facing the 2nd-ranked run-EPA defense and the 31st-ranked pass defense, the lead will not convert them to handoffs.">LA pass</span><span class="badge acc" title="Season pass rate 62.9% and 73.6% once they trailed badly in week 5; two scores down with Love out, the run is ornamental.">ARI pass</span>
+        <span class="badge mute">medium confidence</span>
+      </div>
+      <p class="gm-doc-p">Los Angeles should control this through the air from the opening quarter: Arizona cannot generate pressure at a league rate and ranks 31st in pass EPA allowed, which is the one thing the Rams do best. Arizona&#x27;s counter — a short, high-volume passing game — meets the league&#x27;s stingiest yards-per-attempt defense, so the Cardinals should move the chains in small pieces and stall. Expect a lot of snaps: both offenses are above the league play rate and the trailing team will push tempo. The Rams&#x27; points arrive as touchdowns more than field goals here, because Arizona surrenders scores on nearly 70% of red-zone trips.</p>
+      <div class="gm-doc-two">
+        <div class="gm-doc-box"><div class="gm-doc-k">If the favorite wins</div><p>Stafford throws 38-42 times, Nacua and Higbee work the middle, and Williams finishes drives inside the 10. Los Angeles wins by three scores without ever needing the run game, because Arizona&#x27;s front takes the handoff away and the secondary gives it all back.</p></div>
+        <div class="gm-doc-box"><div class="gm-doc-k">If the underdog wins</div><p>Arizona stacks long dink drives, wins time of possession, and gets two or three Rams giveaways — Los Angeles has turned it over twice in four of five games. Brissett needs completions to turn into first downs rather than third-and-6, and the Cardinals have to finish trips with touchdowns rather than Ryland field goals.</p></div>
+      </div>
+      
+      <div class="gm-doc-prose"><h2>The read</h2>
+<p>The Rams are favored by 12.5 into a 51.5 total, and the shape is cleaner than the number. Arizona's defense is 2nd in the league in rush EPA allowed (-0.291) and 31st in pass EPA, 32nd in yards per attempt (9.08) — a unit built to make you throw and unable to survive it. Los Angeles has thrown 55, 51 and 54 times in the last three weeks at 70.8 plays a game. Even leading, the Rams passed on 60.5% of snaps at Denver in week 3. Expect Stafford in the high 30s to low 40s in attempts against the softest coverage he has faced.</p>
+<p>Arizona's side is the mirror: a high-volume, zero-explosive passing game (5.59 Y/A, 0-0-2 explosive passes in weeks 2-4) walking into the defense that has allowed the fewest passing yards per game in the league (165.0, rank 1) at 5.65 per attempt (rank 2). Trailing, Brissett will get 38-42 attempts and still have trouble clearing a middling yardage number. That is the central split of this card: Arizona's receptions are live, its yardage is not.</p>
+<h2>Why</h2>
+<p>Jeremiyah Love is out (Rotowire, Friday), so Tyler Allgeier is the back by default — but a two-score dog does not hand its lead back 18 carries, and Arizona ran for 3.75 a pop before this. The Rams' red-zone half matters too: Arizona allows touchdowns on 69.2% of opponent trips (rank 24) and Los Angeles converted 0.647 of its own with +0.137 EPA inside the 20, which is where Kyren Williams' goal-line role pays.</p>
+<h2>What would change it</h2>
+<p>If Los Angeles treats a 14-point lead as a reason to hand off, Stafford's volume and Nacua's targets both come down — though Arizona's run defense makes that an inefficient way to kill clock. Budda Baker and Zaven Collins are both questionable for Arizona; Collins is the highest-rated defender on that card. Alaric Jackson's one-game suspension puts Quessenberry at left tackle, which tempers any confidence in Rams protection efficiency.</p></div>
+    </section>
+    <section class="gm-doc-pane" data-title="Offenses">
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>LA offense</b><span class="badge mute">high confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>A volume passing offense: 70.8 plays a game, 63.8% pass, 7.24 Y/A, +0.104 field EPA. Stafford has attempted 55, 51 and 54 in the last three weeks, and the team has produced 5-6 explosive passes in three of five games.</p>
+          <div class="gm-doc-k">How it scores</div><p>Chunk throws between the 20s to Nacua and Adams, then Kyren Williams from inside the 10 — he has four rushing scores. Red-zone TD rate 0.647 with +0.137 EPA inside the 20 after the early-season stalls.</p>
+          <div class="gm-doc-k">What stops it</div><p>Interior pressure (week 1 vs SF: 27.6% sack-or-hit, 7 points) and their own hands — two turnovers in four of five games, plus 4.2 flags a game with five pre-snap in each of weeks 3 and 5.</p>
+          <div class="gm-doc-k">This matchup</div><p>Arizona is 31st in pass EPA allowed and 32nd in yards per attempt (9.08), has allowed explosive passes in every game, and generates pressure at a 15.4% rate that has produced two sacks over the last two weeks. The one thing Arizona does well — 2nd in rush EPA allowed — pushes the Rams further into their best phase, exactly the trade the week-4 Arizona report flagged as a net loss.</p>
+          <div class="gm-doc-k">Injuries</div><p>Alaric Jackson suspended one game (Rotowire, Wednesday: reduced from two), Quessenberry at left tackle — no projection moves for it, but it is the one reason to temper the protection premise. Ferguson on IR leaves Higbee as the only TE with a route role (18-of-23 targets since). Higbee&#x27;s Friday DNP was a rest day and he carries no designation (FantasyPros, Friday). On the Arizona side, Wingard is out, Will Johnson is gone, and Baker and Collins are questionable, which thins an already bottom-five coverage unit.</p>
+          <div class="gm-doc-k">Expect</div><p>36-42 attempts, a pass rate near 65% even in front, Nacua at 10-13 targets, Higbee 5-7, Williams 18-22 touches split between carries and checkdowns, and the points arriving as touchdowns rather than field goals.</p>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>ARI offense</b><span class="badge mute">medium confidence</span></div>
+          <div class="gm-doc-k">How it has moved the ball</div><p>Completions without yards: 5.59 Y/A, 66.5% completions, 6.3 and 3.9 aDOT games, 0-0-2 explosive passes across weeks 2-4, and a run game at 3.75 YPC with 2.11 yards before contact. Field EPA -0.068.</p>
+          <div class="gm-doc-k">How it scores</div><p>Long possession drives — 85 plays at San Francisco, 72 twice — funneled through McBride and the short middle, plus red-zone trips finished at a 0.60 rate.</p>
+          <div class="gm-doc-k">What stops it</div><p>Any front that compresses the pocket (22.6% pressure vs SEA produced 95 passing yards) and their own flags: 3.2 a game with 1.6 pre-snap, 10 for 86 at San Francisco. Third downs have been 3/13, 4/13 and 8/18.</p>
+          <div class="gm-doc-k">This matchup</div><p>Los Angeles allows 165.0 passing yards a game (rank 1) and 5.65 per attempt (rank 2) and is the league&#x27;s stingiest defense against tight ends by fantasy points allowed. It is beatable on the ground by yards — 4.59 YPC, 128.4 rush yards a game allowed — but Arizona will be chasing and cannot use that. The Rams do not pressure much (12.2% generated, rank 27), which buys Brissett completions, not yardage — the exact lesson from the week-4 review.</p>
+          <div class="gm-doc-k">Injuries</div><p>Jeremiyah Love is out with the ankle (Rotowire and FantasyPros, Friday), handing Allgeier the backfield with only Bam Knight behind him. Marvin Harrison Jr. was traded to Houston and Paris Johnson Jr. and Isaiah Adams are on IR — two offensive line starters gone, which is context for the pressure and run efficiency, not a number. On the Rams&#x27; defense, McDuffie and Curl are both questionable after Friday DNPs with the staff expecting them to play (Rotowire, Friday); if McDuffie sits, the perimeter opens slightly for Michael Wilson.</p>
+          <div class="gm-doc-k">Expect</div><p>38-42 attempts at a low aDOT, McBride 10-12 targets, Wilson 7-9, Bourne and Brooks splitting the rest, Allgeier 12-15 carries with 2-4 targets, and points that require near-perfect red-zone work to reach the implied 19.5.</p>
+        </div>
+        
+      </div>
+    </section>
+    <section class="gm-doc-pane" data-title="The calls">
+      <p class="gm-doc-note">Each call is one player, one market, one side of the line Kalshi quoted when the plan was written; graded off the box score, with the report's read of whether the reason given showed up. The rungs are the same call down the Kalshi ladder, Edge halfway to its last rung and Edge+ the last, at Kalshi's last pregame price.</p>
+      <div class="gm-doc-verdicts"><span class="badge mute">Normal <b class="up">6</b>&ndash;<b class="down">5</b></span><span class="badge mute">Edge <b class="up">8</b>&ndash;<b class="down">3</b></span><span class="badge mute">Edge+ <b class="up">10</b>&ndash;<b class="down">1</b></span></div>
+      <div class="gm-doc-calls">
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Kyren Williams</b><span class="flat">LA</span>
+            <span class="bet">to score</span>
+            <span class="res miss">&#10007; 0</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on EPA allowed entering the week (#1 toughest)">D #26 EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 67%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 64%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal / Edge / Edge+</i> to score <small>64&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Williams had 10 carries and 6 targets but no goal-line score; LA&#x27;s two red-zone touchdowns came on a 15-yard Corum reception (Q2 8:29) and the Parkinson catch at 0:52. Arizona allowed 2 TDs on 4 trips, nothing like the 70% rate the mechanism rested on.</p>
+          <p class="why">He is the goal-line back on a team implied for 32 points, and Arizona has given up touchdowns on nearly seven of every ten red-zone trips. The receiving role gives him a second way in.</p>
+          <p class="ev">4 rushing TDs in 5 games; 16 carries plus 8 targets in week 5; ARI red-zone TD rate allowed 0.692 (rank 24) with +0.057 EPA inside its 20.</p>
+          <p class="ev">vs #26 EPA allowed. This is the red-zone-finishing half of the split, not the yardage half; anytime-TD calls are 8-of-12 on the season.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Tyler Higbee</b><span class="flat">LA</span>
+            <span class="bet">over 29.5 rec yds</span>
+            <span class="res miss">&#10007; 22</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #31 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 56%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 56%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> over 29.5 rec yds <small>55&cent;</small></span><span class="rung miss"><i>Edge</i> 25+ rec yds <small>62&cent;</small></span><span class="rung hit"><i>Edge+</i> 15+ rec yds <small>77&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> He was not the only tight end running routes — Parkinson drew 6 targets to Higbee&#x27;s 4 and scored, and Higbee&#x27;s day ended with 22 yards and a lost fumble. The premise about the TE room was wrong before the script was.</p>
+          <p class="why">With Ferguson on injured reserve he is the only tight end running routes, and Arizona&#x27;s linebackers have been the soft spot in the middle all season.</p>
+          <p class="ev">62, 67 and 83 yards on 5 catches in each of the last three weeks, 18-of-23 targets since Ferguson went down, 67% snaps; Parkinson had 2 targets in week 5.</p>
+          <p class="ev">vs #31 pass EPA allowed; ARI is 28th in fantasy points allowed to tight ends. Above the model&#x27;s 34.5 mean; Friday&#x27;s DNP was a rest day and he carries no designation (FantasyPros, Friday).</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Trey McBride</b><span class="flat">ARI</span>
+            <span class="bet">over 6.5 receptions</span>
+            <span class="res hit">&#10003; 7</span>
+            <span class="badge good">hit · read partly held</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #19 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 52%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 56%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> over 6.5 receptions <small>58&cent;</small></span><span class="rung hit"><i>Edge</i> 5+ receptions <small>83&cent;</small></span><span class="rung hit"><i>Edge+</i> 4+ receptions <small>90&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Hit at exactly 7 receptions on 9 targets, and the short-middle mechanism was visible (28 air yards on 9 looks), but it hit despite the volume premise failing — Arizona threw 35 times, not 40, and led most of the game.</p>
+          <p class="why">Arizona&#x27;s answer to everything is the short middle, and two scores down they throw 40 times. The Rams rarely pressure, which buys completions rather than yards.</p>
+          <p class="ev">10-13 targets in all five games (9/8/9/7/9 catches) at 80-97% snaps; ARI 62.9% pass rate, 73.6% once trailing in week 5; LA generates pressure at 12.2% (rank 27).</p>
+          <p class="ev">vs #19 pass EPA allowed. Our week-4 review had this exact call miss by one catch with the mechanism intact — the volume showed up then and the script this week is more pass-forced.</p>
+        </div>
+        
+        <div class="gm-call over hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Jacoby Brissett</b><span class="flat">ARI</span>
+            <span class="bet">over 0.5 INTs</span>
+            <span class="res hit">&#10003; 1</span>
+            <span class="badge warn">hit · not for the reason given</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">low</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #19 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 49%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 56%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal / Edge / Edge+</i> over 0.5 INTs <small>57&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The interception came on 3rd-and-5 at 12:23 of the first quarter with the score 0-0, from a Fiske pressure, not from fourth-quarter chasing volume. Right result, wrong reason — Arizona threw 11 times in the fourth.</p>
+          <p class="why">This is a script read, not an accuracy read: a two-score dog throwing 40 times in the fourth quarter is where the extra pick comes from. More attempts, more exposure.</p>
+          <p class="ev">5 INTs in 5 games including 3 at NYG; ARI implied 19.5 and down 12.5; 47 and 52 attempt games already this season when chasing.</p>
+          <p class="ev">vs #19 pass EPA allowed; LA has forced 1 or fewer turnovers in three of five games, so this leans on volume rather than a takeaway defense — the weakest rung in the book and priced as such.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Matthew Stafford</b><span class="flat">LA</span>
+            <span class="bet">over 274.5 pass yds</span>
+            <span class="res miss">&#10007; 222</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #31 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 40%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 54%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> over 274.5 pass yds <small>55&cent;</small></span><span class="rung miss"><i>Edge</i> 225+ pass yds <small>80&cent;</small></span><span class="rung hit"><i>Edge+</i> 200+ pass yds <small>89&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 33 attempts, 222 yards. The 50-attempt pace required LA to hold the ball; they ran 57 plays total because Arizona possessed it for 34:52, and 27% pressure capped the dropbacks that remained.</p>
+          <p class="why">Arizona takes the run away and gives up more yards per throw than anyone, so the Rams keep throwing even in front. Stafford has cleared 50 attempts three straight weeks while the model prices him near 34.</p>
+          <p class="ev">Att 55/51/54 in weeks 3-5 for 390/317/383; LA 70.8 plays and 63.8% pass; ARI allows 9.08 Y/A and 252.4 pass yards a game.</p>
+          <p class="ev">vs #31 pass EPA allowed; above both the model&#x27;s 257.5 mean and the exchange&#x27;s lean — the blend&#x27;s 33.8-attempt assumption is the part that misses. Passing-yards calls are the plans&#x27; weakest market (45%), so this rests on attempts, not on Y/A.</p>
+        </div>
+        
+        <div class="gm-call over miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">upgrade</span>
+            <b class="who">Puka Nacua</b><span class="flat">LA</span>
+            <span class="bet">over 89.5 rec yds</span>
+            <span class="res miss">&#10007; 80</span>
+            <span class="badge bad">missed · read partly held</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge good" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #31 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 28%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 53%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> over 89.5 rec yds <small>54&cent;</small></span><span class="rung hit"><i>Edge</i> 70+ rec yds <small>71&cent;</small></span><span class="rung hit"><i>Edge+</i> 50+ rec yds <small>86&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Nacua&#x27;s share held — 38.7% of air yards, 6-80 on 7 targets with a 43-yard explosive — but the 40-throw offense behind the call never materialized, so 7 targets could not reach 89.5 without a touchdown.</p>
+          <p class="why">He is the whole target tree in a 40-throw offense, with no ramp since he returned. Arizona&#x27;s secondary has been beaten over the top in every game this season.</p>
+          <p class="ev">12 and 24 targets in weeks 4-5 at 90% and 85% snaps for 125 and 138 yards; ARI 32nd in Y/A allowed and has allowed explosive passes in all five games.</p>
+          <p class="ev">vs #31 pass EPA allowed. The model has him at 7.6 targets because he missed weeks 2-3 — that shrink is the error; the exchange is closer than the model here.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Trey McBride</b><span class="flat">ARI</span>
+            <span class="bet">under 59.5 rec yds</span>
+            <span class="res hit">&#10003; 53</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #19 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 67%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 46%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 59.5 rec yds <small>47&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;100 rec yds <small>83&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;140 rec yds <small>97&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> Exactly the stated mechanism: 9 targets at 3.1 air yards apiece, 34 of his 53 yards after the catch, 7 catches without a chunk gain. Catches yes, yardage no.</p>
+          <p class="why">His targets come at the line of scrimmage, and the Rams are the hardest defense in the league to gain yards on per throw. Catches yes, yardage no.</p>
+          <p class="ev">41, 75, 31, 66 yards after the week-1 95; ARI aDOT 3.9 and 6.3 in two of the last four; LA allows 5.65 Y/A (rank 2) and 165.0 pass yards a game (rank 1).</p>
+          <p class="ev">vs #19 pass EPA allowed, but LA is 1st in fantasy points allowed to tight ends — the one positional split that carries. The model has him at 44.8, well below the posted line; the exchange is the side to fade.</p>
+        </div>
+        
+        <div class="gm-call under miss">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Blake Corum</b><span class="flat">LA</span>
+            <span class="bet">under 39.5 rush yds</span>
+            <span class="res miss">&#10007; 42</span>
+            <span class="badge bad">wrong read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge bad" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #2 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 65%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 46%</span>
+          </div>
+          <div class="rungs"><span class="rung miss"><i>Normal</i> under 39.5 rush yds <small>46&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;80 rush yds <small>86&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;110 rush yds <small>96&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> His snap share did stay at 27.6%, but the carries came anyway (9 for 42, +1.76 rush EPA, a 10+ run) because LA ran only 20 times and split them nearly evenly with Williams. The &#x27;carries do not come back in a throwing game&#x27; premise failed on the distribution, not the script.</p>
+          <p class="why">His snap share has collapsed to a quarter of the offense in a pass-first attack where the starter is also the checkdown back. Carries do not come back in a throwing game.</p>
+          <p class="ev">5, 5 and 6 carries in weeks 3-5 at 29%, 15% and 27% snaps; Kyren Williams at 16 carries plus 8 targets in week 5.</p>
+          <p class="ev">vs #2 rush EPA allowed. Unders against top-10 defenses are the plans&#x27; worst bucket (43%), so this rests on usage, not on the matchup; the model&#x27;s 29.9 is well under the posted line while the exchange sits above it.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Jacoby Brissett</b><span class="flat">ARI</span>
+            <span class="bet">under 224.5 pass yds</span>
+            <span class="res hit">&#10003; 218</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">efficiency</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #19 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 65%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 43%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 224.5 pass yds <small>44&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;300 pass yds <small>81&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;375 pass yds <small>95&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 24-of-35 for 218 with 135 YAC, one deep completion of three attempts and a +0.3 CPOE — completions without chunks, as described, against the league&#x27;s stingiest per-attempt defense.</p>
+          <p class="why">Arizona gets completions, not chunks, and this is the defense that has allowed the fewest passing yards in the league. Volume will be there; yards per throw will not.</p>
+          <p class="ev">5.59 Y/A on the season with 0, 0 and 2 explosive passes in weeks 2-4; LA allows 5.65 per attempt (rank 2) and 165.0 a game (rank 1); 166 yards on 35 attempts at NYG.</p>
+          <p class="ev">vs #19 pass EPA allowed, but the yards-per-attempt rank is #2 and that is the number this market pays. An efficiency call and labelled as one — the risk is 45 attempts in a blowout.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Tyler Allgeier</b><span class="flat">ARI</span>
+            <span class="bet">under 49.5 rush yds</span>
+            <span class="res hit">&#10003; 38</span>
+            <span class="badge good">hit · read partly held</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">volume</span><span class="badge mute">medium</span>
+            <span class="badge mute" title="The opposing defense's league rank on rush EPA allowed entering the week (#1 toughest)">D #14 rush EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 56%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 54%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 49.5 rush yds <small>54&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;60 rush yds <small>67&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;70 rush yds <small>76&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> The under cashed at 38 yards but for the opposite reason: he got 18 carries, more than the plan&#x27;s 12-15, in a leading script. The line-level premise (nothing before contact, 2.11 YBC/carry) is what held — 4 stuffs, 2.1 YPC.</p>
+          <p class="why">He inherits the backfield with Love out, but a two-score underdog does not run it. Arizona&#x27;s line has been giving him nothing before contact all year.</p>
+          <p class="ev">Carries of 17, 5, 2, 8, 3; ARI 3.75 YPC and 2.11 yards before contact against league marks of 4.36 and 2.54; pass rate 73.6% once behind in week 5.</p>
+          <p class="ev">vs #14 rush EPA allowed — LA is softer on raw yards (4.59 YPC, rank 24), which is the reason this is medium and not higher. Love ruled out (Rotowire, Friday) inflates the share, and inherited shares typically land a few yards under the projection.</p>
+        </div>
+        
+        <div class="gm-call under hit">
+          <div class="gm-call-top">
+            <span class="gm-call-side">downgrade</span>
+            <b class="who">Michael Wilson</b><span class="flat">ARI</span>
+            <span class="bet">under 59.5 rec yds</span>
+            <span class="res hit">&#10003; 32</span>
+            <span class="badge good">right read</span>
+          </div>
+          <div class="gm-call-meta">
+            <span class="badge mute">both</span><span class="badge mute">low</span>
+            <span class="badge mute" title="The opposing defense's league rank on pass EPA allowed entering the week (#1 toughest)">D #19 pass EPA allowed</span>
+            <span class="prob" title="The engine's probability of this side">model 49%</span>
+            <span class="prob" title="Kalshi' chance of this side when the plan was written">Kalshi 51%</span>
+          </div>
+          <div class="rungs"><span class="rung hit"><i>Normal</i> under 59.5 rec yds <small>52&cent;</small></span><span class="rung hit"><i>Edge</i> &lt;100 rec yds <small>83&cent;</small></span><span class="rung hit"><i>Edge+</i> &lt;140 rec yds <small>95&cent;</small></span></div>
+          <p class="why"><b>In the game:</b> 7 targets and 86 air yards but only 4 catches for 32, with 23 YAC — the volume and the downfield intent were there and the completion efficiency was not, exactly the short-throws-into-a-stingy-defense read.</p>
+          <p class="why">Even with Harrison traded away his target count fell back to single digits, and the Rams&#x27; corners are the best-rated group he has seen. Short throws into a defense that concedes nothing per attempt.</p>
+          <p class="ev">7 targets for 30 yards in week 5 with Harrison already gone; 4 of 5 games under 60 yards; LA allows 5.65 Y/A (rank 2), with Watson at the 96th percentile and McDuffie the 99th.</p>
+          <p class="ev">vs #19 pass EPA allowed. The model is above the line at 66.2 — this is a deliberate departure from it on the ground that the blend leans on ARI&#x27;s volume rather than LA&#x27;s per-attempt suppression. McDuffie is questionable (Rotowire, Friday), which is the risk.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Same-script legs">
+      <p class="gm-doc-note">Legs the same script produces together: they move as one, which is what a same-game parlay pays for.</p>
+      <div class="gm-doc-three">
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Rams throw it, Rams finish it</b></div>
+          <div class="legs"><span class="leg miss">Matthew Stafford <em>over 274.5 pass yds</em> <i>&#10007;</i></span><span class="leg miss">Puka Nacua <em>over 89.5 rec yds</em> <i>&#10007;</i></span><span class="leg miss">Kyren Williams <em>to score</em> <i>&#10007;</i></span></div>
+          <p class="sub">One script: Arizona&#x27;s front forces Los Angeles to throw, Stafford&#x27;s attempts climb, Nacua absorbs the targets, and the drives end in the end zone against a defense that allows touchdowns on 69% of red-zone trips.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Arizona dinks and stalls</b></div>
+          <div class="legs"><span class="leg hit">Trey McBride <em>over 6.5 receptions</em> <i>&#10003;</i></span><span class="leg hit">Trey McBride <em>under 59.5 rec yds</em> <i>&#10003;</i></span><span class="leg hit">Jacoby Brissett <em>under 224.5 pass yds</em> <i>&#10003;</i></span></div>
+          <p class="sub">Chasing volume into the league&#x27;s stingiest per-attempt defense produces catches without yards — the same mechanism prints all three, and it is what this offense did at New York in week 4.</p>
+        </div>
+        
+        <div class="gm-doc-box"><div class="gm-doc-boxhead"><b>Los Angeles backfield consolidates</b></div>
+          <div class="legs"><span class="leg miss">Kyren Williams <em>to score</em> <i>&#10007;</i></span><span class="leg miss">Blake Corum <em>under 39.5 rush yds</em> <i>&#10007;</i></span></div>
+          <p class="sub">A passing script keeps the starter on the field as the checkdown and goal-line back while the change-of-pace back stays at a quarter of the snaps.</p>
+        </div>
+        
+      </div>
+    </section>
+    
+    
+    
+
+    
+    <section class="gm-doc-pane" data-title="Projection grade">
+      <div class="gm-doc-gradehead">
+        <div class="gm-grade good"><b>B</b><span>projection<br>grade &middot; 75</span></div>
+        <div class="gm-doc-gradetext">
+          
+          <div class="gm-doc-verdicts"><span class="badge mute">ARI 18 – LA 16</span><span class="badge mute">ARI covered (LA by 12.5)</span><span class="badge mute">Under 51.5 (34)</span><span class="badge mute">teams 71</span><span class="badge mute">player lines 29/38 in range</span><span class="badge mute">market calls 2/3</span></div>
+        </div>
+      </div>
+      
+      <div class="gm-doc-two">
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>LA</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">32.0</td><td class="num"><b>16</b></td><td class="num down">-16</td><td class="meter"><i style="width: 20%" class="bad"></i></td></tr><tr><td>Pass yds</td><td class="num flat">257.5</td><td class="num"><b>222.0</b></td><td class="num flat">-35.5</td><td class="meter"><i style="width: 76%" class=""></i></td></tr><tr><td>Rush yds</td><td class="num flat">113.5</td><td class="num"><b>92.0</b></td><td class="num flat">-21.5</td><td class="meter"><i style="width: 76%" class=""></i></td></tr><tr><td>Pass att</td><td class="num flat">33.8</td><td class="num"><b>33</b></td><td class="num flat">-0.8</td><td class="meter"><i style="width: 95%" class=""></i></td></tr><tr><td>Carries</td><td class="num flat">27.2</td><td class="num"><b>20</b></td><td class="num down">-7.2</td><td class="meter"><i style="width: 49%" class="bad"></i></td></tr>
+          </tbody></table>
+        </div>
+        
+        <div class="gm-doc-box">
+          <div class="gm-doc-boxhead"><b>ARI</b><span class="flat">projected &middot; actual</span></div>
+          <table class="gm-doc-table"><thead><tr><th></th><th class="num">Proj</th><th class="num">Actual</th><th class="num">Diff</th><th></th></tr></thead><tbody>
+            <tr><td>Points</td><td class="num flat">19.5</td><td class="num"><b>18</b></td><td class="num flat">-1.5</td><td class="meter"><i style="width: 93%" class=""></i></td></tr><tr><td>Pass yds</td><td class="num flat">206.2</td><td class="num"><b>218.0</b></td><td class="num flat">+11.8</td><td class="meter"><i style="width: 92%" class=""></i></td></tr><tr><td>Rush yds</td><td class="num flat">109.1</td><td class="num"><b>120.0</b></td><td class="num flat">+10.9</td><td class="meter"><i style="width: 88%" class=""></i></td></tr><tr><td>Pass att</td><td class="num flat">33.1</td><td class="num"><b>35</b></td><td class="num flat">+1.9</td><td class="meter"><i style="width: 88%" class=""></i></td></tr><tr><td>Carries</td><td class="num flat">26.5</td><td class="num"><b>35</b></td><td class="num up">+8.5</td><td class="meter"><i style="width: 39%" class="bad"></i></td></tr>
+          </tbody></table>
+        </div>
+        
+      </div>
+      <div class="gm-doc-verdicts"><span class="badge bad">Winner: LA &#10007;</span><span class="badge good">Spread: ARI +12.5 &#10003;</span><span class="badge good">Total: Under 51.5 (proj 51.5) &#10003;</span></div>
+      
+      
+      <div class="gm-doc-k">Why the projection missed &middot; what it got right</div>
+      <p class="gm-doc-p">The grade (0.747, B) is carried by player lines (0.841, 29 of 38) and by Arizona&#x27;s team side, where points (19.5 vs 18), pass yards (206 vs 218) and attempts (33.1 vs 35) were close to exact. The two big flags are both volume-shape errors: Arizona ran 35 times against 26.5 projected and Los Angeles ran 20 against 27.2, because the engine blended both teams&#x27; season pass rates into a script that never arrived — ARI led or was tied for 2,850 of 3,600 seconds and became a clock team (48.6% pass rate, 44% even when trailing), while LA spent 41 of 57 snaps behind and threw. The market_score of 0.667 is honest: the spread and total calls hit, the winner did not. LA&#x27;s 16 points against 32 is a three-way miss — 57 plays instead of 63, -0.112 EPA/play under a 22.2% pressure rate, and two drives ended on downs plus a strip at the ARI 22. The projection was right about the character of both passing games (short, YAC-driven, no deep shots) and wrong about who would have the ball.</p>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>LA</b> &middot; 32.0 projected points, 16 actual; 113.5 rush yards projected, 92 on 20 carries<div class="went">Possession and pressure, not efficiency collapse in the abstract: 57 snaps (ARI held it 34:52), 3 sacks and 7 QB hits (27% pressure on Stafford vs 15.4% season allowed), a Higbee strip at the ARI 22 (Q4 8:05, -4.27 EPA), a 4th-and-1 stuff (Q3 2:44, -4.00) and a 4th-and-8 incompletion (Q4 3:23).</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>ARI</b> &middot; 26.5 carries projected, 35 actual; Brissett 8.4 rush attempts projected, 2 actual<div class="went">Game script inversion. The engine blended ARI&#x27;s 62.9% season pass rate with an expectation of chasing; instead they were never behind until 0:47 of the fourth and ran 36 times, early-down pass rate 43.6% against a 51.5% expectation. Brissett&#x27;s projected rushing was a scramble/designed-run allowance that a pressure-free pocket (0 sacks, 0 scrambles) erased.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag mixed">mixed</span><div><b>ARI</b> &middot; 19.5 points projected and hit at 18 — but with zero touchdowns on five red-zone trips<div class="went">Finishing, not movement: field EPA +0.139 on 56 snaps, red-zone EPA -0.606 on 16 snaps, 5 trips/5 field goals. The right total for the wrong reason — the model had 1.4 passing TDs and 0.6 rushing.</div></div></div></div>
+      <div class="gm-doc-verdicts wrap"><span class="badge good">&#10003; ARI points, pass yards, completions and attempts all within a couple of units</span><span class="badge good">&#10003; Stafford&#x27;s attempts (33.8 projected, 33 actual) and Nacua&#x27;s targets (7.0 projected, 7 actual) exact</span><span class="badge good">&#10003; Both passing games projected short and YAC-heavy: ARI aDOT 5.3, LA 4.8, one deep completion apiece</span><span class="badge good">&#10003; Spread (ARI +12.5) and total (under 51.5) both hit</span><span class="badge good">&#10003; McBride 7 receptions on 9 targets against 7.0/9.4 projected</span></div>
+      
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Turning points">
+      <div class="gm-doc-tl">
+        <div class="gm-doc-tp"><div class="clock">Q1 12:23</div><div class="what"><span class="badge mute">ARI</span> Brissett&#x27;s 3rd-and-5 throw for McBride intercepted by Q. Lake at the ARI 32 (-4.26 EPA)<div class="went">Handed LA a short field that produced the game&#x27;s first points; it was also the only Arizona giveaway all day, and the offense never turned it over again across 72 snaps.</div></div></div><div class="gm-doc-tp"><div class="clock">Q1 01:04</div><div class="what"><span class="badge mute">ARI</span> Bam Knight left end for 31 yards to the LA 10 (+2.41 EPA)<div class="went">The explosive run that defined Arizona&#x27;s day — a backup back the model gave 2.3 carries broke the one chunk gain their run game produced, and it ended in another Ryland field goal rather than a touchdown.</div></div></div><div class="gm-doc-tp"><div class="clock">Q3 02:44</div><div class="what"><span class="badge mute">LA</span> 4th-and-1 at the ARI 27, Davis Allen up the middle stopped for no gain (-4.00 EPA, -0.132 WP)<div class="went">LA&#x27;s best field position of the second half ended with a tight end carry into Gibbens and Mack Wilson; three points there changes the entire endgame arithmetic.</div></div></div><div class="gm-doc-tp"><div class="clock">Q4 08:05</div><div class="what"><span class="badge mute">LA</span> Stafford to Higbee for 8 to the ARI 22, fumble forced by C. Simon, recovered by D. Burke (-4.27 EPA)<div class="went">On a drive that had already been gifted 26 DPI yards, the Rams came away with nothing while trailing 15-9; one of four straight LA possessions that reached ARI territory and scored zero.</div></div></div><div class="gm-doc-tp"><div class="clock">Q4 00:52</div><div class="what"><span class="badge mute">LA</span> Stafford to Parkinson, ruled a touchdown on replay, Evans PAT for 16-15<div class="went">The 91-yard, 2:01 drive put LA ahead for the first time since the second quarter, but it left 47 seconds and Arizona with timeouts — the lead was a liability rather than a close-out.</div></div></div><div class="gm-doc-tp"><div class="clock">Q4 00:47</div><div class="what"><span class="badge mute">ARI</span> Brissett deep middle to Brooks for 21 plus 15 yards unnecessary roughness on J. Wallace (+2.86 EPA, +0.241 WP)<div class="went">The single biggest swing of the game: one play and one flag moved Arizona 36 yards into range, and Ryland&#x27;s 43-yarder at 0:03 won it.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="What decided it">
+      <div class="gm-doc-list">
+        <div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Possession volume: 72 Arizona plays to 57</b><div class="went">ARI TOP 2,092 seconds, drives of 15 plays/8:35 (Q3) and 14 plays/8:11 (Q3-Q4); LA ran 6 fewer plays than projected and ARI 10 more</div><div class="went"><b>Tell:</b> Engine inputs had ARI at 65.8 plays/game and LA&#x27;s defense allowing 58.6; the blend split the difference. A Cardinals team that got the lead was always going to grind, and ARI&#x27;s season field EPA was close to neutral with a stingy LA defense — a low-variance, slow-burn script was live.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag no" title="Not visible before kickoff">in-game only</span><div><b>Red-zone finishing on both sides</b><div class="went">ARI 5 trips, 0 TD, 5 FG, -0.606 EPA/play inside the 20 against +0.139 between the 20s; LA 4 trips, 2 TD</div><div class="went"><b>Tell:</b> Nothing pointed at 0-for-5 — ARI&#x27;s season RZ TD rate was 0.60 and LA&#x27;s defense had allowed 1.00, 0.80 and 1.00 rates in weeks 3-5. This is the least persistent number in the dossier; the under was the correct read, the mechanism was a surprise.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Pressure on Stafford with a blitz</b><div class="went">3 sacks (Sweat Q1 10:25, Baker Q2 6:48, an unassisted strip-sack Q4 8:49), 7 QB hits, 27% pressure rate; charting shows ARI blitzing 37.8% against LA&#x27;s 13.9% blitz rate on Arizona</div><div class="went"><b>Tell:</b> ARI was tagged &#x27;no pass rush&#x27; in three of five weeks and LA &#x27;pressure allowed&#x27; at Denver with Quessenberry forced to left tackle; a team that can&#x27;t win one-on-one but sends five changes the math. The engine&#x27;s 5.5% sack rate for LA was beaten by half again.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag yes" title="The pre-game data pointed at this">pre-game tell</span><div><b>Los Angeles&#x27;s own drive-enders</b><div class="went">Turnover on downs twice (Q3 2:44, Q4 3:23), the Higbee strip, two Q4 false starts (McClendon at the ARI 39, Shelton at the LA 28) and the 15-yard roughness on Wallace that set up the winning kick</div><div class="went"><b>Tell:</b> &#x27;Turnovers&#x27; recurs in four of five LA weeks and &#x27;pre-snap penalties&#x27; in two; the engine had LA at 4.2 flags and 1.6 pre-snap per game, both above league.</div></div></div>
+      </div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; ARI">
+      <div class="gm-doc-boxhead"><b>How ARI gets beaten</b><span class="flat">1-4 entering</span><span class="badge mute">medium confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">explosive passing &times;4</span><span class="badge bad">no pass rush &times;3</span><span class="badge bad">penalties &times;2</span><span class="badge bad">red zone defense &times;2</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Explosive passing over the top</b><div class="went">Tagged in weeks 2, 3, 4, 5 — 6 explosives allowed at SF, 5 at NYG, 4 vs DET; season YPA allowed 9.08. This week only 1 (Nacua&#x27;s 43-yarder, Q4 2:01) because LA&#x27;s aDOT was 4.8.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Red-zone surrender</b><div class="went">Weeks 3 and 5 tagged &#x27;red zone defense&#x27;: SF 3/3, DET 4/4 with +0.454 EPA/play. This week they held LA to 2 TDs on 4 trips, so treat the trait as unresolved.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>No touchdowns on long drives</b><div class="went">This game: 5 trips, 0 TDs, field EPA +0.139 vs RZ -0.606; week 1 at LAC 2/5 with -0.192 RZ EPA; week 4 at NYG -0.609 RZ EPA on 3 trips.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Interior run game that produces nothing</b><div class="went">Allgeier 18 carries, 38 yards, 4 stuffs; ARI middle runs 14 for 30 (2.1 YPC); season YBC/carry 2.11 vs 2.54 league, epa_per_rush -0.071 here.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Flags on their own drives</b><div class="went">Tagged weeks 1 and 3 (111 and 86 penalty yards); this week 5 for 51 including a holding that wiped a throw to the LA 14 (Q3 7:33) and a false start at the ARI 40 (Q3 2:07).</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> Four weeks of explosive passing allowed is the loudest signal on this team, but it is a downfield trait: when an opponent throws at 4.8 air yards, the Arizona secondary is not the problem and their blitz-generated pressure is. On offense Arizona is a yards-without-touchdowns machine — they move it between the 20s and kick.</p>
+      <p class="gm-doc-p"><b>This week:</b> Los Angeles had the profile to cash the blueprint (season 7.24 YPA, explosive passes in every game, +0.104 field EPA) and did not try it: 4 deep attempts, 1 completion for 16, aDOT 4.8, one 20+ pass. The one time they pushed it, Nacua went for 43 and the drive ended in a touchdown.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> A quarterback willing to throw past 10 air yards against five-man pressure, plus an offensive line that can handle a 38% blitz rate without false starts. Teams that live on screens and checkdowns (LA&#x27;s shape here) convert the Arizona weakness into a possession game that Arizona wins.</p>
+    </section>
+    
+    <section class="gm-doc-pane" data-title="Blueprint &middot; LA">
+      <div class="gm-doc-boxhead"><b>How LA gets beaten</b><span class="flat">2-3 entering</span><span class="badge mute">medium confidence</span></div>
+      <div class="gm-doc-verdicts"><span class="badge bad">turnovers &times;4</span><span class="badge bad">no pass rush &times;3</span><span class="badge bad">penalties &times;3</span><span class="badge bad">run game &times;2</span><span class="badge bad">red zone stalls &times;2</span><span class="badge bad">pre-snap penalties &times;2</span><span class="badge bad">red zone defense &times;2</span></div>
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Giveaways and failed fourth downs</b><div class="went">&#x27;Turnovers&#x27; tagged in weeks 1, 2, 3, 4 (two per game); here the Higbee strip at the ARI 22 (Q4 8:05) plus 0-for-2 on fourth down, all inside Arizona territory.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag offense">offense</span><div><b>Pressure allowed when the edge is patched</b><div class="went">Week 3 at DEN 24.1% pressure and 4 sacks; here 27% and 3 sacks with Quessenberry at left tackle. Season rate allowed was only 15.4%, so this is opponent- and lineup-specific.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag both">both</span><div><b>Pre-snap penalties under tempo</b><div class="went">Weeks 3 and 5 tagged (5 and 5 pre-snap flags); here 3 pre-snap flags, two of them Q4 false starts in no-huddle at the ARI 39 and the LA 28, plus the 15-yard roughness that handed Arizona the winning kick.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>Giving up the field but holding at the 20 — sometimes</b><div class="went">This week ARI got 5 trips and 0 TDs; but weeks 3 and 5 the defense allowed 1.00 and 0.80 RZ TD rates. Two-game samples in opposite directions.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag defense">defense</span><div><b>The run against their front</b><div class="went">Tagged weeks 1 and 5 (SF, BUF with 5 explosive runs); season 4.59 YPC allowed. ARI ran 35 times for 120, but at 3.43 a carry — the yards came from one 31-yard Knight keeper, not a push.</div></div></div></div>
+      <p class="gm-doc-p"><b>Pattern:</b> Los Angeles beats itself: four weeks of two-turnover games, two weeks of five-plus pre-snap flags, and a repeated habit of reaching the opponent&#x27;s 25 and leaving with nothing. The defense is good enough between the 20s to keep games close for the offense to lose.</p>
+      <p class="gm-doc-p"><b>This week:</b> Arizona did not have the efficiency to exploit the Rams in any conventional way — -0.027 EPA/play, 5-of-17 on third down, zero red-zone touchdowns — but it did execute the one path that works: own the ball, don&#x27;t turn it over after the first quarter, and collect the Rams&#x27; mistakes. Two fourth-down stops, a forced fumble and two Q4 false starts were the entire margin.</p>
+      <p class="gm-doc-p"><b>What an opponent needs:</b> A defense that can strip the ball on contact and a front that holds on 4th-and-1 (Gibbens and Mack Wilson at Q3 2:44), plus an offense disciplined enough to run 70+ plays without giveaways. Raw efficiency is optional; possession and takeaways are not.</p>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Player lines">
+      <div class="gm-doc-list"><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Bam Knight</b> <span class="flat">ARI</span> &middot; 15 carries, 80 yards vs 2.3/22.2 projected<div class="went">With Love out the engine gave the backfield to Allgeier; instead the split was 18/15 and Knight was the efficient half (31-yard run Q1 1:04, the team&#x27;s only chunk run) while Allgeier was stuffed four times for 2.1 a carry.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Tyler Allgeier</b> <span class="flat">ARI</span> &middot; 18 carries, 38 yards, -4.12 rush EPA, 4 stuffs<div class="went">Volume came (more than projected) but behind a line giving 2.11 YBC/carry; middle runs went 14 for 30. Carries without yards — the under cashed despite the role being larger than modeled.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Colby Parkinson</b> <span class="flat">LA</span> &middot; 6 targets, 5-31 vs 1.1 targets projected; the 0:52 touchdown<div class="went">With Ferguson out the plan assumed Higbee was the only route-running TE; the Rams instead split TE work (Higbee 4 targets, 22 yards, a lost fumble) and Parkinson took the two-minute and goal-line role.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Kendrick Bourne</b> <span class="flat">ARI</span> &middot; 8 targets, 5-47 vs 4.0 projected targets<div class="went">Second-highest target count on the team at a 56.9% snap share; he was the chain-mover on both long third-quarter drives (11-yard and 8-yard conversions). Usage share in the model is stale.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Puka Nacua</b> <span class="flat">LA</span> &middot; 7 targets (exact), 6-80, 38.7% air-yards share<div class="went">Targets nailed; the yardage came in one burst (43 and 16 on the last drive). Concentration is real but 7 targets is the floor in a 33-attempt game — his lines need the attempt projection, not the share, to be right.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Kyren Williams</b> <span class="flat">LA</span> &middot; 10 carries, 50 yards, 6 targets, 3-17, -3.51 receiving EPA, no TD<div class="went">Projected 16 carries and 0.8 rush TDs; LA ran only 20 times and Corum took 9 of them with better results (+1.76 rush EPA). The goal-line assumption failed — the TD went to Corum on a 15-yard pass.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Blake Corum</b> <span class="flat">LA</span> &middot; 9 carries, 42 yards, 2-18 and the only offensive TD through three quarters<div class="went">At a 27.6% snap share he still cleared the rush-yards line; the backfield did not consolidate in a passing script the way the usage model assumed.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag signal">signal</span><div><b>Trey McBride</b> <span class="flat">ARI</span> &middot; 9 targets, 7-53, -3.87 receiving EPA<div class="went">Volume projection was near-perfect; the EPA is dragged by the Q1 interception thrown at him and short-of-the-sticks targets at 3.1 air yards per look. Receptions over, yards under is the stable shape against this defense.</div></div></div><div class="gm-doc-item"><span class="gm-doc-flag noise">noise</span><div><b>Matthew Stafford</b> <span class="flat">LA</span> &middot; 25-33, 222 yards, 2 TD, 3 sacks, 7 hits, aDOT 4.8, +4.2 CPOE<div class="went">Accuracy was fine; the offense was short and the drives died on pressure and fourth downs. 37 dropbacks in a 57-play game is the ceiling when the opponent holds the ball 35 minutes.</div></div></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="Traps">
+      <div class="gm-doc-three"><div class="gm-doc-box"><span class="badge mute">Totals</span><p><b>A double-digit home favorite whose opponent is a high-play, clock-control team is a team-total trap: LA&#x27;s 32 implied points needed snaps it never got (57 vs 63 projected) because ARI ran 72. Check plays/game differentials and projected TOP before buying a favorite&#x27;s team total or its QB passing over.</b></p><p class="sub"><b>Trigger:</b> Favorite&#x27;s projected plays within 2 of its opponent&#x27;s while the dog runs 65+ plays/game and leans run when not trailing.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>High field EPA with a collapsed red-zone rate is a yardage-props-hold, touchdown-props-fail game. ARI hit its projected points via five field goals with zero offensive TDs; Brissett&#x27;s pass yards (218 vs 206 projected) were fine and every touchdown prop on the slate died.</b></p><p class="sub"><b>Trigger:</b> Team with positive EPA between the 20s but RZ EPA/play below -0.3 and a kicker making everything — fade anytime-TD, play yardage and alt-kicker overs.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>Season pass rates are not game-state pass rates. ARI entered at 62.9% and threw 48.6% because they led or were tied for 79% of the clock; their trailing pass rate was 44%. When a big dog&#x27;s path to covering is grinding, their &#x27;chasing volume&#x27; props are a negative-EV default.</b></p><p class="sub"><b>Trigger:</b> Underdog of 10+ whose defense can keep the game under two scores; downgrade QB attempts and WR targets, upgrade the RB committee.</p></div><div class="gm-doc-box"><span class="badge mute">Props</span><p><b>A &#x27;no pass rush&#x27; defensive tag can be a blitz-rate artifact. Arizona blitzed 37.8% and produced a 27% pressure rate and 3 sacks after being tagged &#x27;no pass rush&#x27; three times. Check whether the offense&#x27;s tackle group is patched before trusting season-long pressure rates.</b></p><p class="sub"><b>Trigger:</b> A team tagged &#x27;no pass rush&#x27; facing an offense with a line injury/suspension; sack overs and QB passing unders become live.</p></div><div class="gm-doc-box"><span class="badge mute">Sides</span><p><b>Scoring to take a one-point lead inside a minute against a team with timeouts and a kicker is not a close-out. LA&#x27;s touchdown at 0:52 left 47 seconds, and a 21-yard throw plus a 15-yard roughness flag decided the side and the cover.</b></p><p class="sub"><b>Trigger:</b> Late go-ahead TD leaving 45+ seconds and the opponent holding two or more timeouts — the live price on the dog is still worth more than the clock suggests.</p></div></div>
+    </section>
+    
+    
+    <section class="gm-doc-pane" data-title="The story">
+      <div class="gm-doc-prose"><h2>The short version</h2>
+<p>Arizona went to SoFi a 12.5-point underdog, never trailed until 47 seconds remained, and won 18-16 on Chad Ryland's fifth and sixth field goals — a 27-yarder in the fourth and a 43-yarder at 0:03. The under (51.5) cashed by 17.5 points. The projection had Arizona almost exactly right (19.5 points, 206 pass yards, 33 attempts against 18/218/35) and Los Angeles wildly high: 32 implied points for an offense that got 57 snaps, absorbed a 27% pressure rate, and left three possessions inside Arizona's 30 without points.</p>
+<h2>How it unfolded</h2>
+<p>The first quarter looked like the market's game. Brissett's third-and-5 throw for McBride was tipped by Fiske and picked by Quentin Lake at the ARI 32 (12:23), and the Rams converted the short field into a 44-yard Grupe kick. Then Arizona discovered it could hold the ball. Brissett found McBride for 26 on the next drive (8:57), Bam Knight ripped 31 off left end to the LA 10 (1:04), and the pattern was set: Arizona moved, stalled, kicked. Corum's 15-yard reception at Q2 8:29 was the Rams' only lead of the first three quarters.</p>
+<p>The third quarter was the giveaway. Arizona burned 8:35 on a 15-play, 66-yard field-goal drive; the Rams answered by reaching the ARI 26 and handing Davis Allen the ball on 4th-and-1 into Gibbens and Mack Wilson (-4.00 EPA). Arizona then ate another 8:11 and kicked again for 15-9. Los Angeles's next three drives: a 26-yard DPI gift followed by a strip-sack recovery and then a Higbee fumble forced by Calais Simon at the ARI 22; a false start and a 4th-and-8 incompletion at the ARI 44; and finally the 91-yard, eight-play drive that worked — Nacua for 43, Nacua for 16, Parkinson for the score on review at 0:52.</p>
+<p>That touchdown put LA up one with 47 seconds and Arizona holding timeouts. Brissett threw deep middle to Jalen Brooks for 21, Josh Wallace added 15 for unnecessary roughness (+2.86 EPA, +0.241 WP), and the rest was arithmetic.</p>
+<h2>Why the game diverged from the projection</h2>
+<p>The engine's error was volume, not talent. It blended Arizona to 61.6 plays and Los Angeles to 63.0; the actuals were 72 and 57, a 15-snap swing driven entirely by Arizona never trailing. Arizona's 62.9% season pass rate became 48.6% — 44% even in the handful of snaps they were behind. Los Angeles's pass rate held at 63.2%, so the Rams' problem was never lean; it was that 37 dropbacks is all you get when the opponent possesses the ball for 34:52 and you give three drives away.</p>
+<p>The second error was sack rate. The projection carried LA at a 5.5% sack rate against a defense tagged "no pass rush" in three of five weeks. Arizona blitzed 37.8% (charting has blitz and box; coverage is not charted this season), producing three sacks and seven hits against a patched left tackle. Pressure is why LA's yards came at 4.8 air yards per throw and why a 25-of-33, +4.2 CPOE line produced 222 yards.</p>
+<h2>The plan against the game</h2>
+<p>The plan wrote Arizona's winning path in its own underdog paragraph — long dink drives, time of possession, Rams giveaways — and then bet the other side of it, hanging everything on Stafford reaching 38-42 attempts. The one factor it correctly named as a hidden risk, Quessenberry at left tackle, is the factor that broke the whole passing slate. Its Arizona-side reads were excellent (McBride catches over, yards under, Brissett yards under all swept on exactly the stated mechanism), and its Rams-side reads failed on quantity rather than logic. The caveat it attached to Arizona — that they'd need touchdowns instead of Ryland field goals — turned out to be wrong in the most instructive way: they went 0-for-5 inside the 20 and won anyway.</p>
+<h2>Player by player</h2>
+<p>Bam Knight (15-80) against a 2.3-carry projection is the week's lesson on stale usage shares: with Love out, the model handed the backfield to Allgeier, who took 18 carries for 38 with four stuffs behind a line averaging 2.11 yards before contact. Kendrick Bourne doubled his projected targets (8) and was the chain-mover on both long third-quarter drives. On the other side, Colby Parkinson (6 targets, 5-31, the go-ahead score) took the tight-end role the plan had assigned entirely to Higbee, who finished with 22 yards and the fumble. Nacua's targets were projected to the number (7) and still produced only 80 yards because the attempt pool shrank; Kyren Williams lost his goal-line equity to a Corum reception and split carries 10-9 with him.</p>
+<h2>The defenses</h2>
+<p>Arizona's secondary, beaten over the top in four straight weeks, faced four deep attempts all day and allowed one explosive — because the Rams never asked. Where Arizona won was sending five: 3 sacks, 7 hits, two stops on fourth down. The Rams' defense was the better unit by EPA, surrendering 72 snaps and 34:52 of clock while giving up zero touchdowns on five red-zone trips (ARI -0.606 EPA/play inside the 20 against +0.139 outside). That is bend-don't-break — except LA had allowed 1.00, 0.80 and 1.00 red-zone touchdown rates in weeks 3-5, so it is a one-week reversal, not a trait.</p>
+<h2>What the model should take from this</h2>
+<p>Two things repeat: Arizona's offense moves between the 20s and kicks, and Los Angeles loses possessions it has already earned (turnovers tagged in four of five weeks, five-plus pre-snap flags in two). One thing does not: the red-zone split in this game, on both sides, ran against every prior week and should not move the touchdown constant. The structural fix is the volume model — when a favorite's implied points require 63 snaps and the dog runs 66+ per game and leans run with a lead, the favorite's team total and its quarterback's attempt line are both overpriced before anything happens on the field.</p></div>
+    </section>
+    
+    
+  </div>
+</details>
+
 </div>
 
 
@@ -1798,6 +2390,15 @@
       if(pick) pick.addEventListener("change",function(){ node.querySelectorAll(".pl-tl").forEach(function(t){ t.hidden=t.dataset.key!==pick.value; }); });
       modal.querySelector(".pl-dialog").scrollTop=0;
     }).catch(function(){ body.innerHTML='<div class="pl-loading">The player sheets could not be loaded.</div>'; });
+  }
+  // The plan / report panel: pills and arrows walk its sections.
+  var doc=document.querySelector(".gm-doc");
+  if(doc){
+    var panes=[].slice.call(doc.querySelectorAll(".gm-doc-pane")), pills=doc.querySelector(".gm-doc-pills"), cur=0;
+    panes.forEach(function(pn,i){ var b=document.createElement("button"); b.type="button"; b.textContent=pn.dataset.title; b.setAttribute("role","tab"); b.addEventListener("click",function(){ show(i); }); pills.appendChild(b); });
+    function show(i){ cur=(i+panes.length)%panes.length; panes.forEach(function(pn,k){ pn.classList.toggle("active",k===cur); }); pills.querySelectorAll("button").forEach(function(b,k){ b.classList.toggle("active",k===cur); if(k===cur&&b.scrollIntoView) b.scrollIntoView({block:"nearest",inline:"center"}); }); }
+    doc.querySelectorAll(".gm-doc-arrow").forEach(function(a){ a.addEventListener("click",function(){ show(cur+parseInt(a.dataset.dir,10)); }); });
+    show(0);
   }
   document.querySelectorAll(".pl-open").forEach(function(b){ b.addEventListener("click",function(e){ e.stopPropagation(); openPlayer(b.dataset.pid); }); });
   modal.querySelector(".pl-close").addEventListener("click",closeModal);
