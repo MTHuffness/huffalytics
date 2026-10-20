@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NFL Team Rankings Entering Week 2 2026: Offense and Defense EPA | Huffalytics</title>
-<meta name="description" content="NFL offense and defense rankings entering week 2 of 2026: EPA per play, success rate, explosive plays, pressure, third downs and red zone for all 32 teams, with week-over-week change.">
+<meta name="description" content="NFL offense and defense rankings entering week 2 of 2026: EPA per play, success rate, explosive plays, pressure, third downs and red zone for all 32 teams, plus run direction splits (left, middle, right) for every offense and defense, with week-over-week change.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="keywords" content="NFL stats, NFL projections, NFL week 2 2026, Kalshi NFL, Kalshi player props, NFL player props, NFL team rankings, EPA per play, NFL betting model, NFL streaming picks, fantasy football projections">
 <meta name="author" content="Huffalytics">
@@ -144,6 +144,32 @@
   .hfa-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
   .hfa-grid > * { min-width: 0; }
   .hfa-grid > .hfa-card { margin-bottom: 0; }
+
+  /* Run lanes: per game, each offense's three lanes over the defense it faces */
+  .lane-key { border-radius: 999px; padding: 0.05em 0.5em; font-size: 0.68rem; font-weight: 700; }
+  .lane-key.soft, .lane.soft .lane-tag { background: rgba(47, 212, 164, 0.18); color: var(--hfa-good); }
+  .lane-key.wall, .lane.wall .lane-tag { background: rgba(255, 176, 32, 0.18); color: var(--hfa-bad); }
+  .lane-game { padding: 0.85rem 1.1rem 1rem; border-top: var(--hfa-hairline); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem 1.6rem; }
+  .lane-gm { grid-column: 1 / -1; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-muted); }
+  .lane-side { min-width: 0; }
+  .lane-who { display: flex; align-items: center; flex-wrap: wrap; gap: 0.3rem 0.4rem; font-size: 0.86rem; margin-bottom: 0.5rem; }
+  .lane-who img { width: 22px; height: 22px; object-fit: contain; }
+  .lane-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; }
+  .lane { min-width: 0; border: var(--hfa-hairline); border-radius: 10px; padding: 0.55rem 0.65rem 0.6rem; background: var(--hfa-tint); }
+  .lane.soft { border-color: rgba(47, 212, 164, 0.45); background: rgba(47, 212, 164, 0.07); }
+  .lane.wall { border-color: rgba(255, 176, 32, 0.45); background: rgba(255, 176, 32, 0.07); }
+  .lane-top { display: flex; justify-content: space-between; align-items: center; gap: 0.3rem; font-size: 0.64rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-muted); }
+  .lane-tag { border-radius: 999px; padding: 0.1em 0.5em; font-size: 0.58rem; letter-spacing: 0.04em; white-space: nowrap; }
+  .lane-ypc { font-size: 1.5rem; font-weight: 800; line-height: 1.15; color: var(--hfa-accent); letter-spacing: -0.01em; margin-top: 0.15rem; }
+  .lane-ypc.flat { color: var(--hfa-muted); }
+  .lane .ord { font-size: 0.66rem; font-weight: 600; color: var(--hfa-muted); margin-left: 0.3rem; }
+  .lane .ord.text-success { color: var(--hfa-good); } .lane .ord.text-danger { color: var(--hfa-bad); }
+  .lane-bar { height: 4px; border-radius: 2px; background: rgba(128, 128, 128, 0.22); margin: 0.35rem 0 0.3rem; overflow: hidden; }
+  .lane-bar i { display: block; height: 100%; background: var(--hfa-accent); border-radius: 2px; }
+  .lane-sub, .lane-def, .lane-act { font-size: 0.72rem; line-height: 1.35; color: var(--hfa-muted); }
+  .lane-def { margin-top: 0.4rem; padding-top: 0.35rem; border-top: var(--hfa-hairline); color: var(--hfa-body); }
+  .lane-act { margin-top: 0.25rem; color: var(--hfa-body); }
+  .lane-num { font-weight: 700; color: var(--hfa-accent); }
 
   /* The board: slate left, leaders in a column on the right at full width */
   .hfa-board { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; margin-bottom: 1rem; align-items: stretch; }
@@ -343,6 +369,12 @@
        under the brand; one section shows at a time. */
     .hfa-nav { display: none; }
     .hfa-top { padding-right: 2.2rem; }
+    .lane-game { grid-template-columns: minmax(0, 1fr); gap: 0.7rem; padding: 0.75rem 16px 0.9rem; }
+    .lane-grid { gap: 0.35rem; }
+    .lane { padding: 0.45rem 0.5rem 0.5rem; border-radius: 8px; }
+    .lane-ypc { font-size: 1.25rem; }
+    .lane-sub, .lane-def, .lane-act { font-size: 0.68rem; }
+    .lane-who { font-size: 0.82rem; }
     .hfa-jump { position: sticky; top: 0; z-index: 40; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 0.3rem; margin: 0; padding: 0.55rem 16px 0.55rem; background: rgba(5, 5, 7, 0.86); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: var(--hfa-hairline); -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 2rem), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 2rem), transparent); }
     :root[data-theme="light"] .hfa-jump { background: rgba(243, 244, 248, 0.9); }
     .hfa-jump::-webkit-scrollbar { display: none; }
@@ -452,15 +484,15 @@
     <div class="hfa-head">
       <div class="hfa-eyebrow">NFL &middot; 2026 season</div>
       <h1>NFL team rankings entering week 2, 2026</h1>
-      <p class="lede">Offense and defense efficiency for all 32 NFL teams from play-by-play: EPA per play, success rate, explosive plays, pressure and sacks, third downs and the red zone, ranked entering week 2 with the change from the week before.</p>
+      <p class="lede">Offense and defense efficiency for all 32 NFL teams from play-by-play: EPA per play, success rate, explosive plays, pressure and sacks, third downs and the red zone, ranked entering week 2 with the change from the week before. The run-lane tabs split every team's designed runs into left, middle and right: how often each offense goes there and what it gets, and what each defense allows to the same side.</p>
       <span class="sub">2026 week 1. Every number is opponent-blind and knowable before the week kicked off. Click a column to rank by it; <span class="text-success">green</span> = top 10, <span class="text-danger">amber</span> = bottom 10 in that category. #N is the team's rank in the column; ▲▼ is the change vs the full 2025 season (green improved).</span>
     </div>
   </div>
-  <nav class="hfa-jump" aria-label="Sections"><a href="/w/2/#hero">Week</a><a href="/w/2/#slate">Slate</a><a href="/w/2/#leaders">Leaders</a><a href="/w/2/#outlook">Outlook</a><a href="/w/2/#streaming">Streaming</a><a href="/w/2/rankings/" class="active">Rankings</a><a href="/about/">About</a></nav>
+  <nav class="hfa-jump" aria-label="Sections"><a href="/w/2/#hero">Week</a><a href="/w/2/#slate">Slate</a><a href="/w/2/#leaders">Leaders</a><a href="/w/2/#lanes">Run lanes</a><a href="/w/2/#outlook">Outlook</a><a href="/w/2/#streaming">Streaming</a><a href="/w/2/rankings/" class="active">Rankings</a><a href="/about/">About</a></nav>
   <div class="hfa-card">
     <div class="hfa-head"><div class="hfa-eyebrow">All 32 teams</div><h2>Offense and defense efficiency entering week 2</h2></div>
     <div class="tabs" role="tablist">
-      <button type="button" data-pane="off" class="active">Offense</button><button type="button" data-pane="def" class="">Defense</button>
+      <button type="button" data-pane="off" class="active">Offense</button><button type="button" data-pane="def" class="">Defense</button><button type="button" data-pane="lanes_off" class="">Run lanes · off</button><button type="button" data-pane="lanes_def" class="">Run lanes · def</button>
     </div>
     
     <div class="pane active" id="pane-off">
@@ -939,12 +971,488 @@
       </div>
     </div>
     
+    <div class="pane " id="pane-lanes_off">
+      <div class="scroll">
+      <table class="rank" data-key="lanes_off">
+        <thead><tr>
+          <th style="width: 2.4rem">#</th><th class="team">Team</th><th class="num">GP</th>
+          <th class="num sort" data-idx="3" data-best="high" title="Share of designed runs that go left">Left %</th><th class="num sort" data-idx="4" data-best="high" title="Yards per carry running left">Left YPC</th><th class="num sort" data-idx="5" data-best="high" title="Success rate (EPA &gt; 0) running left">Left SR</th><th class="num sort" data-idx="6" data-best="high" title="Share of designed runs that go middle">Middle %</th><th class="num sort" data-idx="7" data-best="high" title="Yards per carry running middle">Middle YPC</th><th class="num sort" data-idx="8" data-best="high" title="Success rate (EPA &gt; 0) running middle">Middle SR</th><th class="num sort" data-idx="9" data-best="high" title="Share of designed runs that go right">Right %</th><th class="num sort" data-idx="10" data-best="high" title="Yards per carry running right">Right YPC</th><th class="num sort" data-idx="11" data-best="high" title="Success rate (EPA &gt; 0) running right">Right SR</th>
+        </tr></thead>
+        <tbody>
+          
+          <tr>
+            <td class="flat">1</td>
+            <td class="team" title="Kansas City Chiefs"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="Kansas City Chiefs logo" loading="lazy">KC</td>
+            <td class="num">1</td>
+            <td class="num" data-val="38.709677"><span class="">38.7</span><span class="delta ">▲0.8</span></td><td class="num" data-val="11.000000"><span class="text-success">11.0</span><span class="ord">#1</span><span class="delta text-success">▲6.9</span></td><td class="num" data-val="0.583333"><span class="text-success">58.3%</span><span class="ord">#1</span><span class="delta text-success">▲14.2</span></td><td class="num" data-val="41.935484"><span class="">41.9</span><span class="delta ">▲17.7</span></td><td class="num" data-val="3.000000"><span class="text-success">3.0</span><span class="ord">#4</span><span class="delta text-danger">▼0.3</span></td><td class="num" data-val="0.384615"><span class="text-success">38.5%</span><span class="ord">#4</span><span class="delta text-danger">▼1.8</span></td><td class="num" data-val="19.354839"><span class="">19.4</span><span class="delta ">▼18.5</span></td><td class="num" data-val="4.333333"><span class="">4.3</span><span class="delta text-success">▲0.4</span></td><td class="num" data-val="0.166667"><span class="">16.7%</span><span class="delta text-danger">▼22.3</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">2</td>
+            <td class="team" title="Chicago Bears"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="Chicago Bears logo" loading="lazy">CHI</td>
+            <td class="num">1</td>
+            <td class="num" data-val="28.125000"><span class="">28.1</span><span class="delta ">▼2.5</span></td><td class="num" data-val="5.444444"><span class="">5.4</span><span class="delta text-success">▲1.0</span></td><td class="num" data-val="0.333333"><span class="">33.3%</span><span class="delta text-danger">▼8.1</span></td><td class="num" data-val="21.875000"><span class="">21.9</span><span class="delta ">▲5.3</span></td><td class="num" data-val="11.285714"><span class="">11.3</span><span class="delta text-success">▲7.5</span></td><td class="num" data-val="0.714286"><span class="">71.4%</span><span class="delta text-success">▲18.0</span></td><td class="num" data-val="50.000000"><span class="">50.0</span><span class="delta ">▼2.8</span></td><td class="num" data-val="6.500000"><span class="text-success">6.5</span><span class="ord">#1</span><span class="delta text-success">▲1.2</span></td><td class="num" data-val="0.375000"><span class="text-success">37.5%</span><span class="ord">#5</span><span class="delta text-danger">▼12.3</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">3</td>
+            <td class="team" title="Baltimore Ravens"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="Baltimore Ravens logo" loading="lazy">BAL</td>
+            <td class="num">1</td>
+            <td class="num" data-val="41.935484"><span class="">41.9</span><span class="delta ">▼1.6</span></td><td class="num" data-val="7.076923"><span class="text-success">7.1</span><span class="ord">#2</span><span class="delta text-success">▲1.9</span></td><td class="num" data-val="0.538462"><span class="text-success">53.8%</span><span class="ord">#3</span><span class="delta text-success">▲14.1</span></td><td class="num" data-val="9.677419"><span class="">9.7</span><span class="delta ">▼7.0</span></td><td class="num" data-val="2.333333"><span class="">2.3</span><span class="delta text-danger">▼1.1</span></td><td class="num" data-val="0.000000"><span class="">0.0%</span><span class="delta text-danger">▼42.7</span></td><td class="num" data-val="48.387097"><span class="">48.4</span><span class="delta ">▲8.6</span></td><td class="num" data-val="4.533333"><span class="text-success">4.5</span><span class="ord">#3</span><span class="delta text-danger">▼1.6</span></td><td class="num" data-val="0.466667"><span class="text-success">46.7%</span><span class="ord">#2</span><span class="delta text-success">▲0.9</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">4</td>
+            <td class="team" title="San Francisco 49ers"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sf.png" alt="San Francisco 49ers logo" loading="lazy">SF</td>
+            <td class="num">1</td>
+            <td class="num" data-val="32.142857"><span class="">32.1</span><span class="delta ">▼3.5</span></td><td class="num" data-val="5.555556"><span class="">5.6</span><span class="delta text-success">▲1.9</span></td><td class="num" data-val="0.555556"><span class="">55.6%</span><span class="delta text-success">▲17.5</span></td><td class="num" data-val="32.142857"><span class="">32.1</span><span class="delta ">▲4.8</span></td><td class="num" data-val="3.111111"><span class="">3.1</span><span class="delta text-danger">▼0.9</span></td><td class="num" data-val="0.444444"><span class="">44.4%</span><span class="delta text-danger">▼4.3</span></td><td class="num" data-val="35.714286"><span class="">35.7</span><span class="delta ">▼1.3</span></td><td class="num" data-val="7.000000"><span class="">7.0</span><span class="delta text-success">▲3.2</span></td><td class="num" data-val="0.600000"><span class="">60.0%</span><span class="delta text-success">▲19.0</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">5</td>
+            <td class="team" title="Indianapolis Colts"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" alt="Indianapolis Colts logo" loading="lazy">IND</td>
+            <td class="num">1</td>
+            <td class="num" data-val="21.052632"><span class="">21.1</span><span class="delta ">▼4.7</span></td><td class="num" data-val="9.750000"><span class="">9.8</span><span class="delta text-success">▲4.5</span></td><td class="num" data-val="0.750000"><span class="">75.0%</span><span class="delta text-success">▲33.3</span></td><td class="num" data-val="10.526316"><span class="">10.5</span><span class="delta ">▼32.0</span></td><td class="num" data-val="4.000000"><span class="">4.0</span><span class="delta text-danger">▼0.1</span></td><td class="num" data-val="0.500000"><span class="">50.0%</span><span class="delta text-success">▲2.9</span></td><td class="num" data-val="68.421053"><span class="">68.4</span><span class="delta ">▲36.7</span></td><td class="num" data-val="3.923077"><span class="text-success">3.9</span><span class="ord">#4</span><span class="delta text-danger">▼0.8</span></td><td class="num" data-val="0.384615"><span class="text-success">38.5%</span><span class="ord">#4</span><span class="delta text-danger">▼8.0</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">6</td>
+            <td class="team" title="New York Jets"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="New York Jets logo" loading="lazy">NYJ</td>
+            <td class="num">1</td>
+            <td class="num" data-val="27.272727"><span class="">27.3</span><span class="delta ">▼15.5</span></td><td class="num" data-val="4.111111"><span class="">4.1</span><span class="delta text-success">▲0.2</span></td><td class="num" data-val="0.666667"><span class="">66.7%</span><span class="delta text-success">▲29.3</span></td><td class="num" data-val="27.272727"><span class="">27.3</span><span class="delta ">▲3.3</span></td><td class="num" data-val="3.666667"><span class="">3.7</span><span class="delta text-danger">▼1.2</span></td><td class="num" data-val="0.333333"><span class="">33.3%</span><span class="delta text-danger">▼17.2</span></td><td class="num" data-val="45.454545"><span class="">45.5</span><span class="delta ">▲12.2</span></td><td class="num" data-val="5.000000"><span class="text-success">5.0</span><span class="ord">#2</span><span class="delta text-success">▲0.7</span></td><td class="num" data-val="0.533333"><span class="text-success">53.3%</span><span class="ord">#1</span><span class="delta text-success">▲13.0</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">7</td>
+            <td class="team" title="Tampa Bay Buccaneers"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/tb.png" alt="Tampa Bay Buccaneers logo" loading="lazy">TB</td>
+            <td class="num">1</td>
+            <td class="num" data-val="53.333333"><span class="">53.3</span><span class="delta ">▲5.9</span></td><td class="num" data-val="4.625000"><span class="">4.6</span><span class="delta text-success">▲0.6</span></td><td class="num" data-val="0.500000"><span class="">50.0%</span><span class="delta text-success">▲9.6</span></td><td class="num" data-val=""><span class="">—</span></td><td class="num" data-val=""><span class="">—</span></td><td class="num" data-val=""><span class="">—</span></td><td class="num" data-val="46.666667"><span class="">46.7</span><span class="delta ">▲15.7</span></td><td class="num" data-val="3.142857"><span class="">3.1</span><span class="delta text-danger">▼0.6</span></td><td class="num" data-val="0.285714"><span class="">28.6%</span><span class="delta text-danger">▼10.2</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">8</td>
+            <td class="team" title="New York Giants"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png" alt="New York Giants logo" loading="lazy">NYG</td>
+            <td class="num">1</td>
+            <td class="num" data-val="62.500000"><span class="">62.5</span><span class="delta ">▲24.3</span></td><td class="num" data-val="6.300000"><span class="text-success">6.3</span><span class="ord">#3</span><span class="delta text-success">▲2.1</span></td><td class="num" data-val="0.550000"><span class="text-success">55.0%</span><span class="ord">#2</span><span class="delta text-success">▲16.0</span></td><td class="num" data-val="12.500000"><span class="">12.5</span><span class="delta ">▼12.2</span></td><td class="num" data-val="2.250000"><span class="">2.2</span><span class="delta text-danger">▼1.5</span></td><td class="num" data-val="0.500000"><span class="">50.0%</span><span class="delta text-success">▲6.8</span></td><td class="num" data-val="25.000000"><span class="">25.0</span><span class="delta ">▼12.1</span></td><td class="num" data-val="3.125000"><span class="">3.1</span><span class="delta text-danger">▼0.8</span></td><td class="num" data-val="0.375000"><span class="">37.5%</span><span class="delta text-danger">▼3.2</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">9</td>
+            <td class="team" title="Cincinnati Bengals"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="Cincinnati Bengals logo" loading="lazy">CIN</td>
+            <td class="num">1</td>
+            <td class="num" data-val="24.000000"><span class="">24.0</span><span class="delta ">▼11.3</span></td><td class="num" data-val="1.500000"><span class="">1.5</span><span class="delta text-danger">▼3.9</span></td><td class="num" data-val="0.333333"><span class="">33.3%</span><span class="delta text-danger">▼15.1</span></td><td class="num" data-val="48.000000"><span class="">48.0</span><span class="delta ">▲21.9</span></td><td class="num" data-val="5.250000"><span class="text-success">5.2</span><span class="ord">#1</span><span class="delta text-success">▲1.2</span></td><td class="num" data-val="0.500000"><span class="text-success">50.0%</span><span class="ord">#1</span><span class="delta text-success">▲0.5</span></td><td class="num" data-val="28.000000"><span class="">28.0</span><span class="delta ">▼10.7</span></td><td class="num" data-val="4.142857"><span class="">4.1</span><span class="delta text-success">▲0.6</span></td><td class="num" data-val="0.285714"><span class="">28.6%</span><span class="delta text-danger">▼11.3</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">10</td>
+            <td class="team" title="Houston Texans"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/hou.png" alt="Houston Texans logo" loading="lazy">HOU</td>
+            <td class="num">1</td>
+            <td class="num" data-val="38.709677"><span class="">38.7</span><span class="delta ">▲6.6</span></td><td class="num" data-val="3.666667"><span class="text-success">3.7</span><span class="ord">#7</span></td><td class="num" data-val="0.333333"><span class="text-success">33.3%</span><span class="ord">#6</span><span class="delta text-danger">▼0.2</span></td><td class="num" data-val="16.129032"><span class="">16.1</span><span class="delta ">▼13.4</span></td><td class="num" data-val="7.800000"><span class="">7.8</span><span class="delta text-success">▲4.3</span></td><td class="num" data-val="0.600000"><span class="">60.0%</span><span class="delta text-success">▲20.3</span></td><td class="num" data-val="45.161290"><span class="">45.2</span><span class="delta ">▲6.9</span></td><td class="num" data-val="1.857143"><span class="text-success">1.9</span><span class="ord">#5</span><span class="delta text-danger">▼2.2</span></td><td class="num" data-val="0.428571"><span class="text-success">42.9%</span><span class="ord">#3</span><span class="delta text-success">▲6.7</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">11</td>
+            <td class="team" title="Detroit Lions"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="Detroit Lions logo" loading="lazy">DET</td>
+            <td class="num">1</td>
+            <td class="num" data-val="25.806452"><span class="">25.8</span><span class="delta ">▼6.7</span></td><td class="num" data-val="6.750000"><span class="">6.8</span><span class="delta text-success">▲2.8</span></td><td class="num" data-val="0.750000"><span class="">75.0%</span><span class="delta text-success">▲38.5</span></td><td class="num" data-val="38.709677"><span class="">38.7</span><span class="delta ">▲15.0</span></td><td class="num" data-val="4.000000"><span class="text-success">4.0</span><span class="ord">#3</span><span class="delta text-danger">▼0.8</span></td><td class="num" data-val="0.416667"><span class="text-success">41.7%</span><span class="ord">#3</span><span class="delta text-danger">▼5.3</span></td><td class="num" data-val="35.483871"><span class="">35.5</span><span class="delta ">▼8.4</span></td><td class="num" data-val="5.545455"><span class="">5.5</span><span class="delta text-success">▲0.3</span></td><td class="num" data-val="0.454545"><span class="">45.5%</span><span class="delta text-success">▲4.4</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">12</td>
+            <td class="team" title="Dallas Cowboys"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="Dallas Cowboys logo" loading="lazy">DAL</td>
+            <td class="num">1</td>
+            <td class="num" data-val="31.250000"><span class="">31.2</span><span class="delta ">▼5.3</span></td><td class="num" data-val="2.600000"><span class="">2.6</span><span class="delta text-danger">▼2.8</span></td><td class="num" data-val="0.200000"><span class="">20.0%</span><span class="delta text-danger">▼20.8</span></td><td class="num" data-val="37.500000"><span class="">37.5</span><span class="delta ">▲5.8</span></td><td class="num" data-val="4.833333"><span class="">4.8</span><span class="delta text-success">▲0.7</span></td><td class="num" data-val="0.500000"><span class="">50.0%</span><span class="delta text-success">▲1.5</span></td><td class="num" data-val="31.250000"><span class="">31.2</span><span class="delta ">▼0.5</span></td><td class="num" data-val="2.600000"><span class="">2.6</span><span class="delta text-danger">▼1.8</span></td><td class="num" data-val="0.600000"><span class="">60.0%</span><span class="delta text-success">▲16.8</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">13</td>
+            <td class="team" title="Denver Broncos"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="Denver Broncos logo" loading="lazy">DEN</td>
+            <td class="num">1</td>
+            <td class="num" data-val="41.666667"><span class="">41.7</span><span class="delta ">▲1.7</span></td><td class="num" data-val="6.000000"><span class="">6.0</span><span class="delta text-success">▲1.3</span></td><td class="num" data-val="0.200000"><span class="">20.0%</span><span class="delta text-danger">▼21.9</span></td><td class="num" data-val="25.000000"><span class="">25.0</span><span class="delta ">▲4.8</span></td><td class="num" data-val="3.666667"><span class="">3.7</span><span class="delta text-success">▲0.3</span></td><td class="num" data-val="0.333333"><span class="">33.3%</span><span class="delta text-danger">▼18.5</span></td><td class="num" data-val="33.333333"><span class="">33.3</span><span class="delta ">▼6.4</span></td><td class="num" data-val="4.500000"><span class="">4.5</span></td><td class="num" data-val="0.500000"><span class="">50.0%</span><span class="delta text-success">▲9.7</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">14</td>
+            <td class="team" title="New Orleans Saints"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/no.png" alt="New Orleans Saints logo" loading="lazy">NO</td>
+            <td class="num">1</td>
+            <td class="num" data-val="27.272727"><span class="">27.3</span><span class="delta ">▼8.2</span></td><td class="num" data-val="3.500000"><span class="">3.5</span><span class="delta text-danger">▼0.7</span></td><td class="num" data-val="0.166667"><span class="">16.7%</span><span class="delta text-danger">▼23.9</span></td><td class="num" data-val="50.000000"><span class="">50.0</span><span class="delta ">▲21.7</span></td><td class="num" data-val="5.454545"><span class="">5.5</span><span class="delta text-success">▲2.5</span></td><td class="num" data-val="0.545455"><span class="">54.5%</span><span class="delta text-success">▲19.1</span></td><td class="num" data-val="22.727273"><span class="">22.7</span><span class="delta ">▼13.5</span></td><td class="num" data-val="1.200000"><span class="">1.2</span><span class="delta text-danger">▼2.2</span></td><td class="num" data-val="0.000000"><span class="">0.0%</span><span class="delta text-danger">▼34.0</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">15</td>
+            <td class="team" title="Jacksonville Jaguars"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png" alt="Jacksonville Jaguars logo" loading="lazy">JAX</td>
+            <td class="num">1</td>
+            <td class="num" data-val="41.379310"><span class="">41.4</span><span class="delta ">▲6.8</span></td><td class="num" data-val="5.166667"><span class="text-success">5.2</span><span class="ord">#4</span><span class="delta text-success">▲1.1</span></td><td class="num" data-val="0.500000"><span class="text-success">50.0%</span><span class="ord">#4</span><span class="delta text-success">▲12.6</span></td><td class="num" data-val="27.586207"><span class="">27.6</span><span class="delta ">▼10.5</span></td><td class="num" data-val="4.250000"><span class="">4.2</span><span class="delta text-success">▲0.4</span></td><td class="num" data-val="0.750000"><span class="">75.0%</span><span class="delta text-success">▲29.9</span></td><td class="num" data-val="31.034483"><span class="">31.0</span><span class="delta ">▲3.7</span></td><td class="num" data-val="3.666667"><span class="">3.7</span><span class="delta text-danger">▼0.2</span></td><td class="num" data-val="0.333333"><span class="">33.3%</span><span class="delta text-danger">▼4.6</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">16</td>
+            <td class="team" title="Arizona Cardinals"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="Arizona Cardinals logo" loading="lazy">ARI</td>
+            <td class="num">1</td>
+            <td class="num" data-val="23.333333"><span class="">23.3</span><span class="delta ">▼10.4</span></td><td class="num" data-val="3.714286"><span class="">3.7</span><span class="delta text-success">▲0.1</span></td><td class="num" data-val="0.714286"><span class="">71.4%</span><span class="delta text-success">▲31.1</span></td><td class="num" data-val="43.333333"><span class="">43.3</span><span class="delta ">▲12.7</span></td><td class="num" data-val="2.384615"><span class="text-success">2.4</span><span class="ord">#5</span><span class="delta text-danger">▼1.9</span></td><td class="num" data-val="0.230769"><span class="text-success">23.1%</span><span class="ord">#5</span><span class="delta text-danger">▼21.4</span></td><td class="num" data-val="33.333333"><span class="">33.3</span><span class="delta ">▼2.3</span></td><td class="num" data-val="5.100000"><span class="">5.1</span><span class="delta text-success">▲0.9</span></td><td class="num" data-val="0.400000"><span class="">40.0%</span><span class="delta text-success">▲7.8</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">17</td>
+            <td class="team" title="Washington Commanders"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png" alt="Washington Commanders logo" loading="lazy">WAS</td>
+            <td class="num">1</td>
+            <td class="num" data-val="37.931034"><span class="">37.9</span><span class="delta ">▼2.8</span></td><td class="num" data-val="3.909091"><span class="">3.9</span><span class="delta text-danger">▼0.1</span></td><td class="num" data-val="0.454545"><span class="">45.5%</span><span class="delta text-success">▲3.6</span></td><td class="num" data-val="34.482759"><span class="">34.5</span><span class="delta ">▲9.3</span></td><td class="num" data-val="3.700000"><span class="">3.7</span><span class="delta text-danger">▼0.5</span></td><td class="num" data-val="0.600000"><span class="">60.0%</span><span class="delta text-success">▲16.9</span></td><td class="num" data-val="27.586207"><span class="">27.6</span><span class="delta ">▼6.5</span></td><td class="num" data-val="2.875000"><span class="">2.9</span><span class="delta text-danger">▼2.6</span></td><td class="num" data-val="0.375000"><span class="">37.5%</span><span class="delta text-danger">▼7.4</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">18</td>
+            <td class="team" title="Atlanta Falcons"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" alt="Atlanta Falcons logo" loading="lazy">ATL</td>
+            <td class="num">1</td>
+            <td class="num" data-val="38.709677"><span class="">38.7</span><span class="delta ">▼7.4</span></td><td class="num" data-val="4.166667"><span class="text-success">4.2</span><span class="ord">#5</span><span class="delta text-danger">▼0.5</span></td><td class="num" data-val="0.500000"><span class="text-success">50.0%</span><span class="ord">#4</span><span class="delta text-success">▲5.8</span></td><td class="num" data-val="29.032258"><span class="">29.0</span><span class="delta ">▲16.3</span></td><td class="num" data-val="1.666667"><span class="">1.7</span><span class="delta text-danger">▼2.7</span></td><td class="num" data-val="0.333333"><span class="">33.3%</span><span class="delta text-danger">▼14.0</span></td><td class="num" data-val="32.258065"><span class="">32.3</span><span class="delta ">▼8.9</span></td><td class="num" data-val="5.500000"><span class="">5.5</span><span class="delta text-success">▲0.9</span></td><td class="num" data-val="0.500000"><span class="">50.0%</span><span class="delta text-success">▲12.5</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">19</td>
+            <td class="team" title="Las Vegas Raiders"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" alt="Las Vegas Raiders logo" loading="lazy">LV</td>
+            <td class="num">1</td>
+            <td class="num" data-val="36.363636"><span class="">36.4</span><span class="delta ">▲0.7</span></td><td class="num" data-val="3.416667"><span class="text-success">3.4</span><span class="ord">#8</span><span class="delta text-danger">▼0.6</span></td><td class="num" data-val="0.333333"><span class="text-success">33.3%</span><span class="ord">#6</span><span class="delta text-success">▲1.1</span></td><td class="num" data-val="42.424242"><span class="">42.4</span><span class="delta ">▲12.9</span></td><td class="num" data-val="4.071429"><span class="text-success">4.1</span><span class="ord">#2</span><span class="delta text-success">▲1.2</span></td><td class="num" data-val="0.428571"><span class="text-success">42.9%</span><span class="ord">#2</span><span class="delta text-success">▲17.9</span></td><td class="num" data-val="21.212121"><span class="">21.2</span><span class="delta ">▼13.6</span></td><td class="num" data-val="5.000000"><span class="">5.0</span><span class="delta text-success">▲1.6</span></td><td class="num" data-val="0.571429"><span class="">57.1%</span><span class="delta text-success">▲20.7</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">20</td>
+            <td class="team" title="Tennessee Titans"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" alt="Tennessee Titans logo" loading="lazy">TEN</td>
+            <td class="num">1</td>
+            <td class="num" data-val="20.000000"><span class="">20.0</span><span class="delta ">▼14.5</span></td><td class="num" data-val="9.500000"><span class="">9.5</span><span class="delta text-success">▲5.7</span></td><td class="num" data-val="1.000000"><span class="">100.0%</span><span class="delta text-success">▲63.3</span></td><td class="num" data-val="40.000000"><span class="">40.0</span><span class="delta ">▲11.3</span></td><td class="num" data-val="4.500000"><span class="">4.5</span><span class="delta text-success">▲1.0</span></td><td class="num" data-val="0.250000"><span class="">25.0%</span><span class="delta text-danger">▼20.0</span></td><td class="num" data-val="40.000000"><span class="">40.0</span><span class="delta ">▲3.2</span></td><td class="num" data-val="2.500000"><span class="">2.5</span><span class="delta text-danger">▼2.5</span></td><td class="num" data-val="0.250000"><span class="">25.0%</span><span class="delta text-danger">▼10.2</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">21</td>
+            <td class="team" title="Philadelphia Eagles"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" alt="Philadelphia Eagles logo" loading="lazy">PHI</td>
+            <td class="num">1</td>
+            <td class="num" data-val="27.777778"><span class="">27.8</span><span class="delta ">▼8.4</span></td><td class="num" data-val="2.800000"><span class="">2.8</span><span class="delta text-danger">▼2.4</span></td><td class="num" data-val="0.200000"><span class="">20.0%</span><span class="delta text-danger">▼21.7</span></td><td class="num" data-val="11.111111"><span class="">11.1</span><span class="delta ">▼12.9</span></td><td class="num" data-val="0.500000"><span class="">0.5</span><span class="delta text-danger">▼1.6</span></td><td class="num" data-val="0.000000"><span class="">0.0%</span><span class="delta text-danger">▼41.0</span></td><td class="num" data-val="61.111111"><span class="">61.1</span><span class="delta ">▲21.3</span></td><td class="num" data-val="6.818182"><span class="">6.8</span><span class="delta text-success">▲2.4</span></td><td class="num" data-val="0.363636"><span class="">36.4%</span><span class="delta text-danger">▼4.6</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">22</td>
+            <td class="team" title="Carolina Panthers"><img src="https://a.espncdn.com/i/teamlogos/nfl/500-dark/car.png" alt="Carolina Panthers logo" loading="lazy">CAR</td>
+            <td class="num">1</td>
+            <td class="num" data-val="52.631579"><span class="">52.6</span><span class="delta ">▲15.3</span></td><td class="num" data-val="5.900000"><span class="">5.9</span><span class="delta text-success">▲2.0</span></td><td class="num" data-val="0.700000"><span class="">70.0%</span><span class="delta text-success">▲25.0</span></td><td class="num" data-val="26.315789"><span class="">26.3</span><span class="delta ">▼9.0</span></td><td class="num" data-val="3.600000"><span class="">3.6</span><span class="delta text-danger">▼0.1</span></td><td class="num" data-val="0.200000"><span class="">20.0%</span><span class="delta text-danger">▼18.5</span></td><td class="num" data-val="21.052632"><span class="">21.1</span><span class="delta ">▼6.4</span></td><td class="num" data-val="3.500000"><span class="">3.5</span><span class="delta text-danger">▼2.4</span></td><td class="num" data-val="0.250000"><span class="">25.0%</span><span class="delta text-danger">▼20.0</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">23</td>
+            <td class="team" title="Cleveland Browns"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" alt="Cleveland Browns logo" loading="lazy">CLE</td>
+            <td class="num">1</td>
+            <td class="num" data-val="47.368421"><span class="">47.4</span><span class="delta ">▲16.4</span></td><td class="num" data-val="3.333333"><span class="">3.3</span><span class="delta text-danger">▼0.2</span></td><td class="num" data-val="0.666667"><span class="">66.7%</span><span class="delta text-success">▲33.9</span></td><td class="num" data-val="31.578947"><span class="">31.6</span><span class="delta ">▲3.5</span></td><td class="num" data-val="3.500000"><span class="">3.5</span><span class="delta text-success">▲0.5</span></td><td class="num" data-val="0.166667"><span class="">16.7%</span><span class="delta text-danger">▼17.6</span></td><td class="num" data-val="21.052632"><span class="">21.1</span><span class="delta ">▼19.8</span></td><td class="num" data-val="4.000000"><span class="">4.0</span><span class="delta text-danger">▼0.1</span></td><td class="num" data-val="0.250000"><span class="">25.0%</span><span class="delta text-danger">▼11.9</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">24</td>
+            <td class="team" title="Minnesota Vikings"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/min.png" alt="Minnesota Vikings logo" loading="lazy">MIN</td>
+            <td class="num">1</td>
+            <td class="num" data-val="35.714286"><span class="">35.7</span><span class="delta ">▲2.7</span></td><td class="num" data-val="5.000000"><span class="">5.0</span><span class="delta text-success">▲1.0</span></td><td class="num" data-val="0.400000"><span class="">40.0%</span><span class="delta text-danger">▼7.5</span></td><td class="num" data-val="32.142857"><span class="">32.1</span><span class="delta ">▲2.7</span></td><td class="num" data-val="2.888889"><span class="">2.9</span><span class="delta text-danger">▼1.7</span></td><td class="num" data-val="0.333333"><span class="">33.3%</span><span class="delta text-danger">▼15.3</span></td><td class="num" data-val="32.142857"><span class="">32.1</span><span class="delta ">▼5.3</span></td><td class="num" data-val="2.666667"><span class="">2.7</span><span class="delta text-danger">▼2.1</span></td><td class="num" data-val="0.222222"><span class="">22.2%</span><span class="delta text-danger">▼16.0</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">25</td>
+            <td class="team" title="Seattle Seahawks"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="Seattle Seahawks logo" loading="lazy">SEA</td>
+            <td class="num">1</td>
+            <td class="num" data-val="35.000000"><span class="">35.0</span><span class="delta ">▼4.9</span></td><td class="num" data-val="3.428571"><span class="">3.4</span><span class="delta text-danger">▼0.4</span></td><td class="num" data-val="0.285714"><span class="">28.6%</span><span class="delta text-danger">▼6.5</span></td><td class="num" data-val="10.000000"><span class="">10.0</span><span class="delta ">▼18.5</span></td><td class="num" data-val="5.500000"><span class="">5.5</span><span class="delta text-success">▲1.9</span></td><td class="num" data-val="0.500000"><span class="">50.0%</span><span class="delta text-success">▲9.0</span></td><td class="num" data-val="55.000000"><span class="">55.0</span><span class="delta ">▲23.4</span></td><td class="num" data-val="4.454545"><span class="">4.5</span><span class="delta text-danger">▼1.0</span></td><td class="num" data-val="0.272727"><span class="">27.3%</span><span class="delta text-danger">▼18.4</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">26</td>
+            <td class="team" title="Los Angeles Rams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" alt="Los Angeles Rams logo" loading="lazy">LA</td>
+            <td class="num">1</td>
+            <td class="num" data-val="29.629630"><span class="">29.6</span><span class="delta ">▼0.2</span></td><td class="num" data-val="5.625000"><span class="">5.6</span><span class="delta text-success">▲0.1</span></td><td class="num" data-val="0.500000"><span class="">50.0%</span><span class="delta text-danger">▼3.1</span></td><td class="num" data-val="40.740741"><span class="">40.7</span><span class="delta ">▲6.0</span></td><td class="num" data-val="4.272727"><span class="">4.3</span></td><td class="num" data-val="0.545455"><span class="">54.5%</span><span class="delta text-success">▲4.2</span></td><td class="num" data-val="29.629630"><span class="">29.6</span><span class="delta ">▼5.8</span></td><td class="num" data-val="2.750000"><span class="">2.8</span><span class="delta text-danger">▼2.6</span></td><td class="num" data-val="0.375000"><span class="">37.5%</span><span class="delta text-danger">▼11.8</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">27</td>
+            <td class="team" title="Buffalo Bills"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png" alt="Buffalo Bills logo" loading="lazy">BUF</td>
+            <td class="num">1</td>
+            <td class="num" data-val="38.888889"><span class="">38.9</span><span class="delta ">▲5.6</span></td><td class="num" data-val="4.285714"><span class="">4.3</span><span class="delta text-danger">▼0.5</span></td><td class="num" data-val="0.428571"><span class="">42.9%</span><span class="delta text-success">▲1.2</span></td><td class="num" data-val="27.777778"><span class="">27.8</span><span class="delta ">▲0.2</span></td><td class="num" data-val="3.600000"><span class="">3.6</span><span class="delta text-danger">▼1.0</span></td><td class="num" data-val="0.400000"><span class="">40.0%</span><span class="delta text-danger">▼13.5</span></td><td class="num" data-val="33.333333"><span class="">33.3</span><span class="delta ">▼5.8</span></td><td class="num" data-val="3.000000"><span class="">3.0</span><span class="delta text-danger">▼2.3</span></td><td class="num" data-val="0.166667"><span class="">16.7%</span><span class="delta text-danger">▼33.1</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">28</td>
+            <td class="team" title="Pittsburgh Steelers"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/pit.png" alt="Pittsburgh Steelers logo" loading="lazy">PIT</td>
+            <td class="num">1</td>
+            <td class="num" data-val="50.000000"><span class="">50.0</span><span class="delta ">▲10.4</span></td><td class="num" data-val="3.111111"><span class="">3.1</span><span class="delta text-danger">▼1.5</span></td><td class="num" data-val="0.111111"><span class="">11.1%</span><span class="delta text-danger">▼35.2</span></td><td class="num" data-val="22.222222"><span class="">22.2</span><span class="delta ">▲0.7</span></td><td class="num" data-val="4.250000"><span class="">4.2</span><span class="delta text-success">▲1.2</span></td><td class="num" data-val="0.750000"><span class="">75.0%</span><span class="delta text-success">▲31.1</span></td><td class="num" data-val="27.777778"><span class="">27.8</span><span class="delta ">▼11.1</span></td><td class="num" data-val="3.200000"><span class="">3.2</span><span class="delta text-danger">▼1.8</span></td><td class="num" data-val="0.200000"><span class="">20.0%</span><span class="delta text-danger">▼22.6</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">29</td>
+            <td class="team" title="Miami Dolphins"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="Miami Dolphins logo" loading="lazy">MIA</td>
+            <td class="num">1</td>
+            <td class="num" data-val="53.846154"><span class="">53.8</span><span class="delta ">▲15.8</span></td><td class="num" data-val="3.285714"><span class="">3.3</span><span class="delta text-danger">▼1.6</span></td><td class="num" data-val="0.285714"><span class="">28.6%</span><span class="delta text-danger">▼10.6</span></td><td class="num" data-val="38.461538"><span class="">38.5</span><span class="delta ">▲16.8</span></td><td class="num" data-val="2.600000"><span class="">2.6</span><span class="delta text-danger">▼1.5</span></td><td class="num" data-val="0.200000"><span class="">20.0%</span><span class="delta text-danger">▼19.1</span></td><td class="num" data-val="7.692308"><span class="">7.7</span><span class="delta ">▼32.6</span></td><td class="num" data-val="-1.000000"><span class="">-1.0</span><span class="delta text-danger">▼6.4</span></td><td class="num" data-val="0.000000"><span class="">0.0%</span><span class="delta text-danger">▼43.2</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">30</td>
+            <td class="team" title="Los Angeles Chargers"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" alt="Los Angeles Chargers logo" loading="lazy">LAC</td>
+            <td class="num">1</td>
+            <td class="num" data-val="25.000000"><span class="">25.0</span><span class="delta ">▼12.7</span></td><td class="num" data-val="2.000000"><span class="">2.0</span><span class="delta text-danger">▼2.5</span></td><td class="num" data-val="0.250000"><span class="">25.0%</span><span class="delta text-danger">▼13.3</span></td><td class="num" data-val="31.250000"><span class="">31.2</span><span class="delta ">▼2.2</span></td><td class="num" data-val="4.800000"><span class="">4.8</span><span class="delta text-success">▲2.0</span></td><td class="num" data-val="0.600000"><span class="">60.0%</span><span class="delta text-success">▲19.1</span></td><td class="num" data-val="43.750000"><span class="">43.8</span><span class="delta ">▲14.9</span></td><td class="num" data-val="2.857143"><span class="">2.9</span><span class="delta text-danger">▼1.8</span></td><td class="num" data-val="0.285714"><span class="">28.6%</span><span class="delta text-danger">▼11.8</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">31</td>
+            <td class="team" title="New England Patriots"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="New England Patriots logo" loading="lazy">NE</td>
+            <td class="num">1</td>
+            <td class="num" data-val="32.000000"><span class="">32.0</span><span class="delta ">▼6.2</span></td><td class="num" data-val="2.125000"><span class="">2.1</span><span class="delta text-danger">▼2.7</span></td><td class="num" data-val="0.250000"><span class="">25.0%</span><span class="delta text-danger">▼13.2</span></td><td class="num" data-val="36.000000"><span class="">36.0</span><span class="delta ">▲6.9</span></td><td class="num" data-val="2.666667"><span class="">2.7</span><span class="delta text-danger">▼1.0</span></td><td class="num" data-val="0.222222"><span class="">22.2%</span><span class="delta text-danger">▼14.8</span></td><td class="num" data-val="32.000000"><span class="">32.0</span><span class="delta ">▼0.7</span></td><td class="num" data-val="3.000000"><span class="">3.0</span><span class="delta text-danger">▼1.9</span></td><td class="num" data-val="0.250000"><span class="">25.0%</span><span class="delta text-danger">▼16.5</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">32</td>
+            <td class="team" title="Green Bay Packers"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="Green Bay Packers logo" loading="lazy">GB</td>
+            <td class="num">1</td>
+            <td class="num" data-val="66.666667"><span class="">66.7</span><span class="delta ">▲33.1</span></td><td class="num" data-val="3.785714"><span class="text-success">3.8</span><span class="ord">#6</span><span class="delta text-danger">▼0.5</span></td><td class="num" data-val="0.285714"><span class="text-success">28.6%</span><span class="ord">#8</span><span class="delta text-danger">▼14.6</span></td><td class="num" data-val="9.523810"><span class="">9.5</span><span class="delta ">▼18.1</span></td><td class="num" data-val="-2.000000"><span class="">-2.0</span><span class="delta text-danger">▼5.4</span></td><td class="num" data-val="0.000000"><span class="">0.0%</span><span class="delta text-danger">▼45.8</span></td><td class="num" data-val="23.809524"><span class="">23.8</span><span class="delta ">▼15.0</span></td><td class="num" data-val="3.400000"><span class="">3.4</span><span class="delta text-danger">▼1.1</span></td><td class="num" data-val="0.600000"><span class="">60.0%</span><span class="delta text-success">▲15.6</span></td>
+          </tr>
+          
+        </tbody>
+      </table>
+      </div>
+    </div>
+    
+    <div class="pane " id="pane-lanes_def">
+      <div class="scroll">
+      <table class="rank" data-key="lanes_def">
+        <thead><tr>
+          <th style="width: 2.4rem">#</th><th class="team">Team</th><th class="num">GP</th>
+          <th class="num sort" data-idx="3" data-best="high" title="Share of runs faced that come left">Left %</th><th class="num sort" data-idx="4" data-best="low" title="Yards per carry allowed on runs left">Left YPC</th><th class="num sort" data-idx="5" data-best="low" title="Success rate allowed on runs left">Left SR</th><th class="num sort" data-idx="6" data-best="high" title="Share of runs faced that come middle">Middle %</th><th class="num sort" data-idx="7" data-best="low" title="Yards per carry allowed on runs middle">Middle YPC</th><th class="num sort" data-idx="8" data-best="low" title="Success rate allowed on runs middle">Middle SR</th><th class="num sort" data-idx="9" data-best="high" title="Share of runs faced that come right">Right %</th><th class="num sort" data-idx="10" data-best="low" title="Yards per carry allowed on runs right">Right YPC</th><th class="num sort" data-idx="11" data-best="low" title="Success rate allowed on runs right">Right SR</th>
+        </tr></thead>
+        <tbody>
+          
+          <tr>
+            <td class="flat">1</td>
+            <td class="team" title="Minnesota Vikings"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/min.png" alt="Minnesota Vikings logo" loading="lazy">MIN</td>
+            <td class="num">1</td>
+            <td class="num" data-val="66.666667"><span class="">66.7</span><span class="delta ">▲33.2</span></td><td class="num" data-val="3.785714"><span class="text-success">3.8</span><span class="ord">#3</span><span class="delta text-success">▼0.5</span></td><td class="num" data-val="0.285714"><span class="text-success">28.6%</span><span class="ord">#1</span><span class="delta text-success">▼10.1</span></td><td class="num" data-val="9.523810"><span class="">9.5</span><span class="delta ">▼18.0</span></td><td class="num" data-val="-2.000000"><span class="">-2.0</span><span class="delta text-success">▼5.1</span></td><td class="num" data-val="0.000000"><span class="">0.0%</span><span class="delta text-success">▼46.3</span></td><td class="num" data-val="23.809524"><span class="">23.8</span><span class="delta ">▼15.2</span></td><td class="num" data-val="3.400000"><span class="">3.4</span><span class="delta text-success">▼0.7</span></td><td class="num" data-val="0.600000"><span class="">60.0%</span><span class="delta text-danger">▲16.8</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">2</td>
+            <td class="team" title="Seattle Seahawks"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="Seattle Seahawks logo" loading="lazy">SEA</td>
+            <td class="num">1</td>
+            <td class="num" data-val="32.000000"><span class="">32.0</span><span class="delta ">▼3.2</span></td><td class="num" data-val="2.125000"><span class="">2.1</span><span class="delta text-success">▼1.2</span></td><td class="num" data-val="0.250000"><span class="">25.0%</span><span class="delta text-success">▼13.8</span></td><td class="num" data-val="36.000000"><span class="">36.0</span><span class="delta ">▼0.1</span></td><td class="num" data-val="2.666667"><span class="">2.7</span><span class="delta text-success">▼0.6</span></td><td class="num" data-val="0.222222"><span class="">22.2%</span><span class="delta text-success">▼14.9</span></td><td class="num" data-val="32.000000"><span class="">32.0</span><span class="delta ">▲3.3</span></td><td class="num" data-val="3.000000"><span class="">3.0</span><span class="delta text-success">▼1.0</span></td><td class="num" data-val="0.250000"><span class="">25.0%</span><span class="delta text-success">▼7.4</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">3</td>
+            <td class="team" title="Arizona Cardinals"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="Arizona Cardinals logo" loading="lazy">ARI</td>
+            <td class="num">1</td>
+            <td class="num" data-val="25.000000"><span class="">25.0</span><span class="delta ">▼8.6</span></td><td class="num" data-val="2.000000"><span class="">2.0</span><span class="delta text-success">▼2.5</span></td><td class="num" data-val="0.250000"><span class="">25.0%</span><span class="delta text-success">▼16.3</span></td><td class="num" data-val="31.250000"><span class="">31.2</span><span class="delta ">▼2.3</span></td><td class="num" data-val="4.800000"><span class="">4.8</span><span class="delta text-danger">▲1.1</span></td><td class="num" data-val="0.600000"><span class="">60.0%</span><span class="delta text-danger">▲14.5</span></td><td class="num" data-val="43.750000"><span class="">43.8</span><span class="delta ">▲10.9</span></td><td class="num" data-val="2.857143"><span class="">2.9</span><span class="delta text-success">▼3.1</span></td><td class="num" data-val="0.285714"><span class="">28.6%</span><span class="delta text-success">▼17.1</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">4</td>
+            <td class="team" title="Las Vegas Raiders"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" alt="Las Vegas Raiders logo" loading="lazy">LV</td>
+            <td class="num">1</td>
+            <td class="num" data-val="53.846154"><span class="">53.8</span><span class="delta ">▲11.7</span></td><td class="num" data-val="3.285714"><span class="">3.3</span><span class="delta text-success">▼0.3</span></td><td class="num" data-val="0.285714"><span class="">28.6%</span><span class="delta text-success">▼8.1</span></td><td class="num" data-val="38.461538"><span class="">38.5</span><span class="delta ">▲8.0</span></td><td class="num" data-val="2.600000"><span class="">2.6</span><span class="delta text-success">▼1.6</span></td><td class="num" data-val="0.200000"><span class="">20.0%</span><span class="delta text-success">▼27.8</span></td><td class="num" data-val="7.692308"><span class="">7.7</span><span class="delta ">▼19.7</span></td><td class="num" data-val="-1.000000"><span class="">-1.0</span><span class="delta text-success">▼5.6</span></td><td class="num" data-val="0.000000"><span class="">0.0%</span><span class="delta text-success">▼42.7</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">5</td>
+            <td class="team" title="Atlanta Falcons"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" alt="Atlanta Falcons logo" loading="lazy">ATL</td>
+            <td class="num">1</td>
+            <td class="num" data-val="50.000000"><span class="">50.0</span><span class="delta ">▲13.7</span></td><td class="num" data-val="3.111111"><span class="">3.1</span><span class="delta text-success">▼0.9</span></td><td class="num" data-val="0.111111"><span class="">11.1%</span><span class="delta text-success">▼32.2</span></td><td class="num" data-val="22.222222"><span class="">22.2</span><span class="delta ">▼8.8</span></td><td class="num" data-val="4.250000"><span class="">4.2</span><span class="delta text-success">▼1.0</span></td><td class="num" data-val="0.750000"><span class="">75.0%</span><span class="delta text-danger">▲22.7</span></td><td class="num" data-val="27.777778"><span class="">27.8</span><span class="delta ">▼4.9</span></td><td class="num" data-val="3.200000"><span class="">3.2</span><span class="delta text-success">▼0.8</span></td><td class="num" data-val="0.200000"><span class="">20.0%</span><span class="delta text-success">▼16.3</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">6</td>
+            <td class="team" title="Houston Texans"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/hou.png" alt="Houston Texans logo" loading="lazy">HOU</td>
+            <td class="num">1</td>
+            <td class="num" data-val="38.888889"><span class="">38.9</span><span class="delta ">▲6.5</span></td><td class="num" data-val="4.285714"><span class="">4.3</span><span class="delta text-danger">▲1.0</span></td><td class="num" data-val="0.428571"><span class="">42.9%</span><span class="delta text-danger">▲4.6</span></td><td class="num" data-val="27.777778"><span class="">27.8</span><span class="delta ">▼4.6</span></td><td class="num" data-val="3.600000"><span class="">3.6</span><span class="delta text-success">▼0.2</span></td><td class="num" data-val="0.400000"><span class="">40.0%</span><span class="delta text-danger">▲1.7</span></td><td class="num" data-val="33.333333"><span class="">33.3</span><span class="delta ">▼1.9</span></td><td class="num" data-val="3.000000"><span class="">3.0</span><span class="delta text-success">▼0.7</span></td><td class="num" data-val="0.166667"><span class="">16.7%</span><span class="delta text-success">▼20.1</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">7</td>
+            <td class="team" title="San Francisco 49ers"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sf.png" alt="San Francisco 49ers logo" loading="lazy">SF</td>
+            <td class="num">1</td>
+            <td class="num" data-val="29.629630"><span class="">29.6</span><span class="delta ">▲0.3</span></td><td class="num" data-val="5.625000"><span class="">5.6</span><span class="delta text-danger">▲0.5</span></td><td class="num" data-val="0.500000"><span class="">50.0%</span><span class="delta text-danger">▲4.1</span></td><td class="num" data-val="40.740741"><span class="">40.7</span><span class="delta ">▲10.7</span></td><td class="num" data-val="4.272727"><span class="">4.3</span><span class="delta text-danger">▲0.8</span></td><td class="num" data-val="0.545455"><span class="">54.5%</span><span class="delta text-danger">▲5.4</span></td><td class="num" data-val="29.629630"><span class="">29.6</span><span class="delta ">▼11.0</span></td><td class="num" data-val="2.750000"><span class="">2.8</span><span class="delta text-success">▼1.8</span></td><td class="num" data-val="0.375000"><span class="">37.5%</span><span class="delta text-success">▼11.2</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">8</td>
+            <td class="team" title="New England Patriots"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="New England Patriots logo" loading="lazy">NE</td>
+            <td class="num">1</td>
+            <td class="num" data-val="35.000000"><span class="">35.0</span><span class="delta ">▼5.4</span></td><td class="num" data-val="3.428571"><span class="">3.4</span><span class="delta text-success">▼1.3</span></td><td class="num" data-val="0.285714"><span class="">28.6%</span><span class="delta text-success">▼17.4</span></td><td class="num" data-val="10.000000"><span class="">10.0</span><span class="delta ">▼12.4</span></td><td class="num" data-val="5.500000"><span class="">5.5</span><span class="delta text-danger">▲2.0</span></td><td class="num" data-val="0.500000"><span class="">50.0%</span><span class="delta text-danger">▲7.8</span></td><td class="num" data-val="55.000000"><span class="">55.0</span><span class="delta ">▲17.8</span></td><td class="num" data-val="4.454545"><span class="">4.5</span><span class="delta text-danger">▲0.5</span></td><td class="num" data-val="0.272727"><span class="">27.3%</span><span class="delta text-success">▼16.2</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">9</td>
+            <td class="team" title="Green Bay Packers"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="Green Bay Packers logo" loading="lazy">GB</td>
+            <td class="num">1</td>
+            <td class="num" data-val="35.714286"><span class="">35.7</span><span class="delta ">▲1.3</span></td><td class="num" data-val="5.000000"><span class="">5.0</span><span class="delta text-danger">▲0.8</span></td><td class="num" data-val="0.400000"><span class="">40.0%</span><span class="delta text-success">▼2.4</span></td><td class="num" data-val="32.142857"><span class="">32.1</span><span class="delta ">▲3.7</span></td><td class="num" data-val="2.888889"><span class="">2.9</span><span class="delta text-success">▼1.2</span></td><td class="num" data-val="0.333333"><span class="">33.3%</span><span class="delta text-success">▼16.3</span></td><td class="num" data-val="32.142857"><span class="">32.1</span><span class="delta ">▼5.0</span></td><td class="num" data-val="2.666667"><span class="">2.7</span><span class="delta text-success">▼1.5</span></td><td class="num" data-val="0.222222"><span class="">22.2%</span><span class="delta text-success">▼22.6</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">10</td>
+            <td class="team" title="Jacksonville Jaguars"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/jax.png" alt="Jacksonville Jaguars logo" loading="lazy">JAX</td>
+            <td class="num">1</td>
+            <td class="num" data-val="47.368421"><span class="">47.4</span><span class="delta ">▲20.0</span></td><td class="num" data-val="3.333333"><span class="">3.3</span><span class="delta text-success">▼0.5</span></td><td class="num" data-val="0.666667"><span class="">66.7%</span><span class="delta text-danger">▲26.9</span></td><td class="num" data-val="31.578947"><span class="">31.6</span><span class="delta ">▼10.5</span></td><td class="num" data-val="3.500000"><span class="">3.5</span><span class="delta text-danger">▲0.2</span></td><td class="num" data-val="0.166667"><span class="">16.7%</span><span class="delta text-success">▼21.9</span></td><td class="num" data-val="21.052632"><span class="">21.1</span><span class="delta ">▼9.5</span></td><td class="num" data-val="4.000000"><span class="">4.0</span><span class="delta text-success">▼0.4</span></td><td class="num" data-val="0.250000"><span class="">25.0%</span><span class="delta text-success">▼8.7</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">11</td>
+            <td class="team" title="Chicago Bears"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="Chicago Bears logo" loading="lazy">CHI</td>
+            <td class="num">1</td>
+            <td class="num" data-val="52.631579"><span class="">52.6</span><span class="delta ">▲12.8</span></td><td class="num" data-val="5.900000"><span class="">5.9</span><span class="delta text-danger">▲0.7</span></td><td class="num" data-val="0.700000"><span class="">70.0%</span><span class="delta text-danger">▲22.4</span></td><td class="num" data-val="26.315789"><span class="">26.3</span><span class="delta ">▲9.5</span></td><td class="num" data-val="3.600000"><span class="">3.6</span><span class="delta text-success">▼0.1</span></td><td class="num" data-val="0.200000"><span class="">20.0%</span><span class="delta text-success">▼20.8</span></td><td class="num" data-val="21.052632"><span class="">21.1</span><span class="delta ">▼22.3</span></td><td class="num" data-val="3.500000"><span class="">3.5</span><span class="delta text-success">▼1.5</span></td><td class="num" data-val="0.250000"><span class="">25.0%</span><span class="delta text-success">▼18.2</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">12</td>
+            <td class="team" title="Washington Commanders"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png" alt="Washington Commanders logo" loading="lazy">WAS</td>
+            <td class="num">1</td>
+            <td class="num" data-val="27.777778"><span class="">27.8</span><span class="delta ">▼8.9</span></td><td class="num" data-val="2.800000"><span class="">2.8</span><span class="delta text-success">▼2.3</span></td><td class="num" data-val="0.200000"><span class="">20.0%</span><span class="delta text-success">▼24.2</span></td><td class="num" data-val="11.111111"><span class="">11.1</span><span class="delta ">▼14.9</span></td><td class="num" data-val="0.500000"><span class="">0.5</span><span class="delta text-success">▼3.2</span></td><td class="num" data-val="0.000000"><span class="">0.0%</span><span class="delta text-success">▼40.2</span></td><td class="num" data-val="61.111111"><span class="">61.1</span><span class="delta ">▲23.8</span></td><td class="num" data-val="6.818182"><span class="">6.8</span><span class="delta text-danger">▲1.8</span></td><td class="num" data-val="0.363636"><span class="">36.4%</span><span class="delta text-success">▼11.9</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">13</td>
+            <td class="team" title="New York Jets"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="New York Jets logo" loading="lazy">NYJ</td>
+            <td class="num">1</td>
+            <td class="num" data-val="20.000000"><span class="">20.0</span><span class="delta ">▼22.3</span></td><td class="num" data-val="9.500000"><span class="">9.5</span><span class="delta text-danger">▲4.4</span></td><td class="num" data-val="1.000000"><span class="">100.0%</span><span class="delta text-danger">▲55.8</span></td><td class="num" data-val="40.000000"><span class="">40.0</span><span class="delta ">▲22.6</span></td><td class="num" data-val="4.500000"><span class="">4.5</span><span class="delta text-danger">▲1.1</span></td><td class="num" data-val="0.250000"><span class="">25.0%</span><span class="delta text-success">▼11.6</span></td><td class="num" data-val="40.000000"><span class="">40.0</span><span class="delta ">▼0.3</span></td><td class="num" data-val="2.500000"><span class="">2.5</span><span class="delta text-success">▼1.6</span></td><td class="num" data-val="0.250000"><span class="">25.0%</span><span class="delta text-success">▼17.1</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">14</td>
+            <td class="team" title="Miami Dolphins"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="Miami Dolphins logo" loading="lazy">MIA</td>
+            <td class="num">1</td>
+            <td class="num" data-val="36.363636"><span class="">36.4</span><span class="delta ">▲4.9</span></td><td class="num" data-val="3.416667"><span class="text-success">3.4</span><span class="ord">#1</span><span class="delta text-success">▼1.7</span></td><td class="num" data-val="0.333333"><span class="text-success">33.3%</span><span class="ord">#2</span><span class="delta text-success">▼7.9</span></td><td class="num" data-val="42.424242"><span class="">42.4</span><span class="delta ">▲8.5</span></td><td class="num" data-val="4.071429"><span class="text-success">4.1</span><span class="ord">#4</span><span class="delta text-danger">▲0.2</span></td><td class="num" data-val="0.428571"><span class="text-success">42.9%</span><span class="ord">#4</span><span class="delta text-success">▼8.2</span></td><td class="num" data-val="21.212121"><span class="">21.2</span><span class="delta ">▼13.4</span></td><td class="num" data-val="5.000000"><span class="">5.0</span><span class="delta text-danger">▲0.1</span></td><td class="num" data-val="0.571429"><span class="">57.1%</span><span class="delta text-danger">▲20.3</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">15</td>
+            <td class="team" title="Pittsburgh Steelers"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/pit.png" alt="Pittsburgh Steelers logo" loading="lazy">PIT</td>
+            <td class="num">1</td>
+            <td class="num" data-val="38.709677"><span class="">38.7</span><span class="delta ">▼3.3</span></td><td class="num" data-val="4.166667"><span class="text-success">4.2</span><span class="ord">#4</span></td><td class="num" data-val="0.500000"><span class="text-success">50.0%</span><span class="ord">#4</span><span class="delta text-danger">▲12.1</span></td><td class="num" data-val="29.032258"><span class="">29.0</span><span class="delta ">▲2.5</span></td><td class="num" data-val="1.666667"><span class="">1.7</span><span class="delta text-success">▼2.2</span></td><td class="num" data-val="0.333333"><span class="">33.3%</span><span class="delta text-success">▼6.7</span></td><td class="num" data-val="32.258065"><span class="">32.3</span><span class="delta ">▲0.9</span></td><td class="num" data-val="5.500000"><span class="">5.5</span><span class="delta text-danger">▲0.8</span></td><td class="num" data-val="0.500000"><span class="">50.0%</span><span class="delta text-danger">▲6.9</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">16</td>
+            <td class="team" title="Philadelphia Eagles"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" alt="Philadelphia Eagles logo" loading="lazy">PHI</td>
+            <td class="num">1</td>
+            <td class="num" data-val="37.931034"><span class="">37.9</span><span class="delta ">▼2.2</span></td><td class="num" data-val="3.909091"><span class="">3.9</span></td><td class="num" data-val="0.454545"><span class="">45.5%</span><span class="delta text-danger">▲9.0</span></td><td class="num" data-val="34.482759"><span class="">34.5</span><span class="delta ">▲12.7</span></td><td class="num" data-val="3.700000"><span class="">3.7</span><span class="delta text-success">▼0.4</span></td><td class="num" data-val="0.600000"><span class="">60.0%</span><span class="delta text-danger">▲2.6</span></td><td class="num" data-val="27.586207"><span class="">27.6</span><span class="delta ">▼10.5</span></td><td class="num" data-val="2.875000"><span class="">2.9</span><span class="delta text-success">▼1.6</span></td><td class="num" data-val="0.375000"><span class="">37.5%</span><span class="delta text-success">▼2.7</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">17</td>
+            <td class="team" title="Los Angeles Chargers"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" alt="Los Angeles Chargers logo" loading="lazy">LAC</td>
+            <td class="num">1</td>
+            <td class="num" data-val="23.333333"><span class="">23.3</span><span class="delta ">▼12.2</span></td><td class="num" data-val="3.714286"><span class="">3.7</span><span class="delta text-success">▼0.9</span></td><td class="num" data-val="0.714286"><span class="">71.4%</span><span class="delta text-danger">▲31.1</span></td><td class="num" data-val="43.333333"><span class="">43.3</span><span class="delta ">▲13.3</span></td><td class="num" data-val="2.384615"><span class="text-success">2.4</span><span class="ord">#1</span><span class="delta text-success">▼0.8</span></td><td class="num" data-val="0.230769"><span class="text-success">23.1%</span><span class="ord">#1</span><span class="delta text-success">▼14.5</span></td><td class="num" data-val="33.333333"><span class="">33.3</span><span class="delta ">▼1.1</span></td><td class="num" data-val="5.100000"><span class="">5.1</span><span class="delta text-danger">▲0.6</span></td><td class="num" data-val="0.400000"><span class="">40.0%</span><span class="delta text-success">▼0.8</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">18</td>
+            <td class="team" title="Cleveland Browns"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" alt="Cleveland Browns logo" loading="lazy">CLE</td>
+            <td class="num">1</td>
+            <td class="num" data-val="41.379310"><span class="">41.4</span><span class="delta ">▲13.9</span></td><td class="num" data-val="5.166667"><span class="text-success">5.2</span><span class="ord">#5</span><span class="delta text-danger">▲1.0</span></td><td class="num" data-val="0.500000"><span class="text-success">50.0%</span><span class="ord">#4</span><span class="delta text-danger">▲10.7</span></td><td class="num" data-val="27.586207"><span class="">27.6</span><span class="delta ">▲1.5</span></td><td class="num" data-val="4.250000"><span class="">4.2</span><span class="delta text-danger">▲0.2</span></td><td class="num" data-val="0.750000"><span class="">75.0%</span><span class="delta text-danger">▲35.4</span></td><td class="num" data-val="31.034483"><span class="">31.0</span><span class="delta ">▼15.4</span></td><td class="num" data-val="3.666667"><span class="">3.7</span><span class="delta text-success">▼0.8</span></td><td class="num" data-val="0.333333"><span class="">33.3%</span><span class="delta text-success">▼2.5</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">19</td>
+            <td class="team" title="Detroit Lions"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="Detroit Lions logo" loading="lazy">DET</td>
+            <td class="num">1</td>
+            <td class="num" data-val="27.272727"><span class="">27.3</span><span class="delta ">▼8.4</span></td><td class="num" data-val="3.500000"><span class="">3.5</span><span class="delta text-success">▼1.6</span></td><td class="num" data-val="0.166667"><span class="">16.7%</span><span class="delta text-success">▼24.5</span></td><td class="num" data-val="50.000000"><span class="">50.0</span><span class="delta ">▲23.9</span></td><td class="num" data-val="5.454545"><span class="">5.5</span><span class="delta text-danger">▲2.3</span></td><td class="num" data-val="0.545455"><span class="">54.5%</span><span class="delta text-danger">▲14.7</span></td><td class="num" data-val="22.727273"><span class="">22.7</span><span class="delta ">▼15.5</span></td><td class="num" data-val="1.200000"><span class="">1.2</span><span class="delta text-success">▼3.5</span></td><td class="num" data-val="0.000000"><span class="">0.0%</span><span class="delta text-success">▼42.4</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">20</td>
+            <td class="team" title="Kansas City Chiefs"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="Kansas City Chiefs logo" loading="lazy">KC</td>
+            <td class="num">1</td>
+            <td class="num" data-val="41.666667"><span class="">41.7</span><span class="delta ">▲1.7</span></td><td class="num" data-val="6.000000"><span class="">6.0</span><span class="delta text-danger">▲2.6</span></td><td class="num" data-val="0.200000"><span class="">20.0%</span><span class="delta text-success">▼12.5</span></td><td class="num" data-val="25.000000"><span class="">25.0</span><span class="delta ">▲0.6</span></td><td class="num" data-val="3.666667"><span class="">3.7</span><span class="delta text-danger">▲0.2</span></td><td class="num" data-val="0.333333"><span class="">33.3%</span><span class="delta text-success">▼14.6</span></td><td class="num" data-val="33.333333"><span class="">33.3</span><span class="delta ">▼2.3</span></td><td class="num" data-val="4.500000"><span class="">4.5</span><span class="delta text-success">▼0.3</span></td><td class="num" data-val="0.500000"><span class="">50.0%</span><span class="delta text-danger">▲7.1</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">21</td>
+            <td class="team" title="New York Giants"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png" alt="New York Giants logo" loading="lazy">NYG</td>
+            <td class="num">1</td>
+            <td class="num" data-val="31.250000"><span class="">31.2</span><span class="delta ">▼4.6</span></td><td class="num" data-val="2.600000"><span class="">2.6</span><span class="delta text-success">▼2.9</span></td><td class="num" data-val="0.200000"><span class="">20.0%</span><span class="delta text-success">▼29.7</span></td><td class="num" data-val="37.500000"><span class="">37.5</span><span class="delta ">▲13.5</span></td><td class="num" data-val="4.833333"><span class="">4.8</span><span class="delta text-danger">▲0.8</span></td><td class="num" data-val="0.500000"><span class="">50.0%</span><span class="delta text-danger">▲5.7</span></td><td class="num" data-val="31.250000"><span class="">31.2</span><span class="delta ">▼8.8</span></td><td class="num" data-val="2.600000"><span class="">2.6</span><span class="delta text-success">▼3.7</span></td><td class="num" data-val="0.600000"><span class="">60.0%</span><span class="delta text-danger">▲10.6</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">22</td>
+            <td class="team" title="New Orleans Saints"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/no.png" alt="New Orleans Saints logo" loading="lazy">NO</td>
+            <td class="num">1</td>
+            <td class="num" data-val="25.806452"><span class="">25.8</span><span class="delta ">▼11.6</span></td><td class="num" data-val="6.750000"><span class="">6.8</span><span class="delta text-danger">▲3.2</span></td><td class="num" data-val="0.750000"><span class="">75.0%</span><span class="delta text-danger">▲37.0</span></td><td class="num" data-val="38.709677"><span class="">38.7</span><span class="delta ">▲16.2</span></td><td class="num" data-val="4.000000"><span class="text-success">4.0</span><span class="ord">#3</span><span class="delta text-danger">▲0.3</span></td><td class="num" data-val="0.416667"><span class="text-success">41.7%</span><span class="ord">#3</span><span class="delta text-success">▼0.1</span></td><td class="num" data-val="35.483871"><span class="">35.5</span><span class="delta ">▼4.6</span></td><td class="num" data-val="5.545455"><span class="">5.5</span><span class="delta text-danger">▲1.0</span></td><td class="num" data-val="0.454545"><span class="">45.5%</span><span class="delta text-danger">▲4.5</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">23</td>
+            <td class="team" title="Buffalo Bills"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/buf.png" alt="Buffalo Bills logo" loading="lazy">BUF</td>
+            <td class="num">1</td>
+            <td class="num" data-val="38.709677"><span class="">38.7</span><span class="delta ">▼1.9</span></td><td class="num" data-val="3.666667"><span class="text-success">3.7</span><span class="ord">#2</span><span class="delta text-success">▼1.4</span></td><td class="num" data-val="0.333333"><span class="text-success">33.3%</span><span class="ord">#2</span><span class="delta text-success">▼16.4</span></td><td class="num" data-val="16.129032"><span class="">16.1</span><span class="delta ">▼6.7</span></td><td class="num" data-val="7.800000"><span class="">7.8</span><span class="delta text-danger">▲3.3</span></td><td class="num" data-val="0.600000"><span class="">60.0%</span><span class="delta text-danger">▲16.4</span></td><td class="num" data-val="45.161290"><span class="">45.2</span><span class="delta ">▲8.7</span></td><td class="num" data-val="1.857143"><span class="text-success">1.9</span><span class="ord">#1</span><span class="delta text-success">▼3.3</span></td><td class="num" data-val="0.428571"><span class="text-success">42.9%</span><span class="ord">#3</span><span class="delta text-danger">▲6.2</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">24</td>
+            <td class="team" title="Tampa Bay Buccaneers"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/tb.png" alt="Tampa Bay Buccaneers logo" loading="lazy">TB</td>
+            <td class="num">1</td>
+            <td class="num" data-val="24.000000"><span class="">24.0</span><span class="delta ">▼14.1</span></td><td class="num" data-val="1.500000"><span class="">1.5</span><span class="delta text-success">▼2.5</span></td><td class="num" data-val="0.333333"><span class="">33.3%</span><span class="delta text-danger">▲2.3</span></td><td class="num" data-val="48.000000"><span class="">48.0</span><span class="delta ">▲21.2</span></td><td class="num" data-val="5.250000"><span class="text-success">5.2</span><span class="ord">#5</span><span class="delta text-danger">▲1.2</span></td><td class="num" data-val="0.500000"><span class="text-success">50.0%</span><span class="ord">#5</span><span class="delta text-danger">▲8.2</span></td><td class="num" data-val="28.000000"><span class="">28.0</span><span class="delta ">▼7.1</span></td><td class="num" data-val="4.142857"><span class="">4.1</span><span class="delta text-success">▼0.5</span></td><td class="num" data-val="0.285714"><span class="">28.6%</span><span class="delta text-success">▼11.8</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">25</td>
+            <td class="team" title="Dallas Cowboys"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="Dallas Cowboys logo" loading="lazy">DAL</td>
+            <td class="num">1</td>
+            <td class="num" data-val="62.500000"><span class="">62.5</span><span class="delta ">▲23.8</span></td><td class="num" data-val="6.300000"><span class="text-success">6.3</span><span class="ord">#6</span><span class="delta text-danger">▲1.3</span></td><td class="num" data-val="0.550000"><span class="text-success">55.0%</span><span class="ord">#7</span><span class="delta text-danger">▲6.7</span></td><td class="num" data-val="12.500000"><span class="">12.5</span><span class="delta ">▼12.6</span></td><td class="num" data-val="2.250000"><span class="">2.2</span><span class="delta text-success">▼1.7</span></td><td class="num" data-val="0.500000"><span class="">50.0%</span><span class="delta text-danger">▲5.1</span></td><td class="num" data-val="25.000000"><span class="">25.0</span><span class="delta ">▼11.2</span></td><td class="num" data-val="3.125000"><span class="">3.1</span><span class="delta text-success">▼1.7</span></td><td class="num" data-val="0.375000"><span class="">37.5%</span><span class="delta text-success">▼5.8</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">26</td>
+            <td class="team" title="Cincinnati Bengals"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="Cincinnati Bengals logo" loading="lazy">CIN</td>
+            <td class="num">1</td>
+            <td class="num" data-val="53.333333"><span class="">53.3</span><span class="delta ">▲12.2</span></td><td class="num" data-val="4.625000"><span class="">4.6</span><span class="delta text-success">▼0.8</span></td><td class="num" data-val="0.500000"><span class="">50.0%</span><span class="delta text-danger">▲5.7</span></td><td class="num" data-val=""><span class="">—</span></td><td class="num" data-val=""><span class="">—</span></td><td class="num" data-val=""><span class="">—</span></td><td class="num" data-val="46.666667"><span class="">46.7</span><span class="delta ">▲6.0</span></td><td class="num" data-val="3.142857"><span class="">3.1</span><span class="delta text-success">▼2.5</span></td><td class="num" data-val="0.285714"><span class="">28.6%</span><span class="delta text-success">▼17.9</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">27</td>
+            <td class="team" title="Tennessee Titans"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" alt="Tennessee Titans logo" loading="lazy">TEN</td>
+            <td class="num">1</td>
+            <td class="num" data-val="27.272727"><span class="">27.3</span><span class="delta ">▼8.0</span></td><td class="num" data-val="4.111111"><span class="">4.1</span><span class="delta text-success">▼1.1</span></td><td class="num" data-val="0.666667"><span class="">66.7%</span><span class="delta text-danger">▲24.6</span></td><td class="num" data-val="27.272727"><span class="">27.3</span><span class="delta ">▼6.0</span></td><td class="num" data-val="3.666667"><span class="">3.7</span><span class="delta text-danger">▲0.2</span></td><td class="num" data-val="0.333333"><span class="">33.3%</span><span class="delta text-success">▼5.1</span></td><td class="num" data-val="45.454545"><span class="">45.5</span><span class="delta ">▲14.0</span></td><td class="num" data-val="5.000000"><span class="text-success">5.0</span><span class="ord">#4</span><span class="delta text-danger">▲0.9</span></td><td class="num" data-val="0.533333"><span class="text-success">53.3%</span><span class="ord">#5</span><span class="delta text-danger">▲15.1</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">28</td>
+            <td class="team" title="Baltimore Ravens"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="Baltimore Ravens logo" loading="lazy">BAL</td>
+            <td class="num">1</td>
+            <td class="num" data-val="21.052632"><span class="">21.1</span><span class="delta ">▼21.8</span></td><td class="num" data-val="9.750000"><span class="">9.8</span><span class="delta text-danger">▲5.8</span></td><td class="num" data-val="0.750000"><span class="">75.0%</span><span class="delta text-danger">▲35.2</span></td><td class="num" data-val="10.526316"><span class="">10.5</span><span class="delta ">▼5.7</span></td><td class="num" data-val="4.000000"><span class="">4.0</span><span class="delta text-danger">▲1.0</span></td><td class="num" data-val="0.500000"><span class="">50.0%</span><span class="delta text-danger">▲9.0</span></td><td class="num" data-val="68.421053"><span class="">68.4</span><span class="delta ">▲27.5</span></td><td class="num" data-val="3.923077"><span class="text-success">3.9</span><span class="ord">#2</span><span class="delta text-success">▼1.0</span></td><td class="num" data-val="0.384615"><span class="text-success">38.5%</span><span class="ord">#2</span><span class="delta text-success">▼5.0</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">29</td>
+            <td class="team" title="Los Angeles Rams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" alt="Los Angeles Rams logo" loading="lazy">LA</td>
+            <td class="num">1</td>
+            <td class="num" data-val="32.142857"><span class="">32.1</span><span class="delta ">▼1.9</span></td><td class="num" data-val="5.555556"><span class="">5.6</span><span class="delta text-danger">▲1.7</span></td><td class="num" data-val="0.555556"><span class="">55.6%</span><span class="delta text-danger">▲19.8</span></td><td class="num" data-val="32.142857"><span class="">32.1</span><span class="delta ">▲3.9</span></td><td class="num" data-val="3.111111"><span class="">3.1</span><span class="delta text-success">▼0.3</span></td><td class="num" data-val="0.444444"><span class="">44.4%</span><span class="delta text-danger">▲4.1</span></td><td class="num" data-val="35.714286"><span class="">35.7</span><span class="delta ">▼2.0</span></td><td class="num" data-val="7.000000"><span class="">7.0</span><span class="delta text-danger">▲1.9</span></td><td class="num" data-val="0.600000"><span class="">60.0%</span><span class="delta text-danger">▲19.9</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">30</td>
+            <td class="team" title="Indianapolis Colts"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" alt="Indianapolis Colts logo" loading="lazy">IND</td>
+            <td class="num">1</td>
+            <td class="num" data-val="41.935484"><span class="">41.9</span><span class="delta ">▲8.0</span></td><td class="num" data-val="7.076923"><span class="text-success">7.1</span><span class="ord">#7</span><span class="delta text-danger">▲3.2</span></td><td class="num" data-val="0.538462"><span class="text-success">53.8%</span><span class="ord">#6</span><span class="delta text-danger">▲14.7</span></td><td class="num" data-val="9.677419"><span class="">9.7</span><span class="delta ">▼20.5</span></td><td class="num" data-val="2.333333"><span class="">2.3</span><span class="delta text-success">▼0.8</span></td><td class="num" data-val="0.000000"><span class="">0.0%</span><span class="delta text-success">▼45.5</span></td><td class="num" data-val="48.387097"><span class="">48.4</span><span class="delta ">▲12.5</span></td><td class="num" data-val="4.533333"><span class="text-success">4.5</span><span class="ord">#3</span><span class="delta text-danger">▲0.2</span></td><td class="num" data-val="0.466667"><span class="text-success">46.7%</span><span class="ord">#4</span><span class="delta text-danger">▲4.9</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">31</td>
+            <td class="team" title="Carolina Panthers"><img src="https://a.espncdn.com/i/teamlogos/nfl/500-dark/car.png" alt="Carolina Panthers logo" loading="lazy">CAR</td>
+            <td class="num">1</td>
+            <td class="num" data-val="28.125000"><span class="">28.1</span><span class="delta ">▼11.0</span></td><td class="num" data-val="5.444444"><span class="">5.4</span><span class="delta text-danger">▲1.4</span></td><td class="num" data-val="0.333333"><span class="">33.3%</span><span class="delta text-danger">▲1.0</span></td><td class="num" data-val="21.875000"><span class="">21.9</span><span class="delta ">▼4.4</span></td><td class="num" data-val="11.285714"><span class="">11.3</span><span class="delta text-danger">▲6.3</span></td><td class="num" data-val="0.714286"><span class="">71.4%</span><span class="delta text-danger">▲17.9</span></td><td class="num" data-val="50.000000"><span class="">50.0</span><span class="delta ">▲15.4</span></td><td class="num" data-val="6.500000"><span class="text-success">6.5</span><span class="ord">#5</span><span class="delta text-danger">▲2.2</span></td><td class="num" data-val="0.375000"><span class="text-success">37.5%</span><span class="ord">#1</span><span class="delta text-success">▼1.2</span></td>
+          </tr>
+          
+          <tr>
+            <td class="flat">32</td>
+            <td class="team" title="Denver Broncos"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="Denver Broncos logo" loading="lazy">DEN</td>
+            <td class="num">1</td>
+            <td class="num" data-val="38.709677"><span class="">38.7</span><span class="delta ">▲6.1</span></td><td class="num" data-val="11.000000"><span class="text-success">11.0</span><span class="ord">#8</span><span class="delta text-danger">▲7.6</span></td><td class="num" data-val="0.583333"><span class="text-success">58.3%</span><span class="ord">#8</span><span class="delta text-danger">▲31.0</span></td><td class="num" data-val="41.935484"><span class="">41.9</span><span class="delta ">▲13.0</span></td><td class="num" data-val="3.000000"><span class="text-success">3.0</span><span class="ord">#2</span><span class="delta text-success">▼0.4</span></td><td class="num" data-val="0.384615"><span class="text-success">38.5%</span><span class="ord">#2</span><span class="delta text-success">▼4.8</span></td><td class="num" data-val="19.354839"><span class="">19.4</span><span class="delta ">▼19.1</span></td><td class="num" data-val="4.333333"><span class="">4.3</span><span class="delta text-danger">▲0.3</span></td><td class="num" data-val="0.166667"><span class="">16.7%</span><span class="delta text-success">▼21.0</span></td>
+          </tr>
+          
+        </tbody>
+      </table>
+      </div>
+    </div>
+    
   </div>
 
 </main>
   <footer class="hfa-foot">
     <p><strong>Huffalytics</strong> publishes NFL stats, game projections, team EPA rankings and graded player prop plans priced against Kalshi, rebuilt every week from play-by-play data. <a href="/about/">How the engine works</a>.</p>
-    <p>Data as of Mon Oct 19, 4:55 PM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/data/week.json">week.json</a> · <a href="/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
+    <p>Data as of Mon Oct 19, 8:40 PM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/data/week.json">week.json</a> · <a href="/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
   </footer>
 </div>
 <script>

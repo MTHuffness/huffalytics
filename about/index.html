@@ -145,6 +145,32 @@
   .hfa-grid > * { min-width: 0; }
   .hfa-grid > .hfa-card { margin-bottom: 0; }
 
+  /* Run lanes: per game, each offense's three lanes over the defense it faces */
+  .lane-key { border-radius: 999px; padding: 0.05em 0.5em; font-size: 0.68rem; font-weight: 700; }
+  .lane-key.soft, .lane.soft .lane-tag { background: rgba(47, 212, 164, 0.18); color: var(--hfa-good); }
+  .lane-key.wall, .lane.wall .lane-tag { background: rgba(255, 176, 32, 0.18); color: var(--hfa-bad); }
+  .lane-game { padding: 0.85rem 1.1rem 1rem; border-top: var(--hfa-hairline); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem 1.6rem; }
+  .lane-gm { grid-column: 1 / -1; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-muted); }
+  .lane-side { min-width: 0; }
+  .lane-who { display: flex; align-items: center; flex-wrap: wrap; gap: 0.3rem 0.4rem; font-size: 0.86rem; margin-bottom: 0.5rem; }
+  .lane-who img { width: 22px; height: 22px; object-fit: contain; }
+  .lane-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; }
+  .lane { min-width: 0; border: var(--hfa-hairline); border-radius: 10px; padding: 0.55rem 0.65rem 0.6rem; background: var(--hfa-tint); }
+  .lane.soft { border-color: rgba(47, 212, 164, 0.45); background: rgba(47, 212, 164, 0.07); }
+  .lane.wall { border-color: rgba(255, 176, 32, 0.45); background: rgba(255, 176, 32, 0.07); }
+  .lane-top { display: flex; justify-content: space-between; align-items: center; gap: 0.3rem; font-size: 0.64rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-muted); }
+  .lane-tag { border-radius: 999px; padding: 0.1em 0.5em; font-size: 0.58rem; letter-spacing: 0.04em; white-space: nowrap; }
+  .lane-ypc { font-size: 1.5rem; font-weight: 800; line-height: 1.15; color: var(--hfa-accent); letter-spacing: -0.01em; margin-top: 0.15rem; }
+  .lane-ypc.flat { color: var(--hfa-muted); }
+  .lane .ord { font-size: 0.66rem; font-weight: 600; color: var(--hfa-muted); margin-left: 0.3rem; }
+  .lane .ord.text-success { color: var(--hfa-good); } .lane .ord.text-danger { color: var(--hfa-bad); }
+  .lane-bar { height: 4px; border-radius: 2px; background: rgba(128, 128, 128, 0.22); margin: 0.35rem 0 0.3rem; overflow: hidden; }
+  .lane-bar i { display: block; height: 100%; background: var(--hfa-accent); border-radius: 2px; }
+  .lane-sub, .lane-def, .lane-act { font-size: 0.72rem; line-height: 1.35; color: var(--hfa-muted); }
+  .lane-def { margin-top: 0.4rem; padding-top: 0.35rem; border-top: var(--hfa-hairline); color: var(--hfa-body); }
+  .lane-act { margin-top: 0.25rem; color: var(--hfa-body); }
+  .lane-num { font-weight: 700; color: var(--hfa-accent); }
+
   /* The board: slate left, leaders in a column on the right at full width */
   .hfa-board { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; margin-bottom: 1rem; align-items: stretch; }
   .hfa-board > .hfa-card { margin-bottom: 0; min-width: 0; }
@@ -343,6 +369,12 @@
        under the brand; one section shows at a time. */
     .hfa-nav { display: none; }
     .hfa-top { padding-right: 2.2rem; }
+    .lane-game { grid-template-columns: minmax(0, 1fr); gap: 0.7rem; padding: 0.75rem 16px 0.9rem; }
+    .lane-grid { gap: 0.35rem; }
+    .lane { padding: 0.45rem 0.5rem 0.5rem; border-radius: 8px; }
+    .lane-ypc { font-size: 1.25rem; }
+    .lane-sub, .lane-def, .lane-act { font-size: 0.68rem; }
+    .lane-who { font-size: 0.82rem; }
     .hfa-jump { position: sticky; top: 0; z-index: 40; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 0.3rem; margin: 0; padding: 0.55rem 16px 0.55rem; background: rgba(5, 5, 7, 0.86); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: var(--hfa-hairline); -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 2rem), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 2rem), transparent); }
     :root[data-theme="light"] .hfa-jump { background: rgba(243, 244, 248, 0.9); }
     .hfa-jump::-webkit-scrollbar { display: none; }
@@ -494,7 +526,7 @@
   </div></section>
 
   <section class="hfa-card" id="data"><div class="hfa-head"><div class="hfa-eyebrow">06 &middot; Data</div><h2>Where the numbers come from</h2></div><div class="hfa-body prose">
-    <p>Scores, schedules, closing lines, rosters, injury reports and play-by-play come from the open <strong>nflverse</strong> project. Live injury designations and depth charts come from <strong>Sleeper</strong>. Market prices are <strong>Kalshi's</strong> public API. Weather is a forecast feed read in the hours before kickoff. Team logos are served by ESPN.</p>
+    <p>Scores, schedules, closing lines, rosters, injury reports and play-by-play come from the open <strong>nflverse</strong> project; the run-lane splits are its left / middle / right tags on every designed run. Live injury designations and depth charts come from <strong>Sleeper</strong>. Market prices are <strong>Kalshi's</strong> public API. Weather is a forecast feed read in the hours before kickoff. Team logos are served by ESPN.</p>
     <p>The engine, the projections, the plans and every grade are Huffalytics' own. The numbers behind each page are published as JSON beside it, for example <a href="/data/week.json">week.json</a> and <a href="/data/rankings.json">rankings.json</a>.</p>
   </div></section>
 </div>
@@ -522,7 +554,7 @@
 </main>
   <footer class="hfa-foot">
     <p><strong>Huffalytics</strong> publishes NFL stats, game projections, team EPA rankings and graded player prop plans priced against Kalshi, rebuilt every week from play-by-play data. <a href="/about/">How the engine works</a>.</p>
-    <p>Data as of Mon Oct 19, 4:55 PM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/data/week.json">week.json</a> · <a href="/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
+    <p>Data as of Mon Oct 19, 8:40 PM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/data/week.json">week.json</a> · <a href="/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
   </footer>
 </div>
 <script>

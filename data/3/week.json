@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-19T16:55:46.187388-06:00",
+ "as_of": "2026-10-19T20:40:38.710542-06:00",
  "season": 2026,
  "week": 3,
  "slate": {
@@ -3623,6 +3623,3594 @@
     "bar": null,
     "act": "24",
     "cls": "text-success"
+   }
+  ]
+ },
+ "run_lanes": {
+  "basis": "2026 weeks 1–2",
+  "prev_basis": "entering week 2",
+  "league": {
+   "left": {
+    "carries": 549,
+    "share": 0.3612,
+    "ypc": 4.5137,
+    "succ": 0.4281,
+    "epa": -0.052,
+    "stuff": 0.1566,
+    "expl": 0.1148
+   },
+   "middle": {
+    "carries": 450,
+    "share": 0.2961,
+    "ypc": 3.7467,
+    "succ": 0.4156,
+    "epa": -0.0824,
+    "stuff": 0.1578,
+    "expl": 0.06
+   },
+   "right": {
+    "carries": 521,
+    "share": 0.3428,
+    "ypc": 3.9194,
+    "succ": 0.3666,
+    "epa": -0.1206,
+    "stuff": 0.2054,
+    "expl": 0.1017
+   }
+  },
+  "min_carries": 12,
+  "matchups": [
+   {
+    "game_id": "2026_03_KC_MIA",
+    "played": true,
+    "home": "MIA",
+    "away": "KC",
+    "sides": [
+     {
+      "team": "KC",
+      "name": "Kansas City Chiefs",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
+      "opp": "MIA",
+      "opp_name": "Miami Dolphins",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
+      "games": 2,
+      "carries": 58,
+      "favorite_lane": "middle",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 22,
+         "share": 0.3793,
+         "ypc": 9.1364,
+         "succ": 0.6818,
+         "epa": 0.577,
+         "rank": 1,
+         "sr_rank": 1,
+         "cls": "text-success",
+         "bar": 61
+        },
+        "def": {
+         "carries": 17,
+         "share": 0.3091,
+         "ypc": 3.2353,
+         "succ": 0.2941,
+         "epa": -0.2764,
+         "rank": 7,
+         "sr_rank": 7,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 8,
+         "ypc": 3.375,
+         "succ": 0.5
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 26,
+         "share": 0.4483,
+         "ypc": 3.6538,
+         "succ": 0.4615,
+         "epa": 0.1065,
+         "rank": 10,
+         "sr_rank": 7,
+         "cls": "text-success",
+         "bar": 72
+        },
+        "def": {
+         "carries": 22,
+         "share": 0.4,
+         "ypc": 4.0,
+         "succ": 0.4091,
+         "epa": -0.0779,
+         "rank": 15,
+         "sr_rank": 11,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 9,
+         "ypc": 2.7778,
+         "succ": 0.4444
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 10,
+         "share": 0.1724,
+         "ypc": 3.6,
+         "succ": 0.2,
+         "epa": -0.1867,
+         "rank": null,
+         "sr_rank": null,
+         "cls": "",
+         "bar": 28
+        },
+        "def": {
+         "carries": 16,
+         "share": 0.2909,
+         "ypc": 3.5625,
+         "succ": 0.4375,
+         "epa": -0.0703,
+         "rank": 10,
+         "sr_rank": 22,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 7,
+         "ypc": 5.0,
+         "succ": 0.4286
+        }
+       }
+      ],
+      "actual_carries": 24
+     },
+     {
+      "team": "MIA",
+      "name": "Miami Dolphins",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
+      "opp": "KC",
+      "opp_name": "Kansas City Chiefs",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
+      "games": 2,
+      "carries": 40,
+      "favorite_lane": "middle",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 12,
+         "share": 0.3,
+         "ypc": 3.5833,
+         "succ": 0.3333,
+         "epa": -0.0842,
+         "rank": 22,
+         "sr_rank": 26,
+         "cls": "",
+         "bar": 48
+        },
+        "def": {
+         "carries": 14,
+         "share": 0.3333,
+         "ypc": 4.0,
+         "succ": 0.4286,
+         "epa": 0.1739,
+         "rank": 13,
+         "sr_rank": 16,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 10,
+         "ypc": 3.5,
+         "succ": 0.2
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 19,
+         "share": 0.475,
+         "ypc": 3.6316,
+         "succ": 0.4737,
+         "epa": 0.0192,
+         "rank": 11,
+         "sr_rank": 6,
+         "cls": "",
+         "bar": 76
+        },
+        "def": {
+         "carries": 10,
+         "share": 0.2381,
+         "ypc": 4.0,
+         "succ": 0.5,
+         "epa": 0.2012,
+         "rank": null,
+         "sr_rank": null,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 9,
+         "ypc": 3.2222,
+         "succ": 0.2222
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 9,
+         "share": 0.225,
+         "ypc": 2.3333,
+         "succ": 0.3333,
+         "epa": -0.5316,
+         "rank": null,
+         "sr_rank": null,
+         "cls": "",
+         "bar": 36
+        },
+        "def": {
+         "carries": 18,
+         "share": 0.4286,
+         "ypc": 4.1667,
+         "succ": 0.3889,
+         "epa": 0.0577,
+         "rank": 19,
+         "sr_rank": 17,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 6,
+         "ypc": 2.0,
+         "succ": 0.0
+        }
+       }
+      ],
+      "actual_carries": 25
+     }
+    ]
+   },
+   {
+    "game_id": "2026_03_SEA_WAS",
+    "played": true,
+    "home": "WAS",
+    "away": "SEA",
+    "sides": [
+     {
+      "team": "SEA",
+      "name": "Seattle Seahawks",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
+      "opp": "WAS",
+      "opp_name": "Washington Commanders",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
+      "games": 2,
+      "carries": 60,
+      "favorite_lane": "middle",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 16,
+         "share": 0.2667,
+         "ypc": 3.5625,
+         "succ": 0.375,
+         "epa": -0.0177,
+         "rank": 23,
+         "sr_rank": 23,
+         "cls": "text-danger",
+         "bar": 43
+        },
+        "def": {
+         "carries": 9,
+         "share": 0.25,
+         "ypc": 3.2222,
+         "succ": 0.3333,
+         "epa": -0.2352,
+         "rank": null,
+         "sr_rank": null,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 9,
+         "ypc": 3.8889,
+         "succ": 0.4444
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 22,
+         "share": 0.3667,
+         "ypc": 2.6364,
+         "succ": 0.3636,
+         "epa": -0.5372,
+         "rank": 20,
+         "sr_rank": 14,
+         "cls": "",
+         "bar": 59
+        },
+        "def": {
+         "carries": 10,
+         "share": 0.2778,
+         "ypc": 1.7,
+         "succ": 0.3,
+         "epa": -0.2581,
+         "rank": null,
+         "sr_rank": null,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 1,
+         "ypc": 5.0,
+         "succ": 1.0
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 22,
+         "share": 0.3667,
+         "ypc": 5.9545,
+         "succ": 0.4091,
+         "epa": 0.0886,
+         "rank": 1,
+         "sr_rank": 11,
+         "cls": "text-success",
+         "bar": 59
+        },
+        "def": {
+         "carries": 17,
+         "share": 0.4722,
+         "ypc": 5.1176,
+         "succ": 0.3529,
+         "epa": -0.0913,
+         "rank": 24,
+         "sr_rank": 12,
+         "cls": "text-danger"
+        },
+        "tag": "soft",
+        "actual": {
+         "carries": 7,
+         "ypc": -0.1429,
+         "succ": 0.1429
+        }
+       }
+      ],
+      "actual_carries": 17
+     },
+     {
+      "team": "WAS",
+      "name": "Washington Commanders",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png",
+      "opp": "SEA",
+      "opp_name": "Seattle Seahawks",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
+      "games": 2,
+      "carries": 53,
+      "favorite_lane": "left",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 23,
+         "share": 0.434,
+         "ypc": 3.8261,
+         "succ": 0.3913,
+         "epa": -0.1433,
+         "rank": 20,
+         "sr_rank": 20,
+         "cls": "",
+         "bar": 69
+        },
+        "def": {
+         "carries": 13,
+         "share": 0.3171,
+         "ypc": 2.2308,
+         "succ": 0.2308,
+         "epa": -0.5907,
+         "rank": 2,
+         "sr_rank": 3,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 6,
+         "ypc": 3.3333,
+         "succ": 0.5
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 16,
+         "share": 0.3019,
+         "ypc": 4.3125,
+         "succ": 0.5625,
+         "epa": 0.0541,
+         "rank": 6,
+         "sr_rank": 3,
+         "cls": "text-success",
+         "bar": 48
+        },
+        "def": {
+         "carries": 18,
+         "share": 0.439,
+         "ypc": 3.2222,
+         "succ": 0.2222,
+         "epa": -0.3755,
+         "rank": 8,
+         "sr_rank": 2,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 7,
+         "ypc": 2.0,
+         "succ": 0.0
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 14,
+         "share": 0.2642,
+         "ypc": 4.0,
+         "succ": 0.5714,
+         "epa": 0.0835,
+         "rank": 12,
+         "sr_rank": 2,
+         "cls": "",
+         "bar": 42
+        },
+        "def": {
+         "carries": 10,
+         "share": 0.2439,
+         "ypc": 4.1,
+         "succ": 0.4,
+         "epa": -0.2085,
+         "rank": null,
+         "sr_rank": null,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 15,
+         "ypc": 3.0667,
+         "succ": 0.2
+        }
+       }
+      ],
+      "actual_carries": 28
+     }
+    ]
+   },
+   {
+    "game_id": "2026_03_ARI_SF",
+    "played": true,
+    "home": "SF",
+    "away": "ARI",
+    "sides": [
+     {
+      "team": "ARI",
+      "name": "Arizona Cardinals",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png",
+      "opp": "SF",
+      "opp_name": "San Francisco 49ers",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
+      "games": 2,
+      "carries": 46,
+      "favorite_lane": "middle",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 12,
+         "share": 0.2609,
+         "ypc": 3.1667,
+         "succ": 0.5,
+         "epa": -0.1943,
+         "rank": 26,
+         "sr_rank": 6,
+         "cls": "text-danger",
+         "bar": 42
+        },
+        "def": {
+         "carries": 13,
+         "share": 0.2407,
+         "ypc": 5.0,
+         "succ": 0.4615,
+         "epa": -0.2129,
+         "rank": 20,
+         "sr_rank": 18,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 11,
+         "ypc": 4.0,
+         "succ": 0.5455
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 22,
+         "share": 0.4783,
+         "ypc": 2.9545,
+         "succ": 0.2273,
+         "epa": -0.2926,
+         "rank": 18,
+         "sr_rank": 21,
+         "cls": "",
+         "bar": 77
+        },
+        "def": {
+         "carries": 25,
+         "share": 0.463,
+         "ypc": 4.12,
+         "succ": 0.56,
+         "epa": 0.1703,
+         "rank": 16,
+         "sr_rank": 20,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 9,
+         "ypc": 2.2222,
+         "succ": 0.5556
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 12,
+         "share": 0.2609,
+         "ypc": 5.6667,
+         "succ": 0.5,
+         "epa": 0.0842,
+         "rank": 2,
+         "sr_rank": 3,
+         "cls": "text-success",
+         "bar": 42
+        },
+        "def": {
+         "carries": 16,
+         "share": 0.2963,
+         "ypc": 2.75,
+         "succ": 0.375,
+         "epa": -0.4605,
+         "rank": 3,
+         "sr_rank": 15,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 7,
+         "ypc": 4.1429,
+         "succ": 0.7143
+        }
+       }
+      ],
+      "actual_carries": 27
+     },
+     {
+      "team": "SF",
+      "name": "San Francisco 49ers",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
+      "opp": "ARI",
+      "opp_name": "Arizona Cardinals",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png",
+      "games": 2,
+      "carries": 50,
+      "favorite_lane": "right",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 14,
+         "share": 0.28,
+         "ypc": 4.5714,
+         "succ": 0.4286,
+         "epa": -0.0251,
+         "rank": 16,
+         "sr_rank": 14,
+         "cls": "",
+         "bar": 45
+        },
+        "def": {
+         "carries": 13,
+         "share": 0.2321,
+         "ypc": 3.1538,
+         "succ": 0.3846,
+         "epa": -0.3862,
+         "rank": 5,
+         "sr_rank": 12,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 8,
+         "ypc": 4.125,
+         "succ": 0.375
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 17,
+         "share": 0.34,
+         "ypc": 3.4706,
+         "succ": 0.4118,
+         "epa": -0.0606,
+         "rank": 13,
+         "sr_rank": 10,
+         "cls": "",
+         "bar": 54
+        },
+        "def": {
+         "carries": 25,
+         "share": 0.4464,
+         "ypc": 2.84,
+         "succ": 0.4,
+         "epa": -0.3785,
+         "rank": 5,
+         "sr_rank": 9,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 6,
+         "ypc": 6.5,
+         "succ": 0.8333
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 19,
+         "share": 0.38,
+         "ypc": 4.8421,
+         "succ": 0.4737,
+         "epa": 0.0283,
+         "rank": 5,
+         "sr_rank": 5,
+         "cls": "text-success",
+         "bar": 61
+        },
+        "def": {
+         "carries": 18,
+         "share": 0.3214,
+         "ypc": 5.6667,
+         "succ": 0.4444,
+         "epa": 0.0878,
+         "rank": 27,
+         "sr_rank": 23,
+         "cls": "text-danger"
+        },
+        "tag": "soft",
+        "actual": {
+         "carries": 7,
+         "ypc": 4.8571,
+         "succ": 0.4286
+        }
+       }
+      ],
+      "actual_carries": 21
+     }
+    ]
+   },
+   {
+    "game_id": "2026_03_NYJ_DET",
+    "played": true,
+    "home": "DET",
+    "away": "NYJ",
+    "sides": [
+     {
+      "team": "NYJ",
+      "name": "New York Jets",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png",
+      "opp": "DET",
+      "opp_name": "Detroit Lions",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png",
+      "games": 2,
+      "carries": 55,
+      "favorite_lane": "right",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 19,
+         "share": 0.3455,
+         "ypc": 3.2632,
+         "succ": 0.3684,
+         "epa": -0.0065,
+         "rank": 24,
+         "sr_rank": 25,
+         "cls": "text-danger",
+         "bar": 55
+        },
+        "def": {
+         "carries": 18,
+         "share": 0.36,
+         "ypc": 4.7222,
+         "succ": 0.3333,
+         "epa": 0.1054,
+         "rank": 18,
+         "sr_rank": 9,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 7,
+         "ypc": 2.5714,
+         "succ": 0.2857
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 12,
+         "share": 0.2182,
+         "ypc": 3.25,
+         "succ": 0.25,
+         "epa": -0.167,
+         "rank": 15,
+         "sr_rank": 20,
+         "cls": "",
+         "bar": 35
+        },
+        "def": {
+         "carries": 18,
+         "share": 0.36,
+         "ypc": 5.9444,
+         "succ": 0.6667,
+         "epa": 0.3139,
+         "rank": 21,
+         "sr_rank": 21,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 8,
+         "ypc": 2.875,
+         "succ": 0.25
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 24,
+         "share": 0.4364,
+         "ypc": 3.9167,
+         "succ": 0.5,
+         "epa": -0.1565,
+         "rank": 15,
+         "sr_rank": 3,
+         "cls": "",
+         "bar": 70
+        },
+        "def": {
+         "carries": 14,
+         "share": 0.28,
+         "ypc": 3.7143,
+         "succ": 0.3571,
+         "epa": -0.0158,
+         "rank": 12,
+         "sr_rank": 13,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 2,
+         "ypc": 2.5,
+         "succ": 0.0
+        }
+       }
+      ],
+      "actual_carries": 17
+     },
+     {
+      "team": "DET",
+      "name": "Detroit Lions",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png",
+      "opp": "NYJ",
+      "opp_name": "New York Jets",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png",
+      "games": 2,
+      "carries": 48,
+      "favorite_lane": "right",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 14,
+         "share": 0.2917,
+         "ypc": 4.6429,
+         "succ": 0.5,
+         "epa": -0.113,
+         "rank": 15,
+         "sr_rank": 6,
+         "cls": "",
+         "bar": 47
+        },
+        "def": {
+         "carries": 11,
+         "share": 0.3929,
+         "ypc": 5.8182,
+         "succ": 0.4545,
+         "epa": -0.3164,
+         "rank": null,
+         "sr_rank": null,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 9,
+         "ypc": 3.7778,
+         "succ": 0.4444
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 16,
+         "share": 0.3333,
+         "ypc": 4.0,
+         "succ": 0.4375,
+         "epa": 0.0151,
+         "rank": 8,
+         "sr_rank": 8,
+         "cls": "text-success",
+         "bar": 53
+        },
+        "def": {
+         "carries": 10,
+         "share": 0.3571,
+         "ypc": 2.9,
+         "succ": 0.4,
+         "epa": -0.2759,
+         "rank": null,
+         "sr_rank": null,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 8,
+         "ypc": 4.75,
+         "succ": 1.0
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 18,
+         "share": 0.375,
+         "ypc": 5.1667,
+         "succ": 0.4444,
+         "epa": 0.0068,
+         "rank": 4,
+         "sr_rank": 6,
+         "cls": "text-success",
+         "bar": 60
+        },
+        "def": {
+         "carries": 7,
+         "share": 0.25,
+         "ypc": 2.4286,
+         "succ": 0.1429,
+         "epa": -0.3802,
+         "rank": null,
+         "sr_rank": null,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 9,
+         "ypc": 5.8889,
+         "succ": 0.3333
+        }
+       }
+      ],
+      "actual_carries": 26
+     }
+    ]
+   },
+   {
+    "game_id": "2026_03_LAC_BUF",
+    "played": true,
+    "home": "BUF",
+    "away": "LAC",
+    "sides": [
+     {
+      "team": "LAC",
+      "name": "Los Angeles Chargers",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lac.png",
+      "opp": "BUF",
+      "opp_name": "Buffalo Bills",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
+      "games": 2,
+      "carries": 45,
+      "favorite_lane": "left",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 16,
+         "share": 0.3556,
+         "ypc": 3.875,
+         "succ": 0.4375,
+         "epa": -0.2924,
+         "rank": 19,
+         "sr_rank": 13,
+         "cls": "",
+         "bar": 57
+        },
+        "def": {
+         "carries": 18,
+         "share": 0.375,
+         "ypc": 3.0556,
+         "succ": 0.2778,
+         "epa": -0.2819,
+         "rank": 3,
+         "sr_rank": 5,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 9,
+         "ypc": 6.2222,
+         "succ": 0.6667
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 16,
+         "share": 0.3556,
+         "ypc": 5.0,
+         "succ": 0.375,
+         "epa": -0.4432,
+         "rank": 3,
+         "sr_rank": 12,
+         "cls": "text-success",
+         "bar": 57
+        },
+        "def": {
+         "carries": 9,
+         "share": 0.1875,
+         "ypc": 6.1111,
+         "succ": 0.5556,
+         "epa": 0.4956,
+         "rank": null,
+         "sr_rank": null,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 7,
+         "ypc": 2.8571,
+         "succ": 0.5714
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 13,
+         "share": 0.2889,
+         "ypc": 2.6923,
+         "succ": 0.2308,
+         "epa": -0.4238,
+         "rank": 22,
+         "sr_rank": 23,
+         "cls": "",
+         "bar": 46
+        },
+        "def": {
+         "carries": 21,
+         "share": 0.4375,
+         "ypc": 2.7619,
+         "succ": 0.4286,
+         "epa": -0.0219,
+         "rank": 4,
+         "sr_rank": 20,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 10,
+         "ypc": 4.6,
+         "succ": 0.6
+        }
+       }
+      ],
+      "actual_carries": 26
+     },
+     {
+      "team": "BUF",
+      "name": "Buffalo Bills",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
+      "opp": "LAC",
+      "opp_name": "Los Angeles Chargers",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lac.png",
+      "games": 2,
+      "carries": 46,
+      "favorite_lane": "left",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 19,
+         "share": 0.413,
+         "ypc": 4.9474,
+         "succ": 0.4211,
+         "epa": -0.0653,
+         "rank": 11,
+         "sr_rank": 16,
+         "cls": "",
+         "bar": 66
+        },
+        "def": {
+         "carries": 13,
+         "share": 0.2364,
+         "ypc": 3.2308,
+         "succ": 0.5385,
+         "epa": 0.0357,
+         "rank": 6,
+         "sr_rank": 23,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 13,
+         "ypc": 5.0,
+         "succ": 0.7692
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 12,
+         "share": 0.2609,
+         "ypc": 5.4167,
+         "succ": 0.6667,
+         "epa": 0.3449,
+         "rank": 1,
+         "sr_rank": 1,
+         "cls": "text-success",
+         "bar": 42
+        },
+        "def": {
+         "carries": 22,
+         "share": 0.4,
+         "ypc": 2.6818,
+         "succ": 0.2727,
+         "epa": -0.3679,
+         "rank": 3,
+         "sr_rank": 6,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 9,
+         "ypc": 5.8889,
+         "succ": 0.6667
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 15,
+         "share": 0.3261,
+         "ypc": 4.2667,
+         "succ": 0.4,
+         "epa": 0.0742,
+         "rank": 9,
+         "sr_rank": 12,
+         "cls": "text-success",
+         "bar": 52
+        },
+        "def": {
+         "carries": 20,
+         "share": 0.3636,
+         "ypc": 3.15,
+         "succ": 0.2,
+         "epa": -0.2581,
+         "rank": 6,
+         "sr_rank": 1,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 9,
+         "ypc": 5.6667,
+         "succ": 0.3333
+        }
+       }
+      ],
+      "actual_carries": 31
+     }
+    ]
+   },
+   {
+    "game_id": "2026_03_ATL_GB",
+    "played": true,
+    "home": "GB",
+    "away": "ATL",
+    "sides": [
+     {
+      "team": "ATL",
+      "name": "Atlanta Falcons",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
+      "opp": "GB",
+      "opp_name": "Green Bay Packers",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
+      "games": 2,
+      "carries": 59,
+      "favorite_lane": "left",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 27,
+         "share": 0.4576,
+         "ypc": 4.5185,
+         "succ": 0.4444,
+         "epa": -0.1516,
+         "rank": 17,
+         "sr_rank": 12,
+         "cls": "",
+         "bar": 73
+        },
+        "def": {
+         "carries": 20,
+         "share": 0.4,
+         "ypc": 3.75,
+         "succ": 0.25,
+         "epa": -0.1459,
+         "rank": 11,
+         "sr_rank": 4,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 24,
+         "ypc": 6.2083,
+         "succ": 0.5833
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 15,
+         "share": 0.2542,
+         "ypc": 2.7333,
+         "succ": 0.3333,
+         "epa": -0.1944,
+         "rank": 19,
+         "sr_rank": 17,
+         "cls": "",
+         "bar": 41
+        },
+        "def": {
+         "carries": 12,
+         "share": 0.24,
+         "ypc": 2.6667,
+         "succ": 0.25,
+         "epa": -0.2099,
+         "rank": 2,
+         "sr_rank": 3,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 5,
+         "ypc": 4.0,
+         "succ": 0.6
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 17,
+         "share": 0.2881,
+         "ypc": 4.5882,
+         "succ": 0.4118,
+         "epa": -0.0401,
+         "rank": 8,
+         "sr_rank": 9,
+         "cls": "text-success",
+         "bar": 46
+        },
+        "def": {
+         "carries": 18,
+         "share": 0.36,
+         "ypc": 2.3889,
+         "succ": 0.3333,
+         "epa": -0.3864,
+         "rank": 1,
+         "sr_rank": 8,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 10,
+         "ypc": 7.5,
+         "succ": 0.8
+        }
+       }
+      ],
+      "actual_carries": 39
+     },
+     {
+      "team": "GB",
+      "name": "Green Bay Packers",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
+      "opp": "ATL",
+      "opp_name": "Atlanta Falcons",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
+      "games": 2,
+      "carries": 39,
+      "favorite_lane": "left",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 23,
+         "share": 0.5897,
+         "ypc": 4.2609,
+         "succ": 0.3043,
+         "epa": -0.3241,
+         "rank": 18,
+         "sr_rank": 28,
+         "cls": "",
+         "bar": 94
+        },
+        "def": {
+         "carries": 18,
+         "share": 0.4737,
+         "ypc": 3.6667,
+         "succ": 0.2778,
+         "epa": -0.2028,
+         "rank": 10,
+         "sr_rank": 5,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 1,
+         "ypc": 5.0,
+         "succ": 1.0
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 8,
+         "share": 0.2051,
+         "ypc": 0.875,
+         "succ": 0.375,
+         "epa": -0.5573,
+         "rank": null,
+         "sr_rank": null,
+         "cls": "",
+         "bar": 33
+        },
+        "def": {
+         "carries": 13,
+         "share": 0.3421,
+         "ypc": 3.7692,
+         "succ": 0.5385,
+         "epa": -0.0828,
+         "rank": 13,
+         "sr_rank": 18,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 1,
+         "ypc": 1.0,
+         "succ": 1.0
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 8,
+         "share": 0.2051,
+         "ypc": 3.0,
+         "succ": 0.375,
+         "epa": -0.6297,
+         "rank": null,
+         "sr_rank": null,
+         "cls": "",
+         "bar": 33
+        },
+        "def": {
+         "carries": 7,
+         "share": 0.1842,
+         "ypc": 1.7143,
+         "succ": 0.1429,
+         "epa": -0.5112,
+         "rank": null,
+         "sr_rank": null,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 6,
+         "ypc": 1.8333,
+         "succ": 0.1667
+        }
+       }
+      ],
+      "actual_carries": 8
+     }
+    ]
+   },
+   {
+    "game_id": "2026_03_PHI_CHI",
+    "played": true,
+    "home": "CHI",
+    "away": "PHI",
+    "sides": [
+     {
+      "team": "PHI",
+      "name": "Philadelphia Eagles",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
+      "opp": "CHI",
+      "opp_name": "Chicago Bears",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
+      "games": 2,
+      "carries": 48,
+      "favorite_lane": "right",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 15,
+         "share": 0.3125,
+         "ypc": 3.0,
+         "succ": 0.2667,
+         "epa": -0.3225,
+         "rank": 29,
+         "sr_rank": 29,
+         "cls": "text-danger",
+         "bar": 50
+        },
+        "def": {
+         "carries": 17,
+         "share": 0.3778,
+         "ypc": 5.5882,
+         "succ": 0.5882,
+         "epa": 0.0796,
+         "rank": 24,
+         "sr_rank": 25,
+         "cls": "text-danger"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 8,
+         "ypc": 6.75,
+         "succ": 0.625
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 10,
+         "share": 0.2083,
+         "ypc": 3.1,
+         "succ": 0.5,
+         "epa": 0.0651,
+         "rank": null,
+         "sr_rank": null,
+         "cls": "",
+         "bar": 33
+        },
+        "def": {
+         "carries": 6,
+         "share": 0.1333,
+         "ypc": 3.6667,
+         "succ": 0.1667,
+         "epa": -0.5147,
+         "rank": null,
+         "sr_rank": null,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 1,
+         "ypc": 1.0,
+         "succ": 1.0
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 23,
+         "share": 0.4792,
+         "ypc": 4.0,
+         "succ": 0.2609,
+         "epa": -0.1108,
+         "rank": 12,
+         "sr_rank": 19,
+         "cls": "",
+         "bar": 77
+        },
+        "def": {
+         "carries": 22,
+         "share": 0.4889,
+         "ypc": 4.0455,
+         "succ": 0.2727,
+         "epa": -0.0478,
+         "rank": 14,
+         "sr_rank": 3,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 7,
+         "ypc": 4.0,
+         "succ": 0.4286
+        }
+       }
+      ],
+      "actual_carries": 16
+     },
+     {
+      "team": "CHI",
+      "name": "Chicago Bears",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
+      "opp": "PHI",
+      "opp_name": "Philadelphia Eagles",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
+      "games": 2,
+      "carries": 59,
+      "favorite_lane": "right",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 16,
+         "share": 0.2712,
+         "ypc": 4.75,
+         "succ": 0.375,
+         "epa": -0.033,
+         "rank": 13,
+         "sr_rank": 23,
+         "cls": "",
+         "bar": 43
+        },
+        "def": {
+         "carries": 25,
+         "share": 0.4464,
+         "ypc": 4.76,
+         "succ": 0.44,
+         "epa": 0.0896,
+         "rank": 19,
+         "sr_rank": 17,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 16,
+         "ypc": 4.5625,
+         "succ": 0.5625
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 7,
+         "share": 0.1186,
+         "ypc": 11.2857,
+         "succ": 0.7143,
+         "epa": 0.6127,
+         "rank": null,
+         "sr_rank": null,
+         "cls": "",
+         "bar": 19
+        },
+        "def": {
+         "carries": 18,
+         "share": 0.3214,
+         "ypc": 3.0556,
+         "succ": 0.5,
+         "epa": 0.0154,
+         "rank": 7,
+         "sr_rank": 16,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 1,
+         "ypc": 1.0,
+         "succ": 1.0
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 36,
+         "share": 0.6102,
+         "ypc": 4.6389,
+         "succ": 0.3056,
+         "epa": -0.1188,
+         "rank": 7,
+         "sr_rank": 18,
+         "cls": "text-success",
+         "bar": 98
+        },
+        "def": {
+         "carries": 13,
+         "share": 0.2321,
+         "ypc": 3.5385,
+         "succ": 0.4615,
+         "epa": -0.1038,
+         "rank": 9,
+         "sr_rank": 24,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 15,
+         "ypc": 3.2667,
+         "succ": 0.3333
+        }
+       }
+      ],
+      "actual_carries": 32
+     }
+    ]
+   },
+   {
+    "game_id": "2026_03_LV_NO",
+    "played": true,
+    "home": "NO",
+    "away": "LV",
+    "sides": [
+     {
+      "team": "LV",
+      "name": "Las Vegas Raiders",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lv.png",
+      "opp": "NO",
+      "opp_name": "New Orleans Saints",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
+      "games": 2,
+      "carries": 58,
+      "favorite_lane": "middle",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 18,
+         "share": 0.3103,
+         "ypc": 3.1667,
+         "succ": 0.3333,
+         "epa": -0.263,
+         "rank": 26,
+         "sr_rank": 26,
+         "cls": "text-danger",
+         "bar": 50
+        },
+        "def": {
+         "carries": 16,
+         "share": 0.3265,
+         "ypc": 5.375,
+         "succ": 0.75,
+         "epa": 0.1139,
+         "rank": 23,
+         "sr_rank": 28,
+         "cls": "text-danger"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 4,
+         "ypc": 4.75,
+         "succ": 0.5
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 23,
+         "share": 0.3966,
+         "ypc": 3.6957,
+         "succ": 0.3913,
+         "epa": -0.2111,
+         "rank": 9,
+         "sr_rank": 11,
+         "cls": "text-success",
+         "bar": 63
+        },
+        "def": {
+         "carries": 13,
+         "share": 0.2653,
+         "ypc": 4.3077,
+         "succ": 0.4615,
+         "epa": -0.031,
+         "rank": 17,
+         "sr_rank": 14,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 9,
+         "ypc": 1.4444,
+         "succ": 0.1111
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 17,
+         "share": 0.2931,
+         "ypc": 2.7647,
+         "succ": 0.2353,
+         "epa": -0.2709,
+         "rank": 21,
+         "sr_rank": 22,
+         "cls": "",
+         "bar": 47
+        },
+        "def": {
+         "carries": 20,
+         "share": 0.4082,
+         "ypc": 4.75,
+         "succ": 0.6,
+         "epa": 0.1029,
+         "rank": 22,
+         "sr_rank": 28,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 11,
+         "ypc": 7.0909,
+         "succ": 0.3636
+        }
+       }
+      ],
+      "actual_carries": 24
+     },
+     {
+      "team": "NO",
+      "name": "New Orleans Saints",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
+      "opp": "LV",
+      "opp_name": "Las Vegas Raiders",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lv.png",
+      "games": 2,
+      "carries": 45,
+      "favorite_lane": "middle",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 13,
+         "share": 0.2889,
+         "ypc": 3.6154,
+         "succ": 0.3846,
+         "epa": -0.0197,
+         "rank": 21,
+         "sr_rank": 22,
+         "cls": "",
+         "bar": 46
+        },
+        "def": {
+         "carries": 19,
+         "share": 0.4524,
+         "ypc": 4.0526,
+         "succ": 0.4211,
+         "epa": 0.0144,
+         "rank": 14,
+         "sr_rank": 15,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 7,
+         "ypc": 5.1429,
+         "succ": 0.7143
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 19,
+         "share": 0.4222,
+         "ypc": 4.1053,
+         "succ": 0.5263,
+         "epa": 0.2772,
+         "rank": 7,
+         "sr_rank": 5,
+         "cls": "text-success",
+         "bar": 68
+        },
+        "def": {
+         "carries": 16,
+         "share": 0.381,
+         "ypc": 4.3125,
+         "succ": 0.25,
+         "epa": -0.6939,
+         "rank": 18,
+         "sr_rank": 3,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 11,
+         "ypc": 2.9091,
+         "succ": 0.5455
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 13,
+         "share": 0.2889,
+         "ypc": 1.2308,
+         "succ": 0.0769,
+         "epa": -0.4292,
+         "rank": 24,
+         "sr_rank": 24,
+         "cls": "text-danger",
+         "bar": 46
+        },
+        "def": {
+         "carries": 7,
+         "share": 0.1667,
+         "ypc": 2.0,
+         "succ": 0.1429,
+         "epa": -0.6942,
+         "rank": null,
+         "sr_rank": null,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 9,
+         "ypc": 4.8889,
+         "succ": 0.3333
+        }
+       }
+      ],
+      "actual_carries": 27
+     }
+    ]
+   },
+   {
+    "game_id": "2026_03_CIN_PIT",
+    "played": true,
+    "home": "PIT",
+    "away": "CIN",
+    "sides": [
+     {
+      "team": "CIN",
+      "name": "Cincinnati Bengals",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+      "opp": "PIT",
+      "opp_name": "Pittsburgh Steelers",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+      "games": 2,
+      "carries": 47,
+      "favorite_lane": "middle",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 14,
+         "share": 0.2979,
+         "ypc": 3.2143,
+         "succ": 0.4286,
+         "epa": -0.195,
+         "rank": 25,
+         "sr_rank": 14,
+         "cls": "text-danger",
+         "bar": 48
+        },
+        "def": {
+         "carries": 19,
+         "share": 0.3455,
+         "ypc": 5.6316,
+         "succ": 0.5263,
+         "epa": 0.1393,
+         "rank": 25,
+         "sr_rank": 22,
+         "cls": "text-danger"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 9,
+         "ypc": 4.3333,
+         "succ": 0.5556
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 19,
+         "share": 0.4043,
+         "ypc": 4.4211,
+         "succ": 0.3684,
+         "epa": 0.0663,
+         "rank": 4,
+         "sr_rank": 13,
+         "cls": "text-success",
+         "bar": 65
+        },
+        "def": {
+         "carries": 18,
+         "share": 0.3273,
+         "ypc": 2.9444,
+         "succ": 0.3333,
+         "epa": -0.2059,
+         "rank": 6,
+         "sr_rank": 7,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 5,
+         "ypc": 4.6,
+         "succ": 0.4
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 14,
+         "share": 0.2979,
+         "ypc": 4.1429,
+         "succ": 0.3571,
+         "epa": -0.1484,
+         "rank": 11,
+         "sr_rank": 15,
+         "cls": "",
+         "bar": 48
+        },
+        "def": {
+         "carries": 18,
+         "share": 0.3273,
+         "ypc": 4.3889,
+         "succ": 0.3889,
+         "epa": -0.0847,
+         "rank": 20,
+         "sr_rank": 17,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 2,
+         "ypc": 4.0,
+         "succ": 0.5
+        }
+       }
+      ],
+      "actual_carries": 16
+     },
+     {
+      "team": "PIT",
+      "name": "Pittsburgh Steelers",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+      "opp": "CIN",
+      "opp_name": "Cincinnati Bengals",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+      "games": 2,
+      "carries": 39,
+      "favorite_lane": "left",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 17,
+         "share": 0.4359,
+         "ypc": 2.9412,
+         "succ": 0.1176,
+         "epa": -0.325,
+         "rank": 30,
+         "sr_rank": 31,
+         "cls": "text-danger",
+         "bar": 70
+        },
+        "def": {
+         "carries": 13,
+         "share": 0.4333,
+         "ypc": 3.5385,
+         "succ": 0.3077,
+         "epa": -0.0468,
+         "rank": 8,
+         "sr_rank": 8,
+         "cls": "text-success"
+        },
+        "tag": "wall",
+        "actual": {
+         "carries": 10,
+         "ypc": 9.3,
+         "succ": 0.5
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 11,
+         "share": 0.2821,
+         "ypc": 3.9091,
+         "succ": 0.5455,
+         "epa": 0.0337,
+         "rank": null,
+         "sr_rank": null,
+         "cls": "",
+         "bar": 45
+        },
+        "def": {
+         "carries": 3,
+         "share": 0.1,
+         "ypc": 2.3333,
+         "succ": 0.0,
+         "epa": -0.3226,
+         "rank": null,
+         "sr_rank": null,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 7,
+         "ypc": 4.8571,
+         "succ": 0.4286
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 11,
+         "share": 0.2821,
+         "ypc": 4.6364,
+         "succ": 0.2727,
+         "epa": -0.0845,
+         "rank": null,
+         "sr_rank": null,
+         "cls": "",
+         "bar": 45
+        },
+        "def": {
+         "carries": 14,
+         "share": 0.4667,
+         "ypc": 2.6429,
+         "succ": 0.2143,
+         "epa": -0.6619,
+         "rank": 2,
+         "sr_rank": 2,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 3,
+         "ypc": 0.3333,
+         "succ": 0.3333
+        }
+       }
+      ],
+      "actual_carries": 20
+     }
+    ]
+   },
+   {
+    "game_id": "2026_03_BAL_DAL",
+    "played": true,
+    "home": "DAL",
+    "away": "BAL",
+    "sides": [
+     {
+      "team": "BAL",
+      "name": "Baltimore Ravens",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+      "opp": "DAL",
+      "opp_name": "Dallas Cowboys",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
+      "games": 2,
+      "carries": 49,
+      "favorite_lane": "right",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 21,
+         "share": 0.4286,
+         "ypc": 5.9048,
+         "succ": 0.619,
+         "epa": 0.3171,
+         "rank": 4,
+         "sr_rank": 2,
+         "cls": "text-success",
+         "bar": 69
+        },
+        "def": {
+         "carries": 32,
+         "share": 0.5714,
+         "ypc": 5.3438,
+         "succ": 0.4688,
+         "epa": -0.0348,
+         "rank": 22,
+         "sr_rank": 20,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 18,
+         "ypc": 2.8889,
+         "succ": 0.3333
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 4,
+         "share": 0.0816,
+         "ypc": 3.75,
+         "succ": 0.25,
+         "epa": -0.093,
+         "rank": null,
+         "sr_rank": null,
+         "cls": "",
+         "bar": 13
+        },
+        "def": {
+         "carries": 10,
+         "share": 0.1786,
+         "ypc": 4.1,
+         "succ": 0.5,
+         "epa": 0.1569,
+         "rank": null,
+         "sr_rank": null,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 6,
+         "ypc": 3.5,
+         "succ": 0.1667
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 24,
+         "share": 0.4898,
+         "ypc": 4.25,
+         "succ": 0.5833,
+         "epa": 0.0983,
+         "rank": 10,
+         "sr_rank": 1,
+         "cls": "text-success",
+         "bar": 78
+        },
+        "def": {
+         "carries": 14,
+         "share": 0.25,
+         "ypc": 4.1429,
+         "succ": 0.5714,
+         "epa": 0.114,
+         "rank": 16,
+         "sr_rank": 27,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 12,
+         "ypc": 8.4167,
+         "succ": 0.6667
+        }
+       }
+      ],
+      "actual_carries": 36
+     },
+     {
+      "team": "DAL",
+      "name": "Dallas Cowboys",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
+      "opp": "BAL",
+      "opp_name": "Baltimore Ravens",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+      "games": 2,
+      "carries": 34,
+      "favorite_lane": "middle",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 9,
+         "share": 0.2647,
+         "ypc": 3.1111,
+         "succ": 0.3333,
+         "epa": -0.1985,
+         "rank": null,
+         "sr_rank": null,
+         "cls": "",
+         "bar": 42
+        },
+        "def": {
+         "carries": 11,
+         "share": 0.2619,
+         "ypc": 5.9091,
+         "succ": 0.6364,
+         "epa": 0.1873,
+         "rank": null,
+         "sr_rank": null,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 12,
+         "ypc": 7.5,
+         "succ": 0.5
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 14,
+         "share": 0.4118,
+         "ypc": 3.2143,
+         "succ": 0.4286,
+         "epa": -0.046,
+         "rank": 16,
+         "sr_rank": 9,
+         "cls": "",
+         "bar": 66
+        },
+        "def": {
+         "carries": 10,
+         "share": 0.2381,
+         "ypc": 2.6,
+         "succ": 0.5,
+         "epa": 0.34,
+         "rank": null,
+         "sr_rank": null,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 5,
+         "ypc": 4.2,
+         "succ": 0.2
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 11,
+         "share": 0.3235,
+         "ypc": 2.2727,
+         "succ": 0.4545,
+         "epa": -0.1647,
+         "rank": null,
+         "sr_rank": null,
+         "cls": "",
+         "bar": 52
+        },
+        "def": {
+         "carries": 21,
+         "share": 0.5,
+         "ypc": 2.9048,
+         "succ": 0.2857,
+         "epa": -0.1561,
+         "rank": 5,
+         "sr_rank": 4,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 9,
+         "ypc": 2.0,
+         "succ": 0.4444
+        }
+       }
+      ],
+      "actual_carries": 26
+     }
+    ]
+   },
+   {
+    "game_id": "2026_03_NE_JAX",
+    "played": true,
+    "home": "JAX",
+    "away": "NE",
+    "sides": [
+     {
+      "team": "NE",
+      "name": "New England Patriots",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
+      "opp": "JAX",
+      "opp_name": "Jacksonville Jaguars",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
+      "games": 2,
+      "carries": 49,
+      "favorite_lane": "middle",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 15,
+         "share": 0.3061,
+         "ypc": 4.9333,
+         "succ": 0.4,
+         "epa": 0.0012,
+         "rank": 12,
+         "sr_rank": 18,
+         "cls": "",
+         "bar": 49
+        },
+        "def": {
+         "carries": 20,
+         "share": 0.4545,
+         "ypc": 4.25,
+         "succ": 0.65,
+         "epa": -0.0106,
+         "rank": 15,
+         "sr_rank": 26,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 4,
+         "ypc": 2.75,
+         "succ": 0.0
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 18,
+         "share": 0.3673,
+         "ypc": 3.4444,
+         "succ": 0.2778,
+         "epa": -0.2425,
+         "rank": 14,
+         "sr_rank": 19,
+         "cls": "",
+         "bar": 59
+        },
+        "def": {
+         "carries": 12,
+         "share": 0.2727,
+         "ypc": 2.8333,
+         "succ": 0.1667,
+         "epa": -0.2753,
+         "rank": 4,
+         "sr_rank": 1,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 15,
+         "ypc": 3.0667,
+         "succ": 0.3333
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 16,
+         "share": 0.3265,
+         "ypc": 3.0,
+         "succ": 0.25,
+         "epa": -0.3625,
+         "rank": 19,
+         "sr_rank": 21,
+         "cls": "",
+         "bar": 52
+        },
+        "def": {
+         "carries": 12,
+         "share": 0.2727,
+         "ypc": 4.5833,
+         "succ": 0.3333,
+         "epa": -0.0178,
+         "rank": 21,
+         "sr_rank": 8,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 4,
+         "ypc": 1.75,
+         "succ": 0.25
+        }
+       }
+      ],
+      "actual_carries": 23
+     },
+     {
+      "team": "JAX",
+      "name": "Jacksonville Jaguars",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
+      "opp": "NE",
+      "opp_name": "New England Patriots",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
+      "games": 2,
+      "carries": 53,
+      "favorite_lane": "right",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 20,
+         "share": 0.3774,
+         "ypc": 4.65,
+         "succ": 0.5,
+         "epa": 0.0865,
+         "rank": 14,
+         "sr_rank": 6,
+         "cls": "",
+         "bar": 60
+        },
+        "def": {
+         "carries": 15,
+         "share": 0.3659,
+         "ypc": 3.0667,
+         "succ": 0.2,
+         "epa": -0.234,
+         "rank": 4,
+         "sr_rank": 1,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 9,
+         "ypc": 5.8889,
+         "succ": 0.3333
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 12,
+         "share": 0.2264,
+         "ypc": 4.3333,
+         "succ": 0.6667,
+         "epa": 0.0009,
+         "rank": 5,
+         "sr_rank": 1,
+         "cls": "text-success",
+         "bar": 36
+        },
+        "def": {
+         "carries": 9,
+         "share": 0.2195,
+         "ypc": 4.1111,
+         "succ": 0.4444,
+         "epa": 0.0632,
+         "rank": null,
+         "sr_rank": null,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 8,
+         "ypc": 3.5,
+         "succ": 0.625
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 21,
+         "share": 0.3962,
+         "ypc": 3.7619,
+         "succ": 0.381,
+         "epa": -0.0639,
+         "rank": 17,
+         "sr_rank": 13,
+         "cls": "",
+         "bar": 63
+        },
+        "def": {
+         "carries": 17,
+         "share": 0.4146,
+         "ypc": 4.9412,
+         "succ": 0.2941,
+         "epa": -0.0955,
+         "rank": 23,
+         "sr_rank": 5,
+         "cls": "text-danger"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 11,
+         "ypc": 4.3636,
+         "succ": 0.6364
+        }
+       }
+      ],
+      "actual_carries": 28
+     }
+    ]
+   },
+   {
+    "game_id": "2026_03_TEN_NYG",
+    "played": true,
+    "home": "NYG",
+    "away": "TEN",
+    "sides": [
+     {
+      "team": "TEN",
+      "name": "Tennessee Titans",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
+      "opp": "NYG",
+      "opp_name": "New York Giants",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
+      "games": 2,
+      "carries": 37,
+      "favorite_lane": "left",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 16,
+         "share": 0.4324,
+         "ypc": 5.9375,
+         "succ": 0.5,
+         "epa": 0.1421,
+         "rank": 3,
+         "sr_rank": 6,
+         "cls": "text-success",
+         "bar": 69
+        },
+        "def": {
+         "carries": 9,
+         "share": 0.225,
+         "ypc": 4.5556,
+         "succ": 0.4444,
+         "epa": -0.0513,
+         "rank": null,
+         "sr_rank": null,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 8,
+         "ypc": 3.125,
+         "succ": 0.125
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 12,
+         "share": 0.3243,
+         "ypc": 3.0,
+         "succ": 0.3333,
+         "epa": 0.0671,
+         "rank": 17,
+         "sr_rank": 17,
+         "cls": "",
+         "bar": 52
+        },
+        "def": {
+         "carries": 17,
+         "share": 0.425,
+         "ypc": 5.5882,
+         "succ": 0.5294,
+         "epa": -0.1866,
+         "rank": 20,
+         "sr_rank": 17,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 4,
+         "ypc": 2.5,
+         "succ": 0.5
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 9,
+         "share": 0.2432,
+         "ypc": 3.6667,
+         "succ": 0.4444,
+         "epa": -0.1692,
+         "rank": null,
+         "sr_rank": null,
+         "cls": "",
+         "bar": 39
+        },
+        "def": {
+         "carries": 14,
+         "share": 0.35,
+         "ypc": 5.9286,
+         "succ": 0.5,
+         "epa": 0.1556,
+         "rank": 28,
+         "sr_rank": 26,
+         "cls": "text-danger"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 9,
+         "ypc": 5.1111,
+         "succ": 0.4444
+        }
+       }
+      ],
+      "actual_carries": 21
+     },
+     {
+      "team": "NYG",
+      "name": "New York Giants",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
+      "opp": "TEN",
+      "opp_name": "Tennessee Titans",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
+      "games": 2,
+      "carries": 53,
+      "favorite_lane": "left",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 26,
+         "share": 0.4906,
+         "ypc": 5.6154,
+         "succ": 0.4615,
+         "epa": 0.0567,
+         "rank": 5,
+         "sr_rank": 11,
+         "cls": "text-success",
+         "bar": 78
+        },
+        "def": {
+         "carries": 19,
+         "share": 0.3016,
+         "ypc": 3.5789,
+         "succ": 0.4737,
+         "epa": 0.025,
+         "rank": 9,
+         "sr_rank": 21,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 10,
+         "ypc": 6.1,
+         "succ": 0.7
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 14,
+         "share": 0.2642,
+         "ypc": 2.0714,
+         "succ": 0.3571,
+         "epa": -0.3274,
+         "rank": 21,
+         "sr_rank": 15,
+         "cls": "",
+         "bar": 42
+        },
+        "def": {
+         "carries": 17,
+         "share": 0.2698,
+         "ypc": 3.7059,
+         "succ": 0.4706,
+         "epa": 0.0399,
+         "rank": 12,
+         "sr_rank": 15,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 12,
+         "ypc": 2.5,
+         "succ": 0.1667
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 13,
+         "share": 0.2453,
+         "ypc": 2.8462,
+         "succ": 0.3077,
+         "epa": -0.0712,
+         "rank": 20,
+         "sr_rank": 17,
+         "cls": "",
+         "bar": 39
+        },
+        "def": {
+         "carries": 27,
+         "share": 0.4286,
+         "ypc": 3.4074,
+         "succ": 0.3704,
+         "epa": -0.1117,
+         "rank": 8,
+         "sr_rank": 14,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 9,
+         "ypc": 3.6667,
+         "succ": 0.4444
+        }
+       }
+      ],
+      "actual_carries": 31
+     }
+    ]
+   },
+   {
+    "game_id": "2026_03_CAR_CLE",
+    "played": true,
+    "home": "CLE",
+    "away": "CAR",
+    "sides": [
+     {
+      "team": "CAR",
+      "name": "Carolina Panthers",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/car.png",
+      "opp": "CLE",
+      "opp_name": "Cleveland Browns",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
+      "games": 2,
+      "carries": 39,
+      "favorite_lane": "left",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 19,
+         "share": 0.4872,
+         "ypc": 5.1053,
+         "succ": 0.5789,
+         "epa": 0.041,
+         "rank": 8,
+         "sr_rank": 5,
+         "cls": "text-success",
+         "bar": 78
+        },
+        "def": {
+         "carries": 24,
+         "share": 0.4706,
+         "ypc": 5.7083,
+         "succ": 0.4167,
+         "epa": 0.0378,
+         "rank": 26,
+         "sr_rank": 14,
+         "cls": "text-danger"
+        },
+        "tag": "soft",
+        "actual": {
+         "carries": 12,
+         "ypc": 5.9167,
+         "succ": 0.4167
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 14,
+         "share": 0.359,
+         "ypc": 3.5714,
+         "succ": 0.3571,
+         "epa": -0.2685,
+         "rank": 12,
+         "sr_rank": 15,
+         "cls": "",
+         "bar": 57
+        },
+        "def": {
+         "carries": 13,
+         "share": 0.2549,
+         "ypc": 3.4615,
+         "succ": 0.6923,
+         "epa": -0.0469,
+         "rank": 11,
+         "sr_rank": 22,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 2,
+         "ypc": 3.0,
+         "succ": 0.5
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 6,
+         "share": 0.1538,
+         "ypc": 1.6667,
+         "succ": 0.1667,
+         "epa": -0.4898,
+         "rank": null,
+         "sr_rank": null,
+         "cls": "",
+         "bar": 25
+        },
+        "def": {
+         "carries": 14,
+         "share": 0.2745,
+         "ypc": 4.1429,
+         "succ": 0.4286,
+         "epa": -0.0761,
+         "rank": 16,
+         "sr_rank": 20,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 9,
+         "ypc": 2.3333,
+         "succ": 0.1111
+        }
+       }
+      ],
+      "actual_carries": 23
+     },
+     {
+      "team": "CLE",
+      "name": "Cleveland Browns",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
+      "opp": "CAR",
+      "opp_name": "Carolina Panthers",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/car.png",
+      "games": 2,
+      "carries": 37,
+      "favorite_lane": "left",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 18,
+         "share": 0.4865,
+         "ypc": 1.8333,
+         "succ": 0.3889,
+         "epa": -0.4121,
+         "rank": 31,
+         "sr_rank": 21,
+         "cls": "text-danger",
+         "bar": 78
+        },
+        "def": {
+         "carries": 24,
+         "share": 0.4,
+         "ypc": 5.0417,
+         "succ": 0.375,
+         "epa": -0.1182,
+         "rank": 21,
+         "sr_rank": 11,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 7,
+         "ypc": 3.0,
+         "succ": 0.1429
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 9,
+         "share": 0.2432,
+         "ypc": 2.7778,
+         "succ": 0.1111,
+         "epa": -0.2882,
+         "rank": null,
+         "sr_rank": null,
+         "cls": "",
+         "bar": 39
+        },
+        "def": {
+         "carries": 13,
+         "share": 0.2167,
+         "ypc": 8.0769,
+         "succ": 0.5385,
+         "epa": 0.3385,
+         "rank": 22,
+         "sr_rank": 18,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 9,
+         "ypc": 2.4444,
+         "succ": 0.3333
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 10,
+         "share": 0.2703,
+         "ypc": 4.1,
+         "succ": 0.4,
+         "epa": -0.25,
+         "rank": null,
+         "sr_rank": null,
+         "cls": "",
+         "bar": 43
+        },
+        "def": {
+         "carries": 23,
+         "share": 0.3833,
+         "ypc": 5.5217,
+         "succ": 0.3478,
+         "epa": 0.0651,
+         "rank": 26,
+         "sr_rank": 11,
+         "cls": "text-danger"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 7,
+         "ypc": 6.5714,
+         "succ": 0.4286
+        }
+       }
+      ],
+      "actual_carries": 23
+     }
+    ]
+   },
+   {
+    "game_id": "2026_03_LA_DEN",
+    "played": true,
+    "home": "DEN",
+    "away": "LA",
+    "sides": [
+     {
+      "team": "LA",
+      "name": "Los Angeles Rams",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png",
+      "opp": "DEN",
+      "opp_name": "Denver Broncos",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/den.png",
+      "games": 2,
+      "carries": 51,
+      "favorite_lane": "middle",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 12,
+         "share": 0.2353,
+         "ypc": 6.0833,
+         "succ": 0.5833,
+         "epa": -0.0926,
+         "rank": 2,
+         "sr_rank": 4,
+         "cls": "text-success",
+         "bar": 38
+        },
+        "def": {
+         "carries": 20,
+         "share": 0.3636,
+         "ypc": 8.15,
+         "succ": 0.55,
+         "epa": 0.5007,
+         "rank": 28,
+         "sr_rank": 24,
+         "cls": "text-danger"
+        },
+        "tag": "soft",
+        "actual": {
+         "carries": 5,
+         "ypc": 1.6,
+         "succ": 0.0
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 22,
+         "share": 0.4314,
+         "ypc": 5.1364,
+         "succ": 0.5455,
+         "epa": -0.0922,
+         "rank": 2,
+         "sr_rank": 4,
+         "cls": "text-success",
+         "bar": 69
+        },
+        "def": {
+         "carries": 17,
+         "share": 0.3091,
+         "ypc": 3.3529,
+         "succ": 0.4118,
+         "epa": 0.0688,
+         "rank": 10,
+         "sr_rank": 12,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 5,
+         "ypc": 11.4,
+         "succ": 0.8
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 17,
+         "share": 0.3333,
+         "ypc": 5.4118,
+         "succ": 0.4118,
+         "epa": -0.1821,
+         "rank": 3,
+         "sr_rank": 9,
+         "cls": "text-success",
+         "bar": 53
+        },
+        "def": {
+         "carries": 18,
+         "share": 0.3273,
+         "ypc": 4.0,
+         "succ": 0.3333,
+         "epa": -0.0017,
+         "rank": 13,
+         "sr_rank": 8,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 12,
+         "ypc": 3.4167,
+         "succ": 0.3333
+        }
+       }
+      ],
+      "actual_carries": 22
+     },
+     {
+      "team": "DEN",
+      "name": "Denver Broncos",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/den.png",
+      "opp": "LA",
+      "opp_name": "Los Angeles Rams",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png",
+      "games": 2,
+      "carries": 37,
+      "favorite_lane": "left",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 16,
+         "share": 0.4324,
+         "ypc": 5.3125,
+         "succ": 0.5,
+         "epa": -0.0102,
+         "rank": 7,
+         "sr_rank": 6,
+         "cls": "text-success",
+         "bar": 69
+        },
+        "def": {
+         "carries": 15,
+         "share": 0.3061,
+         "ypc": 4.6667,
+         "succ": 0.4,
+         "epa": -0.0359,
+         "rank": 17,
+         "sr_rank": 13,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 9,
+         "ypc": 3.3333,
+         "succ": 0.2222
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 9,
+         "share": 0.2432,
+         "ypc": 2.6667,
+         "succ": 0.2222,
+         "epa": -0.2853,
+         "rank": null,
+         "sr_rank": null,
+         "cls": "",
+         "bar": 39
+        },
+        "def": {
+         "carries": 19,
+         "share": 0.3878,
+         "ypc": 2.5263,
+         "succ": 0.3684,
+         "epa": -0.1984,
+         "rank": 1,
+         "sr_rank": 8,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 10,
+         "ypc": 3.3,
+         "succ": 0.5
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 12,
+         "share": 0.3243,
+         "ypc": 4.75,
+         "succ": 0.4167,
+         "epa": 0.0952,
+         "rank": 6,
+         "sr_rank": 7,
+         "cls": "text-success",
+         "bar": 52
+        },
+        "def": {
+         "carries": 15,
+         "share": 0.3061,
+         "ypc": 5.4667,
+         "succ": 0.4667,
+         "epa": 0.1515,
+         "rank": 25,
+         "sr_rank": 25,
+         "cls": "text-danger"
+        },
+        "tag": "soft",
+        "actual": {
+         "carries": 6,
+         "ypc": 2.5,
+         "succ": 0.3333
+        }
+       }
+      ],
+      "actual_carries": 25
+     }
+    ]
+   },
+   {
+    "game_id": "2026_03_MIN_TB",
+    "played": true,
+    "home": "TB",
+    "away": "MIN",
+    "sides": [
+     {
+      "team": "MIN",
+      "name": "Minnesota Vikings",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png",
+      "opp": "TB",
+      "opp_name": "Tampa Bay Buccaneers",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/tb.png",
+      "games": 2,
+      "carries": 54,
+      "favorite_lane": "right",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 17,
+         "share": 0.3148,
+         "ypc": 5.0588,
+         "succ": 0.4118,
+         "epa": 0.0138,
+         "rank": 9,
+         "sr_rank": 17,
+         "cls": "text-success",
+         "bar": 50
+        },
+        "def": {
+         "carries": 15,
+         "share": 0.3488,
+         "ypc": 0.8,
+         "succ": 0.2,
+         "epa": -0.5986,
+         "rank": 1,
+         "sr_rank": 1,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 9,
+         "ypc": 2.0,
+         "succ": 0.2222
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 10,
+         "share": 0.1852,
+         "ypc": 3.0,
+         "succ": 0.3,
+         "epa": -0.1537,
+         "rank": null,
+         "sr_rank": null,
+         "cls": "",
+         "bar": 30
+        },
+        "def": {
+         "carries": 15,
+         "share": 0.3488,
+         "ypc": 4.4667,
+         "succ": 0.4,
+         "epa": 0.1403,
+         "rank": 19,
+         "sr_rank": 9,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 6,
+         "ypc": 1.6667,
+         "succ": 0.1667
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 27,
+         "share": 0.5,
+         "ypc": 3.6667,
+         "succ": 0.2593,
+         "epa": -0.1044,
+         "rank": 18,
+         "sr_rank": 20,
+         "cls": "",
+         "bar": 80
+        },
+        "def": {
+         "carries": 13,
+         "share": 0.3023,
+         "ypc": 4.1538,
+         "succ": 0.3846,
+         "epa": -0.1639,
+         "rank": 18,
+         "sr_rank": 16,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 6,
+         "ypc": 5.5,
+         "succ": 0.5
+        }
+       }
+      ],
+      "actual_carries": 21
+     },
+     {
+      "team": "TB",
+      "name": "Tampa Bay Buccaneers",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/tb.png",
+      "opp": "MIN",
+      "opp_name": "Minnesota Vikings",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png",
+      "games": 2,
+      "carries": 37,
+      "favorite_lane": "left",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 20,
+         "share": 0.5405,
+         "ypc": 5.6,
+         "succ": 0.4,
+         "epa": 0.0759,
+         "rank": 6,
+         "sr_rank": 18,
+         "cls": "text-success",
+         "bar": 86
+        },
+        "def": {
+         "carries": 21,
+         "share": 0.4375,
+         "ypc": 3.8095,
+         "succ": 0.3333,
+         "epa": -0.1918,
+         "rank": 12,
+         "sr_rank": 9,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 9,
+         "ypc": 3.8889,
+         "succ": 0.3333
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 5,
+         "share": 0.1351,
+         "ypc": 2.2,
+         "succ": 0.6,
+         "epa": -0.0692,
+         "rank": null,
+         "sr_rank": null,
+         "cls": "",
+         "bar": 22
+        },
+        "def": {
+         "carries": 2,
+         "share": 0.0417,
+         "ypc": -2.0,
+         "succ": 0.0,
+         "epa": -1.064,
+         "rank": null,
+         "sr_rank": null,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 3,
+         "ypc": 0.0,
+         "succ": 0.0
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 12,
+         "share": 0.3243,
+         "ypc": 3.9167,
+         "succ": 0.4167,
+         "epa": 0.0202,
+         "rank": 15,
+         "sr_rank": 7,
+         "cls": "",
+         "bar": 52
+        },
+        "def": {
+         "carries": 25,
+         "share": 0.5208,
+         "ypc": 3.2,
+         "succ": 0.32,
+         "epa": -0.4636,
+         "rank": 7,
+         "sr_rank": 7,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 6,
+         "ypc": 1.1667,
+         "succ": 0.0
+        }
+       }
+      ],
+      "actual_carries": 18
+     }
+    ]
+   },
+   {
+    "game_id": "2026_03_HOU_IND",
+    "played": true,
+    "home": "IND",
+    "away": "HOU",
+    "sides": [
+     {
+      "team": "HOU",
+      "name": "Houston Texans",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+      "opp": "IND",
+      "opp_name": "Indianapolis Colts",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
+      "games": 2,
+      "carries": 46,
+      "favorite_lane": "right",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 17,
+         "share": 0.3696,
+         "ypc": 3.1176,
+         "succ": 0.2353,
+         "epa": -0.2992,
+         "rank": 28,
+         "sr_rank": 30,
+         "cls": "text-danger",
+         "bar": 59
+        },
+        "def": {
+         "carries": 23,
+         "share": 0.3966,
+         "ypc": 7.0,
+         "succ": 0.6522,
+         "epa": 0.3857,
+         "rank": 27,
+         "sr_rank": 27,
+         "cls": "text-danger"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 6,
+         "ypc": 2.5,
+         "succ": 0.3333
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 8,
+         "share": 0.1739,
+         "ypc": 5.75,
+         "succ": 0.375,
+         "epa": 0.3156,
+         "rank": null,
+         "sr_rank": null,
+         "cls": "",
+         "bar": 28
+        },
+        "def": {
+         "carries": 16,
+         "share": 0.2759,
+         "ypc": 3.9375,
+         "succ": 0.4375,
+         "epa": 0.0737,
+         "rank": 14,
+         "sr_rank": 13,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 2,
+         "ypc": 3.0,
+         "succ": 0.5
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 21,
+         "share": 0.4565,
+         "ypc": 1.9524,
+         "succ": 0.3333,
+         "epa": -0.4012,
+         "rank": 23,
+         "sr_rank": 16,
+         "cls": "text-danger",
+         "bar": 73
+        },
+        "def": {
+         "carries": 19,
+         "share": 0.3276,
+         "ypc": 4.1053,
+         "succ": 0.4211,
+         "epa": -0.0076,
+         "rank": 15,
+         "sr_rank": 19,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 12,
+         "ypc": 3.4167,
+         "succ": 0.3333
+        }
+       }
+      ],
+      "actual_carries": 20
+     },
+     {
+      "team": "IND",
+      "name": "Indianapolis Colts",
+      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
+      "opp": "HOU",
+      "opp_name": "Houston Texans",
+      "opp_logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+      "games": 2,
+      "carries": 49,
+      "favorite_lane": "right",
+      "lanes": [
+       {
+        "lane": "left",
+        "label": "Left",
+        "off": {
+         "carries": 13,
+         "share": 0.2653,
+         "ypc": 5.0,
+         "succ": 0.6154,
+         "epa": 0.3632,
+         "rank": 10,
+         "sr_rank": 3,
+         "cls": "text-success",
+         "bar": 42
+        },
+        "def": {
+         "carries": 15,
+         "share": 0.375,
+         "ypc": 4.4,
+         "succ": 0.4667,
+         "epa": -0.2858,
+         "rank": 16,
+         "sr_rank": 19,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 10,
+         "ypc": 2.3,
+         "succ": 0.4
+        }
+       },
+       {
+        "lane": "middle",
+        "label": "Middle",
+        "off": {
+         "carries": 9,
+         "share": 0.1837,
+         "ypc": 4.1111,
+         "succ": 0.5556,
+         "epa": 0.3064,
+         "rank": null,
+         "sr_rank": null,
+         "cls": "",
+         "bar": 29
+        },
+        "def": {
+         "carries": 12,
+         "share": 0.3,
+         "ypc": 3.25,
+         "succ": 0.25,
+         "epa": -0.1335,
+         "rank": 9,
+         "sr_rank": 3,
+         "cls": "text-success"
+        },
+        "tag": "",
+        "actual": {
+         "carries": 7,
+         "ypc": 2.5714,
+         "succ": 0.4286
+        }
+       },
+       {
+        "lane": "right",
+        "label": "Right",
+        "off": {
+         "carries": 27,
+         "share": 0.551,
+         "ypc": 4.0,
+         "succ": 0.3704,
+         "epa": 0.0124,
+         "rank": 12,
+         "sr_rank": 14,
+         "cls": "",
+         "bar": 88
+        },
+        "def": {
+         "carries": 13,
+         "share": 0.325,
+         "ypc": 3.6154,
+         "succ": 0.3077,
+         "epa": -0.2123,
+         "rank": 11,
+         "sr_rank": 6,
+         "cls": ""
+        },
+        "tag": "",
+        "actual": {
+         "carries": 12,
+         "ypc": 3.5833,
+         "succ": 0.3333
+        }
+       }
+      ],
+      "actual_carries": 29
+     }
+    ]
    }
   ]
  }
