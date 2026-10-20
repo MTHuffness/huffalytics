@@ -686,6 +686,100 @@
     .gm-ircols { grid-template-columns: 1fr; }
     .gm-irbody { padding-left: 16px; padding-right: 16px; }
   }
+
+  /* ---- Player sheet: a name on the game page opens it in a modal ---- */
+  .hfa .pl-open { border: 0; background: transparent; padding: 0; margin: 0; font: inherit; font-weight: 700; color: var(--hfa-body); cursor: pointer; border-bottom: 1px dotted rgba(128, 128, 128, 0.55); line-height: 1.2; }
+  .hfa .pl-open:hover { color: var(--hfa-accent); border-bottom-color: var(--hfa-accent); }
+  body.pl-lock { overflow: hidden; }
+  .pl-modal { position: fixed; inset: 0; z-index: 100; }
+  .pl-modal[hidden] { display: none; }
+  .pl-back { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.72); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+  .pl-dialog { position: absolute; left: 50%; top: 3vh; transform: translateX(-50%); width: min(1180px, calc(100vw - 2rem)); max-height: 94vh; overflow: auto; background: var(--hfa-card); border: var(--hfa-hairline); border-radius: 16px; box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.95); color: var(--hfa-body); }
+  :root:not([data-theme="light"]) .pl-dialog { background: #0d0d11; }
+  .pl-close { position: sticky; top: 0.6rem; float: right; margin: 0.6rem 0.7rem 0 0; z-index: 3; display: grid; place-items: center; width: 2.1rem; height: 2.1rem; border: 0; border-radius: 999px; background: rgba(128, 128, 128, 0.22); color: var(--hfa-body); font-size: 1.3rem; line-height: 1; cursor: pointer; }
+  .pl-close:hover { background: var(--hfa-accent); color: #fff; }
+  .pl-loading { padding: 2.5rem 1.2rem; color: var(--hfa-muted); font-size: 0.9rem; }
+  .pl-sheet { padding: 0.9rem 1.2rem 1.2rem; }
+  .pl-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.6rem 1.2rem; padding-right: 2.4rem; margin-bottom: 0.8rem; }
+  .pl-who { display: flex; align-items: center; gap: 0.7rem; }
+  .pl-who img { width: 48px; height: 48px; object-fit: contain; }
+  .pl-name { font-size: 1.3rem; font-weight: 900; letter-spacing: -0.01em; }
+  .pl-name .gm-pos { vertical-align: 3px; }
+  .pl-match { font-size: 0.78rem; color: var(--hfa-muted); }
+  .pl-tiles { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+  .pl-tile { display: flex; flex-direction: column; align-items: center; min-width: 5.2rem; padding: 0.35rem 0.7rem; border-radius: 10px; border: var(--hfa-hairline); background: var(--hfa-tint); line-height: 1.15; }
+  .pl-tile b { font-size: 1.05rem; font-weight: 800; color: var(--hfa-body); }
+  .pl-tile span { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--hfa-muted); text-align: center; max-width: 9rem; }
+  .pl-tile span em { display: block; font-style: normal; font-weight: 600; text-transform: none; letter-spacing: 0; }
+  .pl-tile.tough { border-color: rgba(255, 31, 47, 0.5); } .pl-tile.tough b { color: var(--hfa-accent); }
+  .pl-tile.soft { border-color: rgba(47, 212, 164, 0.5); } .pl-tile.soft b { color: var(--hfa-good); }
+  .pl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .pl-grid > .pl-card:first-child { grid-column: 1 / -1; }  /* the season log runs the width; timeline and defense share the row under it */
+  .pl-card { min-width: 0; padding: 0.6rem 0.75rem 0.7rem; border-radius: 12px; border: var(--hfa-hairline); background: var(--hfa-tint); }
+  .pl-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--hfa-accent); margin-bottom: 0.45rem; }
+  .pl-title > span, .pl-title .t > span { font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--hfa-muted); }
+  .pl-title-row { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; }
+  .pl-pick { max-width: 100%; font: inherit; font-size: 0.74rem; padding: 0.2rem 0.5rem; border-radius: 8px; border: 1px solid rgba(128, 128, 128, 0.35); background: var(--hfa-card); color: var(--hfa-body); }
+  .pl-scroll { overflow-x: auto; }
+  .hfa .pl-log { font-size: 0.78rem; width: 100%; }
+  .hfa .pl-log th, .hfa .pl-log td { padding: 0.22rem 0.4rem; white-space: nowrap; }
+  .hfa .pl-log th { font-size: 0.6rem; }
+  .hfa .pl-log td.wk { font-weight: 700; }
+  .hfa .pl-log td.main { font-weight: 700; }
+  .hfa .pl-log tr.dnp td { color: var(--hfa-muted); }
+  .hfa .pl-log tfoot td { border-top: 2px solid rgba(128, 128, 128, 0.35); }
+  .hfa .pl-log tr.tot td { font-weight: 700; }
+  .hfa .pl-log tr.avg td { color: var(--hfa-muted); border-top: 1px solid rgba(128, 128, 128, 0.12); }
+  .hfa .pl-log td.who small { color: var(--hfa-muted); font-size: 0.66rem; }
+  .pl-rank { display: inline-block; font-size: 0.6rem; font-weight: 800; padding: 0.05rem 0.35rem; border-radius: 5px; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); margin-left: 0.15rem; vertical-align: 1px; }
+  .pl-rank.tough { background: rgba(255, 31, 47, 0.18); color: var(--hfa-accent); }
+  .pl-rank.soft { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .pl-empty { color: var(--hfa-muted); font-size: 0.8rem; padding: 0.3rem 0; }
+  .pl-note { font-size: 0.66rem; color: var(--hfa-muted); line-height: 1.4; margin-top: 0.4rem; }
+  .pl-score { width: auto; margin: 0 auto 0.4rem; border-collapse: separate; border-spacing: 2px 0; font-size: 0.76rem; }
+  .hfa .pl-score th, .hfa .pl-score td { text-align: center; padding: 0.1rem 0.5rem; min-width: 2.5rem; border: 0; border-radius: 4px; }
+  .hfa .pl-score th { font-size: 0.6rem; }
+  .hfa .pl-score td.team { text-align: left; font-weight: 700; padding-left: 0; min-width: 0; }
+  .hfa .pl-score td.lead { font-weight: 700; }
+  .hfa .pl-score tr.margin td { font-size: 0.66rem; color: var(--hfa-muted); }
+  .hfa .pl-score tr.margin td:first-child { text-align: left; padding-left: 0; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; }
+  .hfa .pl-score td.blow, .hfa .pl-score th.blow { background: rgba(255, 31, 47, 0.12); }
+  /* The timeline */
+  .tl-svg { width: 100%; display: block; }
+  .tl-title { font-size: 8.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; fill: var(--hfa-muted); }
+  .tl-grid { stroke: rgba(128, 128, 128, 0.16); }
+  .tl-base { stroke: rgba(128, 128, 128, 0.45); }
+  .tl-zero { stroke: rgba(128, 128, 128, 0.35); stroke-dasharray: 3 3; }
+  .tl-line { fill: none; stroke-width: 2.2px; stroke-linejoin: round; stroke-linecap: round; }
+  path.tl-rush, circle.tl-rush { stroke: var(--hfa-accent); fill: var(--hfa-accent); }
+  path.tl-rush { fill: none; }
+  path.tl-rec, circle.tl-rec { stroke: var(--hfa-good); fill: var(--hfa-good); }
+  path.tl-rec { fill: none; }
+  .tl-val { font-size: 9.5px; font-weight: 600; }
+  text.tl-rush, .tl-table td.tl-rush, .tl-key.tl-rush { fill: var(--hfa-accent); color: var(--hfa-accent); }
+  text.tl-rec, .tl-table td.tl-rec, .tl-key.tl-rec { fill: var(--hfa-good); color: var(--hfa-good); }
+  .tl-star { font-size: 16px; fill: #f5b301; stroke: rgba(0, 0, 0, 0.4); stroke-width: 0.7px; paint-order: stroke; }
+  .tl-axis { font-size: 10px; font-weight: 600; fill: var(--hfa-muted); }
+  .tl-legend { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.3rem 0.9rem; font-size: 0.7rem; color: var(--hfa-muted); margin: 0.2rem 0 0.4rem; }
+  .tl-legend i, .tl-td { font-style: normal; }
+  .tl-td { color: #f5b301; margin-left: 2px; font-size: 0.9em; }
+  .hfa .tl-table { font-size: 0.76rem; }
+  .hfa .tl-table th, .hfa .tl-table td { padding: 0.2rem 0.4rem; }
+  .hfa .tl-table th { font-size: 0.6rem; }
+  .hfa .tl-table td.lbl { font-weight: 700; }
+  .hfa .tl-table td.zero { color: var(--hfa-muted); opacity: 0.5; }
+  .hfa .tl-table td.tot { font-weight: 700; }
+  @media (max-width: 760px) {
+    .pl-dialog { left: 0; top: 0; transform: none; width: 100vw; max-height: 100vh; height: 100vh; border-radius: 0; border: 0; }
+    .pl-sheet { padding: 0.8rem 16px 2rem; }
+    .pl-head { padding-right: 2.2rem; }
+    .pl-name { font-size: 1.1rem; }
+    .pl-grid { grid-template-columns: 1fr; gap: 0.6rem; }
+    .pl-grid > .pl-card:first-child { grid-column: auto; }
+    .pl-tile { min-width: 4.4rem; padding: 0.3rem 0.5rem; }
+    .hfa .pl-log td.wk, .hfa .pl-log th:first-child { position: sticky; left: 0; background: #0d0d11; z-index: 1; }
+    :root[data-theme="light"] .hfa .pl-log td.wk, :root[data-theme="light"] .hfa .pl-log th:first-child { background: #fff; }
+  }
   @media (prefers-reduced-motion: reduce) { #hfa-rain { opacity: calc(var(--hfa-rain) * 0.5); } }
 </style>
 
@@ -753,7 +847,7 @@
       <div class="gm-sub">Projected player lines <span class="flat">&middot; the team totals shared out by each man's role</span></div>
       
       <div class="gm-qb">
-        <div class="gm-who"><span class="gm-pos QB">QB</span><b>Malik Willis</b></div>
+        <div class="gm-who"><span class="gm-pos QB">QB</span><button type="button" class="pl-open" data-pid="00-0038128" title="Season log, scoring timeline and the defense he faces">Malik Willis</button></div>
         <div class="gm-line">
           <div><span>Att</span><b>30</b></div><div><span>Cmp</span><b>18</b></div><div><span>Yds</span><b>202</b></div><div><span>TD</span><b>0.9</b></div><div><span>INT</span><b>0.6</b></div>
           <div class="sep" aria-hidden="true"></div>
@@ -766,9 +860,9 @@
         <table class="gm-ptable">
           <thead><tr><th>Backs</th><th class="num">Car</th><th class="num">Ru yds</th><th class="num">Ru TD</th><th class="num">Tgt</th><th class="num">Rec</th><th class="num">Rec yds</th><th class="num">Rec TD</th></tr></thead>
           <tbody>
-            <tr><td class="name"><span class="gm-pos RB">RB</span>Ollie Gordon II<span class="badge mute">Q</span></td><td class="num ">13</td><td class="num ">56</td><td class="num ">0.5</td><td class="num ">1.6</td><td class="num ">1.1</td><td class="num ">3</td><td class="num zero">0</td></tr><tr><td class="name"><span class="gm-pos RB">RB</span>Jaylen Wright</td><td class="num ">6</td><td class="num ">7</td><td class="num ">0.1</td><td class="num zero">0</td><td class="num zero">0</td><td class="num zero">0</td><td class="num zero">0</td></tr>
+            <tr><td class="name"><span class="gm-pos RB">RB</span><button type="button" class="pl-open" data-pid="00-0040198" title="Season log, scoring timeline and the defense he faces">Ollie Gordon II</button><span class="badge mute">Q</span></td><td class="num ">13</td><td class="num ">56</td><td class="num ">0.5</td><td class="num ">1.6</td><td class="num ">1.1</td><td class="num ">3</td><td class="num zero">0</td></tr><tr><td class="name"><span class="gm-pos RB">RB</span><button type="button" class="pl-open" data-pid="00-0039874" title="Season log, scoring timeline and the defense he faces">Jaylen Wright</button></td><td class="num ">6</td><td class="num ">7</td><td class="num ">0.1</td><td class="num zero">0</td><td class="num zero">0</td><td class="num zero">0</td><td class="num zero">0</td></tr>
             
-            <tr class="out"><td class="name"><span class="gm-pos RB">RB</span>De&#x27;Von Achane<span class="badge out">IR</span></td><td class="num flat" colspan="7">no projected volume</td></tr>
+            <tr class="out"><td class="name"><span class="gm-pos RB">RB</span><button type="button" class="pl-open" data-pid="00-0039040" title="Season log, scoring timeline and the defense he faces">De&#x27;Von Achane</button><span class="badge out">IR</span></td><td class="num flat" colspan="7">no projected volume</td></tr>
           </tbody>
         </table>
         
@@ -778,9 +872,9 @@
         <table class="gm-ptable">
           <thead><tr><th>Receivers</th><th class="num">Tgt</th><th class="num">Rec</th><th class="num">Yds</th><th class="num">TD</th></tr></thead>
           <tbody>
-            <tr><td class="name"><span class="gm-pos WR">WR</span>Malik Washington</td><td class="num ">9.4</td><td class="num ">6.5</td><td class="num ">94</td><td class="num ">0.4</td></tr><tr><td class="name"><span class="gm-pos WR">WR</span>Chris Bell</td><td class="num ">4.4</td><td class="num ">2.7</td><td class="num ">19</td><td class="num ">0.1</td></tr><tr><td class="name"><span class="gm-pos WR">WR</span>Kevin Coleman Jr.</td><td class="num ">5.8</td><td class="num ">3.4</td><td class="num ">19</td><td class="num ">0.1</td></tr><tr><td class="name"><span class="gm-pos WR">WR</span>Jalen Tolbert</td><td class="num ">1.3</td><td class="num ">0.8</td><td class="num ">11</td><td class="num zero">0</td></tr>
+            <tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0039880" title="Season log, scoring timeline and the defense he faces">Malik Washington</button></td><td class="num ">9.4</td><td class="num ">6.5</td><td class="num ">94</td><td class="num ">0.4</td></tr><tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0041525" title="Season log, scoring timeline and the defense he faces">Chris Bell</button></td><td class="num ">4.4</td><td class="num ">2.7</td><td class="num ">19</td><td class="num ">0.1</td></tr><tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0041529" title="Season log, scoring timeline and the defense he faces">Kevin Coleman Jr.</button></td><td class="num ">5.8</td><td class="num ">3.4</td><td class="num ">19</td><td class="num ">0.1</td></tr><tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0037666" title="Season log, scoring timeline and the defense he faces">Jalen Tolbert</button></td><td class="num ">1.3</td><td class="num ">0.8</td><td class="num ">11</td><td class="num zero">0</td></tr>
             
-            <tr class="out"><td class="name"><span class="gm-pos WR">WR</span>Caleb Douglas<span class="badge mute">O</span></td><td class="num flat" colspan="4">no projected volume</td></tr>
+            <tr class="out"><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0041523" title="Season log, scoring timeline and the defense he faces">Caleb Douglas</button><span class="badge mute">O</span></td><td class="num flat" colspan="4">no projected volume</td></tr>
           </tbody>
         </table>
         
@@ -790,7 +884,7 @@
         <table class="gm-ptable">
           <thead><tr><th>Tight ends</th><th class="num">Tgt</th><th class="num">Rec</th><th class="num">Yds</th><th class="num">TD</th></tr></thead>
           <tbody>
-            <tr><td class="name"><span class="gm-pos TE">TE</span>Greg Dulcich</td><td class="num ">4.3</td><td class="num ">2.9</td><td class="num ">32</td><td class="num ">0.2</td></tr><tr><td class="name"><span class="gm-pos TE">TE</span>Will Kacmarek</td><td class="num ">2.2</td><td class="num ">1.5</td><td class="num ">12</td><td class="num ">0.1</td></tr>
+            <tr><td class="name"><span class="gm-pos TE">TE</span><button type="button" class="pl-open" data-pid="00-0037252" title="Season log, scoring timeline and the defense he faces">Greg Dulcich</button></td><td class="num ">4.3</td><td class="num ">2.9</td><td class="num ">32</td><td class="num ">0.2</td></tr><tr><td class="name"><span class="gm-pos TE">TE</span><button type="button" class="pl-open" data-pid="00-0041524" title="Season log, scoring timeline and the defense he faces">Will Kacmarek</button></td><td class="num ">2.2</td><td class="num ">1.5</td><td class="num ">12</td><td class="num ">0.1</td></tr>
             
             
           </tbody>
@@ -1031,7 +1125,7 @@
       <div class="gm-sub">Projected player lines <span class="flat">&middot; the team totals shared out by each man's role</span></div>
       
       <div class="gm-qb">
-        <div class="gm-who"><span class="gm-pos QB">QB</span><b>Geno Smith</b></div>
+        <div class="gm-who"><span class="gm-pos QB">QB</span><button type="button" class="pl-open" data-pid="00-0030565" title="Season log, scoring timeline and the defense he faces">Geno Smith</button></div>
         <div class="gm-line">
           <div><span>Att</span><b>30</b></div><div><span>Cmp</span><b>20</b></div><div><span>Yds</span><b>220</b></div><div><span>TD</span><b>1.4</b></div><div><span>INT</span><b>0.7</b></div>
           <div class="sep" aria-hidden="true"></div>
@@ -1044,9 +1138,9 @@
         <table class="gm-ptable">
           <thead><tr><th>Backs</th><th class="num">Car</th><th class="num">Ru yds</th><th class="num">Ru TD</th><th class="num">Tgt</th><th class="num">Rec</th><th class="num">Rec yds</th><th class="num">Rec TD</th></tr></thead>
           <tbody>
-            <tr><td class="name"><span class="gm-pos RB">RB</span>Braelon Allen</td><td class="num ">20</td><td class="num ">85</td><td class="num ">0.7</td><td class="num ">2.8</td><td class="num ">1.9</td><td class="num ">10</td><td class="num ">0.1</td></tr><tr><td class="name"><span class="gm-pos RB">RB</span>Isaiah Davis</td><td class="num ">3</td><td class="num ">8</td><td class="num ">0.1</td><td class="num ">0.8</td><td class="num ">0.5</td><td class="num ">5</td><td class="num zero">0</td></tr>
+            <tr><td class="name"><span class="gm-pos RB">RB</span><button type="button" class="pl-open" data-pid="00-0039794" title="Season log, scoring timeline and the defense he faces">Braelon Allen</button></td><td class="num ">20</td><td class="num ">85</td><td class="num ">0.7</td><td class="num ">2.8</td><td class="num ">1.9</td><td class="num ">10</td><td class="num ">0.1</td></tr><tr><td class="name"><span class="gm-pos RB">RB</span><button type="button" class="pl-open" data-pid="00-0039798" title="Season log, scoring timeline and the defense he faces">Isaiah Davis</button></td><td class="num ">3</td><td class="num ">8</td><td class="num ">0.1</td><td class="num ">0.8</td><td class="num ">0.5</td><td class="num ">5</td><td class="num zero">0</td></tr>
             
-            <tr class="out"><td class="name"><span class="gm-pos RB">RB</span>Breece Hall<span class="badge mute">O</span></td><td class="num flat" colspan="7">no projected volume</td></tr>
+            <tr class="out"><td class="name"><span class="gm-pos RB">RB</span><button type="button" class="pl-open" data-pid="00-0038120" title="Season log, scoring timeline and the defense he faces">Breece Hall</button><span class="badge mute">O</span></td><td class="num flat" colspan="7">no projected volume</td></tr>
           </tbody>
         </table>
         
@@ -1056,9 +1150,9 @@
         <table class="gm-ptable">
           <thead><tr><th>Receivers</th><th class="num">Tgt</th><th class="num">Rec</th><th class="num">Yds</th><th class="num">TD</th></tr></thead>
           <tbody>
-            <tr><td class="name"><span class="gm-pos WR">WR</span>Garrett Wilson</td><td class="num ">8.3</td><td class="num ">5.1</td><td class="num ">69</td><td class="num ">0.5</td></tr><tr><td class="name"><span class="gm-pos WR">WR</span>Isaiah Williams</td><td class="num ">2.7</td><td class="num ">1.9</td><td class="num ">37</td><td class="num ">0.2</td></tr><tr><td class="name"><span class="gm-pos WR">WR</span>Omar Cooper Jr.</td><td class="num ">2.4</td><td class="num ">1.7</td><td class="num ">32</td><td class="num ">0.2</td></tr><tr><td class="name"><span class="gm-pos WR">WR</span>Tim Patrick</td><td class="num ">1.7</td><td class="num ">1.1</td><td class="num ">12</td><td class="num ">0.1</td></tr>
+            <tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0037740" title="Season log, scoring timeline and the defense he faces">Garrett Wilson</button></td><td class="num ">8.3</td><td class="num ">5.1</td><td class="num ">69</td><td class="num ">0.5</td></tr><tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0039451" title="Season log, scoring timeline and the defense he faces">Isaiah Williams</button></td><td class="num ">2.7</td><td class="num ">1.9</td><td class="num ">37</td><td class="num ">0.2</td></tr><tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0041511" title="Season log, scoring timeline and the defense he faces">Omar Cooper Jr.</button></td><td class="num ">2.4</td><td class="num ">1.7</td><td class="num ">32</td><td class="num ">0.2</td></tr><tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0033375" title="Season log, scoring timeline and the defense he faces">Tim Patrick</button></td><td class="num ">1.7</td><td class="num ">1.1</td><td class="num ">12</td><td class="num ">0.1</td></tr>
             
-            <tr class="out"><td class="name"><span class="gm-pos WR">WR</span>Adonai Mitchell<span class="badge mute">O</span></td><td class="num flat" colspan="4">no projected volume</td></tr><tr class="out"><td class="name"><span class="gm-pos WR">WR</span>Arian Smith<span class="badge out">IR</span></td><td class="num flat" colspan="4">no projected volume</td></tr>
+            <tr class="out"><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0039890" title="Season log, scoring timeline and the defense he faces">Adonai Mitchell</button><span class="badge mute">O</span></td><td class="num flat" colspan="4">no projected volume</td></tr><tr class="out"><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0040582" title="Season log, scoring timeline and the defense he faces">Arian Smith</button><span class="badge out">IR</span></td><td class="num flat" colspan="4">no projected volume</td></tr>
           </tbody>
         </table>
         
@@ -1068,8 +1162,8 @@
         <table class="gm-ptable">
           <thead><tr><th>Tight ends</th><th class="num">Tgt</th><th class="num">Rec</th><th class="num">Yds</th><th class="num">TD</th></tr></thead>
           <tbody>
-            <tr><td class="name"><span class="gm-pos TE">TE</span>Mason Taylor</td><td class="num ">4.0</td><td class="num ">2.7</td><td class="num ">22</td><td class="num ">0.1</td></tr><tr><td class="name"><span class="gm-pos TE">TE</span>Kenyon Sadiq</td><td class="num ">4.0</td><td class="num ">2.7</td><td class="num ">16</td><td class="num ">0.1</td></tr>
-            <tr class="more" hidden><td class="name"><span class="gm-pos TE">TE</span>Jelani Woods</td><td class="num ">1.0</td><td class="num ">0.7</td><td class="num ">8</td><td class="num ">0.1</td></tr>
+            <tr><td class="name"><span class="gm-pos TE">TE</span><button type="button" class="pl-open" data-pid="00-0040736" title="Season log, scoring timeline and the defense he faces">Mason Taylor</button></td><td class="num ">4.0</td><td class="num ">2.7</td><td class="num ">22</td><td class="num ">0.1</td></tr><tr><td class="name"><span class="gm-pos TE">TE</span><button type="button" class="pl-open" data-pid="00-0041032" title="Season log, scoring timeline and the defense he faces">Kenyon Sadiq</button></td><td class="num ">4.0</td><td class="num ">2.7</td><td class="num ">16</td><td class="num ">0.1</td></tr>
+            <tr class="more" hidden><td class="name"><span class="gm-pos TE">TE</span><button type="button" class="pl-open" data-pid="00-0037755" title="Season log, scoring timeline and the defense he faces">Jelani Woods</button></td><td class="num ">1.0</td><td class="num ">0.7</td><td class="num ">8</td><td class="num ">0.1</td></tr>
             
           </tbody>
         </table>
@@ -1607,10 +1701,17 @@
   
 </section>
 
+<div class="pl-modal" id="pl-modal" hidden data-src="/w/7/g/2026_07_MIA_NYJ/players.html">
+  <div class="pl-back"></div>
+  <div class="pl-dialog" role="dialog" aria-modal="true" aria-label="Player">
+    <button type="button" class="pl-close" aria-label="Close">&times;</button>
+    <div class="pl-body"><div class="pl-loading">Loading&hellip;</div></div>
+  </div>
+</div>
 </main>
   <footer class="hfa-foot">
     <p><strong>Huffalytics</strong> publishes NFL stats, game projections, team EPA rankings and graded player prop plans priced against Kalshi, rebuilt every week from play-by-play data. <a href="/about/">How the engine works</a>.</p>
-    <p>Data as of Tue Oct 20, 1:25 PM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/data/week.json">week.json</a> · <a href="/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
+    <p>Data as of Tue Oct 20, 1:46 PM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/data/week.json">week.json</a> · <a href="/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
   </footer>
 </div>
 <script>
@@ -1686,6 +1787,31 @@
   });});
   document.addEventListener("click",function(e){ if(!e.target.closest("details.stat")) document.querySelectorAll("details.stat[open]").forEach(function(o){o.open=false;}); });
   document.querySelectorAll(".sheet-close").forEach(function(b){ b.addEventListener("click",function(e){ e.stopPropagation(); var d=b.closest("details"); if(d) d.open=false; }); });
+  // Player sheets: fetched once (players.html beside the page), the
+  // clicked one lifted into the modal. Escape, the X or the backdrop close it.
+  var modal=document.getElementById("pl-modal"), body=modal.querySelector(".pl-body"), sheets=null, loading=null;
+  function sheetsLoaded(){
+    if(sheets) return Promise.resolve(sheets);
+    if(!loading) loading=fetch(modal.dataset.src,{credentials:"same-origin"}).then(function(r){ if(!r.ok) throw new Error(r.status); return r.text(); }).then(function(html){ sheets=document.createElement("div"); sheets.innerHTML=html; return sheets; });
+    return loading;
+  }
+  function closeModal(){ modal.hidden=true; document.body.classList.remove("pl-lock"); body.innerHTML=""; }
+  function openPlayer(pid){
+    modal.hidden=false; document.body.classList.add("pl-lock");
+    body.innerHTML='<div class="pl-loading">Loading\u2026</div>';
+    sheetsLoaded().then(function(box){
+      var s=box.querySelector('.pl-sheet[data-pid="'+pid+'"]');
+      if(!s){ body.innerHTML='<div class="pl-loading">No sheet for this player yet.</div>'; return; }
+      body.innerHTML=""; var node=s.cloneNode(true); body.appendChild(node);
+      var pick=node.querySelector(".pl-pick");
+      if(pick) pick.addEventListener("change",function(){ node.querySelectorAll(".pl-tl").forEach(function(t){ t.hidden=t.dataset.key!==pick.value; }); });
+      modal.querySelector(".pl-dialog").scrollTop=0;
+    }).catch(function(){ body.innerHTML='<div class="pl-loading">The player sheets could not be loaded.</div>'; });
+  }
+  document.querySelectorAll(".pl-open").forEach(function(b){ b.addEventListener("click",function(e){ e.stopPropagation(); openPlayer(b.dataset.pid); }); });
+  modal.querySelector(".pl-close").addEventListener("click",closeModal);
+  modal.querySelector(".pl-back").addEventListener("click",closeModal);
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape"&&!modal.hidden) closeModal(); });
   document.querySelectorAll(".gm-more").forEach(function(b){
     b.addEventListener("click",function(){
       var open=b.classList.toggle("open");
