@@ -579,6 +579,7 @@
   .gm-lbl .stat-pop p.eng, .gm-lbl .stat-pop p.rk { color: var(--hfa-muted); font-size: 0.72rem; margin-bottom: 0.2rem; }
   .gm-lbl .stat-pop .sheet-close { display: none; }
   .gm-row:has(details.stat[open]) { position: relative; z-index: 31; }
+  .gm-matchup:has(details.stat[open]) { z-index: 40; }  /* the open card sits above the card below it */
   .gm-lbl small { display: block; font-size: 0.62rem; color: var(--hfa-muted); margin-top: 0.1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .gm-lanes { margin-top: 0.9rem; }
   .gm-lanes .lane-grid { gap: 0.5rem; }
