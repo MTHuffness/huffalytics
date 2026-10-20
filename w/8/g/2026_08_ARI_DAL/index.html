@@ -497,6 +497,7 @@
   .gm-chip i { font-style: normal; color: var(--hfa-muted); }
   .gm-chip b { color: var(--hfa-body); font-weight: 700; }
   .gm-chip.warn { border-color: rgba(255, 176, 32, 0.55); } .gm-chip.warn b { color: var(--hfa-warn); }
+  .gm-chip.final { border-color: var(--hfa-accent); background: var(--hfa-accent-soft); } .gm-chip.final b { color: var(--hfa-accent); }
 
   .gm-matchup { position: relative; overflow: visible; }  /* a stat description may hang below the last row */
   .gm-matchup::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: linear-gradient(90deg, var(--gm-team), transparent 60%); pointer-events: none; }
@@ -841,6 +842,7 @@
     <span class="gm-chip">Sunday Nov 1, 2026 <i>&middot; 11:00 AM Denver</i></span>
     <span class="gm-chip"><i>spread</i> <b>DAL -6.5</b></span>
     <span class="gm-chip"><i>total</i> <b>51.5</b></span>
+    
     <span class="gm-chip " title="Artificial turf (matrixturf). Passing is the same on grass and turf; rushing runs about 3.5% higher on turf (+3.7 yards a team) and a catch gains a tenth of a yard more after it. Points, the closing lines and the engine show no surface effect, so it is not an engine input."><i>field</i> <b>turf</b></span>
   </div>
 </div>
