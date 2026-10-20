@@ -917,6 +917,29 @@
     .gm-doc-arrow { display: none; }
     .gm-doc-flag { min-width: 4.4rem; font-size: 0.56rem; }
   }
+
+  /* Sport bubble beside the week: the football, and the other sports behind it */
+  .hfa-sport { position: relative; margin-left: auto; }
+  .hfa-sport + .hfa-wk { margin-left: 0; }
+  .hfa-sport > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.35rem; padding: 3px 0.7rem 3px 3px; border-radius: 999px; background: rgba(128, 128, 128, 0.14); }
+  .hfa-sport > summary::-webkit-details-marker { display: none; }
+  .hfa-sport .ball { display: inline-grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: var(--hfa-accent); font-size: 0.95rem; line-height: 1; box-shadow: 0 0 0 2px rgba(255, 31, 47, 0.22), 0 4px 10px -4px rgba(255, 31, 47, 0.8); }
+  .hfa-sport > summary .lbl { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; color: var(--hfa-body); }
+  .hfa-sport[open] > summary { background: var(--hfa-accent); } .hfa-sport[open] > summary .lbl { color: #fff; } .hfa-sport[open] > summary .ball { background: #fff; box-shadow: none; }
+  .hfa-sport-pop { position: absolute; left: 0; top: calc(100% + 0.45rem); z-index: 60; min-width: 11rem; display: flex; flex-direction: column; gap: 0.2rem; padding: 0.45rem; background: var(--hfa-card); border: var(--hfa-hairline); border-radius: 14px; box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.9); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+  .hfa-sport-pop > a, .hfa-sport-pop > span { display: flex; align-items: center; gap: 0.55rem; padding: 0.35rem 0.6rem 0.35rem 0.35rem; border-radius: 10px; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.04em; color: var(--hfa-body); text-decoration: none; }
+  .hfa-sport-pop > a.on { background: var(--hfa-accent-soft); }
+  .hfa-sport-pop > .off { color: var(--hfa-muted); cursor: default; }
+  .hfa-sport-pop > .off .ball { background: rgba(128, 128, 128, 0.25); box-shadow: none; filter: grayscale(1) opacity(0.7); }
+  .hfa-sport-pop i { margin-left: auto; font-style: normal; font-size: 0.56rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--hfa-muted); }
+  .hfa-sport-pop > a.on i { color: var(--hfa-accent); }
+  @media (max-width: 760px) {
+    .hfa-sport { margin-left: 0; order: 2; }
+    .hfa-sport > summary .lbl { display: none; }
+    .hfa-sport > summary { padding-right: 3px; }
+    .hfa-wk { order: 3; }
+    .hfa-nav { order: 5; }
+  }
   @media (prefers-reduced-motion: reduce) { #hfa-rain { opacity: calc(var(--hfa-rain) * 0.5); } }
 </style>
 
@@ -926,22 +949,31 @@
 <div class="hfa">
   <div class="hfa-top">
     <a class="hfa-brand" href="/" aria-label="Huffalytics home"><img class="logo" src="/icons/icon-192.png" width="34" height="34" alt="Huffalytics logo"><span class="words"><span class="mark"><i>Huff</i>alytics</span><span class="tag">GAME SCRIPTS // PROJECTIONS // GRADED</span></span></a>
+    <details class="hfa-sport" id="hfa-sport">
+      <summary title="Sport: NFL. More sports are on the way." aria-label="Sport"><span class="ball" aria-hidden="true">&#127944;</span><span class="lbl">NFL</span></summary>
+      <div class="hfa-sport-pop">
+        <a class="on" href="/nfl/"><span class="ball" aria-hidden="true">&#127944;</span>NFL<i>live</i></a>
+        <span class="off" title="Coming soon"><span class="ball" aria-hidden="true">&#127936;</span>NBA<i>soon</i></span>
+        <span class="off" title="Coming soon"><span class="ball" aria-hidden="true">&#9918;</span>MLB<i>soon</i></span>
+        <span class="off" title="Coming soon"><span class="ball" aria-hidden="true">&#127954;</span>NHL<i>soon</i></span>
+      </div>
+    </details>
     
     <div class="hfa-wk" aria-label="Week">
-      <a class="arrow" href="/w/6/" title="Week 6">&#8249;</a>
-      <label class="pick"><span class="lbl">WK</span><b>7</b><i>live</i><select id="hfa-wk"><option value="/w/1/">Week 1</option><option value="/w/2/">Week 2</option><option value="/w/3/">Week 3</option><option value="/w/4/">Week 4</option><option value="/w/5/">Week 5</option><option value="/w/6/">Week 6</option><option value="/" selected>Week 7 · in play</option><option value="/w/8/">Week 8 · next</option></select></label>
-      <a class="arrow" href="/w/8/" title="Week 8">&#8250;</a>
+      <a class="arrow" href="/nfl/w/6/" title="Week 6">&#8249;</a>
+      <label class="pick"><span class="lbl">WK</span><b>7</b><i>live</i><select id="hfa-wk"><option value="/nfl/w/1/">Week 1</option><option value="/nfl/w/2/">Week 2</option><option value="/nfl/w/3/">Week 3</option><option value="/nfl/w/4/">Week 4</option><option value="/nfl/w/5/">Week 5</option><option value="/nfl/w/6/">Week 6</option><option value="/nfl/" selected>Week 7 · in play</option><option value="/nfl/w/8/">Week 8 · next</option></select></label>
+      <a class="arrow" href="/nfl/w/8/" title="Week 8">&#8250;</a>
     </div>
     
     <nav class="hfa-nav" aria-label="Pages">
-      <a href="/" class="">This week</a>
-      <a href="/rankings/" class="">Rankings</a>
+      <a href="/nfl/" class="">This week</a>
+      <a href="/nfl/rankings/" class="">Rankings</a>
       <a href="/about/" class="active">About</a>
     </nav>
     <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
   </div>
   <main>
-<nav class="hfa-jump" aria-label="Sections"><a href="/#hero">Week</a><a href="/#slate">Slate</a><a href="/#leaders">Leaders</a><a href="/#outlook">Outlook</a><a href="/#streaming">Streaming</a><a href="/rankings/">Rankings</a><a href="/about/" class="active">About</a></nav>
+<nav class="hfa-jump" aria-label="Sections"><a href="/nfl/#hero">Week</a><a href="/nfl/#slate">Slate</a><a href="/nfl/#leaders">Leaders</a><a href="/nfl/#outlook">Outlook</a><a href="/nfl/#streaming">Streaming</a><a href="/nfl/rankings/">Rankings</a><a href="/about/" class="active">About</a></nav>
 <div class="hfa-card hfa-hero">
   <div class="hfa-head"><div class="hfa-eyebrow">About</div><h1>How Huffalytics works</h1>
   <p class="lede">Huffalytics is an NFL statistics and projection engine. It turns play-by-play data into team ratings, game projections and player prop plans, then grades every call against the box score and the prices on Kalshi. The site is rebuilt from the engine after each data sync, one page per week of the season.</p></div>
@@ -958,7 +990,7 @@
 <div class="about-grid">
   <section class="hfa-card" id="ratings"><div class="hfa-head"><div class="hfa-eyebrow">01 &middot; Ratings</div><h2>Team ratings and rankings</h2></div><div class="hfa-body prose">
     <p>Every team carries an offense rating and a defense rating in expected points added (EPA) per play, adjusted for the opponents faced. Each rating blends a preseason projection with the season's plays, weighted by how many plays have been run, so an early-season number leans on the prior and a late-season number on the games. Net rating is offense minus defense allowed.</p>
-    <p>The <a href="/rankings/">team rankings</a> show the same inputs for all 32 teams entering each week: EPA per play, success rate, explosive plays, pressure and sacks, third downs and the red zone, with week-over-week change.</p>
+    <p>The <a href="/nfl/rankings/">team rankings</a> show the same inputs for all 32 teams entering each week: EPA per play, success rate, explosive plays, pressure and sacks, third downs and the red zone, with week-over-week change.</p>
   </div></section>
 
   <section class="hfa-card" id="margin"><div class="hfa-head"><div class="hfa-eyebrow">02 &middot; The model margin</div><h2>From ratings to a number</h2></div><div class="hfa-body prose">
@@ -989,7 +1021,7 @@
 
   <section class="hfa-card" id="data"><div class="hfa-head"><div class="hfa-eyebrow">06 &middot; Data</div><h2>Where the numbers come from</h2></div><div class="hfa-body prose">
     <p>Scores, schedules, closing lines, rosters, injury reports and play-by-play come from the open <strong>nflverse</strong> project; the run-lane splits are its left / middle / right tags on every designed run. Live injury designations and depth charts come from <strong>Sleeper</strong>. Market prices are <strong>Kalshi's</strong> public API. Weather is a forecast feed read in the hours before kickoff. Team logos are served by ESPN.</p>
-    <p>The engine, the projections, the plans and every grade are Huffalytics' own. The numbers behind each page are published as JSON beside it, for example <a href="/data/week.json">week.json</a> and <a href="/data/rankings.json">rankings.json</a>.</p>
+    <p>The engine, the projections, the plans and every grade are Huffalytics' own. The numbers behind each page are published as JSON beside it, for example <a href="/nfl/data/week.json">week.json</a> and <a href="/nfl/data/rankings.json">rankings.json</a>.</p>
   </div></section>
 </div>
 
@@ -1016,7 +1048,7 @@
 </main>
   <footer class="hfa-foot">
     <p><strong>Huffalytics</strong> publishes NFL stats, game projections, team EPA rankings and graded player prop plans priced against Kalshi, rebuilt every week from play-by-play data. <a href="/about/">How the engine works</a>.</p>
-    <p>Data as of Tue Oct 20, 1:46 PM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/data/week.json">week.json</a> · <a href="/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
+    <p>Data as of Tue Oct 20, 1:46 PM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/nfl/data/week.json">week.json</a> · <a href="/nfl/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
   </footer>
 </div>
 <script>
@@ -1041,6 +1073,7 @@
   window.addEventListener("hashchange",function(){ if(app.matches) pick(location.hash.replace("#",""),false); });
   app.addEventListener?app.addEventListener("change",mode):app.addListener(mode); mode();
   var wk=document.getElementById("hfa-wk"); if(wk) wk.addEventListener("change",function(){ location.href=wk.value; });
+  var sp=document.getElementById("hfa-sport"); if(sp) document.addEventListener("click",function(e){ if(sp.open&&!e.target.closest("#hfa-sport")) sp.open=false; });
   var b=document.getElementById("hfa-theme");
   b.addEventListener("click",function(){
     var r=document.documentElement, next=r.dataset.theme==="light"?"dark":"light";
