@@ -566,7 +566,17 @@
   .gm-bar.styl i { background: rgba(128, 128, 128, 0.5); }
   .gm-cell.off .gm-bar { transform: scaleX(-1); }
   .gm-lbl { text-align: center; min-width: 0; }
-  .gm-lbl span { font-size: 0.76rem; font-weight: 600; color: var(--hfa-body); border-bottom: 1px dotted rgba(128, 128, 128, 0.5); cursor: help; }
+  .gm-lbl details.stat { position: relative; display: inline-block; }
+  .gm-lbl details.stat > summary { list-style: none; font-size: 0.76rem; font-weight: 600; color: var(--hfa-body); border-bottom: 1px dotted rgba(128, 128, 128, 0.6); cursor: pointer; white-space: nowrap; }
+  .gm-lbl details.stat > summary::-webkit-details-marker { display: none; }
+  .gm-lbl details.stat > summary:hover, .gm-lbl details.stat[open] > summary { color: var(--hfa-accent); border-bottom-color: var(--hfa-accent); }
+  .gm-lbl .stat-pop { position: absolute; left: 50%; top: calc(100% + 0.45rem); transform: translateX(-50%); z-index: 30; width: min(22rem, calc(100vw - 2rem)); text-align: left; background: var(--hfa-card); border: var(--hfa-hairline); border-radius: 12px; box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.9); padding: 0.65rem 0.85rem 0.6rem; font-size: 0.8rem; line-height: 1.45; font-weight: 400; white-space: normal; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+  .gm-lbl .stat-pop::before { content: ""; position: absolute; left: 50%; top: -6px; width: 10px; height: 10px; transform: translateX(-50%) rotate(45deg); background: var(--hfa-card); border-left: var(--hfa-hairline); border-top: var(--hfa-hairline); }
+  .gm-lbl .stat-pop b { display: block; color: var(--hfa-accent); font-size: 0.86rem; margin-bottom: 0.2rem; }
+  .gm-lbl .stat-pop p { margin: 0 0 0.4rem; color: var(--hfa-body); text-align: left; }
+  .gm-lbl .stat-pop p.eng, .gm-lbl .stat-pop p.rk { color: var(--hfa-muted); font-size: 0.72rem; margin-bottom: 0.2rem; }
+  .gm-lbl .stat-pop .sheet-close { display: none; }
+  .gm-row:has(details.stat[open]) { position: relative; z-index: 31; }
   .gm-lbl small { display: block; font-size: 0.62rem; color: var(--hfa-muted); margin-top: 0.1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .gm-lanes { margin-top: 0.9rem; }
   .gm-lanes .lane-grid { gap: 0.5rem; }
@@ -657,7 +667,13 @@
     .gm-cols, .gm-row { grid-template-columns: minmax(0, 1fr) 6.4rem minmax(0, 1fr); gap: 0 0.35rem; }
     .gm-cols { font-size: 0.6rem; } .gm-cols img { display: none; }
     .gm-cell b { font-size: 0.88rem; } .gm-cell .rk { font-size: 0.58rem; padding: 0.06rem 0.3rem; }
-    .gm-lbl span { font-size: 0.68rem; } .gm-lbl small { font-size: 0.56rem; }
+    .gm-lbl details.stat > summary { font-size: 0.68rem; } .gm-lbl small { font-size: 0.56rem; }
+    .gm-lbl details.stat { position: static; }
+    .gm-lbl details.stat[open]::before { content: ""; position: fixed; inset: 0; z-index: 45; background: rgba(0, 0, 0, 0.6); }
+    .gm-lbl .stat-pop { position: fixed; left: 0; right: 0; bottom: 0; top: auto; transform: none; width: auto; z-index: 50; border-radius: 18px 18px 0 0; padding: 1rem 1rem 1.5rem; font-size: 0.9rem; box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.6); }
+    .gm-lbl .stat-pop::before { position: static; display: block; width: 2.4rem; height: 4px; border: 0; border-radius: 2px; background: rgba(128, 128, 128, 0.4); margin: -0.3rem auto 0.8rem; transform: none; }
+    .gm-lbl .stat-pop .sheet-close { display: grid; }
+    .gm-lbl .stat-pop b { padding-right: 2.4rem; }
     .gm-fields { padding: 0.3rem 16px 0.5rem; }
     /* The field keeps its width on a phone and scrolls sideways: at 358px the names pile up */
     .gm-fwrap { overflow-x: auto; scrollbar-width: none; }
@@ -788,61 +804,61 @@
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk ">#16</i><b>-0.017</b><div class="gm-bar "><i style="width: 52%"></i></div></div>
-          <div class="gm-lbl"><span title="Expected points added per play, garbage time excluded: the one-number read of an offense, and of what a defense allows.">EPA / play</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">EPA / play</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>EPA / play</b><p>Expected points added per play, garbage time excluded: the one-number read of an offense, and of what a defense allows.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>+0.126</b><i class="rk bad">#30</i><div class="gm-bar bad"><i style="width: 6%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk bad">#23</i><b>40.2%</b><div class="gm-bar bad"><i style="width: 29%"></i></div></div>
-          <div class="gm-lbl"><span title="Share of plays that gain enough to stay on schedule.">Success rate</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Success rate</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Success rate</b><p>Share of plays that gain enough to stay on schedule.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>47.9%</b><i class="rk bad">#28</i><div class="gm-bar bad"><i style="width: 13%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk bad">#23</i><b>21.2</b><div class="gm-bar bad"><i style="width: 29%"></i></div></div>
-          <div class="gm-lbl"><span title="Points scored per game against points allowed per game.">Points / game</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Points / game</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Points / game</b><p>Points scored per game against points allowed per game.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>29.6</b><i class="rk bad">#30</i><div class="gm-bar bad"><i style="width: 6%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk ">#22</i><b>60.5</b><div class="gm-bar  styl"><i style="width: 38%"></i></div></div>
-          <div class="gm-lbl"><span title="Offensive snaps per game, a pace number: more plays means more volume to go around, not a better team.">Plays / game</span><small title="The blended per-game value the projection used; lg = league average">engine 63.4 &middot; lg 60.8</small></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Plays / game</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Plays / game</b><p>Offensive snaps per game, a pace number: more plays means more volume to go around, not a better team.</p><p class="eng">Engine 63.4: the blended per-game value the projection used for this game; the league average is 60.8.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details><small title="The blended per-game value the projection used; lg = league average">engine 63.4 &middot; lg 60.8</small></div>
           <div class="gm-cell def"><b>70.6</b><i class="rk ">#1</i><div class="gm-bar  styl"><i style="width: 98%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk ">#3</i><b>66%</b><div class="gm-bar  styl"><i style="width: 92%"></i></div></div>
-          <div class="gm-lbl"><span title="Share of snaps that are dropbacks: how the volume splits between the pass and the run.">Pass rate</span><small title="The blended per-game value the projection used; lg = league average">engine 61% &middot; lg 56%</small></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Pass rate</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Pass rate</b><p>Share of snaps that are dropbacks: how the volume splits between the pass and the run.</p><p class="eng">Engine 61%: the blended per-game value the projection used for this game; the league average is 56%.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details><small title="The blended per-game value the projection used; lg = league average">engine 61% &middot; lg 56%</small></div>
           <div class="gm-cell def"><b>64%</b><i class="rk ">#2</i><div class="gm-bar  styl"><i style="width: 95%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk ">#13</i><b>8.4%</b><div class="gm-bar "><i style="width: 61%"></i></div></div>
-          <div class="gm-lbl"><span title="Share of plays that go for a chunk: 20+ passing, 10+ rushing.">Explosive plays</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Explosive plays</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Explosive plays</b><p>Share of plays that go for a chunk: 20+ passing, 10+ rushing.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>10.2%</b><i class="rk bad">#31</i><div class="gm-bar bad"><i style="width: 6%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk bad">#26</i><b>32.8%</b><div class="gm-bar bad"><i style="width: 19%"></i></div></div>
-          <div class="gm-lbl"><span title="The offense&#x27;s third-down conversion rate against the defense&#x27;s third-down stop rate.">Third down</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Third down</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Third down</b><p>The offense&#x27;s third-down conversion rate against the defense&#x27;s third-down stop rate.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>52.8%</b><i class="rk bad">#30</i><div class="gm-bar bad"><i style="width: 6%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk ">#20</i><b>56%</b><div class="gm-bar "><i style="width: 41%"></i></div></div>
-          <div class="gm-lbl"><span title="Touchdowns per trip inside the 20: finishing drives against the defense that bends or breaks.">Red-zone TD rate</span><small title="The blended per-game value the projection used; lg = league average">engine 61% &middot; lg 58%</small></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Red-zone TD rate</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Red-zone TD rate</b><p>Touchdowns per trip inside the 20: finishing drives against the defense that bends or breaks.</p><p class="eng">Engine 61%: the blended per-game value the projection used for this game; the league average is 58%.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details><small title="The blended per-game value the projection used; lg = league average">engine 61% &middot; lg 58%</small></div>
           <div class="gm-cell def"><b>75%</b><i class="rk bad">#28</i><div class="gm-bar bad"><i style="width: 87%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk ">#18</i><b>1.00</b><div class="gm-bar "><i style="width: 45%"></i></div></div>
-          <div class="gm-lbl"><span title="Turnovers the offense gives away per game against the ones the defense takes.">Giveaways / game</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Giveaways / game</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Giveaways / game</b><p>Turnovers the offense gives away per game against the ones the defense takes.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>0.60</b><i class="rk bad">#25</i><div class="gm-bar bad"><i style="width: 23%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk bad">#30</i><b>5.0</b><div class="gm-bar bad"><i style="width: 6%"></i></div></div>
-          <div class="gm-lbl"><span title="Accepted penalties per game committed by each unit.">Flags / game</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Flags / game</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Flags / game</b><p>Accepted penalties per game committed by each unit.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>1.2</b><i class="rk good">#1</i><div class="gm-bar good"><i style="width: 100%"></i></div></div>
         </div>
         
@@ -854,31 +870,31 @@
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk bad">#31</i><b>-0.299</b><div class="gm-bar bad"><i style="width: 6%"></i></div></div>
-          <div class="gm-lbl"><span title="Expected points added per designed run, and per run allowed.">Rush EPA / carry</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Rush EPA / carry</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Rush EPA / carry</b><p>Expected points added per designed run, and per run allowed.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>-0.078</b><i class="rk ">#19</i><div class="gm-bar "><i style="width: 42%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk bad">#32</i><b>59.8</b><div class="gm-bar bad"><i style="width: 6%"></i></div></div>
-          <div class="gm-lbl"><span title="Rushing yards per game, gained and allowed.">Rush yards / game</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Rush yards / game</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Rush yards / game</b><p>Rushing yards per game, gained and allowed.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>107.0</b><i class="rk ">#15</i><div class="gm-bar "><i style="width: 55%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk bad">#32</i><b>2.87</b><div class="gm-bar bad"><i style="width: 10%"></i></div></div>
-          <div class="gm-lbl"><span title="Rushing yards per carry: the offense&#x27;s own against what the defense gives up, blended into the projection.">Yards / carry</span><small title="The blended per-game value the projection used; lg = league average">engine 3.69 &middot; lg 4.36</small></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Yards / carry</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Yards / carry</b><p>Rushing yards per carry: the offense&#x27;s own against what the defense gives up, blended into the projection.</p><p class="eng">Engine 3.69: the blended per-game value the projection used for this game; the league average is 4.36.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details><small title="The blended per-game value the projection used; lg = league average">engine 3.69 &middot; lg 4.36</small></div>
           <div class="gm-cell def"><b>4.25</b><i class="rk ">#20</i><div class="gm-bar "><i style="width: 64%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk bad">#31</i><b>1.84</b><div class="gm-bar bad"><i style="width: 6%"></i></div></div>
-          <div class="gm-lbl"><span title="Yards before a defender touches the runner, per carry: the line-and-scheme share of the run game (PFR charting). Feeds each back&#x27;s efficiency tilt.">Yards before contact</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Yards before contact</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Yards before contact</b><p>Yards before a defender touches the runner, per carry: the line-and-scheme share of the run game (PFR charting). Feeds each back&#x27;s efficiency tilt.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>2.91</b><i class="rk bad">#24</i><div class="gm-bar bad"><i style="width: 26%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk bad">#27</i><b>43.0</b><div class="gm-bar bad"><i style="width: 16%"></i></div></div>
-          <div class="gm-lbl"><span title="A composite of the line&#x27;s pass protection and run blocking, offense only.">O-line grade</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">O-line grade</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>O-line grade</b><p>A composite of the line&#x27;s pass protection and run blocking, offense only.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><span class="flat na">offense only</span></div>
         </div>
         
@@ -921,61 +937,61 @@
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk ">#15</i><b>+0.126</b><div class="gm-bar "><i style="width: 55%"></i></div></div>
-          <div class="gm-lbl"><span title="Expected points added per dropback, and per dropback allowed.">Pass EPA / play</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Pass EPA / play</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Pass EPA / play</b><p>Expected points added per dropback, and per dropback allowed.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>+0.221</b><i class="rk bad">#29</i><div class="gm-bar bad"><i style="width: 10%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk good">#5</i><b>280.7</b><div class="gm-bar good"><i style="width: 87%"></i></div></div>
-          <div class="gm-lbl"><span title="Passing yards per game, gained and allowed.">Pass yards / game</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Pass yards / game</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Pass yards / game</b><p>Passing yards per game, gained and allowed.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>321.4</b><i class="rk bad">#32</i><div class="gm-bar bad"><i style="width: 6%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk ">#12</i><b>7.45</b><div class="gm-bar "><i style="width: 67%"></i></div></div>
-          <div class="gm-lbl"><span title="Passing yards per attempt, blended into the projection.">Yards / attempt</span><small title="The blended per-game value the projection used; lg = league average">engine 7.32 &middot; lg 7.02</small></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Yards / attempt</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Yards / attempt</b><p>Passing yards per attempt, blended into the projection.</p><p class="eng">Engine 7.32: the blended per-game value the projection used for this game; the league average is 7.02.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details><small title="The blended per-game value the projection used; lg = league average">engine 7.32 &middot; lg 7.02</small></div>
           <div class="gm-cell def"><b>7.54</b><i class="rk ">#23</i><div class="gm-bar "><i style="width: 72%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk bad">#27</i><b>59.7%</b><div class="gm-bar bad"><i style="width: 16%"></i></div></div>
-          <div class="gm-lbl"><span title="Completions per attempt thrown, and per attempt faced.">Completion rate</span><small title="The blended per-game value the projection used; lg = league average">engine 61% &middot; lg 64%</small></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Completion rate</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Completion rate</b><p>Completions per attempt thrown, and per attempt faced.</p><p class="eng">Engine 61%: the blended per-game value the projection used for this game; the league average is 64%.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details><small title="The blended per-game value the projection used; lg = league average">engine 61% &middot; lg 64%</small></div>
           <div class="gm-cell def"><b>68.1%</b><i class="rk bad">#29</i><div class="gm-bar bad"><i style="width: 10%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk ">#15</i><b>91.8</b><div class="gm-bar "><i style="width: 55%"></i></div></div>
-          <div class="gm-lbl"><span title="The quarterback rating the offense posts against the one the defense allows.">Passer rating</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Passer rating</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Passer rating</b><p>The quarterback rating the offense posts against the one the defense allows.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>106.3</b><i class="rk bad">#29</i><div class="gm-bar bad"><i style="width: 10%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk ">#16</i><b>6.2%</b><div class="gm-bar "><i style="width: 53%"></i></div></div>
-          <div class="gm-lbl"><span title="Sacks per dropback: taken by the offense, generated by the defense.">Sack rate</span><small title="The blended per-game value the projection used; lg = league average">engine 7.0% &middot; lg 6.4%</small></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Sack rate</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Sack rate</b><p>Sacks per dropback: taken by the offense, generated by the defense.</p><p class="eng">Engine 7.0%: the blended per-game value the projection used for this game; the league average is 6.4%.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details><small title="The blended per-game value the projection used; lg = league average">engine 7.0% &middot; lg 6.4%</small></div>
           <div class="gm-cell def"><b>8.1%</b><i class="rk good">#7</i><div class="gm-bar good"><i style="width: 81%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk bad">#26</i><b>17.9%</b><div class="gm-bar bad"><i style="width: 81%"></i></div></div>
-          <div class="gm-lbl"><span title="Sacks or quarterback hits per dropback, the play-by-play pressure proxy.">Pressure rate</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Pressure rate</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Pressure rate</b><p>Sacks or quarterback hits per dropback, the play-by-play pressure proxy.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>18.5%</b><i class="rk ">#9</i><div class="gm-bar "><i style="width: 75%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk ">#12</i><b>1.8%</b><div class="gm-bar "><i style="width: 41%"></i></div></div>
-          <div class="gm-lbl"><span title="Interceptions per attempt: thrown by the offense, forced by the defense.">INT rate</span><small title="The blended per-game value the projection used; lg = league average">engine 2.0% &middot; lg 2.2%</small></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">INT rate</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>INT rate</b><p>Interceptions per attempt: thrown by the offense, forced by the defense.</p><p class="eng">Engine 2.0%: the blended per-game value the projection used for this game; the league average is 2.2%.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details><small title="The blended per-game value the projection used; lg = league average">engine 2.0% &middot; lg 2.2%</small></div>
           <div class="gm-cell def"><b>1.4%</b><i class="rk ">#23</i><div class="gm-bar "><i style="width: 36%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk good">#3</i><b>12.5</b><div class="gm-bar good"><i style="width: 94%"></i></div></div>
-          <div class="gm-lbl"><span title="Receiving yards per reception, offense only: where the ball goes once it is caught.">Yards / catch</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Yards / catch</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Yards / catch</b><p>Receiving yards per reception, offense only: where the ball goes once it is caught.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><span class="flat na">offense only</span></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk good">#1</i><b>22.5</b><div class="gm-bar good"><i style="width: 100%"></i></div></div>
-          <div class="gm-lbl"><span title="Pass-interference yards per game: drawn by the receivers, committed by the secondary.">DPI yards / game</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">DPI yards / game</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>DPI yards / game</b><p>Pass-interference yards per game: drawn by the receivers, committed by the secondary.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>7.6</b><i class="rk ">#16</i><div class="gm-bar "><i style="width: 52%"></i></div></div>
         </div>
         
@@ -1054,61 +1070,61 @@
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk good">#6</i><b>+0.116</b><div class="gm-bar good"><i style="width: 84%"></i></div></div>
-          <div class="gm-lbl"><span title="Expected points added per play, garbage time excluded: the one-number read of an offense, and of what a defense allows.">EPA / play</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">EPA / play</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>EPA / play</b><p>Expected points added per play, garbage time excluded: the one-number read of an offense, and of what a defense allows.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>-0.040</b><i class="rk ">#11</i><div class="gm-bar "><i style="width: 68%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk good">#2</i><b>49.8%</b><div class="gm-bar good"><i style="width: 97%"></i></div></div>
-          <div class="gm-lbl"><span title="Share of plays that gain enough to stay on schedule.">Success rate</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Success rate</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Success rate</b><p>Share of plays that gain enough to stay on schedule.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>44.1%</b><i class="rk ">#20</i><div class="gm-bar "><i style="width: 39%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk good">#2</i><b>32.8</b><div class="gm-bar good"><i style="width: 97%"></i></div></div>
-          <div class="gm-lbl"><span title="Points scored per game against points allowed per game.">Points / game</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Points / game</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Points / game</b><p>Points scored per game against points allowed per game.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>20.8</b><i class="rk good">#10</i><div class="gm-bar good"><i style="width: 71%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk ">#7</i><b>66.0</b><div class="gm-bar  styl"><i style="width: 78%"></i></div></div>
-          <div class="gm-lbl"><span title="Offensive snaps per game, a pace number: more plays means more volume to go around, not a better team.">Plays / game</span><small title="The blended per-game value the projection used; lg = league average">engine 63.8 &middot; lg 60.8</small></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Plays / game</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Plays / game</b><p>Offensive snaps per game, a pace number: more plays means more volume to go around, not a better team.</p><p class="eng">Engine 63.8: the blended per-game value the projection used for this game; the league average is 60.8.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details><small title="The blended per-game value the projection used; lg = league average">engine 63.8 &middot; lg 60.8</small></div>
           <div class="gm-cell def"><b>66.0</b><i class="rk ">#6</i><div class="gm-bar  styl"><i style="width: 84%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk ">#11</i><b>61%</b><div class="gm-bar  styl"><i style="width: 70%"></i></div></div>
-          <div class="gm-lbl"><span title="Share of snaps that are dropbacks: how the volume splits between the pass and the run.">Pass rate</span><small title="The blended per-game value the projection used; lg = league average">engine 57% &middot; lg 56%</small></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Pass rate</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Pass rate</b><p>Share of snaps that are dropbacks: how the volume splits between the pass and the run.</p><p class="eng">Engine 57%: the blended per-game value the projection used for this game; the league average is 56%.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details><small title="The blended per-game value the projection used; lg = league average">engine 57% &middot; lg 56%</small></div>
           <div class="gm-cell def"><b>57%</b><i class="rk ">#18</i><div class="gm-bar  styl"><i style="width: 50%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk good">#7</i><b>9.3%</b><div class="gm-bar good"><i style="width: 81%"></i></div></div>
-          <div class="gm-lbl"><span title="Share of plays that go for a chunk: 20+ passing, 10+ rushing.">Explosive plays</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Explosive plays</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Explosive plays</b><p>Share of plays that go for a chunk: 20+ passing, 10+ rushing.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>5.0%</b><i class="rk good">#3</i><div class="gm-bar good"><i style="width: 94%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk bad">#29</i><b>31.7%</b><div class="gm-bar bad"><i style="width: 10%"></i></div></div>
-          <div class="gm-lbl"><span title="The offense&#x27;s third-down conversion rate against the defense&#x27;s third-down stop rate.">Third down</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Third down</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Third down</b><p>The offense&#x27;s third-down conversion rate against the defense&#x27;s third-down stop rate.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>59.7%</b><i class="rk ">#21</i><div class="gm-bar "><i style="width: 35%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk good">#2</i><b>76%</b><div class="gm-bar good"><i style="width: 92%"></i></div></div>
-          <div class="gm-lbl"><span title="Touchdowns per trip inside the 20: finishing drives against the defense that bends or breaks.">Red-zone TD rate</span><small title="The blended per-game value the projection used; lg = league average">engine 65% &middot; lg 58%</small></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Red-zone TD rate</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Red-zone TD rate</b><p>Touchdowns per trip inside the 20: finishing drives against the defense that bends or breaks.</p><p class="eng">Engine 65%: the blended per-game value the projection used for this game; the league average is 58%.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details><small title="The blended per-game value the projection used; lg = league average">engine 65% &middot; lg 58%</small></div>
           <div class="gm-cell def"><b>71%</b><i class="rk bad">#25</i><div class="gm-bar bad"><i style="width: 78%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk good">#1</i><b>0.20</b><div class="gm-bar good"><i style="width: 100%"></i></div></div>
-          <div class="gm-lbl"><span title="Turnovers the offense gives away per game against the ones the defense takes.">Giveaways / game</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Giveaways / game</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Giveaways / game</b><p>Turnovers the offense gives away per game against the ones the defense takes.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>1.33</b><i class="rk good">#7</i><div class="gm-bar good"><i style="width: 81%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk good">#7</i><b>3.0</b><div class="gm-bar good"><i style="width: 81%"></i></div></div>
-          <div class="gm-lbl"><span title="Accepted penalties per game committed by each unit.">Flags / game</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Flags / game</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Flags / game</b><p>Accepted penalties per game committed by each unit.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>3.3</b><i class="rk bad">#26</i><div class="gm-bar bad"><i style="width: 19%"></i></div></div>
         </div>
         
@@ -1120,31 +1136,31 @@
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk good">#7</i><b>-0.024</b><div class="gm-bar good"><i style="width: 81%"></i></div></div>
-          <div class="gm-lbl"><span title="Expected points added per designed run, and per run allowed.">Rush EPA / carry</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Rush EPA / carry</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Rush EPA / carry</b><p>Expected points added per designed run, and per run allowed.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>-0.032</b><i class="rk bad">#28</i><div class="gm-bar bad"><i style="width: 13%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk ">#13</i><b>114.2</b><div class="gm-bar "><i style="width: 61%"></i></div></div>
-          <div class="gm-lbl"><span title="Rushing yards per game, gained and allowed.">Rush yards / game</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Rush yards / game</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Rush yards / game</b><p>Rushing yards per game, gained and allowed.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>114.3</b><i class="rk ">#18</i><div class="gm-bar "><i style="width: 45%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk ">#12</i><b>4.39</b><div class="gm-bar "><i style="width: 67%"></i></div></div>
-          <div class="gm-lbl"><span title="Rushing yards per carry: the offense&#x27;s own against what the defense gives up, blended into the projection.">Yards / carry</span><small title="The blended per-game value the projection used; lg = league average">engine 4.06 &middot; lg 4.36</small></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Yards / carry</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Yards / carry</b><p>Rushing yards per carry: the offense&#x27;s own against what the defense gives up, blended into the projection.</p><p class="eng">Engine 4.06: the blended per-game value the projection used for this game; the league average is 4.36.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details><small title="The blended per-game value the projection used; lg = league average">engine 4.06 &middot; lg 4.36</small></div>
           <div class="gm-cell def"><b>3.99</b><i class="rk ">#14</i><div class="gm-bar "><i style="width: 47%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk good">#4</i><b>3.08</b><div class="gm-bar good"><i style="width: 90%"></i></div></div>
-          <div class="gm-lbl"><span title="Yards before a defender touches the runner, per carry: the line-and-scheme share of the run game (PFR charting). Feeds each back&#x27;s efficiency tilt.">Yards before contact</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Yards before contact</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Yards before contact</b><p>Yards before a defender touches the runner, per carry: the line-and-scheme share of the run game (PFR charting). Feeds each back&#x27;s efficiency tilt.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>2.32</b><i class="rk ">#17</i><div class="gm-bar "><i style="width: 48%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk good">#10</i><b>54.7</b><div class="gm-bar good"><i style="width: 71%"></i></div></div>
-          <div class="gm-lbl"><span title="A composite of the line&#x27;s pass protection and run blocking, offense only.">O-line grade</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">O-line grade</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>O-line grade</b><p>A composite of the line&#x27;s pass protection and run blocking, offense only.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><span class="flat na">offense only</span></div>
         </div>
         
@@ -1187,61 +1203,61 @@
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk good">#7</i><b>+0.204</b><div class="gm-bar good"><i style="width: 81%"></i></div></div>
-          <div class="gm-lbl"><span title="Expected points added per dropback, and per dropback allowed.">Pass EPA / play</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Pass EPA / play</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Pass EPA / play</b><p>Expected points added per dropback, and per dropback allowed.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>-0.045</b><i class="rk good">#6</i><div class="gm-bar good"><i style="width: 84%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk good">#3</i><b>297.0</b><div class="gm-bar good"><i style="width: 94%"></i></div></div>
-          <div class="gm-lbl"><span title="Passing yards per game, gained and allowed.">Pass yards / game</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Pass yards / game</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Pass yards / game</b><p>Passing yards per game, gained and allowed.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>209.2</b><i class="rk good">#6</i><div class="gm-bar good"><i style="width: 84%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk good">#8</i><b>7.77</b><div class="gm-bar good"><i style="width: 78%"></i></div></div>
-          <div class="gm-lbl"><span title="Passing yards per attempt, blended into the projection.">Yards / attempt</span><small title="The blended per-game value the projection used; lg = league average">engine 6.91 &middot; lg 7.02</small></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Yards / attempt</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Yards / attempt</b><p>Passing yards per attempt, blended into the projection.</p><p class="eng">Engine 6.91: the blended per-game value the projection used for this game; the league average is 7.02.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details><small title="The blended per-game value the projection used; lg = league average">engine 6.91 &middot; lg 7.02</small></div>
           <div class="gm-cell def"><b>5.95</b><i class="rk good">#3</i><div class="gm-bar good"><i style="width: 16%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk good">#6</i><b>67.0%</b><div class="gm-bar good"><i style="width: 84%"></i></div></div>
-          <div class="gm-lbl"><span title="Completions per attempt thrown, and per attempt faced.">Completion rate</span><small title="The blended per-game value the projection used; lg = league average">engine 66% &middot; lg 64%</small></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Completion rate</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Completion rate</b><p>Completions per attempt thrown, and per attempt faced.</p><p class="eng">Engine 66%: the blended per-game value the projection used for this game; the league average is 64%.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details><small title="The blended per-game value the projection used; lg = league average">engine 66% &middot; lg 64%</small></div>
           <div class="gm-cell def"><b>64.5%</b><i class="rk ">#16</i><div class="gm-bar "><i style="width: 52%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk good">#2</i><b>111.3</b><div class="gm-bar good"><i style="width: 97%"></i></div></div>
-          <div class="gm-lbl"><span title="The quarterback rating the offense posts against the one the defense allows.">Passer rating</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Passer rating</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Passer rating</b><p>The quarterback rating the offense posts against the one the defense allows.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>73.9</b><i class="rk good">#3</i><div class="gm-bar good"><i style="width: 94%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk ">#15</i><b>6.0%</b><div class="gm-bar "><i style="width: 50%"></i></div></div>
-          <div class="gm-lbl"><span title="Sacks per dropback: taken by the offense, generated by the defense.">Sack rate</span><small title="The blended per-game value the projection used; lg = league average">engine 6.4% &middot; lg 6.4%</small></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Sack rate</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Sack rate</b><p>Sacks per dropback: taken by the offense, generated by the defense.</p><p class="eng">Engine 6.4%: the blended per-game value the projection used for this game; the league average is 6.4%.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details><small title="The blended per-game value the projection used; lg = league average">engine 6.4% &middot; lg 6.4%</small></div>
           <div class="gm-cell def"><b>6.8%</b><i class="rk ">#14</i><div class="gm-bar "><i style="width: 61%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk ">#15</i><b>15.3%</b><div class="gm-bar "><i style="width: 50%"></i></div></div>
-          <div class="gm-lbl"><span title="Sacks or quarterback hits per dropback, the play-by-play pressure proxy.">Pressure rate</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Pressure rate</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Pressure rate</b><p>Sacks or quarterback hits per dropback, the play-by-play pressure proxy.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>16.1%</b><i class="rk ">#14</i><div class="gm-bar "><i style="width: 61%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk good">#1</i><b>0.0%</b><div class="gm-bar good"><i style="width: 10%"></i></div></div>
-          <div class="gm-lbl"><span title="Interceptions per attempt: thrown by the offense, forced by the defense.">INT rate</span><small title="The blended per-game value the projection used; lg = league average">engine 2.4% &middot; lg 2.2%</small></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">INT rate</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>INT rate</b><p>Interceptions per attempt: thrown by the offense, forced by the defense.</p><p class="eng">Engine 2.4%: the blended per-game value the projection used for this game; the league average is 2.2%.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details><small title="The blended per-game value the projection used; lg = league average">engine 2.4% &middot; lg 2.2%</small></div>
           <div class="gm-cell def"><b>4.3%</b><i class="rk good">#1</i><div class="gm-bar good"><i style="width: 98%"></i></div></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk ">#13</i><b>11.6</b><div class="gm-bar "><i style="width: 61%"></i></div></div>
-          <div class="gm-lbl"><span title="Receiving yards per reception, offense only: where the ball goes once it is caught.">Yards / catch</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Yards / catch</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Yards / catch</b><p>Receiving yards per reception, offense only: where the ball goes once it is caught.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><span class="flat na">offense only</span></div>
         </div>
         
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk bad">#27</i><b>1.0</b><div class="gm-bar bad"><i style="width: 16%"></i></div></div>
-          <div class="gm-lbl"><span title="Pass-interference yards per game: drawn by the receivers, committed by the secondary.">DPI yards / game</span></div>
+          <div class="gm-lbl"><details class="stat"><summary title="What this stat is">DPI yards / game</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>DPI yards / game</b><p>Pass-interference yards per game: drawn by the receivers, committed by the secondary.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>6.3</b><i class="rk ">#15</i><div class="gm-bar "><i style="width: 55%"></i></div></div>
         </div>
         
@@ -1679,6 +1695,12 @@
       });
     });
   });
+  // Stat descriptions: one open at a time, a click elsewhere (or the X) closes it.
+  document.querySelectorAll("details.stat").forEach(function(d){ d.addEventListener("toggle",function(){
+    if(d.open) document.querySelectorAll("details.stat[open]").forEach(function(o){ if(o!==d) o.open=false; });
+  });});
+  document.addEventListener("click",function(e){ if(!e.target.closest("details.stat")) document.querySelectorAll("details.stat[open]").forEach(function(o){o.open=false;}); });
+  document.querySelectorAll(".sheet-close").forEach(function(b){ b.addEventListener("click",function(e){ e.stopPropagation(); var d=b.closest("details"); if(d) d.open=false; }); });
   document.querySelectorAll(".gm-more").forEach(function(b){
     b.addEventListener("click",function(){
       var open=b.classList.toggle("open");
