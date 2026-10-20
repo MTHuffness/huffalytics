@@ -918,7 +918,10 @@
     .gm-doc-flag { min-width: 4.4rem; font-size: 0.56rem; }
   }
 
-  /* Sport bubble beside the week: the football, and the other sports behind it */
+  /* The X account, then the sport bubble beside the week */
+  .hfa-x { display: inline-grid; place-items: center; width: 2.1rem; height: 2.1rem; border-radius: 50%; margin-left: auto; color: var(--hfa-body); background: rgba(128, 128, 128, 0.14); text-decoration: none; transition: background 0.12s, color 0.12s; }
+  .hfa-x:hover { background: var(--hfa-accent); color: #fff; }
+  .hfa-x + .hfa-sport { margin-left: 0; }
   .hfa-sport { position: relative; margin-left: auto; }
   .hfa-sport + .hfa-wk { margin-left: 0; }
   .hfa-sport > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.35rem; padding: 3px 0.7rem 3px 3px; border-radius: 999px; background: rgba(128, 128, 128, 0.14); }
@@ -934,6 +937,7 @@
   .hfa-sport-pop i { margin-left: auto; font-style: normal; font-size: 0.56rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--hfa-muted); }
   .hfa-sport-pop > a.on i { color: var(--hfa-accent); }
   @media (max-width: 760px) {
+    .hfa-x { margin-left: 0; order: 1; width: 1.9rem; height: 1.9rem; }
     .hfa-sport { margin-left: 0; order: 2; }
     .hfa-sport > summary .lbl { display: none; }
     .hfa-sport > summary { padding-right: 3px; }
@@ -1071,6 +1075,7 @@
 <div class="hfa">
   <div class="hfa-top">
     <a class="hfa-brand" href="/" aria-label="Huffalytics home"><img class="logo" src="/icons/icon-192.png" width="34" height="34" alt="Huffalytics logo"><span class="words"><span class="mark"><i>Huff</i>alytics</span><span class="tag">GAME SCRIPTS // PROJECTIONS // GRADED</span></span></a>
+    <a class="hfa-x" href="https://x.com/Huffalytics" target="_blank" rel="noopener" title="Huffalytics on X" aria-label="Huffalytics on X"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M18.9 2H22l-7.2 8.2L23.3 22h-6.6l-5.2-6.8L5.6 22H2.5l7.7-8.8L2 2h6.8l4.7 6.2L18.9 2zm-1.2 18h1.8L7.4 3.9H5.5L17.7 20z"/></svg></a>
     <details class="hfa-sport" id="hfa-sport">
       <summary title="Sport: NFL. More sports are on the way." aria-label="Sport"><span class="ball" aria-hidden="true">&#127944;</span><span class="lbl">NFL</span></summary>
       <div class="hfa-sport-pop">
