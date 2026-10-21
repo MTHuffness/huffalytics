@@ -1123,9 +1123,9 @@
   .pp-open { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
   .pp-sec[open] > summary .pp-open { display: none; }
   .gm-matchup.pp-sec > summary .pp-chev, .gm-starters.pp-sec > summary .pp-chev, .gm-injuries.pp-sec > summary .pp-chev { order: -1; }
-  .gm-matchup.pp-sec > summary.gm-mhead { display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 0.75rem; row-gap: 0.1rem; align-items: center; }
-  .gm-matchup.pp-sec > summary.gm-mhead .pp-chev { grid-row: 1 / 3; }
-  .gm-matchup.pp-sec > summary.gm-mhead .hfa-eyebrow, .gm-matchup.pp-sec > summary.gm-mhead h2 { grid-column: 2; }
+  .gm-matchup.pp-sec > summary.gm-mhead { display: flex; align-items: center; gap: 0.75rem; flex-wrap: nowrap; }
+  .gm-matchup.pp-sec > summary.gm-mhead h2 { margin: 0; min-width: 0; }
+  .gm-h2 em { font-style: normal; } .gm-h2 em.short { display: none; }
   .gm-starters.pp-sec > summary, .gm-injuries.pp-sec > summary { display: grid; grid-template-columns: auto 1fr; column-gap: 0.75rem; row-gap: 0.1rem; align-items: center; }
   .gm-starters.pp-sec > summary .pp-chev, .gm-injuries.pp-sec > summary .pp-chev { grid-row: 1 / 3; }
   .gm-starters.pp-sec > summary .hfa-eyebrow, .gm-starters.pp-sec > summary h2, .gm-injuries.pp-sec > summary .hfa-eyebrow, .gm-injuries.pp-sec > summary h2 { grid-column: 2; margin: 0; }
@@ -1230,6 +1230,14 @@
   .gm-script-v.lean { color: var(--hfa-muted); } .gm-script-v.lean b { color: var(--hfa-body); text-transform: uppercase; }
   @media (max-width: 760px) {
     .pp-head { padding: 0.8rem 16px 0.6rem; }
+    /* app pages, not cards: no chevron, no "open", the matchup title on one row */
+    .pp-sec > summary { cursor: default; }
+    .pp-sec > summary .pp-chev, .pp-sec > summary .pp-open { display: none; }
+    .gm-matchup.pp-sec > summary.gm-mhead .gm-h2 { display: flex; flex-wrap: nowrap; align-items: center; gap: 0.3rem; font-size: 0.98rem; white-space: nowrap; overflow: hidden; }
+    .gm-matchup.pp-sec > summary.gm-mhead .gm-h2 img { width: 26px; height: 26px; flex: 0 0 auto; }
+    .gm-matchup.pp-sec > summary.gm-mhead .gm-h2 span { overflow: hidden; text-overflow: ellipsis; }
+    .gm-h2 em.full { display: none; } .gm-h2 em.short { display: inline; }
+    .gm-matchup.pp-sec > summary.gm-mhead .gm-h2 .vs { font-size: 0.62rem; flex: 0 0 auto; }
     .pp-body, .pp-off { padding-left: 16px; padding-right: 16px; }
     .pp-h2 { font-size: 1.15rem; }
     .pp-hook { grid-template-columns: 1fr; }
@@ -1310,8 +1318,7 @@
 <details class="hfa-card hfa-sec gm-matchup pp-sec" id="away" data-sec="away" style="--gm-team: #97233F; --gm-opp: #002244;" open>
   <summary class="hfa-head gm-mhead pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    <div class="hfa-eyebrow">ARI offense vs DAL defense</div>
-    <h2 class="gm-h2"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy"><span>Cardinals offense</span><span class="vs">against the</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="" loading="lazy"><span>Cowboys defense</span></h2>
+    <h2 class="gm-h2"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy"><span><em class="full">Cardinals</em><em class="short">ARI</em> offense</span><span class="vs">against the</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="" loading="lazy"><span><em class="full">Cowboys</em><em class="short">DAL</em> defense</span></h2>
   </summary>
   <div class="hfa-head gm-mhead">
     <p class="lede">Projected ARI offense output &mdash; equivalently, what the DAL defense allows. The engine blends each offense's season-to-date rates with the defense across from it, anchored on the market's implied points.</p>
@@ -1592,8 +1599,7 @@
 <details class="hfa-card hfa-sec gm-matchup pp-sec" id="home" data-sec="home" style="--gm-team: #002244; --gm-opp: #97233F;" open>
   <summary class="hfa-head gm-mhead pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    <div class="hfa-eyebrow">DAL offense vs ARI defense</div>
-    <h2 class="gm-h2"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="" loading="lazy"><span>Cowboys offense</span><span class="vs">against the</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy"><span>Cardinals defense</span></h2>
+    <h2 class="gm-h2"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="" loading="lazy"><span><em class="full">Cowboys</em><em class="short">DAL</em> offense</span><span class="vs">against the</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy"><span><em class="full">Cardinals</em><em class="short">ARI</em> defense</span></h2>
   </summary>
   <div class="hfa-head gm-mhead">
     <p class="lede">Projected DAL offense output &mdash; equivalently, what the ARI defense allows. The engine blends each offense's season-to-date rates with the defense across from it, anchored on the market's implied points.</p>
@@ -2041,6 +2047,12 @@
       modal.querySelector(".pl-dialog").scrollTop=0;
     }).catch(function(){ body.innerHTML='<div class="pl-loading">The player sheets could not be loaded.</div>'; });
   }
+  // On the phone every section is its own page (the jump tabs): the
+  // cards stay open and the chevron does nothing.
+  var app=matchMedia("(max-width: 760px)");
+  function pin(){ if(!app.matches) return; document.querySelectorAll("details.pp-sec").forEach(function(d){ d.open=true; }); }
+  pin(); app.addEventListener("change",pin);
+  document.querySelectorAll("details.pp-sec > summary").forEach(function(sm){ sm.addEventListener("click",function(e){ if(app.matches) e.preventDefault(); }); });
   // The plan / report panel: pills and arrows walk its sections.
   var doc=document.querySelector(".gm-doc");
   if(doc){
