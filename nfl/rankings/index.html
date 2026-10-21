@@ -1123,7 +1123,8 @@
   .pp-open { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
   .pp-sec[open] > summary .pp-open { display: none; }
   .gm-matchup.pp-sec > summary .pp-chev, .gm-starters.pp-sec > summary .pp-chev, .gm-injuries.pp-sec > summary .pp-chev { order: -1; }
-  .gm-matchup.pp-sec > summary.gm-mhead { display: flex; align-items: center; gap: 0.75rem; flex-wrap: nowrap; }
+  .gm-matchup.pp-sec > summary.gm-mhead { display: flex; align-items: center; gap: 0.75rem; flex-wrap: nowrap; padding-top: 1.2rem; }  /* the 3px team bar sits inside the top padding */
+  .gm-matchup.pp-sec:not([open]) > summary.gm-mhead { padding-bottom: 1rem; }  /* collapsed: the title sits in the middle of the card */
   .gm-matchup.pp-sec > summary.gm-mhead h2 { margin: 0; min-width: 0; }
   .gm-h2 em { font-style: normal; } .gm-h2 em.short { display: none; }
   .gm-starters.pp-sec > summary, .gm-injuries.pp-sec > summary { display: grid; grid-template-columns: auto 1fr; column-gap: 0.75rem; row-gap: 0.1rem; align-items: center; }
