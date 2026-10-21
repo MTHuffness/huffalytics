@@ -1108,6 +1108,135 @@
     .hfa-sport-pop { left: auto; right: 0; }
   }
   @media (prefers-reduced-motion: reduce) { #hfa-rain { opacity: calc(var(--hfa-rain) * 0.5); } }
+
+  /* ---- The post-plan look (pp-): collapsible sections, short text, imagery ---- */
+  .pp-sec { overflow: hidden; }
+  .pp-sec > summary { list-style: none; cursor: pointer; }
+  .pp-sec > summary::-webkit-details-marker { display: none; }
+  .pp-head { display: flex; align-items: center; gap: 0.6rem 0.9rem; padding: 0.9rem 1.1rem 0.7rem; flex-wrap: wrap; }
+  .pp-head .pp-chev { flex: 0 0 auto; width: 1.6rem; height: 1.6rem; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--hfa-accent-soft); color: var(--hfa-accent); transition: transform 0.18s; }
+  .pp-sec:not([open]) > summary .pp-chev { transform: rotate(-90deg); }
+  .pp-head .pp-headtext { display: flex; flex-direction: column; gap: 0.1rem; flex: 1 1 auto; min-width: 0; }
+  .pp-head .hfa-eyebrow { flex: 0 0 auto; }
+  .pp-h2 { font-size: 1.35rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1.15; }
+  .pp-headchips { display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap; }
+  .pp-open { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .pp-sec[open] > summary .pp-open { display: none; }
+  .gm-matchup.pp-sec > summary .pp-chev, .gm-starters.pp-sec > summary .pp-chev, .gm-injuries.pp-sec > summary .pp-chev { order: -1; }
+  .gm-matchup.pp-sec > summary.gm-mhead { display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 0.75rem; row-gap: 0.1rem; align-items: center; }
+  .gm-matchup.pp-sec > summary.gm-mhead .pp-chev { grid-row: 1 / 3; }
+  .gm-matchup.pp-sec > summary.gm-mhead .hfa-eyebrow, .gm-matchup.pp-sec > summary.gm-mhead h2 { grid-column: 2; }
+  .gm-starters.pp-sec > summary, .gm-injuries.pp-sec > summary { display: grid; grid-template-columns: auto 1fr; column-gap: 0.75rem; row-gap: 0.1rem; align-items: center; }
+  .gm-starters.pp-sec > summary .pp-chev, .gm-injuries.pp-sec > summary .pp-chev { grid-row: 1 / 3; }
+  .gm-starters.pp-sec > summary .hfa-eyebrow, .gm-starters.pp-sec > summary h2, .gm-injuries.pp-sec > summary .hfa-eyebrow, .gm-injuries.pp-sec > summary h2 { grid-column: 2; margin: 0; }
+  .pp-sec > .hfa-head { padding-top: 0; }
+  .pp-body { padding: 0.2rem 1.1rem 1.1rem; }
+  .pp-k { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin: 0 0 0.3rem; display: flex; align-items: center; gap: 0.35rem; }
+  .pp-k .flat { text-transform: none; letter-spacing: 0; font-weight: 500; color: var(--hfa-muted); }
+  .pp-k-sec { margin: 1.1rem 0 0.5rem; font-size: 0.72rem; }
+  .pp-lead { font-size: 0.98rem; line-height: 1.45; margin: 0; font-weight: 500; }
+  .pp-sub { font-size: 0.86rem; color: var(--hfa-muted); margin: 0.35rem 0 0; line-height: 1.4; }
+  .pp-more { margin-top: 0.3rem; }
+  .pp-more > summary { list-style: none; cursor: pointer; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); display: inline-flex; align-items: center; gap: 0.25rem; }
+  .pp-more > summary::-webkit-details-marker { display: none; }
+  .pp-more > summary::after { content: "+"; font-size: 0.85rem; }
+  .pp-more[open] > summary::after { content: "\2212"; }
+  .pp-more p { font-size: 0.86rem; line-height: 1.5; color: var(--hfa-muted); margin: 0.3rem 0 0; }
+  .pp-more p b { color: var(--hfa-body); }
+  /* the read */
+  .pp-hook { display: grid; grid-template-columns: auto 1fr; gap: 0.5rem 1.2rem; align-items: center; padding: 0.4rem 0 1rem; }
+  .pp-hook-logos { display: flex; align-items: center; gap: 0.4rem; }
+  .pp-hook-logos img { width: 64px; height: 64px; object-fit: contain; filter: drop-shadow(0 6px 10px rgba(0,0,0,0.35)); }
+  .pp-vs { font-size: 0.7rem; font-weight: 800; color: var(--hfa-muted); text-transform: uppercase; }
+  .pp-quote { font-size: 1.55rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1.15; color: var(--hfa-accent); margin: 0; }
+  .pp-headline { grid-column: 1 / -1; font-size: 1.02rem; font-weight: 600; line-height: 1.4; margin: 0; }
+  .pp-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.6rem; }
+  .pp-card { border: var(--hfa-hairline); border-radius: 14px; padding: 0.75rem 0.9rem; background: var(--hfa-tint); min-width: 0; }
+  .pp-card.wide { margin: 0.9rem 0; }
+  /* the script */
+  .pp-gauges { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.6rem; padding-bottom: 0.3rem; }
+  .pp-gauge { border: var(--hfa-hairline); border-radius: 14px; padding: 0.65rem 0.8rem; background: var(--hfa-tint); display: flex; flex-direction: column; gap: 0.35rem; }
+  .pp-gauge b { font-size: 1.05rem; font-weight: 800; text-transform: capitalize; }
+  .pp-gauge .pp-k img { width: 18px; height: 18px; object-fit: contain; }
+  .pp-bars { display: inline-flex; align-items: flex-end; gap: 3px; height: 18px; }
+  .pp-bars i { display: block; width: 9px; border-radius: 2px; background: rgba(128,128,128,0.25); }
+  .pp-bars i:nth-child(1) { height: 7px; } .pp-bars i:nth-child(2) { height: 12px; } .pp-bars i:nth-child(3) { height: 18px; }
+  .pp-bars i.on { background: var(--hfa-accent); }
+  .pp-bars.sm { height: 12px; } .pp-bars.sm i { width: 6px; } .pp-bars.sm i:nth-child(1) { height: 5px; } .pp-bars.sm i:nth-child(2) { height: 8px; } .pp-bars.sm i:nth-child(3) { height: 12px; }
+  .pp-pips { display: inline-flex; gap: 4px; }
+  .pp-pips i { width: 10px; height: 10px; border-radius: 50%; background: rgba(128,128,128,0.25); }
+  .pp-pips i.on { background: var(--hfa-good); }
+  .pp-pips.sm i { width: 7px; height: 7px; }
+  .pp-leanbar { display: flex; align-items: center; gap: 0.4rem; font-size: 0.64rem; color: var(--hfa-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .pp-leanbar .track { position: relative; flex: 1 1 auto; height: 6px; border-radius: 3px; background: linear-gradient(90deg, rgba(255,176,32,0.6), rgba(128,128,128,0.25), rgba(114,124,245,0.7)); }
+  .pp-leanbar .track i { position: absolute; top: -4px; width: 14px; height: 14px; border-radius: 50%; background: var(--hfa-body); border: 2px solid var(--hfa-card); transform: translateX(-50%); box-shadow: 0 1px 4px rgba(0,0,0,0.4); }
+  .pp-paths { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.6rem; }
+  .pp-path { border: var(--hfa-hairline); border-left: 4px solid var(--pp-team, var(--hfa-accent)); border-radius: 14px; padding: 0.75rem 0.9rem; background: var(--hfa-tint); }
+  .pp-pathhead { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem; }
+  .pp-pathhead img { width: 28px; height: 28px; object-fit: contain; }
+  .pp-pathhead .pp-k { margin: 0; }
+  .pp-swing { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.6rem; }
+  .pp-swingcard { display: flex; gap: 0.6rem; align-items: flex-start; border: var(--hfa-hairline); border-radius: 14px; padding: 0.65rem 0.8rem; background: var(--hfa-tint); }
+  .pp-swingcard .n { flex: 0 0 1.7rem; height: 1.7rem; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--hfa-accent); color: #fff; font-weight: 900; font-size: 0.85rem; }
+  .pp-swingcard .pp-lead { font-size: 0.9rem; }
+  .pp-angles { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.6rem; }
+  .pp-angle { border: var(--hfa-hairline); border-radius: 14px; padding: 0.75rem 0.9rem; background: var(--hfa-tint); }
+  .pp-angletitle { font-weight: 800; font-size: 0.98rem; letter-spacing: -0.01em; margin-bottom: 0.45rem; }
+  .pp-legs { display: flex; flex-direction: column; gap: 0.3rem; }
+  .pp-leg { display: flex; align-items: center; gap: 0.5rem; border-radius: 10px; padding: 0.3rem 0.55rem; background: rgba(128,128,128,0.12); font-size: 0.84rem; }
+  .pp-leg .arrow { font-style: normal; font-size: 0.7rem; }
+  .pp-leg.over .arrow { color: var(--hfa-good); } .pp-leg.under .arrow { color: var(--hfa-bad); }
+  .pp-leg b { font-weight: 700; color: var(--hfa-body); } .pp-leg em { font-style: normal; color: var(--hfa-muted); margin-left: auto; white-space: nowrap; }
+  /* inside an offense */
+  .pp-off { padding: 0 1.1rem 0.6rem; }
+  .pp-offhead { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+  .pp-offhead .hfa-eyebrow { flex: 0 1 auto; }
+  .pp-offcards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.5rem; }
+  .pp-offcard { border: var(--hfa-hairline); border-radius: 12px; padding: 0.6rem 0.75rem; background: var(--hfa-tint); min-width: 0; }
+  .pp-offcard .pp-lead { font-size: 0.88rem; }
+  .pp-ic { display: inline-block; width: 14px; height: 14px; border-radius: 4px; background: var(--hfa-accent); opacity: 0.85; }
+  .pp-ic.id { border-radius: 50%; } .pp-ic.score { background: var(--hfa-good); } .pp-ic.stop { background: var(--hfa-bad); } .pp-ic.vs { background: linear-gradient(135deg, var(--gm-team, var(--hfa-accent)) 50%, var(--gm-opp, var(--hfa-muted)) 50%); } .pp-ic.inj { background: var(--hfa-warn); } .pp-ic.flag { background: var(--hfa-warn); width: 10px; height: 14px; border-radius: 2px; flex: 0 0 auto; margin-top: 0.25rem; }
+  .pp-expect { margin-top: 0.6rem; border: 1px solid var(--hfa-accent); border-radius: 12px; padding: 0.6rem 0.8rem; background: var(--hfa-accent-soft); }
+  .pp-expect .pp-k { margin-bottom: 0.2rem; }
+  .pp-calls { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.6rem; }
+  .pp-call { border: var(--hfa-hairline); border-radius: 14px; padding: 0.7rem 0.85rem; background: var(--hfa-tint); border-left: 4px solid var(--hfa-good); min-width: 0; }
+  .pp-call.under { border-left-color: var(--hfa-bad); }
+  .pp-callhead { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; }
+  .pp-dir { font-size: 0.8rem; color: var(--hfa-good); } .pp-call.under .pp-dir { color: var(--hfa-bad); }
+  .pp-callwho { display: flex; flex-direction: column; min-width: 0; flex: 1 1 auto; }
+  .pp-callwho b { font-size: 1rem; font-weight: 800; letter-spacing: -0.01em; }
+  .pp-bet { font-size: 0.82rem; color: var(--hfa-muted); }
+  .pp-probs { display: flex; flex-direction: column; gap: 0.25rem; margin: 0.3rem 0 0.45rem; }
+  .pp-prob { display: grid; grid-template-columns: 3.6rem 1fr 2.6rem; align-items: center; gap: 0.5rem; font-size: 0.72rem; color: var(--hfa-muted); }
+  .pp-prob b { text-align: right; font-variant-numeric: tabular-nums; color: var(--hfa-body); }
+  .pp-prob .meter { height: 7px; border-radius: 4px; background: rgba(128,128,128,0.18); overflow: hidden; }
+  .pp-prob .meter i { display: block; height: 100%; background: var(--hfa-accent); border-radius: 4px; }
+  .pp-prob.mkt .meter i { background: var(--hfa-muted); }
+  .pp-callmeta { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.45rem; }
+  .pp-call .pp-lead { font-size: 0.88rem; }
+  /* before you bet it */
+  .pp-checks { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.55rem; }
+  .pp-check { display: flex; gap: 0.6rem; border: var(--hfa-hairline); border-radius: 12px; padding: 0.6rem 0.8rem; background: var(--hfa-tint); }
+  .pp-check .pp-lead { font-size: 0.88rem; }
+  .pp-disclaimer { margin: 0.9rem 0 0; font-size: 0.78rem; color: var(--hfa-muted); line-height: 1.45; }
+  /* the script chip on the hero */
+  .gm-script { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.4rem 0.9rem; margin: -0.6rem 1.1rem 1.2rem; padding: 0.5rem 0.9rem; border: 1px solid var(--hfa-accent); border-radius: 16px; background: var(--hfa-accent-soft); color: inherit; text-decoration: none; }
+  .gm-script-k { font-size: 0.66rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-accent); }
+  .gm-script-v { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; text-transform: capitalize; }
+  .gm-script-v b { font-weight: 700; }
+  .gm-script-v.lean { color: var(--hfa-muted); } .gm-script-v.lean b { color: var(--hfa-body); text-transform: uppercase; }
+  @media (max-width: 760px) {
+    .pp-head { padding: 0.8rem 16px 0.6rem; }
+    .pp-body, .pp-off { padding-left: 16px; padding-right: 16px; }
+    .pp-h2 { font-size: 1.15rem; }
+    .pp-hook { grid-template-columns: 1fr; }
+    .pp-hook-logos img { width: 44px; height: 44px; }
+    .pp-quote { font-size: 1.25rem; }
+    .pp-cards, .pp-paths, .pp-swing, .pp-angles, .pp-calls, .pp-checks, .pp-offcards { grid-template-columns: 1fr; }
+    .pp-gauges { grid-template-columns: 1fr 1fr; }
+    .gm-script { margin: -0.4rem 16px 1rem; }
+    .pp-headchips .badge { display: none; }
+  }
 </style>
 
 </head>
@@ -1168,17 +1297,22 @@
     
     <span class="gm-chip " title="Artificial turf (sportturf). Passing is the same on grass and turf; rushing runs about 3.5% higher on turf (+3.7 yards a team) and a catch gains a tenth of a yard more after it. Points, the closing lines and the engine show no surface effect, so it is not an engine input."><i>field</i> <b>turf</b></span><span class="gm-chip " title="Played under a roof: the weather outside does not reach the field."><i>roof</i> <b>dome</b></span>
   </div>
+  
 </div>
 
 
 
 
-<section class="hfa-card hfa-sec gm-matchup" id="away" data-sec="away" style="--gm-team: #002C5F; --gm-opp: #4F2683;">
-  <div class="hfa-head gm-mhead">
+<details class="hfa-card hfa-sec gm-matchup pp-sec" id="away" data-sec="away" style="--gm-team: #002C5F; --gm-opp: #4F2683;" open>
+  <summary class="hfa-head gm-mhead pp-head">
+    <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <div class="hfa-eyebrow">IND offense vs MIN defense</div>
     <h2 class="gm-h2"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" alt="" loading="lazy"><span>Colts offense</span><span class="vs">against the</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/min.png" alt="" loading="lazy"><span>Vikings defense</span></h2>
+  </summary>
+  <div class="hfa-head gm-mhead">
     <p class="lede">Projected IND offense output &mdash; equivalently, what the MIN defense allows. The engine blends each offense's season-to-date rates with the defense across from it, anchored on the market's implied points.</p>
   </div>
+  
   <div class="gm-tiles">
     <div class="gm-tile big"><b>17.5</b><span>Points</span></div><div class="gm-tile "><b>61</b><span>Plays</span></div><div class="gm-tile "><b>212</b><span>Pass yds</span></div><div class="gm-tile "><b>91</b><span>Rush yds</span></div><div class="gm-tile "><b>2.6</b><span>Sacks taken</span></div><div class="gm-tile "><b>0.9</b><span>INTs thrown</span></div>
   </div>
@@ -1449,14 +1583,18 @@
       
     </div>
   </div>
-</section>
+</details>
 
-<section class="hfa-card hfa-sec gm-matchup" id="home" data-sec="home" style="--gm-team: #4F2683; --gm-opp: #002C5F;">
-  <div class="hfa-head gm-mhead">
+<details class="hfa-card hfa-sec gm-matchup pp-sec" id="home" data-sec="home" style="--gm-team: #4F2683; --gm-opp: #002C5F;" open>
+  <summary class="hfa-head gm-mhead pp-head">
+    <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <div class="hfa-eyebrow">MIN offense vs IND defense</div>
     <h2 class="gm-h2"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/min.png" alt="" loading="lazy"><span>Vikings offense</span><span class="vs">against the</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" alt="" loading="lazy"><span>Colts defense</span></h2>
+  </summary>
+  <div class="hfa-head gm-mhead">
     <p class="lede">Projected MIN offense output &mdash; equivalently, what the IND defense allows. The engine blends each offense's season-to-date rates with the defense across from it, anchored on the market's implied points.</p>
   </div>
+  
   <div class="gm-tiles">
     <div class="gm-tile big"><b>24.0</b><span>Points</span></div><div class="gm-tile "><b>60</b><span>Plays</span></div><div class="gm-tile "><b>217</b><span>Pass yds</span></div><div class="gm-tile "><b>115</b><span>Rush yds</span></div><div class="gm-tile "><b>2.3</b><span>Sacks taken</span></div><div class="gm-tile "><b>0.6</b><span>INTs thrown</span></div>
   </div>
@@ -1727,14 +1865,17 @@
       
     </div>
   </div>
-</section>
+</details>
 
 
 
-<section class="hfa-card hfa-sec gm-starters" id="starters" data-sec="starters">
-  <div class="hfa-head">
+<details class="hfa-card hfa-sec gm-starters pp-sec" id="starters" data-sec="starters" open>
+  <summary class="hfa-head pp-head">
+    <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <div class="hfa-eyebrow">Starters on the field</div>
     <h2>The elevens, rated</h2>
+  </summary>
+  <div class="hfa-head">
     <p class="lede">Defenders colored by rating percentile within their position group (2026 wks 1-6 + ½·2025); the offense by production percentile among the position's starter pool. Linemen are unrated. Each defense is last game's snap leaders in a nickel base, minus this week's Out / Doubtful.</p>
     <div class="gm-key"><span><i class="r1"></i>&lt;20</span><span><i class="r2"></i>20&ndash;40</span><span><i class="r3"></i>40&ndash;60</span><span><i class="r4"></i>60&ndash;80</span><span><i class="r5"></i>80+</span><span><i class="thin"></i>thin sample</span><span><i class="ol"></i>line</span></div>
   </div>
@@ -1764,14 +1905,17 @@
     
   </div>
   <div class="blurb">Defender ratings: pass rushers on pressure, sack and TFL rate plus missed tackles; coverage players on targets drawn and yards allowed per snap plus missed tackles; linebackers add tackle and TFL rate. Each rate is shrunk toward the group average, z-scored within the group and weighted into one percentile.</div>
-</section>
+</details>
 
 
 
-<section class="hfa-card hfa-sec gm-injuries" id="injuries" data-sec="injuries">
-  <div class="hfa-head">
+<details class="hfa-card hfa-sec gm-injuries pp-sec" id="injuries" data-sec="injuries" open>
+  <summary class="hfa-head pp-head">
+    <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <div class="hfa-eyebrow">Injury report</div>
     <h2>Who is listed</h2>
+  </summary>
+  <div class="hfa-head">
     <p class="lede">Everyone on the clubs' reports, the best-rated man first in his group: the designation, what is hurt, the practice line and the share of the snaps he took last game. Ratings are the same percentiles as the field above.</p>
     <div class="gm-ircounts"><span class="gm-irteam"><b>IND</b> <span class="flat">11 listed</span><span class="badge out">1 Doubtful</span><span class="badge out">6 IR</span><span class="badge q">4 Questionable</span></span><span class="gm-irteam"><b>MIN</b> <span class="flat">6 listed</span><span class="badge out">6 IR</span></span></div>
   </div>
@@ -1967,7 +2111,8 @@
     
   </div>
   
-</section>
+</details>
+
 
 <div class="pl-modal" id="pl-modal" hidden data-src="/nfl/w/7/g/2026_07_IND_MIN/players.html">
   <div class="pl-back"></div>
@@ -1979,7 +2124,7 @@
 </main>
   <footer class="hfa-foot">
     <p><strong>Huffalytics</strong> publishes NFL stats, game projections, team EPA rankings and graded player prop plans priced against Kalshi, rebuilt every week from play-by-play data. <a href="/about/">How the engine works</a>.</p>
-    <p>Data as of Wed Oct 21, 7:13 AM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/nfl/data/week.json">week.json</a> · <a href="/nfl/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
+    <p>Data as of Wed Oct 21, 11:26 AM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/nfl/data/week.json">week.json</a> · <a href="/nfl/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
   </footer>
 </div>
 <script>
