@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-21T14:13:31.110524-06:00",
+ "as_of": "2026-10-22T06:45:55.115852-06:00",
  "season": 2026,
  "week": 7,
  "slate": {
@@ -43,7 +43,7 @@
    "total_score": null,
    "total_result": null,
    "model_margin": "+4.8",
-   "adj_margin": "+4.2",
+   "adj_margin": "+3.7",
    "proj_score": "26–16",
    "score": null,
    "played": false,
@@ -71,7 +71,7 @@
    "total_score": null,
    "total_result": null,
    "model_margin": "+6.1",
-   "adj_margin": "+5.8",
+   "adj_margin": "+5.6",
    "proj_score": "24–18",
    "score": null,
    "played": false,
@@ -127,7 +127,7 @@
    "total_score": null,
    "total_result": null,
    "model_margin": "+2.4",
-   "adj_margin": "+1.9",
+   "adj_margin": "+2.7",
    "proj_score": "26–22",
    "score": null,
    "played": false,
@@ -155,7 +155,7 @@
    "total_score": null,
    "total_result": null,
    "model_margin": "+2.5",
-   "adj_margin": "+3.0",
+   "adj_margin": "+2.6",
    "proj_score": "24–20",
    "score": null,
    "played": false,
@@ -183,7 +183,7 @@
    "total_score": null,
    "total_result": null,
    "model_margin": "+5.6",
-   "adj_margin": "+6.0",
+   "adj_margin": "+6.2",
    "proj_score": "22–18",
    "score": null,
    "played": false,
@@ -239,7 +239,7 @@
    "total_score": null,
    "total_result": null,
    "model_margin": "+0.3",
-   "adj_margin": "+0.8",
+   "adj_margin": "+2.3",
    "proj_score": "28–25",
    "score": null,
    "played": false,
@@ -269,34 +269,6 @@
    "model_margin": "+5.8",
    "adj_margin": "+7.2",
    "proj_score": "24–21",
-   "score": null,
-   "played": false,
-   "hit": null,
-   "qb_notes": [],
-   "grade": null,
-   "plan": null
-  },
-  {
-   "game_id": "2026_07_SF_ATL",
-   "page": "/nfl/w/7/g/2026_07_SF_ATL/",
-   "fav": "SF",
-   "opp": "ATL",
-   "sep": "@",
-   "status": "tight spread",
-   "is_leg": false,
-   "gameday": "2026-10-25",
-   "kickoff": {
-    "label": "11:00am",
-    "title": "Sun Oct 25, 11:00 AM Denver",
-    "sort": "2026-10-25T13:00:00-04:00"
-   },
-   "line": "-3",
-   "total": "49.5",
-   "total_score": null,
-   "total_result": null,
-   "model_margin": "+6.4",
-   "adj_margin": "+4.0",
-   "proj_score": "26–23",
    "score": null,
    "played": false,
    "hit": null,
@@ -360,8 +332,36 @@
    "total_score": null,
    "total_result": null,
    "model_margin": "+0.5",
-   "adj_margin": "+0.3",
+   "adj_margin": "+0.4",
    "proj_score": "22–20",
+   "score": null,
+   "played": false,
+   "hit": null,
+   "qb_notes": [],
+   "grade": null,
+   "plan": null
+  },
+  {
+   "game_id": "2026_07_SF_ATL",
+   "page": "/nfl/w/7/g/2026_07_SF_ATL/",
+   "fav": "SF",
+   "opp": "ATL",
+   "sep": "@",
+   "status": "tight spread",
+   "is_leg": false,
+   "gameday": "2026-10-25",
+   "kickoff": {
+    "label": "11:00am",
+    "title": "Sun Oct 25, 11:00 AM Denver",
+    "sort": "2026-10-25T13:00:00-04:00"
+   },
+   "line": "-2.5",
+   "total": "49.5",
+   "total_score": null,
+   "total_result": null,
+   "model_margin": "+6.4",
+   "adj_margin": "+4.3",
+   "proj_score": "26–24",
    "score": null,
    "played": false,
    "hit": null,
@@ -597,7 +597,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
     "game_id": "2026_07_CIN_BAL",
     "proj": "18.0",
-    "bar": "95",
+    "bar": "96",
     "act": null,
     "cls": null,
     "inj": null
@@ -610,7 +610,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png",
     "game_id": "2026_07_IND_MIN",
     "proj": "17.7",
-    "bar": "93",
+    "bar": "94",
     "act": null,
     "cls": null,
     "inj": null
@@ -626,7 +626,11 @@
     "bar": "93",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Limited Participation in Practice · Back · via Sleeper · as of Wed 10/21 10:50 PM"
+    }
    },
    {
     "rank": 7,
@@ -652,7 +656,11 @@
     "bar": "89",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "FP",
+     "cls": "bg-secondary-subtle text-secondary",
+     "title": "Full practice · Thumb"
+    }
    },
    {
     "rank": 9,
@@ -701,10 +709,14 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
     "game_id": "2026_07_PIT_NO",
     "proj": "15.8",
-    "bar": "83",
+    "bar": "84",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "FP",
+     "cls": "bg-secondary-subtle text-secondary",
+     "title": "Full practice · Hand"
+    }
    },
    {
     "rank": 13,
@@ -717,7 +729,11 @@
     "bar": "83",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "FP",
+     "cls": "bg-secondary-subtle text-secondary",
+     "title": "Full practice · Knee"
+    }
    },
    {
     "rank": 14,
@@ -883,7 +899,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
     "game_id": "2026_07_SF_ATL",
     "proj": "13.0",
-    "bar": "68",
+    "bar": "69",
     "act": null,
     "cls": null,
     "inj": null
@@ -896,10 +912,14 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
     "game_id": "2026_07_KC_SEA",
     "proj": "12.9",
-    "bar": "68",
+    "bar": "69",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "FP",
+     "cls": "bg-secondary-subtle text-secondary",
+     "title": "Full practice · Knee"
+    }
    },
    {
     "rank": 28,
@@ -928,7 +948,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Ankle · via Sleeper · as of Wed 10/21 1:35 PM"
+     "title": "Questionable · Limited Participation in Practice · Ankle · via Sleeper · as of Wed 10/21 6:35 PM"
     }
    },
    {
@@ -945,7 +965,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Thumb · via Sleeper · as of Wed 10/21 1:35 PM"
+     "title": "Questionable · Full Participation in Practice · Thumb · via Sleeper · as of Wed 10/21 2:30 PM"
     }
    }
   ],
@@ -996,8 +1016,8 @@
     "team": "ATL",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
     "game_id": "2026_07_SF_ATL",
-    "proj": "21.0",
-    "bar": "77",
+    "proj": "21.1",
+    "bar": "78",
     "act": null,
     "cls": null,
     "inj": null
@@ -1078,7 +1098,11 @@
     "bar": "60",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "LP",
+     "cls": "text-bg-secondary",
+     "title": "Limited practice · Not injury related - resting player"
+    }
    },
    {
     "rank": 11,
@@ -1091,7 +1115,11 @@
     "bar": "57",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "DNP",
+     "cls": "text-bg-warning",
+     "title": "Did not practice · Not injury related - resting player"
+    }
    },
    {
     "rank": 12,
@@ -1159,7 +1187,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Illness · via Sleeper · as of Wed 10/21 1:35 PM"
+     "title": "Questionable · Did Not Participate In Practice · Illness · via Sleeper · as of Wed 10/21 2:25 PM"
     }
    },
    {
@@ -1202,7 +1230,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Quadriceps · via Sleeper · as of Wed 10/21 11:00 AM"
+     "title": "Questionable · Did Not Participate In Practice · Quadricep · via Sleeper · as of Wed 10/21 11:00 AM"
     }
    },
    {
@@ -1284,7 +1312,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Ankle · via Sleeper · as of Wed 10/21 10:45 AM"
+     "title": "Questionable · Limited Participation in Practice · Ankle · via Sleeper · as of Wed 10/21 2:55 PM"
     }
    },
    {
@@ -1314,7 +1342,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Ankle · via Sleeper · as of Wed 10/21 2:00 PM"
+     "title": "Questionable · Did Not Participate In Practice · Ankle · via Sleeper · as of Wed 10/21 2:00 PM"
     }
    },
    {
@@ -1367,7 +1395,11 @@
     "bar": "32",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Limited Participation in Practice · Back · via Sleeper · as of Wed 10/21 10:25 PM"
+    }
    },
    {
     "rank": 32,
@@ -1413,7 +1445,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Groin · via Sleeper · as of Wed 10/21 12:35 PM"
+     "title": "Questionable · Did Not Participate In Practice · Groin · via Sleeper · as of Wed 10/21 7:15 PM"
     }
    },
    {
@@ -1453,7 +1485,11 @@
     "bar": "24",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Limited Participation in Practice · Knee · via Sleeper · as of Wed 10/21 10:25 PM"
+    }
    },
    {
     "rank": 38,
@@ -1522,7 +1558,11 @@
     "bar": "22",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "DNP",
+     "cls": "text-bg-warning",
+     "title": "Did not practice · Not injury related - resting player"
+    }
    },
    {
     "rank": 43,
@@ -1535,7 +1575,11 @@
     "bar": "21",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Limited Participation in Practice · Foot · via Sleeper · as of Wed 10/21 9:40 PM"
+    }
    },
    {
     "rank": 44,
@@ -1587,7 +1631,11 @@
     "bar": "18",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Limited Participation in Practice · Hamstring · via Sleeper · as of Wed 10/21 7:05 PM"
+    }
    },
    {
     "rank": 48,
@@ -1667,7 +1715,11 @@
     "bar": "78",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Limited Participation in Practice · Shoulder · via Sleeper · as of Wed 10/21 6:55 PM"
+    }
    },
    {
     "rank": 4,
@@ -1676,7 +1728,7 @@
     "team": "ATL",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
     "game_id": "2026_07_SF_ATL",
-    "proj": "16.7",
+    "proj": "16.8",
     "bar": "77",
     "act": null,
     "cls": null,
@@ -1719,7 +1771,11 @@
     "bar": "71",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Limited Participation in Practice · Ankle · via Sleeper · as of Wed 10/21 6:45 PM"
+    }
    },
    {
     "rank": 8,
@@ -1748,7 +1804,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Achilles · via Sleeper · as of Wed 10/21 2:00 PM"
+     "title": "Questionable · Did Not Participate In Practice · Ribs · via Sleeper · as of Wed 10/21 10:15 PM"
     }
    },
    {
@@ -1840,7 +1896,11 @@
     "bar": "67",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Limited Participation in Practice · Ankle · via Sleeper · as of Wed 10/21 9:50 PM"
+    }
    },
    {
     "rank": 17,
@@ -1944,7 +2004,11 @@
     "bar": "55",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "LP",
+     "cls": "text-bg-secondary",
+     "title": "Limited practice · Not injury related - resting player"
+    }
    },
    {
     "rank": 25,
@@ -1960,7 +2024,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Foot · via Sleeper · as of Sun 10/18 8:35 PM"
+     "title": "Questionable · Limited Participation in Practice · Foot · via Sleeper · as of Wed 10/21 2:40 PM"
     }
    },
    {
@@ -1974,7 +2038,11 @@
     "bar": "55",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Limited Participation in Practice · Chest · via Sleeper · as of Wed 10/21 7:15 PM"
+    }
    },
    {
     "rank": 27,
@@ -2016,7 +2084,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Concussion · via Sleeper · as of Wed 10/21 1:30 PM"
+     "title": "Questionable · Did Not Participate In Practice · Concussion · via Sleeper · as of Wed 10/21 2:15 PM"
     }
    },
    {
@@ -2098,7 +2166,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Ankle · via Sleeper · as of Tue 10/20 7:55 AM"
+     "title": "Questionable · Limited Participation in Practice · Ankle · via Sleeper · as of Wed 10/21 9:50 PM"
     }
    },
    {
@@ -2160,7 +2228,7 @@
     "team": "ATL",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
     "game_id": "2026_07_SF_ATL",
-    "proj": "9.0",
+    "proj": "9.1",
     "bar": "42",
     "act": null,
     "cls": null,
@@ -2193,7 +2261,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Hamstring · via Sleeper · as of Wed 10/21 11:55 AM"
+     "title": "Questionable · Did Not Participate In Practice · Hamstring · via Sleeper · as of Wed 10/21 5:50 PM"
     }
    },
    {
@@ -2210,7 +2278,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Quadriceps · via Sleeper · as of Mon 10/19 4:25 AM"
+     "title": "Questionable · Limited Participation in Practice · Calf · via Sleeper · as of Wed 10/21 2:55 PM"
     }
    },
    {
@@ -2237,7 +2305,11 @@
     "bar": "39",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Limited Participation in Practice · Hip · via Sleeper · as of Wed 10/21 6:15 PM"
+    }
    },
    {
     "rank": 46,
@@ -2277,9 +2349,9 @@
     "act": null,
     "cls": null,
     "inj": {
-     "label": "Q",
-     "cls": "text-bg-warning",
-     "title": "Questionable · Hamstring · via Sleeper · as of Wed 10/21 1:20 PM"
+     "label": "FP",
+     "cls": "bg-secondary-subtle text-secondary",
+     "title": "Full practice · Hamstring"
     }
    },
    {
@@ -2319,7 +2391,11 @@
     "bar": "35",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "DNP",
+     "cls": "text-bg-warning",
+     "title": "Did not practice · Not injury related - resting player"
+    }
    },
    {
     "rank": 52,
@@ -2374,7 +2450,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Shoulder · via Sleeper · as of Wed 10/21 11:15 AM"
+     "title": "Questionable · Limited Participation in Practice · Shoulder · via Sleeper · as of Wed 10/21 6:45 PM"
     }
    },
    {
@@ -2482,7 +2558,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Hamstring · via Sleeper · as of Fri 10/16 5:45 PM"
+     "title": "Questionable · Limited Participation in Practice · Hamstring · via Sleeper · as of Wed 10/21 6:00 PM"
     }
    },
    {
@@ -2538,7 +2614,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Finger · via Sleeper · as of Wed 10/21 10:55 AM"
+     "title": "Questionable · Limited Participation in Practice · Finger · via Sleeper · as of Wed 10/21 10:00 PM"
     }
    },
    {
@@ -2592,9 +2668,9 @@
     "act": null,
     "cls": null,
     "inj": {
-     "label": "Q",
-     "cls": "text-bg-warning",
-     "title": "Questionable · Neck · via Sleeper · as of Sun 10/18 11:50 PM"
+     "label": "FP",
+     "cls": "bg-secondary-subtle text-secondary",
+     "title": "Full practice · Neck"
     }
    },
    {
@@ -2661,9 +2737,9 @@
     "act": null,
     "cls": null,
     "inj": {
-     "label": "LP",
-     "cls": "text-bg-secondary",
-     "title": "Limited practice · Ankle"
+     "label": "FP",
+     "cls": "bg-secondary-subtle text-secondary",
+     "title": "Full practice · Ankle"
     }
    },
    {
@@ -2784,7 +2860,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Hip · via Sleeper · as of Mon 10/19 8:35 PM"
+     "title": "Questionable · Limited Participation in Practice · Hip · via Sleeper · as of Wed 10/21 3:00 PM"
     }
    },
    {
@@ -2811,7 +2887,11 @@
     "bar": "16",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Limited Participation in Practice · Ankle · via Sleeper · as of Wed 10/21 6:55 PM"
+    }
    },
    {
     "rank": 88,
@@ -3004,7 +3084,7 @@
     "team": "SF",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
     "game_id": "2026_07_SF_ATL",
-    "proj": "13.1",
+    "proj": "13.0",
     "bar": "89",
     "act": null,
     "cls": null,
@@ -3021,7 +3101,11 @@
     "bar": "85",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Limited Participation in Practice · Hamstring · via Sleeper · as of Wed 10/21 9:40 PM"
+    }
    },
    {
     "rank": 4,
@@ -3086,7 +3170,11 @@
     "bar": "63",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Limited Participation in Practice · Ankle · via Sleeper · as of Wed 10/21 5:45 PM"
+    }
    },
    {
     "rank": 9,
@@ -3115,7 +3203,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Concussion · via Sleeper · as of Wed 10/21 1:05 PM"
+     "title": "Questionable · Full Participation in Practice · Concussion · via Sleeper · as of Wed 10/21 9:50 PM"
     }
    },
    {
@@ -3207,7 +3295,11 @@
     "bar": "49",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Did Not Participate In Practice · Quadricep · via Sleeper · as of Wed 10/21 7:25 PM"
+    }
    },
    {
     "rank": 18,
@@ -3249,7 +3341,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Groin · via Sleeper · as of Wed 10/21 1:20 PM"
+     "title": "Questionable · Did Not Participate In Practice · Groin · via Sleeper · as of Wed 10/21 2:30 PM"
     }
    }
   ],
@@ -3403,7 +3495,7 @@
     "team": "",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
     "game_id": "2026_07_SF_ATL",
-    "proj": "23.2",
+    "proj": "23.5",
     "bar": null,
     "act": null,
     "cls": null
@@ -3513,7 +3605,7 @@
     "team": "",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
     "game_id": "2026_07_SF_ATL",
-    "proj": "26.2",
+    "proj": "26.0",
     "bar": null,
     "act": null,
     "cls": null
