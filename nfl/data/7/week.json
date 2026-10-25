@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-25T13:01:02.588982-06:00",
+ "as_of": "2026-10-25T13:15:21.176594-06:00",
  "season": 2026,
  "week": 7,
  "slate": {
@@ -152,7 +152,16 @@
    "hit": null,
    "qb_notes": [],
    "grade": null,
-   "plan": null
+   "plan": {
+    "calls": 11,
+    "calls_by_dir": {
+     "over": 5,
+     "under": 6
+    },
+    "records": null,
+    "records_by_dir": null,
+    "verdict": ""
+   }
   },
   {
    "game_id": "2026_07_LA_LV",
@@ -180,7 +189,16 @@
    "hit": null,
    "qb_notes": [],
    "grade": null,
-   "plan": null
+   "plan": {
+    "calls": 11,
+    "calls_by_dir": {
+     "over": 5,
+     "under": 6
+    },
+    "records": null,
+    "records_by_dir": null,
+    "verdict": ""
+   }
   },
   {
    "game_id": "2026_07_GB_DET",
@@ -201,14 +219,23 @@
    "total_score": null,
    "total_result": null,
    "model_margin": "+0.3",
-   "adj_margin": "+0.9",
+   "adj_margin": "+1.0",
    "proj_score": "30–26",
    "score": null,
    "played": false,
    "hit": null,
    "qb_notes": [],
    "grade": null,
-   "plan": null
+   "plan": {
+    "calls": 11,
+    "calls_by_dir": {
+     "over": 6,
+     "under": 5
+    },
+    "records": null,
+    "records_by_dir": null,
+    "verdict": ""
+   }
   },
   {
    "game_id": "2026_07_MIA_NYJ",
@@ -550,8 +577,8 @@
   }
  ],
  "plan_summary": {
-  "plans": 9,
-  "calls": 97,
+  "plans": 12,
+  "calls": 130,
   "graded": 1,
   "all": [
    {
@@ -590,7 +617,7 @@
   ],
   "sides": {
    "over": {
-    "calls": 47,
+    "calls": 63,
     "levels": [
      {
       "key": "normal",
@@ -628,7 +655,7 @@
     ]
    },
    "under": {
-    "calls": 50,
+    "calls": 67,
     "levels": [
      {
       "key": "normal",
@@ -714,6 +741,23 @@
    },
    {
     "rank": 4,
+    "pid": "00-0036264",
+    "name": "Jordan Love",
+    "team": "GB",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
+    "game_id": "2026_07_GB_DET",
+    "proj": "18.2",
+    "bar": "97",
+    "act": null,
+    "cls": null,
+    "inj": {
+     "label": "FP",
+     "cls": "bg-secondary-subtle text-secondary",
+     "title": "Full practice · Back"
+    }
+   },
+   {
+    "rank": 5,
     "pid": "00-0039163",
     "name": "C.J. Stroud",
     "team": "HOU",
@@ -726,7 +770,7 @@
     "inj": null
    },
    {
-    "rank": 5,
+    "rank": 6,
     "pid": "00-0036442",
     "name": "Joe Burrow",
     "team": "CIN",
@@ -737,23 +781,6 @@
     "act": null,
     "cls": null,
     "inj": null
-   },
-   {
-    "rank": 6,
-    "pid": "00-0036264",
-    "name": "Jordan Love",
-    "team": "GB",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
-    "game_id": "2026_07_GB_DET",
-    "proj": "17.9",
-    "bar": "95",
-    "act": null,
-    "cls": null,
-    "inj": {
-     "label": "FP",
-     "cls": "bg-secondary-subtle text-secondary",
-     "title": "Full practice · Back"
-    }
    },
    {
     "rank": 7,
@@ -1129,7 +1156,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Calf · via Sleeper · as of Sun 10/25 12:50 PM"
+     "title": "Questionable · Calf · via Sleeper · as of Sun 10/25 1:00 PM"
     }
    },
    {
@@ -1384,6 +1411,19 @@
    },
    {
     "rank": 22,
+    "pid": "00-0039811",
+    "name": "MarShawn Lloyd",
+    "team": "GB",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
+    "game_id": "2026_07_GB_DET",
+    "proj": "11.0",
+    "bar": "40",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 23,
     "pid": "00-0037258",
     "name": "Dameon Pierce",
     "team": "PHI",
@@ -1396,7 +1436,7 @@
     "inj": null
    },
    {
-    "rank": 23,
+    "rank": 24,
     "pid": "00-0036875",
     "name": "Rhamondre Stevenson",
     "team": "NE",
@@ -1409,7 +1449,7 @@
     "inj": null
    },
    {
-    "rank": 24,
+    "rank": 25,
     "pid": "00-0040784",
     "name": "Quinshon Judkins",
     "team": "CLE",
@@ -1426,7 +1466,7 @@
     }
    },
    {
-    "rank": 25,
+    "rank": 26,
     "pid": "00-0039738",
     "name": "Blake Corum",
     "team": "LA",
@@ -1439,7 +1479,7 @@
     "inj": null
    },
    {
-    "rank": 26,
+    "rank": 27,
     "pid": "00-0033906",
     "name": "Alvin Kamara",
     "team": "NO",
@@ -1456,7 +1496,7 @@
     }
    },
    {
-    "rank": 27,
+    "rank": 28,
     "pid": "00-0034844",
     "name": "Saquon Barkley",
     "team": "PHI",
@@ -1473,7 +1513,7 @@
     }
    },
    {
-    "rank": 28,
+    "rank": 29,
     "pid": "00-0040198",
     "name": "Ollie Gordon II",
     "team": "MIA",
@@ -1486,7 +1526,7 @@
     "inj": null
    },
    {
-    "rank": 29,
+    "rank": 30,
     "pid": "00-0040715",
     "name": "Cam Skattebo",
     "team": "NYG",
@@ -1499,25 +1539,12 @@
     "inj": null
    },
    {
-    "rank": 30,
+    "rank": 31,
     "pid": "00-0037263",
     "name": "Tyler Allgeier",
     "team": "ARI",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png",
     "game_id": "2026_07_DEN_ARI",
-    "proj": "8.8",
-    "bar": "32",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 31,
-    "pid": "00-0039811",
-    "name": "MarShawn Lloyd",
-    "team": "GB",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
-    "game_id": "2026_07_GB_DET",
     "proj": "8.8",
     "bar": "32",
     "act": null,
@@ -1578,6 +1605,19 @@
    },
    {
     "rank": 36,
+    "pid": "00-0038098",
+    "name": "Pierre Strong",
+    "team": "GB",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
+    "game_id": "2026_07_GB_DET",
+    "proj": "7.0",
+    "bar": "26",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 37,
     "pid": "00-0036919",
     "name": "Kenny Gainwell",
     "team": "TB",
@@ -1590,11 +1630,11 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Hip · via Sleeper · as of Fri 10/23 8:30 PM"
+     "title": "Questionable · Hip · via Sleeper · as of Sun 10/25 12:55 PM"
     }
    },
    {
-    "rank": 37,
+    "rank": 38,
     "pid": "00-0038705",
     "name": "Emari Demercado",
     "team": "DAL",
@@ -1607,7 +1647,7 @@
     "inj": null
    },
    {
-    "rank": 38,
+    "rank": 39,
     "pid": "00-0036139",
     "name": "Rico Dowdle",
     "team": "PIT",
@@ -1622,19 +1662,6 @@
      "cls": "text-bg-warning",
      "title": "Questionable · Limited Participation in Practice · Knee"
     }
-   },
-   {
-    "rank": 39,
-    "pid": "00-0038098",
-    "name": "Pierre Strong",
-    "team": "GB",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
-    "game_id": "2026_07_GB_DET",
-    "proj": "6.0",
-    "bar": "22",
-    "act": null,
-    "cls": null,
-    "inj": null
    },
    {
     "rank": 40,
@@ -1737,19 +1764,6 @@
    },
    {
     "rank": 47,
-    "pid": "00-0040142",
-    "name": "Kaleb Johnson",
-    "team": "GB",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
-    "game_id": "2026_07_GB_DET",
-    "proj": "4.4",
-    "bar": "16",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 48,
     "pid": "00-0036893",
     "name": "Najee Harris",
     "team": "NYG",
@@ -1762,7 +1776,7 @@
     "inj": null
    },
    {
-    "rank": 49,
+    "rank": 48,
     "pid": "00-0040556",
     "name": "Corey Kiner",
     "team": "NE",
@@ -1775,7 +1789,7 @@
     "inj": null
    },
    {
-    "rank": 50,
+    "rank": 49,
     "pid": "00-0041125",
     "name": "Seth McGowan",
     "team": "IND",
@@ -1783,6 +1797,19 @@
     "game_id": "2026_07_IND_MIN",
     "proj": "3.3",
     "bar": "12",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 50,
+    "pid": "00-0039364",
+    "name": "Sione Vaki",
+    "team": "DET",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png",
+    "game_id": "2026_07_GB_DET",
+    "proj": "3.0",
+    "bar": "11",
     "act": null,
     "cls": null,
     "inj": null
@@ -1852,8 +1879,8 @@
     "team": "GB",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
     "game_id": "2026_07_GB_DET",
-    "proj": "17.0",
-    "bar": "78",
+    "proj": "17.2",
+    "bar": "79",
     "act": null,
     "cls": null,
     "inj": {
@@ -1877,6 +1904,23 @@
    },
    {
     "rank": 7,
+    "pid": "00-0038124",
+    "name": "Christian Watson",
+    "team": "GB",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
+    "game_id": "2026_07_GB_DET",
+    "proj": "15.6",
+    "bar": "71",
+    "act": null,
+    "cls": null,
+    "inj": {
+     "label": "LP",
+     "cls": "text-bg-secondary",
+     "title": "Limited practice · Ankle"
+    }
+   },
+   {
+    "rank": 8,
     "pid": "00-0039337",
     "name": "Malik Nabers",
     "team": "NYG",
@@ -1887,23 +1931,6 @@
     "act": null,
     "cls": null,
     "inj": null
-   },
-   {
-    "rank": 8,
-    "pid": "00-0038124",
-    "name": "Christian Watson",
-    "team": "GB",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
-    "game_id": "2026_07_GB_DET",
-    "proj": "15.5",
-    "bar": "71",
-    "act": null,
-    "cls": null,
-    "inj": {
-     "label": "LP",
-     "cls": "text-bg-secondary",
-     "title": "Limited practice · Ankle"
-    }
    },
    {
     "rank": 9,
@@ -2894,6 +2921,23 @@
    },
    {
     "rank": 80,
+    "pid": "00-0040009",
+    "name": "Savion Williams",
+    "team": "GB",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
+    "game_id": "2026_07_GB_DET",
+    "proj": "3.8",
+    "bar": "18",
+    "act": null,
+    "cls": null,
+    "inj": {
+     "label": "LP",
+     "cls": "text-bg-secondary",
+     "title": "Limited practice · Ankle"
+    }
+   },
+   {
+    "rank": 81,
     "pid": "00-0040646",
     "name": "Jalen Royals",
     "team": "KC",
@@ -2906,7 +2950,7 @@
     "inj": null
    },
    {
-    "rank": 81,
+    "rank": 82,
     "pid": "00-0040172",
     "name": "Jordan Watkins",
     "team": "SF",
@@ -2919,7 +2963,7 @@
     "inj": null
    },
    {
-    "rank": 82,
+    "rank": 83,
     "pid": "00-0035891",
     "name": "Cody White",
     "team": "LV",
@@ -2930,23 +2974,6 @@
     "act": null,
     "cls": null,
     "inj": null
-   },
-   {
-    "rank": 83,
-    "pid": "00-0040009",
-    "name": "Savion Williams",
-    "team": "GB",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
-    "game_id": "2026_07_GB_DET",
-    "proj": "3.4",
-    "bar": "16",
-    "act": null,
-    "cls": null,
-    "inj": {
-     "label": "LP",
-     "cls": "text-bg-secondary",
-     "title": "Limited practice · Ankle"
-    }
    },
    {
     "rank": 84,
@@ -3289,8 +3316,8 @@
     "team": "GB",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
     "game_id": "2026_07_GB_DET",
-    "proj": "10.5",
-    "bar": "55",
+    "proj": "10.6",
+    "bar": "56",
     "act": null,
     "cls": null,
     "inj": null
