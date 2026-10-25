@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-25T14:16:14.104850-06:00",
+ "as_of": "2026-10-25T15:02:44.126004-06:00",
  "season": 2026,
  "week": 7,
  "slate": {
@@ -8,9 +8,9 @@
   "combined": "50.6%",
   "fair_price": "-103",
   "played": true,
-  "all_hit": true,
+  "all_hit": false,
   "hits": 1,
-  "misses": 0,
+  "misses": 1,
   "rr": {
    "n": 5,
    "tickets": 5,
@@ -40,14 +40,14 @@
    },
    "line": "-10",
    "total": "42.5",
-   "total_score": null,
-   "total_result": null,
+   "total_score": 48,
+   "total_result": "over",
    "model_margin": "+4.8",
    "adj_margin": "+3.5",
    "proj_score": "26–16",
-   "score": null,
-   "played": false,
-   "hit": null,
+   "score": "21–27",
+   "played": true,
+   "hit": false,
    "qb_notes": [],
    "grade": null,
    "plan": {
@@ -517,14 +517,14 @@
    },
    "line": "-2.5",
    "total": "49.5",
-   "total_score": null,
-   "total_result": null,
+   "total_score": 49,
+   "total_result": "under",
    "model_margin": "+6.4",
    "adj_margin": "+3.9",
    "proj_score": "26–24",
-   "score": null,
-   "played": false,
-   "hit": null,
+   "score": "20–29",
+   "played": true,
+   "hit": true,
    "qb_notes": [],
    "grade": null,
    "plan": {
@@ -1225,7 +1225,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Undisclosed · via Sleeper · as of Sun 10/25 1:40 PM"
+     "title": "Questionable · Undisclosed · via Sleeper · as of Sun 10/25 2:35 PM"
     }
    },
    {
@@ -3512,8 +3512,8 @@
     "game_id": "2026_07_NYG_HOU",
     "proj": "16.2",
     "bar": null,
-    "act": null,
-    "cls": null
+    "act": "27",
+    "cls": "text-danger"
    },
    {
     "rank": 2,
@@ -3677,8 +3677,8 @@
     "game_id": "2026_07_SF_ATL",
     "proj": "23.5",
     "bar": null,
-    "act": null,
-    "cls": null
+    "act": "29",
+    "cls": "text-danger"
    },
    {
     "rank": 17,
@@ -3765,8 +3765,8 @@
     "game_id": "2026_07_SF_ATL",
     "proj": "26.0",
     "bar": null,
-    "act": null,
-    "cls": null
+    "act": "20",
+    "cls": "text-success"
    },
    {
     "rank": 25,
@@ -3776,8 +3776,8 @@
     "game_id": "2026_07_NYG_HOU",
     "proj": "26.2",
     "bar": null,
-    "act": null,
-    "cls": null
+    "act": "21",
+    "cls": "text-success"
    },
    {
     "rank": 26,
