@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-25T08:41:53.227735-06:00",
+ "as_of": "2026-10-25T09:23:56.086176-06:00",
  "season": 2026,
  "week": 7,
  "slate": {
@@ -50,7 +50,16 @@
    "hit": null,
    "qb_notes": [],
    "grade": null,
-   "plan": null
+   "plan": {
+    "calls": 10,
+    "calls_by_dir": {
+     "over": 6,
+     "under": 4
+    },
+    "records": null,
+    "records_by_dir": null,
+    "verdict": ""
+   }
   },
   {
    "game_id": "2026_07_IND_MIN",
@@ -66,19 +75,28 @@
     "title": "Sun Oct 25, 11:00 AM Denver",
     "sort": "2026-10-25T13:00:00-04:00"
    },
-   "line": "-7",
+   "line": "-6.5",
    "total": "41.5",
    "total_score": null,
    "total_result": null,
    "model_margin": "+6.1",
    "adj_margin": "+7.2",
-   "proj_score": "24–17",
+   "proj_score": "24–18",
    "score": null,
    "played": false,
    "hit": null,
    "qb_notes": [],
    "grade": null,
-   "plan": null
+   "plan": {
+    "calls": 12,
+    "calls_by_dir": {
+     "over": 6,
+     "under": 6
+    },
+    "records": null,
+    "records_by_dir": null,
+    "verdict": ""
+   }
   },
   {
    "game_id": "2026_07_DAL_PHI",
@@ -218,7 +236,16 @@
    "hit": null,
    "qb_notes": [],
    "grade": null,
-   "plan": null
+   "plan": {
+    "calls": 11,
+    "calls_by_dir": {
+     "over": 5,
+     "under": 6
+    },
+    "records": null,
+    "records_by_dir": null,
+    "verdict": ""
+   }
   },
   {
    "game_id": "2026_07_KC_SEA",
@@ -274,7 +301,16 @@
    "hit": null,
    "qb_notes": [],
    "grade": null,
-   "plan": null
+   "plan": {
+    "calls": 12,
+    "calls_by_dir": {
+     "over": 6,
+     "under": 6
+    },
+    "records": null,
+    "records_by_dir": null,
+    "verdict": ""
+   }
   },
   {
    "game_id": "2026_07_CIN_BAL",
@@ -302,7 +338,16 @@
    "hit": null,
    "qb_notes": [],
    "grade": null,
-   "plan": null
+   "plan": {
+    "calls": 10,
+    "calls_by_dir": {
+     "over": 4,
+     "under": 6
+    },
+    "records": null,
+    "records_by_dir": null,
+    "verdict": ""
+   }
   },
   {
    "game_id": "2026_07_PIT_NO",
@@ -455,7 +500,16 @@
    "hit": null,
    "qb_notes": [],
    "grade": null,
-   "plan": null
+   "plan": {
+    "calls": 11,
+    "calls_by_dir": {
+     "over": 5,
+     "under": 6
+    },
+    "records": null,
+    "records_by_dir": null,
+    "verdict": ""
+   }
   },
   {
    "game_id": "2026_07_SF_ATL",
@@ -472,7 +526,7 @@
     "sort": "2026-10-25T13:00:00-04:00"
    },
    "line": "-2.5",
-   "total": "50.5",
+   "total": "49.5",
    "total_score": null,
    "total_result": null,
    "model_margin": "+6.4",
@@ -483,12 +537,21 @@
    "hit": null,
    "qb_notes": [],
    "grade": null,
-   "plan": null
+   "plan": {
+    "calls": 10,
+    "calls_by_dir": {
+     "over": 5,
+     "under": 5
+    },
+    "records": null,
+    "records_by_dir": null,
+    "verdict": ""
+   }
   }
  ],
  "plan_summary": {
-  "plans": 2,
-  "calls": 21,
+  "plans": 9,
+  "calls": 97,
   "graded": 1,
   "all": [
    {
@@ -527,7 +590,7 @@
   ],
   "sides": {
    "over": {
-    "calls": 10,
+    "calls": 47,
     "levels": [
      {
       "key": "normal",
@@ -565,7 +628,7 @@
     ]
    },
    "under": {
-    "calls": 11,
+    "calls": 50,
     "levels": [
      {
       "key": "normal",
@@ -613,7 +676,7 @@
     "team": "SF",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
     "game_id": "2026_07_SF_ATL",
-    "proj": "19.0",
+    "proj": "18.9",
     "bar": "100",
     "act": null,
     "cls": null,
@@ -627,7 +690,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
     "game_id": "2026_07_CLE_TEN",
     "proj": "18.3",
-    "bar": "96",
+    "bar": "97",
     "act": null,
     "cls": null,
     "inj": null
@@ -640,7 +703,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
     "game_id": "2026_07_NE_CHI",
     "proj": "18.3",
-    "bar": "96",
+    "bar": "97",
     "act": "27.4",
     "cls": "text-success",
     "inj": {
@@ -657,7 +720,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
     "game_id": "2026_07_NYG_HOU",
     "proj": "18.3",
-    "bar": "96",
+    "bar": "97",
     "act": null,
     "cls": null,
     "inj": null
@@ -670,7 +733,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
     "game_id": "2026_07_CIN_BAL",
     "proj": "18.0",
-    "bar": "94",
+    "bar": "95",
     "act": null,
     "cls": null,
     "inj": null
@@ -683,7 +746,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
     "game_id": "2026_07_GB_DET",
     "proj": "17.9",
-    "bar": "94",
+    "bar": "95",
     "act": null,
     "cls": null,
     "inj": {
@@ -699,8 +762,8 @@
     "team": "MIN",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png",
     "game_id": "2026_07_IND_MIN",
-    "proj": "17.4",
-    "bar": "91",
+    "proj": "17.3",
+    "bar": "92",
     "act": null,
     "cls": null,
     "inj": null
@@ -713,7 +776,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
     "game_id": "2026_07_MIA_NYJ",
     "proj": "16.9",
-    "bar": "89",
+    "bar": "90",
     "act": null,
     "cls": null,
     "inj": {
@@ -730,7 +793,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png",
     "game_id": "2026_07_DEN_ARI",
     "proj": "16.4",
-    "bar": "86",
+    "bar": "87",
     "act": null,
     "cls": null,
     "inj": null
@@ -743,7 +806,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
     "game_id": "2026_07_PIT_NO",
     "proj": "16.2",
-    "bar": "85",
+    "bar": "86",
     "act": null,
     "cls": null,
     "inj": null
@@ -756,7 +819,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png",
     "game_id": "2026_07_LA_LV",
     "proj": "16.2",
-    "bar": "85",
+    "bar": "86",
     "act": null,
     "cls": null,
     "inj": null
@@ -782,7 +845,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png",
     "game_id": "2026_07_GB_DET",
     "proj": "15.9",
-    "bar": "83",
+    "bar": "84",
     "act": null,
     "cls": null,
     "inj": null
@@ -829,7 +892,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
     "game_id": "2026_07_CIN_BAL",
     "proj": "15.5",
-    "bar": "81",
+    "bar": "82",
     "act": null,
     "cls": null,
     "inj": null
@@ -885,7 +948,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/den.png",
     "game_id": "2026_07_DEN_ARI",
     "proj": "14.3",
-    "bar": "75",
+    "bar": "76",
     "act": null,
     "cls": null,
     "inj": null
@@ -898,7 +961,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lv.png",
     "game_id": "2026_07_LA_LV",
     "proj": "14.3",
-    "bar": "75",
+    "bar": "76",
     "act": null,
     "cls": null,
     "inj": null
@@ -931,24 +994,24 @@
    },
    {
     "rank": 24,
-    "pid": "00-0039917",
-    "name": "Michael Penix Jr.",
-    "team": "ATL",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
-    "game_id": "2026_07_SF_ATL",
-    "proj": "13.2",
-    "bar": "69",
+    "pid": "00-0040676",
+    "name": "Cam Ward",
+    "team": "TEN",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
+    "game_id": "2026_07_CLE_TEN",
+    "proj": "13.1",
+    "bar": "70",
     "act": null,
     "cls": null,
     "inj": null
    },
    {
     "rank": 25,
-    "pid": "00-0040676",
-    "name": "Cam Ward",
-    "team": "TEN",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
-    "game_id": "2026_07_CLE_TEN",
+    "pid": "00-0038400",
+    "name": "Tanner McKee",
+    "team": "PHI",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
+    "game_id": "2026_07_DAL_PHI",
     "proj": "13.1",
     "bar": "69",
     "act": null,
@@ -957,11 +1020,11 @@
    },
    {
     "rank": 26,
-    "pid": "00-0038400",
-    "name": "Tanner McKee",
-    "team": "PHI",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
-    "game_id": "2026_07_DAL_PHI",
+    "pid": "00-0039917",
+    "name": "Michael Penix Jr.",
+    "team": "ATL",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
+    "game_id": "2026_07_SF_ATL",
     "proj": "13.1",
     "bar": "69",
     "act": null,
@@ -992,8 +1055,8 @@
     "team": "IND",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
     "game_id": "2026_07_IND_MIN",
-    "proj": "11.3",
-    "bar": "59",
+    "proj": "11.4",
+    "bar": "60",
     "act": null,
     "cls": null,
     "inj": null
@@ -1046,8 +1109,8 @@
     "team": "ATL",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
     "game_id": "2026_07_SF_ATL",
-    "proj": "24.7",
-    "bar": "90",
+    "proj": "24.5",
+    "bar": "89",
     "act": null,
     "cls": null,
     "inj": null
@@ -1059,7 +1122,7 @@
     "team": "SF",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
     "game_id": "2026_07_SF_ATL",
-    "proj": "24.3",
+    "proj": "24.2",
     "bar": "88",
     "act": null,
     "cls": null,
@@ -1124,8 +1187,8 @@
     "team": "IND",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
     "game_id": "2026_07_IND_MIN",
-    "proj": "17.4",
-    "bar": "63",
+    "proj": "17.5",
+    "bar": "64",
     "act": null,
     "cls": null,
     "inj": {
@@ -1142,7 +1205,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png",
     "game_id": "2026_07_IND_MIN",
     "proj": "17.2",
-    "bar": "63",
+    "bar": "62",
     "act": null,
     "cls": null,
     "inj": null
@@ -1763,7 +1826,7 @@
     "team": "ATL",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
     "game_id": "2026_07_SF_ATL",
-    "proj": "17.4",
+    "proj": "17.3",
     "bar": "80",
     "act": null,
     "cls": null,
@@ -2185,8 +2248,8 @@
     "team": "IND",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
     "game_id": "2026_07_IND_MIN",
-    "proj": "10.5",
-    "bar": "48",
+    "proj": "10.6",
+    "bar": "49",
     "act": null,
     "cls": null,
     "inj": null
@@ -2280,7 +2343,7 @@
     "team": "ATL",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
     "game_id": "2026_07_SF_ATL",
-    "proj": "9.4",
+    "proj": "9.3",
     "bar": "43",
     "act": null,
     "cls": null,
@@ -2850,7 +2913,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
     "game_id": "2026_07_SF_ATL",
     "proj": "3.6",
-    "bar": "17",
+    "bar": "16",
     "act": null,
     "cls": null,
     "inj": null
@@ -3026,7 +3089,7 @@
     "team": "SF",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
     "game_id": "2026_07_SF_ATL",
-    "proj": "2.6",
+    "proj": "2.5",
     "bar": "12",
     "act": null,
     "cls": null,
@@ -3150,7 +3213,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png",
     "game_id": "2026_07_DEN_ARI",
     "proj": "15.4",
-    "bar": "80",
+    "bar": "81",
     "act": null,
     "cls": null,
     "inj": null
@@ -3180,7 +3243,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
     "game_id": "2026_07_NYG_HOU",
     "proj": "12.3",
-    "bar": "64",
+    "bar": "65",
     "act": null,
     "cls": null,
     "inj": null
@@ -3305,7 +3368,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
     "game_id": "2026_07_NE_CHI",
     "proj": "7.9",
-    "bar": "41",
+    "bar": "42",
     "act": "19.9",
     "cls": "text-success",
     "inj": null
@@ -3387,7 +3450,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
     "game_id": "2026_07_PIT_NO",
     "proj": "6.6",
-    "bar": "34",
+    "bar": "35",
     "act": null,
     "cls": null,
     "inj": null
@@ -3422,7 +3485,7 @@
     "team": "",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png",
     "game_id": "2026_07_IND_MIN",
-    "proj": "17.2",
+    "proj": "17.5",
     "bar": null,
     "act": null,
     "cls": null
@@ -3572,6 +3635,17 @@
    },
    {
     "rank": 17,
+    "name": "SF",
+    "team": "",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
+    "game_id": "2026_07_SF_ATL",
+    "proj": "23.5",
+    "bar": null,
+    "act": null,
+    "cls": null
+   },
+   {
+    "rank": 18,
     "name": "TB",
     "team": "",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/tb.png",
@@ -3582,7 +3656,7 @@
     "cls": null
    },
    {
-    "rank": 18,
+    "rank": 19,
     "name": "CHI",
     "team": "",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
@@ -3593,22 +3667,11 @@
     "cls": "text-danger"
    },
    {
-    "rank": 19,
-    "name": "PHI",
-    "team": "",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
-    "game_id": "2026_07_DAL_PHI",
-    "proj": "24.0",
-    "bar": null,
-    "act": null,
-    "cls": null
-   },
-   {
     "rank": 20,
-    "name": "SF",
+    "name": "IND",
     "team": "",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
-    "game_id": "2026_07_SF_ATL",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
+    "game_id": "2026_07_IND_MIN",
     "proj": "24.0",
     "bar": null,
     "act": null,
@@ -3616,11 +3679,11 @@
    },
    {
     "rank": 21,
-    "name": "IND",
+    "name": "PHI",
     "team": "",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
-    "game_id": "2026_07_IND_MIN",
-    "proj": "24.2",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
+    "game_id": "2026_07_DAL_PHI",
+    "proj": "24.0",
     "bar": null,
     "act": null,
     "cls": null
@@ -3660,21 +3723,21 @@
    },
    {
     "rank": 25,
-    "name": "NYG",
+    "name": "ATL",
     "team": "",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
-    "game_id": "2026_07_NYG_HOU",
-    "proj": "26.5",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
+    "game_id": "2026_07_SF_ATL",
+    "proj": "26.0",
     "bar": null,
     "act": null,
     "cls": null
    },
    {
     "rank": 26,
-    "name": "ATL",
+    "name": "NYG",
     "team": "",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
-    "game_id": "2026_07_SF_ATL",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
+    "game_id": "2026_07_NYG_HOU",
     "proj": "26.5",
     "bar": null,
     "act": null,
