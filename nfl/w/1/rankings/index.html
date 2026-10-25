@@ -1086,6 +1086,47 @@
   .ld-game .nums em { font-style: normal; font-size: 1.05rem; font-weight: 900; letter-spacing: -0.01em; white-space: nowrap; }
   .ld-game .nums small, .ld-game .meta small { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-muted); }
   .ld-game .meta { grid-area: meta; display: flex; gap: 0.7rem; }
+  .ld-plans { grid-column: 1 / -1; position: relative; padding: 1rem 1.1rem 1.05rem; border-radius: 18px; border: var(--hfa-hairline); background: var(--hfa-card); box-shadow: var(--hfa-shadow); }
+  .ld-plans.on { border-color: rgba(255, 31, 47, 0.55); background: linear-gradient(135deg, rgba(255, 31, 47, 0.16), var(--hfa-card) 55%); }
+  .ld-plans-head { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.8rem; }
+  .ld-plans-head h2 { margin: 0.1rem 0 0.15rem; font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: 900; letter-spacing: -0.02em; line-height: 1.1; }
+  .ld-plans-head h2 b { color: var(--hfa-accent); }
+  .ld-plans-head small { font-size: 0.76rem; color: var(--hfa-muted); }
+  .ld-pulse { flex: none; width: 0.8rem; height: 0.8rem; border-radius: 50%; background: rgba(128, 128, 128, 0.45); }
+  .ld-plans.on .ld-pulse { background: var(--hfa-accent); box-shadow: 0 0 0 0 rgba(255, 31, 47, 0.6); animation: ld-pulse 1.8s infinite; }
+  @keyframes ld-pulse { 70% { box-shadow: 0 0 0 0.6rem rgba(255, 31, 47, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 31, 47, 0); } }
+  .ld-plan-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 0.55rem; }
+  .ld-plan { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "teams calls" "split calls" "stamp stamp" "kick kick"; gap: 0.2rem 0.7rem; padding: 0.65rem 0.75rem; border-radius: 12px; background: var(--hfa-tint); border: var(--hfa-hairline); text-decoration: none; color: var(--hfa-body); transition: transform 0.12s, border-color 0.12s; }
+  .ld-plan:hover { transform: translateY(-2px); border-color: rgba(255, 31, 47, 0.55); }
+  .ld-plan .teams { grid-area: teams; display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 800; font-size: 0.98rem; white-space: nowrap; }
+  .ld-plan .teams img { width: 24px; height: 24px; object-fit: contain; }
+  .ld-plan .teams b { color: var(--hfa-accent); } .ld-plan .teams b.opp { color: var(--hfa-body); }
+  .ld-plan .teams i { font-style: normal; font-size: 0.74rem; color: var(--hfa-muted); font-weight: 500; }
+  .ld-plan .calls { grid-area: calls; display: flex; flex-direction: column; align-items: flex-end; justify-content: center; }
+  .ld-plan .calls em { font-style: normal; font-size: 1.35rem; font-weight: 900; color: var(--hfa-accent); line-height: 1; }
+  .ld-plan .calls small, .ld-plan .kick { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-muted); }
+  .ld-plan .split { grid-area: split; display: flex; gap: 0.35rem; }
+  .ld-plan .split i { font-style: normal; font-size: 0.66rem; font-weight: 800; padding: 0.08rem 0.45rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); }
+  .ld-plan .split i.o { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); } .ld-plan .split i.u { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .ld-plan .stamp { grid-area: stamp; font-size: 0.72rem; color: var(--hfa-body); margin-top: 0.15rem; }
+  .ld-plan .kick { grid-area: kick; }
+  .ld-plan-wait { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem; margin-top: 0.75rem; }
+  .ld-plan-wait span { font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); margin-right: 0.2rem; }
+  .ld-plan-wait a { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.15rem 0.6rem 0.15rem 0.25rem; border-radius: 999px; border: 1px dashed rgba(128, 128, 128, 0.4); font-size: 0.74rem; font-weight: 700; color: var(--hfa-muted); text-decoration: none; }
+  .ld-plan-wait a:hover { color: var(--hfa-body); border-color: rgba(255, 31, 47, 0.5); }
+  .ld-plan-wait img { width: 16px; height: 16px; object-fit: contain; }
+  @media (prefers-reduced-motion: reduce) { .ld-plans.on .ld-pulse { animation: none; } }
+  @media (max-width: 760px) {
+    .ld-plans { padding: 0.85rem 0.75rem 0.9rem; }
+    .ld-plan-grid { grid-template-columns: 1fr 1fr; gap: 0.4rem; }
+    .ld-plan { grid-template-columns: 1fr; grid-template-areas: "teams" "calls" "stamp" "kick"; padding: 0.5rem 0.55rem; gap: 0.15rem; }
+    .ld-plan .teams { font-size: 0.86rem; gap: 0.25rem; }
+    .ld-plan .teams img { width: 18px; height: 18px; }
+    .ld-plan .split { display: none; }
+    .ld-plan .calls { flex-direction: row; align-items: baseline; justify-content: flex-start; gap: 0.3rem; }
+    .ld-plan .calls em { font-size: 1.05rem; }
+    .ld-plan .stamp { font-size: 0.64rem; color: var(--hfa-muted); margin-top: 0; }
+  }
   @media (max-width: 1100px) { .ld-hero { grid-template-columns: 1fr; } }
 
   /* Phone top bar: one row — brand, X, sport, week counter, theme */
