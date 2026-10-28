@@ -1294,6 +1294,248 @@
     .gm-script { margin: -0.4rem 16px 1rem; }
     .pp-headchips .badge { display: none; }
   }
+
+  /* ---- the post-game look: the plan against the game (.rv-) ---- */
+  .gm-side.lost img { opacity: 0.45; filter: grayscale(0.6) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.55)); }
+  .gm-side.lost .gm-abbr { color: var(--hfa-muted); }
+  .gm-pts.final { color: var(--hfa-body); text-shadow: none; }
+  .gm-pts.final span { opacity: 0.55; }
+  .gm-pts.final span.w { opacity: 1; color: var(--hfa-accent); text-shadow: 0 0 28px rgba(255, 31, 47, 0.35); }
+  .gm-projwas { letter-spacing: 0.08em; }
+  .gm-verdict { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.4rem 1rem; margin: -0.6rem 1.1rem 1.2rem; padding: 0.55rem 1rem; border: 1px solid var(--hfa-accent); border-radius: 16px; background: var(--hfa-accent-soft); color: inherit; text-decoration: none; }
+  .gm-verdict.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.10); }
+  .gm-verdict.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.10); }
+  .gm-verdict.warn { border-color: rgba(128, 128, 128, 0.5); background: var(--hfa-tint); }
+  .gm-verdict-stamp { display: inline-flex; align-items: baseline; gap: 0.45rem; }
+  .gm-verdict-stamp i, .gm-verdict-v i { font-style: normal; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-muted); }
+  .gm-verdict-stamp b { font-size: 1.05rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; color: var(--hfa-body); }
+  .gm-verdict.good .gm-verdict-stamp b { color: var(--hfa-good); } .gm-verdict.bad .gm-verdict-stamp b { color: var(--hfa-bad); }
+  .gm-verdict-v { display: inline-flex; align-items: baseline; gap: 0.35rem; font-size: 0.9rem; }
+  .gm-verdict-v b { font-weight: 800; color: var(--hfa-body); }
+  .gm-verdict-v.mk { font-size: 0.74rem; color: var(--hfa-muted); padding: 0.1rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.14); }
+  .gm-letter { font-size: 1.1rem; } .gm-letter.good { color: var(--hfa-good) !important; } .gm-letter.bad { color: var(--hfa-bad) !important; }
+  .gm-tile.rv small { font-size: 0.66rem; color: var(--hfa-muted); }
+  .gm-tile.rv.over b { color: var(--hfa-good); } .gm-tile.rv.under b { color: var(--hfa-bad); }
+  .gm-tile.rv b.flat { color: var(--hfa-muted); }
+
+  .rv-stamp { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.4rem; padding: 0.8rem 1rem; margin: 0.3rem 0 0.9rem; border-radius: 16px; border: 2px solid rgba(128, 128, 128, 0.4); background: var(--hfa-tint); }
+  .rv-stamp.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.08); }
+  .rv-stamp.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.08); }
+  .rv-stamp-word { display: flex; flex-direction: column; line-height: 1; }
+  .rv-stamp-word span { font-size: 0.64rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: var(--hfa-muted); }
+  .rv-stamp-word b { font-size: 2rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; color: var(--hfa-body); margin-top: 0.2rem; }
+  .rv-stamp.good .rv-stamp-word b { color: var(--hfa-good); } .rv-stamp.bad .rv-stamp-word b { color: var(--hfa-bad); }
+  .rv-stamp-meta { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.9rem; }
+  .rv-stamp-meta b { color: var(--hfa-body); }
+  .rv-win { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 700; }
+  .rv-win img { width: 26px; height: 26px; object-fit: contain; }
+  .rv-vs { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 0.8rem; align-items: stretch; }
+  .rv-col { border: var(--hfa-hairline); border-radius: 14px; padding: 0.8rem 0.95rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-col .pp-hook-logos { margin-bottom: 0.4rem; } .rv-col .pp-hook-logos img { width: 40px; height: 40px; }
+  .rv-col .pp-quote { font-size: 1.2rem; }
+  .rv-col.plan .pp-quote { color: var(--hfa-body); }
+  .rv-col.game { border-color: rgba(255, 31, 47, 0.45); }
+  .rv-col.game.good { border-color: var(--hfa-good); } .rv-col.game.bad { border-color: var(--hfa-bad); }
+  .rv-arrow { align-self: center; font-size: 1.6rem; font-weight: 900; color: var(--hfa-accent); }
+  .rv-tally { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.55rem; margin-top: 0.9rem; }
+  .rv-tile { display: flex; flex-direction: column; gap: 0.15rem; border: var(--hfa-hairline); border-radius: 12px; padding: 0.6rem 0.75rem; background: var(--hfa-tint); color: inherit; text-decoration: none; min-width: 0; }
+  .rv-tile > span { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .rv-tile > b { font-size: 1.6rem; font-weight: 900; line-height: 1.1; color: var(--hfa-body); }
+  .rv-tile > b i { font-style: normal; }
+  .rv-tile > b small, .rv-tile > small { font-size: 0.72rem; font-weight: 600; color: var(--hfa-muted); }
+  .rv-tile.hot { border-color: rgba(255, 31, 47, 0.5); }
+  .rv-tile.lt b { font-size: 2rem; } .rv-tile.lt.good b { color: var(--hfa-good); } .rv-tile.lt.bad b { color: var(--hfa-bad); }
+  .rv-headline { font-size: 1.08rem; font-weight: 800; line-height: 1.35; margin: 0; letter-spacing: -0.01em; }
+  .rv-tile.mk em { font-style: normal; font-size: 0.8rem; font-weight: 700; }
+  .rv-bar { height: 5px; border-radius: 3px; background: rgba(128, 128, 128, 0.2); overflow: hidden; }
+  .rv-bar i { display: block; height: 100%; border-radius: 3px; background: var(--hfa-good); }
+  .rv-why { border-left: 4px solid var(--hfa-accent); }
+  .rv-fold { margin-top: 0.9rem; border-top: var(--hfa-hairline); padding-top: 0.7rem; }
+  .rv-fold > summary { list-style: none; cursor: pointer; font-size: 0.74rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin-bottom: 0.6rem; }
+  .rv-fold > summary::-webkit-details-marker { display: none; }
+  .rv-fold > summary::before { content: "+ "; } .rv-fold[open] > summary::before { content: "\2212  "; }
+  .rv-fold > summary .flat { text-transform: none; letter-spacing: 0; font-weight: 500; }
+  .rv-story { font-size: 0.92rem; line-height: 1.6; max-width: 52rem; }
+  .rv-story h1, .rv-story h2, .rv-story h3 { font-size: 1rem; color: var(--hfa-accent); margin: 1rem 0 0.3rem; }
+  .rv-story p { margin: 0 0 0.7rem; }
+
+  .rv-tl { list-style: none; margin: 0; padding: 0 0 0 0.2rem; display: flex; flex-direction: column; }
+  .rv-tl li { position: relative; display: grid; grid-template-columns: 5.2rem minmax(0, 1fr); gap: 0.8rem; padding: 0 0 0.9rem; }
+  .rv-tl li::before { content: ""; position: absolute; left: 2.6rem; top: 1.6rem; bottom: 0; width: 2px; background: rgba(128, 128, 128, 0.25); }
+  .rv-tl li:last-child::before { display: none; }
+  .rv-clock { align-self: start; justify-self: center; z-index: 1; font-size: 0.72rem; font-weight: 800; padding: 0.25rem 0.55rem; border-radius: 999px; background: var(--pp-team); color: #fff; white-space: nowrap; box-shadow: 0 0 0 3px var(--hfa-card); }
+  .rv-tlbody { border: var(--hfa-hairline); border-left: 4px solid var(--pp-team); border-radius: 12px; padding: 0.55rem 0.8rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-play { display: flex; align-items: flex-start; gap: 0.5rem; font-weight: 700; font-size: 0.94rem; line-height: 1.35; }
+  .rv-play img { width: 24px; height: 24px; object-fit: contain; flex: none; }
+  .rv-decided { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.6rem; }
+  .rv-dcard { border: var(--hfa-hairline); border-radius: 14px; padding: 0.7rem 0.85rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-dcard.tell { border-color: rgba(47, 212, 164, 0.5); }
+  .rv-flag { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.12rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); margin-bottom: 0.4rem; }
+  .rv-flag img { width: 14px; height: 14px; object-fit: contain; }
+  .rv-dcard.tell .rv-flag { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .rv-dcard .pp-lead { font-size: 0.92rem; font-weight: 700; }
+
+  .rv-gauge.held { border-color: rgba(47, 212, 164, 0.55); } .rv-gauge.miss { border-color: rgba(255, 176, 32, 0.55); }
+  .rv-mark { margin-left: auto; font-size: 0.85rem; }
+  .rv-gauge.held .rv-mark { color: var(--hfa-good); } .rv-gauge.miss .rv-mark { color: var(--hfa-bad); }
+  .rv-row { display: grid; grid-template-columns: 3.2rem auto 1fr; align-items: center; gap: 0.45rem; font-size: 0.8rem; }
+  .rv-row small { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-muted); }
+  .rv-row em { font-style: normal; font-weight: 800; text-transform: capitalize; }
+  .rv-row.played .pp-bars i.on { background: var(--hfa-body); }
+  .rv-gauge.held .rv-row.played .pp-bars i.on { background: var(--hfa-good); } .rv-gauge.miss .rv-row.played .pp-bars i.on { background: var(--hfa-bad); }
+  .rv-note { font-size: 0.7rem; color: var(--hfa-muted); }
+  .pp-leanbar .track i.called { background: transparent; border: 2px solid var(--hfa-body); box-shadow: none; }
+  .pp-leanbar .track i.played { background: var(--hfa-accent); border-color: var(--hfa-card); }
+  .rv-cvp { text-transform: capitalize; } .rv-cvp i { font-style: normal; color: var(--hfa-muted); }
+  .rv-legend { display: flex; gap: 1rem; font-size: 0.68rem; color: var(--hfa-muted); margin: 0.2rem 0 0; }
+  .rv-legend span { display: inline-flex; align-items: center; gap: 0.3rem; }
+  .rv-legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .rv-legend i.called { border: 2px solid var(--hfa-body); } .rv-legend i.played { background: var(--hfa-accent); }
+  .pp-path.took { border-color: rgba(47, 212, 164, 0.55); border-left-color: var(--pp-team); box-shadow: 0 0 0 1px rgba(47, 212, 164, 0.25) inset; }
+  .pp-path.not { opacity: 0.55; }
+  .pp-pathhead .badge { white-space: nowrap; }
+  .rv-swing { flex-direction: column; gap: 0.35rem; }
+  .rv-weight { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.12rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); }
+  .rv-swing.decisive { border-color: var(--hfa-accent); } .rv-swing.decisive .rv-weight { background: var(--hfa-accent); color: #fff; }
+  .rv-swing.contributed .rv-weight { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .rv-swing.minor { opacity: 0.85; }
+  .rv-went { font-size: 0.84rem; color: var(--hfa-muted); margin: 0; line-height: 1.4; } .rv-went b { color: var(--hfa-body); }
+  .pp-angle.cashed { border-color: rgba(47, 212, 164, 0.55); }
+  .pp-angletitle .badge { margin-left: 0.3rem; vertical-align: 0.1rem; }
+  .pp-leg .rv-res { font-size: 0.74rem; font-weight: 800; white-space: nowrap; }
+  .pp-leg.hit { background: rgba(47, 212, 164, 0.12); } .pp-leg.hit .rv-res { color: var(--hfa-good); }
+  .pp-leg.miss { background: rgba(255, 176, 32, 0.10); } .pp-leg.miss .rv-res { color: var(--hfa-bad); }
+  .pp-leg.void .rv-res { color: var(--hfa-muted); }
+
+  .rv-eh { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0.6rem; }
+  .rv-ehcol { border: var(--hfa-hairline); border-radius: 12px; padding: 0.6rem 0.8rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-ehcol .pp-lead { font-size: 0.9rem; }
+  .rv-ehcol.happened { border-width: 1px; border-color: rgba(128, 128, 128, 0.45); }
+  .rv-ehcol.happened.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.07); }
+  .rv-ehcol.happened.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.07); }
+  .rv-call.hit { border-left-color: var(--hfa-good); box-shadow: 0 0 0 1px rgba(47, 212, 164, 0.3) inset; }
+  .rv-call.miss { border-left-color: var(--hfa-bad); }
+  .rv-call.void { opacity: 0.6; border-left-color: rgba(128, 128, 128, 0.5); }
+  .rv-stamp-res { flex: none; display: inline-grid; place-items: center; min-width: 2rem; height: 2rem; padding: 0 0.3rem; border-radius: 999px; font-size: 0.95rem; font-weight: 900; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); }
+  .hfa .rv-stamp-res.hit { margin: 0; background: var(--hfa-good); color: #04130e; } .rv-stamp-res.miss { background: var(--hfa-bad); color: #1a1000; } .rv-stamp-res.void { font-size: 0.62rem; }
+  .rv-meter { margin: 0.25rem 0 0.45rem; }
+  .rv-meter .track { position: relative; height: 8px; border-radius: 4px; background: rgba(128, 128, 128, 0.18); }
+  .rv-meter .track .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: var(--hfa-muted); }
+  .rv-call.hit .rv-meter .fill { background: var(--hfa-good); } .rv-call.miss .rv-meter .fill { background: var(--hfa-bad); }
+  .rv-meter .track .line { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: var(--hfa-body); border-radius: 1px; }
+  .rv-meterlbl { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--hfa-muted); margin-top: 0.2rem; }
+  .rv-meterlbl b { color: var(--hfa-body); font-size: 0.85rem; }
+  .rv-read { margin-bottom: 0.35rem; display: inline-block; }
+  .rv-ig { color: var(--hfa-body); }
+  .rv-call .pp-probs { margin: 0.4rem 0; }
+  .rv-notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.5rem; }
+  .rv-note-card { border: var(--hfa-hairline); border-radius: 12px; padding: 0.55rem 0.75rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-note-card.signal { border-color: rgba(47, 212, 164, 0.45); }
+  .rv-notehead { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; }
+  .rv-notehead b { color: var(--hfa-body); font-size: 0.9rem; }
+
+  .rv-gradehead { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; padding: 0.3rem 0 0.4rem; }
+  .rv-letter { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 6rem; height: 6rem; border-radius: 22px; border: 2px solid rgba(128, 128, 128, 0.45); background: var(--hfa-tint); }
+  .rv-letter b { font-size: 3rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .rv-letter span { font-size: 0.66rem; font-weight: 700; color: var(--hfa-muted); }
+  .rv-letter.good { border-color: var(--hfa-good); } .rv-letter.good b { color: var(--hfa-good); }
+  .rv-letter.bad { border-color: var(--hfa-bad); } .rv-letter.bad b { color: var(--hfa-bad); }
+  .rv-gradeparts { flex: 1 1 18rem; display: flex; flex-direction: column; gap: 0.5rem; min-width: 0; }
+  .rv-part { display: grid; grid-template-columns: 11rem 1fr 2rem; align-items: center; gap: 0.6rem; font-size: 0.8rem; }
+  .rv-part span small { color: var(--hfa-muted); display: block; font-size: 0.68rem; }
+  .rv-part b { text-align: right; color: var(--hfa-body); }
+  .rv-part .rv-bar { height: 8px; }
+  .rv-mkts { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .rv-teams { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.6rem; margin-top: 0.9rem; }
+  .rv-team, .rv-bp { border: var(--hfa-hairline); border-top: 3px solid var(--pp-team); border-radius: 14px; padding: 0.7rem 0.85rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-teamhead { display: flex; align-items: center; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 0.5rem; }
+  .rv-teamhead img { width: 28px; height: 28px; object-fit: contain; }
+  .rv-teamhead b { color: var(--hfa-body); font-size: 1rem; }
+  .rv-teamhead .flat { font-size: 0.72rem; }
+  .rv-trow { display: grid; grid-template-columns: 5.2rem auto auto auto 1fr; grid-template-areas: "l p a v d" "bar bar bar bar bar"; align-items: baseline; gap: 0.15rem 0.45rem; padding: 0.35rem 0; border-top: var(--hfa-hairline); font-size: 0.84rem; }
+  .rv-trow span { grid-area: l; color: var(--hfa-muted); font-size: 0.74rem; }
+  .rv-trow em { font-style: normal; color: var(--hfa-muted); } .rv-trow i { font-style: normal; color: var(--hfa-muted); font-size: 0.72rem; }
+  .rv-trow b { color: var(--hfa-body); font-size: 1rem; } .rv-trow small { justify-self: end; font-weight: 700; }
+  .rv-trow .rv-bar { grid-area: bar; height: 4px; }
+  .rv-trow.big .rv-bar i { background: var(--hfa-bad); }
+  .rv-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.9rem; }
+  .rv-list { border: var(--hfa-hairline); border-radius: 14px; padding: 0.65rem 0.85rem; background: var(--hfa-tint); }
+  .rv-list.good .pp-k { color: var(--hfa-good); } .rv-list.bad .pp-k { color: var(--hfa-bad); }
+  .rv-li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem; padding: 0.3rem 0; border-top: var(--hfa-hairline); font-size: 0.84rem; }
+  .rv-li > b { color: var(--hfa-body); } .rv-li .flat { font-size: 0.72rem; }
+  .rv-nums { margin-left: auto; color: var(--hfa-muted); white-space: nowrap; } .rv-nums b { color: var(--hfa-body); }
+  .rv-right { display: flex; flex-direction: column; gap: 0.35rem; }
+  .rv-right span { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.4; }
+  .rv-right i { font-style: normal; color: var(--hfa-good); font-weight: 900; }
+
+  .rv-lesson img { width: 28px; height: 28px; object-fit: contain; flex: none; }
+  .rv-blueprints { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0.6rem; }
+  .rv-recur { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.45rem; }
+  .rv-facet { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); gap: 0.5rem; padding: 0.4rem 0; border-top: var(--hfa-hairline); font-size: 0.86rem; }
+  .rv-facet b { color: var(--hfa-body); }
+  .rv-side { align-self: start; text-align: center; font-size: 0.58rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.15rem 0.3rem; border-radius: 6px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); }
+  .rv-side.defense { background: rgba(255, 176, 32, 0.14); color: var(--hfa-bad); } .rv-side.offense { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .rv-bp .pp-expect { margin-top: 0.5rem; }
+  @media (max-width: 760px) {
+    .gm-verdict { margin: -0.4rem 16px 1rem; gap: 0.35rem 0.8rem; }
+    .gm-verdict-v.mk { display: none; }
+    .rv-vs { grid-template-columns: 1fr; }
+    .rv-arrow { transform: rotate(90deg); justify-self: center; line-height: 1; }
+    .rv-stamp-word b { font-size: 1.5rem; }
+    .rv-tally { grid-template-columns: 1fr 1fr; }
+    .rv-tally .rv-tile.mk { grid-column: 1 / -1; }
+    .rv-tl li { grid-template-columns: 1fr; gap: 0.3rem; }
+    .rv-tl li::before { display: none; }
+    .rv-clock { justify-self: start; }
+    .rv-decided, .rv-notes, .rv-teams, .rv-blueprints, .rv-two { grid-template-columns: 1fr; }
+    .rv-eh { grid-template-columns: 1fr; }
+    .rv-part { grid-template-columns: 8rem 1fr 2rem; }
+  }
+
+  /* ---- landing: the final reports band (.ld-rep) ---- */
+  .ld-reports.on { border-color: rgba(47, 212, 164, 0.5); background: linear-gradient(135deg, rgba(47, 212, 164, 0.12), var(--hfa-card) 55%); }
+  .ld-reports.on .ld-pulse { background: var(--hfa-good); animation: none; box-shadow: 0 0 0 4px rgba(47, 212, 164, 0.2); }
+  .ld-reports .ld-plans-head { flex-wrap: wrap; }
+  .ld-reports .ld-plans-head h2 b { color: var(--hfa-good); }
+  .ld-rep-title { flex: 1 1 18rem; min-width: 0; }
+  .ld-rep-sum { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .ld-rep-chip { display: inline-flex; align-items: baseline; gap: 0.3rem; padding: 0.3rem 0.7rem; border-radius: 999px; background: var(--hfa-tint); border: var(--hfa-hairline); font-size: 0.8rem; color: var(--hfa-muted); white-space: nowrap; }
+  .ld-rep-chip i { font-style: normal; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-right: 0.15rem; }
+  .ld-rep-chip b { font-weight: 900; font-size: 0.95rem; color: var(--hfa-body); } .ld-rep-chip b.up { color: var(--hfa-good); } .ld-rep-chip b.down { color: var(--hfa-bad); }
+  .ld-rep-chip.hot { border-color: rgba(255, 31, 47, 0.5); }
+  .ld-rep-grid { grid-auto-columns: 17rem; }
+  .ld-rep { display: flex; flex-direction: column; gap: 0.45rem; padding: 0.7rem 0.8rem; border-radius: 12px; background: var(--hfa-tint); border: var(--hfa-hairline); border-top: 3px solid rgba(128, 128, 128, 0.5); text-decoration: none; color: var(--hfa-body); transition: transform 0.12s, border-color 0.12s; scroll-snap-align: start; min-width: 0; }
+  .ld-rep:hover { transform: translateY(-2px); }
+  .ld-rep.good { border-top-color: var(--hfa-good); } .ld-rep.bad { border-top-color: var(--hfa-bad); }
+  .ld-rep-score { display: grid; grid-template-columns: 1fr 1fr auto; align-items: center; gap: 0.4rem; }
+  .ld-rep-score .t { display: inline-flex; align-items: center; gap: 0.3rem; opacity: 0.6; }
+  .ld-rep-score .t.w { opacity: 1; }
+  .ld-rep-score img { width: 22px; height: 22px; object-fit: contain; }
+  .ld-rep-score b { font-size: 0.82rem; font-weight: 800; color: var(--hfa-body); }
+  .ld-rep-score em { font-style: normal; font-size: 1.35rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .ld-rep-score .t.w em { color: var(--hfa-accent); }
+  .ld-rep-score small { font-size: 0.58rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep-verdict { align-self: flex-start; display: inline-flex; align-items: baseline; gap: 0.35rem; font-size: 0.72rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.15rem 0.55rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-body); }
+  .ld-rep-verdict i { font-style: normal; font-size: 0.56rem; font-weight: 800; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep.good .ld-rep-verdict { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); } .ld-rep.bad .ld-rep-verdict { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .ld-rep-head { font-size: 0.8rem; line-height: 1.4; color: var(--hfa-body); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; flex: 1 1 auto; }
+  .ld-rep-foot { display: flex; flex-wrap: wrap; gap: 0.3rem 0.8rem; padding-top: 0.4rem; border-top: var(--hfa-hairline); font-size: 0.8rem; }
+  .ld-rep-foot span { display: inline-flex; align-items: baseline; gap: 0.25rem; }
+  .ld-rep-foot i { font-style: normal; font-size: 0.56rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep-foot b { font-weight: 900; color: var(--hfa-body); } .ld-rep-foot b.up { color: var(--hfa-good); } .ld-rep-foot b.down { color: var(--hfa-bad); }
+  .ld-rep-foot b.g.good { color: var(--hfa-good); } .ld-rep-foot b.g.bad { color: var(--hfa-bad); }
+  @media (max-width: 760px) {
+    .ld-rep-grid { grid-auto-columns: 14.5rem; }
+    .ld-rep { padding: 0.55rem 0.6rem; }
+    .ld-rep-head { -webkit-line-clamp: 3; font-size: 0.76rem; }
+    .ld-rep-chip { font-size: 0.72rem; padding: 0.2rem 0.55rem; }
+    .rv-headline { font-size: 0.98rem; font-weight: 700; }
+    .ld-rep-score small { display: none; }
+    .ld-rep-score { grid-template-columns: 1fr 1fr; }
+    /* The live bands ride up under the intro, ahead of the game list. */
+    .ld-hero > .ld-hero-main { order: -2; }
+    .ld-hero > .ld-reports, .ld-hero > .ld-plans.on { order: -1; }
+  }
 </style>
 
 </head>
@@ -1345,7 +1587,7 @@
     <a class="ld-game" href="/nfl/w/8/g/2026_08_TEN_CIN/">
       <span class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy"><b>CIN</b><i>vs</i><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" alt="" loading="lazy"><b class="opp">TEN</b></span>
       <span class="nums"><em>28–18</em><small>projected</small></span>
-      <span class="meta"><small>-10.5</small><small>o/u 46.5</small><small>11:00am</small></span>
+      <span class="meta"><small>-10</small><small>o/u 46.5</small><small>11:00am</small></span>
     </a>
     
     <a class="ld-game" href="/nfl/w/8/g/2026_08_IND_JAX/">
@@ -1356,25 +1598,259 @@
     
     <a class="ld-game" href="/nfl/w/8/g/2026_08_NE_MIA/">
       <span class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy"><b>NE</b><i>@</i><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy"><b class="opp">MIA</b></span>
-      <span class="nums"><em>26–19</em><small>projected</small></span>
-      <span class="meta"><small>-7</small><small>o/u 44.5</small><small>2:25pm</small></span>
-    </a>
-    
-    <a class="ld-game" href="/nfl/w/8/g/2026_08_LAC_LA/">
-      <span class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" alt="" loading="lazy"><b>LA</b><i>vs</i><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" alt="" loading="lazy"><b class="opp">LAC</b></span>
-      <span class="nums"><em>26–19</em><small>projected</small></span>
-      <span class="meta"><small>-6.5</small><small>o/u 44.5</small><small>2:05pm</small></span>
+      <span class="nums"><em>25–18</em><small>projected</small></span>
+      <span class="meta"><small>-7</small><small>o/u 43.5</small><small>2:25pm</small></span>
     </a>
     
     <a class="ld-game" href="/nfl/w/8/g/2026_08_ARI_DAL/">
       <span class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="" loading="lazy"><b>DAL</b><i>vs</i><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy"><b class="opp">ARI</b></span>
-      <span class="nums"><em>30–24</em><small>projected</small></span>
-      <span class="meta"><small>-6.5</small><small>o/u 54.5</small><small>11:00am</small></span>
+      <span class="nums"><em>31–24</em><small>projected</small></span>
+      <span class="meta"><small>-7</small><small>o/u 54.5</small><small>11:00am</small></span>
+    </a>
+    
+    <a class="ld-game" href="/nfl/w/8/g/2026_08_LAC_LA/">
+      <span class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" alt="" loading="lazy"><b>LA</b><i>vs</i><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lac.png" alt="" loading="lazy"><b class="opp">LAC</b></span>
+      <span class="nums"><em>26–20</em><small>projected</small></span>
+      <span class="meta"><small>-6.5</small><small>o/u 45.5</small><small>2:05pm</small></span>
     </a>
     
   </div>
   
   
+
+<div class="ld-plans ld-reports on" id="reports">
+  <div class="ld-plans-head">
+    <span class="ld-pulse"></span>
+    <div class="ld-rep-title">
+      <div class="hfa-eyebrow">Week 7 &middot; final reports</div>
+      <h2><b>14</b> of 14 game reports are in</h2>
+      <small>Each one grades the projection and reviews the plan call by call.</small>
+    </div>
+    <div class="ld-rep-sum">
+      <span class="ld-rep-chip"><i>scripts</i><b class="up">2</b> held &middot; <b>12</b> partly &middot; <b class="down">0</b> broke</span>
+      <span class="ld-rep-chip"><i>calls</i><b class="up">79</b>&ndash;<b class="down">71</b></span>
+      <span class="ld-rep-chip hot"><i>Edge+</i><b class="up">125</b>&ndash;<b class="down">25</b></span>
+    </div>
+  </div>
+  <div class="ld-plan-grid ld-rep-grid">
+    
+    <a class="ld-rep warn" href="/nfl/w/7/g/2026_07_NYG_HOU/">
+      <span class="ld-rep-score">
+        <span class="t w"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png" alt="" loading="lazy"><b>NYG</b><em>27</em></span>
+        <span class="t "><img src="https://a.espncdn.com/i/teamlogos/nfl/500/hou.png" alt="" loading="lazy"><b>HOU</b><em>21</em></span>
+        <small>final/OT</small>
+      </span>
+      <span class="ld-rep-verdict"><i>script</i>Partly held</span>
+      <span class="ld-rep-head">New York won 27-21 in overtime as a 10-point dog, covering and sending the game over 42.5, because the Giants ran 34 times for 188 yards and four rushing touchdowns against a Houston front that had been allowing 3.43 a carry — the exact facet the projection (98.5 NYG rush yards, 16.2 points) priced as impossible.</span>
+      <span class="ld-rep-foot">
+        <span><i>calls</i><b class="up">7</b>&ndash;<b class="down">3</b></span>
+        <span><i>Edge+</i><b class="up">7</b>&ndash;<b class="down">3</b></span>
+        <span><i>proj</i><b class="g bad">D</b></span>
+      </span>
+    </a>
+    
+    <a class="ld-rep warn" href="/nfl/w/7/g/2026_07_IND_MIN/">
+      <span class="ld-rep-score">
+        <span class="t "><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ind.png" alt="" loading="lazy"><b>IND</b><em>10</em></span>
+        <span class="t w"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/min.png" alt="" loading="lazy"><b>MIN</b><em>16</em></span>
+        <small>final</small>
+      </span>
+      <span class="ld-rep-verdict"><i>script</i>Partly held</span>
+      <span class="ld-rep-head">Minnesota won 16-10 but never covered the 6.5, and the total (26) landed miles under 41.5 — because the projected script inverted: Indianapolis led for 2,379 of 3,600 seconds, ran it 33 times for 154 yards, and threw only 22 passes for 108.</span>
+      <span class="ld-rep-foot">
+        <span><i>calls</i><b class="up">7</b>&ndash;<b class="down">5</b></span>
+        <span><i>Edge+</i><b class="up">11</b>&ndash;<b class="down">1</b></span>
+        <span><i>proj</i><b class="g bad">D</b></span>
+      </span>
+    </a>
+    
+    <a class="ld-rep warn" href="/nfl/w/7/g/2026_07_DAL_PHI/">
+      <span class="ld-rep-score">
+        <span class="t w"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/dal.png" alt="" loading="lazy"><b>DAL</b><em>38</em></span>
+        <span class="t "><img src="https://a.espncdn.com/i/teamlogos/nfl/500/phi.png" alt="" loading="lazy"><b>PHI</b><em>21</em></span>
+        <small>final</small>
+      </span>
+      <span class="ld-rep-verdict"><i>script</i>Partly held</span>
+      <span class="ld-rep-head">Dallas 38-21 at Philadelphia: the Cowboys covered -4.5 and the 43.5 sailed over because the projection had them throwing 36 times — instead they ran 38 times for 204 yards behind a line that allowed zero pressure, while Philadelphia&#x27;s 5.1-adot passing game scored 21 on three red-zone trips and never threatened an explosive.</span>
+      <span class="ld-rep-foot">
+        <span><i>calls</i><b class="up">9</b>&ndash;<b class="down">2</b></span>
+        <span><i>Edge+</i><b class="up">11</b>&ndash;<b class="down">0</b></span>
+        <span><i>proj</i><b class="g good">B</b></span>
+      </span>
+    </a>
+    
+    <a class="ld-rep warn" href="/nfl/w/7/g/2026_07_DEN_ARI/">
+      <span class="ld-rep-score">
+        <span class="t w"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy"><b>DEN</b><em>30</em></span>
+        <span class="t "><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy"><b>ARI</b><em>16</em></span>
+        <small>final</small>
+      </span>
+      <span class="ld-rep-verdict"><i>script</i>Partly held</span>
+      <span class="ld-rep-head">Denver 30-16 at Arizona: the Broncos covered -4.5 and the game went over 44.5 because Denver scored from outside the red zone — a 62-yard Nix scramble and a 52-yard Harvey catch-and-run — while Arizona put 81 plays and five red-zone trips into 16 points.</span>
+      <span class="ld-rep-foot">
+        <span><i>calls</i><b class="up">6</b>&ndash;<b class="down">5</b></span>
+        <span><i>Edge+</i><b class="up">9</b>&ndash;<b class="down">2</b></span>
+        <span><i>proj</i><b class="g good">B</b></span>
+      </span>
+    </a>
+    
+    <a class="ld-rep good" href="/nfl/w/7/g/2026_07_LA_LV/">
+      <span class="ld-rep-score">
+        <span class="t w"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lar.png" alt="" loading="lazy"><b>LA</b><em>35</em></span>
+        <span class="t "><img src="https://a.espncdn.com/i/teamlogos/nfl/500/lv.png" alt="" loading="lazy"><b>LV</b><em>21</em></span>
+        <small>final</small>
+      </span>
+      <span class="ld-rep-verdict"><i>script</i>Held</span>
+      <span class="ld-rep-head">Los Angeles 35, Las Vegas 21: the Rams covered -3.5 and the game sailed over 49.5 (56) not because either offense was efficient between the 20s — LA&#x27;s field EPA was -0.02, Vegas&#x27;s +0.04 — but because the Rams scored touchdowns on all five red-zone trips while the Raiders turned five trips into one touchdown and three Daniel Gay field goals.</span>
+      <span class="ld-rep-foot">
+        <span><i>calls</i><b class="up">4</b>&ndash;<b class="down">7</b></span>
+        <span><i>Edge+</i><b class="up">9</b>&ndash;<b class="down">2</b></span>
+        <span><i>proj</i><b class="g bad">D</b></span>
+      </span>
+    </a>
+    
+    <a class="ld-rep warn" href="/nfl/w/7/g/2026_07_GB_DET/">
+      <span class="ld-rep-score">
+        <span class="t "><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy"><b>GB</b><em>17</em></span>
+        <span class="t w"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy"><b>DET</b><em>20</em></span>
+        <small>final</small>
+      </span>
+      <span class="ld-rep-verdict"><i>script</i>Partly held</span>
+      <span class="ld-rep-head">Detroit 20, Green Bay 17 on a 22-yard field goal with one second left: GB covered +3.5 and the total landed 18.5 points under 55.5, because two offenses that moved the ball freely between the 20s (GB 0.164 field EPA, DET 0.089) combined to go 3-for-10 in the red zone with a missed 26-yarder, a blocked 35-yarder and four failed fourth downs.</span>
+      <span class="ld-rep-foot">
+        <span><i>calls</i><b class="up">7</b>&ndash;<b class="down">4</b></span>
+        <span><i>Edge+</i><b class="up">10</b>&ndash;<b class="down">1</b></span>
+        <span><i>proj</i><b class="g good">B</b></span>
+      </span>
+    </a>
+    
+    <a class="ld-rep warn" href="/nfl/w/7/g/2026_07_MIA_NYJ/">
+      <span class="ld-rep-score">
+        <span class="t w"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy"><b>MIA</b><em>28</em></span>
+        <span class="t "><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy"><b>NYJ</b><em>25</em></span>
+        <small>final</small>
+      </span>
+      <span class="ld-rep-verdict"><i>script</i>Partly held</span>
+      <span class="ld-rep-head">Miami, 0-5 and a 3.5-point dog, led wire to wire and won 28-25 — the game flew over a 39.5 total because both secondaries got torched on a handful of snaps, and the Jets left 11 points in the scoring zone (missed 40-yarder, red-zone pick, a 12-yard sack at the 3).</span>
+      <span class="ld-rep-foot">
+        <span><i>calls</i><b class="up">5</b>&ndash;<b class="down">6</b></span>
+        <span><i>Edge+</i><b class="up">10</b>&ndash;<b class="down">1</b></span>
+        <span><i>proj</i><b class="g bad">D</b></span>
+      </span>
+    </a>
+    
+    <a class="ld-rep warn" href="/nfl/w/7/g/2026_07_KC_SEA/">
+      <span class="ld-rep-score">
+        <span class="t "><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy"><b>KC</b><em>3</em></span>
+        <span class="t w"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy"><b>SEA</b><em>20</em></span>
+        <small>final</small>
+      </span>
+      <span class="ld-rep-verdict"><i>script</i>Partly held</span>
+      <span class="ld-rep-head">Seattle 20, Kansas City 3: the Seahawks covered -3 and the game went under 43.5 by 20 points because Kansas City never once crossed the Seattle 20 — zero red-zone trips, 3-of-13 on third down, two missed field goals — while Seattle turned a wire-to-wire lead into 41 carries and 35:51 of possession.</span>
+      <span class="ld-rep-foot">
+        <span><i>calls</i><b class="up">6</b>&ndash;<b class="down">4</b></span>
+        <span><i>Edge+</i><b class="up">8</b>&ndash;<b class="down">2</b></span>
+        <span><i>proj</i><b class="g warn">C</b></span>
+      </span>
+    </a>
+    
+    <a class="ld-rep warn" href="/nfl/w/7/g/2026_07_TB_CAR/">
+      <span class="ld-rep-score">
+        <span class="t w"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/tb.png" alt="" loading="lazy"><b>TB</b><em>43</em></span>
+        <span class="t "><img src="https://a.espncdn.com/i/teamlogos/nfl/500-dark/car.png" alt="" loading="lazy"><b>CAR</b><em>13</em></span>
+        <small>final</small>
+      </span>
+      <span class="ld-rep-verdict"><i>script</i>Partly held</span>
+      <span class="ld-rep-head">Tampa Bay 43, Carolina 13 as a three-point road dog: the Bucs threw it 11 times, ran it 49 for 258 yards, and turned a muffed punt, a strip-sack return and two Bryce Young interceptions into a 33-6 halftime lead. The model&#x27;s 20.8-point Tampa projection and 33-attempt Mayfield line were obliterated by a script nobody priced.</span>
+      <span class="ld-rep-foot">
+        <span><i>calls</i><b class="up">4</b>&ndash;<b class="down">8</b></span>
+        <span><i>Edge+</i><b class="up">7</b>&ndash;<b class="down">5</b></span>
+        <span><i>proj</i><b class="g bad">F</b></span>
+      </span>
+    </a>
+    
+    <a class="ld-rep warn" href="/nfl/w/7/g/2026_07_CIN_BAL/">
+      <span class="ld-rep-score">
+        <span class="t w"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy"><b>CIN</b><em>35</em></span>
+        <span class="t "><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy"><b>BAL</b><em>13</em></span>
+        <small>final</small>
+      </span>
+      <span class="ld-rep-verdict"><i>script</i>Partly held</span>
+      <span class="ld-rep-head">Cincinnati trailed 13-0 at half and won 35-13, scoring 35 unanswered as Baltimore went 0-for-3 in the red zone and Joe Burrow turned 30 attempts into four touchdowns — the model had CIN by 3 and the over (46.5, actual 48) and got all three market calls, missing only the size of the gap.</span>
+      <span class="ld-rep-foot">
+        <span><i>calls</i><b class="up">6</b>&ndash;<b class="down">4</b></span>
+        <span><i>Edge+</i><b class="up">9</b>&ndash;<b class="down">1</b></span>
+        <span><i>proj</i><b class="g good">B</b></span>
+      </span>
+    </a>
+    
+    <a class="ld-rep good" href="/nfl/w/7/g/2026_07_PIT_NO/">
+      <span class="ld-rep-score">
+        <span class="t w"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/pit.png" alt="" loading="lazy"><b>PIT</b><em>16</em></span>
+        <span class="t "><img src="https://a.espncdn.com/i/teamlogos/nfl/500/no.png" alt="" loading="lazy"><b>NO</b><em>10</em></span>
+        <small>final</small>
+      </span>
+      <span class="ld-rep-verdict"><i>script</i>Held</span>
+      <span class="ld-rep-head">Pittsburgh never trailed and won 16-10 as a 3-point favorite, covering and cashing the under (26 vs 43.5), because New Orleans&#x27; running game produced 18 yards on 17 carries and its three red-zone trips yielded one touchdown, an interception at the Pittsburgh 11 and a missed 52-yarder.</span>
+      <span class="ld-rep-foot">
+        <span><i>calls</i><b class="up">7</b>&ndash;<b class="down">4</b></span>
+        <span><i>Edge+</i><b class="up">9</b>&ndash;<b class="down">2</b></span>
+        <span><i>proj</i><b class="g good">B</b></span>
+      </span>
+    </a>
+    
+    <a class="ld-rep warn" href="/nfl/w/7/g/2026_07_NE_CHI/">
+      <span class="ld-rep-score">
+        <span class="t "><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy"><b>NE</b><em>24</em></span>
+        <span class="t w"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy"><b>CHI</b><em>30</em></span>
+        <small>final</small>
+      </span>
+      <span class="ld-rep-verdict"><i>script</i>Partly held</span>
+      <span class="ld-rep-head">Chicago 30, New England 24 — the Bears covered -3 and the game sailed over 50.5 at 54 despite the model nailing both team totals (NE 23.8/24, CHI 26.8/30), because the yards arrived in a completely different shape: 629 combined passing yards on 64 attempts, eight Chicago explosives, and a New England run game that was abandoned (17 carries vs 26 projected) after the Bears led from 9:58 of the first quarter to the end.</span>
+      <span class="ld-rep-foot">
+        <span><i>calls</i><b class="up">1</b>&ndash;<b class="down">9</b></span>
+        <span><i>Edge+</i><b class="up">7</b>&ndash;<b class="down">3</b></span>
+        <span><i>proj</i><b class="g warn">C</b></span>
+      </span>
+    </a>
+    
+    <a class="ld-rep warn" href="/nfl/w/7/g/2026_07_SF_ATL/">
+      <span class="ld-rep-score">
+        <span class="t "><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sf.png" alt="" loading="lazy"><b>SF</b><em>20</em></span>
+        <span class="t w"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/atl.png" alt="" loading="lazy"><b>ATL</b><em>29</em></span>
+        <small>final</small>
+      </span>
+      <span class="ld-rep-verdict"><i>script</i>Partly held</span>
+      <span class="ld-rep-head">Atlanta 29, San Francisco 20: the 49ers out-gained the Falcons and lost by nine because they gave the ball away four times and never touched Michael Penix — zero sacks, zero QB hits — while Atlanta&#x27;s three Folk field goals kept the game under a 49.5 total that landed on 49.</span>
+      <span class="ld-rep-foot">
+        <span><i>calls</i><b class="up">6</b>&ndash;<b class="down">4</b></span>
+        <span><i>Edge+</i><b class="up">9</b>&ndash;<b class="down">1</b></span>
+        <span><i>proj</i><b class="g warn">C</b></span>
+      </span>
+    </a>
+    
+    <a class="ld-rep warn" href="/nfl/w/7/g/2026_07_CLE_TEN/">
+      <span class="ld-rep-score">
+        <span class="t w"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cle.png" alt="" loading="lazy"><b>CLE</b><em>27</em></span>
+        <span class="t "><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ten.png" alt="" loading="lazy"><b>TEN</b><em>24</em></span>
+        <small>final</small>
+      </span>
+      <span class="ld-rep-verdict"><i>script</i>Partly held</span>
+      <span class="ld-rep-head">Cleveland 27, Tennessee 24 on a 32-yard Szmyt kick at 0:03 — the side and spread landed, but a 36.5 total went over by 14.5 because both offenses ran for touchdowns (six rushing TDs, zero passing) against two defenses the model had priced as red-zone walls.</span>
+      <span class="ld-rep-foot">
+        <span><i>calls</i><b class="up">4</b>&ndash;<b class="down">6</b></span>
+        <span><i>Edge+</i><b class="up">9</b>&ndash;<b class="down">1</b></span>
+        <span><i>proj</i><b class="g bad">D</b></span>
+      </span>
+    </a>
+    
+  </div>
+  
+</div>
+
+
+  
+
   
   <div class="ld-stats">
     
@@ -1400,7 +1876,7 @@
     </div>
     
     <div class="ld-stat"><div class="ld-stat-n">628</div><div class="ld-stat-l">graded calls</div><div class="ld-stat-s">across 58 game plans</div></div>
-    <div class="ld-stat"><div class="ld-stat-n">79</div><div class="ld-stat-l">game reports</div><div class="ld-stat-s">every one grades the projection</div></div>
+    <div class="ld-stat"><div class="ld-stat-n">93</div><div class="ld-stat-l">game reports</div><div class="ld-stat-s">every one grades the projection</div></div>
   </div>
   
 </section>
@@ -1491,7 +1967,7 @@
     <p>The projected leaders rank every projected line as PPR fantasy points by position, and once the week is played the actual sits beside each projection. The player outlook blends each offense with the defenses left on its schedule, so you can see who has the soft road for the rest of the season. Click any name on a game page for his season game by game, his per-quarter scoring timeline and what the defense he faces allows his position.</p>
     
     <div class="ld-leaders">
-      <div class="ld-leader"><span>QB</span><b>Jayden Daniels</b><small>WAS &middot; 21.9 pts</small></div><div class="ld-leader"><span>RB</span><b>Jahmyr Gibbs</b><small>DET &middot; 23.2 pts</small></div><div class="ld-leader"><span>WR</span><b>Jaxon Smith-Njigba</b><small>SEA &middot; 26.1 pts</small></div><div class="ld-leader"><span>TE</span><b>Trey McBride</b><small>ARI &middot; 17.8 pts</small></div>
+      <div class="ld-leader"><span>QB</span><b>Jayden Daniels</b><small>WAS &middot; 20.7 pts</small></div><div class="ld-leader"><span>RB</span><b>Jahmyr Gibbs</b><small>DET &middot; 23.2 pts</small></div><div class="ld-leader"><span>WR</span><b>Jaxon Smith-Njigba</b><small>SEA &middot; 23.1 pts</small></div><div class="ld-leader"><span>TE</span><b>Trey McBride</b><small>ARI &middot; 16.9 pts</small></div>
     </div>
     <div class="ld-cap">Week 8 projected leaders</div>
     
@@ -1512,7 +1988,7 @@
     <div><b>The scoreboard</b><span>Projected score, line, total, field and forecast; the final beside it once played.</span></div>
     <div><b>Each offense against its defense</b><span>Projected player lines beside the season-to-date numbers at three depths: overall, the run game with its lanes, the pass game.</span></div>
     <div><b>Starters on the field</b><span>Both elevens rated by percentile, and the injury reports in matchup order.</span></div>
-    <div><b>The plan and the report</b><span>The plan alone before kickoff, then the plan against the game: the script's verdict, every swing factor weighed, every call graded with the reason checked.</span></div>
+    <div><b>The plan and the report</b><span>The plan alone before kickoff. Once the report is in, the whole page turns into the plan against the game: the final and the verdict up top, the turning points, every gauge called against played, every call graded with the reason checked, the projection's grade and what carries into the next plan.</span></div>
     <div><b>Player sheets</b><span>Click a name: the season game by game, the per-quarter timeline, the defense he faces.</span></div>
     <div><b>Open data</b><span>The numbers behind each page are published as JSON beside it.</span></div>
   </div>
@@ -1531,7 +2007,7 @@
 </main>
   <footer class="hfa-foot">
     <p><strong>Huffalytics</strong> publishes NFL stats, game projections, team EPA rankings and graded player prop plans priced against Kalshi, rebuilt every week from play-by-play data. <a href="/about/">How the engine works</a>.</p>
-    <p>Data as of Tue Oct 27, 4:04 PM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/nfl/data/week.json">week.json</a> · <a href="/nfl/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
+    <p>Data as of Wed Oct 28, 8:02 AM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/nfl/data/week.json">week.json</a> · <a href="/nfl/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
   </footer>
 </div>
 <script>

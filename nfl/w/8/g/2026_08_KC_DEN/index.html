@@ -1294,6 +1294,248 @@
     .gm-script { margin: -0.4rem 16px 1rem; }
     .pp-headchips .badge { display: none; }
   }
+
+  /* ---- the post-game look: the plan against the game (.rv-) ---- */
+  .gm-side.lost img { opacity: 0.45; filter: grayscale(0.6) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.55)); }
+  .gm-side.lost .gm-abbr { color: var(--hfa-muted); }
+  .gm-pts.final { color: var(--hfa-body); text-shadow: none; }
+  .gm-pts.final span { opacity: 0.55; }
+  .gm-pts.final span.w { opacity: 1; color: var(--hfa-accent); text-shadow: 0 0 28px rgba(255, 31, 47, 0.35); }
+  .gm-projwas { letter-spacing: 0.08em; }
+  .gm-verdict { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.4rem 1rem; margin: -0.6rem 1.1rem 1.2rem; padding: 0.55rem 1rem; border: 1px solid var(--hfa-accent); border-radius: 16px; background: var(--hfa-accent-soft); color: inherit; text-decoration: none; }
+  .gm-verdict.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.10); }
+  .gm-verdict.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.10); }
+  .gm-verdict.warn { border-color: rgba(128, 128, 128, 0.5); background: var(--hfa-tint); }
+  .gm-verdict-stamp { display: inline-flex; align-items: baseline; gap: 0.45rem; }
+  .gm-verdict-stamp i, .gm-verdict-v i { font-style: normal; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-muted); }
+  .gm-verdict-stamp b { font-size: 1.05rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; color: var(--hfa-body); }
+  .gm-verdict.good .gm-verdict-stamp b { color: var(--hfa-good); } .gm-verdict.bad .gm-verdict-stamp b { color: var(--hfa-bad); }
+  .gm-verdict-v { display: inline-flex; align-items: baseline; gap: 0.35rem; font-size: 0.9rem; }
+  .gm-verdict-v b { font-weight: 800; color: var(--hfa-body); }
+  .gm-verdict-v.mk { font-size: 0.74rem; color: var(--hfa-muted); padding: 0.1rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.14); }
+  .gm-letter { font-size: 1.1rem; } .gm-letter.good { color: var(--hfa-good) !important; } .gm-letter.bad { color: var(--hfa-bad) !important; }
+  .gm-tile.rv small { font-size: 0.66rem; color: var(--hfa-muted); }
+  .gm-tile.rv.over b { color: var(--hfa-good); } .gm-tile.rv.under b { color: var(--hfa-bad); }
+  .gm-tile.rv b.flat { color: var(--hfa-muted); }
+
+  .rv-stamp { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.4rem; padding: 0.8rem 1rem; margin: 0.3rem 0 0.9rem; border-radius: 16px; border: 2px solid rgba(128, 128, 128, 0.4); background: var(--hfa-tint); }
+  .rv-stamp.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.08); }
+  .rv-stamp.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.08); }
+  .rv-stamp-word { display: flex; flex-direction: column; line-height: 1; }
+  .rv-stamp-word span { font-size: 0.64rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: var(--hfa-muted); }
+  .rv-stamp-word b { font-size: 2rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; color: var(--hfa-body); margin-top: 0.2rem; }
+  .rv-stamp.good .rv-stamp-word b { color: var(--hfa-good); } .rv-stamp.bad .rv-stamp-word b { color: var(--hfa-bad); }
+  .rv-stamp-meta { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.9rem; }
+  .rv-stamp-meta b { color: var(--hfa-body); }
+  .rv-win { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 700; }
+  .rv-win img { width: 26px; height: 26px; object-fit: contain; }
+  .rv-vs { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 0.8rem; align-items: stretch; }
+  .rv-col { border: var(--hfa-hairline); border-radius: 14px; padding: 0.8rem 0.95rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-col .pp-hook-logos { margin-bottom: 0.4rem; } .rv-col .pp-hook-logos img { width: 40px; height: 40px; }
+  .rv-col .pp-quote { font-size: 1.2rem; }
+  .rv-col.plan .pp-quote { color: var(--hfa-body); }
+  .rv-col.game { border-color: rgba(255, 31, 47, 0.45); }
+  .rv-col.game.good { border-color: var(--hfa-good); } .rv-col.game.bad { border-color: var(--hfa-bad); }
+  .rv-arrow { align-self: center; font-size: 1.6rem; font-weight: 900; color: var(--hfa-accent); }
+  .rv-tally { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.55rem; margin-top: 0.9rem; }
+  .rv-tile { display: flex; flex-direction: column; gap: 0.15rem; border: var(--hfa-hairline); border-radius: 12px; padding: 0.6rem 0.75rem; background: var(--hfa-tint); color: inherit; text-decoration: none; min-width: 0; }
+  .rv-tile > span { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .rv-tile > b { font-size: 1.6rem; font-weight: 900; line-height: 1.1; color: var(--hfa-body); }
+  .rv-tile > b i { font-style: normal; }
+  .rv-tile > b small, .rv-tile > small { font-size: 0.72rem; font-weight: 600; color: var(--hfa-muted); }
+  .rv-tile.hot { border-color: rgba(255, 31, 47, 0.5); }
+  .rv-tile.lt b { font-size: 2rem; } .rv-tile.lt.good b { color: var(--hfa-good); } .rv-tile.lt.bad b { color: var(--hfa-bad); }
+  .rv-headline { font-size: 1.08rem; font-weight: 800; line-height: 1.35; margin: 0; letter-spacing: -0.01em; }
+  .rv-tile.mk em { font-style: normal; font-size: 0.8rem; font-weight: 700; }
+  .rv-bar { height: 5px; border-radius: 3px; background: rgba(128, 128, 128, 0.2); overflow: hidden; }
+  .rv-bar i { display: block; height: 100%; border-radius: 3px; background: var(--hfa-good); }
+  .rv-why { border-left: 4px solid var(--hfa-accent); }
+  .rv-fold { margin-top: 0.9rem; border-top: var(--hfa-hairline); padding-top: 0.7rem; }
+  .rv-fold > summary { list-style: none; cursor: pointer; font-size: 0.74rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin-bottom: 0.6rem; }
+  .rv-fold > summary::-webkit-details-marker { display: none; }
+  .rv-fold > summary::before { content: "+ "; } .rv-fold[open] > summary::before { content: "\2212  "; }
+  .rv-fold > summary .flat { text-transform: none; letter-spacing: 0; font-weight: 500; }
+  .rv-story { font-size: 0.92rem; line-height: 1.6; max-width: 52rem; }
+  .rv-story h1, .rv-story h2, .rv-story h3 { font-size: 1rem; color: var(--hfa-accent); margin: 1rem 0 0.3rem; }
+  .rv-story p { margin: 0 0 0.7rem; }
+
+  .rv-tl { list-style: none; margin: 0; padding: 0 0 0 0.2rem; display: flex; flex-direction: column; }
+  .rv-tl li { position: relative; display: grid; grid-template-columns: 5.2rem minmax(0, 1fr); gap: 0.8rem; padding: 0 0 0.9rem; }
+  .rv-tl li::before { content: ""; position: absolute; left: 2.6rem; top: 1.6rem; bottom: 0; width: 2px; background: rgba(128, 128, 128, 0.25); }
+  .rv-tl li:last-child::before { display: none; }
+  .rv-clock { align-self: start; justify-self: center; z-index: 1; font-size: 0.72rem; font-weight: 800; padding: 0.25rem 0.55rem; border-radius: 999px; background: var(--pp-team); color: #fff; white-space: nowrap; box-shadow: 0 0 0 3px var(--hfa-card); }
+  .rv-tlbody { border: var(--hfa-hairline); border-left: 4px solid var(--pp-team); border-radius: 12px; padding: 0.55rem 0.8rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-play { display: flex; align-items: flex-start; gap: 0.5rem; font-weight: 700; font-size: 0.94rem; line-height: 1.35; }
+  .rv-play img { width: 24px; height: 24px; object-fit: contain; flex: none; }
+  .rv-decided { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.6rem; }
+  .rv-dcard { border: var(--hfa-hairline); border-radius: 14px; padding: 0.7rem 0.85rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-dcard.tell { border-color: rgba(47, 212, 164, 0.5); }
+  .rv-flag { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.12rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); margin-bottom: 0.4rem; }
+  .rv-flag img { width: 14px; height: 14px; object-fit: contain; }
+  .rv-dcard.tell .rv-flag { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .rv-dcard .pp-lead { font-size: 0.92rem; font-weight: 700; }
+
+  .rv-gauge.held { border-color: rgba(47, 212, 164, 0.55); } .rv-gauge.miss { border-color: rgba(255, 176, 32, 0.55); }
+  .rv-mark { margin-left: auto; font-size: 0.85rem; }
+  .rv-gauge.held .rv-mark { color: var(--hfa-good); } .rv-gauge.miss .rv-mark { color: var(--hfa-bad); }
+  .rv-row { display: grid; grid-template-columns: 3.2rem auto 1fr; align-items: center; gap: 0.45rem; font-size: 0.8rem; }
+  .rv-row small { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-muted); }
+  .rv-row em { font-style: normal; font-weight: 800; text-transform: capitalize; }
+  .rv-row.played .pp-bars i.on { background: var(--hfa-body); }
+  .rv-gauge.held .rv-row.played .pp-bars i.on { background: var(--hfa-good); } .rv-gauge.miss .rv-row.played .pp-bars i.on { background: var(--hfa-bad); }
+  .rv-note { font-size: 0.7rem; color: var(--hfa-muted); }
+  .pp-leanbar .track i.called { background: transparent; border: 2px solid var(--hfa-body); box-shadow: none; }
+  .pp-leanbar .track i.played { background: var(--hfa-accent); border-color: var(--hfa-card); }
+  .rv-cvp { text-transform: capitalize; } .rv-cvp i { font-style: normal; color: var(--hfa-muted); }
+  .rv-legend { display: flex; gap: 1rem; font-size: 0.68rem; color: var(--hfa-muted); margin: 0.2rem 0 0; }
+  .rv-legend span { display: inline-flex; align-items: center; gap: 0.3rem; }
+  .rv-legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .rv-legend i.called { border: 2px solid var(--hfa-body); } .rv-legend i.played { background: var(--hfa-accent); }
+  .pp-path.took { border-color: rgba(47, 212, 164, 0.55); border-left-color: var(--pp-team); box-shadow: 0 0 0 1px rgba(47, 212, 164, 0.25) inset; }
+  .pp-path.not { opacity: 0.55; }
+  .pp-pathhead .badge { white-space: nowrap; }
+  .rv-swing { flex-direction: column; gap: 0.35rem; }
+  .rv-weight { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.12rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); }
+  .rv-swing.decisive { border-color: var(--hfa-accent); } .rv-swing.decisive .rv-weight { background: var(--hfa-accent); color: #fff; }
+  .rv-swing.contributed .rv-weight { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .rv-swing.minor { opacity: 0.85; }
+  .rv-went { font-size: 0.84rem; color: var(--hfa-muted); margin: 0; line-height: 1.4; } .rv-went b { color: var(--hfa-body); }
+  .pp-angle.cashed { border-color: rgba(47, 212, 164, 0.55); }
+  .pp-angletitle .badge { margin-left: 0.3rem; vertical-align: 0.1rem; }
+  .pp-leg .rv-res { font-size: 0.74rem; font-weight: 800; white-space: nowrap; }
+  .pp-leg.hit { background: rgba(47, 212, 164, 0.12); } .pp-leg.hit .rv-res { color: var(--hfa-good); }
+  .pp-leg.miss { background: rgba(255, 176, 32, 0.10); } .pp-leg.miss .rv-res { color: var(--hfa-bad); }
+  .pp-leg.void .rv-res { color: var(--hfa-muted); }
+
+  .rv-eh { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0.6rem; }
+  .rv-ehcol { border: var(--hfa-hairline); border-radius: 12px; padding: 0.6rem 0.8rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-ehcol .pp-lead { font-size: 0.9rem; }
+  .rv-ehcol.happened { border-width: 1px; border-color: rgba(128, 128, 128, 0.45); }
+  .rv-ehcol.happened.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.07); }
+  .rv-ehcol.happened.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.07); }
+  .rv-call.hit { border-left-color: var(--hfa-good); box-shadow: 0 0 0 1px rgba(47, 212, 164, 0.3) inset; }
+  .rv-call.miss { border-left-color: var(--hfa-bad); }
+  .rv-call.void { opacity: 0.6; border-left-color: rgba(128, 128, 128, 0.5); }
+  .rv-stamp-res { flex: none; display: inline-grid; place-items: center; min-width: 2rem; height: 2rem; padding: 0 0.3rem; border-radius: 999px; font-size: 0.95rem; font-weight: 900; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); }
+  .hfa .rv-stamp-res.hit { margin: 0; background: var(--hfa-good); color: #04130e; } .rv-stamp-res.miss { background: var(--hfa-bad); color: #1a1000; } .rv-stamp-res.void { font-size: 0.62rem; }
+  .rv-meter { margin: 0.25rem 0 0.45rem; }
+  .rv-meter .track { position: relative; height: 8px; border-radius: 4px; background: rgba(128, 128, 128, 0.18); }
+  .rv-meter .track .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: var(--hfa-muted); }
+  .rv-call.hit .rv-meter .fill { background: var(--hfa-good); } .rv-call.miss .rv-meter .fill { background: var(--hfa-bad); }
+  .rv-meter .track .line { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: var(--hfa-body); border-radius: 1px; }
+  .rv-meterlbl { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--hfa-muted); margin-top: 0.2rem; }
+  .rv-meterlbl b { color: var(--hfa-body); font-size: 0.85rem; }
+  .rv-read { margin-bottom: 0.35rem; display: inline-block; }
+  .rv-ig { color: var(--hfa-body); }
+  .rv-call .pp-probs { margin: 0.4rem 0; }
+  .rv-notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.5rem; }
+  .rv-note-card { border: var(--hfa-hairline); border-radius: 12px; padding: 0.55rem 0.75rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-note-card.signal { border-color: rgba(47, 212, 164, 0.45); }
+  .rv-notehead { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; }
+  .rv-notehead b { color: var(--hfa-body); font-size: 0.9rem; }
+
+  .rv-gradehead { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; padding: 0.3rem 0 0.4rem; }
+  .rv-letter { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 6rem; height: 6rem; border-radius: 22px; border: 2px solid rgba(128, 128, 128, 0.45); background: var(--hfa-tint); }
+  .rv-letter b { font-size: 3rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .rv-letter span { font-size: 0.66rem; font-weight: 700; color: var(--hfa-muted); }
+  .rv-letter.good { border-color: var(--hfa-good); } .rv-letter.good b { color: var(--hfa-good); }
+  .rv-letter.bad { border-color: var(--hfa-bad); } .rv-letter.bad b { color: var(--hfa-bad); }
+  .rv-gradeparts { flex: 1 1 18rem; display: flex; flex-direction: column; gap: 0.5rem; min-width: 0; }
+  .rv-part { display: grid; grid-template-columns: 11rem 1fr 2rem; align-items: center; gap: 0.6rem; font-size: 0.8rem; }
+  .rv-part span small { color: var(--hfa-muted); display: block; font-size: 0.68rem; }
+  .rv-part b { text-align: right; color: var(--hfa-body); }
+  .rv-part .rv-bar { height: 8px; }
+  .rv-mkts { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .rv-teams { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.6rem; margin-top: 0.9rem; }
+  .rv-team, .rv-bp { border: var(--hfa-hairline); border-top: 3px solid var(--pp-team); border-radius: 14px; padding: 0.7rem 0.85rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-teamhead { display: flex; align-items: center; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 0.5rem; }
+  .rv-teamhead img { width: 28px; height: 28px; object-fit: contain; }
+  .rv-teamhead b { color: var(--hfa-body); font-size: 1rem; }
+  .rv-teamhead .flat { font-size: 0.72rem; }
+  .rv-trow { display: grid; grid-template-columns: 5.2rem auto auto auto 1fr; grid-template-areas: "l p a v d" "bar bar bar bar bar"; align-items: baseline; gap: 0.15rem 0.45rem; padding: 0.35rem 0; border-top: var(--hfa-hairline); font-size: 0.84rem; }
+  .rv-trow span { grid-area: l; color: var(--hfa-muted); font-size: 0.74rem; }
+  .rv-trow em { font-style: normal; color: var(--hfa-muted); } .rv-trow i { font-style: normal; color: var(--hfa-muted); font-size: 0.72rem; }
+  .rv-trow b { color: var(--hfa-body); font-size: 1rem; } .rv-trow small { justify-self: end; font-weight: 700; }
+  .rv-trow .rv-bar { grid-area: bar; height: 4px; }
+  .rv-trow.big .rv-bar i { background: var(--hfa-bad); }
+  .rv-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.9rem; }
+  .rv-list { border: var(--hfa-hairline); border-radius: 14px; padding: 0.65rem 0.85rem; background: var(--hfa-tint); }
+  .rv-list.good .pp-k { color: var(--hfa-good); } .rv-list.bad .pp-k { color: var(--hfa-bad); }
+  .rv-li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem; padding: 0.3rem 0; border-top: var(--hfa-hairline); font-size: 0.84rem; }
+  .rv-li > b { color: var(--hfa-body); } .rv-li .flat { font-size: 0.72rem; }
+  .rv-nums { margin-left: auto; color: var(--hfa-muted); white-space: nowrap; } .rv-nums b { color: var(--hfa-body); }
+  .rv-right { display: flex; flex-direction: column; gap: 0.35rem; }
+  .rv-right span { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.4; }
+  .rv-right i { font-style: normal; color: var(--hfa-good); font-weight: 900; }
+
+  .rv-lesson img { width: 28px; height: 28px; object-fit: contain; flex: none; }
+  .rv-blueprints { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0.6rem; }
+  .rv-recur { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.45rem; }
+  .rv-facet { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); gap: 0.5rem; padding: 0.4rem 0; border-top: var(--hfa-hairline); font-size: 0.86rem; }
+  .rv-facet b { color: var(--hfa-body); }
+  .rv-side { align-self: start; text-align: center; font-size: 0.58rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.15rem 0.3rem; border-radius: 6px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); }
+  .rv-side.defense { background: rgba(255, 176, 32, 0.14); color: var(--hfa-bad); } .rv-side.offense { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .rv-bp .pp-expect { margin-top: 0.5rem; }
+  @media (max-width: 760px) {
+    .gm-verdict { margin: -0.4rem 16px 1rem; gap: 0.35rem 0.8rem; }
+    .gm-verdict-v.mk { display: none; }
+    .rv-vs { grid-template-columns: 1fr; }
+    .rv-arrow { transform: rotate(90deg); justify-self: center; line-height: 1; }
+    .rv-stamp-word b { font-size: 1.5rem; }
+    .rv-tally { grid-template-columns: 1fr 1fr; }
+    .rv-tally .rv-tile.mk { grid-column: 1 / -1; }
+    .rv-tl li { grid-template-columns: 1fr; gap: 0.3rem; }
+    .rv-tl li::before { display: none; }
+    .rv-clock { justify-self: start; }
+    .rv-decided, .rv-notes, .rv-teams, .rv-blueprints, .rv-two { grid-template-columns: 1fr; }
+    .rv-eh { grid-template-columns: 1fr; }
+    .rv-part { grid-template-columns: 8rem 1fr 2rem; }
+  }
+
+  /* ---- landing: the final reports band (.ld-rep) ---- */
+  .ld-reports.on { border-color: rgba(47, 212, 164, 0.5); background: linear-gradient(135deg, rgba(47, 212, 164, 0.12), var(--hfa-card) 55%); }
+  .ld-reports.on .ld-pulse { background: var(--hfa-good); animation: none; box-shadow: 0 0 0 4px rgba(47, 212, 164, 0.2); }
+  .ld-reports .ld-plans-head { flex-wrap: wrap; }
+  .ld-reports .ld-plans-head h2 b { color: var(--hfa-good); }
+  .ld-rep-title { flex: 1 1 18rem; min-width: 0; }
+  .ld-rep-sum { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .ld-rep-chip { display: inline-flex; align-items: baseline; gap: 0.3rem; padding: 0.3rem 0.7rem; border-radius: 999px; background: var(--hfa-tint); border: var(--hfa-hairline); font-size: 0.8rem; color: var(--hfa-muted); white-space: nowrap; }
+  .ld-rep-chip i { font-style: normal; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-right: 0.15rem; }
+  .ld-rep-chip b { font-weight: 900; font-size: 0.95rem; color: var(--hfa-body); } .ld-rep-chip b.up { color: var(--hfa-good); } .ld-rep-chip b.down { color: var(--hfa-bad); }
+  .ld-rep-chip.hot { border-color: rgba(255, 31, 47, 0.5); }
+  .ld-rep-grid { grid-auto-columns: 17rem; }
+  .ld-rep { display: flex; flex-direction: column; gap: 0.45rem; padding: 0.7rem 0.8rem; border-radius: 12px; background: var(--hfa-tint); border: var(--hfa-hairline); border-top: 3px solid rgba(128, 128, 128, 0.5); text-decoration: none; color: var(--hfa-body); transition: transform 0.12s, border-color 0.12s; scroll-snap-align: start; min-width: 0; }
+  .ld-rep:hover { transform: translateY(-2px); }
+  .ld-rep.good { border-top-color: var(--hfa-good); } .ld-rep.bad { border-top-color: var(--hfa-bad); }
+  .ld-rep-score { display: grid; grid-template-columns: 1fr 1fr auto; align-items: center; gap: 0.4rem; }
+  .ld-rep-score .t { display: inline-flex; align-items: center; gap: 0.3rem; opacity: 0.6; }
+  .ld-rep-score .t.w { opacity: 1; }
+  .ld-rep-score img { width: 22px; height: 22px; object-fit: contain; }
+  .ld-rep-score b { font-size: 0.82rem; font-weight: 800; color: var(--hfa-body); }
+  .ld-rep-score em { font-style: normal; font-size: 1.35rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .ld-rep-score .t.w em { color: var(--hfa-accent); }
+  .ld-rep-score small { font-size: 0.58rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep-verdict { align-self: flex-start; display: inline-flex; align-items: baseline; gap: 0.35rem; font-size: 0.72rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.15rem 0.55rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-body); }
+  .ld-rep-verdict i { font-style: normal; font-size: 0.56rem; font-weight: 800; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep.good .ld-rep-verdict { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); } .ld-rep.bad .ld-rep-verdict { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .ld-rep-head { font-size: 0.8rem; line-height: 1.4; color: var(--hfa-body); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; flex: 1 1 auto; }
+  .ld-rep-foot { display: flex; flex-wrap: wrap; gap: 0.3rem 0.8rem; padding-top: 0.4rem; border-top: var(--hfa-hairline); font-size: 0.8rem; }
+  .ld-rep-foot span { display: inline-flex; align-items: baseline; gap: 0.25rem; }
+  .ld-rep-foot i { font-style: normal; font-size: 0.56rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep-foot b { font-weight: 900; color: var(--hfa-body); } .ld-rep-foot b.up { color: var(--hfa-good); } .ld-rep-foot b.down { color: var(--hfa-bad); }
+  .ld-rep-foot b.g.good { color: var(--hfa-good); } .ld-rep-foot b.g.bad { color: var(--hfa-bad); }
+  @media (max-width: 760px) {
+    .ld-rep-grid { grid-auto-columns: 14.5rem; }
+    .ld-rep { padding: 0.55rem 0.6rem; }
+    .ld-rep-head { -webkit-line-clamp: 3; font-size: 0.76rem; }
+    .ld-rep-chip { font-size: 0.72rem; padding: 0.2rem 0.55rem; }
+    .rv-headline { font-size: 0.98rem; font-weight: 700; }
+    .ld-rep-score small { display: none; }
+    .ld-rep-score { grid-template-columns: 1fr 1fr; }
+    /* The live bands ride up under the intro, ahead of the game list. */
+    .ld-hero > .ld-hero-main { order: -2; }
+    .ld-hero > .ld-reports, .ld-hero > .ld-plans.on { order: -1; }
+  }
 </style>
 
 </head>
@@ -1352,7 +1594,7 @@
     <span class="gm-chip"><i>spread</i> <b>KC -1.5</b></span>
     <span class="gm-chip"><i>total</i> <b>41.5</b></span>
     
-    <span class="gm-chip " title="Natural grass. Passing is the same on grass and turf; rushing runs about 3.5% higher on turf (+3.7 yards a team) and a catch gains a tenth of a yard more after it. Points, the closing lines and the engine show no surface effect, so it is not an engine input."><i>field</i> <b>grass</b></span><span class="gm-chip " title="Forecast for the kickoff window, as of Tue 4:04 PM Denver. Wind above 10 mph trims the passing projection."><i>forecast</i> <b>61°F · wind 5 mph</b></span>
+    <span class="gm-chip " title="Natural grass. Passing is the same on grass and turf; rushing runs about 3.5% higher on turf (+3.7 yards a team) and a catch gains a tenth of a yard more after it. Points, the closing lines and the engine show no surface effect, so it is not an engine input."><i>field</i> <b>grass</b></span><span class="gm-chip " title="Forecast for the kickoff window, as of Wed 8:01 AM Denver. Wind above 10 mph trims the passing projection."><i>forecast</i> <b>64°F · wind 6 mph</b></span>
   </div>
   
 </div>
@@ -1390,7 +1632,7 @@
         <table class="gm-ptable">
           <thead><tr><th>Backs</th><th class="num">Car</th><th class="num">Ru yds</th><th class="num">Ru TD</th><th class="num">Tgt</th><th class="num">Rec</th><th class="num">Rec yds</th><th class="num">Rec TD</th></tr></thead>
           <tbody>
-            <tr><td class="name"><span class="gm-pos RB">RB</span><button type="button" class="pl-open" data-pid="00-0038134" title="Season log, scoring timeline and the defense he faces">Kenneth Walker III</button></td><td class="num ">22</td><td class="num ">97</td><td class="num ">0.8</td><td class="num ">5.2</td><td class="num ">4.0</td><td class="num ">22</td><td class="num ">0.1</td></tr><tr><td class="name"><span class="gm-pos RB">RB</span><button type="button" class="pl-open" data-pid="00-0041013" title="Season log, scoring timeline and the defense he faces">Emmett Johnson</button></td><td class="num ">2</td><td class="num ">6</td><td class="num ">0.1</td><td class="num ">2.7</td><td class="num ">1.9</td><td class="num ">23</td><td class="num ">0.1</td></tr>
+            <tr><td class="name"><span class="gm-pos RB">RB</span><button type="button" class="pl-open" data-pid="00-0038134" title="Season log, scoring timeline and the defense he faces">Kenneth Walker III</button></td><td class="num ">22</td><td class="num ">97</td><td class="num ">0.8</td><td class="num ">4.4</td><td class="num ">3.4</td><td class="num ">18</td><td class="num ">0.1</td></tr><tr><td class="name"><span class="gm-pos RB">RB</span><button type="button" class="pl-open" data-pid="00-0041013" title="Season log, scoring timeline and the defense he faces">Emmett Johnson</button></td><td class="num ">2</td><td class="num ">6</td><td class="num ">0.1</td><td class="num ">2.3</td><td class="num ">1.6</td><td class="num ">19</td><td class="num ">0.1</td></tr>
             
             <tr class="out"><td class="name"><span class="gm-pos RB">RB</span><button type="button" class="pl-open" data-pid="00-0040078" title="Season log, scoring timeline and the defense he faces">Brashard Smith</button><span class="badge out">IR</span></td><td class="num flat" colspan="7">no projected volume</td></tr>
           </tbody>
@@ -1402,19 +1644,19 @@
         <table class="gm-ptable">
           <thead><tr><th>Receivers</th><th class="num">Tgt</th><th class="num">Rec</th><th class="num">Yds</th><th class="num">TD</th></tr></thead>
           <tbody>
-            <tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0039894" title="Season log, scoring timeline and the defense he faces">Xavier Worthy</button></td><td class="num ">7.9</td><td class="num ">4.9</td><td class="num ">48</td><td class="num ">0.3</td></tr><tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0040890" title="Season log, scoring timeline and the defense he faces">Cyrus Allen</button></td><td class="num ">1.7</td><td class="num ">1.1</td><td class="num ">15</td><td class="num ">0.1</td></tr><tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0040646" title="Season log, scoring timeline and the defense he faces">Jalen Royals</button></td><td class="num ">3.0</td><td class="num ">1.9</td><td class="num ">9</td><td class="num zero">0</td></tr><tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0040298" title="Season log, scoring timeline and the defense he faces">Andrew Armstrong</button></td><td class="num ">1.3</td><td class="num ">0.8</td><td class="num ">5</td><td class="num zero">0</td></tr>
-            
-            <tr class="out"><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0039067" title="Season log, scoring timeline and the defense he faces">Rashee Rice</button><span class="badge mute">O</span></td><td class="num flat" colspan="4">no projected volume</td></tr><tr class="out"><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0038104" title="Season log, scoring timeline and the defense he faces">Tyquan Thornton</button><span class="badge out">IR</span></td><td class="num flat" colspan="4">no projected volume</td></tr>
+            <tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0039894" title="Season log, scoring timeline and the defense he faces">Xavier Worthy</button></td><td class="num ">6.7</td><td class="num ">4.2</td><td class="num ">40</td><td class="num ">0.2</td></tr><tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0039067" title="Season log, scoring timeline and the defense he faces">Rashee Rice</button><span class="badge mute">Q</span></td><td class="num ">5.2</td><td class="num ">3.8</td><td class="num ">38</td><td class="num ">0.2</td></tr><tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0040890" title="Season log, scoring timeline and the defense he faces">Cyrus Allen</button></td><td class="num ">1.4</td><td class="num ">0.9</td><td class="num ">13</td><td class="num ">0.1</td></tr><tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0040646" title="Season log, scoring timeline and the defense he faces">Jalen Royals</button></td><td class="num ">2.5</td><td class="num ">1.6</td><td class="num ">7</td><td class="num zero">0</td></tr>
+            <tr class="more" hidden><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0040298" title="Season log, scoring timeline and the defense he faces">Andrew Armstrong</button></td><td class="num ">1.1</td><td class="num ">0.7</td><td class="num ">4</td><td class="num zero">0</td></tr>
+            <tr class="out"><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0038104" title="Season log, scoring timeline and the defense he faces">Tyquan Thornton</button><span class="badge out">IR</span></td><td class="num flat" colspan="4">no projected volume</td></tr>
           </tbody>
         </table>
-        
+        <button type="button" class="gm-more" data-more="1">+ 1 more receivers</button>
       </div>
       
       <div class="gm-group">
         <table class="gm-ptable">
           <thead><tr><th>Tight ends</th><th class="num">Tgt</th><th class="num">Rec</th><th class="num">Yds</th><th class="num">TD</th></tr></thead>
           <tbody>
-            <tr><td class="name"><span class="gm-pos TE">TE</span><button type="button" class="pl-open" data-pid="00-0030506" title="Season log, scoring timeline and the defense he faces">Travis Kelce</button></td><td class="num ">7.1</td><td class="num ">5.1</td><td class="num ">58</td><td class="num ">0.4</td></tr><tr><td class="name"><span class="gm-pos TE">TE</span><button type="button" class="pl-open" data-pid="00-0036637" title="Season log, scoring timeline and the defense he faces">Noah Gray</button></td><td class="num ">3.7</td><td class="num ">2.7</td><td class="num ">43</td><td class="num ">0.3</td></tr>
+            <tr><td class="name"><span class="gm-pos TE">TE</span><button type="button" class="pl-open" data-pid="00-0030506" title="Season log, scoring timeline and the defense he faces">Travis Kelce</button></td><td class="num ">6.0</td><td class="num ">4.3</td><td class="num ">48</td><td class="num ">0.3</td></tr><tr><td class="name"><span class="gm-pos TE">TE</span><button type="button" class="pl-open" data-pid="00-0036637" title="Season log, scoring timeline and the defense he faces">Noah Gray</button></td><td class="num ">3.1</td><td class="num ">2.3</td><td class="num ">36</td><td class="num ">0.2</td></tr>
             
             
           </tbody>
@@ -1514,13 +1756,13 @@
         </div>
         
         <div class="gm-row">
-          <div class="gm-cell off"><i class="rk good">#5</i><b>2.90</b><div class="gm-bar good"><i style="width: 87%"></i></div></div>
+          <div class="gm-cell off"><i class="rk good">#4</i><b>2.92</b><div class="gm-bar good"><i style="width: 90%"></i></div></div>
           <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Yards before contact</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Yards before contact</b><p>Yards before a defender touches the runner, per carry: the line-and-scheme share of the run game (PFR charting). Feeds each back&#x27;s efficiency tilt.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
-          <div class="gm-cell def"><b>2.16</b><i class="rk good">#9</i><div class="gm-bar good"><i style="width: 74%"></i></div></div>
+          <div class="gm-cell def"><b>2.10</b><i class="rk good">#10</i><div class="gm-bar good"><i style="width: 71%"></i></div></div>
         </div>
         
         <div class="gm-row">
-          <div class="gm-cell off"><i class="rk good">#2</i><b>60.9</b><div class="gm-bar good"><i style="width: 97%"></i></div></div>
+          <div class="gm-cell off"><i class="rk good">#2</i><b>61.2</b><div class="gm-bar good"><i style="width: 97%"></i></div></div>
           <div class="gm-lbl"><details class="stat"><summary title="What this stat is">O-line grade</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>O-line grade</b><p>A composite of the line&#x27;s pass protection and run blocking, offense only.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><span class="flat na">offense only</span></div>
         </div>
@@ -1662,7 +1904,7 @@
         <div class="gm-line">
           <div><span>Att</span><b>32</b></div><div><span>Cmp</span><b>20</b></div><div><span>Yds</span><b>210</b></div><div><span>TD</span><b>1.2</b></div><div><span>INT</span><b>0.8</b></div>
           <div class="sep" aria-hidden="true"></div>
-          <div><span>Car <small>ru</small></span><b class="">5</b></div><div><span>Yds</span><b class="">17</b></div><div><span>TD</span><b class="">0.2</b></div>
+          <div><span>Car <small>ru</small></span><b class="">5</b></div><div><span>Yds</span><b class="">18</b></div><div><span>TD</span><b class="">0.2</b></div>
         </div>
       </div>
       
@@ -1795,13 +2037,13 @@
         </div>
         
         <div class="gm-row">
-          <div class="gm-cell off"><i class="rk bad">#26</i><b>2.03</b><div class="gm-bar bad"><i style="width: 19%"></i></div></div>
+          <div class="gm-cell off"><i class="rk ">#19</i><b>2.39</b><div class="gm-bar "><i style="width: 42%"></i></div></div>
           <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Yards before contact</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Yards before contact</b><p>Yards before a defender touches the runner, per carry: the line-and-scheme share of the run game (PFR charting). Feeds each back&#x27;s efficiency tilt.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
-          <div class="gm-cell def"><b>2.17</b><i class="rk good">#10</i><div class="gm-bar good"><i style="width: 71%"></i></div></div>
+          <div class="gm-cell def"><b>2.35</b><i class="rk ">#15</i><div class="gm-bar "><i style="width: 55%"></i></div></div>
         </div>
         
         <div class="gm-row">
-          <div class="gm-cell off"><i class="rk good">#7</i><b>56.6</b><div class="gm-bar good"><i style="width: 81%"></i></div></div>
+          <div class="gm-cell off"><i class="rk good">#4</i><b>59.1</b><div class="gm-bar good"><i style="width: 90%"></i></div></div>
           <div class="gm-lbl"><details class="stat"><summary title="What this stat is">O-line grade</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>O-line grade</b><p>A composite of the line&#x27;s pass protection and run blocking, offense only.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><span class="flat na">offense only</span></div>
         </div>
@@ -1900,7 +2142,7 @@
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk bad">#28</i><b>-0.158</b><div class="gm-bar bad"><i style="width: 21%"></i></div></div>
           <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Blitz</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Blitz</b><p>Offense: its EPA per dropback when the defense sends five or more rushers, higher is better. Defense: the share of its pass snaps it sends five or more, ranked most to least with no good or bad (FTN charting). Display only, not an engine input.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
-          <div class="gm-cell def"><b>26%</b><i class="rk ">#24</i><div class="gm-bar  styl"><i style="width: 33%"></i></div></div>
+          <div class="gm-cell def"><b>26%</b><i class="rk ">#25</i><div class="gm-bar  styl"><i style="width: 30%"></i></div></div>
         </div>
         
         <div class="gm-row">
@@ -1942,8 +2184,8 @@
         <div class="gm-ftag top">DEN defense</div>
         <div class="gm-los"></div>
         <div class="gm-ftag bot">KC offense</div>
-        <div class="gm-fp def r5" style="left: 26%; top: 51%" title="Nik Bonitto LBlast game 58% of snapsEdge · 94th pct of group · 601 wtd snaps2026 wks 1-7 + ½·2025Pressure rate4.5% lg 3.5%Sack rate1.6% lg 0.9%TFL rate1.7% lg 1.2%Missed tackle %8% lg 9%context (not rated): 6 tgt · 3.5 yds/tgt · 69% comp · aDOT 0.9 · 28 prs · 10.5 sk · 38 tkl / 3 miss · 0 INT · 0 PD"><span class="dot">94</span><span class="nm">N. Bonitto <small>EDGE</small></span></div><div class="gm-fp def r2" style="left: 44%; top: 51%" title="Eyioma Uwazurike DLlast game 63% of snapsInterior DL · 36th pct of group · 426 wtd snaps2026 wks 1-7 + ½·2025Pressure rate1.3% lg 1.8%Sack rate0.6% lg 0.5%TFL rate0.8% lg 0.8%Missed tackle %12% lg 11%context (not rated): 5 prs · 2.8 sk · 13 tkl / 2 miss"><span class="dot">36</span><span class="nm">E. Uwazurike <small>DI</small></span></div><div class="gm-fp def r5" style="left: 56%; top: 51%" title="Zach Allen DLQuestionable – Hamstringlast game 58% of snapsInterior DL · 99th pct of group · 694 wtd snaps2026 wks 1-7 + ½·2025Pressure rate5.0% lg 1.8%Sack rate1.0% lg 0.5%TFL rate0.9% lg 0.8%Missed tackle %8% lg 11%context (not rated): 40 prs · 8.0 sk · 39 tkl / 2 miss · 0 INT · 5 PD"><span class="dot">99<em>Q</em></span><span class="nm">Z. Allen <small>DI</small></span></div><div class="gm-fp def r3" style="left: 75%; top: 51%" title="Quandarrius Robinson LBlast game 51% of snapsEdge · 57th pct of group · 279 wtd snaps2026 wks 1-7 + ½·2025Pressure rate3.2% lg 3.5%Sack rate0.8% lg 0.9%TFL rate1.5% lg 1.2%Missed tackle %5% lg 9%context (not rated): 2 tgt · 7.0 yds/tgt · 50% comp · aDOT 4.5 · 8 prs · 2.2 sk · 23 tkl / 0 miss · 0 INT · 2 PD"><span class="dot">57</span><span class="nm">Q. Robinson <small>EDGE</small></span></div><div class="gm-fp def r2" style="left: 41%; top: 37%" title="Alex Singleton LBlast game 100% of snapsLinebacker · 30th pct of group · 946 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.50 lg 0.38Targets drawn6.7% lg 5.5%Missed tackle %8% lg 8%Tackle rate13.8% lg 11.7%TFL rate0.5% lg 0.8%context (not rated): 65 tgt · 7.6 yds/tgt · 72% comp · aDOT 4.5 · 8 prs · 0.5 sk · 134 tkl / 12 miss · 0 INT · 3 PD"><span class="dot">30</span><span class="nm">A. Singleton <small>LB</small></span></div><div class="gm-fp def r5" style="left: 59%; top: 37%" title="Justin Strnad LBlast game 75% of snapsLinebacker · 80th pct of group · 646 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.28 lg 0.38Targets drawn4.7% lg 5.5%Missed tackle %8% lg 8%Tackle rate9.7% lg 11.7%TFL rate0.8% lg 0.8%context (not rated): 29 tgt · 5.7 yds/tgt · 55% comp · aDOT 4.7 · 6 prs · 2.8 sk · 60 tkl / 5 miss · 0 INT · 4 PD"><span class="dot">80</span><span class="nm">J. Strnad <small>LB</small></span></div><div class="gm-fp def r2" style="left: 7%; top: 42%" title="Riley Moss CBlast game 100% of snapsCornerback · 27th pct of group · 812 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.70 lg 0.66Targets drawn9.8% lg 9.1%Missed tackle %11% lg 10%context (not rated): 80 tgt · 7.1 yds/tgt · 56% comp · aDOT 12.2 · 0 prs · 0.5 sk · 56 tkl / 8 miss · 2 INT · 14 PD"><span class="dot">27</span><span class="nm">R. Moss <small>CB</small></span></div><div class="gm-fp def r4" style="left: 93%; top: 42%" title="Jahdae Barron CBlast game 65% of snapsCornerback · 62nd pct of group · 389 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.63 lg 0.66Targets drawn8.7% lg 9.1%Missed tackle %9% lg 10%context (not rated): 33 tgt · 7.4 yds/tgt · 64% comp · aDOT 8.9 · 38 tkl / 4 miss · 0 INT · 4 PD"><span class="dot">62</span><span class="nm">J. Barron <small>CB</small></span></div><div class="gm-fp def r1" style="left: 18%; top: 44%" title="Ja&amp;#x27;Quan McMillian CBlast game 62% of snapsCornerback · 18th pct of group · 637 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.68 lg 0.66Targets drawn10.1% lg 9.1%Missed tackle %14% lg 10%context (not rated): 66 tgt · 6.7 yds/tgt · 58% comp · aDOT 8.6 · 4 prs · 4.0 sk · 44 tkl / 8 miss · 2 INT · 8 PD"><span class="dot">18</span><span class="nm">J. McMillian <small>NB</small></span></div><div class="gm-fp def r2" style="left: 34%; top: 19%" title="Brandon Jones Slast game 100% of snapsSafety · 30th pct of group · 862 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.46 lg 0.47Targets drawn5.1% lg 5.6%Missed tackle %15% lg 9%context (not rated): 43 tgt · 9.3 yds/tgt · 62% comp · aDOT 9.7 · 2 prs · 0.2 sk · 82 tkl / 16 miss · 2 INT · 8 PD"><span class="dot">30</span><span class="nm">B. Jones <small>S</small></span></div><div class="gm-fp def r1" style="left: 66%; top: 19%" title="Taylor Rapp Slast game 62% of snapsSafety · 6th pct of group · 236 wtd snaps2026 wks 1-7 + ½·2025Missed tackle %13% lg 9%context (not rated): 9 tgt · 8.2 yds/tgt · 67% comp · aDOT 12.3 · 17 tkl / 4 miss"><span class="dot">6</span><span class="nm">T. Rapp <small>S</small></span></div>
-        <div class="gm-fp off r2" style="left: 7%; top: 63%" title="Xavier Worthy WRprojected: 7.9 tgt · 48 rec yds35th pct production among the position&#x27;s starter pool · 37 yds/g over 13.0 wtd games5.5 tgt/g · 0.4 car/g"><span class="dot">35</span><span class="nm">X. Worthy <small>WR</small></span></div><div class="gm-fp off thin" style="left: 18%; top: 65%" title="Cyrus Allen WRprojected: 1.7 tgt · 15 rec yds0th pct production among the position&#x27;s starter pool (outside the pool) · 11 yds/g over 4.0 wtd games1.5 tgt/g · 0.0 car/g"><span class="dot">0</span><span class="nm">C. Allen <small>WR</small></span></div><div class="gm-fp off r5" style="left: 80%; top: 62%" title="Travis Kelce TEprojected: 7.1 tgt · 58 rec yds84th pct production among the position&#x27;s starter pool · 53 yds/g over 14.5 wtd games6.1 tgt/g · 0.0 car/g"><span class="dot">84</span><span class="nm">T. Kelce <small>TE</small></span></div><div class="gm-fp off thin" style="left: 93%; top: 63%" title="Jalen Royals WRprojected: 3.0 tgt · 9 rec yds0th pct production among the position&#x27;s starter pool (outside the pool) · 6 yds/g over 7.0 wtd games1.8 tgt/g · 0.0 car/g"><span class="dot">0</span><span class="nm">J. Royals <small>WR</small></span></div><div class="gm-fp off r5" style="left: 50%; top: 75%" title="Patrick Mahomes QBprojected: 34 att · 234 pass yds81st pct production among the position&#x27;s starter pool · 273 yds/g over 13.0 wtd games34.0 att/g"><span class="dot">81</span><span class="nm">P. Mahomes <small>QB</small></span></div><div class="gm-fp off r5" style="left: 39%; top: 76%" title="Kenneth Walker III RBprojected: 21.6 car · 97 rush · 5.2 tgt · 22 rec91st pct production among the position&#x27;s starter pool · 101 yds/g over 14.5 wtd games3.1 tgt/g · 15.9 car/g"><span class="dot">91</span><span class="nm">K. Walker III <small>RB</small></span></div><div class="gm-fp off ol" style="left: 31%; top: 62%" title="Kahlil Benson Tlast game 77% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LT</span></div><div class="gm-fp off ol" style="left: 40.5%; top: 62%" title="Trey Smith Glast game 77% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LG</span></div><div class="gm-fp off ol" style="left: 50%; top: 62%" title="Creed Humphrey Clast game 77% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">C</span></div><div class="gm-fp off ol" style="left: 59.5%; top: 62%" title="Joshua Ezeudu OLlast game 77% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RG</span></div><div class="gm-fp off ol" style="left: 69%; top: 62%" title="Kingsley Suamataia OLlast game 77% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RT</span></div>
+        <div class="gm-fp def r5" style="left: 26%; top: 51%" title="Nik Bonitto LBlast game 58% of snapsEdge · 94th pct of group · 648 wtd snaps2026 wks 1-7 + ½·2025Pressure rate4.6% lg 3.4%Sack rate1.5% lg 0.9%TFL rate1.6% lg 1.2%Missed tackle %8% lg 9%context (not rated): 8 tgt · 3.6 yds/tgt · 73% comp · aDOT 1.1 · 32 prs · 10.5 sk · 39 tkl / 3 miss · 0 INT · 0 PD"><span class="dot">94</span><span class="nm">N. Bonitto <small>EDGE</small></span></div><div class="gm-fp def r3" style="left: 44%; top: 51%" title="Eyioma Uwazurike DLlast game 63% of snapsInterior DL · 59th pct of group · 476 wtd snaps2026 wks 1-7 + ½·2025Pressure rate1.7% lg 1.8%Sack rate0.5% lg 0.5%TFL rate0.9% lg 0.8%Missed tackle %11% lg 11%context (not rated): 8 prs · 2.8 sk · 17 tkl / 2 miss"><span class="dot">59</span><span class="nm">E. Uwazurike <small>DI</small></span></div><div class="gm-fp def r5" style="left: 56%; top: 51%" title="Zach Allen DLQuestionable – Hamstringlast game 58% of snapsInterior DL · 99th pct of group · 742 wtd snaps2026 wks 1-7 + ½·2025Pressure rate5.1% lg 1.8%Sack rate1.0% lg 0.5%TFL rate0.8% lg 0.8%Missed tackle %7% lg 11%context (not rated): 2 tgt · 0.0 yds/tgt · 0% comp · aDOT 4.0 · 42 prs · 8.0 sk · 42 tkl / 2 miss · 0 INT · 5 PD"><span class="dot">99<em>Q</em></span><span class="nm">Z. Allen <small>DI</small></span></div><div class="gm-fp def r3" style="left: 75%; top: 51%" title="Quandarrius Robinson LBlast game 51% of snapsEdge · 49th pct of group · 320 wtd snaps2026 wks 1-7 + ½·2025Pressure rate2.9% lg 3.4%Sack rate0.8% lg 0.9%TFL rate1.3% lg 1.2%Missed tackle %5% lg 9%context (not rated): 4 tgt · 4.2 yds/tgt · 75% comp · aDOT 1.2 · 8 prs · 2.2 sk · 26 tkl / 0 miss · 0 INT · 2 PD"><span class="dot">49</span><span class="nm">Q. Robinson <small>EDGE</small></span></div><div class="gm-fp def r2" style="left: 41%; top: 37%" title="Alex Singleton LBlast game 100% of snapsLinebacker · 38th pct of group · 1026 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.50 lg 0.38Targets drawn6.7% lg 5.6%Missed tackle %7% lg 8%Tackle rate14.5% lg 11.8%TFL rate0.6% lg 0.8%context (not rated): 70 tgt · 7.6 yds/tgt · 73% comp · aDOT 4.5 · 10 prs · 1.5 sk · 153 tkl / 12 miss · 0 INT · 3 PD"><span class="dot">38</span><span class="nm">A. Singleton <small>LB</small></span></div><div class="gm-fp def r5" style="left: 59%; top: 37%" title="Justin Strnad LBlast game 75% of snapsLinebacker · 82nd pct of group · 708 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.28 lg 0.38Targets drawn4.9% lg 5.6%Missed tackle %7% lg 8%Tackle rate9.7% lg 11.8%TFL rate0.8% lg 0.8%context (not rated): 34 tgt · 5.4 yds/tgt · 59% comp · aDOT 4.6 · 6 prs · 2.8 sk · 66 tkl / 5 miss · 0 INT · 4 PD"><span class="dot">82</span><span class="nm">J. Strnad <small>LB</small></span></div><div class="gm-fp def r2" style="left: 7%; top: 42%" title="Riley Moss CBlast game 100% of snapsCornerback · 28th pct of group · 892 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.70 lg 0.66Targets drawn9.6% lg 9.1%Missed tackle %12% lg 10%context (not rated): 86 tgt · 7.3 yds/tgt · 55% comp · aDOT 12.3 · 0 prs · 0.5 sk · 60 tkl / 8 miss · 2 INT · 16 PD"><span class="dot">28</span><span class="nm">R. Moss <small>CB</small></span></div><div class="gm-fp def r4" style="left: 93%; top: 42%" title="Jahdae Barron CBlast game 65% of snapsCornerback · 61st pct of group · 442 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.64 lg 0.66Targets drawn8.9% lg 9.1%Missed tackle %8% lg 10%context (not rated): 39 tgt · 7.2 yds/tgt · 62% comp · aDOT 8.2 · 44 tkl / 4 miss · 0 INT · 4 PD"><span class="dot">61</span><span class="nm">J. Barron <small>CB</small></span></div><div class="gm-fp def r1" style="left: 18%; top: 44%" title="Ja&amp;#x27;Quan McMillian CBlast game 62% of snapsCornerback · 17th pct of group · 687 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.70 lg 0.66Targets drawn10.3% lg 9.1%Missed tackle %13% lg 10%context (not rated): 72 tgt · 6.7 yds/tgt · 57% comp · aDOT 8.6 · 4 prs · 4.0 sk · 49 tkl / 8 miss · 2 INT · 12 PD"><span class="dot">17</span><span class="nm">J. McMillian <small>NB</small></span></div><div class="gm-fp def r2" style="left: 34%; top: 19%" title="Brandon Jones Slast game 100% of snapsSafety · 27th pct of group · 942 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.46 lg 0.47Targets drawn5.2% lg 5.6%Missed tackle %14% lg 9%context (not rated): 48 tgt · 9.1 yds/tgt · 61% comp · aDOT 9.4 · 2 prs · 0.2 sk · 91 tkl / 16 miss · 2 INT · 8 PD"><span class="dot">27</span><span class="nm">B. Jones <small>S</small></span></div><div class="gm-fp def r1" style="left: 66%; top: 19%" title="Taylor Rapp Slast game 62% of snapsSafety · 5th pct of group · 286 wtd snaps2026 wks 1-7 + ½·2025Missed tackle %12% lg 9%context (not rated): 9 tgt · 8.2 yds/tgt · 67% comp · aDOT 12.3 · 19 tkl / 4 miss"><span class="dot">5</span><span class="nm">T. Rapp <small>S</small></span></div>
+        <div class="gm-fp off r2" style="left: 7%; top: 63%" title="Xavier Worthy WRprojected: 6.7 tgt · 40 rec yds35th pct production among the position&#x27;s starter pool · 37 yds/g over 13.0 wtd games5.5 tgt/g · 0.4 car/g"><span class="dot">35</span><span class="nm">X. Worthy <small>WR</small></span></div><div class="gm-fp off thin" style="left: 18%; top: 65%" title="Jalen Royals WRprojected: 2.5 tgt · 7 rec yds0th pct production among the position&#x27;s starter pool (outside the pool) · 6 yds/g over 7.0 wtd games1.8 tgt/g · 0.0 car/g"><span class="dot">0</span><span class="nm">J. Royals <small>WR</small></span></div><div class="gm-fp off r5" style="left: 80%; top: 62%" title="Travis Kelce TEprojected: 6.0 tgt · 48 rec yds84th pct production among the position&#x27;s starter pool · 53 yds/g over 14.5 wtd games6.1 tgt/g · 0.0 car/g"><span class="dot">84</span><span class="nm">T. Kelce <small>TE</small></span></div><div class="gm-fp off r5" style="left: 93%; top: 63%" title="Rashee Rice WRQuestionable – Hamstringprojected: 5.2 tgt · 38 rec yds83rd pct production among the position&#x27;s starter pool · 68 yds/g over 7.0 wtd games8.0 tgt/g · 0.4 car/g"><span class="dot">83<em>Q</em></span><span class="nm">R. Rice <small>WR</small></span></div><div class="gm-fp off r5" style="left: 50%; top: 75%" title="Patrick Mahomes QBprojected: 34 att · 234 pass yds81st pct production among the position&#x27;s starter pool · 273 yds/g over 13.0 wtd games34.0 att/g"><span class="dot">81</span><span class="nm">P. Mahomes <small>QB</small></span></div><div class="gm-fp off r5" style="left: 39%; top: 76%" title="Kenneth Walker III RBprojected: 21.6 car · 97 rush · 4.4 tgt · 18 rec91st pct production among the position&#x27;s starter pool · 101 yds/g over 14.5 wtd games3.1 tgt/g · 15.9 car/g"><span class="dot">91</span><span class="nm">K. Walker III <small>RB</small></span></div><div class="gm-fp off ol" style="left: 31%; top: 62%" title="Kahlil Benson Tlast game 77% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LT</span></div><div class="gm-fp off ol" style="left: 40.5%; top: 62%" title="Trey Smith Glast game 77% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LG</span></div><div class="gm-fp off ol" style="left: 50%; top: 62%" title="Creed Humphrey Clast game 77% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">C</span></div><div class="gm-fp off ol" style="left: 59.5%; top: 62%" title="Joshua Ezeudu OLlast game 77% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RG</span></div><div class="gm-fp off ol" style="left: 69%; top: 62%" title="Kingsley Suamataia OLlast game 77% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RT</span></div>
       </div>
     </div>
     
@@ -1953,7 +2195,7 @@
         <div class="gm-ftag top">KC defense</div>
         <div class="gm-los"></div>
         <div class="gm-ftag bot">DEN offense</div>
-        <div class="gm-fp def r4" style="left: 26%; top: 51%" title="George Karlaftis III DElast game 83% of snapsEdge · 79th pct of group · 670 wtd snaps2026 wks 1-7 + ½·2025Pressure rate4.3% lg 3.5%Sack rate0.7% lg 0.9%TFL rate1.3% lg 1.2%Missed tackle %8% lg 9%context (not rated): 12 tgt · 4.0 yds/tgt · 78% comp · aDOT -2.5 · 30 prs · 4.0 sk · 42 tkl / 4 miss · 1 INT · 5 PD"><span class="dot">79</span><span class="nm">G. Karlaftis III <small>EDGE</small></span></div><div class="gm-fp def r5" style="left: 44%; top: 51%" title="Chris Jones DTlast game 65% of snapsInterior DL · 94th pct of group · 622 wtd snaps2026 wks 1-7 + ½·2025Pressure rate3.1% lg 1.8%Sack rate0.6% lg 0.5%TFL rate1.1% lg 0.8%Missed tackle %9% lg 11%context (not rated): 1 tgt · 4.0 yds/tgt · 100% comp · aDOT -2.0 · 22 prs · 4.0 sk · 21 tkl / 2 miss · 0 INT · 3 PD"><span class="dot">94</span><span class="nm">C. Jones <small>DI</small></span></div><div class="gm-fp def r1" style="left: 56%; top: 51%" title="Khyiris Tonga NTlast game 55% of snapsInterior DL · 0th pct of group · 312 wtd snaps2026 wks 1-7 + ½·2025Pressure rate0.9% lg 1.8%Sack rate0.1% lg 0.5%TFL rate0.5% lg 0.8%Missed tackle %18% lg 11%context (not rated): 1 tgt · -1.0 yds/tgt · 50% comp · aDOT -4.0 · 2 prs · 4 tkl / 2 miss · 0 INT · 1 PD"><span class="dot">0</span><span class="nm">K. Tonga <small>DI</small></span></div><div class="gm-fp def r1" style="left: 75%; top: 51%" title="Ashton Gillotte DElast game 58% of snapsEdge · 9th pct of group · 392 wtd snaps2026 wks 1-7 + ½·2025Pressure rate2.2% lg 3.5%Sack rate0.6% lg 0.9%TFL rate0.8% lg 1.2%Missed tackle %9% lg 9%context (not rated): 0 tgt · 34.0 yds/tgt · 100% comp · aDOT -3.0 · 6 prs · 1.8 sk · 11 tkl / 1 miss · 0 INT · 0 PD"><span class="dot">9</span><span class="nm">A. Gillotte <small>EDGE</small></span></div><div class="gm-fp def r3" style="left: 41%; top: 37%" title="Nick Bolton LBlast game 99% of snapsLinebacker · 57th pct of group · 846 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.41 lg 0.38Targets drawn6.1% lg 5.5%Missed tackle %8% lg 8%Tackle rate13.3% lg 11.7%TFL rate0.8% lg 0.8%context (not rated): 52 tgt · 6.7 yds/tgt · 78% comp · aDOT 3.6 · 6 prs · 0.5 sk · 116 tkl / 10 miss · 0 INT · 5 PD"><span class="dot">57</span><span class="nm">N. Bolton <small>LB</small></span></div><div class="gm-fp def r5" style="left: 59%; top: 37%" title="Drue Tranquill LBlast game 91% of snapsLinebacker · 98th pct of group · 734 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.33 lg 0.38Targets drawn4.4% lg 5.5%Missed tackle %3% lg 8%Tackle rate11.5% lg 11.7%TFL rate1.3% lg 0.8%context (not rated): 30 tgt · 7.7 yds/tgt · 69% comp · aDOT 3.8 · 6 prs · 1.0 sk · 84 tkl / 2 miss · 0 INT · 2 PD"><span class="dot">98</span><span class="nm">D. Tranquill <small>LB</small></span></div><div class="gm-fp def r3" style="left: 7%; top: 42%" title="Mansoor Delane CBlast game 100% of snapsCornerback · 52nd pct of group · 218 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.74 lg 0.66Targets drawn8.9% lg 9.1%Missed tackle %7% lg 10%context (not rated): 19 tgt · 9.2 yds/tgt · 68% comp · aDOT 13.0 · 22 tkl / 1 miss · 1 INT · 3 PD"><span class="dot">52</span><span class="nm">M. Delane <small>CB</small></span></div><div class="gm-fp def r5" style="left: 93%; top: 42%" title="Christian Roland-Wallace CBlast game 45% of snapsCornerback · 83rd pct of group · 170 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.66 lg 0.66Targets drawn8.2% lg 9.1%Missed tackle %5% lg 10%context (not rated): 12 tgt · 8.9 yds/tgt · 88% comp · aDOT 6.4 · 22 tkl / 0 miss · 0 INT · 2 PD"><span class="dot">83</span><span class="nm">C. Roland-Wallace <small>CB</small></span></div><div class="gm-fp def r1" style="left: 18%; top: 44%" title="L&amp;#x27;Jarius Sneed CBlast game 20% of snapsCornerback · 8th pct of group · 424 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.84 lg 0.66Targets drawn11.5% lg 9.1%Missed tackle %10% lg 10%context (not rated): 52 tgt · 7.4 yds/tgt · 73% comp · aDOT 7.3 · 1 prs · 43 tkl / 5 miss · 0 INT · 4 PD"><span class="dot">8</span><span class="nm">L. Sneed <small>NB</small></span></div><div class="gm-fp def r4" style="left: 34%; top: 19%" title="Chamarri Conner DBlast game 100% of snapsSafety · 75th pct of group · 642 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.36 lg 0.47Targets drawn5.2% lg 5.6%Missed tackle %10% lg 9%context (not rated): 32 tgt · 6.5 yds/tgt · 71% comp · aDOT 4.6 · 3 prs · 2.0 sk · 59 tkl / 6 miss · 0 INT · 2 PD"><span class="dot">75</span><span class="nm">C. Conner <small>S</small></span></div><div class="gm-fp def r1" style="left: 66%; top: 19%" title="Nohl Williams DBlast game 96% of snapsSafety · 19th pct of group · 536 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.49 lg 0.47Targets drawn7.9% lg 5.6%Missed tackle %9% lg 9%context (not rated): 46 tgt · 5.8 yds/tgt · 47% comp · aDOT 9.7 · 2 prs · 1.5 sk · 40 tkl / 4 miss · 0 INT · 10 PD"><span class="dot">19</span><span class="nm">N. Williams <small>S</small></span></div>
+        <div class="gm-fp def r4" style="left: 26%; top: 51%" title="George Karlaftis III DElast game 83% of snapsEdge · 78th pct of group · 727 wtd snaps2026 wks 1-7 + ½·2025Pressure rate4.2% lg 3.4%Sack rate0.6% lg 0.9%TFL rate1.3% lg 1.2%Missed tackle %8% lg 9%context (not rated): 12 tgt · 3.7 yds/tgt · 72% comp · aDOT -2.1 · 32 prs · 4.0 sk · 45 tkl / 4 miss · 1 INT · 6 PD"><span class="dot">78</span><span class="nm">G. Karlaftis III <small>EDGE</small></span></div><div class="gm-fp def r5" style="left: 44%; top: 51%" title="Chris Jones DTlast game 65% of snapsInterior DL · 90th pct of group · 668 wtd snaps2026 wks 1-7 + ½·2025Pressure rate3.0% lg 1.8%Sack rate0.6% lg 0.5%TFL rate1.0% lg 0.8%Missed tackle %11% lg 11%context (not rated): 1 tgt · 4.0 yds/tgt · 100% comp · aDOT -2.0 · 22 prs · 4.0 sk · 21 tkl / 2 miss · 0 INT · 3 PD"><span class="dot">90</span><span class="nm">C. Jones <small>DI</small></span></div><div class="gm-fp def r1" style="left: 56%; top: 51%" title="Khyiris Tonga NTlast game 55% of snapsInterior DL · 0th pct of group · 350 wtd snaps2026 wks 1-7 + ½·2025Pressure rate0.8% lg 1.8%Sack rate0.1% lg 0.5%TFL rate0.7% lg 0.8%Missed tackle %18% lg 11%context (not rated): 1 tgt · -1.0 yds/tgt · 50% comp · aDOT -4.0 · 2 prs · 4 tkl / 2 miss · 0 INT · 1 PD"><span class="dot">0</span><span class="nm">K. Tonga <small>DI</small></span></div><div class="gm-fp def r1" style="left: 75%; top: 51%" title="Ashton Gillotte DElast game 58% of snapsEdge · 7th pct of group · 432 wtd snaps2026 wks 1-7 + ½·2025Pressure rate2.0% lg 3.4%Sack rate0.5% lg 0.9%TFL rate0.9% lg 1.2%Missed tackle %9% lg 9%context (not rated): 0 tgt · 34.0 yds/tgt · 100% comp · aDOT -3.0 · 6 prs · 1.8 sk · 11 tkl / 1 miss · 0 INT · 0 PD"><span class="dot">7</span><span class="nm">A. Gillotte <small>EDGE</small></span></div><div class="gm-fp def r3" style="left: 41%; top: 37%" title="Nick Bolton LBlast game 99% of snapsLinebacker · 55th pct of group · 914 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.41 lg 0.38Targets drawn5.9% lg 5.6%Missed tackle %9% lg 8%Tackle rate13.5% lg 11.8%TFL rate0.9% lg 0.8%context (not rated): 54 tgt · 7.0 yds/tgt · 79% comp · aDOT 3.5 · 6 prs · 0.5 sk · 126 tkl / 12 miss · 0 INT · 5 PD"><span class="dot">55</span><span class="nm">N. Bolton <small>LB</small></span></div><div class="gm-fp def r5" style="left: 59%; top: 37%" title="Drue Tranquill LBlast game 91% of snapsLinebacker · 98th pct of group · 796 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.33 lg 0.38Targets drawn4.3% lg 5.6%Missed tackle %3% lg 8%Tackle rate12.1% lg 11.8%TFL rate1.2% lg 0.8%context (not rated): 32 tgt · 7.8 yds/tgt · 68% comp · aDOT 3.8 · 6 prs · 1.0 sk · 96 tkl / 2 miss · 0 INT · 2 PD"><span class="dot">98</span><span class="nm">D. Tranquill <small>LB</small></span></div><div class="gm-fp def r3" style="left: 7%; top: 42%" title="Mansoor Delane CBlast game 100% of snapsCornerback · 48th pct of group · 287 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.79 lg 0.66Targets drawn8.9% lg 9.1%Missed tackle %6% lg 10%context (not rated): 25 tgt · 9.9 yds/tgt · 68% comp · aDOT 12.9 · 27 tkl / 1 miss · 1 INT · 5 PD"><span class="dot">48</span><span class="nm">M. Delane <small>CB</small></span></div><div class="gm-fp def r5" style="left: 93%; top: 42%" title="Christian Roland-Wallace CBlast game 45% of snapsCornerback · 84th pct of group · 201 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.63 lg 0.66Targets drawn8.3% lg 9.1%Missed tackle %4% lg 10%context (not rated): 16 tgt · 7.9 yds/tgt · 84% comp · aDOT 5.8 · 28 tkl / 0 miss · 0 INT · 2 PD"><span class="dot">84</span><span class="nm">C. Roland-Wallace <small>CB</small></span></div><div class="gm-fp def r1" style="left: 18%; top: 44%" title="L&amp;#x27;Jarius Sneed CBlast game 20% of snapsCornerback · 1st pct of group · 438 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.97 lg 0.66Targets drawn12.3% lg 9.1%Missed tackle %10% lg 10%context (not rated): 58 tgt · 8.0 yds/tgt · 74% comp · aDOT 7.3 · 1 prs · 45 tkl / 5 miss · 0 INT · 4 PD"><span class="dot">1</span><span class="nm">L. Sneed <small>NB</small></span></div><div class="gm-fp def r5" style="left: 34%; top: 19%" title="Chamarri Conner DBlast game 100% of snapsSafety · 88th pct of group · 710 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.33 lg 0.47Targets drawn4.8% lg 5.6%Missed tackle %9% lg 9%context (not rated): 32 tgt · 6.5 yds/tgt · 71% comp · aDOT 4.6 · 3 prs · 2.0 sk · 66 tkl / 6 miss · 0 INT · 2 PD"><span class="dot">88</span><span class="nm">C. Conner <small>S</small></span></div><div class="gm-fp def r2" style="left: 66%; top: 19%" title="Nohl Williams DBlast game 96% of snapsSafety · 28th pct of group · 602 wtd snaps2026 wks 1-7 + ½·2025Yards allowed / snap0.46 lg 0.47Targets drawn7.4% lg 5.6%Missed tackle %9% lg 9%context (not rated): 48 tgt · 5.8 yds/tgt · 47% comp · aDOT 9.7 · 2 prs · 1.5 sk · 50 tkl / 5 miss · 1 INT · 10 PD"><span class="dot">28</span><span class="nm">N. Williams <small>S</small></span></div>
         <div class="gm-fp off r3" style="left: 7%; top: 63%" title="Jaylen Waddle WRQuestionable – Undisclosedprojected: 7.7 tgt · 44 rec yds58th pct production among the position&#x27;s starter pool · 49 yds/g over 15.0 wtd games6.3 tgt/g · 0.2 car/g"><span class="dot">58<em>Q</em></span><span class="nm">J. Waddle <small>WR</small></span></div><div class="gm-fp off thin" style="left: 18%; top: 65%" title="Marvin Mims Jr. WRprojected: 2.7 tgt · 24 rec yds3rd pct production among the position&#x27;s starter pool (outside the pool) · 19 yds/g over 12.5 wtd games2.9 tgt/g · 0.6 car/g"><span class="dot">3</span><span class="nm">M. Mims Jr. <small>WR</small></span></div><div class="gm-fp off r1" style="left: 80%; top: 62%" title="Evan Engram TEprojected: 3.8 tgt · 30 rec yds0th pct production among the position&#x27;s starter pool · 24 yds/g over 15.0 wtd games4.0 tgt/g · 0.0 car/g"><span class="dot">0</span><span class="nm">E. Engram <small>TE</small></span></div><div class="gm-fp off r3" style="left: 93%; top: 63%" title="Courtland Sutton WRprojected: 5.7 tgt · 37 rec yds47th pct production among the position&#x27;s starter pool · 44 yds/g over 15.5 wtd games6.1 tgt/g · 0.0 car/g"><span class="dot">47</span><span class="nm">C. Sutton <small>WR</small></span></div><div class="gm-fp off r2" style="left: 50%; top: 75%" title="Bo Nix QBprojected: 32 att · 210 pass yds22nd pct production among the position&#x27;s starter pool · 227 yds/g over 15.5 wtd games33.8 att/g"><span class="dot">22</span><span class="nm">B. Nix <small>QB</small></span></div><div class="gm-fp off r3" style="left: 39%; top: 76%" title="J.K. Dobbins RBprojected: 13.0 car · 44 rush · 1.8 tgt · 6 rec55th pct production among the position&#x27;s starter pool · 60 yds/g over 12.0 wtd games1.3 tgt/g · 13.6 car/g"><span class="dot">55</span><span class="nm">J. Dobbins <small>RB</small></span></div><div class="gm-fp off ol" style="left: 31%; top: 62%" title="Garett Bolles Tlast game 75% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LT</span></div><div class="gm-fp off ol" style="left: 40.5%; top: 62%" title="Ben Powers Glast game 75% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LG</span></div><div class="gm-fp off ol" style="left: 50%; top: 62%" title="Luke Wattenberg Clast game 75% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">C</span></div><div class="gm-fp off ol" style="left: 59.5%; top: 62%" title="Quinn Meinerz Glast game 75% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RG</span></div><div class="gm-fp off ol" style="left: 69%; top: 62%" title="Mike McGlinchey Tlast game 75% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RT</span></div>
       </div>
     </div>
@@ -1972,31 +2214,10 @@
   </summary>
   <div class="hfa-head">
     <p class="lede">Everyone on the clubs' reports, the best-rated man first in his group: the designation, what is hurt, the practice line and the share of the snaps he took last game. Ratings are the same percentiles as the field above.</p>
-    <div class="gm-ircounts"><span class="gm-irteam"><b>KC</b> <span class="flat">11 listed</span><span class="badge out">3 Out</span><span class="badge out">7 IR</span><span class="badge out">1 PUP</span></span><span class="gm-irteam"><b>DEN</b> <span class="flat">14 listed</span><span class="badge out">3 Out</span><span class="badge out">8 IR</span><span class="badge out">1 PUP</span><span class="badge q">2 Questionable</span></span></div>
+    <div class="gm-ircounts"><span class="gm-irteam"><b>KC</b> <span class="flat">10 listed</span><span class="badge out">7 IR</span><span class="badge out">1 PUP</span><span class="badge q">2 Questionable</span></span><span class="gm-irteam"><b>DEN</b> <span class="flat">13 listed</span><span class="badge out">8 IR</span><span class="badge out">1 PUP</span><span class="badge q">4 Questionable</span></span></div>
   </div>
   
   <div class="hfa-body gm-irbody">
-    
-    <div class="gm-irpair qb">
-      <div class="gm-irptitle">Quarterbacks <span class="flat">&middot; a starter out changes every line under him</span></div>
-      <div class="gm-ircols"><div><div class="gm-irside off">KC &middot; QB</div>
-<div class="gm-ir ">
-  <span class="gm-rate none" title="no rating: too little play to rate">&ndash;</span>
-  <div class="gm-irm">
-    <div class="top"><b>Garrett Nussmeier</b><span class="flat">QB</span><span class="badge out">Out</span></div>
-    <div class="meta">Coach&#x27;s Decision</div>
-  </div>
-</div>
-</div><div><div class="gm-irside off">DEN &middot; QB</div>
-<div class="gm-ir ">
-  <span class="gm-rate none" title="no rating: too little play to rate">&ndash;</span>
-  <div class="gm-irm">
-    <div class="top"><b>Sam Ehlinger</b><span class="flat">QB</span><span class="badge out">Out</span></div>
-    <div class="meta">Coach&#x27;s Decision</div>
-  </div>
-</div>
-</div></div>
-    </div>
     
     
     <div class="gm-irmatch">
@@ -2009,7 +2230,7 @@
 <div class="gm-ir ">
   <span class="gm-rate r5" title="83rd percentile in production among the WR starter pool (68 yards a game)">83</span>
   <div class="gm-irm">
-    <div class="top"><b>Rashee Rice</b><span class="flat">WR</span><span class="badge out">Out</span></div>
+    <div class="top"><b>Rashee Rice</b><span class="flat">WR</span><span class="badge q">Questionable</span></div>
     <div class="meta">Hamstring &middot; 10% of snaps last game</div>
   </div>
 </div>
@@ -2042,15 +2263,15 @@
 <div class="gm-ir ">
   <span class="gm-rate r5" title="98th percentile in the Cornerback group, 2026 wks 1-7 + ½·2025">98</span>
   <div class="gm-irm">
-    <div class="top"><b>Pat Surtain II</b><span class="flat">DB</span><span class="badge out">Out</span></div>
+    <div class="top"><b>Pat Surtain II</b><span class="flat">DB</span><span class="badge q">Questionable</span></div>
     <div class="meta">Ankle &middot; 44% of snaps last game</div>
   </div>
 </div>
 
 <div class="gm-ir ">
-  <span class="gm-rate r3" title="56th percentile in the Safety group, 2026 wks 1-7 + ½·2025">56</span>
+  <span class="gm-rate r3" title="54th percentile in the Safety group, 2026 wks 1-7 + ½·2025">54</span>
   <div class="gm-irm">
-    <div class="top"><b>Talanoa Hufanga</b><span class="flat">DB</span><span class="badge out">Out</span></div>
+    <div class="top"><b>Talanoa Hufanga</b><span class="flat">DB</span><span class="badge q">Questionable</span></div>
     <div class="meta">Ankle &middot; 66% of snaps last game</div>
   </div>
 </div>
@@ -2080,7 +2301,7 @@
 </div>
           <div><div class="gm-irside def">DEN &middot; LB</div>
 <div class="gm-ir ">
-  <span class="gm-rate thin" title="50th percentile in the Linebacker group, 2026 wks 1-7 + ½·2025 (thin sample)">50</span>
+  <span class="gm-rate thin" title="53rd percentile in the Linebacker group, 2026 wks 1-7 + ½·2025 (thin sample)">53</span>
   <div class="gm-irm">
     <div class="top"><b>Levelle Bailey</b><span class="flat">LB</span><span class="badge out">IR</span></div>
     <div class="meta">Leg</div>
@@ -2097,7 +2318,7 @@
 <div class="gm-ir ">
   <span class="gm-rate none" title="linemen are unrated">&ndash;</span>
   <div class="gm-irm">
-    <div class="top"><b>Jaylon Moore</b><span class="flat">OL</span><span class="badge out">Out</span></div>
+    <div class="top"><b>Jaylon Moore</b><span class="flat">OL</span><span class="badge q">Questionable</span></div>
     <div class="meta">Concussion &middot; 46% of snaps last game</div>
   </div>
 </div>
@@ -2120,7 +2341,7 @@
 </div>
 
 <div class="gm-ir ">
-  <span class="gm-rate r2" title="31st percentile in the Edge group, 2026 wks 1-7 + ½·2025">31</span>
+  <span class="gm-rate r2" title="36th percentile in the Edge group, 2026 wks 1-7 + ½·2025">36</span>
   <div class="gm-irm">
     <div class="top"><b>Jonah Elliss</b><span class="flat">LB</span><span class="badge out">IR</span></div>
     <div class="meta">Ankle &middot; 45% of snaps last game</div>
@@ -2189,7 +2410,7 @@
 </div>
           <div><div class="gm-irside def">KC &middot; LB</div>
 <div class="gm-ir ">
-  <span class="gm-rate thin" title="50th percentile in the Linebacker group, 2026 wks 1-7 + ½·2025 (thin sample)">50</span>
+  <span class="gm-rate thin" title="53rd percentile in the Linebacker group, 2026 wks 1-7 + ½·2025 (thin sample)">53</span>
   <div class="gm-irm">
     <div class="top"><b>Ethan Downs</b><span class="flat">LB</span><span class="badge out">IR</span></div>
     <div class="meta">Knee - ACL</div>
@@ -2229,7 +2450,7 @@
 </div>
           <div><div class="gm-irside def">KC &middot; DL</div>
 <div class="gm-ir ">
-  <span class="gm-rate thin" title="81st percentile in the Interior DL group, 2026 wks 1-7 + ½·2025 (thin sample)">81</span>
+  <span class="gm-rate thin" title="80th percentile in the Interior DL group, 2026 wks 1-7 + ½·2025 (thin sample)">80</span>
   <div class="gm-irm">
     <div class="top"><b>Omarr Norman-Lott</b><span class="flat">DL</span><span class="badge out">PUP</span></div>
     <div class="meta">Knee - ACL</div>
@@ -2256,7 +2477,7 @@
 </main>
   <footer class="hfa-foot">
     <p><strong>Huffalytics</strong> publishes NFL stats, game projections, team EPA rankings and graded player prop plans priced against Kalshi, rebuilt every week from play-by-play data. <a href="/about/">How the engine works</a>.</p>
-    <p>Data as of Tue Oct 27, 4:04 PM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/nfl/data/week.json">week.json</a> · <a href="/nfl/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
+    <p>Data as of Wed Oct 28, 8:02 AM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/nfl/data/week.json">week.json</a> · <a href="/nfl/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
   </footer>
 </div>
 <script>

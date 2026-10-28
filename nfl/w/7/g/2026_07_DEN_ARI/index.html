@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Broncos at Cardinals: NFL Week 7 2026 Projection, Matchups and Injuries | Huffalytics</title>
-<meta name="description" content="Denver Broncos at Arizona Cardinals, NFL week 7 2026: the projected score, each offense against the defense it meets (projected player lines, overall, run game with lanes, pass game), the starting elevens rated, and both injury reports.">
+<title>Broncos at Cardinals: NFL Week 7 2026 Final, Game Report and the Plan Graded | Huffalytics</title>
+<meta name="description" content="Denver Broncos 30, Arizona Cardinals 16, NFL week 7 2026: Denver 30-16 at Arizona: the Broncos covered -4.5 and the game went over 44.5 because Denver scored from outside the red zone — a 62-yard Nix scramble and a 52-yard Harvey catch-and-run — while Arizona put 81 plays and five red-zone trips into 16 points. The pre-game plan graded: script partly held, every call checked against the box score.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="keywords" content="NFL stats, NFL projections, NFL week 7 2026, Kalshi NFL, Kalshi player props, NFL player props, NFL team rankings, EPA per play, NFL betting model, NFL streaming picks, fantasy football projections">
 <meta name="author" content="Huffalytics">
@@ -1294,6 +1294,248 @@
     .gm-script { margin: -0.4rem 16px 1rem; }
     .pp-headchips .badge { display: none; }
   }
+
+  /* ---- the post-game look: the plan against the game (.rv-) ---- */
+  .gm-side.lost img { opacity: 0.45; filter: grayscale(0.6) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.55)); }
+  .gm-side.lost .gm-abbr { color: var(--hfa-muted); }
+  .gm-pts.final { color: var(--hfa-body); text-shadow: none; }
+  .gm-pts.final span { opacity: 0.55; }
+  .gm-pts.final span.w { opacity: 1; color: var(--hfa-accent); text-shadow: 0 0 28px rgba(255, 31, 47, 0.35); }
+  .gm-projwas { letter-spacing: 0.08em; }
+  .gm-verdict { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.4rem 1rem; margin: -0.6rem 1.1rem 1.2rem; padding: 0.55rem 1rem; border: 1px solid var(--hfa-accent); border-radius: 16px; background: var(--hfa-accent-soft); color: inherit; text-decoration: none; }
+  .gm-verdict.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.10); }
+  .gm-verdict.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.10); }
+  .gm-verdict.warn { border-color: rgba(128, 128, 128, 0.5); background: var(--hfa-tint); }
+  .gm-verdict-stamp { display: inline-flex; align-items: baseline; gap: 0.45rem; }
+  .gm-verdict-stamp i, .gm-verdict-v i { font-style: normal; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-muted); }
+  .gm-verdict-stamp b { font-size: 1.05rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; color: var(--hfa-body); }
+  .gm-verdict.good .gm-verdict-stamp b { color: var(--hfa-good); } .gm-verdict.bad .gm-verdict-stamp b { color: var(--hfa-bad); }
+  .gm-verdict-v { display: inline-flex; align-items: baseline; gap: 0.35rem; font-size: 0.9rem; }
+  .gm-verdict-v b { font-weight: 800; color: var(--hfa-body); }
+  .gm-verdict-v.mk { font-size: 0.74rem; color: var(--hfa-muted); padding: 0.1rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.14); }
+  .gm-letter { font-size: 1.1rem; } .gm-letter.good { color: var(--hfa-good) !important; } .gm-letter.bad { color: var(--hfa-bad) !important; }
+  .gm-tile.rv small { font-size: 0.66rem; color: var(--hfa-muted); }
+  .gm-tile.rv.over b { color: var(--hfa-good); } .gm-tile.rv.under b { color: var(--hfa-bad); }
+  .gm-tile.rv b.flat { color: var(--hfa-muted); }
+
+  .rv-stamp { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.4rem; padding: 0.8rem 1rem; margin: 0.3rem 0 0.9rem; border-radius: 16px; border: 2px solid rgba(128, 128, 128, 0.4); background: var(--hfa-tint); }
+  .rv-stamp.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.08); }
+  .rv-stamp.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.08); }
+  .rv-stamp-word { display: flex; flex-direction: column; line-height: 1; }
+  .rv-stamp-word span { font-size: 0.64rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: var(--hfa-muted); }
+  .rv-stamp-word b { font-size: 2rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; color: var(--hfa-body); margin-top: 0.2rem; }
+  .rv-stamp.good .rv-stamp-word b { color: var(--hfa-good); } .rv-stamp.bad .rv-stamp-word b { color: var(--hfa-bad); }
+  .rv-stamp-meta { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.9rem; }
+  .rv-stamp-meta b { color: var(--hfa-body); }
+  .rv-win { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 700; }
+  .rv-win img { width: 26px; height: 26px; object-fit: contain; }
+  .rv-vs { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 0.8rem; align-items: stretch; }
+  .rv-col { border: var(--hfa-hairline); border-radius: 14px; padding: 0.8rem 0.95rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-col .pp-hook-logos { margin-bottom: 0.4rem; } .rv-col .pp-hook-logos img { width: 40px; height: 40px; }
+  .rv-col .pp-quote { font-size: 1.2rem; }
+  .rv-col.plan .pp-quote { color: var(--hfa-body); }
+  .rv-col.game { border-color: rgba(255, 31, 47, 0.45); }
+  .rv-col.game.good { border-color: var(--hfa-good); } .rv-col.game.bad { border-color: var(--hfa-bad); }
+  .rv-arrow { align-self: center; font-size: 1.6rem; font-weight: 900; color: var(--hfa-accent); }
+  .rv-tally { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.55rem; margin-top: 0.9rem; }
+  .rv-tile { display: flex; flex-direction: column; gap: 0.15rem; border: var(--hfa-hairline); border-radius: 12px; padding: 0.6rem 0.75rem; background: var(--hfa-tint); color: inherit; text-decoration: none; min-width: 0; }
+  .rv-tile > span { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .rv-tile > b { font-size: 1.6rem; font-weight: 900; line-height: 1.1; color: var(--hfa-body); }
+  .rv-tile > b i { font-style: normal; }
+  .rv-tile > b small, .rv-tile > small { font-size: 0.72rem; font-weight: 600; color: var(--hfa-muted); }
+  .rv-tile.hot { border-color: rgba(255, 31, 47, 0.5); }
+  .rv-tile.lt b { font-size: 2rem; } .rv-tile.lt.good b { color: var(--hfa-good); } .rv-tile.lt.bad b { color: var(--hfa-bad); }
+  .rv-headline { font-size: 1.08rem; font-weight: 800; line-height: 1.35; margin: 0; letter-spacing: -0.01em; }
+  .rv-tile.mk em { font-style: normal; font-size: 0.8rem; font-weight: 700; }
+  .rv-bar { height: 5px; border-radius: 3px; background: rgba(128, 128, 128, 0.2); overflow: hidden; }
+  .rv-bar i { display: block; height: 100%; border-radius: 3px; background: var(--hfa-good); }
+  .rv-why { border-left: 4px solid var(--hfa-accent); }
+  .rv-fold { margin-top: 0.9rem; border-top: var(--hfa-hairline); padding-top: 0.7rem; }
+  .rv-fold > summary { list-style: none; cursor: pointer; font-size: 0.74rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin-bottom: 0.6rem; }
+  .rv-fold > summary::-webkit-details-marker { display: none; }
+  .rv-fold > summary::before { content: "+ "; } .rv-fold[open] > summary::before { content: "\2212  "; }
+  .rv-fold > summary .flat { text-transform: none; letter-spacing: 0; font-weight: 500; }
+  .rv-story { font-size: 0.92rem; line-height: 1.6; max-width: 52rem; }
+  .rv-story h1, .rv-story h2, .rv-story h3 { font-size: 1rem; color: var(--hfa-accent); margin: 1rem 0 0.3rem; }
+  .rv-story p { margin: 0 0 0.7rem; }
+
+  .rv-tl { list-style: none; margin: 0; padding: 0 0 0 0.2rem; display: flex; flex-direction: column; }
+  .rv-tl li { position: relative; display: grid; grid-template-columns: 5.2rem minmax(0, 1fr); gap: 0.8rem; padding: 0 0 0.9rem; }
+  .rv-tl li::before { content: ""; position: absolute; left: 2.6rem; top: 1.6rem; bottom: 0; width: 2px; background: rgba(128, 128, 128, 0.25); }
+  .rv-tl li:last-child::before { display: none; }
+  .rv-clock { align-self: start; justify-self: center; z-index: 1; font-size: 0.72rem; font-weight: 800; padding: 0.25rem 0.55rem; border-radius: 999px; background: var(--pp-team); color: #fff; white-space: nowrap; box-shadow: 0 0 0 3px var(--hfa-card); }
+  .rv-tlbody { border: var(--hfa-hairline); border-left: 4px solid var(--pp-team); border-radius: 12px; padding: 0.55rem 0.8rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-play { display: flex; align-items: flex-start; gap: 0.5rem; font-weight: 700; font-size: 0.94rem; line-height: 1.35; }
+  .rv-play img { width: 24px; height: 24px; object-fit: contain; flex: none; }
+  .rv-decided { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.6rem; }
+  .rv-dcard { border: var(--hfa-hairline); border-radius: 14px; padding: 0.7rem 0.85rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-dcard.tell { border-color: rgba(47, 212, 164, 0.5); }
+  .rv-flag { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.12rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); margin-bottom: 0.4rem; }
+  .rv-flag img { width: 14px; height: 14px; object-fit: contain; }
+  .rv-dcard.tell .rv-flag { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .rv-dcard .pp-lead { font-size: 0.92rem; font-weight: 700; }
+
+  .rv-gauge.held { border-color: rgba(47, 212, 164, 0.55); } .rv-gauge.miss { border-color: rgba(255, 176, 32, 0.55); }
+  .rv-mark { margin-left: auto; font-size: 0.85rem; }
+  .rv-gauge.held .rv-mark { color: var(--hfa-good); } .rv-gauge.miss .rv-mark { color: var(--hfa-bad); }
+  .rv-row { display: grid; grid-template-columns: 3.2rem auto 1fr; align-items: center; gap: 0.45rem; font-size: 0.8rem; }
+  .rv-row small { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-muted); }
+  .rv-row em { font-style: normal; font-weight: 800; text-transform: capitalize; }
+  .rv-row.played .pp-bars i.on { background: var(--hfa-body); }
+  .rv-gauge.held .rv-row.played .pp-bars i.on { background: var(--hfa-good); } .rv-gauge.miss .rv-row.played .pp-bars i.on { background: var(--hfa-bad); }
+  .rv-note { font-size: 0.7rem; color: var(--hfa-muted); }
+  .pp-leanbar .track i.called { background: transparent; border: 2px solid var(--hfa-body); box-shadow: none; }
+  .pp-leanbar .track i.played { background: var(--hfa-accent); border-color: var(--hfa-card); }
+  .rv-cvp { text-transform: capitalize; } .rv-cvp i { font-style: normal; color: var(--hfa-muted); }
+  .rv-legend { display: flex; gap: 1rem; font-size: 0.68rem; color: var(--hfa-muted); margin: 0.2rem 0 0; }
+  .rv-legend span { display: inline-flex; align-items: center; gap: 0.3rem; }
+  .rv-legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .rv-legend i.called { border: 2px solid var(--hfa-body); } .rv-legend i.played { background: var(--hfa-accent); }
+  .pp-path.took { border-color: rgba(47, 212, 164, 0.55); border-left-color: var(--pp-team); box-shadow: 0 0 0 1px rgba(47, 212, 164, 0.25) inset; }
+  .pp-path.not { opacity: 0.55; }
+  .pp-pathhead .badge { white-space: nowrap; }
+  .rv-swing { flex-direction: column; gap: 0.35rem; }
+  .rv-weight { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.12rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); }
+  .rv-swing.decisive { border-color: var(--hfa-accent); } .rv-swing.decisive .rv-weight { background: var(--hfa-accent); color: #fff; }
+  .rv-swing.contributed .rv-weight { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .rv-swing.minor { opacity: 0.85; }
+  .rv-went { font-size: 0.84rem; color: var(--hfa-muted); margin: 0; line-height: 1.4; } .rv-went b { color: var(--hfa-body); }
+  .pp-angle.cashed { border-color: rgba(47, 212, 164, 0.55); }
+  .pp-angletitle .badge { margin-left: 0.3rem; vertical-align: 0.1rem; }
+  .pp-leg .rv-res { font-size: 0.74rem; font-weight: 800; white-space: nowrap; }
+  .pp-leg.hit { background: rgba(47, 212, 164, 0.12); } .pp-leg.hit .rv-res { color: var(--hfa-good); }
+  .pp-leg.miss { background: rgba(255, 176, 32, 0.10); } .pp-leg.miss .rv-res { color: var(--hfa-bad); }
+  .pp-leg.void .rv-res { color: var(--hfa-muted); }
+
+  .rv-eh { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0.6rem; }
+  .rv-ehcol { border: var(--hfa-hairline); border-radius: 12px; padding: 0.6rem 0.8rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-ehcol .pp-lead { font-size: 0.9rem; }
+  .rv-ehcol.happened { border-width: 1px; border-color: rgba(128, 128, 128, 0.45); }
+  .rv-ehcol.happened.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.07); }
+  .rv-ehcol.happened.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.07); }
+  .rv-call.hit { border-left-color: var(--hfa-good); box-shadow: 0 0 0 1px rgba(47, 212, 164, 0.3) inset; }
+  .rv-call.miss { border-left-color: var(--hfa-bad); }
+  .rv-call.void { opacity: 0.6; border-left-color: rgba(128, 128, 128, 0.5); }
+  .rv-stamp-res { flex: none; display: inline-grid; place-items: center; min-width: 2rem; height: 2rem; padding: 0 0.3rem; border-radius: 999px; font-size: 0.95rem; font-weight: 900; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); }
+  .hfa .rv-stamp-res.hit { margin: 0; background: var(--hfa-good); color: #04130e; } .rv-stamp-res.miss { background: var(--hfa-bad); color: #1a1000; } .rv-stamp-res.void { font-size: 0.62rem; }
+  .rv-meter { margin: 0.25rem 0 0.45rem; }
+  .rv-meter .track { position: relative; height: 8px; border-radius: 4px; background: rgba(128, 128, 128, 0.18); }
+  .rv-meter .track .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: var(--hfa-muted); }
+  .rv-call.hit .rv-meter .fill { background: var(--hfa-good); } .rv-call.miss .rv-meter .fill { background: var(--hfa-bad); }
+  .rv-meter .track .line { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: var(--hfa-body); border-radius: 1px; }
+  .rv-meterlbl { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--hfa-muted); margin-top: 0.2rem; }
+  .rv-meterlbl b { color: var(--hfa-body); font-size: 0.85rem; }
+  .rv-read { margin-bottom: 0.35rem; display: inline-block; }
+  .rv-ig { color: var(--hfa-body); }
+  .rv-call .pp-probs { margin: 0.4rem 0; }
+  .rv-notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.5rem; }
+  .rv-note-card { border: var(--hfa-hairline); border-radius: 12px; padding: 0.55rem 0.75rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-note-card.signal { border-color: rgba(47, 212, 164, 0.45); }
+  .rv-notehead { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; }
+  .rv-notehead b { color: var(--hfa-body); font-size: 0.9rem; }
+
+  .rv-gradehead { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; padding: 0.3rem 0 0.4rem; }
+  .rv-letter { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 6rem; height: 6rem; border-radius: 22px; border: 2px solid rgba(128, 128, 128, 0.45); background: var(--hfa-tint); }
+  .rv-letter b { font-size: 3rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .rv-letter span { font-size: 0.66rem; font-weight: 700; color: var(--hfa-muted); }
+  .rv-letter.good { border-color: var(--hfa-good); } .rv-letter.good b { color: var(--hfa-good); }
+  .rv-letter.bad { border-color: var(--hfa-bad); } .rv-letter.bad b { color: var(--hfa-bad); }
+  .rv-gradeparts { flex: 1 1 18rem; display: flex; flex-direction: column; gap: 0.5rem; min-width: 0; }
+  .rv-part { display: grid; grid-template-columns: 11rem 1fr 2rem; align-items: center; gap: 0.6rem; font-size: 0.8rem; }
+  .rv-part span small { color: var(--hfa-muted); display: block; font-size: 0.68rem; }
+  .rv-part b { text-align: right; color: var(--hfa-body); }
+  .rv-part .rv-bar { height: 8px; }
+  .rv-mkts { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .rv-teams { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.6rem; margin-top: 0.9rem; }
+  .rv-team, .rv-bp { border: var(--hfa-hairline); border-top: 3px solid var(--pp-team); border-radius: 14px; padding: 0.7rem 0.85rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-teamhead { display: flex; align-items: center; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 0.5rem; }
+  .rv-teamhead img { width: 28px; height: 28px; object-fit: contain; }
+  .rv-teamhead b { color: var(--hfa-body); font-size: 1rem; }
+  .rv-teamhead .flat { font-size: 0.72rem; }
+  .rv-trow { display: grid; grid-template-columns: 5.2rem auto auto auto 1fr; grid-template-areas: "l p a v d" "bar bar bar bar bar"; align-items: baseline; gap: 0.15rem 0.45rem; padding: 0.35rem 0; border-top: var(--hfa-hairline); font-size: 0.84rem; }
+  .rv-trow span { grid-area: l; color: var(--hfa-muted); font-size: 0.74rem; }
+  .rv-trow em { font-style: normal; color: var(--hfa-muted); } .rv-trow i { font-style: normal; color: var(--hfa-muted); font-size: 0.72rem; }
+  .rv-trow b { color: var(--hfa-body); font-size: 1rem; } .rv-trow small { justify-self: end; font-weight: 700; }
+  .rv-trow .rv-bar { grid-area: bar; height: 4px; }
+  .rv-trow.big .rv-bar i { background: var(--hfa-bad); }
+  .rv-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.9rem; }
+  .rv-list { border: var(--hfa-hairline); border-radius: 14px; padding: 0.65rem 0.85rem; background: var(--hfa-tint); }
+  .rv-list.good .pp-k { color: var(--hfa-good); } .rv-list.bad .pp-k { color: var(--hfa-bad); }
+  .rv-li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem; padding: 0.3rem 0; border-top: var(--hfa-hairline); font-size: 0.84rem; }
+  .rv-li > b { color: var(--hfa-body); } .rv-li .flat { font-size: 0.72rem; }
+  .rv-nums { margin-left: auto; color: var(--hfa-muted); white-space: nowrap; } .rv-nums b { color: var(--hfa-body); }
+  .rv-right { display: flex; flex-direction: column; gap: 0.35rem; }
+  .rv-right span { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.4; }
+  .rv-right i { font-style: normal; color: var(--hfa-good); font-weight: 900; }
+
+  .rv-lesson img { width: 28px; height: 28px; object-fit: contain; flex: none; }
+  .rv-blueprints { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0.6rem; }
+  .rv-recur { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.45rem; }
+  .rv-facet { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); gap: 0.5rem; padding: 0.4rem 0; border-top: var(--hfa-hairline); font-size: 0.86rem; }
+  .rv-facet b { color: var(--hfa-body); }
+  .rv-side { align-self: start; text-align: center; font-size: 0.58rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.15rem 0.3rem; border-radius: 6px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); }
+  .rv-side.defense { background: rgba(255, 176, 32, 0.14); color: var(--hfa-bad); } .rv-side.offense { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .rv-bp .pp-expect { margin-top: 0.5rem; }
+  @media (max-width: 760px) {
+    .gm-verdict { margin: -0.4rem 16px 1rem; gap: 0.35rem 0.8rem; }
+    .gm-verdict-v.mk { display: none; }
+    .rv-vs { grid-template-columns: 1fr; }
+    .rv-arrow { transform: rotate(90deg); justify-self: center; line-height: 1; }
+    .rv-stamp-word b { font-size: 1.5rem; }
+    .rv-tally { grid-template-columns: 1fr 1fr; }
+    .rv-tally .rv-tile.mk { grid-column: 1 / -1; }
+    .rv-tl li { grid-template-columns: 1fr; gap: 0.3rem; }
+    .rv-tl li::before { display: none; }
+    .rv-clock { justify-self: start; }
+    .rv-decided, .rv-notes, .rv-teams, .rv-blueprints, .rv-two { grid-template-columns: 1fr; }
+    .rv-eh { grid-template-columns: 1fr; }
+    .rv-part { grid-template-columns: 8rem 1fr 2rem; }
+  }
+
+  /* ---- landing: the final reports band (.ld-rep) ---- */
+  .ld-reports.on { border-color: rgba(47, 212, 164, 0.5); background: linear-gradient(135deg, rgba(47, 212, 164, 0.12), var(--hfa-card) 55%); }
+  .ld-reports.on .ld-pulse { background: var(--hfa-good); animation: none; box-shadow: 0 0 0 4px rgba(47, 212, 164, 0.2); }
+  .ld-reports .ld-plans-head { flex-wrap: wrap; }
+  .ld-reports .ld-plans-head h2 b { color: var(--hfa-good); }
+  .ld-rep-title { flex: 1 1 18rem; min-width: 0; }
+  .ld-rep-sum { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .ld-rep-chip { display: inline-flex; align-items: baseline; gap: 0.3rem; padding: 0.3rem 0.7rem; border-radius: 999px; background: var(--hfa-tint); border: var(--hfa-hairline); font-size: 0.8rem; color: var(--hfa-muted); white-space: nowrap; }
+  .ld-rep-chip i { font-style: normal; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-right: 0.15rem; }
+  .ld-rep-chip b { font-weight: 900; font-size: 0.95rem; color: var(--hfa-body); } .ld-rep-chip b.up { color: var(--hfa-good); } .ld-rep-chip b.down { color: var(--hfa-bad); }
+  .ld-rep-chip.hot { border-color: rgba(255, 31, 47, 0.5); }
+  .ld-rep-grid { grid-auto-columns: 17rem; }
+  .ld-rep { display: flex; flex-direction: column; gap: 0.45rem; padding: 0.7rem 0.8rem; border-radius: 12px; background: var(--hfa-tint); border: var(--hfa-hairline); border-top: 3px solid rgba(128, 128, 128, 0.5); text-decoration: none; color: var(--hfa-body); transition: transform 0.12s, border-color 0.12s; scroll-snap-align: start; min-width: 0; }
+  .ld-rep:hover { transform: translateY(-2px); }
+  .ld-rep.good { border-top-color: var(--hfa-good); } .ld-rep.bad { border-top-color: var(--hfa-bad); }
+  .ld-rep-score { display: grid; grid-template-columns: 1fr 1fr auto; align-items: center; gap: 0.4rem; }
+  .ld-rep-score .t { display: inline-flex; align-items: center; gap: 0.3rem; opacity: 0.6; }
+  .ld-rep-score .t.w { opacity: 1; }
+  .ld-rep-score img { width: 22px; height: 22px; object-fit: contain; }
+  .ld-rep-score b { font-size: 0.82rem; font-weight: 800; color: var(--hfa-body); }
+  .ld-rep-score em { font-style: normal; font-size: 1.35rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .ld-rep-score .t.w em { color: var(--hfa-accent); }
+  .ld-rep-score small { font-size: 0.58rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep-verdict { align-self: flex-start; display: inline-flex; align-items: baseline; gap: 0.35rem; font-size: 0.72rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.15rem 0.55rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-body); }
+  .ld-rep-verdict i { font-style: normal; font-size: 0.56rem; font-weight: 800; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep.good .ld-rep-verdict { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); } .ld-rep.bad .ld-rep-verdict { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .ld-rep-head { font-size: 0.8rem; line-height: 1.4; color: var(--hfa-body); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; flex: 1 1 auto; }
+  .ld-rep-foot { display: flex; flex-wrap: wrap; gap: 0.3rem 0.8rem; padding-top: 0.4rem; border-top: var(--hfa-hairline); font-size: 0.8rem; }
+  .ld-rep-foot span { display: inline-flex; align-items: baseline; gap: 0.25rem; }
+  .ld-rep-foot i { font-style: normal; font-size: 0.56rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep-foot b { font-weight: 900; color: var(--hfa-body); } .ld-rep-foot b.up { color: var(--hfa-good); } .ld-rep-foot b.down { color: var(--hfa-bad); }
+  .ld-rep-foot b.g.good { color: var(--hfa-good); } .ld-rep-foot b.g.bad { color: var(--hfa-bad); }
+  @media (max-width: 760px) {
+    .ld-rep-grid { grid-auto-columns: 14.5rem; }
+    .ld-rep { padding: 0.55rem 0.6rem; }
+    .ld-rep-head { -webkit-line-clamp: 3; font-size: 0.76rem; }
+    .ld-rep-chip { font-size: 0.72rem; padding: 0.2rem 0.55rem; }
+    .rv-headline { font-size: 0.98rem; font-weight: 700; }
+    .ld-rep-score small { display: none; }
+    .ld-rep-score { grid-template-columns: 1fr 1fr; }
+    /* The live bands ride up under the intro, ahead of the game list. */
+    .ld-hero > .ld-hero-main { order: -2; }
+    .ld-hero > .ld-reports, .ld-hero > .ld-plans.on { order: -1; }
+  }
 </style>
 
 </head>
@@ -1327,12 +1569,12 @@
     <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
   </div>
   <main>
-<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#read" data-sec="read">The read</a><a href="#script" data-sec="script">The script</a><a href="#away" data-sec="away">DEN offense</a><a href="#home" data-sec="home">ARI offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="#before" data-sec="before">Before you bet</a><a href="/nfl/w/7/">Week 7 board</a></nav>
+<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#result" data-sec="result">The result</a><a href="#game" data-sec="game">How it was decided</a><a href="#script" data-sec="script">The script</a><a href="#away" data-sec="away">DEN offense</a><a href="#home" data-sec="home">ARI offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="#grade" data-sec="grade">The grade</a><a href="#next" data-sec="next">Next time</a><a href="/nfl/w/7/">Week 7 board</a></nav>
 
 <div class="hfa-card hfa-hero hfa-sec gm-hero" id="hero" data-sec="hero" style="--gm-away: #002244; --gm-home: #97233F;">
   <div class="gm-hero-top">
     <a class="gm-back" href="/nfl/w/7/">&#8249; Week 7 board</a>
-    <span class="hfa-eyebrow">NFL &middot; 2026 season &middot; week 7 &middot; final</span>
+    <span class="hfa-eyebrow">NFL &middot; 2026 season &middot; week 7 &middot; final &middot; reviewed</span>
   </div>
   <div class="gm-score">
     <div class="gm-side away">
@@ -1340,9 +1582,9 @@
       <div class="gm-id"><div class="gm-abbr">DEN</div><div class="gm-nick">Broncos</div><i class="gm-under" style="background: #002244"></i></div>
     </div>
     <div class="gm-mid">
-      <div class="gm-pts"><span>24.5</span><em>&ndash;</em><span>20.0</span></div><div class="gm-tag">projected</div>
+      <div class="gm-pts final"><span class="w">30</span><em>&ndash;</em><span class="">16</span></div><div class="gm-tag">final <span class="gm-projwas">&middot; projected 24.5&ndash;20.0</span></div>
     </div>
-    <div class="gm-side home">
+    <div class="gm-side home lost">
       <div class="gm-id"><div class="gm-abbr">ARI</div><div class="gm-nick">Cardinals</div><i class="gm-under" style="background: #97233F"></i></div>
       <img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="Arizona Cardinals logo" width="96" height="96">
     </div>
@@ -1351,135 +1593,335 @@
     <span class="gm-chip">Sunday Oct 25, 2026 <i>&middot; 2:05 PM Denver</i></span>
     <span class="gm-chip"><i>spread</i> <b>DEN -4.5</b></span>
     <span class="gm-chip"><i>total</i> <b>44.5</b></span>
-    <span class="gm-chip final"><i>final</i> <b>DEN 30 &ndash; 16 ARI</b></span>
+    
     <span class="gm-chip " title="Natural grass. Passing is the same on grass and turf; rushing runs about 3.5% higher on turf (+3.7 yards a team) and a catch gains a tenth of a yard more after it. Points, the closing lines and the engine show no surface effect, so it is not an engine input."><i>field</i> <b>grass</b></span><span class="gm-chip " title="Played under a roof: the weather outside does not reach the field."><i>roof</i> <b>closed</b></span>
   </div>
   
-  <a class="gm-script" href="#script" title="The plan's script: pace, confidence and each side's lean — the section below has the rest">
-    <span class="gm-script-k">The script</span>
-    <span class="gm-script-v"><b>slow pace</b><span class="pp-bars sm"><i class="on"></i><i class=""></i><i class=""></i></span></span>
-    <span class="gm-script-v"><b>medium confidence</b><span class="pp-pips sm"><i class="on"></i><i class="on"></i><i class=""></i></span></span>
-    <span class="gm-script-v lean"><b>DEN</b> pass</span><span class="gm-script-v lean"><b>ARI</b> pass</span>
+  <a class="gm-verdict warn" href="#result" title="The pre-game plan against the game: the report's verdict on the script, the calls graded off the box score, and the projection's grade">
+    <span class="gm-verdict-stamp"><i>The script</i><b>Partly held</b></span>
+    <span class="gm-verdict-v"><i>calls</i><b><span class="up">6</span>&ndash;<span class="down">5</span></b></span>
+    <span class="gm-verdict-v"><i>Edge+</i><b><span class="up">9</span>&ndash;<span class="down">2</span></b></span>
+    <span class="gm-verdict-v"><i>projection</i><b class="gm-letter good">B</b></span>
+    <span class="gm-verdict-v mk">DEN covered (DEN by 4.5)</span><span class="gm-verdict-v mk">Over 44.5 (46)</span>
   </a>
   
 </div>
 
 
-<details class="hfa-card hfa-sec pp-sec pp-read" id="read" data-sec="read" open>
+
+<details class="hfa-card hfa-sec pp-sec rv-result" id="result" data-sec="result" open>
   <summary class="pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    <span class="pp-headtext"><span class="hfa-eyebrow">The read &middot; written Sun Oct 25, 1:05 PM</span><span class="pp-h2">What the plan sees</span></span>
-    <span class="pp-headchips"><span class="badge acc">11 calls</span><span class="pp-open">open</span></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The result &middot; plan written Sun Oct 25, 1:05 PM &middot; report Tue Oct 27, 5:27 PM</span><span class="pp-h2">What the plan saw. What happened.</span></span>
+    <span class="pp-headchips"><span class="badge warn">script partly held</span><span class="pp-open">open</span></span>
   </summary>
   <div class="pp-body">
-    <div class="pp-hook">
-      <div class="pp-hook-logos"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy"><span class="pp-vs">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy"></div>
-      <blockquote class="pp-quote">Denver can&#x27;t run and Arizona can&#x27;t finish. Brissett throws into trouble.</blockquote>
-      <p class="pp-headline">Two offenses that move the ball and stall: Denver&#x27;s run game meets a top-three run front, Arizona&#x27;s drives end in Ryland field goals, and the lever is whether Brissett gives one away.</p>
+    <div class="rv-stamp warn">
+      <div class="rv-stamp-word"><span>The script</span><b>Partly held</b></div>
+      <div class="rv-stamp-meta">
+        <span>The game took <b>the favorite&#x27;s path</b></span>
+        <span class="rv-win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy">Broncos won 30–16</span>
+      </div>
     </div>
-    <div class="pp-cards">
+    <div class="rv-vs">
+      <div class="rv-col plan">
+        <div class="pp-k">The plan said</div>
+        <div class="pp-hook-logos"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy"><span class="pp-vs">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy"></div>
+        <blockquote class="pp-quote">Denver can&#x27;t run and Arizona can&#x27;t finish. Brissett throws into trouble.</blockquote>
+        <p class="pp-sub">Two offenses that move the ball and stall: Denver&#x27;s run game meets a top-three run front, Arizona&#x27;s drives end in Ryland field goals, and the lever is whether Brissett gives one away.</p>
+      </div>
+      <div class="rv-arrow" aria-hidden="true">&#8594;</div>
+      <div class="rv-col game warn">
+        <div class="pp-k">What happened</div>
+        <p class="rv-headline">Denver 30-16 at Arizona: the Broncos covered -4.5 and the game went over 44.5 because Denver scored from outside the red zone — a 62-yard Nix scramble and a 52-yard Harvey catch-and-run — while Arizona put 81 plays and five red-zone trips into 16 points.</p>
+        <p class="pp-sub">The plan read the shape of the game well — Denver wins, Arizona moves it and kicks, the Cardinals&#x27; trips die inside the 20 — and got five of its six structural reads at least half right, but the mechanism it leaned on was wrong in both directions. It expected Denver to be unable to run and forced into a 60% short-passing game; Denver instead ran for 159, threw at an 11.1 aDOT and scored twice from outside the red zone.</p><details class="pp-more"><summary>more</summary><p>It also expected the lever to be a Brissett giveaway and a per-throw squeeze on Arizona; there were zero turnovers all game and Arizona cleared 272 yards on sheer volume. The 6-5 call record is honest: the calls that cashed on their own logic (McBride receptions, Dobbins TD) were the usage-based ones, and the yardage calls that cashed (Nix under, Waddle under) got there by routes the plan never described.</p></details>
+      </div>
+    </div>
+    <div class="rv-tally">
       
-      <div class="pp-card">
-        <div class="pp-k">The read</div>
-        <p class="pp-lead">A 43.5 total that deserves it.</p>
-        <details class="pp-more"><summary>more</summary><p>Denver is favored by 4.5 and gets there without its run game: Arizona ranks 3rd in rush EPA allowed and Denver has averaged 3.44 a carry with 2.03 yards before contact all season. That pushes Bo Nix to 32-36 throws at the three-to-five yard depth he has lived at since week 1 — completions and checkdowns, not yardage. Arizona&#x27;s answer is the short middle: McBride has seen 9+ targets in all six games, Michael Wilson 7+ in five, and Brissett has produced two explosive passes in his last four games combined. He meets Denver&#x27;s coverage, 5th in pass EPA allowed and 4th in pressure generated, behind a line without Paris Johnson Jr. (IR) and Jon Gaines (out, Rotowire Friday). Expect long, slow possessions on both sides, points arriving in threes for Arizona and in short touchdowns for Denver.</p></details>
+      <div class="rv-tile " title="The plan's calls graded off the box score at the Normal cushion">
+        <span>Normal calls</span>
+        <b><i class="up">6</i>&ndash;<i class="down">5</i></b>
+        <div class="rv-bar"><i style="width: 55%"></i></div>
       </div>
       
-      <div class="pp-card">
-        <div class="pp-k">Why</div>
-        <p class="pp-lead">Split each offense at the 20.</p>
-        <details class="pp-more"><summary>more</summary><p>Denver&#x27;s field EPA is -0.082 — it does not move the ball — but it converts 68.8% of red-zone trips, and Arizona gives up touchdowns on 64.7% of trips (22nd). That is the case for Dobbins&#x27;s touchdown equity and against piling up Broncos field goals. Arizona is the mirror: -0.18 EPA inside the 20, a 45% trip conversion rate, five Ryland field goals and zero touchdowns at the Rams in week 6, against a Denver defense ranked 9th in red-zone touchdown rate allowed. Arizona&#x27;s weakness — 8.63 yards per attempt allowed, 31st in pass EPA — is a vertical leak, and Denver has no vertical component (0-for-3 deep in week 6, aDOT 3.0). The rank flatters Denver&#x27;s receivers more than the quarterback they share.</p></details>
+      <div class="rv-tile " title="The plan's calls graded off the box score at the Edge cushion">
+        <span>Edge calls</span>
+        <b><i class="up">8</i>&ndash;<i class="down">3</i></b>
+        <div class="rv-bar"><i style="width: 73%"></i></div>
       </div>
       
-      <div class="pp-card">
-        <div class="pp-k">What would change it</div>
-        <p class="pp-lead">A Denver turnover or a short field flipping Arizona into a lead, which would hand Allgeier and Knight carries against a front allowing 139.8 rush yards a game.</p>
-        <details class="pp-more"><summary>more</summary><p>A Brissett multi-interception day turns this into a blowout and kills Arizona&#x27;s volume props. And the Cardinals&#x27; patched interior could turn Denver&#x27;s pass rush into four sacks, ending drives before Ryland ever kicks.</p></details>
+      <div class="rv-tile hot" title="The plan's calls graded off the box score at the Edge+ cushion">
+        <span>Edge+ calls</span>
+        <b><i class="up">9</i>&ndash;<i class="down">2</i></b>
+        <div class="rv-bar"><i style="width: 82%"></i></div>
       </div>
+      
+      <a class="rv-tile lt good" href="#grade" title="The projection graded: team volume and yardage, player lines and the market calls it implied"><span>Projection</span><b>B</b><small>71 of 100</small></a>
+      <div class="rv-tile" title="Projected player lines that landed in range"><span>Player lines</span><b>31<small>/45</small></b><small>in range</small></div>
+      <div class="rv-tile mk"><span>The market</span><em>DEN covered (DEN by 4.5)</em><em>Over 44.5 (46)</em></div>
+    </div>
+    
+    <div class="pp-card wide rv-why">
+      <div class="pp-k">Why the script partly held</div>
+      <p class="pp-lead">The favorite path&#x27;s outline landed — Denver won by 14, Arizona kicked three field goals and never led a second — but the stated engine did not: the plan had Denver converting its red-zone trips against a soft goal-line defense with neither QB clearing 220, and instead Denver went 1-for-3 inside the 20 and scored on plays of 62, 52 and 47 yards while both quarterbacks cleared 220. `checks` confirms the texture was wrong too: pace was called slow and the game ran 131 plays to a 121.5 league baseline, and Denver&#x27;s lean was called pass but came in balanced at 53.6% (season 57.3%), with a 40.7% pass rate in the second half. The underdog path&#x27;s components — 12-play drives, time of possession (ARI 33:18), Ryland kicking — all appeared, but with zero Denver giveaways it produced 16 points, not 20.</p>
       
     </div>
+    
+    
+    <details class="rv-fold">
+      <summary>The plan's pre-game read <span class="flat">&middot; as written before kickoff</span></summary>
+      <div class="pp-cards">
+        <div class="pp-card"><div class="pp-k">The read</div><p class="pp-lead">A 43.5 total that deserves it.</p><details class="pp-more"><summary>more</summary><p>Denver is favored by 4.5 and gets there without its run game: Arizona ranks 3rd in rush EPA allowed and Denver has averaged 3.44 a carry with 2.03 yards before contact all season. That pushes Bo Nix to 32-36 throws at the three-to-five yard depth he has lived at since week 1 — completions and checkdowns, not yardage. Arizona&#x27;s answer is the short middle: McBride has seen 9+ targets in all six games, Michael Wilson 7+ in five, and Brissett has produced two explosive passes in his last four games combined. He meets Denver&#x27;s coverage, 5th in pass EPA allowed and 4th in pressure generated, behind a line without Paris Johnson Jr. (IR) and Jon Gaines (out, Rotowire Friday). Expect long, slow possessions on both sides, points arriving in threes for Arizona and in short touchdowns for Denver.</p></details></div><div class="pp-card"><div class="pp-k">Why</div><p class="pp-lead">Split each offense at the 20.</p><details class="pp-more"><summary>more</summary><p>Denver&#x27;s field EPA is -0.082 — it does not move the ball — but it converts 68.8% of red-zone trips, and Arizona gives up touchdowns on 64.7% of trips (22nd). That is the case for Dobbins&#x27;s touchdown equity and against piling up Broncos field goals. Arizona is the mirror: -0.18 EPA inside the 20, a 45% trip conversion rate, five Ryland field goals and zero touchdowns at the Rams in week 6, against a Denver defense ranked 9th in red-zone touchdown rate allowed. Arizona&#x27;s weakness — 8.63 yards per attempt allowed, 31st in pass EPA — is a vertical leak, and Denver has no vertical component (0-for-3 deep in week 6, aDOT 3.0). The rank flatters Denver&#x27;s receivers more than the quarterback they share.</p></details></div><div class="pp-card"><div class="pp-k">What would change it</div><p class="pp-lead">A Denver turnover or a short field flipping Arizona into a lead, which would hand Allgeier and Knight carries against a front allowing 139.8 rush yards a game.</p><details class="pp-more"><summary>more</summary><p>A Brissett multi-interception day turns this into a blowout and kills Arizona&#x27;s volume props. And the Cardinals&#x27; patched interior could turn Denver&#x27;s pass rush into four sacks, ending drives before Ryland ever kicks.</p></details></div>
+      </div>
+    </details>
+    
   </div>
 </details>
 
 
-<details class="hfa-card hfa-sec pp-sec pp-script" id="script" data-sec="script" open>
+
+<details class="hfa-card hfa-sec pp-sec rv-game" id="game" data-sec="game" open>
   <summary class="pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    <span class="pp-headtext"><span class="hfa-eyebrow">The script</span><span class="pp-h2">How the game plays</span></span>
-    <span class="pp-headchips"><span class="badge mute">slow pace</span><span class="badge mute">medium confidence</span><span class="pp-open">open</span></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The game</span><span class="pp-h2">How it was decided</span></span>
+    <span class="pp-headchips"><span class="badge mute">5 turning points</span><span class="pp-open">open</span></span>
+  </summary>
+  <div class="pp-body">
+    
+    <div class="pp-k">Turning points</div>
+    <ol class="rv-tl">
+      
+      <li style="--pp-team: #002244">
+        <span class="rv-clock">Q1 11:19</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="DEN" loading="lazy"><span>Nix 19 yards to Harvey to the ARI 1 wiped out by Trautman offensive pass interference (EPA -1.68)</span></div>
+          <p class="pp-sub">First-and-goal becomes a 48-yard field goal.</p>
+          <details class="pp-more"><summary>more</summary><p>Denver&#x27;s only trip inside the 10 in the first half ends in three points — the start of a 3-trip, 1-TD red-zone day for a team whose season rate was 68.8%.</p></details>
+        </div>
+      </li>
+      
+      <li style="--pp-team: #002244">
+        <span class="rv-clock">Q2 03:57</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="DEN" loading="lazy"><span>Nix scrambles up the middle 62 yards for a touchdown (EPA +5.48, WPA +0.203)</span></div>
+          <p class="pp-sub">From 6-6 to 13-6 on one snap, two plays after Arizona had tied it.</p>
+          <details class="pp-more"><summary>more</summary><p>The single biggest play of the game and a quarter of Denver&#x27;s rushing total; Arizona never led or tied again.</p></details>
+        </div>
+      </li>
+      
+      <li style="--pp-team: #002244">
+        <span class="rv-clock">Q3 10:36</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="DEN" loading="lazy"><span>Nix short left to Harvey for 52 yards and a touchdown (EPA +4.49)</span></div>
+          <p class="pp-sub">A checkdown at -14 air yards turned into 68 YAC and a two-score lead on a three-play, 62-yard drive — Denver scoring without a red-zone snap again.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #002244">
+        <span class="rv-clock">Q3 00:47</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="DEN" loading="lazy"><span>Nix deep right to Mims for 47 to the ARI 6 (EPA +3.23), Dobbins 1-yard TD at 0:02</span></div>
+          <p class="pp-sub">Answered Arizona&#x27;s 12-play, 6:36 touchdown drive within 3:50 and restored the two-touchdown cushion at the half-quarter break.</p>
+          <details class="pp-more"><summary>more</summary><p>Denver&#x27;s fourth explosive of the day against a defense that had allowed 20-plus-yard passes in four straight weeks.</p></details>
+        </div>
+      </li>
+      
+      <li style="--pp-team: #97233F">
+        <span class="rv-clock">Q4 01:30</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="ARI" loading="lazy"><span>Brissett sacked at the DEN 5 by Singleton (-4, EPA -1.79) on 2nd-and-1 from the 1, then two DEN pass interference flags and an incompletion on 4th-and-5</span></div>
+          <p class="pp-sub">The 15-play, 69-yard drive that reached the 1-yard line produced nothing — the cleanest single illustration of Arizona&#x27;s red-zone problem, and it kept the total at 46 instead of 53.</p>
+          
+        </div>
+      </li>
+      
+    </ol>
+    
+    
+    <div class="pp-k pp-k-sec">What decided it <span class="flat">&middot; and whether the numbers showed it before kickoff</span></div>
+    <div class="rv-decided">
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag">pre-game tell</span>
+        <p class="pp-lead">Denver&#x27;s explosive plays against a defense that has leaked them all season</p>
+        <p class="pp-sub">5 explosive passes plus the 62-yard scramble; DEN scored 20 of its 30 points on drives of 2, 3 and 7 plays covering 65, 62 and 71 yards.</p>
+        <details class="pp-more"><summary>more</summary><p>Arizona had allowed 6 explosive passes to SF (wk3), 5 to NYG (wk4), 4 to DET (wk5).</p><p><b>The tell.</b> ARI&#x27;s `explosive passing` tag in four of six weeks and 8.63 YPA allowed in the engine inputs — the question was only whether Denver (season aDOT 3.0-8.6) would throw past the sticks. It did: aDOT 11.1, 9 deep attempts.</p></details>
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag">pre-game tell</span>
+        <p class="pp-lead">Arizona&#x27;s red-zone failure</p>
+        <p class="pp-sub">5 trips, 1 TD, 3 FGs, 22 red-zone plays at -0.474 EPA; two turnovers on downs, including from the DEN 1 and 5 in the fourth quarter.</p>
+        <details class="pp-more"><summary>more</summary><p>Field EPA was +0.084 — the Cardinals moved it fine.</p><p><b>The tell.</b> Week 6 at LA: 5 trips, 0 touchdowns, 5 Ryland field goals, `yards without touchdowns`. Week 1: 5 trips, 2 TDs. Season red-zone EPA/play -0.180 against a league -0.002.</p></details>
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag">pre-game tell</span>
+        <p class="pp-lead">No Arizona pass rush despite blitzing</p>
+        <p class="pp-sub">Denver faced a 42.9% blitz rate and allowed 1 sack and 1 QB hit on 32 dropbacks — a 3.1% pressure rate.</p>
+        <details class="pp-more"><summary>more</summary><p>Nix was +0.35 EPA per dropback. Arizona has carried a `no pass rush` tag in three of six weeks.</p><p><b>The tell.</b> ARI blitz rate 36.6% with a 7.2% sack rate allowed-side profile and 31st-ranked pass EPA; blitzing without getting home is how the 47-yard and 52-yard plays happen.</p></details>
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag">pre-game tell</span>
+        <p class="pp-lead">Denver&#x27;s coverage penalties kept Arizona&#x27;s drives alive — and still didn&#x27;t cost it</p>
+        <p class="pp-sub">11 flags for 114 yards, including 26- and 25-yard DPIs on Brandon Jones and two more DPIs by Barron at the goal line; Arizona drew 79 penalty yards, 51 of them DPI — free yards that never show as Brissett passing yards.</p>
+        <details class="pp-more"><summary>more</summary><p><b>The tell.</b> DEN allowed 19.8 DPI yards per game entering (league 6.45). Only 2 of the 11 flags were pre-snap, so this was not the recurring `pre-snap penalties` tag — it was coverage grabbing.</p></details>
+      </div>
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag">in-game only</span>
+        <p class="pp-lead">Game-state volume: Arizona never led for a second</p>
+        <p class="pp-sub">DEN led 3,328 of 3,600 seconds; ARI ran 81 plays to DEN&#x27;s 59 and still lost by 14.</p>
+        <details class="pp-more"><summary>more</summary><p>DEN second-half EPA/play +0.39 on 27 snaps at a 40.7% pass rate.</p><p><b>The tell.</b> Not predictable in advance, but the consequence was: once Denver led, it ran the ball and bled 25:50 of clock, which is exactly what its leading-state split (49 plays, 0.095 EPA) shows.</p></details>
+      </div>
+      
+    </div>
+    
+    
+    <details class="rv-fold">
+      <summary>The full story <span class="flat">&middot; the report's account, start to finish</span></summary>
+      <div class="rv-story"><h2>The short version</h2>
+<p>Denver 30, Arizona 16: the Broncos covered -4.5 and the game cleared 44.5 by a point and a half, which is roughly the model's grade in miniature — the side right, the total wrong, the mechanism different from the one projected. Denver ran 59 plays to Arizona's 81, converted 3 of 13 third downs, scored one red-zone touchdown on three trips, and won by two scores because three snaps produced 161 yards and two touchdowns. Arizona ran the ball 24 times for 94, threw 48 times for 272, reached the 20 five times, and kicked three field goals.</p>
+<h2>How it unfolded</h2>
+<p>Denver opened with a 20-yard Sutton completion and reached the ARI 1 on a Harvey catch at Q1 11:19 — erased by Trautman's offensive pass interference, EPA -1.68 — and settled for a 48-yarder. That became the first-half pattern: Denver in position, Denver kicking. Arizona crawled back to 6-6 on two Ryland field goals, the second ending a 13-play, 7:55 drive that converted 4th-and-1 at the DEN 20 and then died inside the 20 behind a delay of game at the DEN 2.</p>
+<p>Two plays later the game turned. On 2nd-and-7 from the DEN 38 at Q2 3:57, Nix scrambled up the middle for 62 and a touchdown — EPA +5.48, WPA +0.203, the largest swing of the afternoon. Arizona did not lead or tie again for the remaining 33 minutes. The third quarter compounded it: a Harvey screen at -14 air yards went 52 yards for a score at 10:36, and after Arizona's only touchdown drive (12 plays, 6:36, McBride from 7), Denver answered in 3:50 with a 47-yard Mims completion and a Dobbins 1-yard plunge at 0:02. 27-13 at the break between quarters, and the rest was Arizona accumulating.</p>
+<p>That accumulation is worth reading carefully. Arizona's last three drives went 34, 52 and 69 yards and produced three points. The 15-play march that began at its own 11 with 3:54 left reached the DEN 1 on a 35-yard Brooks catch, then lost four on a Singleton sack at 1:30, drew two Denver pass-interference flags at the goal line, and ended on an incompletion to Wilson on 4th-and-5 from the 5.</p>
+<h2>Why the game diverged from the projection</h2>
+<p>Two flagged misses, two different causes. Denver's 159 rush yards against 102.9 is mostly one scramble (Nix 7 for 73) plus a running back the model barely had on the field: Coleman, projected 1.3 carries, took 9 for 54 with two explosive runs while Dobbins played 23% of snaps. The scramble is noise; the snap split is a real read. Arizona's 48 attempts against 35.1 is pure game state — 81 plays, all of them trailing, 65.4% pass, 13.6% no-huddle, 30 garbage-time snaps. Per attempt the projection was right (5.67 YPA against a 6.4 blend); the overage is volume the engine's 64.9-play line could not carry.</p>
+<p>The third divergence is the one the inputs pointed at. Denver's field EPA was +0.235 and its red-zone EPA -0.444; Arizona's were +0.084 and -0.474. Both teams moved it and stalled. Denver got away with it because it scored twice from beyond the 20; Arizona's five trips turned into 16 points, the same shape as week 6 at the Rams (5 trips, 0 touchdowns, 5 field goals).</p>
+<h2>The plan against the game</h2>
+<p>The plan's picture — Denver wins, Arizona kicks, the trips die inside the 20 — showed up on the scoreboard, but almost none of the engine it described did. It had Denver unable to run and forced into a 60% short game; Denver ran for 159, threw at an 11.1 aDOT and leaned balanced at 53.6%. It had the lever as a Brissett giveaway; there were no turnovers in the game at all. It called pace slow and got 131 plays against a 121.5 baseline. Even the unders that cashed cashed sideways: Nix stayed under 224.5 while throwing nine deep balls, Waddle stayed under 49.5 with 104 air yards and 4 YAC.</p>
+<h2>Player by player</h2>
+<p>McBride was the biggest player miss on the board — 13 targets, 10-111-1 against 7.1/57.5 — and the targets are the repeatable half (92.6% snaps, 32% air-yards share, volume that rises with the deficit). The yardage leaned on a 27-yard out and a 26-yard deep ball. Harvey's 54 receiving yards came on two targets, one of them the 52-yard screen; treat it as a broken play, not a role. Waddle's usage inverted — the projection's 6.9 targets were exact, but he was the vertical option, not the underneath one. Knight (7 for 48, a 29-yard run) outproduced Allgeier (8 for 19, -3.72 rushing EPA) on fewer carries; Arizona's runs left went 5 for 39 while the middle went 13 for 28. Bourne's six targets produced 3-9 and -5.42 EPA, two of them drive-killers.</p>
+<h2>The defenses</h2>
+<p>Arizona blitzed Denver on 42.9% of snaps and generated one sack and one QB hit on 32 dropbacks — a 3.1% pressure rate against a 14.8% league mean. That is the <code>no pass rush</code> tag from weeks 1-3 showing up in its most expensive form: with a clean pocket, Nix's three completions of 47, 52 and 27 beat a defense that had already allowed 6 explosives to SF, 5 to NYG and 4 to DET.</p>
+<p>Denver's front was the opposite — 13 QB hits, 3 sacks, 24.5% pressure against a patched interior — but its secondary gave Arizona 51 DPI yards on three flags, free yardage that never shows in Brissett's line. Eleven flags for 114 yards, only two pre-snap: this was coverage grabbing, not the recurring pre-snap problem. It extended drives and still didn't cost points, because the drives died at the 20.</p>
+<h2>What the model should take from this</h2>
+<p>Three things. First, condition Denver's passing depth on the opponent's pass rush rather than on its own season aDOT; the week's shape was a short-game team that threw deep because nobody could touch the quarterback. Second, Denver's backfield is a committee with a goal-line specialist — Coleman is the volume, Dobbins is the touchdown. Third, when a fast, trailing offense is the underdog, build the total from its plays, not the favorite's: 59 Denver snaps looked like an under and the game went 131 combined plays and 46 points. And Arizona's red-zone rate, now three games of trips-into-kicks, is the one small-sample number here worth leaning on for team totals until it breaks.</p></div>
+    </details>
+    
+  </div>
+</details>
+
+
+
+<details class="hfa-card hfa-sec pp-sec pp-script rv-script" id="script" data-sec="script" open>
+  <summary class="pp-head">
+    <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The script, graded</span><span class="pp-h2">Called against played</span></span>
+    <span class="pp-headchips"><span class="badge warn">script partly held</span><span class="pp-open">open</span></span>
   </summary>
   <div class="pp-body">
     <div class="pp-gauges">
-      <div class="pp-gauge" title="Plays and tempo the plan expects">
-        <div class="pp-k">Pace</div>
-        <div class="pp-bars"><i class="on"></i><i class=""></i><i class=""></i></div>
-        <b>slow</b>
+      
+      <div class="pp-gauge rv-gauge miss" title="Both teams ran 131 plays; two league-average offenses run 121.5">
+        <div class="pp-k">Pace <span class="rv-mark">&#10007;</span></div>
+        <div class="rv-row"><small>called</small><span class="pp-bars sm"><i class="on"></i><i class=""></i><i class=""></i></span><em>slow</em></div>
+        <div class="rv-row played"><small>played</small><span class="pp-bars sm"><i class="on"></i><i class="on"></i><i class="on"></i></span><em>fast</em></div>
+        <span class="rv-note">131 plays &middot; league 121.5</span>
       </div>
-      <div class="pp-gauge" title="How sure the plan is of its script">
-        <div class="pp-k">Confidence</div>
+      
+      <div class="pp-gauge" title="How sure the plan was of its script">
+        <div class="pp-k">The plan's confidence</div>
         <div class="pp-pips"><i class="on"></i><i class="on"></i><i class=""></i></div>
         <b>medium</b>
       </div>
       
-      <div class="pp-gauge lean" title="Season pass rate 57.3%, but a 3.44-YPC run game meeting the 3rd-ranked run defense forces throws; Denver only ran it heavy in week 6 because it led.">
-        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy"> DEN leans</div>
-        <div class="pp-leanbar"><span>run</span><div class="track"><i style="left: 85%"></i></div><span>pass</span></div>
-        <b>pass</b>
+      <div class="pp-gauge lean rv-gauge miss" title="Season pass rate 57.3%, but a 3.44-YPC run game meeting the 3rd-ranked run defense forces throws; Denver only ran it heavy in week 6 because it led.">
+        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy"> DEN lean <span class="rv-mark">&#10007;</span></div>
+        <div class="pp-leanbar"><span>run</span><div class="track"><i class="called" style="left: 85%" title="called"></i><i class="played" style="left: 50%" title="played"></i></div><span>pass</span></div>
+        <b class="rv-cvp">pass <i>&#8594;</i> balanced</b><span class="rv-note">passed on 54% &middot; season 57%</span>
       </div>
       
-      <div class="pp-gauge lean" title="62%-ish passing when not in front, and with Love out and the interior line patched, the dink game to McBride and Wilson is the offense.">
-        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy"> ARI leans</div>
-        <div class="pp-leanbar"><span>run</span><div class="track"><i style="left: 85%"></i></div><span>pass</span></div>
-        <b>pass</b>
+      <div class="pp-gauge lean rv-gauge held" title="62%-ish passing when not in front, and with Love out and the interior line patched, the dink game to McBride and Wilson is the offense.">
+        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy"> ARI lean <span class="rv-mark">&#10003;</span></div>
+        <div class="pp-leanbar"><span>run</span><div class="track"><i class="called" style="left: 85%" title="called"></i><i class="played" style="left: 85%" title="played"></i></div><span>pass</span></div>
+        <b class="rv-cvp">pass <i>&#8594;</i> pass</b><span class="rv-note">passed on 68% &middot; season 61%</span>
       </div>
       
     </div>
-    <div class="pp-card wide">
-      <p class="pp-lead">Denver takes the ball and finds out quickly that it cannot run: Arizona&#x27;s front is 3rd in rush EPA allowed and Dobbins has not cleared 4.0 a carry in a game this season. Nix throws 32-36 times at a short depth, moving the chains and burning clock without much yardage.</p>
-      <details class="pp-more"><summary>more</summary><p>Arizona answers with McBride and Wilson underneath against a defense that squeezes per-throw yardage, builds 10-play drives and stalls near the goal line. The likeliest final shape is Denver in the low-to-mid 20s on short touchdowns, Arizona in the high teens on kicks, with the game decided by one takeaway.</p></details>
-    </div>
+    <div class="rv-legend"><span><i class="called"></i>called</span><span><i class="played"></i>played</span></div>
+    <div class="pp-k pp-k-sec">The two paths <span class="flat">&middot; the game took the favorite&#x27;s path</span></div>
     <div class="pp-paths">
       
-      <div class="pp-path fav" style="--pp-team: #002244">
-        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy"><span class="pp-k">If Broncos win</span><span class="badge mute">favorite</span></div>
+      <div class="pp-path fav took" style="--pp-team: #002244">
+        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy"><span class="pp-k">If Broncos win</span><span class="badge good">the way it went</span><span class="badge acc">won</span></div>
         <p class="pp-lead">Denver wins possessions, converts both or all three red-zone trips into touchdowns against Arizona&#x27;s soft goal-line defense, and the pass rush turns one Brissett throw into a short field.</p>
         <details class="pp-more"><summary>more</summary><p>It looks like 24-16 with neither quarterback clearing 220 yards.</p></details>
       </div>
       
-      <div class="pp-path dog" style="--pp-team: #97233F">
-        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy"><span class="pp-k">If Cardinals win</span><span class="badge mute">underdog</span></div>
+      <div class="pp-path dog not" style="--pp-team: #97233F">
+        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy"><span class="pp-k">If Cardinals win</span><span class="badge mute">didn't happen</span></div>
         <p class="pp-lead">Arizona stacks 12-play drives the way it did at the Rams, wins time of possession, and Ryland kicks three or four times while Denver&#x27;s offense goes three-and-out in the middle quarters.</p>
         <details class="pp-more"><summary>more</summary><p>A single Nix giveaway or a special-teams miscue flips the margin and Arizona wins 20-17.</p></details>
       </div>
       
     </div>
     
-    <div class="pp-k pp-k-sec">What swings it</div>
+    <div class="pp-k pp-k-sec">What the plan said would swing it <span class="flat">&middot; weighed after the game, biggest first</span></div>
     <div class="pp-swing">
-      <div class="pp-swingcard"><b class="n">1</b><div><p class="pp-lead">Arizona&#x27;s line without Paris Johnson Jr. and Gaines against Denver&#x27;s 4th-ranked pressure — sacks end drives before the 20.</p></div></div><div class="pp-swingcard"><b class="n">2</b><div><p class="pp-lead">Red-zone split: Denver converts 68.8% of trips, Arizona 45% with five field goals and no TDs in its last game.</p></div></div><div class="pp-swingcard"><b class="n">3</b><div><p class="pp-lead">Whether Brissett gives one away; Denver&#x27;s defense forced three takeaways from Seattle in week 6.</p></div></div><div class="pp-swingcard"><b class="n">4</b><div><p class="pp-lead">Backfield split in Arizona — Allgeier out-snapped Knight last week but Knight had the only chunk run.</p></div></div><div class="pp-swingcard"><b class="n">5</b><div><p class="pp-lead">Denver&#x27;s own flags: 2.67 pre-snap penalties a game, worst-case drive killers in a low-total game.</p></div></div>
+      
+      <div class="pp-swingcard rv-swing contributed">
+        <span class="rv-weight">contributed</span>
+        <p class="pp-lead">Arizona&#x27;s line without Paris Johnson Jr. and Gaines against Denver&#x27;s 4th-ranked pressure — sacks end drives before the 20.</p>
+        <p class="rv-went"><b>Went:</b> The patched Arizona line did leak: 3 sacks and 13 QB hits, a 24.5% pressure rate, and Singleton&#x27;s sack at the DEN 5 on 2nd-and-1 at Q4 1:30 helped kill a 15-play drive that reached the 1.</p>
+        <details class="pp-more"><summary>more</summary><p><b>In the game.</b> But no sack created a short field or a takeaway, and Arizona still ran 81 plays.</p></details>
+      </div>
+      
+      <div class="pp-swingcard rv-swing contributed">
+        <span class="rv-weight">contributed</span>
+        <p class="pp-lead">Red-zone split: Denver converts 68.8% of trips, Arizona 45% with five field goals and no TDs in its last game.</p>
+        <p class="rv-went"><b>Went:</b> The red-zone split went Arizona&#x27;s way as feared — 5 trips, 1 TD, 3 FGs, -0.474 EPA on 22 snaps — but Denver failed there too (3 trips, 1 TD, 2 FGs, -0.444).</p>
+        <details class="pp-more"><summary>more</summary><p><b>In the game.</b> The gap mattered because Arizona needed touchdowns; Denver&#x27;s scoring bypassed the 20 entirely.</p></details>
+      </div>
+      
+      <div class="pp-swingcard rv-swing minor">
+        <span class="rv-weight">minor</span>
+        <p class="pp-lead">Whether Brissett gives one away; Denver&#x27;s defense forced three takeaways from Seattle in week 6.</p>
+        <p class="rv-went"><b>Went:</b> Zero turnovers in the game.</p>
+        <details class="pp-more"><summary>more</summary><p><b>In the game.</b> Brissett threw 48 times under 24.5% pressure and did not give one away; the margin came from Denver explosives instead.</p></details>
+      </div>
+      
+      <div class="pp-swingcard rv-swing minor">
+        <span class="rv-weight">minor</span>
+        <p class="pp-lead">Backfield split in Arizona — Allgeier out-snapped Knight last week but Knight had the only chunk run.</p>
+        <p class="rv-went"><b>Went:</b> It mattered for props, not the result: Knight 7 carries for 48 (including a 29-yard left-tackle run) outproduced Allgeier&#x27;s 8 for 19 at -3.72 EPA, the inverse of the implied featured role.</p>
+        
+      </div>
+      
+      <div class="pp-swingcard rv-swing minor">
+        <span class="rv-weight">minor</span>
+        <p class="pp-lead">Denver&#x27;s own flags: 2.67 pre-snap penalties a game, worst-case drive killers in a low-total game.</p>
+        <p class="rv-went"><b>Went:</b> Denver committed 11 flags for 114 yards but only 2 pre-snap.</p>
+        <details class="pp-more"><summary>more</summary><p><b>In the game.</b> The one that hurt — Trautman&#x27;s OPI at Q1 11:19 erasing a first down at the ARI 1 — cost four points at most, and the coverage DPIs extended Arizona drives that ended in kicks anyway.</p></details>
+      </div>
+      
     </div>
     
     
-    <div class="pp-k pp-k-sec">Legs the same script produces <span class="flat">&middot; they move as one, which is what a same-game parlay pays for</span></div>
+    <div class="pp-k pp-k-sec">The legs the same script produced <span class="flat">&middot; graded off the box score</span></div>
     <div class="pp-angles">
       
-      <div class="pp-angle">
-        <div class="pp-angletitle">Denver grinds, Arizona chases</div>
-        <div class="pp-legs"><span class="pp-leg under"><i class="arrow" aria-hidden="true">&#9660;</i><b>J.K. Dobbins</b><em>under 49.5 rush yds</em></span><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>RJ Harvey</b><em>over 24.5 rec yds</em></span><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>Jacoby Brissett</b><em>over 0.5 INTs</em></span></div>
+      <div class="pp-angle ">
+        <div class="pp-angletitle">Denver grinds, Arizona chases <span class="badge mute">2 of 3 hit</span></div>
+        <div class="pp-legs"><span class="pp-leg under hit"><i class="arrow" aria-hidden="true">&#9660;</i><b>J.K. Dobbins</b><em>under 49.5 rush yds</em><span class="rv-res">&#10003; 23</span></span><span class="pp-leg over hit"><i class="arrow" aria-hidden="true">&#9650;</i><b>RJ Harvey</b><em>over 24.5 rec yds</em><span class="rv-res">&#10003; 54</span></span><span class="pp-leg over miss"><i class="arrow" aria-hidden="true">&#9650;</i><b>Jacoby Brissett</b><em>over 0.5 INTs</em><span class="rv-res">&#10007; 0</span></span></div>
         <p class="pp-sub">One script: Arizona&#x27;s front takes the run away, Denver&#x27;s answer is checkdowns to the back, and the Cardinals end up behind and throwing into Denver&#x27;s coverage and pass rush.</p>
         
       </div>
       
-      <div class="pp-angle">
-        <div class="pp-angletitle">Arizona moves it and kicks it</div>
-        <div class="pp-legs"><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>Trey McBride</b><em>over 6.5 receptions</em></span><span class="pp-leg under"><i class="arrow" aria-hidden="true">&#9660;</i><b>Trey McBride</b><em>under 59.5 rec yds</em></span></div>
+      <div class="pp-angle ">
+        <div class="pp-angletitle">Arizona moves it and kicks it <span class="badge mute">1 of 2 hit</span></div>
+        <div class="pp-legs"><span class="pp-leg over hit"><i class="arrow" aria-hidden="true">&#9650;</i><b>Trey McBride</b><em>over 6.5 receptions</em><span class="rv-res">&#10003; 10</span></span><span class="pp-leg under miss"><i class="arrow" aria-hidden="true">&#9660;</i><b>Trey McBride</b><em>under 59.5 rec yds</em><span class="rv-res">&#10007; 111</span></span></div>
         <p class="pp-sub">The short-middle offense produces catches without chunks, which is exactly how drives reach the 20 and stall into field goals.</p>
         
       </div>
       
-      <div class="pp-angle">
-        <div class="pp-angletitle">Low-yardage Denver, short touchdowns</div>
-        <div class="pp-legs"><span class="pp-leg under"><i class="arrow" aria-hidden="true">&#9660;</i><b>Bo Nix</b><em>under 224.5 pass yds</em></span><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>J.K. Dobbins</b><em>to score</em></span></div>
+      <div class="pp-angle cashed">
+        <div class="pp-angletitle">Low-yardage Denver, short touchdowns <span class="badge good">all hit</span></div>
+        <div class="pp-legs"><span class="pp-leg under hit"><i class="arrow" aria-hidden="true">&#9660;</i><b>Bo Nix</b><em>under 224.5 pass yds</em><span class="rv-res">&#10003; 222</span></span><span class="pp-leg over hit"><i class="arrow" aria-hidden="true">&#9650;</i><b>J.K. Dobbins</b><em>to score</em><span class="rv-res">&#10003; 1</span></span></div>
         <p class="pp-sub">Both rest on the same split: Denver does not move the ball efficiently but finishes the trips it gets against a defense that surrenders touchdowns inside the 20.</p>
         
       </div>
@@ -1498,154 +1940,221 @@
     <h2 class="gm-h2"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy"><span><em class="full">Broncos</em><em class="short">DEN</em> offense</span><span class="vs">against the</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy"><span><em class="full">Cardinals</em><em class="short">ARI</em> defense</span></h2>
   </summary>
   <div class="hfa-head gm-mhead">
-    <p class="lede">Projected DEN offense output &mdash; equivalently, what the ARI defense allows. The engine blends each offense's season-to-date rates with the defense across from it, anchored on the market's implied points.</p>
+    <p class="lede">What the DEN offense put up against the ARI defense, the projection beneath each number: <span class="up">green</span> beat it, <span class="down">amber</span> fell short (INTs judged the other way).</p>
   </div>
   
-<div class="pp-off">
-  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Broncos offense</span><span class="badge mute">medium confidence</span></div>
+<div class="pp-off rv-off">
+  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Broncos offense, graded</span><span class="badge bad">broke</span><span class="badge mute">calls 5&ndash;0</span></div>
   
-  <div class="pp-offcards">
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div>
-      <p class="pp-lead">A low-aDOT, YAC-dependent offense with negative field EPA (-0.082) that converts what little it reaches: 68.8% red-zone TD rate, 3.44 yards a carry, 5.55 yards per attempt.</p>
-      <details class="pp-more"><summary>more</summary><p>Nix has cleared 220 passing yards once in six games (288 vs Jacksonville).</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div>
-      <p class="pp-lead">Short throws and checkdowns to move the chains, then Dobbins or a goal-line package inside the 10 — two straight games with a Dobbins short touchdown — plus Lutz from distance when drives stall between the 40s.</p>
-      
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div>
-      <p class="pp-lead">A front that wins without blitzing (KC, week 1: 21.2% pressure, 10 points) and any defense that tackles in front of the sticks; the offense is 3-of-14, 1-of-13 and 2-of-12 on third down in three of six weeks.</p>
-      
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div>
-      <p class="pp-lead">Arizona stops exactly what Denver wants to do — 3rd in rush EPA allowed, 0 explosive runs allowed to the Giants — while leaking the one thing Denver does not do, throw past 10 yards (8.63 YPA allowed, 31st in pass EPA).</p>
-      <details class="pp-more"><summary>more</summary><p>Arizona blitzes 36.6% and Denver is -0.203 EPA against the blitz, which argues for checkdowns, not shots.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div>
-      <p class="pp-lead">Pat Bryant on IR and Badie out; Coleman activated off IR and active (Rotowire, Sunday) as the third back, a mild tax on Harvey and Dobbins touches.</p>
-      <details class="pp-more"><summary>more</summary><p>Arizona is without Will Johnson (IR), Melton (out, confirmed inactive Sunday) and Walter Nolen (out) — a thinner secondary and a lighter interior rush, but Budda Baker is active (Rotowire, Sunday noon).</p></details>
-    </div>
-    
+  <div class="rv-eh">
+    <div class="rv-ehcol"><span class="pp-k">Expected</span><p class="pp-lead">Pass rate near 60%, 32-36 attempts at a 4-to-6 yard depth, Dobbins 15-17 carries for under 4.0 a pop, Harvey as the checkdown outlet, and the yards coming after the catch.</p><details class="pp-more"><summary>more</summary><p>Points nearer 22 than 24 and arriving as short touchdowns.</p></details></div>
+    <div class="rv-ehcol happened bad"><span class="pp-k">Happened</span><p class="pp-lead">Expected ~60% pass, 32-36 attempts at 4-6 yard depth, Dobbins 15-17 carries under 4.0. Actual: 54.2% pass, 29 attempts at an 11.1 aDOT with 9 deep throws, Dobbins 6 carries (23% snaps) with Coleman taking 9 for 54, and 159 team rush yards against a front the plan called the problem.</p></div>
   </div>
   
   
-  <div class="pp-expect"><span class="pp-k">Expect</span><p class="pp-lead">Pass rate near 60%, 32-36 attempts at a 4-to-6 yard depth, Dobbins 15-17 carries for under 4.0 a pop, Harvey as the checkdown outlet, and the yards coming after the catch.</p><details class="pp-more"><summary>more</summary><p>Points nearer 22 than 24 and arriving as short touchdowns.</p></details></div>
-  
-  
-  <div class="pp-k pp-k-sec">Who the plan moves <span class="flat">&middot; 2 up, 3 down &middot; one player, one market, one side of Kalshi's line when the plan was written</span></div>
-  <div class="pp-calls">
+  <div class="pp-k pp-k-sec">Who the plan moved <span class="flat">&middot; 2 up, 3 down &middot; graded off the box score, with whether the reason given showed up</span></div>
+  <div class="pp-calls rv-calls">
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>RJ Harvey</b><span class="pp-bet">over 24.5 rec yds</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 72%"></i></div><b>72%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+      
+      <div class="rv-meter" title="The line 24.5 against the actual 54">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 36.3%"></i></div>
+        <div class="rv-meterlbl"><span>line 24.5</span><b>54</b></div>
       </div>
+      
+      <span class="badge good rv-read">hit · read partly held</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Hit at 54 yards, and the YAC half of the mechanism was exactly right (air yards -14, 68 YAC).</p>
       <div class="pp-callmeta">
-        <span class="badge good" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #31 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: over 24.5 rec yds"><i>Normal</i> 25+ <small>52&cent;</small></span><span class="rung" title="Edge: 15+ rec yds"><i>Edge</i> 15+ <small>69&cent;</small></span><span class="rung" title="Edge+: 10+ rec yds"><i>Edge+</i> 10+ <small>80&cent;</small></span>
+        <span class="rung hit" title="Normal: over 24.5 rec yds"><i>Normal</i> 25+ <small>52&cent;</small></span><span class="rung hit" title="Edge: 15+ rec yds"><i>Edge</i> 15+ <small>69&cent;</small></span><span class="rung hit" title="Edge+: 10+ rec yds"><i>Edge+</i> 10+ <small>80&cent;</small></span>
       </div>
-      <p class="pp-lead">Denver cannot run on this front, so the ball goes to the back underneath.</p>
-      <details class="pp-more"><summary>why</summary><p>He has drawn four-plus targets in four of five games and every yard comes after the catch.</p><p><b>Evidence.</b> Receiving yards of 23, 41, 68 and 31 in the five games he has played; 10 targets in week 4 when Denver threw 42 times; 40-45% snap share each week. </p><p><b>Against it.</b> vs #31 pass EPA allowed; the line sits well under the model&#x27;s mean and near the market&#x27;s coin flip, and the market is pricing his week-5 zero rather than the chase-script role. </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>Denver cannot run on this front, so the ball goes to the back underneath. He has drawn four-plus targets in four of five games and every yard comes after the catch.</p>
+        <p><b>In the game.</b> The volume half broke: 2 targets, not the four-plus the plan cited, and 52 of the 54 came on one screen that went for a touchdown at Q3 10:36.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 72%"></i></div><b>72%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+        </div>
+        <p><b>Evidence.</b> Receiving yards of 23, 41, 68 and 31 in the five games he has played; 10 targets in week 4 when Denver threw 42 times; 40-45% snap share each week. </p>
+        <p><b>Against it.</b> vs #31 pass EPA allowed; the line sits well under the model&#x27;s mean and near the market&#x27;s coin flip, and the market is pricing his week-5 zero rather than the chase-script role. </p>
+      </details>
     </div>
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>J.K. Dobbins</b><span class="pp-bet">to score</span></div>
-        <span class="badge mute">efficiency</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 40%"></i></div><b>40%</b></div>
+      
+      <div class="rv-meter" title="The line 0.0 against the actual 1">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 0.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 0.0</span><b>1</b></div>
       </div>
+      
+      <span class="badge good rv-read">right read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Hit on a 1-yard left-tackle touchdown at Q3 0:02 — the short-yardage role survived a collapse to 6 carries and 23% of snaps, which is the point the mechanism made.</p>
       <div class="pp-callmeta">
-        <span class="badge mute" title="The opposing defense's rank on EPA allowed entering the week (#1 toughest)">D #22 EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal / Edge / Edge+: to score"><i>Normal / Edge / Edge+</i> TD <small>41&cent;</small></span>
+        <span class="rung hit" title="Normal / Edge / Edge+: to score"><i>Normal / Edge / Edge+</i> TD <small>41&cent;</small></span>
       </div>
-      <p class="pp-lead">This is the finishing half of the matchup: Denver scores touchdowns on most red-zone trips and Arizona surrenders them on most trips it allows.</p>
-      <details class="pp-more"><summary>why</summary><p>He has the short-yardage role.</p><p><b>Evidence.</b> Rushing touchdowns in weeks 5 and 6; Denver converts 68.8% of red-zone trips; Arizona allows 64.7% (22nd). </p><p><b>Against it.</b> vs #22 EPA allowed; the market prices him near 40% against the model&#x27;s 50%, and anytime-TD calls are the strongest market in our record this season. </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>This is the finishing half of the matchup: Denver scores touchdowns on most red-zone trips and Arizona surrenders them on most trips it allows. He has the short-yardage role.</p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 40%"></i></div><b>40%</b></div>
+        </div>
+        <p><b>Evidence.</b> Rushing touchdowns in weeks 5 and 6; Denver converts 68.8% of red-zone trips; Arizona allows 64.7% (22nd). </p>
+        <p><b>Against it.</b> vs #22 EPA allowed; the market prices him near 40% against the model&#x27;s 50%, and anytime-TD calls are the strongest market in our record this season. </p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Jaylen Waddle</b><span class="pp-bet">under 49.5 rec yds</span></div>
-        <span class="badge mute">efficiency</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 61%"></i></div><b>61%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 48%"></i></div><b>48%</b></div>
+      
+      <div class="rv-meter" title="The line 49.5 against the actual 48">
+        <div class="track"><i class="fill" style="width: 77.6%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 49.5</span><b>48</b></div>
       </div>
+      
+      <span class="badge warn rv-read">hit · not for the reason given</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Hit at 48 yards, one yard under, but for the opposite reason: Waddle&#x27;s air yards did arrive (104 on 7 targets, 38% air-yards share, a 27-yard deep right at Q4 11:00) with only 4 YAC.</p>
       <div class="pp-callmeta">
-        <span class="badge good" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #31 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 49.5 rec yds"><i>Normal</i> &lt;50 <small>49&cent;</small></span><span class="rung" title="Edge: &lt;90 rec yds"><i>Edge</i> &lt;90 <small>86&cent;</small></span><span class="rung" title="Edge+: &lt;130 rec yds"><i>Edge+</i> &lt;130 <small>97&cent;</small></span>
+        <span class="rung hit" title="Normal: under 49.5 rec yds"><i>Normal</i> &lt;50 <small>49&cent;</small></span><span class="rung hit" title="Edge: &lt;90 rec yds"><i>Edge</i> &lt;90 <small>86&cent;</small></span><span class="rung hit" title="Edge+: &lt;130 rec yds"><i>Edge+</i> &lt;130 <small>97&cent;</small></span>
       </div>
-      <p class="pp-lead">Four straight games under 40 yards with his quarterback capping every route short.</p>
-      <details class="pp-more"><summary>why</summary><p>The targets arrive, the air yards do not — our week-4 and week-6 calls on this both cashed.</p><p><b>Evidence.</b> 35, 19, 24 receiving yards in his last three on 5-7 targets a game; 138 of his 228 season yards came in week 2. </p><p><b>Against it.</b> vs #31 pass EPA allowed — the soft rank is the risk here, and it is why this is an efficiency call rather than a volume one; unders against soft defenses have graded fine in our record. </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>Four straight games under 40 yards with his quarterback capping every route short. The targets arrive, the air yards do not — our week-4 and week-6 calls on this both cashed.</p>
+        <p><b>In the game.</b> The plan&#x27;s &#x27;capped short&#x27; logic was contradicted by the box score.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 61%"></i></div><b>61%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 48%"></i></div><b>48%</b></div>
+        </div>
+        <p><b>Evidence.</b> 35, 19, 24 receiving yards in his last three on 5-7 targets a game; 138 of his 228 season yards came in week 2. </p>
+        <p><b>Against it.</b> vs #31 pass EPA allowed — the soft rank is the risk here, and it is why this is an efficiency call rather than a volume one; unders against soft defenses have graded fine in our record. </p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Bo Nix</b><span class="pp-bet">under 224.5 pass yds</span></div>
-        <span class="badge mute">efficiency</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 56%"></i></div><b>56%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 56%"></i></div><b>56%</b></div>
+      
+      <div class="rv-meter" title="The line 224.5 against the actual 222">
+        <div class="track"><i class="fill" style="width: 79.1%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 224.5</span><b>222</b></div>
       </div>
+      
+      <span class="badge warn rv-read">hit · not for the reason given</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Hit at 222 under 224.5, but not via the stated 3-to-5-yard throws into soft coverage.</p>
       <div class="pp-callmeta">
-        <span class="badge good" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #31 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 224.5 pass yds"><i>Normal</i> &lt;225 <small>57&cent;</small></span><span class="rung" title="Edge: &lt;275 pass yds"><i>Edge</i> &lt;275 <small>80&cent;</small></span><span class="rung" title="Edge+: &lt;325 pass yds"><i>Edge+</i> &lt;325 <small>94&cent;</small></span>
+        <span class="rung hit" title="Normal: under 224.5 pass yds"><i>Normal</i> &lt;225 <small>57&cent;</small></span><span class="rung hit" title="Edge: &lt;275 pass yds"><i>Edge</i> &lt;275 <small>80&cent;</small></span><span class="rung hit" title="Edge+: &lt;325 pass yds"><i>Edge+</i> &lt;325 <small>94&cent;</small></span>
       </div>
-      <p class="pp-lead">His throws arrive three to five yards downfield and the soft coverage he faces buys completions, not yardage.</p>
-      <details class="pp-more"><summary>why</summary><p>Arizona&#x27;s leak is vertical and Denver has no vertical game.</p><p><b>Evidence.</b> Cleared this number once in six starts (288 vs Jacksonville); 131, 186, 214, 123, 107 otherwise; aDOT 3.0 and 0-for-3 deep in week 6; season 5.55 yards per attempt. </p><p><b>Against it.</b> vs #31 pass EPA allowed — the rank is why the line is this high; his own per-attempt number has been the truer input in four straight weeks. </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>His throws arrive three to five yards downfield and the soft coverage he faces buys completions, not yardage. Arizona&#x27;s leak is vertical and Denver has no vertical game.</p>
+        <p><b>In the game.</b> Nix&#x27;s aDOT was 11.1 with 9 deep attempts and 5 explosive completions; the under cashed because he completed only 15 of 29 (-3.0 cpoe) and gained 73 more on the ground.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 56%"></i></div><b>56%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 56%"></i></div><b>56%</b></div>
+        </div>
+        <p><b>Evidence.</b> Cleared this number once in six starts (288 vs Jacksonville); 131, 186, 214, 123, 107 otherwise; aDOT 3.0 and 0-for-3 deep in week 6; season 5.55 yards per attempt. </p>
+        <p><b>Against it.</b> vs #31 pass EPA allowed — the rank is why the line is this high; his own per-attempt number has been the truer input in four straight weeks. </p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>J.K. Dobbins</b><span class="pp-bet">under 49.5 rush yds</span></div>
-        <span class="badge mute">both</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 42%"></i></div><b>42%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+      
+      <div class="rv-meter" title="The line 49.5 against the actual 23">
+        <div class="track"><i class="fill" style="width: 37.2%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 49.5</span><b>23</b></div>
       </div>
+      
+      <span class="badge good rv-read">hit · read partly held</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Hit at 23 yards, and he did stay under 4.0 a carry (3.8).</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on rush EPA allowed entering the week (#1 toughest)">D #3 rush EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 49.5 rush yds"><i>Normal</i> &lt;50 <small>53&cent;</small></span><span class="rung" title="Edge: &lt;90 rush yds"><i>Edge</i> &lt;90 <small>87&cent;</small></span><span class="rung" title="Edge+: &lt;130 rush yds"><i>Edge+</i> &lt;130 <small>98&cent;</small></span>
+        <span class="rung hit" title="Normal: under 49.5 rush yds"><i>Normal</i> &lt;50 <small>53&cent;</small></span><span class="rung hit" title="Edge: &lt;90 rush yds"><i>Edge</i> &lt;90 <small>87&cent;</small></span><span class="rung hit" title="Edge+: &lt;130 rush yds"><i>Edge+</i> &lt;130 <small>98&cent;</small></span>
       </div>
-      <p class="pp-lead">He has not averaged four yards a carry in any game and meets a front that ranks near the top of the league against the run.</p>
-      <details class="pp-more"><summary>why</summary><p>Our week-4 and week-6 reviews cashed this exact read.</p><p><b>Evidence.</b> 36, 36, 49, 40, 68, 41 rushing yards; Denver&#x27;s offense at 3.44 YPC with 2.03 before contact; Arizona 3rd in rush EPA allowed and zero explosive runs allowed to the Giants. </p><p><b>Against it.</b> vs #3 rush EPA allowed; the model&#x27;s mean sits a full 10 yards above the line on a blend that regresses his yards per carry toward league — the opponent half says it shouldn&#x27;t. </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>He has not averaged four yards a carry in any game and meets a front that ranks near the top of the league against the run. Our week-4 and week-6 reviews cashed this exact read.</p>
+        <p><b>In the game.</b> But the cause was not the front — zero stuffs, +0.39 rushing EPA — it was a 23% snap share with Coleman handling 9 carries for 54. Right number, wrong reason.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 42%"></i></div><b>42%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+        </div>
+        <p><b>Evidence.</b> 36, 36, 49, 40, 68, 41 rushing yards; Denver&#x27;s offense at 3.44 YPC with 2.03 before contact; Arizona 3rd in rush EPA allowed and zero explosive runs allowed to the Giants. </p>
+        <p><b>Against it.</b> vs #3 rush EPA allowed; the model&#x27;s mean sits a full 10 yards above the line on a blend that regresses his yards per carry toward league — the opponent half says it shouldn&#x27;t. </p>
+      </details>
     </div>
     
   </div>
+  
+  
+  <div class="pp-k pp-k-sec">Lines the report singled out <span class="flat">&middot; signal carries forward, noise doesn't</span></div>
+  <div class="rv-notes">
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Jonah Coleman</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">9 carries, 54 yards, 2 runs of 10+, 49% snaps vs a 1.3-carry projection</span>
+      <p class="pp-sub">Role change — he out-snapped and out-carried Dobbins, working almost entirely between the tackles (7 of 9 carries middle), where Denver averaged 5.4 a pop.</p>
+      
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>J.K. Dobbins</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">6 carries, 23 yards, 1-yard TD, 23% snaps vs 15.5 carries projected</span>
+      <p class="pp-sub">Not a blocking or efficiency failure (zero stuffs, +0.39 rushing EPA) — a snap-share collapse.</p>
+      <details class="pp-more"><summary>more</summary><p>He retained the goal-line role, which is why the touchdown still came.</p></details>
+    </div>
+    
+    <div class="rv-note-card ">
+      <div class="rv-notehead"><b>Bo Nix</b><span class="badge mute">noise</span></div>
+      <span class="pp-bet">15/29, 222, 1 TD, 0 INT, 7 carries for 73 and a rushing TD; aDOT 11.1</span>
+      <p class="pp-sub">The passing yardage matched the projection almost exactly while the shape didn&#x27;t — 9 deep attempts against a season aDOT in the 3-to-8 range, plus 70 scramble yards on 2 scrambles against a rush that never touched him.</p>
+      
+    </div>
+    
+    <div class="rv-note-card ">
+      <div class="rv-notehead"><b>RJ Harvey</b><span class="badge mute">noise</span></div>
+      <span class="pp-bet">2 targets, 2-54-1 (air yards -14, 68 YAC)</span>
+      <p class="pp-sub">One screen behind the line went 52 for a touchdown.</p>
+      <details class="pp-more"><summary>more</summary><p>The receiving yardage came on a single broken play, not the five-target checkdown role; 3 carries for 6 on the ground.</p></details>
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Jaylen Waddle</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">7 targets, 4-48, 104 air yards, 4 YAC</span>
+      <p class="pp-sub">The target volume projected exactly but the usage inverted — he was the vertical element (38% air-yards share, a 27-yard deep right at Q4 11:00) rather than the short-area option.</p>
+      
+    </div>
+    
+  </div>
+  
+  
+  <details class="rv-fold">
+    <summary>The plan's pre-game read on this offense <span class="flat">&middot; medium confidence</span></summary>
+    <div class="pp-offcards">
+      <div class="pp-offcard"><div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div><p class="pp-lead">A low-aDOT, YAC-dependent offense with negative field EPA (-0.082) that converts what little it reaches: 68.8% red-zone TD rate, 3.44 yards a carry, 5.55 yards per attempt.</p><details class="pp-more"><summary>more</summary><p>Nix has cleared 220 passing yards once in six games (288 vs Jacksonville).</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div><p class="pp-lead">Short throws and checkdowns to move the chains, then Dobbins or a goal-line package inside the 10 — two straight games with a Dobbins short touchdown — plus Lutz from distance when drives stall between the 40s.</p></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div><p class="pp-lead">A front that wins without blitzing (KC, week 1: 21.2% pressure, 10 points) and any defense that tackles in front of the sticks; the offense is 3-of-14, 1-of-13 and 2-of-12 on third down in three of six weeks.</p></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div><p class="pp-lead">Arizona stops exactly what Denver wants to do — 3rd in rush EPA allowed, 0 explosive runs allowed to the Giants — while leaking the one thing Denver does not do, throw past 10 yards (8.63 YPA allowed, 31st in pass EPA).</p><details class="pp-more"><summary>more</summary><p>Arizona blitzes 36.6% and Denver is -0.203 EPA against the blitz, which argues for checkdowns, not shots.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div><p class="pp-lead">Pat Bryant on IR and Badie out; Coleman activated off IR and active (Rotowire, Sunday) as the third back, a mild tax on Harvey and Dobbins touches.</p><details class="pp-more"><summary>more</summary><p>Arizona is without Will Johnson (IR), Melton (out, confirmed inactive Sunday) and Walter Nolen (out) — a thinner secondary and a lighter interior rush, but Budda Baker is active (Rotowire, Sunday noon).</p></details></div>
+    </div>
+  </details>
   
 </div>
 
   <div class="gm-tiles">
-    <div class="gm-tile big"><b>24.5<i class="act over" title="Actual">(30)</i></b><span>Points</span></div><div class="gm-tile "><b>59</b><span>Plays</span></div><div class="gm-tile "><b>218<i class="act over" title="Actual">(222)</i></b><span>Pass yds</span></div><div class="gm-tile "><b>103<i class="act over" title="Actual">(159)</i></b><span>Rush yds</span></div><div class="gm-tile "><b>1.8</b><span>Sacks taken</span></div><div class="gm-tile "><b>0.7<i class="act over" title="Actual">(0)</i></b><span>INTs thrown</span></div>
+    <div class="gm-tile rv big over"><b>30</b><span>Points</span><small>projected 24.5</small></div><div class="gm-tile rv  "><b class="flat">59</b><span>Plays</span><small>projected</small></div><div class="gm-tile rv  over"><b>222</b><span>Pass yds</span><small>projected 218</small></div><div class="gm-tile rv  over"><b>159</b><span>Rush yds</span><small>projected 103</small></div><div class="gm-tile rv  "><b class="flat">1.8</b><span>Sacks taken</span><small>projected</small></div><div class="gm-tile rv  over"><b>0</b><span>INTs thrown</span><small>projected 0.7</small></div>
   </div>
   <div class="gm-split">
     <div class="gm-players">
@@ -1922,173 +2431,243 @@
     <h2 class="gm-h2"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy"><span><em class="full">Cardinals</em><em class="short">ARI</em> offense</span><span class="vs">against the</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy"><span><em class="full">Broncos</em><em class="short">DEN</em> defense</span></h2>
   </summary>
   <div class="hfa-head gm-mhead">
-    <p class="lede">Projected ARI offense output &mdash; equivalently, what the DEN defense allows. The engine blends each offense's season-to-date rates with the defense across from it, anchored on the market's implied points.</p>
+    <p class="lede">What the ARI offense put up against the DEN defense, the projection beneath each number: <span class="up">green</span> beat it, <span class="down">amber</span> fell short (INTs judged the other way).</p>
   </div>
   
-<div class="pp-off">
-  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Cardinals offense</span><span class="badge mute">medium confidence</span></div>
+<div class="pp-off rv-off">
+  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Cardinals offense, graded</span><span class="badge warn">partly held</span><span class="badge mute">calls 1&ndash;5</span></div>
   
-  <div class="pp-offcards">
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div>
-      <p class="pp-lead">Volume without explosives: 66.5 plays a game, 60.7% pass rate, 5.68 yards per attempt, zero or two explosive passes most weeks, and a red-zone offense at 45% with -0.18 EPA inside the 20 — the week-6 line was five trips, five field goals, no touchdowns.</p>
-      
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div>
-      <p class="pp-lead">Long possessions built on McBride and Wilson underneath and Bourne as the chain-mover, finished by Ryland; touchdowns only when a short field or a red-zone run cooperates.</p>
-      
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div>
-      <p class="pp-lead">Pressure (22.6% at Seattle, five sacks vs Detroit) and any defense that keeps the ball in front; the run game produces 2.13 yards before contact and has been stuffed repeatedly (Allgeier: four stuffs in week 6).</p>
-      
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div>
-      <p class="pp-lead">Denver is 5th in pass EPA allowed, 6th in pass success, 4th in pressure generated and 9th in red-zone TD rate allowed — it takes away the middle and holds at the goal line.</p>
-      <details class="pp-more"><summary>more</summary><p>What it does not do is stop the run: 24th in rush EPA, 25th in yards per carry, 31st in rush yards allowed, with Arizona&#x27;s own 3.68 YPC the limiting factor.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div>
-      <p class="pp-lead">Jeremiyah Love out again (Rotowire, Friday), leaving Allgeier featured with Knight behind him; Paris Johnson Jr. (IR) and Gaines (out) are gone from the line, which the model does not price but which matters against Denver&#x27;s rush.</p>
-      <details class="pp-more"><summary>more</summary><p>Denver plays without Surtain (inactive Sunday), Hufanga and Elliss — a thinner secondary and one fewer edge.</p></details>
-    </div>
-    
+  <div class="rv-eh">
+    <div class="rv-ehcol"><span class="pp-k">Expected</span><p class="pp-lead">34-38 attempts at a sub-7 depth, McBride 9-11 targets, Wilson 7-9, Allgeier 14-17 carries with Knight 8-12, and points landing at or under the implied total with at least two field goals.</p></div>
+    <div class="rv-ehcol happened warn"><span class="pp-k">Happened</span><p class="pp-lead">Depth and personnel were right — 6.5 aDOT, McBride and Wilson targeted 21 times, points (16) under the implied total with three field goals — but the volume blew past the 34-38 attempt range to 48, and the backfield plan inverted (Allgeier 8 carries, Knight 7, neither near the 14-17 and 8-12 ranges).</p></div>
   </div>
   
   
-  <div class="pp-expect"><span class="pp-k">Expect</span><p class="pp-lead">34-38 attempts at a sub-7 depth, McBride 9-11 targets, Wilson 7-9, Allgeier 14-17 carries with Knight 8-12, and points landing at or under the implied total with at least two field goals.</p></div>
-  
-  
-  <div class="pp-k pp-k-sec">Who the plan moves <span class="flat">&middot; 3 up, 3 down &middot; one player, one market, one side of Kalshi's line when the plan was written</span></div>
-  <div class="pp-calls">
+  <div class="pp-k pp-k-sec">Who the plan moved <span class="flat">&middot; 3 up, 3 down &middot; graded off the box score, with whether the reason given showed up</span></div>
+  <div class="pp-calls rv-calls">
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Tyler Allgeier</b><span class="pp-bet">over 29.5 rush yds</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 59%"></i></div><b>59%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+      
+      <div class="rv-meter" title="The line 29.5 against the actual 19">
+        <div class="track"><i class="fill" style="width: 51.5%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 29.5</span><b>19</b></div>
       </div>
+      
+      <span class="badge bad rv-read">wrong read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Missed at 19 yards.</p>
       <div class="pp-callmeta">
-        <span class="badge good" title="The opposing defense's rank on rush EPA allowed entering the week (#1 toughest)">D #24 rush EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: over 29.5 rush yds"><i>Normal</i> 30+ <small>53&cent;</small></span><span class="rung" title="Edge / Edge+: 25+ rush yds"><i>Edge / Edge+</i> 25+ <small>59&cent;</small></span>
+        <span class="rung miss" title="Normal: over 29.5 rush yds"><i>Normal</i> 30+ <small>53&cent;</small></span><span class="rung miss" title="Edge / Edge+: 25+ rush yds"><i>Edge / Edge+</i> 25+ <small>59&cent;</small></span>
       </div>
-      <p class="pp-lead">With Love out he is the featured back against the one thing Denver cannot stop.</p>
-      <details class="pp-more"><summary>why</summary><p>This is a carry-count call, not a bet on yards per carry behind a patched line.</p><p><b>Evidence.</b> 18 carries last week with Love out; Denver allows 139.8 rush yards a game and 4.66 a carry, and gave up five 10+ runs to San Francisco in week 4. </p><p><b>Against it.</b> vs #24 rush EPA allowed; the line is a full touch-count below the model&#x27;s mean and projections systematically under-respond to a soft run front. </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>With Love out he is the featured back against the one thing Denver cannot stop. This is a carry-count call, not a bet on yards per carry behind a patched line.</p>
+        <p><b>In the game.</b> He was not the featured back (8 carries, 46.9% snaps) and Denver&#x27;s run defense was never exploited — Arizona&#x27;s 24 carries for 94 at -0.109 EPA/rush, with Allgeier at -3.72 rushing EPA, and the team trailing by 14 from early in the third.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 59%"></i></div><b>59%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+        </div>
+        <p><b>Evidence.</b> 18 carries last week with Love out; Denver allows 139.8 rush yards a game and 4.66 a carry, and gave up five 10+ runs to San Francisco in week 4. </p>
+        <p><b>Against it.</b> vs #24 rush EPA allowed; the line is a full touch-count below the model&#x27;s mean and projections systematically under-respond to a soft run front. </p>
+      </details>
     </div>
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Jacoby Brissett</b><span class="pp-bet">over 0.5 INTs</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 53%"></i></div><b>53%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 54%"></i></div><b>54%</b></div>
+      
+      <div class="rv-meter" title="The line 0.5 against the actual 0">
+        <div class="track"><i class="fill" style="width: 0.0%"></i><i class="line" style="left: 40.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 0.5</span><b>0</b></div>
       </div>
+      
+      <span class="badge warn rv-read">read held · result didn&#x27;t</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Missed at 0 INTs, but every condition the plan named showed up: Brissett threw 48 times from 81 trailing snaps into 24.5% pressure with 13 QB hits.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #5 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal / Edge / Edge+: over 0.5 INTs"><i>Normal / Edge / Edge+</i> 1+ <small>54&cent;</small></span>
+        <span class="rung miss" title="Normal / Edge / Edge+: over 0.5 INTs"><i>Normal / Edge / Edge+</i> 1+ <small>54&cent;</small></span>
       </div>
-      <p class="pp-lead">A script call: a chasing underdog throwing 35-plus times into the best coverage he has faced, with two starting linemen out against a front that gets home with four.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> Six interceptions in his last five games; Denver forced three takeaways from Seattle in week 6 and generates pressure on 20.4% of dropbacks. </p><p><b>Against it.</b> vs #5 pass EPA allowed; model and market agree near 53%, and the reason to take it is the volume mechanism — the trailing attempts — not the rate. </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>A script call: a chasing underdog throwing 35-plus times into the best coverage he has faced, with two starting linemen out against a front that gets home with four. </p>
+        <p><b>In the game.</b> The interception simply did not come — this is the bounce, not the read.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 53%"></i></div><b>53%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 54%"></i></div><b>54%</b></div>
+        </div>
+        <p><b>Evidence.</b> Six interceptions in his last five games; Denver forced three takeaways from Seattle in week 6 and generates pressure on 20.4% of dropbacks. </p>
+        <p><b>Against it.</b> vs #5 pass EPA allowed; model and market agree near 53%, and the reason to take it is the volume mechanism — the trailing attempts — not the rate. </p>
+      </details>
     </div>
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Trey McBride</b><span class="pp-bet">over 6.5 receptions</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 53%"></i></div><b>53%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 56%"></i></div><b>56%</b></div>
+      
+      <div class="rv-meter" title="The line 6.5 against the actual 10">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 52.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 6.5</span><b>10</b></div>
       </div>
+      
+      <span class="badge good rv-read">right read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Hit at 10 receptions on 13 targets, 92.6% snaps, short middle from the first drive of the third quarter onward — target count rose with the deficit exactly as described.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #5 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: over 6.5 receptions"><i>Normal</i> 7+ <small>57&cent;</small></span><span class="rung" title="Edge: 5+ receptions"><i>Edge</i> 5+ <small>82&cent;</small></span><span class="rung" title="Edge+: 4+ receptions"><i>Edge+</i> 4+ <small>91&cent;</small></span>
+        <span class="rung hit" title="Normal: over 6.5 receptions"><i>Normal</i> 7+ <small>57&cent;</small></span><span class="rung hit" title="Edge: 5+ receptions"><i>Edge</i> 5+ <small>82&cent;</small></span><span class="rung hit" title="Edge+: 4+ receptions"><i>Edge+</i> 4+ <small>91&cent;</small></span>
       </div>
-      <p class="pp-lead">Arizona&#x27;s answer to every coverage is the short middle, and trailing means 35-plus throws.</p>
-      <details class="pp-more"><summary>why</summary><p>His target count has not moved with the score all season.</p><p><b>Evidence.</b> Targets of 13, 10, 11, 12, 10 and 9 with 7+ catches in four of six; 90%+ snap share in five straight games. </p><p><b>Against it.</b> vs #5 pass EPA allowed — the rank binds yardage, not catch volume, and opponent strength carries no measurable effect on tight-end receiving; our week-6 review hit this same market on the same mechanism. </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>Arizona&#x27;s answer to every coverage is the short middle, and trailing means 35-plus throws. His target count has not moved with the score all season.</p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 53%"></i></div><b>53%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 56%"></i></div><b>56%</b></div>
+        </div>
+        <p><b>Evidence.</b> Targets of 13, 10, 11, 12, 10 and 9 with 7+ catches in four of six; 90%+ snap share in five straight games. </p>
+        <p><b>Against it.</b> vs #5 pass EPA allowed — the rank binds yardage, not catch volume, and opponent strength carries no measurable effect on tight-end receiving; our week-6 review hit this same market on the same mechanism. </p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Trey McBride</b><span class="pp-bet">under 59.5 rec yds</span></div>
-        <span class="badge mute">efficiency</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 57%"></i></div><b>57%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 48%"></i></div><b>48%</b></div>
+      
+      <div class="rv-meter" title="The line 59.5 against the actual 111">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 42.9%"></i></div>
+        <div class="rv-meterlbl"><span>line 59.5</span><b>111</b></div>
       </div>
+      
+      <span class="badge bad rv-read">wrong read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Missed at 111.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #5 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 59.5 rec yds"><i>Normal</i> &lt;60 <small>48&cent;</small></span><span class="rung" title="Edge: &lt;100 rec yds"><i>Edge</i> &lt;100 <small>86&cent;</small></span><span class="rung" title="Edge+: &lt;140 rec yds"><i>Edge+</i> &lt;140 <small>98&cent;</small></span>
+        <span class="rung miss" title="Normal: under 59.5 rec yds"><i>Normal</i> &lt;60 <small>48&cent;</small></span><span class="rung miss" title="Edge: &lt;100 rec yds"><i>Edge</i> &lt;100 <small>86&cent;</small></span><span class="rung hit" title="Edge+: &lt;140 rec yds"><i>Edge+</i> &lt;140 <small>98&cent;</small></span>
       </div>
-      <p class="pp-lead">His looks come at the line of scrimmage — catches, not chunks — and this is a defense built to tackle in front of the sticks.</p>
-      <details class="pp-more"><summary>why</summary><p>Same shape that cashed in our week-6 review.</p><p><b>Evidence.</b> 3.1 air yards per target and 53 yards on nine looks last week; 41 and 31 yard games in weeks 2 and 4; Denver 6th in pass success allowed. </p><p><b>Against it.</b> vs #5 pass EPA allowed; the market prices him above the model&#x27;s mean, which is the disagreement worth taking. </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>His looks come at the line of scrimmage — catches, not chunks — and this is a defense built to tackle in front of the sticks. Same shape that cashed in our week-6 review.</p>
+        <p><b>In the game.</b> He got exactly the chunks the plan said he wouldn&#x27;t — 27 yards on the first snap of Q4 and 26 on a deep left at 8:31 — plus 42 YAC and 106 air yards, 32% of Arizona&#x27;s total.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 57%"></i></div><b>57%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 48%"></i></div><b>48%</b></div>
+        </div>
+        <p><b>Evidence.</b> 3.1 air yards per target and 53 yards on nine looks last week; 41 and 31 yard games in weeks 2 and 4; Denver 6th in pass success allowed. </p>
+        <p><b>Against it.</b> vs #5 pass EPA allowed; the market prices him above the model&#x27;s mean, which is the disagreement worth taking. </p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Jacoby Brissett</b><span class="pp-bet">under 224.5 pass yds</span></div>
-        <span class="badge mute">both</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 53%"></i></div><b>53%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+      
+      <div class="rv-meter" title="The line 224.5 against the actual 272">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 66.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 224.5</span><b>272</b></div>
       </div>
+      
+      <span class="badge bad rv-read">missed · read partly held</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Missed at 272.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #5 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 224.5 pass yds"><i>Normal</i> &lt;225 <small>53&cent;</small></span><span class="rung" title="Edge: &lt;300 pass yds"><i>Edge</i> &lt;300 <small>86&cent;</small></span><span class="rung" title="Edge+: &lt;375 pass yds"><i>Edge+</i> &lt;375 <small>97&cent;</small></span>
+        <span class="rung miss" title="Normal: under 224.5 pass yds"><i>Normal</i> &lt;225 <small>53&cent;</small></span><span class="rung hit" title="Edge: &lt;300 pass yds"><i>Edge</i> &lt;300 <small>86&cent;</small></span><span class="rung hit" title="Edge+: &lt;375 pass yds"><i>Edge+</i> &lt;375 <small>97&cent;</small></span>
       </div>
-      <p class="pp-lead">Completions without chunks into a defense that squeezes yards per throw and gets home with four rushers, behind a line missing two starters.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> Two explosive passes in his last four games; 218 on 35 attempts last week; Denver allows 6.39 yards per attempt (10th) and is 5th in pass EPA. </p><p><b>Against it.</b> vs #5 pass EPA allowed; the line sits exactly on the model&#x27;s mean, which blends his volume up toward a league depth distribution he has not thrown at since week 1. </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>Completions without chunks into a defense that squeezes yards per throw and gets home with four rushers, behind a line missing two starters. </p>
+        <p><b>In the game.</b> The per-throw squeeze held — 5.67 YPA, 1-of-6 deep, -4.7 cpoe, three sacks — but 48 attempts from an 81-play trailing script overwhelmed the number. The plan priced efficiency and not volume.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 53%"></i></div><b>53%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+        </div>
+        <p><b>Evidence.</b> Two explosive passes in his last four games; 218 on 35 attempts last week; Denver allows 6.39 yards per attempt (10th) and is 5th in pass EPA. </p>
+        <p><b>Against it.</b> vs #5 pass EPA allowed; the line sits exactly on the model&#x27;s mean, which blends his volume up toward a league depth distribution he has not thrown at since week 1. </p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Bam Knight</b><span class="pp-bet">under 39.5 rush yds</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 45%"></i></div><b>45%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+      
+      <div class="rv-meter" title="The line 39.5 against the actual 48">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 65.8%"></i></div>
+        <div class="rv-meterlbl"><span>line 39.5</span><b>48</b></div>
       </div>
+      
+      <span class="badge bad rv-read">wrong read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Missed at 48 on 7 carries.</p>
       <div class="pp-callmeta">
-        <span class="badge good" title="The opposing defense's rank on rush EPA allowed entering the week (#1 toughest)">D #24 rush EPA allowed</span>
-        <span class="badge mute">low</span>
-        <span class="rung" title="Normal: under 39.5 rush yds"><i>Normal</i> &lt;40 <small>54&cent;</small></span><span class="rung" title="Edge: &lt;60 rush yds"><i>Edge</i> &lt;60 <small>77&cent;</small></span><span class="rung" title="Edge+: &lt;80 rush yds"><i>Edge+</i> &lt;80 <small>90&cent;</small></span>
+        <span class="rung miss" title="Normal: under 39.5 rush yds"><i>Normal</i> &lt;40 <small>54&cent;</small></span><span class="rung hit" title="Edge: &lt;60 rush yds"><i>Edge</i> &lt;60 <small>77&cent;</small></span><span class="rung hit" title="Edge+: &lt;80 rush yds"><i>Edge+</i> &lt;80 <small>90&cent;</small></span>
       </div>
-      <p class="pp-lead">His number rests on one afternoon.</p>
-      <details class="pp-more"><summary>why</summary><p>Allgeier out-snapped him last week and takes the early-down work, so the carries needed to clear this are not his by default.</p><p><b>Evidence.</b> Two carries in week 2, one in week 5, then 15 for 80 in week 6; the backfield split 40 snaps to 32 in Allgeier&#x27;s favor. </p><p><b>Against it.</b> vs #24 rush EPA allowed; the model projects only about seven carries yet a yards mean well above the line — it carried his week-6 yards per carry forward, which is the least persistent input there is. </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>His number rests on one afternoon. Allgeier out-snapped him last week and takes the early-down work, so the carries needed to clear this are not his by default.</p>
+        <p><b>In the game.</b> The premise that Allgeier takes the early-down work was true by snap count (46.9% to 53.1%) but Knight was the efficient one, 6.9 a carry with a 29-yard run at Q1 0:54 that set up a field goal.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 45%"></i></div><b>45%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+        </div>
+        <p><b>Evidence.</b> Two carries in week 2, one in week 5, then 15 for 80 in week 6; the backfield split 40 snaps to 32 in Allgeier&#x27;s favor. </p>
+        <p><b>Against it.</b> vs #24 rush EPA allowed; the model projects only about seven carries yet a yards mean well above the line — it carried his week-6 yards per carry forward, which is the least persistent input there is. </p>
+      </details>
     </div>
     
   </div>
+  
+  
+  <div class="pp-k pp-k-sec">Lines the report singled out <span class="flat">&middot; signal carries forward, noise doesn't</span></div>
+  <div class="rv-notes">
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Trey McBride</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">13 targets, 10-111-1 vs 7.1/57.5 projected</span>
+      <p class="pp-sub">Target volume is script-proof (92.6% snaps, 32% air-yards share) and grew with 48 attempts; the yardage came from two chunks, a 27-yard out on the first snap of Q4 and a 26-yard deep left at 8:31, plus 42 YAC.</p>
+      
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Bam Knight</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">7 carries, 48 yards (incl. a 29-yard left-tackle run), 3 receptions</span>
+      <p class="pp-sub">Arizona&#x27;s only efficient runner — 6.9 a carry against Allgeier&#x27;s 2.4 on 8 carries; ARI&#x27;s left-side runs went 5 for 39 while middle runs went 13 for 28.</p>
+      
+    </div>
+    
+    <div class="rv-note-card ">
+      <div class="rv-notehead"><b>Kendrick Bourne</b><span class="badge mute">noise</span></div>
+      <span class="pp-bet">6 targets, 3-9, -5.42 receiving EPA</span>
+      <p class="pp-sub">The worst per-target line on the field: six looks, zero YAC, two drive-ending incompletions.</p>
+      <details class="pp-more"><summary>more</summary><p>Volume existed, production did not, even in 30 garbage-time snaps.</p></details>
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Jacoby Brissett</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">27/48, 272, 1 TD, 0 INT; 3 sacks, 13 QB hits, 1-of-6 deep</span>
+      <p class="pp-sub">Yardage via attempts, not efficiency: 5.67 YPA, -4.7 cpoe, and 51 DPI yards of drive progress that never hit his stat line.</p>
+      <details class="pp-more"><summary>more</summary><p>He also took 24.5% pressure behind the patched interior.</p></details>
+    </div>
+    
+  </div>
+  
+  
+  <details class="rv-fold">
+    <summary>The plan's pre-game read on this offense <span class="flat">&middot; medium confidence</span></summary>
+    <div class="pp-offcards">
+      <div class="pp-offcard"><div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div><p class="pp-lead">Volume without explosives: 66.5 plays a game, 60.7% pass rate, 5.68 yards per attempt, zero or two explosive passes most weeks, and a red-zone offense at 45% with -0.18 EPA inside the 20 — the week-6 line was five trips, five field goals, no touchdowns.</p></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div><p class="pp-lead">Long possessions built on McBride and Wilson underneath and Bourne as the chain-mover, finished by Ryland; touchdowns only when a short field or a red-zone run cooperates.</p></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div><p class="pp-lead">Pressure (22.6% at Seattle, five sacks vs Detroit) and any defense that keeps the ball in front; the run game produces 2.13 yards before contact and has been stuffed repeatedly (Allgeier: four stuffs in week 6).</p></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div><p class="pp-lead">Denver is 5th in pass EPA allowed, 6th in pass success, 4th in pressure generated and 9th in red-zone TD rate allowed — it takes away the middle and holds at the goal line.</p><details class="pp-more"><summary>more</summary><p>What it does not do is stop the run: 24th in rush EPA, 25th in yards per carry, 31st in rush yards allowed, with Arizona&#x27;s own 3.68 YPC the limiting factor.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div><p class="pp-lead">Jeremiyah Love out again (Rotowire, Friday), leaving Allgeier featured with Knight behind him; Paris Johnson Jr. (IR) and Gaines (out) are gone from the line, which the model does not price but which matters against Denver&#x27;s rush.</p><details class="pp-more"><summary>more</summary><p>Denver plays without Surtain (inactive Sunday), Hufanga and Elliss — a thinner secondary and one fewer edge.</p></details></div>
+    </div>
+  </details>
   
 </div>
 
   <div class="gm-tiles">
-    <div class="gm-tile big"><b>20.0<i class="act under" title="Actual">(16)</i></b><span>Points</span></div><div class="gm-tile "><b>65</b><span>Plays</span></div><div class="gm-tile "><b>225<i class="act over" title="Actual">(272)</i></b><span>Pass yds</span></div><div class="gm-tile "><b>108<i class="act under" title="Actual">(94)</i></b><span>Rush yds</span></div><div class="gm-tile "><b>2.2</b><span>Sacks taken</span></div><div class="gm-tile "><b>0.8<i class="act over" title="Actual">(0)</i></b><span>INTs thrown</span></div>
+    <div class="gm-tile rv big under"><b>16</b><span>Points</span><small>projected 20.0</small></div><div class="gm-tile rv  "><b class="flat">65</b><span>Plays</span><small>projected</small></div><div class="gm-tile rv  over"><b>272</b><span>Pass yds</span><small>projected 225</small></div><div class="gm-tile rv  under"><b>94</b><span>Rush yds</span><small>projected 108</small></div><div class="gm-tile rv  "><b class="flat">2.2</b><span>Sacks taken</span><small>projected</small></div><div class="gm-tile rv  over"><b>0</b><span>INTs thrown</span><small>projected 0.8</small></div>
   </div>
   <div class="gm-split">
     <div class="gm-players">
@@ -2361,7 +2940,7 @@
 
 
 
-<details class="hfa-card hfa-sec gm-starters pp-sec" id="starters" data-sec="starters" open>
+<details class="hfa-card hfa-sec gm-starters pp-sec" id="starters" data-sec="starters">
   <summary class="hfa-head pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <div class="hfa-eyebrow">Starters on the field</div>
@@ -2379,7 +2958,7 @@
         <div class="gm-ftag top">ARI defense</div>
         <div class="gm-los"></div>
         <div class="gm-ftag bot">DEN offense</div>
-        <div class="gm-fp def r5" style="left: 26%; top: 51%" title="Josh Sweat LBon report – Not injury related - resting playerlast game 64% of snapsEdge · 93rd pct of group · 478 wtd snaps2026 wks 1-6 + ½·2025Pressure rate4.2% lg 3.5%Sack rate1.5% lg 0.9%TFL rate1.8% lg 1.2%Missed tackle %4% lg 9%context (not rated): 4 tgt · 6.4 yds/tgt · 100% comp · aDOT 1.3 · 21 prs · 8.0 sk · 28 tkl / 0 miss · 0 INT · 1 PD"><span class="dot">93<em>?</em></span><span class="nm">J. Sweat <small>EDGE</small></span></div><div class="gm-fp def r2" style="left: 44%; top: 51%" title="Dante Stills DLlast game 46% of snapsInterior DL · 24th pct of group · 488 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.1% lg 1.8%Sack rate0.3% lg 0.5%TFL rate0.8% lg 0.8%Missed tackle %12% lg 11%context (not rated): 2 tgt · 14.5 yds/tgt · 100% comp · aDOT 12.0 · 4 prs · 1.0 sk · 18 tkl / 2 miss · 0 INT · 2 PD"><span class="dot">24</span><span class="nm">D. Stills <small>DI</small></span></div><div class="gm-fp def r1" style="left: 56%; top: 51%" title="L.J. Collier DLlast game 32% of snapsInterior DL · 9th pct of group · 198 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.1% lg 1.8%Sack rate0.2% lg 0.5%TFL rate0.4% lg 0.8%context (not rated): 1 prs · 2 tkl / 0 miss"><span class="dot">9</span><span class="nm">L. Collier <small>DI</small></span></div><div class="gm-fp def r3" style="left: 75%; top: 51%" title="Roy Lopez DLlast game 31% of snapsInterior DL · 57th pct of group · 408 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.4% lg 1.8%Sack rate0.5% lg 0.5%TFL rate1.1% lg 0.8%Missed tackle %7% lg 11%context (not rated): 0 tgt · 4.0 yds/tgt · 100% comp · aDOT -3.0 · 5 prs · 2.0 sk · 16 tkl / 0 miss · 0 INT · 2 PD"><span class="dot">57</span><span class="nm">R. Lopez <small>EDGE</small></span></div><div class="gm-fp def r2" style="left: 41%; top: 37%" title="Mack Wilson LBlast game 81% of snapsLinebacker · 24th pct of group · 624 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.49 lg 0.38Targets drawn6.0% lg 5.6%Missed tackle %9% lg 8%Tackle rate11.8% lg 11.7%TFL rate0.5% lg 0.8%context (not rated): 38 tgt · 8.4 yds/tgt · 72% comp · aDOT 6.2 · 2 prs · 74 tkl / 8 miss · 0 INT · 4 PD"><span class="dot">24</span><span class="nm">M. Wilson <small>LB</small></span></div><div class="gm-fp def r4" style="left: 59%; top: 37%" title="Jack Gibbens LBlast game 68% of snapsLinebacker · 67th pct of group · 578 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.42 lg 0.38Targets drawn6.0% lg 5.6%Missed tackle %7% lg 8%Tackle rate13.6% lg 11.7%TFL rate0.8% lg 0.8%context (not rated): 36 tgt · 7.0 yds/tgt · 72% comp · aDOT 5.2 · 5 prs · 1.0 sk · 82 tkl / 6 miss · 0 INT · 3 PD"><span class="dot">67</span><span class="nm">J. Gibbens <small>LB</small></span></div><div class="gm-fp def r4" style="left: 7%; top: 42%" title="Denzel Burke CBlast game 64% of snapsCornerback · 76th pct of group · 662 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.56 lg 0.66Targets drawn7.8% lg 9.1%Missed tackle %11% lg 10%context (not rated): 50 tgt · 7.1 yds/tgt · 65% comp · aDOT 9.6 · 40 tkl / 5 miss · 2 INT · 8 PD"><span class="dot">76</span><span class="nm">D. Burke <small>CB</small></span></div><div class="gm-fp def r2" style="left: 93%; top: 42%" title="Max Melton CBQuestionable – Kneelast game 62% of snapsCornerback · 21st pct of group · 452 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.71 lg 0.66Targets drawn10.2% lg 9.1%Missed tackle %11% lg 10%context (not rated): 48 tgt · 7.0 yds/tgt · 57% comp · aDOT 12.1 · 36 tkl / 4 miss · 0 INT · 6 PD"><span class="dot">21<em>Q</em></span><span class="nm">M. Melton <small>CB</small></span></div><div class="gm-fp def thin" style="left: 18%; top: 44%" title="Kalen King CBlast game 50% of snapsCornerback · 47th pct of group · thin sample · 46 wtd snaps2026 wks 1-6 + ½·2025context (not rated): 3 tgt · 19.0 yds/tgt · 100% comp · aDOT 4.7 · 1 prs · 1 tkl / 0 miss · 0 INT · 1 PD"><span class="dot">47</span><span class="nm">K. King <small>NB</small></span></div><div class="gm-fp def r2" style="left: 34%; top: 19%" title="Budda Baker SQuestionable – Groinlast game 81% of snapsSafety · 32nd pct of group · 890 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.57 lg 0.47Targets drawn6.1% lg 5.6%Missed tackle %8% lg 9%context (not rated): 56 tgt · 9.4 yds/tgt · 61% comp · aDOT 9.4 · 8 prs · 3.8 sk · 102 tkl / 8 miss · 2 INT · 6 PD"><span class="dot">32<em>Q</em></span><span class="nm">B. Baker <small>S</small></span></div><div class="gm-fp def r3" style="left: 66%; top: 19%" title="Dadrion Taylor-Demerson Slast game 25% of snapsSafety · 57th pct of group · 292 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.47 lg 0.47Targets drawn5.1% lg 5.6%Missed tackle %9% lg 9%context (not rated): 14 tgt · 9.9 yds/tgt · 64% comp · aDOT 9.6 · 32 tkl / 3 miss · 1 INT · 3 PD"><span class="dot">57</span><span class="nm">D. Taylor-Demerson <small>S</small></span></div>
+        <div class="gm-fp def r5" style="left: 26%; top: 51%" title="Josh Sweat LBon report – Not injury related - resting playerlast game 64% of snapsEdge · 93rd pct of group · 478 wtd snaps2026 wks 1-6 + ½·2025Pressure rate4.2% lg 3.5%Sack rate1.5% lg 0.9%TFL rate1.8% lg 1.2%Missed tackle %4% lg 9%context (not rated): 4 tgt · 6.4 yds/tgt · 100% comp · aDOT 1.3 · 21 prs · 8.0 sk · 28 tkl / 0 miss · 0 INT · 1 PD"><span class="dot">93<em>?</em></span><span class="nm">J. Sweat <small>EDGE</small></span></div><div class="gm-fp def r2" style="left: 44%; top: 51%" title="Dante Stills DLlast game 46% of snapsInterior DL · 24th pct of group · 488 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.1% lg 1.8%Sack rate0.3% lg 0.5%TFL rate0.8% lg 0.8%Missed tackle %12% lg 11%context (not rated): 2 tgt · 14.5 yds/tgt · 100% comp · aDOT 12.0 · 4 prs · 1.0 sk · 18 tkl / 2 miss · 0 INT · 2 PD"><span class="dot">24</span><span class="nm">D. Stills <small>DI</small></span></div><div class="gm-fp def r1" style="left: 56%; top: 51%" title="L.J. Collier DLlast game 32% of snapsInterior DL · 9th pct of group · 198 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.1% lg 1.8%Sack rate0.2% lg 0.5%TFL rate0.4% lg 0.8%context (not rated): 1 prs · 2 tkl / 0 miss"><span class="dot">9</span><span class="nm">L. Collier <small>DI</small></span></div><div class="gm-fp def r1" style="left: 75%; top: 51%" title="Jordan Burch LBlast game 22% of snapsEdge · 7th pct of group · 405 wtd snaps2026 wks 1-6 + ½·2025Pressure rate2.0% lg 3.5%Sack rate0.5% lg 0.9%TFL rate0.8% lg 1.2%Missed tackle %8% lg 9%context (not rated): 4 tgt · 13.0 yds/tgt · 100% comp · aDOT 6.1 · 6 prs · 1.5 sk · 20 tkl / 2 miss · 0 INT · 2 PD"><span class="dot">7</span><span class="nm">J. Burch <small>EDGE</small></span></div><div class="gm-fp def r2" style="left: 41%; top: 37%" title="Mack Wilson LBlast game 81% of snapsLinebacker · 24th pct of group · 624 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.49 lg 0.38Targets drawn6.0% lg 5.6%Missed tackle %9% lg 8%Tackle rate11.9% lg 11.8%TFL rate0.5% lg 0.8%context (not rated): 38 tgt · 8.4 yds/tgt · 72% comp · aDOT 6.2 · 2 prs · 74 tkl / 8 miss · 0 INT · 4 PD"><span class="dot">24</span><span class="nm">M. Wilson <small>LB</small></span></div><div class="gm-fp def r4" style="left: 59%; top: 37%" title="Jack Gibbens LBlast game 68% of snapsLinebacker · 67th pct of group · 578 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.42 lg 0.38Targets drawn6.0% lg 5.6%Missed tackle %7% lg 8%Tackle rate13.6% lg 11.8%TFL rate0.8% lg 0.8%context (not rated): 36 tgt · 7.0 yds/tgt · 72% comp · aDOT 5.2 · 5 prs · 1.0 sk · 82 tkl / 6 miss · 0 INT · 3 PD"><span class="dot">67</span><span class="nm">J. Gibbens <small>LB</small></span></div><div class="gm-fp def r4" style="left: 7%; top: 42%" title="Denzel Burke CBlast game 64% of snapsCornerback · 76th pct of group · 662 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.56 lg 0.66Targets drawn7.8% lg 9.1%Missed tackle %11% lg 10%context (not rated): 50 tgt · 7.1 yds/tgt · 65% comp · aDOT 9.6 · 40 tkl / 5 miss · 2 INT · 8 PD"><span class="dot">76</span><span class="nm">D. Burke <small>CB</small></span></div><div class="gm-fp def r2" style="left: 93%; top: 42%" title="Max Melton CBQuestionable – Kneelast game 62% of snapsCornerback · 21st pct of group · 452 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.71 lg 0.66Targets drawn10.2% lg 9.1%Missed tackle %11% lg 10%context (not rated): 48 tgt · 7.0 yds/tgt · 57% comp · aDOT 12.1 · 36 tkl / 4 miss · 0 INT · 6 PD"><span class="dot">21<em>Q</em></span><span class="nm">M. Melton <small>CB</small></span></div><div class="gm-fp def thin" style="left: 18%; top: 44%" title="Kalen King CBlast game 50% of snapsCornerback · 47th pct of group · thin sample · 46 wtd snaps2026 wks 1-6 + ½·2025context (not rated): 3 tgt · 19.0 yds/tgt · 100% comp · aDOT 4.7 · 1 prs · 1 tkl / 0 miss · 0 INT · 1 PD"><span class="dot">47</span><span class="nm">K. King <small>NB</small></span></div><div class="gm-fp def r2" style="left: 34%; top: 19%" title="Budda Baker SQuestionable – Groinlast game 81% of snapsSafety · 32nd pct of group · 890 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.57 lg 0.47Targets drawn6.1% lg 5.6%Missed tackle %8% lg 9%context (not rated): 56 tgt · 9.4 yds/tgt · 61% comp · aDOT 9.4 · 8 prs · 3.8 sk · 102 tkl / 8 miss · 2 INT · 6 PD"><span class="dot">32<em>Q</em></span><span class="nm">B. Baker <small>S</small></span></div><div class="gm-fp def r3" style="left: 66%; top: 19%" title="Dadrion Taylor-Demerson Slast game 25% of snapsSafety · 57th pct of group · 292 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.47 lg 0.47Targets drawn5.1% lg 5.6%Missed tackle %9% lg 9%context (not rated): 14 tgt · 9.9 yds/tgt · 64% comp · aDOT 9.6 · 32 tkl / 3 miss · 1 INT · 3 PD"><span class="dot">57</span><span class="nm">D. Taylor-Demerson <small>S</small></span></div>
         <div class="gm-fp off r3" style="left: 7%; top: 63%" title="Jaylen Waddle WRon report – Chestprojected: 6.9 tgt · 41 rec yds58th pct production among the position&#x27;s starter pool · 49 yds/g over 14.0 wtd games6.3 tgt/g · 0.2 car/g"><span class="dot">58<em>?</em></span><span class="nm">J. Waddle <small>WR</small></span></div><div class="gm-fp off thin" style="left: 18%; top: 65%" title="Marvin Mims Jr. WRprojected: 2.8 tgt · 13 rec yds0th pct production among the position&#x27;s starter pool (outside the pool) · 17 yds/g over 11.5 wtd games3.0 tgt/g · 0.6 car/g"><span class="dot">0</span><span class="nm">M. Mims Jr. <small>WR</small></span></div><div class="gm-fp off r1" style="left: 80%; top: 62%" title="Evan Engram TEprojected: 3.5 tgt · 37 rec yds0th pct production among the position&#x27;s starter pool · 26 yds/g over 14.0 wtd games4.1 tgt/g · 0.0 car/g"><span class="dot">0</span><span class="nm">E. Engram <small>TE</small></span></div><div class="gm-fp off r3" style="left: 93%; top: 63%" title="Courtland Sutton WRprojected: 5.0 tgt · 32 rec yds49th pct production among the position&#x27;s starter pool · 44 yds/g over 14.5 wtd games6.2 tgt/g · 0.0 car/g"><span class="dot">49</span><span class="nm">C. Sutton <small>WR</small></span></div><div class="gm-fp off r2" style="left: 50%; top: 75%" title="Bo Nix QBprojected: 31 att · 218 pass yds22nd pct production among the position&#x27;s starter pool · 223 yds/g over 14.5 wtd games34.1 att/g"><span class="dot">22</span><span class="nm">B. Nix <small>QB</small></span></div><div class="gm-fp off r3" style="left: 39%; top: 76%" title="J.K. Dobbins RBprojected: 15.5 car · 59 rush · 2.3 tgt · 8 rec55th pct production among the position&#x27;s starter pool · 64 yds/g over 11.0 wtd games1.5 tgt/g · 14.3 car/g"><span class="dot">55</span><span class="nm">J. Dobbins <small>RB</small></span></div><div class="gm-fp off ol" style="left: 31%; top: 62%" title="Garett Bolles Tlast game 71% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LT</span></div><div class="gm-fp off ol" style="left: 40.5%; top: 62%" title="Ben Powers Glast game 71% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LG</span></div><div class="gm-fp off ol" style="left: 50%; top: 62%" title="Luke Wattenberg Clast game 71% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">C</span></div><div class="gm-fp off ol" style="left: 59.5%; top: 62%" title="Quinn Meinerz Glast game 71% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RG</span></div><div class="gm-fp off ol" style="left: 69%; top: 62%" title="Mike McGlinchey Tlast game 71% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RT</span></div>
       </div>
     </div>
@@ -2390,7 +2969,7 @@
         <div class="gm-ftag top">DEN defense</div>
         <div class="gm-los"></div>
         <div class="gm-ftag bot">ARI offense</div>
-        <div class="gm-fp def r5" style="left: 26%; top: 51%" title="Nik Bonitto LBlast game 56% of snapsEdge · 94th pct of group · 601 wtd snaps2026 wks 1-6 + ½·2025Pressure rate4.5% lg 3.5%Sack rate1.6% lg 0.9%TFL rate1.7% lg 1.2%Missed tackle %8% lg 9%context (not rated): 6 tgt · 3.5 yds/tgt · 69% comp · aDOT 0.9 · 28 prs · 10.5 sk · 38 tkl / 3 miss · 0 INT · 0 PD"><span class="dot">94</span><span class="nm">N. Bonitto <small>EDGE</small></span></div><div class="gm-fp def r5" style="left: 44%; top: 51%" title="Zach Allen DLon report – Not injury related - resting playerlast game 67% of snapsInterior DL · 99th pct of group · 694 wtd snaps2026 wks 1-6 + ½·2025Pressure rate5.0% lg 1.8%Sack rate1.0% lg 0.5%TFL rate0.9% lg 0.8%Missed tackle %8% lg 11%context (not rated): 40 prs · 8.0 sk · 39 tkl / 2 miss · 0 INT · 5 PD"><span class="dot">99<em>?</em></span><span class="nm">Z. Allen <small>DI</small></span></div><div class="gm-fp def r2" style="left: 56%; top: 51%" title="Eyioma Uwazurike DLlast game 53% of snapsInterior DL · 36th pct of group · 426 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.3% lg 1.8%Sack rate0.6% lg 0.5%TFL rate0.8% lg 0.8%Missed tackle %12% lg 11%context (not rated): 5 prs · 2.8 sk · 13 tkl / 2 miss"><span class="dot">36</span><span class="nm">E. Uwazurike <small>DI</small></span></div><div class="gm-fp def r3" style="left: 75%; top: 51%" title="Quandarrius Robinson LBlast game 51% of snapsEdge · 56th pct of group · 279 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.2% lg 3.5%Sack rate0.8% lg 0.9%TFL rate1.5% lg 1.2%Missed tackle %5% lg 9%context (not rated): 2 tgt · 7.0 yds/tgt · 50% comp · aDOT 4.5 · 8 prs · 2.2 sk · 23 tkl / 0 miss · 0 INT · 2 PD"><span class="dot">56</span><span class="nm">Q. Robinson <small>EDGE</small></span></div><div class="gm-fp def r2" style="left: 41%; top: 37%" title="Alex Singleton LBlast game 100% of snapsLinebacker · 31st pct of group · 946 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.50 lg 0.38Targets drawn6.7% lg 5.6%Missed tackle %8% lg 8%Tackle rate13.8% lg 11.7%TFL rate0.5% lg 0.8%context (not rated): 65 tgt · 7.6 yds/tgt · 72% comp · aDOT 4.5 · 8 prs · 0.5 sk · 134 tkl / 12 miss · 0 INT · 3 PD"><span class="dot">31</span><span class="nm">A. Singleton <small>LB</small></span></div><div class="gm-fp def r5" style="left: 59%; top: 37%" title="Justin Strnad LBlast game 89% of snapsLinebacker · 80th pct of group · 646 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.28 lg 0.38Targets drawn4.7% lg 5.6%Missed tackle %8% lg 8%Tackle rate9.7% lg 11.7%TFL rate0.8% lg 0.8%context (not rated): 29 tgt · 5.7 yds/tgt · 55% comp · aDOT 4.7 · 6 prs · 2.8 sk · 60 tkl / 5 miss · 0 INT · 4 PD"><span class="dot">80</span><span class="nm">J. Strnad <small>LB</small></span></div><div class="gm-fp def r4" style="left: 7%; top: 42%" title="Jahdae Barron CBlast game 100% of snapsCornerback · 62nd pct of group · 389 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.63 lg 0.66Targets drawn8.7% lg 9.1%Missed tackle %9% lg 10%context (not rated): 33 tgt · 7.4 yds/tgt · 64% comp · aDOT 8.9 · 38 tkl / 4 miss · 0 INT · 4 PD"><span class="dot">62</span><span class="nm">J. Barron <small>CB</small></span></div><div class="gm-fp def r1" style="left: 93%; top: 42%" title="Ja&amp;#x27;Quan McMillian CBlast game 76% of snapsCornerback · 18th pct of group · 637 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.68 lg 0.66Targets drawn10.1% lg 9.1%Missed tackle %14% lg 10%context (not rated): 66 tgt · 6.7 yds/tgt · 58% comp · aDOT 8.6 · 4 prs · 4.0 sk · 44 tkl / 8 miss · 2 INT · 8 PD"><span class="dot">18</span><span class="nm">J. McMillian <small>CB</small></span></div><div class="gm-fp def r2" style="left: 18%; top: 44%" title="Kris Abrams-Draine CBlast game 76% of snapsCornerback · 32nd pct of group · 271 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.67 lg 0.66Targets drawn10.4% lg 9.1%Missed tackle %9% lg 10%context (not rated): 30 tgt · 6.2 yds/tgt · 67% comp · aDOT 10.1 · 24 tkl / 2 miss · 1 INT · 4 PD"><span class="dot">32</span><span class="nm">K. Abrams-Draine <small>NB</small></span></div><div class="gm-fp def r2" style="left: 34%; top: 19%" title="Brandon Jones Slast game 100% of snapsSafety · 29th pct of group · 862 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.46 lg 0.47Targets drawn5.1% lg 5.6%Missed tackle %15% lg 9%context (not rated): 43 tgt · 9.3 yds/tgt · 62% comp · aDOT 9.7 · 2 prs · 0.2 sk · 82 tkl / 16 miss · 2 INT · 8 PD"><span class="dot">29</span><span class="nm">B. Jones <small>S</small></span></div><div class="gm-fp def r1" style="left: 66%; top: 19%" title="Taylor Rapp Slast game 76% of snapsSafety · 6th pct of group · 236 wtd snaps2026 wks 1-6 + ½·2025Missed tackle %13% lg 9%context (not rated): 9 tgt · 8.2 yds/tgt · 67% comp · aDOT 12.3 · 17 tkl / 4 miss"><span class="dot">6</span><span class="nm">T. Rapp <small>S</small></span></div>
+        <div class="gm-fp def r5" style="left: 26%; top: 51%" title="Nik Bonitto LBlast game 56% of snapsEdge · 94th pct of group · 601 wtd snaps2026 wks 1-6 + ½·2025Pressure rate4.5% lg 3.5%Sack rate1.6% lg 0.9%TFL rate1.7% lg 1.2%Missed tackle %8% lg 9%context (not rated): 6 tgt · 3.5 yds/tgt · 69% comp · aDOT 0.9 · 28 prs · 10.5 sk · 38 tkl / 3 miss · 0 INT · 0 PD"><span class="dot">94</span><span class="nm">N. Bonitto <small>EDGE</small></span></div><div class="gm-fp def r5" style="left: 44%; top: 51%" title="Zach Allen DLon report – Not injury related - resting playerlast game 67% of snapsInterior DL · 99th pct of group · 694 wtd snaps2026 wks 1-6 + ½·2025Pressure rate5.0% lg 1.8%Sack rate1.0% lg 0.5%TFL rate0.9% lg 0.8%Missed tackle %8% lg 11%context (not rated): 40 prs · 8.0 sk · 39 tkl / 2 miss · 0 INT · 5 PD"><span class="dot">99<em>?</em></span><span class="nm">Z. Allen <small>DI</small></span></div><div class="gm-fp def r2" style="left: 56%; top: 51%" title="Eyioma Uwazurike DLlast game 53% of snapsInterior DL · 36th pct of group · 426 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.3% lg 1.8%Sack rate0.6% lg 0.5%TFL rate0.8% lg 0.8%Missed tackle %12% lg 11%context (not rated): 5 prs · 2.8 sk · 13 tkl / 2 miss"><span class="dot">36</span><span class="nm">E. Uwazurike <small>DI</small></span></div><div class="gm-fp def r3" style="left: 75%; top: 51%" title="Quandarrius Robinson LBlast game 51% of snapsEdge · 58th pct of group · 279 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.2% lg 3.5%Sack rate0.8% lg 0.9%TFL rate1.5% lg 1.2%Missed tackle %5% lg 9%context (not rated): 2 tgt · 7.0 yds/tgt · 50% comp · aDOT 4.5 · 8 prs · 2.2 sk · 23 tkl / 0 miss · 0 INT · 2 PD"><span class="dot">58</span><span class="nm">Q. Robinson <small>EDGE</small></span></div><div class="gm-fp def r2" style="left: 41%; top: 37%" title="Alex Singleton LBlast game 100% of snapsLinebacker · 30th pct of group · 946 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.50 lg 0.38Targets drawn6.7% lg 5.6%Missed tackle %8% lg 8%Tackle rate13.8% lg 11.8%TFL rate0.5% lg 0.8%context (not rated): 65 tgt · 7.6 yds/tgt · 72% comp · aDOT 4.5 · 8 prs · 0.5 sk · 134 tkl / 12 miss · 0 INT · 3 PD"><span class="dot">30</span><span class="nm">A. Singleton <small>LB</small></span></div><div class="gm-fp def r5" style="left: 59%; top: 37%" title="Justin Strnad LBlast game 89% of snapsLinebacker · 80th pct of group · 646 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.28 lg 0.38Targets drawn4.7% lg 5.6%Missed tackle %8% lg 8%Tackle rate9.7% lg 11.8%TFL rate0.8% lg 0.8%context (not rated): 29 tgt · 5.7 yds/tgt · 55% comp · aDOT 4.7 · 6 prs · 2.8 sk · 60 tkl / 5 miss · 0 INT · 4 PD"><span class="dot">80</span><span class="nm">J. Strnad <small>LB</small></span></div><div class="gm-fp def r4" style="left: 7%; top: 42%" title="Jahdae Barron CBlast game 100% of snapsCornerback · 62nd pct of group · 389 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.63 lg 0.66Targets drawn8.7% lg 9.1%Missed tackle %9% lg 10%context (not rated): 33 tgt · 7.4 yds/tgt · 64% comp · aDOT 8.9 · 38 tkl / 4 miss · 0 INT · 4 PD"><span class="dot">62</span><span class="nm">J. Barron <small>CB</small></span></div><div class="gm-fp def r1" style="left: 93%; top: 42%" title="Ja&amp;#x27;Quan McMillian CBlast game 76% of snapsCornerback · 18th pct of group · 637 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.68 lg 0.66Targets drawn10.1% lg 9.1%Missed tackle %14% lg 10%context (not rated): 66 tgt · 6.7 yds/tgt · 58% comp · aDOT 8.6 · 4 prs · 4.0 sk · 44 tkl / 8 miss · 2 INT · 8 PD"><span class="dot">18</span><span class="nm">J. McMillian <small>CB</small></span></div><div class="gm-fp def r2" style="left: 18%; top: 44%" title="Kris Abrams-Draine CBlast game 76% of snapsCornerback · 32nd pct of group · 271 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.67 lg 0.66Targets drawn10.4% lg 9.1%Missed tackle %9% lg 10%context (not rated): 30 tgt · 6.2 yds/tgt · 67% comp · aDOT 10.1 · 24 tkl / 2 miss · 1 INT · 4 PD"><span class="dot">32</span><span class="nm">K. Abrams-Draine <small>NB</small></span></div><div class="gm-fp def r2" style="left: 34%; top: 19%" title="Brandon Jones Slast game 100% of snapsSafety · 29th pct of group · 862 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.46 lg 0.47Targets drawn5.1% lg 5.6%Missed tackle %15% lg 9%context (not rated): 43 tgt · 9.3 yds/tgt · 62% comp · aDOT 9.7 · 2 prs · 0.2 sk · 82 tkl / 16 miss · 2 INT · 8 PD"><span class="dot">29</span><span class="nm">B. Jones <small>S</small></span></div><div class="gm-fp def r1" style="left: 66%; top: 19%" title="Taylor Rapp Slast game 76% of snapsSafety · 6th pct of group · 236 wtd snaps2026 wks 1-6 + ½·2025Missed tackle %13% lg 9%context (not rated): 9 tgt · 8.2 yds/tgt · 67% comp · aDOT 12.3 · 17 tkl / 4 miss"><span class="dot">6</span><span class="nm">T. Rapp <small>S</small></span></div>
         <div class="gm-fp off r4" style="left: 7%; top: 63%" title="Michael Wilson WRprojected: 9.0 tgt · 61 rec yds71st pct production among the position&#x27;s starter pool · 57 yds/g over 14.5 wtd games8.3 tgt/g · 0.0 car/g"><span class="dot">71</span><span class="nm">M. Wilson <small>WR</small></span></div><div class="gm-fp off thin" style="left: 18%; top: 65%" title="Jalen Brooks WRprojected: 2.2 tgt · 12 rec yds0th pct production among the position&#x27;s starter pool (outside the pool) · 10 yds/g over 7.5 wtd games1.9 tgt/g · 0.0 car/g"><span class="dot">0</span><span class="nm">J. Brooks <small>WR</small></span></div><div class="gm-fp off r5" style="left: 80%; top: 62%" title="Trey McBride TEprojected: 9.5 tgt · 57 rec yds94th pct production among the position&#x27;s starter pool · 68 yds/g over 14.5 wtd games10.3 tgt/g · 0.0 car/g"><span class="dot">94</span><span class="nm">T. McBride <small>TE</small></span></div><div class="gm-fp off r3" style="left: 93%; top: 63%" title="Kendrick Bourne WRprojected: 5.3 tgt · 37 rec yds45th pct production among the position&#x27;s starter pool · 42 yds/g over 12.0 wtd games4.7 tgt/g · 0.0 car/g"><span class="dot">45</span><span class="nm">K. Bourne <small>WR</small></span></div><div class="gm-fp off r3" style="left: 50%; top: 75%" title="Jacoby Brissett QBprojected: 35 att · 225 pass yds47th pct production among the position&#x27;s starter pool · 243 yds/g over 13.0 wtd games36.7 att/g"><span class="dot">47</span><span class="nm">J. Brissett <small>QB</small></span></div><div class="gm-fp off r1" style="left: 39%; top: 76%" title="Tyler Allgeier RBprojected: 15.4 car · 40 rush · 2.3 tgt · 11 rec17th pct production among the position&#x27;s starter pool · 36 yds/g over 14.5 wtd games1.5 tgt/g · 8.6 car/g"><span class="dot">17</span><span class="nm">T. Allgeier <small>RB</small></span></div><div class="gm-fp off ol" style="left: 31%; top: 62%" title="Isaac Seumalo OLlast game 100% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LT<em>?</em></span></div><div class="gm-fp off ol" style="left: 40.5%; top: 62%" title="Elijah Wilkinson OLlast game 100% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LG</span></div><div class="gm-fp off ol" style="left: 50%; top: 62%" title="Hjalte Froholdt OLlast game 100% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">C</span></div><div class="gm-fp off ol" style="left: 59.5%; top: 62%" title="Jon Gaines OLlast game 100% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RG<em>O</em></span></div><div class="gm-fp off ol" style="left: 69%; top: 62%" title="Jayden Williams OLlast game 100% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RT</span></div>
       </div>
     </div>
@@ -2401,7 +2980,7 @@
 
 
 
-<details class="hfa-card hfa-sec gm-injuries pp-sec" id="injuries" data-sec="injuries" open>
+<details class="hfa-card hfa-sec gm-injuries pp-sec" id="injuries" data-sec="injuries">
   <summary class="hfa-head pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <div class="hfa-eyebrow">Injury report</div>
@@ -2659,19 +3238,205 @@
 </details>
 
 
-<details class="hfa-card hfa-sec pp-sec pp-unknowns" id="before" data-sec="before" open>
+
+<details class="hfa-card hfa-sec pp-sec rv-grade" id="grade" data-sec="grade" open>
   <summary class="pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    <span class="pp-headtext"><span class="hfa-eyebrow">Before you bet it</span><span class="pp-h2">Check these first</span></span>
-    <span class="pp-headchips"><span class="badge warn">6 to check</span><span class="pp-open">open</span></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The grade</span><span class="pp-h2">The projection against the box score</span></span>
+    <span class="pp-headchips"><span class="badge good">projection B &middot; 71</span><span class="pp-open">open</span></span>
   </summary>
   <div class="pp-body">
-    <div class="pp-checks">
-      <div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Every price here is Kalshi&#x27;s and its player markets are thin — check whether there is real volume behind a number before taking it.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Denver&#x27;s backfield split with Jonah Coleman activated off IR and active (Rotowire, Sunday): if he takes 8-10 snaps it trims both Dobbins carries and Harvey targets.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Arizona&#x27;s Allgeier/Knight division of labor — one week of committee data with Love out is not a settled role.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Budda Baker is reported active despite the Questionable tag (Rotowire, Sunday noon); if that reverses, Arizona&#x27;s safety group is down to backups and Denver&#x27;s intermediate throws open up.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">The retractable roof decision is not final; no conditions are flagged, so nothing is priced for it either way.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Arizona&#x27;s line without Paris Johnson Jr. and Gaines is not in any projection — if Denver&#x27;s rush gets four sacks, Brissett&#x27;s yardage and McBride&#x27;s catch volume both fall short of the script described.</p></div></div>
+    <div class="rv-gradehead">
+      <div class="rv-letter good"><b>B</b><span>71 of 100</span></div>
+      <div class="rv-gradeparts">
+        <div class="rv-part"><span>Team volume &amp; yards</span><div class="rv-bar"><i style="width: 72%"></i></div><b>72</b></div>
+        <div class="rv-part"><span>Player lines <small>31/45 in range</small></span><div class="rv-bar"><i style="width: 71%"></i></div><b>71</b></div>
+        <div class="rv-mkts"><span class="badge good">Winner: DEN &#10003;</span><span class="badge good">Spread: DEN -4.5 &#10003;</span><span class="badge bad">Total: Under 44.5 (proj 44.5) &#10007;</span></div>
+      </div>
     </div>
-    <p class="pp-disclaimer">The plan is a read written from the data as of Sun Oct 25, 1:02 PM Denver; lines, designations and the model's inputs move after that. Nothing here changes a projection or a price, and nothing on this site is betting advice.</p>
+    <div class="pp-card wide"><p class="pp-lead">A B (0.709): team score 0.725, players 0.712, market 2-of-3 (winner and spread right, the 44.5 under wrong by a point and a half). The two flagged misses are the whole story — Denver rushed for 159 against a projected 102.9, and Brissett threw 48 times against a projected 35.1.</p><details class="pp-more"><summary>more</summary><p>Both trace to the same place: Denver&#x27;s points came on three chunk plays rather than the grinding short-pass script the inputs implied (DEN aDOT 11.1 against a season 3.0-8.6 range), and Arizona ran 81 plays from a 0-second-in-the-lead position, which the blended 64.9-play, 35-attempt line never contemplated. Per-attempt the model was excellent: DEN 222 pass yards on a 217.5 projection, 26 carries on 26.3, ARI 94 rush yards on 108.5. The grade is held up by volume accuracy and dragged down by where the yards came from.</p></details></div>
+    <div class="rv-teams">
+      
+      <div class="rv-team" style="--pp-team: #97233F">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy"><b>Cardinals</b><span class="flat">projected &rarr; actual</span></div>
+        
+        <div class="rv-trow ">
+          <span>Points</span>
+          <em>20.0</em><i>&#8594;</i><b>16</b>
+          <small class="flat">-4</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 80%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Pass yds</span>
+          <em>224.5</em><i>&#8594;</i><b>272</b>
+          <small class="flat">+47.5</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 68%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Rush yds</span>
+          <em>108.5</em><i>&#8594;</i><b>94</b>
+          <small class="flat">-14.5</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 84%"></i></div>
+        </div>
+        
+        <div class="rv-trow big">
+          <span>Pass att</span>
+          <em>35.1</em><i>&#8594;</i><b>48</b>
+          <small class="up">+12.9</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 19%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Carries</span>
+          <em>27.6</em><i>&#8594;</i><b>24</b>
+          <small class="flat">-3.6</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 74%"></i></div>
+        </div>
+        
+      </div>
+      
+      <div class="rv-team" style="--pp-team: #002244">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy"><b>Broncos</b><span class="flat">projected &rarr; actual</span></div>
+        
+        <div class="rv-trow ">
+          <span>Points</span>
+          <em>24.5</em><i>&#8594;</i><b>30</b>
+          <small class="flat">+5.5</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 72%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Pass yds</span>
+          <em>217.5</em><i>&#8594;</i><b>222</b>
+          <small class="flat">+4.5</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 97%"></i></div>
+        </div>
+        
+        <div class="rv-trow big">
+          <span>Rush yds</span>
+          <em>102.9</em><i>&#8594;</i><b>159</b>
+          <small class="up">+56.1</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 38%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Pass att</span>
+          <em>30.9</em><i>&#8594;</i><b>29</b>
+          <small class="flat">-1.9</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 88%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Carries</span>
+          <em>26.3</em><i>&#8594;</i><b>26</b>
+          <small class="flat">-0.3</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 98%"></i></div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="rv-two">
+      <div class="rv-list good"><div class="pp-k">Nailed it</div><div class="rv-li"><b>Courtland Sutton</b> <span class="flat">DEN &middot; targets</span><span class="rv-nums">5.0 &#8594; <b>5</b></span></div><div class="rv-li"><b>Courtland Sutton</b> <span class="flat">DEN &middot; rec</span><span class="rv-nums">3.0 &#8594; <b>3</b></span></div><div class="rv-li"><b>Marvin Mims Jr.</b> <span class="flat">DEN &middot; rec</span><span class="rv-nums">2.0 &#8594; <b>2</b></span></div><div class="rv-li"><b>Bam Knight</b> <span class="flat">ARI &middot; carries</span><span class="rv-nums">6.9 &#8594; <b>7</b></span></div></div>
+      <div class="rv-list bad"><div class="pp-k">Missed most</div><div class="rv-li"><b>Trey McBride</b> <span class="flat">ARI &middot; rec yds</span><span class="rv-nums">57.5 &#8594; <b>111</b></span></div><div class="rv-li"><b>J.K. Dobbins</b> <span class="flat">DEN &middot; rush yds</span><span class="rv-nums">58.7 &#8594; <b>23</b></span></div><div class="rv-li"><b>Evan Engram</b> <span class="flat">DEN &middot; rec yds</span><span class="rv-nums">37.3 &#8594; <b>2</b></span></div><div class="rv-li"><b>Kendrick Bourne</b> <span class="flat">ARI &middot; rec yds</span><span class="rv-nums">37.2 &#8594; <b>9</b></span></div></div>
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">Why it missed</div>
+    <div class="rv-decided">
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy">mixed</span>
+        <p class="pp-lead">159 rush yards vs 102.9 projected (score 0.38, flagged big)</p>
+        <p class="pp-sub">Bo Nix carried 7 for 73, 62 of it on one scramble up the middle for a touchdown at Q2 3:57 (EPA +5.48); the projection gave him 7.5 rush yards.</p>
+        <details class="pp-more"><summary>more</summary><p>Jonah Coleman, projected 1.3 carries, took 9 for 54 with two 10-plus runs, all between the tackles (DEN middle runs 12 for 65, 5.4 ypc).</p></details>
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy">signal</span>
+        <p class="pp-lead">Backfield distribution: Dobbins 6 carries/23 yards against 15.5/58.7, Coleman 9/54 against 1.3/5.4</p>
+        <p class="pp-sub">Snap share, not efficiency — Dobbins played 23% of snaps, Coleman 49%.</p>
+        <details class="pp-more"><summary>more</summary><p>Dobbins wasn&#x27;t stuffed once and was +0.39 EPA on his carries. This is a usage read the engine&#x27;s share table hadn&#x27;t absorbed (Coleman was activated and carried a Questionable tag).</p></details>
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy">signal</span>
+        <p class="pp-lead">48 pass attempts vs 35.1 projected (score 0.19, flagged big); 272 pass yards vs 224.5</p>
+        <p class="pp-sub">Pure game state: Arizona ran all 81 of its plays while trailing, at a 65.4% pass rate and 13.6% no-huddle, with 30 garbage-time snaps.</p>
+        <details class="pp-more"><summary>more</summary><p>Per-throw the projection was right (5.67 YPA, cpoe -4.7, 1-of-6 deep); the yardage overage is volume.</p></details>
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy">signal</span>
+        <p class="pp-lead">16 points vs 20 projected despite 81 plays and 5 red-zone trips</p>
+        <p class="pp-sub">Finishing, not movement: field EPA +0.084 on 59 snaps, red-zone EPA -0.474 on 22 snaps, 1 TD and 3 FGs on five trips, plus two turnovers on downs — including 4th-and-5 at the DEN 5 incomplete at Q4 0:56.</p>
+        
+      </div>
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy">mixed</span>
+        <p class="pp-lead">McBride 10/111/TD vs 7.1/57.5 projected — the biggest player miss</p>
+        <p class="pp-sub">Target volume (13) plus two chunk plays the short-middle read didn&#x27;t price: 27 yards on the opening Q4 snap and a 26-yard deep left at Q4 8:31.</p>
+        <details class="pp-more"><summary>more</summary><p>42 YAC, 106 air yards, 32% air-yards share.</p></details>
+      </div>
+      
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">What it got right</div>
+    <div class="rv-right"><span><i>&#10003;</i>Denver&#x27;s pass yards (222 vs 217.5) and attempts (29 vs 30.9) and carries (26 vs 26.3) — the volume shape of the Denver offense was nearly exact.</span><span><i>&#10003;</i>Arizona&#x27;s rush yards (94 vs 108.5) — the Cardinals&#x27; 3.68 ypc season rate was the binding constraint, as modeled (Allgeier 8 for 19, -3.72 rushing EPA).</span><span><i>&#10003;</i>Winner and spread: DEN -4.5 in a projection that had the margin at exactly -4.5.</span><span><i>&#10003;</i>Waddle 7 targets (6.9 proj), Sutton 5 targets/3 receptions exact, Mims 2 receptions exact, Knight 7 carries (6.9 proj).</span></div>
+    
   </div>
 </details>
+
+
+
+<details class="hfa-card hfa-sec pp-sec rv-next" id="next" data-sec="next" open>
+  <summary class="pp-head">
+    <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">Next time</span><span class="pp-h2">What carries into the next plan</span></span>
+    <span class="pp-headchips"><span class="badge acc">4 lessons</span><span class="pp-open">open</span></span>
+  </summary>
+  <div class="pp-body">
+    
+    <div class="pp-k">For the next plan on these clubs</div>
+    <div class="pp-checks">
+      <div class="pp-check rv-lesson"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="DEN" loading="lazy"><div><p class="pp-lead">Stop anchoring Denver&#x27;s passing game to a 3-to-5-yard aDOT.</p><details class="pp-more"><summary>more</summary><p>Against a defense with no pass rush (1 hit on 32 dropbacks) Nix threw nine deep balls at an 11.1 aDOT and produced five explosives; the next plan should condition receiver air-yard expectations on the opponent&#x27;s pressure rate, not on Denver&#x27;s season aDOT alone.</p></details></div></div><div class="pp-check rv-lesson"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="DEN" loading="lazy"><div><p class="pp-lead">Treat the backfield as a three-way committee until it resettles: Coleman 49% snaps / 9 carries, Harvey 26%, Dobbins 23% with the goal-line role intact.</p><details class="pp-more"><summary>more</summary><p>Project Dobbins as a touchdown-only asset and Coleman as the volume runner.</p></details></div></div><div class="pp-check rv-lesson"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="ARI" loading="lazy"><div><p class="pp-lead">Project Arizona&#x27;s pass attempts from the script, not the season rate.</p><details class="pp-more"><summary>more</summary><p>Trailing wire-to-wire with 13.6% no-huddle it reached 81 plays and 48 attempts; any yardage under on a Cardinals passer needs the number set for ~45 throws, because the per-throw squeeze (5.67 YPA) can hold and the total still blow by.</p></details></div></div><div class="pp-check rv-lesson"><div><p class="pp-lead">Do not react to the zero turnovers.</p><details class="pp-more"><summary>more</summary><p>The plan&#x27;s giveaway lever was well argued — 48 attempts under 24.5% pressure against a defense that forced three takeaways in week 6 — and it came up empty once. Keep the INT-over logic for the next chasing-underdog script.</p></details></div></div>
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">How each club gets beaten <span class="flat">&middot; this game read with its season so far</span></div>
+    <div class="rv-blueprints">
+      
+      <div class="rv-bp" style="--pp-team: #002244">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/den.png" alt="" loading="lazy"><b>Broncos</b><span class="flat">4-2 entering</span><span class="badge mute">medium confidence</span></div>
+        <div class="rv-recur"><span class="badge bad">run game &times;3</span><span class="badge bad">third down &times;3</span><span class="badge bad">pre-snap penalties &times;3</span><span class="badge bad">explosive passing &times;2</span></div>
+        <div class="rv-facet"><span class="rv-side defense">defense</span><div><b>The run game against its front</b><p class="pp-sub">`run game` tag in weeks 1, 2 and 4: KC had 4 explosive runs (wk1), SF had 5 (wk4), JAX 4 (wk2); defense rush EPA allowed +0.259 at KC.</p><details class="pp-more"><summary>more</summary><p>Arizona managed 24 carries for 94 and 2 explosive runs this week.</p></details></div></div><div class="rv-facet"><span class="rv-side defense">defense</span><div><b>Coverage penalties and DPI yards</b><p class="pp-sub">3 DPIs this game (26, 25 and two goal-line spots), 51 DPI yards drawn by ARI; season allowance 19.8 DPI yards/game vs a 6.45 league rate.</p><details class="pp-more"><summary>more</summary><p>Week 3 vs LA: 13 penalties, 91 yards.</p></details></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Its own third downs</b><p class="pp-sub">3-for-13 here; `third down` tag in weeks 1, 5 and 6 (2/12, 1/13, 3/14).</p><details class="pp-more"><summary>more</summary><p>Denver has not converted 50% of third downs in any game this season.</p></details></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>A field offense that doesn&#x27;t move without explosives</b><p class="pp-sub">Season field EPA/play -0.082 (league +0.023), 5.55 YPA.</p><details class="pp-more"><summary>more</summary><p>This week it posted +0.235 field EPA only because of plays of 62, 52, 47, 27 and 20 yards; pass success rate was still 34.4%.</p></details></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Pre-snap flags</b><p class="pp-sub">2.67 pre-snap penalties per game (league 1.55), tagged weeks 2, 4 and 5 — 6 pre-snap flags vs JAX.</p><details class="pp-more"><summary>more</summary><p>Only 2 this week, but the Trautman OPI at Q1 11:19 cost a first-and-goal at the 1.</p></details></div></div>
+        <div class="pp-expect"><span class="pp-k">What an opponent needs</span><p class="pp-lead">A rushing attack above league in explosive-run rate (2.2/game) with a line that creates yards before contact — Denver&#x27;s front allows 2.63 YBC/carry — plus an offense that can stay on schedule, because Denver&#x27;s coverage squeezes per-throw yardage and its third-down defense is fine.</p><details class="pp-more"><summary>more</summary><p>Teams that must throw to catch up feed Denver&#x27;s strength.</p></details></div>
+      </div>
+      
+      <div class="rv-bp" style="--pp-team: #97233F">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ari.png" alt="" loading="lazy"><b>Cardinals</b><span class="flat">2-4 entering</span><span class="badge mute">high confidence</span></div>
+        <div class="rv-recur"><span class="badge bad">explosive passing &times;4</span><span class="badge bad">no pass rush &times;3</span><span class="badge bad">penalties &times;2</span><span class="badge bad">third down &times;2</span><span class="badge bad">red zone defense &times;2</span></div>
+        <div class="rv-facet"><span class="rv-side defense">defense</span><div><b>Explosive passing allowed</b><p class="pp-sub">Tagged in weeks 2, 3, 4 and 5: SF 6 explosives (defense dropback EPA +0.901), NYG 5, DET 4.</p><details class="pp-more"><summary>more</summary><p>This week Denver hit 5 of 20-plus — 52, 47, 27, 20 — on just 29 attempts.</p></details></div></div><div class="rv-facet"><span class="rv-side defense">defense</span><div><b>No pass rush, including when it blitzes</b><p class="pp-sub">`no pass rush` in weeks 1, 2 and 3 (0 sacks vs SF, 1 vs SEA).</p><details class="pp-more"><summary>more</summary><p>This week a 42.9% blitz rate produced one sack and one hit on 32 Denver dropbacks, a 3.1% pressure rate against a 14.8% league mean.</p></details></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Red-zone stalls on its own offense</b><p class="pp-sub">Week 6 at LA: 5 trips, 0 TDs, 5 field goals, RZ EPA -0.606.</p><details class="pp-more"><summary>more</summary><p>Week 1: 5 trips, 2 TDs, 3 FGs. This week: 5 trips, 1 TD, 3 FGs, RZ EPA -0.474, plus turnovers on downs at the DEN 1 and 5. Season red-zone TD rate 45%.</p></details></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Pressure allowed with the patched interior line</b><p class="pp-sub">5 sacks vs DET (wk5, `pressure allowed`), 2 vs SEA and NYG; this week 3 sacks and 13 QB hits, a 24.5% pressure rate, with Gaines out — including the drive-ending sack at the DEN 5 at Q4 1:30.</p></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>No vertical threat to punish a defense that sits on the short game</b><p class="pp-sub">1-for-6 on deep throws, aDOT 6.5, cpoe -4.7; 42 of 48 attempts were short.</p><details class="pp-more"><summary>more</summary><p>272 yards took 48 throws (5.67 YPA) and 51 DPI yards helped the drives that did move.</p></details></div></div>
+        <div class="pp-expect"><span class="pp-k">What an opponent needs</span><p class="pp-lead">Any offense willing to push the ball past 10 yards and protect long enough for it; Arizona will blitz (36.6% season, 42.9% here) and not get home, so a quarterback who handles free rushers — or a line that is merely average — turns the blitz into explosives.</p><details class="pp-more"><summary>more</summary><p>You do not need a high completion rate, just a willingness to take shots and a back who can turn a screen into 52.</p></details></div>
+      </div>
+      
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">Traps <span class="flat">&middot; where a line can fool you next time</span></div>
+    <div class="pp-checks">
+      <div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Props</span><p class="pp-lead">Arizona&#x27;s defense is a blitz-without-pressure unit: 42.9% blitz rate produced one QB hit on 32 Denver dropbacks. Back opposing QB pass-yard and longest-completion overs, and fade sacks-taken overs, whenever the opponent has any downfield willingness — and remember the opponent does not need to be efficient (Nix went 15-of-29 with -3.0 cpoe for 222).</p><p class="pp-sub"><b>Trigger:</b> Opponent faces ARI with a season aDOT above 7 or a quarterback who scrambles; ARI blitz rate above 35%.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Totals</span><p class="pp-lead">Don&#x27;t price Arizona&#x27;s team total off its yardage. Five red-zone trips, 22 snaps inside the 20, -0.474 EPA and one touchdown — the third straight game (weeks 1, 6, 7) where trips became kicks. Yardage props on McBride and the backs hold; Cardinals anytime-TD and team-total overs lag.</p><p class="pp-sub"><b>Trigger:</b> ARI implied total at or above 20 with a red-zone TD rate under 50% in the engine inputs; take unders on ARI team total and overs on Ryland FG props.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Props</span><p class="pp-lead">Denver&#x27;s backfield is a committee, not a Dobbins workload. Dobbins 23% of snaps and 6 carries; Coleman 49% and 9 carries for 54 with two explosive runs. Any projection built on season carry share overshoots Dobbins and badly undershoots Coleman until the split resettles.</p><p class="pp-sub"><b>Trigger:</b> Dobbins rush-yard line set near 50 with Coleman active; take the under on Dobbins and look for Coleman&#x27;s number to be unposted or stale.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Totals</span><p class="pp-lead">Low-play-count games are not low-total games. Denver ran 59 plays and scored 30; the game went 131 combined plays and over 44.5 because the trailing team no-huddled (13.6%) for 81 snaps. Pace models that key on the favorite&#x27;s plays will keep missing in this shape.</p><p class="pp-sub"><b>Trigger:</b> Big spread plus an underdog with a 66-plus play season rate: project total plays from the dog&#x27;s trailing pace, not the favorite&#x27;s grind.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Props</span><p class="pp-lead">Denver&#x27;s defense gives away free yards in coverage — 51 DPI yards drawn by Arizona this week, 19.8 per game on the season against a 6.45 league rate. Those yards inflate drive length without touching the QB&#x27;s passing-yard prop, so a receiver&#x27;s yardage under can cash while his team marches.</p><p class="pp-sub"><b>Trigger:</b> Opposing WR/TE yardage unders against DEN when the receiver&#x27;s targets are contested downfield — the flags, not the catches, move the ball.</p></div></div>
+    </div>
+    
+    <p class="pp-disclaimer">The plan was a read written before kickoff; the report reads the game after it, from the play-by-play and the box score. Nothing here changes a projection or a price, and nothing on this site is betting advice.</p>
+  </div>
+</details>
+
 
 <div class="pl-modal" id="pl-modal" hidden data-src="/nfl/w/7/g/2026_07_DEN_ARI/players.html">
   <div class="pl-back"></div>
@@ -2683,7 +3448,7 @@
 </main>
   <footer class="hfa-foot">
     <p><strong>Huffalytics</strong> publishes NFL stats, game projections, team EPA rankings and graded player prop plans priced against Kalshi, rebuilt every week from play-by-play data. <a href="/about/">How the engine works</a>.</p>
-    <p>Data as of Tue Oct 27, 4:04 PM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/nfl/data/week.json">week.json</a> · <a href="/nfl/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
+    <p>Data as of Wed Oct 28, 8:02 AM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/nfl/data/week.json">week.json</a> · <a href="/nfl/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
   </footer>
 </div>
 <script>

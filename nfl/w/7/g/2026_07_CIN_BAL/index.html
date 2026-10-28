@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bengals at Ravens: NFL Week 7 2026 Projection, Matchups and Injuries | Huffalytics</title>
-<meta name="description" content="Cincinnati Bengals at Baltimore Ravens, NFL week 7 2026: the projected score, each offense against the defense it meets (projected player lines, overall, run game with lanes, pass game), the starting elevens rated, and both injury reports.">
+<title>Bengals at Ravens: NFL Week 7 2026 Final, Game Report and the Plan Graded | Huffalytics</title>
+<meta name="description" content="Cincinnati Bengals 35, Baltimore Ravens 13, NFL week 7 2026: Cincinnati trailed 13-0 at half and won 35-13, scoring 35 unanswered as Baltimore went 0-for-3 in the red zone and Joe Burrow turned 30 attempts into four touchdowns — the model had CIN by 3 and the over (46.5, actual 48) and got all three market calls, missing only the size of the gap. The pre-game plan graded: script partly held, every call checked against the box score.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="keywords" content="NFL stats, NFL projections, NFL week 7 2026, Kalshi NFL, Kalshi player props, NFL player props, NFL team rankings, EPA per play, NFL betting model, NFL streaming picks, fantasy football projections">
 <meta name="author" content="Huffalytics">
@@ -1294,6 +1294,248 @@
     .gm-script { margin: -0.4rem 16px 1rem; }
     .pp-headchips .badge { display: none; }
   }
+
+  /* ---- the post-game look: the plan against the game (.rv-) ---- */
+  .gm-side.lost img { opacity: 0.45; filter: grayscale(0.6) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.55)); }
+  .gm-side.lost .gm-abbr { color: var(--hfa-muted); }
+  .gm-pts.final { color: var(--hfa-body); text-shadow: none; }
+  .gm-pts.final span { opacity: 0.55; }
+  .gm-pts.final span.w { opacity: 1; color: var(--hfa-accent); text-shadow: 0 0 28px rgba(255, 31, 47, 0.35); }
+  .gm-projwas { letter-spacing: 0.08em; }
+  .gm-verdict { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.4rem 1rem; margin: -0.6rem 1.1rem 1.2rem; padding: 0.55rem 1rem; border: 1px solid var(--hfa-accent); border-radius: 16px; background: var(--hfa-accent-soft); color: inherit; text-decoration: none; }
+  .gm-verdict.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.10); }
+  .gm-verdict.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.10); }
+  .gm-verdict.warn { border-color: rgba(128, 128, 128, 0.5); background: var(--hfa-tint); }
+  .gm-verdict-stamp { display: inline-flex; align-items: baseline; gap: 0.45rem; }
+  .gm-verdict-stamp i, .gm-verdict-v i { font-style: normal; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-muted); }
+  .gm-verdict-stamp b { font-size: 1.05rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; color: var(--hfa-body); }
+  .gm-verdict.good .gm-verdict-stamp b { color: var(--hfa-good); } .gm-verdict.bad .gm-verdict-stamp b { color: var(--hfa-bad); }
+  .gm-verdict-v { display: inline-flex; align-items: baseline; gap: 0.35rem; font-size: 0.9rem; }
+  .gm-verdict-v b { font-weight: 800; color: var(--hfa-body); }
+  .gm-verdict-v.mk { font-size: 0.74rem; color: var(--hfa-muted); padding: 0.1rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.14); }
+  .gm-letter { font-size: 1.1rem; } .gm-letter.good { color: var(--hfa-good) !important; } .gm-letter.bad { color: var(--hfa-bad) !important; }
+  .gm-tile.rv small { font-size: 0.66rem; color: var(--hfa-muted); }
+  .gm-tile.rv.over b { color: var(--hfa-good); } .gm-tile.rv.under b { color: var(--hfa-bad); }
+  .gm-tile.rv b.flat { color: var(--hfa-muted); }
+
+  .rv-stamp { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.4rem; padding: 0.8rem 1rem; margin: 0.3rem 0 0.9rem; border-radius: 16px; border: 2px solid rgba(128, 128, 128, 0.4); background: var(--hfa-tint); }
+  .rv-stamp.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.08); }
+  .rv-stamp.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.08); }
+  .rv-stamp-word { display: flex; flex-direction: column; line-height: 1; }
+  .rv-stamp-word span { font-size: 0.64rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: var(--hfa-muted); }
+  .rv-stamp-word b { font-size: 2rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; color: var(--hfa-body); margin-top: 0.2rem; }
+  .rv-stamp.good .rv-stamp-word b { color: var(--hfa-good); } .rv-stamp.bad .rv-stamp-word b { color: var(--hfa-bad); }
+  .rv-stamp-meta { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.9rem; }
+  .rv-stamp-meta b { color: var(--hfa-body); }
+  .rv-win { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 700; }
+  .rv-win img { width: 26px; height: 26px; object-fit: contain; }
+  .rv-vs { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 0.8rem; align-items: stretch; }
+  .rv-col { border: var(--hfa-hairline); border-radius: 14px; padding: 0.8rem 0.95rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-col .pp-hook-logos { margin-bottom: 0.4rem; } .rv-col .pp-hook-logos img { width: 40px; height: 40px; }
+  .rv-col .pp-quote { font-size: 1.2rem; }
+  .rv-col.plan .pp-quote { color: var(--hfa-body); }
+  .rv-col.game { border-color: rgba(255, 31, 47, 0.45); }
+  .rv-col.game.good { border-color: var(--hfa-good); } .rv-col.game.bad { border-color: var(--hfa-bad); }
+  .rv-arrow { align-self: center; font-size: 1.6rem; font-weight: 900; color: var(--hfa-accent); }
+  .rv-tally { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.55rem; margin-top: 0.9rem; }
+  .rv-tile { display: flex; flex-direction: column; gap: 0.15rem; border: var(--hfa-hairline); border-radius: 12px; padding: 0.6rem 0.75rem; background: var(--hfa-tint); color: inherit; text-decoration: none; min-width: 0; }
+  .rv-tile > span { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .rv-tile > b { font-size: 1.6rem; font-weight: 900; line-height: 1.1; color: var(--hfa-body); }
+  .rv-tile > b i { font-style: normal; }
+  .rv-tile > b small, .rv-tile > small { font-size: 0.72rem; font-weight: 600; color: var(--hfa-muted); }
+  .rv-tile.hot { border-color: rgba(255, 31, 47, 0.5); }
+  .rv-tile.lt b { font-size: 2rem; } .rv-tile.lt.good b { color: var(--hfa-good); } .rv-tile.lt.bad b { color: var(--hfa-bad); }
+  .rv-headline { font-size: 1.08rem; font-weight: 800; line-height: 1.35; margin: 0; letter-spacing: -0.01em; }
+  .rv-tile.mk em { font-style: normal; font-size: 0.8rem; font-weight: 700; }
+  .rv-bar { height: 5px; border-radius: 3px; background: rgba(128, 128, 128, 0.2); overflow: hidden; }
+  .rv-bar i { display: block; height: 100%; border-radius: 3px; background: var(--hfa-good); }
+  .rv-why { border-left: 4px solid var(--hfa-accent); }
+  .rv-fold { margin-top: 0.9rem; border-top: var(--hfa-hairline); padding-top: 0.7rem; }
+  .rv-fold > summary { list-style: none; cursor: pointer; font-size: 0.74rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin-bottom: 0.6rem; }
+  .rv-fold > summary::-webkit-details-marker { display: none; }
+  .rv-fold > summary::before { content: "+ "; } .rv-fold[open] > summary::before { content: "\2212  "; }
+  .rv-fold > summary .flat { text-transform: none; letter-spacing: 0; font-weight: 500; }
+  .rv-story { font-size: 0.92rem; line-height: 1.6; max-width: 52rem; }
+  .rv-story h1, .rv-story h2, .rv-story h3 { font-size: 1rem; color: var(--hfa-accent); margin: 1rem 0 0.3rem; }
+  .rv-story p { margin: 0 0 0.7rem; }
+
+  .rv-tl { list-style: none; margin: 0; padding: 0 0 0 0.2rem; display: flex; flex-direction: column; }
+  .rv-tl li { position: relative; display: grid; grid-template-columns: 5.2rem minmax(0, 1fr); gap: 0.8rem; padding: 0 0 0.9rem; }
+  .rv-tl li::before { content: ""; position: absolute; left: 2.6rem; top: 1.6rem; bottom: 0; width: 2px; background: rgba(128, 128, 128, 0.25); }
+  .rv-tl li:last-child::before { display: none; }
+  .rv-clock { align-self: start; justify-self: center; z-index: 1; font-size: 0.72rem; font-weight: 800; padding: 0.25rem 0.55rem; border-radius: 999px; background: var(--pp-team); color: #fff; white-space: nowrap; box-shadow: 0 0 0 3px var(--hfa-card); }
+  .rv-tlbody { border: var(--hfa-hairline); border-left: 4px solid var(--pp-team); border-radius: 12px; padding: 0.55rem 0.8rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-play { display: flex; align-items: flex-start; gap: 0.5rem; font-weight: 700; font-size: 0.94rem; line-height: 1.35; }
+  .rv-play img { width: 24px; height: 24px; object-fit: contain; flex: none; }
+  .rv-decided { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.6rem; }
+  .rv-dcard { border: var(--hfa-hairline); border-radius: 14px; padding: 0.7rem 0.85rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-dcard.tell { border-color: rgba(47, 212, 164, 0.5); }
+  .rv-flag { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.12rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); margin-bottom: 0.4rem; }
+  .rv-flag img { width: 14px; height: 14px; object-fit: contain; }
+  .rv-dcard.tell .rv-flag { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .rv-dcard .pp-lead { font-size: 0.92rem; font-weight: 700; }
+
+  .rv-gauge.held { border-color: rgba(47, 212, 164, 0.55); } .rv-gauge.miss { border-color: rgba(255, 176, 32, 0.55); }
+  .rv-mark { margin-left: auto; font-size: 0.85rem; }
+  .rv-gauge.held .rv-mark { color: var(--hfa-good); } .rv-gauge.miss .rv-mark { color: var(--hfa-bad); }
+  .rv-row { display: grid; grid-template-columns: 3.2rem auto 1fr; align-items: center; gap: 0.45rem; font-size: 0.8rem; }
+  .rv-row small { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-muted); }
+  .rv-row em { font-style: normal; font-weight: 800; text-transform: capitalize; }
+  .rv-row.played .pp-bars i.on { background: var(--hfa-body); }
+  .rv-gauge.held .rv-row.played .pp-bars i.on { background: var(--hfa-good); } .rv-gauge.miss .rv-row.played .pp-bars i.on { background: var(--hfa-bad); }
+  .rv-note { font-size: 0.7rem; color: var(--hfa-muted); }
+  .pp-leanbar .track i.called { background: transparent; border: 2px solid var(--hfa-body); box-shadow: none; }
+  .pp-leanbar .track i.played { background: var(--hfa-accent); border-color: var(--hfa-card); }
+  .rv-cvp { text-transform: capitalize; } .rv-cvp i { font-style: normal; color: var(--hfa-muted); }
+  .rv-legend { display: flex; gap: 1rem; font-size: 0.68rem; color: var(--hfa-muted); margin: 0.2rem 0 0; }
+  .rv-legend span { display: inline-flex; align-items: center; gap: 0.3rem; }
+  .rv-legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .rv-legend i.called { border: 2px solid var(--hfa-body); } .rv-legend i.played { background: var(--hfa-accent); }
+  .pp-path.took { border-color: rgba(47, 212, 164, 0.55); border-left-color: var(--pp-team); box-shadow: 0 0 0 1px rgba(47, 212, 164, 0.25) inset; }
+  .pp-path.not { opacity: 0.55; }
+  .pp-pathhead .badge { white-space: nowrap; }
+  .rv-swing { flex-direction: column; gap: 0.35rem; }
+  .rv-weight { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.12rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); }
+  .rv-swing.decisive { border-color: var(--hfa-accent); } .rv-swing.decisive .rv-weight { background: var(--hfa-accent); color: #fff; }
+  .rv-swing.contributed .rv-weight { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .rv-swing.minor { opacity: 0.85; }
+  .rv-went { font-size: 0.84rem; color: var(--hfa-muted); margin: 0; line-height: 1.4; } .rv-went b { color: var(--hfa-body); }
+  .pp-angle.cashed { border-color: rgba(47, 212, 164, 0.55); }
+  .pp-angletitle .badge { margin-left: 0.3rem; vertical-align: 0.1rem; }
+  .pp-leg .rv-res { font-size: 0.74rem; font-weight: 800; white-space: nowrap; }
+  .pp-leg.hit { background: rgba(47, 212, 164, 0.12); } .pp-leg.hit .rv-res { color: var(--hfa-good); }
+  .pp-leg.miss { background: rgba(255, 176, 32, 0.10); } .pp-leg.miss .rv-res { color: var(--hfa-bad); }
+  .pp-leg.void .rv-res { color: var(--hfa-muted); }
+
+  .rv-eh { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0.6rem; }
+  .rv-ehcol { border: var(--hfa-hairline); border-radius: 12px; padding: 0.6rem 0.8rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-ehcol .pp-lead { font-size: 0.9rem; }
+  .rv-ehcol.happened { border-width: 1px; border-color: rgba(128, 128, 128, 0.45); }
+  .rv-ehcol.happened.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.07); }
+  .rv-ehcol.happened.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.07); }
+  .rv-call.hit { border-left-color: var(--hfa-good); box-shadow: 0 0 0 1px rgba(47, 212, 164, 0.3) inset; }
+  .rv-call.miss { border-left-color: var(--hfa-bad); }
+  .rv-call.void { opacity: 0.6; border-left-color: rgba(128, 128, 128, 0.5); }
+  .rv-stamp-res { flex: none; display: inline-grid; place-items: center; min-width: 2rem; height: 2rem; padding: 0 0.3rem; border-radius: 999px; font-size: 0.95rem; font-weight: 900; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); }
+  .hfa .rv-stamp-res.hit { margin: 0; background: var(--hfa-good); color: #04130e; } .rv-stamp-res.miss { background: var(--hfa-bad); color: #1a1000; } .rv-stamp-res.void { font-size: 0.62rem; }
+  .rv-meter { margin: 0.25rem 0 0.45rem; }
+  .rv-meter .track { position: relative; height: 8px; border-radius: 4px; background: rgba(128, 128, 128, 0.18); }
+  .rv-meter .track .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: var(--hfa-muted); }
+  .rv-call.hit .rv-meter .fill { background: var(--hfa-good); } .rv-call.miss .rv-meter .fill { background: var(--hfa-bad); }
+  .rv-meter .track .line { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: var(--hfa-body); border-radius: 1px; }
+  .rv-meterlbl { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--hfa-muted); margin-top: 0.2rem; }
+  .rv-meterlbl b { color: var(--hfa-body); font-size: 0.85rem; }
+  .rv-read { margin-bottom: 0.35rem; display: inline-block; }
+  .rv-ig { color: var(--hfa-body); }
+  .rv-call .pp-probs { margin: 0.4rem 0; }
+  .rv-notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.5rem; }
+  .rv-note-card { border: var(--hfa-hairline); border-radius: 12px; padding: 0.55rem 0.75rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-note-card.signal { border-color: rgba(47, 212, 164, 0.45); }
+  .rv-notehead { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; }
+  .rv-notehead b { color: var(--hfa-body); font-size: 0.9rem; }
+
+  .rv-gradehead { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; padding: 0.3rem 0 0.4rem; }
+  .rv-letter { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 6rem; height: 6rem; border-radius: 22px; border: 2px solid rgba(128, 128, 128, 0.45); background: var(--hfa-tint); }
+  .rv-letter b { font-size: 3rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .rv-letter span { font-size: 0.66rem; font-weight: 700; color: var(--hfa-muted); }
+  .rv-letter.good { border-color: var(--hfa-good); } .rv-letter.good b { color: var(--hfa-good); }
+  .rv-letter.bad { border-color: var(--hfa-bad); } .rv-letter.bad b { color: var(--hfa-bad); }
+  .rv-gradeparts { flex: 1 1 18rem; display: flex; flex-direction: column; gap: 0.5rem; min-width: 0; }
+  .rv-part { display: grid; grid-template-columns: 11rem 1fr 2rem; align-items: center; gap: 0.6rem; font-size: 0.8rem; }
+  .rv-part span small { color: var(--hfa-muted); display: block; font-size: 0.68rem; }
+  .rv-part b { text-align: right; color: var(--hfa-body); }
+  .rv-part .rv-bar { height: 8px; }
+  .rv-mkts { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .rv-teams { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.6rem; margin-top: 0.9rem; }
+  .rv-team, .rv-bp { border: var(--hfa-hairline); border-top: 3px solid var(--pp-team); border-radius: 14px; padding: 0.7rem 0.85rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-teamhead { display: flex; align-items: center; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 0.5rem; }
+  .rv-teamhead img { width: 28px; height: 28px; object-fit: contain; }
+  .rv-teamhead b { color: var(--hfa-body); font-size: 1rem; }
+  .rv-teamhead .flat { font-size: 0.72rem; }
+  .rv-trow { display: grid; grid-template-columns: 5.2rem auto auto auto 1fr; grid-template-areas: "l p a v d" "bar bar bar bar bar"; align-items: baseline; gap: 0.15rem 0.45rem; padding: 0.35rem 0; border-top: var(--hfa-hairline); font-size: 0.84rem; }
+  .rv-trow span { grid-area: l; color: var(--hfa-muted); font-size: 0.74rem; }
+  .rv-trow em { font-style: normal; color: var(--hfa-muted); } .rv-trow i { font-style: normal; color: var(--hfa-muted); font-size: 0.72rem; }
+  .rv-trow b { color: var(--hfa-body); font-size: 1rem; } .rv-trow small { justify-self: end; font-weight: 700; }
+  .rv-trow .rv-bar { grid-area: bar; height: 4px; }
+  .rv-trow.big .rv-bar i { background: var(--hfa-bad); }
+  .rv-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.9rem; }
+  .rv-list { border: var(--hfa-hairline); border-radius: 14px; padding: 0.65rem 0.85rem; background: var(--hfa-tint); }
+  .rv-list.good .pp-k { color: var(--hfa-good); } .rv-list.bad .pp-k { color: var(--hfa-bad); }
+  .rv-li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem; padding: 0.3rem 0; border-top: var(--hfa-hairline); font-size: 0.84rem; }
+  .rv-li > b { color: var(--hfa-body); } .rv-li .flat { font-size: 0.72rem; }
+  .rv-nums { margin-left: auto; color: var(--hfa-muted); white-space: nowrap; } .rv-nums b { color: var(--hfa-body); }
+  .rv-right { display: flex; flex-direction: column; gap: 0.35rem; }
+  .rv-right span { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.4; }
+  .rv-right i { font-style: normal; color: var(--hfa-good); font-weight: 900; }
+
+  .rv-lesson img { width: 28px; height: 28px; object-fit: contain; flex: none; }
+  .rv-blueprints { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0.6rem; }
+  .rv-recur { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.45rem; }
+  .rv-facet { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); gap: 0.5rem; padding: 0.4rem 0; border-top: var(--hfa-hairline); font-size: 0.86rem; }
+  .rv-facet b { color: var(--hfa-body); }
+  .rv-side { align-self: start; text-align: center; font-size: 0.58rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.15rem 0.3rem; border-radius: 6px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); }
+  .rv-side.defense { background: rgba(255, 176, 32, 0.14); color: var(--hfa-bad); } .rv-side.offense { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .rv-bp .pp-expect { margin-top: 0.5rem; }
+  @media (max-width: 760px) {
+    .gm-verdict { margin: -0.4rem 16px 1rem; gap: 0.35rem 0.8rem; }
+    .gm-verdict-v.mk { display: none; }
+    .rv-vs { grid-template-columns: 1fr; }
+    .rv-arrow { transform: rotate(90deg); justify-self: center; line-height: 1; }
+    .rv-stamp-word b { font-size: 1.5rem; }
+    .rv-tally { grid-template-columns: 1fr 1fr; }
+    .rv-tally .rv-tile.mk { grid-column: 1 / -1; }
+    .rv-tl li { grid-template-columns: 1fr; gap: 0.3rem; }
+    .rv-tl li::before { display: none; }
+    .rv-clock { justify-self: start; }
+    .rv-decided, .rv-notes, .rv-teams, .rv-blueprints, .rv-two { grid-template-columns: 1fr; }
+    .rv-eh { grid-template-columns: 1fr; }
+    .rv-part { grid-template-columns: 8rem 1fr 2rem; }
+  }
+
+  /* ---- landing: the final reports band (.ld-rep) ---- */
+  .ld-reports.on { border-color: rgba(47, 212, 164, 0.5); background: linear-gradient(135deg, rgba(47, 212, 164, 0.12), var(--hfa-card) 55%); }
+  .ld-reports.on .ld-pulse { background: var(--hfa-good); animation: none; box-shadow: 0 0 0 4px rgba(47, 212, 164, 0.2); }
+  .ld-reports .ld-plans-head { flex-wrap: wrap; }
+  .ld-reports .ld-plans-head h2 b { color: var(--hfa-good); }
+  .ld-rep-title { flex: 1 1 18rem; min-width: 0; }
+  .ld-rep-sum { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .ld-rep-chip { display: inline-flex; align-items: baseline; gap: 0.3rem; padding: 0.3rem 0.7rem; border-radius: 999px; background: var(--hfa-tint); border: var(--hfa-hairline); font-size: 0.8rem; color: var(--hfa-muted); white-space: nowrap; }
+  .ld-rep-chip i { font-style: normal; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-right: 0.15rem; }
+  .ld-rep-chip b { font-weight: 900; font-size: 0.95rem; color: var(--hfa-body); } .ld-rep-chip b.up { color: var(--hfa-good); } .ld-rep-chip b.down { color: var(--hfa-bad); }
+  .ld-rep-chip.hot { border-color: rgba(255, 31, 47, 0.5); }
+  .ld-rep-grid { grid-auto-columns: 17rem; }
+  .ld-rep { display: flex; flex-direction: column; gap: 0.45rem; padding: 0.7rem 0.8rem; border-radius: 12px; background: var(--hfa-tint); border: var(--hfa-hairline); border-top: 3px solid rgba(128, 128, 128, 0.5); text-decoration: none; color: var(--hfa-body); transition: transform 0.12s, border-color 0.12s; scroll-snap-align: start; min-width: 0; }
+  .ld-rep:hover { transform: translateY(-2px); }
+  .ld-rep.good { border-top-color: var(--hfa-good); } .ld-rep.bad { border-top-color: var(--hfa-bad); }
+  .ld-rep-score { display: grid; grid-template-columns: 1fr 1fr auto; align-items: center; gap: 0.4rem; }
+  .ld-rep-score .t { display: inline-flex; align-items: center; gap: 0.3rem; opacity: 0.6; }
+  .ld-rep-score .t.w { opacity: 1; }
+  .ld-rep-score img { width: 22px; height: 22px; object-fit: contain; }
+  .ld-rep-score b { font-size: 0.82rem; font-weight: 800; color: var(--hfa-body); }
+  .ld-rep-score em { font-style: normal; font-size: 1.35rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .ld-rep-score .t.w em { color: var(--hfa-accent); }
+  .ld-rep-score small { font-size: 0.58rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep-verdict { align-self: flex-start; display: inline-flex; align-items: baseline; gap: 0.35rem; font-size: 0.72rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.15rem 0.55rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-body); }
+  .ld-rep-verdict i { font-style: normal; font-size: 0.56rem; font-weight: 800; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep.good .ld-rep-verdict { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); } .ld-rep.bad .ld-rep-verdict { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .ld-rep-head { font-size: 0.8rem; line-height: 1.4; color: var(--hfa-body); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; flex: 1 1 auto; }
+  .ld-rep-foot { display: flex; flex-wrap: wrap; gap: 0.3rem 0.8rem; padding-top: 0.4rem; border-top: var(--hfa-hairline); font-size: 0.8rem; }
+  .ld-rep-foot span { display: inline-flex; align-items: baseline; gap: 0.25rem; }
+  .ld-rep-foot i { font-style: normal; font-size: 0.56rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep-foot b { font-weight: 900; color: var(--hfa-body); } .ld-rep-foot b.up { color: var(--hfa-good); } .ld-rep-foot b.down { color: var(--hfa-bad); }
+  .ld-rep-foot b.g.good { color: var(--hfa-good); } .ld-rep-foot b.g.bad { color: var(--hfa-bad); }
+  @media (max-width: 760px) {
+    .ld-rep-grid { grid-auto-columns: 14.5rem; }
+    .ld-rep { padding: 0.55rem 0.6rem; }
+    .ld-rep-head { -webkit-line-clamp: 3; font-size: 0.76rem; }
+    .ld-rep-chip { font-size: 0.72rem; padding: 0.2rem 0.55rem; }
+    .rv-headline { font-size: 0.98rem; font-weight: 700; }
+    .ld-rep-score small { display: none; }
+    .ld-rep-score { grid-template-columns: 1fr 1fr; }
+    /* The live bands ride up under the intro, ahead of the game list. */
+    .ld-hero > .ld-hero-main { order: -2; }
+    .ld-hero > .ld-reports, .ld-hero > .ld-plans.on { order: -1; }
+  }
 </style>
 
 </head>
@@ -1327,12 +1569,12 @@
     <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
   </div>
   <main>
-<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#read" data-sec="read">The read</a><a href="#script" data-sec="script">The script</a><a href="#away" data-sec="away">CIN offense</a><a href="#home" data-sec="home">BAL offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="#before" data-sec="before">Before you bet</a><a href="/nfl/w/7/">Week 7 board</a></nav>
+<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#result" data-sec="result">The result</a><a href="#game" data-sec="game">How it was decided</a><a href="#script" data-sec="script">The script</a><a href="#away" data-sec="away">CIN offense</a><a href="#home" data-sec="home">BAL offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="#grade" data-sec="grade">The grade</a><a href="#next" data-sec="next">Next time</a><a href="/nfl/w/7/">Week 7 board</a></nav>
 
 <div class="hfa-card hfa-hero hfa-sec gm-hero" id="hero" data-sec="hero" style="--gm-away: #FB4F14; --gm-home: #241773;">
   <div class="gm-hero-top">
     <a class="gm-back" href="/nfl/w/7/">&#8249; Week 7 board</a>
-    <span class="hfa-eyebrow">NFL &middot; 2026 season &middot; week 7 &middot; final</span>
+    <span class="hfa-eyebrow">NFL &middot; 2026 season &middot; week 7 &middot; final &middot; reviewed</span>
   </div>
   <div class="gm-score">
     <div class="gm-side away">
@@ -1340,9 +1582,9 @@
       <div class="gm-id"><div class="gm-abbr">CIN</div><div class="gm-nick">Bengals</div><i class="gm-under" style="background: #FB4F14"></i></div>
     </div>
     <div class="gm-mid">
-      <div class="gm-pts"><span>24.8</span><em>&ndash;</em><span>21.8</span></div><div class="gm-tag">projected</div>
+      <div class="gm-pts final"><span class="w">35</span><em>&ndash;</em><span class="">13</span></div><div class="gm-tag">final <span class="gm-projwas">&middot; projected 24.8&ndash;21.8</span></div>
     </div>
-    <div class="gm-side home">
+    <div class="gm-side home lost">
       <div class="gm-id"><div class="gm-abbr">BAL</div><div class="gm-nick">Ravens</div><i class="gm-under" style="background: #241773"></i></div>
       <img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="Baltimore Ravens logo" width="96" height="96">
     </div>
@@ -1351,135 +1593,334 @@
     <span class="gm-chip">Sunday Oct 25, 2026 <i>&middot; 11:00 AM Denver</i></span>
     <span class="gm-chip"><i>spread</i> <b>CIN -3</b></span>
     <span class="gm-chip"><i>total</i> <b>46.5</b></span>
-    <span class="gm-chip final"><i>final</i> <b>CIN 35 &ndash; 13 BAL</b></span>
+    
     <span class="gm-chip " title="Natural grass. Passing is the same on grass and turf; rushing runs about 3.5% higher on turf (+3.7 yards a team) and a catch gains a tenth of a yard more after it. Points, the closing lines and the engine show no surface effect, so it is not an engine input."><i>field</i> <b>grass</b></span><span class="gm-chip " title="Forecast for the kickoff window, as of Sun 9:23 AM Denver. Wind above 10 mph trims the passing projection."><i>forecast</i> <b>64°F · wind 3 mph</b></span>
   </div>
   
-  <a class="gm-script" href="#script" title="The plan's script: pace, confidence and each side's lean — the section below has the rest">
-    <span class="gm-script-k">The script</span>
-    <span class="gm-script-v"><b>average pace</b><span class="pp-bars sm"><i class="on"></i><i class="on"></i><i class=""></i></span></span>
-    <span class="gm-script-v"><b>medium confidence</b><span class="pp-pips sm"><i class="on"></i><i class="on"></i><i class=""></i></span></span>
-    <span class="gm-script-v lean"><b>CIN</b> pass</span><span class="gm-script-v lean"><b>BAL</b> run</span>
+  <a class="gm-verdict warn" href="#result" title="The pre-game plan against the game: the report's verdict on the script, the calls graded off the box score, and the projection's grade">
+    <span class="gm-verdict-stamp"><i>The script</i><b>Partly held</b></span>
+    <span class="gm-verdict-v"><i>calls</i><b><span class="up">6</span>&ndash;<span class="down">4</span></b></span>
+    <span class="gm-verdict-v"><i>Edge+</i><b><span class="up">9</span>&ndash;<span class="down">1</span></b></span>
+    <span class="gm-verdict-v"><i>projection</i><b class="gm-letter good">B</b></span>
+    <span class="gm-verdict-v mk">CIN covered (CIN by 3)</span><span class="gm-verdict-v mk">Over 46.5 (48)</span>
   </a>
   
 </div>
 
 
-<details class="hfa-card hfa-sec pp-sec pp-read" id="read" data-sec="read" open>
+
+<details class="hfa-card hfa-sec pp-sec rv-result" id="result" data-sec="result" open>
   <summary class="pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    <span class="pp-headtext"><span class="hfa-eyebrow">The read &middot; written Sun Oct 25, 9:12 AM</span><span class="pp-h2">What the plan sees</span></span>
-    <span class="pp-headchips"><span class="badge acc">10 calls</span><span class="pp-open">open</span></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The result &middot; plan written Sun Oct 25, 9:12 AM &middot; report Tue Oct 27, 5:50 PM</span><span class="pp-h2">What the plan saw. What happened.</span></span>
+    <span class="pp-headchips"><span class="badge warn">script partly held</span><span class="pp-open">open</span></span>
   </summary>
   <div class="pp-body">
-    <div class="pp-hook">
-      <div class="pp-hook-logos"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy"><span class="pp-vs">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy"></div>
-      <blockquote class="pp-quote">Huntley throws into Cincinnati&#x27;s teeth. Henry finds the one soft spot in the game.</blockquote>
-      <p class="pp-headline">Lamar is out again, so Baltimore&#x27;s points have to come off Henry and short throws — into a Bengals defense that is soft on the ground and brutal at the goal line.</p>
+    <div class="rv-stamp warn">
+      <div class="rv-stamp-word"><span>The script</span><b>Partly held</b></div>
+      <div class="rv-stamp-meta">
+        <span>The game took <b>the favorite&#x27;s path</b></span>
+        <span class="rv-win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy">Bengals won 35–13</span>
+      </div>
     </div>
-    <div class="pp-cards">
+    <div class="rv-vs">
+      <div class="rv-col plan">
+        <div class="pp-k">The plan said</div>
+        <div class="pp-hook-logos"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy"><span class="pp-vs">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy"></div>
+        <blockquote class="pp-quote">Huntley throws into Cincinnati&#x27;s teeth. Henry finds the one soft spot in the game.</blockquote>
+        <p class="pp-sub">Lamar is out again, so Baltimore&#x27;s points have to come off Henry and short throws — into a Bengals defense that is soft on the ground and brutal at the goal line.</p>
+      </div>
+      <div class="rv-arrow" aria-hidden="true">&#8594;</div>
+      <div class="rv-col game warn">
+        <div class="pp-k">What happened</div>
+        <p class="rv-headline">Cincinnati trailed 13-0 at half and won 35-13, scoring 35 unanswered as Baltimore went 0-for-3 in the red zone and Joe Burrow turned 30 attempts into four touchdowns — the model had CIN by 3 and the over (46.5, actual 48) and got all three market calls, missing only the size of the gap.</p>
+        <p class="pp-sub">The plan read the shape of this game well: Baltimore&#x27;s drives dying as field goals, Huntley capped downfield, Cincinnati&#x27;s yardage concentrated in Higgins and Chase, and the Bengals&#x27; own run game staying bad. It missed on two inputs that turned the one-score projection into a blowout — Cincinnati&#x27;s front was not soft at all (Henry 2.6 a carry on 17 carries, -5.96 EPA) and Huntley&#x27;s capped efficiency was swamped by volume and 212 YAC.</p><details class="pp-more"><summary>more</summary><p>The record was 6-4 with both parlays dead, and the losing calls fail for mechanism reasons worth separating: Henry&#x27;s under-the-hood collapse looks like a bad read of the Bengals&#x27; run defense, while Brown missing 39.5 by half a yard and Bateman&#x27;s usage are the bounce and a usage error respectively. The favorite path happened as written; the margin did not.</p></details>
+      </div>
+    </div>
+    <div class="rv-tally">
       
-      <div class="pp-card">
-        <div class="pp-k">The read</div>
-        <p class="pp-lead">Cincinnati is a field-goal road favorite in a 46.5-point divisional game, and the lever is Lamar Jackson&#x27;s absence — ruled out Saturday, with Rapoport reporting Sunday morning he is tracking for Week 8.</p>
-        <details class="pp-more"><summary>more</summary><p>Tyler Huntley makes a third straight start into the one unit Cincinnati actually has: a pass defense ranked 4th in EPA allowed, 2nd in red-zone EPA and 2nd in red-zone touchdown rate per trip. That same Bengals defense is 30th in yards per carry allowed and 25th in rush EPA. So Baltimore&#x27;s path is Derrick Henry and short completions, and its finishing is the part most likely to fail — the profile is field position into field goals, not touchdowns. Cincinnati&#x27;s own problem is the mirror: it cannot run (3.63 yards per carry, negative rush EPA in four of five weeks) into a Ravens front allowing 3.82 per carry, 9th. Burrow has thrown 32-plus times in every game. Expect a pass-leaning Bengals offense attacking a secondary that has given up four or more explosive passes in three of six weeks, with Humphrey rating in the 12th percentile of corners.</p></details>
+      <div class="rv-tile " title="The plan's calls graded off the box score at the Normal cushion">
+        <span>Normal calls</span>
+        <b><i class="up">6</i>&ndash;<i class="down">4</i></b>
+        <div class="rv-bar"><i style="width: 60%"></i></div>
       </div>
       
-      <div class="pp-card">
-        <div class="pp-k">Why</div>
-        <p class="pp-lead">Baltimore&#x27;s two Huntley starts produced 201 and 165 passing yards at 6.3 and 5.3 per attempt, and our Week 6 review found the Ravens throwing 72.5% of snaps while leading because the run stopped working without a quarterback run threat.</p>
-        <details class="pp-more"><summary>more</summary><p>Here the run should work — Cincinnati is the softest front he has met since Week 1 — but the red zone is a wall, which is where Henry&#x27;s touchdown price and Baltimore&#x27;s kicker diverge from the yardage. On the Cincinnati side, volume is the dependable half: Higgins has led the air-yards share in three of five weeks, and Chase&#x27;s reception rung is set at a number he has cleared once all year.</p></details>
+      <div class="rv-tile " title="The plan's calls graded off the box score at the Edge cushion">
+        <span>Edge calls</span>
+        <b><i class="up">8</i>&ndash;<i class="down">2</i></b>
+        <div class="rv-bar"><i style="width: 80%"></i></div>
       </div>
       
-      <div class="pp-card">
-        <div class="pp-k">What would change it</div>
-        <p class="pp-lead">Any late news on Jackson (the designation is filed, but a surprise activation rewrites both sides).</p>
-        <details class="pp-more"><summary>more</summary><p>Baltimore&#x27;s interior line — Stanley did not practice at all. And Cincinnati&#x27;s three veteran defensive linemen listed as rest-day DNPs: if Lawrence, Allen and Hill are genuinely limited, the run-defense fade gets worse, not better.</p></details>
+      <div class="rv-tile hot" title="The plan's calls graded off the box score at the Edge+ cushion">
+        <span>Edge+ calls</span>
+        <b><i class="up">9</i>&ndash;<i class="down">1</i></b>
+        <div class="rv-bar"><i style="width: 90%"></i></div>
       </div>
+      
+      <a class="rv-tile lt good" href="#grade" title="The projection graded: team volume and yardage, player lines and the market calls it implied"><span>Projection</span><b>B</b><small>76 of 100</small></a>
+      <div class="rv-tile" title="Projected player lines that landed in range"><span>Player lines</span><b>31<small>/39</small></b><small>in range</small></div>
+      <div class="rv-tile mk"><span>The market</span><em>CIN covered (CIN by 3)</em><em>Over 46.5 (48)</em></div>
+    </div>
+    
+    <div class="pp-card wide rv-why">
+      <div class="pp-k">Why the script partly held</div>
+      <p class="pp-lead">The favorite path is exactly what happened in its mechanics — Burrow hit chunk throws (44 and 43 to Higgins, 30 to Chase) and Cincinnati held Baltimore to kicks inside the 20 (3 trips, 0 TDs, two Loop field goals) — but the plan&#x27;s &#x27;24-19, one-score game in the low-to-mid 40s&#x27; was 35-13 on 48 points, and Brown&#x27;s clock-burn carries never materialized (11 carries, 39 yards). The checks confirm the pace call (116 plays vs 121.5 league, average) but both lean calls failed: Cincinnati came in balanced at 60.8% pass rather than above its 63.2% season mark, and Baltimore threw on 58.5% of plays against a 49.2% season rate, abandoning the run-to-survive premise by the second quarter.</p>
       
     </div>
+    
+    
+    <details class="rv-fold">
+      <summary>The plan's pre-game read <span class="flat">&middot; as written before kickoff</span></summary>
+      <div class="pp-cards">
+        <div class="pp-card"><div class="pp-k">The read</div><p class="pp-lead">Cincinnati is a field-goal road favorite in a 46.5-point divisional game, and the lever is Lamar Jackson&#x27;s absence — ruled out Saturday, with Rapoport reporting Sunday morning he is tracking for Week 8.</p><details class="pp-more"><summary>more</summary><p>Tyler Huntley makes a third straight start into the one unit Cincinnati actually has: a pass defense ranked 4th in EPA allowed, 2nd in red-zone EPA and 2nd in red-zone touchdown rate per trip. That same Bengals defense is 30th in yards per carry allowed and 25th in rush EPA. So Baltimore&#x27;s path is Derrick Henry and short completions, and its finishing is the part most likely to fail — the profile is field position into field goals, not touchdowns. Cincinnati&#x27;s own problem is the mirror: it cannot run (3.63 yards per carry, negative rush EPA in four of five weeks) into a Ravens front allowing 3.82 per carry, 9th. Burrow has thrown 32-plus times in every game. Expect a pass-leaning Bengals offense attacking a secondary that has given up four or more explosive passes in three of six weeks, with Humphrey rating in the 12th percentile of corners.</p></details></div><div class="pp-card"><div class="pp-k">Why</div><p class="pp-lead">Baltimore&#x27;s two Huntley starts produced 201 and 165 passing yards at 6.3 and 5.3 per attempt, and our Week 6 review found the Ravens throwing 72.5% of snaps while leading because the run stopped working without a quarterback run threat.</p><details class="pp-more"><summary>more</summary><p>Here the run should work — Cincinnati is the softest front he has met since Week 1 — but the red zone is a wall, which is where Henry&#x27;s touchdown price and Baltimore&#x27;s kicker diverge from the yardage. On the Cincinnati side, volume is the dependable half: Higgins has led the air-yards share in three of five weeks, and Chase&#x27;s reception rung is set at a number he has cleared once all year.</p></details></div><div class="pp-card"><div class="pp-k">What would change it</div><p class="pp-lead">Any late news on Jackson (the designation is filed, but a surprise activation rewrites both sides).</p><details class="pp-more"><summary>more</summary><p>Baltimore&#x27;s interior line — Stanley did not practice at all. And Cincinnati&#x27;s three veteran defensive linemen listed as rest-day DNPs: if Lawrence, Allen and Hill are genuinely limited, the run-defense fade gets worse, not better.</p></details></div>
+      </div>
+    </details>
+    
   </div>
 </details>
 
 
-<details class="hfa-card hfa-sec pp-sec pp-script" id="script" data-sec="script" open>
+
+<details class="hfa-card hfa-sec pp-sec rv-game" id="game" data-sec="game" open>
   <summary class="pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    <span class="pp-headtext"><span class="hfa-eyebrow">The script</span><span class="pp-h2">How the game plays</span></span>
-    <span class="pp-headchips"><span class="badge mute">average pace</span><span class="badge mute">medium confidence</span><span class="pp-open">open</span></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The game</span><span class="pp-h2">How it was decided</span></span>
+    <span class="pp-headchips"><span class="badge mute">6 turning points</span><span class="pp-open">open</span></span>
+  </summary>
+  <div class="pp-body">
+    
+    <div class="pp-k">Turning points</div>
+    <ol class="rv-tl">
+      
+      <li style="--pp-team: #241773">
+        <span class="rv-clock">Q1 13:45</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="BAL" loading="lazy"><span>Huntley 48-yard TD to Flowers on 3rd-and-9 (EPA +5.3, WPA +0.167)</span></div>
+          <p class="pp-sub">The game&#x27;s biggest single swing and the only explosive Baltimore produced after the first quarter; it gave the Ravens a lead they held for 39 minutes of game clock.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #241773">
+        <span class="rv-clock">Q2 09:46</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="BAL" loading="lazy"><span>Loop 34-yard field goal after a Hibner false start at the CIN 11 wiped out a run-formation snap</span></div>
+          <p class="pp-sub">The clearest instance of the recurring pattern: a 17-play, 93-yard drive ends in three points with a pre-snap flag inside the 20.</p>
+          <details class="pp-more"><summary>more</summary><p>BAL finished 0-for-3 on red-zone touchdowns.</p></details>
+        </div>
+      </li>
+      
+      <li style="--pp-team: #FB4F14">
+        <span class="rv-clock">Q3 04:33</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="CIN" loading="lazy"><span>Burrow 13-yard TD to Higgins, capping a six-play, 47-yard drive (EPA +2.02)</span></div>
+          <p class="pp-sub">Second touchdown in five minutes of the third quarter put Cincinnati ahead 14-13; the Bengals&#x27; second-half EPA/play was +0.70 against -0.654 for Baltimore.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #241773">
+        <span class="rv-clock">Q4 15:00</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="BAL" loading="lazy"><span>4th-and-2 at the CIN 12, Huntley incomplete to Cuevas (EPA -3.11, WPA -0.15)</span></div>
+          <p class="pp-sub">Baltimore&#x27;s last real chance to retake the lead.</p>
+          <details class="pp-more"><summary>more</summary><p>A 10-play, 59-yard drive produced nothing; after this the Ravens never got inside the 20 again.</p></details>
+        </div>
+      </li>
+      
+      <li style="--pp-team: #FB4F14">
+        <span class="rv-clock">Q4 12:52</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="CIN" loading="lazy"><span>Burrow 44 yards to Higgins on 2nd-and-6 (EPA +3.24, WPA +0.14)</span></div>
+          <p class="pp-sub">Broke an 8-play, 76-yard drive from the CIN 12 open; a DPI on Wallace at the goal line and Perine&#x27;s 1-yard plunge made it 21-13.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #241773">
+        <span class="rv-clock">Q4 07:25</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="BAL" loading="lazy"><span>Huntley intercepted by Knight at the BAL 38, returned to the 24 (EPA -6.02)</span></div>
+          <p class="pp-sub">Turned a 15-point deficit into 22 in 57 seconds — Burrow found Sample for 16 and the score ended.</p>
+          
+        </div>
+      </li>
+      
+    </ol>
+    
+    
+    <div class="pp-k pp-k-sec">What decided it <span class="flat">&middot; and whether the numbers showed it before kickoff</span></div>
+    <div class="rv-decided">
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag">pre-game tell</span>
+        <p class="pp-lead">Red-zone finishing in opposite directions</p>
+        <p class="pp-sub">CIN 5 trips / 5 TDs / +0.99 EPA per red-zone play; BAL 3 trips / 0 TDs / 2 FGs / -0.724 EPA per play.</p>
+        <details class="pp-more"><summary>more</summary><p>Neither team&#x27;s field EPA was far apart (CIN +0.181, BAL +0.031).</p><p><b>The tell.</b> The engine had Cincinnati&#x27;s defense allowing a 0.357 red-zone TD rate and -0.497 EPA/play inside the 20 on the season, with the Ravens&#x27; own red-zone EPA/play at only +0.095 — but the note warns this is the least persistent input, so it was a lean, not a lock.</p></details>
+      </div>
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag">in-game only</span>
+        <p class="pp-lead">Baltimore&#x27;s run game produced nothing against the front it was supposed to beat</p>
+        <p class="pp-sub">27 carries, 83 yards (3.07), -0.319 EPA/rush, 23.1% rush success, zero 10-yard runs; Henry 17/45 with -5.96 rushing EPA and a TFL.</p>
+        <details class="pp-more"><summary>more</summary><p>Lawrence (2 TFL) and Battle, Hill and Jenkins all show tackles for loss in the pbp.</p><p><b>The tell.</b> Season-to-date Cincinnati allowed 5.04 a carry; nothing pre-game pointed at a 3.07 game. This is the single biggest divergence from the inputs.</p></details>
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag">pre-game tell</span>
+        <p class="pp-lead">The deep ball existed for one quarterback only</p>
+        <p class="pp-sub">Burrow 4/5 on deep throws for 125 yards and 15.5 CPOE; Huntley 0/5 deep, -1.8 CPOE, 212 of his 298 yards after the catch.</p>
+        <details class="pp-more"><summary>more</summary><p>Cincinnati&#x27;s three 20-plus passes all came in the fourth quarter.</p><p><b>The tell.</b> Jackson out for a third straight start plus Hawkins (safety) out of Baltimore&#x27;s secondary; the engine had BAL allowing 7.29 YPA and four-plus explosives in multiple weeks.</p></details>
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag">pre-game tell</span>
+        <p class="pp-lead">Pressure and pre-snap discipline</p>
+        <p class="pp-sub">Huntley sacked 4 times on 40 dropbacks (25% sack-or-hit), including drive-enders at Q1 7:25, Q3 8:03 and Q4 9:41 on 3rd-and-2; Baltimore took 10 flags for 57 yards, 7 of them pre-snap, against Cincinnati&#x27;s single 15-yarder.</p>
+        <details class="pp-more"><summary>more</summary><p><b>The tell.</b> BAL&#x27;s pre-snap flag rate of 2.5/game (league 1.55) with the &#x27;pre-snap penalties&#x27; tag in four of six prior weeks, and its 0.068 sack rate allowed.</p></details>
+      </div>
+      
+    </div>
+    
+    
+    <details class="rv-fold">
+      <summary>The full story <span class="flat">&middot; the report's account, start to finish</span></summary>
+      <div class="rv-story"><h2>The short version</h2>
+<p>Baltimore led 13-0 at the half and lost 35-13. The market numbers all landed — Cincinnati by three, over 46.5, final 48 points — but the shape was a blowout the projection never drew, and it came from one place: Cincinnati went five-for-five on red-zone trips at +0.99 EPA per play inside the 20, and Baltimore went zero-for-three at -0.724. Between the 20s this was close to even (CIN +0.181, BAL +0.031). At the goal line it was not close at all.</p>
+<h2>How it unfolded</h2>
+<p>The Ravens front-loaded their entire offense. Huntley's 48-yard touchdown to Flowers on 3rd-and-9 at Q1 13:45 was worth +5.3 EPA and 16.7 points of win probability, and a 17-play, 93-yard march that ate 11 minutes of clock ended in a 34-yard field goal after Hibner false-started at the CIN 11. A second 14-play drive ended in a 24-yarder. That is 32 plays and 180 yards for ten points — the whole Baltimore game in miniature.</p>
+<p>Cincinnati's first half was its own worst version: 19 plays, 73.7% pass, -0.279 EPA per play, three punts and a Mike Green sack to end the half. The third quarter flipped it. Nine plays and 66 yards to a Gesicki touchdown, then a short field after a Howell sack forced a three-and-out, and a Higgins 13-yard score made it 14-13. Baltimore's answer was a ten-play drive that reached the CIN 12 and died on a fourth-and-two incompletion to Cuevas at Q4 15:00 (-3.11 EPA, -0.15 WPA). From there Cincinnati scored on four straight possessions: Higgins 44 and a Wallace DPI set up Perine's one-yard plunge, Chase's 30-yarder and Higgins' 43 produced a two-yard touchdown to Chase, Knight's interception at the BAL 38 produced Sample's 16-yard score. Twenty-two unanswered in nine minutes.</p>
+<h2>Why the game diverged from the projection</h2>
+<p>Two inputs. First, Baltimore's run game. The engine had Cincinnati allowing 5.04 a carry and blended Henry to 82.8 yards; he got 17 carries — the volume was there — for 45 yards, -5.96 rushing EPA, one stuff, no run longer than nine. Team-wide it was 27 for 83 at 23.1% success. Lawrence played two-thirds of the snaps with two tackles for loss. Second, Huntley's yardage. The efficiency read was correct in every component — 0-for-5 deep, -1.8 CPOE, 7.0 average depth — and he still threw for 298 because Baltimore ran 67 plays, 40 dropbacks, and its receivers piled up 212 yards after the catch, 101 of them Flowers'. Yards without points on one side; Burrow's 4-for-5 deep and 15.5 CPOE turning 53 plays into 35 points on the other.</p>
+<h2>The plan against the game</h2>
+<p>The pre-game plan had the right movie and the wrong ending. It said Baltimore's half would arrive in threes against a defense ranked near the top at keeping teams out of the end zone, and that Cincinnati's yardage would concentrate in Higgins and Chase against a leaky secondary — both exactly right, and the Higgins over and the Henry-no-touchdown call came in off precisely those mechanisms. What it got wrong was the premise under the Henry rushing over: it treated the Bengals' allowed yards-per-carry rank as a fixed property rather than a healthy-interior question. It also called both leans backwards — Cincinnati came in balanced at 60.8% rather than above 63%, Baltimore threw on 58.5% of snaps against a 49.2% season rate — which is the tell that the run-to-survive script never existed once the scoreboard moved.</p>
+<h2>Player by player</h2>
+<p>Higgins is the lesson and the trap: 61.2% of the team's air yards on seven targets, 148 receiving yards, 90 above projection — but 87 of those came on two throws. The role repeats; the number does not. Chase was the projection's best call (7.1 targets to 7, 4.8 catches to 5) and still scored. Chase Brown's 11 carries for 39 is a volume story — Cincinnati ran only 19 times in a 53-play game, with Perine taking the goal-line carry and Brooks the late ones. On the other side, Flowers at 11 targets and 8 catches is the sort of funnel to buy whenever this quarterback is throwing at a seven-yard depth and chasing. Bateman at 73% of snaps and 91 air yards kills the Week 6 role-shrink read. Lane at 68.7% with five targets is new and real.</p>
+<h2>The defenses</h2>
+<p>Cincinnati generated four sacks and six hits on 40 Huntley dropbacks against a Baltimore line that played its starters, and three of those sacks ended drives — Q1 7:25, Q3 8:03 and Q4 9:41 on 3rd-and-2. No pressure charting is published for this game, so that is a sack-and-hit proxy, not a scheme read; the available charting shows Baltimore faced 4.22 rushers and a 19.5% blitz rate while Cincinnati faced 29.4%. Baltimore's defense held up between the 20s and lost the game in two chunks and a flag: Wiggins beaten for 43, Martin and Hamilton late on the 44, Wallace's interference at the goal line. Ten Baltimore penalties for 57 yards, seven pre-snap, against one Cincinnati flag.</p>
+<h2>What the model should take from this</h2>
+<p>Condition the Bengals' run-defense read on interior availability — the season rate said soft and the game said 3.07 a carry. Stop blending Baltimore toward a run lean while Jackson is out; three straight starts of short, high-volume throwing says the pass rate goes up, not down, and the yardage shows up on YAC even when the efficiency inputs are right. And weigh Baltimore's pre-snap flags, now tagged in five of seven weeks and seven of ten this game, specifically for where they occur: one of them cost a touchdown try at the 11.</p></div>
+    </details>
+    
+  </div>
+</details>
+
+
+
+<details class="hfa-card hfa-sec pp-sec pp-script rv-script" id="script" data-sec="script" open>
+  <summary class="pp-head">
+    <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The script, graded</span><span class="pp-h2">Called against played</span></span>
+    <span class="pp-headchips"><span class="badge warn">script partly held</span><span class="pp-open">open</span></span>
   </summary>
   <div class="pp-body">
     <div class="pp-gauges">
-      <div class="pp-gauge" title="Plays and tempo the plan expects">
-        <div class="pp-k">Pace</div>
-        <div class="pp-bars"><i class="on"></i><i class="on"></i><i class=""></i></div>
-        <b>average</b>
+      
+      <div class="pp-gauge rv-gauge held" title="Both teams ran 116 plays; two league-average offenses run 121.5">
+        <div class="pp-k">Pace <span class="rv-mark">&#10003;</span></div>
+        <div class="rv-row"><small>called</small><span class="pp-bars sm"><i class="on"></i><i class="on"></i><i class=""></i></span><em>average</em></div>
+        <div class="rv-row played"><small>played</small><span class="pp-bars sm"><i class="on"></i><i class="on"></i><i class=""></i></span><em>average</em></div>
+        <span class="rv-note">116 plays &middot; league 121.5</span>
       </div>
-      <div class="pp-gauge" title="How sure the plan is of its script">
-        <div class="pp-k">Confidence</div>
+      
+      <div class="pp-gauge" title="How sure the plan was of its script">
+        <div class="pp-k">The plan's confidence</div>
         <div class="pp-pips"><i class="on"></i><i class="on"></i><i class=""></i></div>
         <b>medium</b>
       </div>
       
-      <div class="pp-gauge lean" title="Already the more pass-heavy side at 63%, and its run game (3.63 a carry) meets a Ravens front allowing 3.82, 9th — every stalled drive becomes a dropback.">
-        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy"> CIN leans</div>
-        <div class="pp-leanbar"><span>run</span><div class="track"><i style="left: 85%"></i></div><span>pass</span></div>
-        <b>pass</b>
+      <div class="pp-gauge lean rv-gauge miss" title="Already the more pass-heavy side at 63%, and its run game (3.63 a carry) meets a Ravens front allowing 3.82, 9th — every stalled drive becomes a dropback.">
+        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy"> CIN lean <span class="rv-mark">&#10007;</span></div>
+        <div class="pp-leanbar"><span>run</span><div class="track"><i class="called" style="left: 85%" title="called"></i><i class="played" style="left: 50%" title="played"></i></div><span>pass</span></div>
+        <b class="rv-cvp">pass <i>&#8594;</i> balanced</b><span class="rv-note">passed on 61% &middot; season 63%</span>
       </div>
       
-      <div class="pp-gauge lean" title="Without Jackson the throwing game is short and low-yield; Cincinnati is 30th in yards per carry and 25th in rush EPA allowed, so the ground game is the only efficient thing available.">
-        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy"> BAL leans</div>
-        <div class="pp-leanbar"><span>run</span><div class="track"><i style="left: 15%"></i></div><span>pass</span></div>
-        <b>run</b>
+      <div class="pp-gauge lean rv-gauge miss" title="Without Jackson the throwing game is short and low-yield; Cincinnati is 30th in yards per carry and 25th in rush EPA allowed, so the ground game is the only efficient thing available.">
+        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy"> BAL lean <span class="rv-mark">&#10007;</span></div>
+        <div class="pp-leanbar"><span>run</span><div class="track"><i class="called" style="left: 15%" title="called"></i><i class="played" style="left: 85%" title="played"></i></div><span>pass</span></div>
+        <b class="rv-cvp">run <i>&#8594;</i> pass</b><span class="rv-note">passed on 58% &middot; season 49%</span>
       </div>
       
     </div>
-    <div class="pp-card wide">
-      <p class="pp-lead">Cincinnati throws to move the ball and Baltimore runs to survive, and both offenses meet the half of the opponent that is actually good. Baltimore should get yards on the ground — Cincinnati is 30th in yards per carry allowed — but the Bengals are 2nd in the league at keeping teams out of the end zone once they cross the 20, so Ravens drives die as field goals.</p>
-      <details class="pp-more"><summary>more</summary><p>Huntley&#x27;s throwing game is short and capped against a pass defense ranked 4th in EPA allowed. Cincinnati&#x27;s own run game is dead against a Baltimore front allowing 3.82 a carry, so Burrow throws early and often and the yardage comes from Higgins and Chase against a secondary that leaks chunk plays. Expect a one-score game in the low-to-mid 40s with Baltimore&#x27;s half arriving in threes.</p></details>
-    </div>
+    <div class="rv-legend"><span><i class="called"></i>called</span><span><i class="played"></i>played</span></div>
+    <div class="pp-k pp-k-sec">The two paths <span class="flat">&middot; the game took the favorite&#x27;s path</span></div>
     <div class="pp-paths">
       
-      <div class="pp-path fav" style="--pp-team: #FB4F14">
-        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy"><span class="pp-k">If Bengals win</span><span class="badge mute">favorite</span></div>
+      <div class="pp-path fav took" style="--pp-team: #FB4F14">
+        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy"><span class="pp-k">If Bengals win</span><span class="badge good">the way it went</span><span class="badge acc">won</span></div>
         <p class="pp-lead">Burrow gets to 33-plus attempts, hits two or three chunk throws on Humphrey&#x27;s side, and Cincinnati&#x27;s defense holds Baltimore to kicks inside the 20.</p>
         <details class="pp-more"><summary>more</summary><p>The Bengals lead by a score in the fourth, Chase Brown gets clock-burn carries against a soft front and Cincinnati wins 24-19.</p></details>
       </div>
       
-      <div class="pp-path dog" style="--pp-team: #241773">
-        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy"><span class="pp-k">If Ravens win</span><span class="badge mute">underdog</span></div>
+      <div class="pp-path dog not" style="--pp-team: #241773">
+        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy"><span class="pp-k">If Ravens win</span><span class="badge mute">didn't happen</span></div>
         <p class="pp-lead">Henry gets 22-plus carries and actually cashes the matchup on the ground, Baltimore wins time of possession, and Huntley&#x27;s short game converts enough third downs that the Ravens steal two touchdowns instead of two field goals.</p>
         <details class="pp-more"><summary>more</summary><p>Add one Burrow giveaway under interior pressure and it is 23-20 Baltimore.</p></details>
       </div>
       
     </div>
     
-    <div class="pp-k pp-k-sec">What swings it</div>
+    <div class="pp-k pp-k-sec">What the plan said would swing it <span class="flat">&middot; weighed after the game, biggest first</span></div>
     <div class="pp-swing">
-      <div class="pp-swingcard"><b class="n">1</b><div><p class="pp-lead">Lamar Jackson is out; Huntley&#x27;s third straight start caps Baltimore&#x27;s downfield passing and its red-zone equity.</p></div></div><div class="pp-swingcard"><b class="n">2</b><div><p class="pp-lead">Cincinnati is 2nd in red-zone TD rate allowed — Baltimore&#x27;s yards turning into threes instead of sevens is the whole total.</p></div></div><div class="pp-swingcard"><b class="n">3</b><div><p class="pp-lead">Ronnie Stanley did not practice (toe); a patched Ravens line against a front that generated 23.7% pressure on Huntley last week.</p></div></div><div class="pp-swingcard"><b class="n">4</b><div><p class="pp-lead">Cincinnati&#x27;s Lawrence, Allen and Hill all logged rest-day DNPs — their snap counts decide whether the soft run-defense read holds.</p></div></div><div class="pp-swingcard"><b class="n">5</b><div><p class="pp-lead">Hawkins (87% of safety snaps) is out for Baltimore, thinning a secondary that has already leaked explosives in three of six weeks.</p></div></div>
+      
+      <div class="pp-swingcard rv-swing decisive">
+        <span class="rv-weight">decisive</span>
+        <p class="pp-lead">Lamar Jackson is out; Huntley&#x27;s third straight start caps Baltimore&#x27;s downfield passing and its red-zone equity.</p>
+        <p class="rv-went"><b>Went:</b> Huntley went 0-for-5 on deep throws with -1.8 CPOE, took four sacks on 40 dropbacks, threw the game-ending interception at Q4 7:25 (-6.02 EPA) and led three red-zone trips to zero touchdowns.</p>
+        <details class="pp-more"><summary>more</summary><p><b>In the game.</b> The cap on downfield and red-zone equity was the game.</p></details>
+      </div>
+      
+      <div class="pp-swingcard rv-swing decisive">
+        <span class="rv-weight">decisive</span>
+        <p class="pp-lead">Cincinnati is 2nd in red-zone TD rate allowed — Baltimore&#x27;s yards turning into threes instead of sevens is the whole total.</p>
+        <p class="rv-went"><b>Went:</b> Exactly as called: Baltimore&#x27;s 3 red-zone trips produced 2 field goals and a failed fourth-and-2 at the 12, -0.724 EPA/play inside the 20, while Cincinnati went 5-for-5 at +0.99.</p>
+        
+      </div>
+      
+      <div class="pp-swingcard rv-swing decisive">
+        <span class="rv-weight">decisive</span>
+        <p class="pp-lead">Cincinnati&#x27;s Lawrence, Allen and Hill all logged rest-day DNPs — their snap counts decide whether the soft run-defense read holds.</p>
+        <p class="rv-went"><b>Went:</b> The soft-run read broke entirely: Lawrence played 66.7% of snaps with 2 TFL, Cincinnati allowed 3.07 a carry and -0.319 EPA/rush, 23.1% rush success and zero 10-plus runs to a team averaging 4.91.</p>
+        
+      </div>
+      
+      <div class="pp-swingcard rv-swing contributed">
+        <span class="rv-weight">contributed</span>
+        <p class="pp-lead">Ronnie Stanley did not practice (toe); a patched Ravens line against a front that generated 23.7% pressure on Huntley last week.</p>
+        <p class="rv-went"><b>Went:</b> Stanley played 100% of snaps but false-started twice (Q2 4:34, Q4 6:13) and Baltimore allowed 4 sacks and 6 hits (25% sack-or-hit), with sacks ending drives at Q1 7:25, Q3 8:03 and Q4 9:41 on 3rd-and-2.</p>
+        
+      </div>
+      
+      <div class="pp-swingcard rv-swing contributed">
+        <span class="rv-weight">contributed</span>
+        <p class="pp-lead">Hawkins (87% of safety snaps) is out for Baltimore, thinning a secondary that has already leaked explosives in three of six weeks.</p>
+        <p class="rv-went"><b>Went:</b> With Hawkins out, Baltimore surrendered three 20-plus passes — Higgins 44 (Martin and Hamilton on the tackle) and 43 (Wiggins), Chase 30 — plus a 7-yard DPI on Wallace at the goal line that set up the go-ahead-plus touchdown.</p>
+        
+      </div>
+      
     </div>
     
     
-    <div class="pp-k pp-k-sec">Legs the same script produces <span class="flat">&middot; they move as one, which is what a same-game parlay pays for</span></div>
+    <div class="pp-k pp-k-sec">The legs the same script produced <span class="flat">&middot; graded off the box score</span></div>
     <div class="pp-angles">
       
-      <div class="pp-angle">
-        <div class="pp-angletitle">Baltimore moves it, then kicks</div>
-        <div class="pp-legs"><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>Derrick Henry</b><em>over 79.5 rush yds</em></span><span class="pp-leg under"><i class="arrow" aria-hidden="true">&#9660;</i><b>Derrick Henry</b><em>not to score</em></span></div>
+      <div class="pp-angle ">
+        <div class="pp-angletitle">Baltimore moves it, then kicks <span class="badge mute">1 of 2 hit</span></div>
+        <div class="pp-legs"><span class="pp-leg over miss"><i class="arrow" aria-hidden="true">&#9650;</i><b>Derrick Henry</b><em>over 79.5 rush yds</em><span class="rv-res">&#10007; 45</span></span><span class="pp-leg under hit"><i class="arrow" aria-hidden="true">&#9660;</i><b>Derrick Henry</b><em>not to score</em><span class="rv-res">&#10003; 0</span></span></div>
         <p class="pp-sub">One script produces all three: Henry grinds yards against the league&#x27;s softest yards-per-carry front, then the drives die inside the 20 against a defense ranked 2nd in red-zone TD rate allowed, and the kicker collects.</p>
         
       </div>
       
-      <div class="pp-angle">
-        <div class="pp-angletitle">Huntley short and often</div>
-        <div class="pp-legs"><span class="pp-leg under"><i class="arrow" aria-hidden="true">&#9660;</i><b>Tyler Huntley</b><em>under 199.5 pass yds</em></span><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>Zay Flowers</b><em>over 5.5 receptions</em></span><span class="pp-leg under"><i class="arrow" aria-hidden="true">&#9660;</i><b>Mark Andrews</b><em>under 29.5 rec yds</em></span></div>
+      <div class="pp-angle ">
+        <div class="pp-angletitle">Huntley short and often <span class="badge mute">2 of 3 hit</span></div>
+        <div class="pp-legs"><span class="pp-leg under miss"><i class="arrow" aria-hidden="true">&#9660;</i><b>Tyler Huntley</b><em>under 199.5 pass yds</em><span class="rv-res">&#10007; 298</span></span><span class="pp-leg over hit"><i class="arrow" aria-hidden="true">&#9650;</i><b>Zay Flowers</b><em>over 5.5 receptions</em><span class="rv-res">&#10003; 8</span></span><span class="pp-leg under hit"><i class="arrow" aria-hidden="true">&#9660;</i><b>Mark Andrews</b><em>under 29.5 rec yds</em><span class="rv-res">&#10003; 23</span></span></div>
         <p class="pp-sub">A backup quarterback throwing at a low depth into a top-five pass defense piles up catches for his one separator while the team&#x27;s yardage stays capped and the tight end gets nothing downfield.</p>
         
       </div>
       
-      <div class="pp-angle">
-        <div class="pp-angletitle">Bengals lead, Burrow stays clean</div>
-        <div class="pp-legs"><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>Chase Brown</b><em>over 39.5 rush yds</em></span><span class="pp-leg under"><i class="arrow" aria-hidden="true">&#9660;</i><b>Joe Burrow</b><em>under 0.5 INTs</em></span><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>Tee Higgins</b><em>over 69.5 rec yds</em></span></div>
+      <div class="pp-angle ">
+        <div class="pp-angletitle">Bengals lead, Burrow stays clean <span class="badge mute">2 of 3 hit</span></div>
+        <div class="pp-legs"><span class="pp-leg over miss"><i class="arrow" aria-hidden="true">&#9650;</i><b>Chase Brown</b><em>over 39.5 rush yds</em><span class="rv-res">&#10007; 39</span></span><span class="pp-leg under hit"><i class="arrow" aria-hidden="true">&#9660;</i><b>Joe Burrow</b><em>under 0.5 INTs</em><span class="rv-res">&#10003; 0</span></span><span class="pp-leg over hit"><i class="arrow" aria-hidden="true">&#9650;</i><b>Tee Higgins</b><em>over 69.5 rec yds</em><span class="rv-res">&#10003; 148</span></span></div>
         <p class="pp-sub">If Cincinnati gets ahead on Higgins chunk plays, the run volume returns for Brown and the throwing turns conservative — fewer forced attempts, fewer giveaway chances.</p>
         
       </div>
@@ -1498,135 +1939,185 @@
     <h2 class="gm-h2"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy"><span><em class="full">Bengals</em><em class="short">CIN</em> offense</span><span class="vs">against the</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy"><span><em class="full">Ravens</em><em class="short">BAL</em> defense</span></h2>
   </summary>
   <div class="hfa-head gm-mhead">
-    <p class="lede">Projected CIN offense output &mdash; equivalently, what the BAL defense allows. The engine blends each offense's season-to-date rates with the defense across from it, anchored on the market's implied points.</p>
+    <p class="lede">What the CIN offense put up against the BAL defense, the projection beneath each number: <span class="up">green</span> beat it, <span class="down">amber</span> fell short (INTs judged the other way).</p>
   </div>
   
-<div class="pp-off">
-  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Bengals offense</span><span class="badge mute">medium confidence</span></div>
+<div class="pp-off rv-off">
+  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Bengals offense, graded</span><span class="badge warn">partly held</span><span class="badge mute">calls 3&ndash;1</span></div>
   
-  <div class="pp-offcards">
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div>
-      <p class="pp-lead">A volume passing offense: 63% pass rate, 7.2 yards per attempt, +0.133 field EPA, and 32-plus Burrow attempts in every game.</p>
-      <details class="pp-more"><summary>more</summary><p>The run game is the weak half at 3.63 yards per carry with negative rush EPA in Weeks 2, 4 and 5.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div>
-      <p class="pp-lead">Chunk throws to Higgins and Chase — three games tagged for explosive passing — plus a genuinely good finishing rate inside the 20 (64.3% of trips become touchdowns, +0.221 red-zone EPA) and a kicker with 57- and 58-yarders already banked.</p>
-      
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div>
-      <p class="pp-lead">A four-man rush (five sacks and 38.9% pressure at Houston in Week 2; 11 hits from Jacksonville in Week 4), its own pre-snap flags (2.0 per game vs 1.55 league, tagged in three of five weeks), and defenses that make it one-dimensional by stuffing the run.</p>
-      
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div>
-      <p class="pp-lead">Baltimore is 9th in yards per carry allowed and 16th in rush EPA, so the ground game stays bad — but the Ravens blitz only 16.4% and rank 12th in pass EPA allowed, with Humphrey at the 12th percentile among corners and four-plus explosive passes allowed in three of six weeks.</p>
-      <details class="pp-more"><summary>more</summary><p>The Ravens are also the league&#x27;s 7th-least-penalized defense, so no free yardage.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div>
-      <p class="pp-lead">Iosivas (IR) and Hudson (IR) thin the pass-catching room, concentrating targets on Chase, Higgins and the backs.</p>
-      <details class="pp-more"><summary>more</summary><p>On the Baltimore side, safety Jaylinn Hawkins (87% of snaps) is out and Tavius Robinson is on IR — fewer bodies behind a secondary already leaking chunk plays.</p></details>
-    </div>
-    
+  <div class="rv-eh">
+    <div class="rv-ehcol"><span class="pp-k">Expected</span><p class="pp-lead">Pass rate at or above its 63% season mark, Burrow in the 33-36 attempt range, Chase Brown 15-18 carries against the softer back half of the Ravens front once Cincinnati leads, and the receiving yardage concentrated in Higgins and Chase rather than spread.</p></div>
+    <div class="rv-ehcol happened warn"><span class="pp-k">Happened</span><p class="pp-lead">The concentration held — Higgins and Chase took 14 of 30 targets for 210 of 292 yards — but the volume did not: 30 attempts (not 33-36), 60.4% pass (below the 63% mark), and Brown got 11 carries, not 15-18, on a 53-play afternoon.</p></div>
   </div>
   
   
-  <div class="pp-expect"><span class="pp-k">Expect</span><p class="pp-lead">Pass rate at or above its 63% season mark, Burrow in the 33-36 attempt range, Chase Brown 15-18 carries against the softer back half of the Ravens front once Cincinnati leads, and the receiving yardage concentrated in Higgins and Chase rather than spread.</p></div>
-  
-  
-  <div class="pp-k pp-k-sec">Who the plan moves <span class="flat">&middot; 2 up, 2 down &middot; one player, one market, one side of Kalshi's line when the plan was written</span></div>
-  <div class="pp-calls">
+  <div class="pp-k pp-k-sec">Who the plan moved <span class="flat">&middot; 2 up, 2 down &middot; graded off the box score, with whether the reason given showed up</span></div>
+  <div class="pp-calls rv-calls">
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Chase Brown</b><span class="pp-bet">over 39.5 rush yds</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 64%"></i></div><b>64%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 51%"></i></div><b>51%</b></div>
+      
+      <div class="rv-meter" title="The line 39.5 against the actual 39">
+        <div class="track"><i class="fill" style="width: 79.0%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 39.5</span><b>39</b></div>
       </div>
+      
+      <span class="badge bad rv-read">missed · read partly held</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> The lead did come and the lean did return — Cincinnati passed only 42.1% of its 19 plays while leading — but Brown finished with 11 carries for 39 yards; Perine took the goal-line carry and Brooks three in the final four minutes.</p>
       <div class="pp-callmeta">
-        <span class="badge mute" title="The opposing defense's rank on rush EPA allowed entering the week (#1 toughest)">D #16 rush EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: over 39.5 rush yds"><i>Normal</i> 40+ <small>54&cent;</small></span><span class="rung" title="Edge: 30+ rush yds"><i>Edge</i> 30+ <small>69&cent;</small></span><span class="rung" title="Edge+: 25+ rush yds"><i>Edge+</i> 25+ <small>76&cent;</small></span>
+        <span class="rung miss" title="Normal: over 39.5 rush yds"><i>Normal</i> 40+ <small>54&cent;</small></span><span class="rung hit" title="Edge: 30+ rush yds"><i>Edge</i> 30+ <small>69&cent;</small></span><span class="rung hit" title="Edge+: 25+ rush yds"><i>Edge+</i> 25+ <small>76&cent;</small></span>
       </div>
-      <p class="pp-lead">His number is priced off two games where Cincinnati trailed and quit on the run.</p>
-      <details class="pp-more"><summary>why</summary><p>As a favorite with a lead to protect, the carries come back, and the line needs only a bad yards-per-carry day to clear.</p><p><b>Evidence.</b> 56, 80 and 61 rushing yards in Weeks 1-3 on 16, 20 and 13 carries; the 10- and 39-yard games came at a 76% and 53% pass rate. The projection gives him 15.6 carries.</p><p><b>Against it.</b> vs #16 rush EPA allowed — mid-band. Engine mean is well clear of the line and the market is near a coin flip; the gap is the market still pricing the Jacksonville abandonment.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>His number is priced off two games where Cincinnati trailed and quit on the run. As a favorite with a lead to protect, the carries come back, and the line needs only a bad yards-per-carry day to clear.</p>
+        <p><b>In the game.</b> Mechanism right, distribution and play count wrong by half a yard.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 64%"></i></div><b>64%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 51%"></i></div><b>51%</b></div>
+        </div>
+        <p><b>Evidence.</b> 56, 80 and 61 rushing yards in Weeks 1-3 on 16, 20 and 13 carries; the 10- and 39-yard games came at a 76% and 53% pass rate. The projection gives him 15.6 carries.</p>
+        <p><b>Against it.</b> vs #16 rush EPA allowed — mid-band. Engine mean is well clear of the line and the market is near a coin flip; the gap is the market still pricing the Jacksonville abandonment.</p>
+      </details>
     </div>
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Tee Higgins</b><span class="pp-bet">over 69.5 rec yds</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 36%"></i></div><b>36%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 48%"></i></div><b>48%</b></div>
+      
+      <div class="rv-meter" title="The line 69.5 against the actual 148">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 37.6%"></i></div>
+        <div class="rv-meterlbl"><span>line 69.5</span><b>148</b></div>
       </div>
+      
+      <span class="badge good rv-read">right read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Higgins led the team with 137 air yards (61.2% air-yards share) and the Baltimore secondary donated the chunks — 44 on 2nd-and-6 at Q4 12:52 and 43 past Wiggins at Q4 8:37.</p>
       <div class="pp-callmeta">
-        <span class="badge mute" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #12 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: over 69.5 rec yds"><i>Normal</i> 70+ <small>47&cent;</small></span><span class="rung" title="Edge: 50+ rec yds"><i>Edge</i> 50+ <small>67&cent;</small></span><span class="rung" title="Edge+: 40+ rec yds"><i>Edge+</i> 40+ <small>75&cent;</small></span>
+        <span class="rung hit" title="Normal: over 69.5 rec yds"><i>Normal</i> 70+ <small>47&cent;</small></span><span class="rung hit" title="Edge: 50+ rec yds"><i>Edge</i> 50+ <small>67&cent;</small></span><span class="rung hit" title="Edge+: 40+ rec yds"><i>Edge+</i> 40+ <small>75&cent;</small></span>
       </div>
-      <p class="pp-lead">He is the air-yards leader in this offense and Baltimore&#x27;s secondary has been the chunk-play donor all season, with its top corner rating near the bottom of the league.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> Higgins: 95, 90 and 157 yards in Weeks 2-4 on 10, 7 and 16 targets. BAL allowed 5+ explosive passes in Weeks 2 and 4, 4 in Week 5; Humphrey rates 12th percentile among corners.</p><p><b>Against it.</b> vs #12 pass EPA allowed — mid-band, where over calls have run 56% this season. Engine mean sits under the line, so this is a read that the model&#x27;s usage split understates his air-yards share in a game Cincinnati has to throw to move.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>He is the air-yards leader in this offense and Baltimore&#x27;s secondary has been the chunk-play donor all season, with its top corner rating near the bottom of the league. </p>
+        <p><b>In the game.</b> 148 yards on 7 targets.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 36%"></i></div><b>36%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 48%"></i></div><b>48%</b></div>
+        </div>
+        <p><b>Evidence.</b> Higgins: 95, 90 and 157 yards in Weeks 2-4 on 10, 7 and 16 targets. BAL allowed 5+ explosive passes in Weeks 2 and 4, 4 in Week 5; Humphrey rates 12th percentile among corners.</p>
+        <p><b>Against it.</b> vs #12 pass EPA allowed — mid-band, where over calls have run 56% this season. Engine mean sits under the line, so this is a read that the model&#x27;s usage split understates his air-yards share in a game Cincinnati has to throw to move.</p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Ja&#x27;Marr Chase</b><span class="pp-bet">under 7.5 receptions</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 83%"></i></div><b>83%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 56%"></i></div><b>56%</b></div>
+      
+      <div class="rv-meter" title="The line 7.5 against the actual 5">
+        <div class="track"><i class="fill" style="width: 53.3%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 7.5</span><b>5</b></div>
       </div>
+      
+      <span class="badge good rv-read">right read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Cincinnati was never in a chase script after halftime; Chase saw 7 targets and caught 5 for 62 and a 2-yard score, well clear of the 7.5 rung.</p>
       <div class="pp-callmeta">
-        <span class="badge mute" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #12 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 7.5 receptions"><i>Normal</i> &lt;8 <small>57&cent;</small></span><span class="rung" title="Edge: &lt;11 receptions"><i>Edge</i> &lt;11 <small>84&cent;</small></span><span class="rung" title="Edge+: &lt;14 receptions"><i>Edge+</i> &lt;14 <small>97&cent;</small></span>
+        <span class="rung hit" title="Normal: under 7.5 receptions"><i>Normal</i> &lt;8 <small>57&cent;</small></span><span class="rung hit" title="Edge: &lt;11 receptions"><i>Edge</i> &lt;11 <small>84&cent;</small></span><span class="rung hit" title="Edge+: &lt;14 receptions"><i>Edge+</i> &lt;14 <small>97&cent;</small></span>
       </div>
-      <p class="pp-lead">His catch rung is set at a count he has reached once all season, and it needs a chase script Cincinnati is favored to avoid.</p>
-      <details class="pp-more"><summary>why</summary><p>Baltimore&#x27;s defense also gives up few free first downs.</p><p><b>Evidence.</b> 2, 7, 9, 3 and 6 catches; the nine came in a 37-attempt game Cincinnati trailed all day. BAL is 7th fewest in penalties and 8th in pre-snap flags.</p><p><b>Against it.</b> vs #12 pass EPA allowed. The engine has him more than two catches under the line while the market prices it near even — that gap is the call.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>His catch rung is set at a count he has reached once all season, and it needs a chase script Cincinnati is favored to avoid. Baltimore&#x27;s defense also gives up few free first downs.</p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 83%"></i></div><b>83%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 56%"></i></div><b>56%</b></div>
+        </div>
+        <p><b>Evidence.</b> 2, 7, 9, 3 and 6 catches; the nine came in a 37-attempt game Cincinnati trailed all day. BAL is 7th fewest in penalties and 8th in pre-snap flags.</p>
+        <p><b>Against it.</b> vs #12 pass EPA allowed. The engine has him more than two catches under the line while the market prices it near even — that gap is the call.</p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Joe Burrow</b><span class="pp-bet">under 0.5 INTs</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 54%"></i></div><b>54%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 48%"></i></div><b>48%</b></div>
+      
+      <div class="rv-meter" title="The line 0.5 against the actual 0">
+        <div class="track"><i class="fill" style="width: 0.0%"></i><i class="line" style="left: 40.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 0.5</span><b>0</b></div>
       </div>
+      
+      <span class="badge good rv-read">right read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Burrow threw 30 times with one sack, 15.5 CPOE and zero interceptions; once Cincinnati led in the fourth it ran on 58% of snaps, exactly the attempts-and-script logic given.</p>
       <div class="pp-callmeta">
-        <span class="badge mute" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #12 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 0.5 INTs"><i>Normal</i> &lt;1 <small>51&cent;</small></span><span class="rung" title="Edge: &lt;2 INTs"><i>Edge</i> &lt;2 <small>85&cent;</small></span><span class="rung" title="Edge+: &lt;3 INTs"><i>Edge+</i> &lt;3 <small>98&cent;</small></span>
+        <span class="rung hit" title="Normal: under 0.5 INTs"><i>Normal</i> &lt;1 <small>51&cent;</small></span><span class="rung hit" title="Edge: &lt;2 INTs"><i>Edge</i> &lt;2 <small>85&cent;</small></span><span class="rung hit" title="Edge+: &lt;3 INTs"><i>Edge+</i> &lt;3 <small>98&cent;</small></span>
       </div>
-      <p class="pp-lead">Picks are an attempts-and-script story.</p>
-      <details class="pp-more"><summary>why</summary><p>The favorite that grabs the lead throws fewer and safer, and this defense has not been taking the ball away.</p><p><b>Evidence.</b> BAL has forced 0, 1, 2, 1 and 0 takeaways in its last five and allows an INT rate of 1.8%; Burrow&#x27;s two-pick game came in a 54-attempt chase at JAX. </p><p><b>Against it.</b> vs #12 pass EPA allowed. The engine projects above the line and the market near even — but the house study says the engine over-projects attempts and overstates 1+ INT by three to four points, most of all for favorites.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>Picks are an attempts-and-script story. The favorite that grabs the lead throws fewer and safer, and this defense has not been taking the ball away.</p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 54%"></i></div><b>54%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 48%"></i></div><b>48%</b></div>
+        </div>
+        <p><b>Evidence.</b> BAL has forced 0, 1, 2, 1 and 0 takeaways in its last five and allows an INT rate of 1.8%; Burrow&#x27;s two-pick game came in a 54-attempt chase at JAX. </p>
+        <p><b>Against it.</b> vs #12 pass EPA allowed. The engine projects above the line and the market near even — but the house study says the engine over-projects attempts and overstates 1+ INT by three to four points, most of all for favorites.</p>
+      </details>
     </div>
     
   </div>
+  
+  
+  <div class="pp-k pp-k-sec">Lines the report singled out <span class="flat">&middot; signal carries forward, noise doesn't</span></div>
+  <div class="rv-notes">
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Tee Higgins</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">7 targets, 6-148-1 vs 57.9 projected yards (137 air yards, 61.2% air-yards share)</span>
+      <p class="pp-sub">He is the air-yards hog in this offense and Burrow went 4/5 deep; the yardage is two plays (44 and 43 yards) against a Baltimore secondary missing Hawkins.</p>
+      <details class="pp-more"><summary>more</summary><p>The role is real and repeatable, the 148 is not.</p></details>
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Chase Brown</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">11-39 rushing, 5 targets, 4-19 receiving vs 15.6 projected carries</span>
+      <p class="pp-sub">Cincinnati only ran 53 plays and ran 19 times total; Perine took the 1-yard touchdown and Brooks three late carries.</p>
+      <details class="pp-more"><summary>more</summary><p>The lead arrived too late (CIN led for only 19 of its 53 plays) to produce clock-burn volume.</p></details>
+    </div>
+    
+    <div class="rv-note-card ">
+      <div class="rv-notehead"><b>Joe Burrow</b><span class="badge mute">noise</span></div>
+      <span class="pp-bet">22/30, 292 yards, 4 TD, 0 INT on 32 dropbacks (+0.592 EPA/dropback, 15.5 CPOE)</span>
+      <p class="pp-sub">Four touchdown passes on 30 attempts with five red-zone trips — a finishing outlier, not a volume one.</p>
+      <details class="pp-more"><summary>more</summary><p>He was hit six times and sacked once; the yardage per attempt is the repeatable part.</p></details>
+    </div>
+    
+    <div class="rv-note-card ">
+      <div class="rv-notehead"><b>Drew Sample</b><span class="badge mute">noise</span></div>
+      <span class="pp-bet">2 targets, 2-24-1 (23 YAC) on a 54.7% snap share vs 3.8 projected yards</span>
+      <p class="pp-sub">Short-area touchdown off a turnover-shortened field at the BAL 24.</p>
+      <details class="pp-more"><summary>more</summary><p>Snap share is meaningful, the usage is not.</p></details>
+    </div>
+    
+  </div>
+  
+  
+  <details class="rv-fold">
+    <summary>The plan's pre-game read on this offense <span class="flat">&middot; medium confidence</span></summary>
+    <div class="pp-offcards">
+      <div class="pp-offcard"><div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div><p class="pp-lead">A volume passing offense: 63% pass rate, 7.2 yards per attempt, +0.133 field EPA, and 32-plus Burrow attempts in every game.</p><details class="pp-more"><summary>more</summary><p>The run game is the weak half at 3.63 yards per carry with negative rush EPA in Weeks 2, 4 and 5.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div><p class="pp-lead">Chunk throws to Higgins and Chase — three games tagged for explosive passing — plus a genuinely good finishing rate inside the 20 (64.3% of trips become touchdowns, +0.221 red-zone EPA) and a kicker with 57- and 58-yarders already banked.</p></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div><p class="pp-lead">A four-man rush (five sacks and 38.9% pressure at Houston in Week 2; 11 hits from Jacksonville in Week 4), its own pre-snap flags (2.0 per game vs 1.55 league, tagged in three of five weeks), and defenses that make it one-dimensional by stuffing the run.</p></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div><p class="pp-lead">Baltimore is 9th in yards per carry allowed and 16th in rush EPA, so the ground game stays bad — but the Ravens blitz only 16.4% and rank 12th in pass EPA allowed, with Humphrey at the 12th percentile among corners and four-plus explosive passes allowed in three of six weeks.</p><details class="pp-more"><summary>more</summary><p>The Ravens are also the league&#x27;s 7th-least-penalized defense, so no free yardage.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div><p class="pp-lead">Iosivas (IR) and Hudson (IR) thin the pass-catching room, concentrating targets on Chase, Higgins and the backs.</p><details class="pp-more"><summary>more</summary><p>On the Baltimore side, safety Jaylinn Hawkins (87% of snaps) is out and Tavius Robinson is on IR — fewer bodies behind a secondary already leaking chunk plays.</p></details></div>
+    </div>
+  </details>
   
 </div>
 
   <div class="gm-tiles">
-    <div class="gm-tile big"><b>24.8<i class="act over" title="Actual">(35)</i></b><span>Points</span></div><div class="gm-tile "><b>61</b><span>Plays</span></div><div class="gm-tile "><b>236<i class="act over" title="Actual">(292)</i></b><span>Pass yds</span></div><div class="gm-tile "><b>100<i class="act under" title="Actual">(67)</i></b><span>Rush yds</span></div><div class="gm-tile "><b>2.1</b><span>Sacks taken</span></div><div class="gm-tile "><b>0.6<i class="act over" title="Actual">(0)</i></b><span>INTs thrown</span></div>
+    <div class="gm-tile rv big over"><b>35</b><span>Points</span><small>projected 24.8</small></div><div class="gm-tile rv  "><b class="flat">61</b><span>Plays</span><small>projected</small></div><div class="gm-tile rv  over"><b>292</b><span>Pass yds</span><small>projected 236</small></div><div class="gm-tile rv  under"><b>67</b><span>Rush yds</span><small>projected 100</small></div><div class="gm-tile rv  "><b class="flat">2.1</b><span>Sacks taken</span><small>projected</small></div><div class="gm-tile rv  over"><b>0</b><span>INTs thrown</span><small>projected 0.6</small></div>
   </div>
   <div class="gm-split">
     <div class="gm-players">
@@ -1903,173 +2394,243 @@
     <h2 class="gm-h2"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy"><span><em class="full">Ravens</em><em class="short">BAL</em> offense</span><span class="vs">against the</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy"><span><em class="full">Bengals</em><em class="short">CIN</em> defense</span></h2>
   </summary>
   <div class="hfa-head gm-mhead">
-    <p class="lede">Projected BAL offense output &mdash; equivalently, what the CIN defense allows. The engine blends each offense's season-to-date rates with the defense across from it, anchored on the market's implied points.</p>
+    <p class="lede">What the BAL offense put up against the CIN defense, the projection beneath each number: <span class="up">green</span> beat it, <span class="down">amber</span> fell short (INTs judged the other way).</p>
   </div>
   
-<div class="pp-off">
-  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Ravens offense</span><span class="badge mute">medium confidence</span></div>
+<div class="pp-off rv-off">
+  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Ravens offense, graded</span><span class="badge warn">partly held</span><span class="badge mute">calls 3&ndash;3</span></div>
   
-  <div class="pp-offcards">
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div>
-      <p class="pp-lead">A run-first team (49% pass rate) that produced 8.3 yards per attempt with Jackson and 5.3-6.3 with Huntley.</p>
-      <details class="pp-more"><summary>more</summary><p>Field EPA is a healthy +0.137, red-zone TD rate 68.4% — but both halves were built when Jackson played.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div>
-      <p class="pp-lead">Henry volume and goal-line work (seven rushing touchdowns in six games) plus Flowers winning in bursts; with Huntley it has been short throws, checkdowns and a Cuevas-type role score.</p>
-      
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div>
-      <p class="pp-lead">Pressure on a patched line (23.7% sack-or-hit at Cleveland), its own pre-snap flags (tagged in four of six weeks, including the offside that gave Cleveland a second game-winning kick), and third down — 3/11, 3/11, 2/11, 6/16 in four of its six games.</p>
-      
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div>
-      <p class="pp-lead">Cincinnati is 30th in yards per carry allowed (5.04) and 25th in rush EPA — the softest front Henry has seen in a month.</p>
-      <details class="pp-more"><summary>more</summary><p>But it is 4th in pass EPA allowed, 2nd in red-zone EPA allowed and 2nd in red-zone TD rate per trip, so the yards Baltimore earns on the ground are likeliest to convert into field-goal tries rather than touchdowns.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div>
-      <p class="pp-lead">Jackson out (ankle) for a third straight week — Rotowire&#x27;s Sunday report has him close and expected back in Week 8.</p>
-      <details class="pp-more"><summary>more</summary><p>Stanley did not practice (toe); Jurgens, Simpson, Vorhees and Ioane all practiced in full. Bateman (shoulder) is cleared but played only 30% of snaps last week. Cincinnati&#x27;s Lawrence, Allen and Hill took veteran rest-day DNPs, not injuries.</p></details>
-    </div>
-    
+  <div class="rv-eh">
+    <div class="rv-ehcol"><span class="pp-k">Expected</span><p class="pp-lead">Run-leaning early, 22-26 carries as a team with Henry at 19-22, Huntley around 30 attempts at a short depth, Flowers as the target hog and the scoring skewed toward field goals.</p></div>
+    <div class="rv-ehcol happened warn"><span class="pp-k">Happened</span><p class="pp-lead">Flowers was the target hog (11) and the scoring skewed to field goals as described, but the run-lean broke: 58.5% pass rate against a 49.2% season rate, Henry 17 carries for 45, and the yards came from short throws (298 passing, 212 YAC) rather than the ground.</p></div>
   </div>
   
   
-  <div class="pp-expect"><span class="pp-k">Expect</span><p class="pp-lead">Run-leaning early, 22-26 carries as a team with Henry at 19-22, Huntley around 30 attempts at a short depth, Flowers as the target hog and the scoring skewed toward field goals.</p></div>
-  
-  
-  <div class="pp-k pp-k-sec">Who the plan moves <span class="flat">&middot; 2 up, 4 down &middot; one player, one market, one side of Kalshi's line when the plan was written</span></div>
-  <div class="pp-calls">
+  <div class="pp-k pp-k-sec">Who the plan moved <span class="flat">&middot; 2 up, 4 down &middot; graded off the box score, with whether the reason given showed up</span></div>
+  <div class="pp-calls rv-calls">
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Derrick Henry</b><span class="pp-bet">over 79.5 rush yds</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 45%"></i></div><b>45%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 55%"></i></div><b>55%</b></div>
+      
+      <div class="rv-meter" title="The line 79.5 against the actual 45">
+        <div class="track"><i class="fill" style="width: 45.3%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 79.5</span><b>45</b></div>
       </div>
+      
+      <span class="badge bad rv-read">wrong read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> The premise — Cincinnati can&#x27;t stop the run — was false on the day.</p>
       <div class="pp-callmeta">
-        <span class="badge good" title="The opposing defense's rank on rush EPA allowed entering the week (#1 toughest)">D #25 rush EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: over 79.5 rush yds"><i>Normal</i> 80+ <small>55&cent;</small></span><span class="rung" title="Edge: 60+ rush yds"><i>Edge</i> 60+ <small>74&cent;</small></span><span class="rung" title="Edge+: 50+ rush yds"><i>Edge+</i> 50+ <small>82&cent;</small></span>
+        <span class="rung miss" title="Normal: over 79.5 rush yds"><i>Normal</i> 80+ <small>55&cent;</small></span><span class="rung miss" title="Edge: 60+ rush yds"><i>Edge</i> 60+ <small>74&cent;</small></span><span class="rung miss" title="Edge+: 50+ rush yds"><i>Edge+</i> 50+ <small>82&cent;</small></span>
       </div>
-      <p class="pp-lead">Without Lamar, the ground game is the plan, and Cincinnati is one of the worst fronts in the league at stopping it.</p>
-      <details class="pp-more"><summary>why</summary><p>Henry gets the carries whether Baltimore leads or trails.</p><p><b>Evidence.</b> CIN allows 5.04 yards per carry and 123 rush yards a game; Henry has had 23, 24, 26, 24 and 17 carries in his last five, with 102 yards at ATL in Week 5. </p><p><b>Against it.</b> vs #25 rush EPA allowed (30th in yards per carry). Engine mean sits just above the line; the market is slightly higher still — the model&#x27;s lean is that backs are chronically under-adjusted for soft run defenses, which is where the edge lives.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>Without Lamar, the ground game is the plan, and Cincinnati is one of the worst fronts in the league at stopping it. Henry gets the carries whether Baltimore leads or trails.</p>
+        <p><b>In the game.</b> Henry got 17 carries (the volume was there) for 45 yards, -5.96 rushing EPA, one stuff and no run over nine yards; 2.6 a carry against a projected 3.96.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 45%"></i></div><b>45%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 55%"></i></div><b>55%</b></div>
+        </div>
+        <p><b>Evidence.</b> CIN allows 5.04 yards per carry and 123 rush yards a game; Henry has had 23, 24, 26, 24 and 17 carries in his last five, with 102 yards at ATL in Week 5. </p>
+        <p><b>Against it.</b> vs #25 rush EPA allowed (30th in yards per carry). Engine mean sits just above the line; the market is slightly higher still — the model&#x27;s lean is that backs are chronically under-adjusted for soft run defenses, which is where the edge lives.</p>
+      </details>
     </div>
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Zay Flowers</b><span class="pp-bet">over 5.5 receptions</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 39%"></i></div><b>39%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 55%"></i></div><b>55%</b></div>
+      
+      <div class="rv-meter" title="The line 5.5 against the actual 8">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 55.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 5.5</span><b>8</b></div>
       </div>
+      
+      <span class="badge good rv-read">right read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Exactly the stated mechanism: 11 targets at a 7.0 adot in a chasing offense, 8 catches, 101 YAC.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #4 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: over 5.5 receptions"><i>Normal</i> 6+ <small>56&cent;</small></span><span class="rung" title="Edge: 4+ receptions"><i>Edge</i> 4+ <small>83&cent;</small></span><span class="rung" title="Edge+: 3+ receptions"><i>Edge+</i> 3+ <small>90&cent;</small></span>
+        <span class="rung hit" title="Normal: over 5.5 receptions"><i>Normal</i> 6+ <small>56&cent;</small></span><span class="rung hit" title="Edge: 4+ receptions"><i>Edge</i> 4+ <small>83&cent;</small></span><span class="rung hit" title="Edge+: 3+ receptions"><i>Edge+</i> 3+ <small>90&cent;</small></span>
       </div>
-      <p class="pp-lead">He is the only route-winner left with Bateman&#x27;s role shrunk, and a backup quarterback throwing short in a chasing script funnels catches to him.</p>
-      <details class="pp-more"><summary>why</summary><p>Catches, not yards, are the stable part.</p><p><b>Evidence.</b> 9 and 11 targets the last two weeks (8-53, 6-66); 88% and 82% snap shares. Bateman played 30% of snaps in Week 6 with one target.</p><p><b>Against it.</b> vs #4 pass EPA allowed — the rank does not bind the volume: Cincinnati still gives up 245 pass yards a game (22nd) and its EPA rank rests on red-zone stinginess, while an underdog script forces attempts. Engine mean is just under the line; the read is targets above his projected share.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>He is the only route-winner left with Bateman&#x27;s role shrunk, and a backup quarterback throwing short in a chasing script funnels catches to him. Catches, not yards, are the stable part.</p>
+        <p><b>In the game.</b> Bateman&#x27;s role did not shrink, but Flowers remained the funnel regardless.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 39%"></i></div><b>39%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 55%"></i></div><b>55%</b></div>
+        </div>
+        <p><b>Evidence.</b> 9 and 11 targets the last two weeks (8-53, 6-66); 88% and 82% snap shares. Bateman played 30% of snaps in Week 6 with one target.</p>
+        <p><b>Against it.</b> vs #4 pass EPA allowed — the rank does not bind the volume: Cincinnati still gives up 245 pass yards a game (22nd) and its EPA rank rests on red-zone stinginess, while an underdog script forces attempts. Engine mean is just under the line; the read is targets above his projected share.</p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Mark Andrews</b><span class="pp-bet">under 29.5 rec yds</span></div>
-        <span class="badge mute">both</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 63%"></i></div><b>63%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+      
+      <div class="rv-meter" title="The line 29.5 against the actual 23">
+        <div class="track"><i class="fill" style="width: 62.4%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 29.5</span><b>23</b></div>
       </div>
+      
+      <span class="badge good rv-read">right read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> 4 targets, 3 catches, 23 yards on a 56.7% snap share — the fifth straight sub-30-yard game, with 39 air yards in a short-depth passing game.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #4 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 29.5 rec yds"><i>Normal</i> &lt;30 <small>52&cent;</small></span><span class="rung" title="Edge: &lt;60 rec yds"><i>Edge</i> &lt;60 <small>87&cent;</small></span><span class="rung" title="Edge+: &lt;90 rec yds"><i>Edge+</i> &lt;90 <small>97&cent;</small></span>
+        <span class="rung hit" title="Normal: under 29.5 rec yds"><i>Normal</i> &lt;30 <small>52&cent;</small></span><span class="rung hit" title="Edge: &lt;60 rec yds"><i>Edge</i> &lt;60 <small>87&cent;</small></span><span class="rung hit" title="Edge+: &lt;90 rec yds"><i>Edge+</i> &lt;90 <small>97&cent;</small></span>
       </div>
-      <p class="pp-lead">Four straight games under thirty yards, and a short-depth backup quarterback does not change that.</p>
-      <details class="pp-more"><summary>why</summary><p>The chatter about Cincinnati being soft on tight ends is built on two games against other teams&#x27; target hogs.</p><p><b>Evidence.</b> 4, 28, 27 and 24 receiving yards in his last four; 3 targets for 4 yards at CLE. The engine itself projects him below the line.</p><p><b>Against it.</b> vs #4 pass EPA allowed. Both the model and the market sit near or under this number; the read is that his snap share and single-digit depth cap him well short.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>Four straight games under thirty yards, and a short-depth backup quarterback does not change that. The chatter about Cincinnati being soft on tight ends is built on two games against other teams&#x27; target hogs.</p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 63%"></i></div><b>63%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+        </div>
+        <p><b>Evidence.</b> 4, 28, 27 and 24 receiving yards in his last four; 3 targets for 4 yards at CLE. The engine itself projects him below the line.</p>
+        <p><b>Against it.</b> vs #4 pass EPA allowed. Both the model and the market sit near or under this number; the read is that his snap share and single-digit depth cap him well short.</p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Derrick Henry</b><span class="pp-bet">not to score</span></div>
-        <span class="badge mute">efficiency</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 47%"></i></div><b>47%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 40%"></i></div><b>40%</b></div>
+      
+      <div class="rv-meter" title="The line 0.0 against the actual 0">
+        <div class="track"><i class="fill" style="width: 0.0%"></i><i class="line" style="left: 0.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 0.0</span><b>0</b></div>
       </div>
+      
+      <span class="badge good rv-read">right read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Baltimore reached the red zone three times and scored no touchdowns at all, so the goal-line path never opened; Henry&#x27;s only two targets went for four yards.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on EPA allowed entering the week (#1 toughest)">D #5 EPA allowed</span>
-        <span class="badge mute">low</span>
-        <span class="rung" title="Normal / Edge / Edge+: not to score"><i>Normal / Edge / Edge+</i> no TD <small>41&cent;</small></span>
+        <span class="rung hit" title="Normal / Edge / Edge+: not to score"><i>Normal / Edge / Edge+</i> no TD <small>41&cent;</small></span>
       </div>
-      <p class="pp-lead">The same matchup that gives him yards takes away his scores: Cincinnati is near the top of the league at keeping offenses out of the end zone once they get close, and there is no quarterback run threat to help at the goal line.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> CIN allows a 35.7% red-zone TD rate (2nd) and -0.497 red-zone EPA (2nd). Henry has no touchdown in his last two games, with four stuffs at CLE.</p><p><b>Against it.</b> vs #5 EPA allowed. Engine has him near a coin flip; the market is meaningfully higher. Note the caution: red-zone rate barely persists, so this is direction, not conviction, and anytime-TD calls have run well (65%) this season.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>The same matchup that gives him yards takes away his scores: Cincinnati is near the top of the league at keeping offenses out of the end zone once they get close, and there is no quarterback run threat to help at the goal line. </p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 47%"></i></div><b>47%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 40%"></i></div><b>40%</b></div>
+        </div>
+        <p><b>Evidence.</b> CIN allows a 35.7% red-zone TD rate (2nd) and -0.497 red-zone EPA (2nd). Henry has no touchdown in his last two games, with four stuffs at CLE.</p>
+        <p><b>Against it.</b> vs #5 EPA allowed. Engine has him near a coin flip; the market is meaningfully higher. Note the caution: red-zone rate barely persists, so this is direction, not conviction, and anytime-TD calls have run well (65%) this season.</p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Tyler Huntley</b><span class="pp-bet">under 199.5 pass yds</span></div>
-        <span class="badge mute">efficiency</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 35%"></i></div><b>35%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+      
+      <div class="rv-meter" title="The line 199.5 against the actual 298">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 53.6%"></i></div>
+        <div class="rv-meterlbl"><span>line 199.5</span><b>298</b></div>
       </div>
+      
+      <span class="badge bad rv-read">wrong read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> The efficiency read was right — 0/5 deep, -1.8 CPOE, 7.0 adot — but it missed by 98 yards because 34 attempts in a trailing script and 212 team YAC (Flowers 101, Cuevas 38, Hill 29) generated the yardage the plan said wouldn&#x27;t come.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #4 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 199.5 pass yds"><i>Normal</i> &lt;200 <small>53&cent;</small></span><span class="rung" title="Edge: &lt;275 pass yds"><i>Edge</i> &lt;275 <small>88&cent;</small></span><span class="rung" title="Edge+: &lt;325 pass yds"><i>Edge+</i> &lt;325 <small>97&cent;</small></span>
+        <span class="rung miss" title="Normal: under 199.5 pass yds"><i>Normal</i> &lt;200 <small>53&cent;</small></span><span class="rung miss" title="Edge: &lt;275 pass yds"><i>Edge</i> &lt;275 <small>88&cent;</small></span><span class="rung hit" title="Edge+: &lt;325 pass yds"><i>Edge+</i> &lt;325 <small>97&cent;</small></span>
       </div>
-      <p class="pp-lead">A backup quarterback behind a patched line, throwing short into the best pass defense he has faced.</p>
-      <details class="pp-more"><summary>why</summary><p>The attempts may be there; the yards per throw have not been.</p><p><b>Evidence.</b> 201 yards on 32 attempts at ATL and 165 on 31 at CLE (5.3 per attempt, 1-of-6 deep, 23.7% sack-or-hit). Stanley did not practice all week.</p><p><b>Against it.</b> vs #4 pass EPA allowed; passing overs against top-5 pass defenses have gone 1-for-3 for these plans. The engine projects well above the line on carried-over Jackson-era rates — that blend is the thing to fade.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>A backup quarterback behind a patched line, throwing short into the best pass defense he has faced. The attempts may be there; the yards per throw have not been.</p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 35%"></i></div><b>35%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+        </div>
+        <p><b>Evidence.</b> 201 yards on 32 attempts at ATL and 165 on 31 at CLE (5.3 per attempt, 1-of-6 deep, 23.7% sack-or-hit). Stanley did not practice all week.</p>
+        <p><b>Against it.</b> vs #4 pass EPA allowed; passing overs against top-5 pass defenses have gone 1-for-3 for these plans. The engine projects well above the line on carried-over Jackson-era rates — that blend is the thing to fade.</p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Rashod Bateman</b><span class="pp-bet">under 19.5 rec yds</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 29%"></i></div><b>29%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+      
+      <div class="rv-meter" title="The line 19.5 against the actual 33">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 47.3%"></i></div>
+        <div class="rv-meterlbl"><span>line 19.5</span><b>33</b></div>
       </div>
+      
+      <span class="badge bad rv-read">wrong read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> The usage-shift premise was wrong: Bateman played 73.1% of snaps, led the team with 91 air yards on 4 targets and finished with 33 — essentially his engine mean of 33.8.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #4 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 19.5 rec yds"><i>Normal</i> &lt;20 <small>52&cent;</small></span><span class="rung" title="Edge: &lt;50 rec yds"><i>Edge</i> &lt;50 <small>89&cent;</small></span><span class="rung" title="Edge+: &lt;80 rec yds"><i>Edge+</i> &lt;80 <small>97&cent;</small></span>
+        <span class="rung miss" title="Normal: under 19.5 rec yds"><i>Normal</i> &lt;20 <small>52&cent;</small></span><span class="rung hit" title="Edge: &lt;50 rec yds"><i>Edge</i> &lt;50 <small>89&cent;</small></span><span class="rung hit" title="Edge+: &lt;80 rec yds"><i>Edge+</i> &lt;80 <small>97&cent;</small></span>
       </div>
-      <p class="pp-lead">His role changed, not his health.</p>
-      <details class="pp-more"><summary>why</summary><p>He was off the field for most of last week while younger receivers played, and our Week 6 review flagged that as a usage shift to price in now.</p><p><b>Evidence.</b> Week 6: 29.8% snap share, 1 target, 0 yards, with Lane at 54% and Walker at 65%. Cleared to play (full practice, shoulder) per Friday&#x27;s reports.</p><p><b>Against it.</b> vs #4 pass EPA allowed. The engine still carries his old share and projects well over the line; the market is near even. This is the model&#x27;s blend lagging a role change.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>His role changed, not his health. He was off the field for most of last week while younger receivers played, and our Week 6 review flagged that as a usage shift to price in now.</p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 29%"></i></div><b>29%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+        </div>
+        <p><b>Evidence.</b> Week 6: 29.8% snap share, 1 target, 0 yards, with Lane at 54% and Walker at 65%. Cleared to play (full practice, shoulder) per Friday&#x27;s reports.</p>
+        <p><b>Against it.</b> vs #4 pass EPA allowed. The engine still carries his old share and projects well over the line; the market is near even. This is the model&#x27;s blend lagging a role change.</p>
+      </details>
     </div>
     
   </div>
+  
+  
+  <div class="pp-k pp-k-sec">Lines the report singled out <span class="flat">&middot; signal carries forward, noise doesn't</span></div>
+  <div class="rv-notes">
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Zay Flowers</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">11 targets, 8-137-1 vs 7.4 projected targets</span>
+      <p class="pp-sub">Target funnel with Jackson out and a chase script — 101 of his 137 yards came after the catch, including the 48-yard third-and-9 touchdown.</p>
+      <details class="pp-more"><summary>more</summary><p>Targets and catches are the stable part.</p></details>
+    </div>
+    
+    <div class="rv-note-card ">
+      <div class="rv-notehead"><b>Derrick Henry</b><span class="badge mute">noise</span></div>
+      <span class="pp-bet">17-45 rushing (-5.96 EPA), 2 targets, 0 TDs vs 82.8 projected rush yards</span>
+      <p class="pp-sub">Volume came as projected (team 27 carries) but efficiency collapsed against an interior that produced TFLs; zero red-zone touchdowns for the team removes his goal-line path entirely.</p>
+      
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Rashod Bateman</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">4 targets, 2-33, 91 air yards, 73.1% snap share</span>
+      <p class="pp-sub">The Week 6 usage-shift read was wrong — he played a full starter&#x27;s share and led the team in air yards.</p>
+      <details class="pp-more"><summary>more</summary><p>Price the role back up.</p></details>
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Ja&#x27;Kobi Lane</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">5 targets, 3-25 on a 68.7% snap share vs 1.5 projected targets</span>
+      <p class="pp-sub">Real role growth, not injury replacement — 49 air yards and a two-thirds snap share says he&#x27;s part of the base three-receiver group now.</p>
+      
+    </div>
+    
+  </div>
+  
+  
+  <details class="rv-fold">
+    <summary>The plan's pre-game read on this offense <span class="flat">&middot; medium confidence</span></summary>
+    <div class="pp-offcards">
+      <div class="pp-offcard"><div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div><p class="pp-lead">A run-first team (49% pass rate) that produced 8.3 yards per attempt with Jackson and 5.3-6.3 with Huntley.</p><details class="pp-more"><summary>more</summary><p>Field EPA is a healthy +0.137, red-zone TD rate 68.4% — but both halves were built when Jackson played.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div><p class="pp-lead">Henry volume and goal-line work (seven rushing touchdowns in six games) plus Flowers winning in bursts; with Huntley it has been short throws, checkdowns and a Cuevas-type role score.</p></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div><p class="pp-lead">Pressure on a patched line (23.7% sack-or-hit at Cleveland), its own pre-snap flags (tagged in four of six weeks, including the offside that gave Cleveland a second game-winning kick), and third down — 3/11, 3/11, 2/11, 6/16 in four of its six games.</p></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div><p class="pp-lead">Cincinnati is 30th in yards per carry allowed (5.04) and 25th in rush EPA — the softest front Henry has seen in a month.</p><details class="pp-more"><summary>more</summary><p>But it is 4th in pass EPA allowed, 2nd in red-zone EPA allowed and 2nd in red-zone TD rate per trip, so the yards Baltimore earns on the ground are likeliest to convert into field-goal tries rather than touchdowns.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div><p class="pp-lead">Jackson out (ankle) for a third straight week — Rotowire&#x27;s Sunday report has him close and expected back in Week 8.</p><details class="pp-more"><summary>more</summary><p>Stanley did not practice (toe); Jurgens, Simpson, Vorhees and Ioane all practiced in full. Bateman (shoulder) is cleared but played only 30% of snaps last week. Cincinnati&#x27;s Lawrence, Allen and Hill took veteran rest-day DNPs, not injuries.</p></details></div>
+    </div>
+  </details>
   
 </div>
 
   <div class="gm-tiles">
-    <div class="gm-tile big"><b>21.8<i class="act under" title="Actual">(13)</i></b><span>Points</span></div><div class="gm-tile "><b>61</b><span>Plays</span></div><div class="gm-tile "><b>231<i class="act over" title="Actual">(298)</i></b><span>Pass yds</span></div><div class="gm-tile "><b>124<i class="act under" title="Actual">(64)</i></b><span>Rush yds</span></div><div class="gm-tile "><b>2.3</b><span>Sacks taken</span></div><div class="gm-tile "><b>0.8<i class="act under" title="Actual">(1)</i></b><span>INTs thrown</span></div>
+    <div class="gm-tile rv big under"><b>13</b><span>Points</span><small>projected 21.8</small></div><div class="gm-tile rv  "><b class="flat">61</b><span>Plays</span><small>projected</small></div><div class="gm-tile rv  over"><b>298</b><span>Pass yds</span><small>projected 231</small></div><div class="gm-tile rv  under"><b>64</b><span>Rush yds</span><small>projected 124</small></div><div class="gm-tile rv  "><b class="flat">2.3</b><span>Sacks taken</span><small>projected</small></div><div class="gm-tile rv  under"><b>1</b><span>INTs thrown</span><small>projected 0.8</small></div>
   </div>
   <div class="gm-split">
     <div class="gm-players">
@@ -2219,7 +2780,7 @@
         </div>
         
         <div class="gm-row">
-          <div class="gm-cell off"><i class="rk ">#16</i><b>52.2</b><div class="gm-bar "><i style="width: 52%"></i></div></div>
+          <div class="gm-cell off"><i class="rk ">#16</i><b>52.3</b><div class="gm-bar "><i style="width: 52%"></i></div></div>
           <div class="gm-lbl"><details class="stat"><summary title="What this stat is">O-line grade</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>O-line grade</b><p>A composite of the line&#x27;s pass protection and run blocking, offense only.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><span class="flat na">offense only</span></div>
         </div>
@@ -2342,7 +2903,7 @@
 
 
 
-<details class="hfa-card hfa-sec gm-starters pp-sec" id="starters" data-sec="starters" open>
+<details class="hfa-card hfa-sec gm-starters pp-sec" id="starters" data-sec="starters">
   <summary class="hfa-head pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <div class="hfa-eyebrow">Starters on the field</div>
@@ -2360,7 +2921,7 @@
         <div class="gm-ftag top">BAL defense</div>
         <div class="gm-los"></div>
         <div class="gm-ftag bot">CIN offense</div>
-        <div class="gm-fp def r3" style="left: 26%; top: 51%" title="Trey Hendrickson LBon report – Fingerlast game 62% of snapsEdge · 51st pct of group · 302 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.4% lg 3.5%Sack rate1.2% lg 0.9%TFL rate1.2% lg 1.2%Missed tackle %12% lg 9%context (not rated): 10 prs · 4.0 sk · 10 tkl / 2 miss · 0 INT · 0 PD"><span class="dot">51<em>?</em></span><span class="nm">T. Hendrickson <small>EDGE</small></span></div><div class="gm-fp def r4" style="left: 44%; top: 51%" title="Nnamdi Madubuike DLlast game 78% of snapsInterior DL · 79th pct of group · 246 wtd snaps2026 wks 1-6 + ½·2025Pressure rate2.2% lg 1.8%Sack rate0.6% lg 0.5%TFL rate0.6% lg 0.8%Missed tackle %6% lg 11%context (not rated): 6 prs · 1.5 sk · 14 tkl / 0 miss"><span class="dot">79</span><span class="nm">N. Madubuike <small>DI</small></span></div><div class="gm-fp def r2" style="left: 56%; top: 51%" title="Travis Jones DLlast game 54% of snapsInterior DL · 39th pct of group · 588 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.3% lg 1.8%Sack rate0.4% lg 0.5%TFL rate1.3% lg 0.8%Missed tackle %13% lg 11%context (not rated): 0 tgt · 25.0 yds/tgt · 100% comp · aDOT -8.0 · 7 prs · 2.5 sk · 16 tkl / 3 miss · 0 INT · 2 PD"><span class="dot">39</span><span class="nm">T. Jones <small>DI</small></span></div><div class="gm-fp def r2" style="left: 75%; top: 51%" title="Mike Green LBlast game 38% of snapsEdge · 33rd pct of group · 529 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.0% lg 3.5%Sack rate0.8% lg 0.9%TFL rate1.4% lg 1.2%Missed tackle %10% lg 9%context (not rated): 4 tgt · 13.3 yds/tgt · 67% comp · aDOT 0.8 · 15 prs · 3.8 sk · 27 tkl / 3 miss"><span class="dot">33</span><span class="nm">M. Green <small>EDGE</small></span></div><div class="gm-fp def r4" style="left: 41%; top: 37%" title="Roquan Smith LBlast game 100% of snapsLinebacker · 66th pct of group · 864 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.36 lg 0.38Targets drawn6.2% lg 5.6%Missed tackle %6% lg 8%Tackle rate12.2% lg 11.7%TFL rate0.5% lg 0.8%context (not rated): 54 tgt · 5.7 yds/tgt · 61% comp · aDOT 3.3 · 8 prs · 2.0 sk · 106 tkl / 6 miss · 1 INT · 2 PD"><span class="dot">66</span><span class="nm">R. Smith <small>LB</small></span></div><div class="gm-fp def r5" style="left: 59%; top: 37%" title="Trenton Simpson LBlast game 59% of snapsLinebacker · 98th pct of group · 432 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.31 lg 0.38Targets drawn6.5% lg 5.6%Missed tackle %4% lg 8%Tackle rate15.1% lg 11.7%TFL rate1.6% lg 0.8%context (not rated): 30 tgt · 4.2 yds/tgt · 71% comp · aDOT 3.4 · 4 prs · 2.2 sk · 70 tkl / 2 miss · 1 INT · 2 PD"><span class="dot">98</span><span class="nm">T. Simpson <small>LB</small></span></div><div class="gm-fp def r3" style="left: 7%; top: 42%" title="Nate Wiggins CBlast game 100% of snapsCornerback · 58th pct of group · 896 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.58 lg 0.66Targets drawn9.1% lg 9.1%Missed tackle %10% lg 10%context (not rated): 82 tgt · 6.3 yds/tgt · 58% comp · aDOT 9.7 · 1 prs · 55 tkl / 6 miss · 2 INT · 10 PD"><span class="dot">58</span><span class="nm">N. Wiggins <small>CB</small></span></div><div class="gm-fp def r1" style="left: 93%; top: 42%" title="Marlon Humphrey CBlast game 95% of snapsCornerback · 12th pct of group · 751 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.87 lg 0.66Targets drawn10.0% lg 9.1%Missed tackle %12% lg 10%context (not rated): 76 tgt · 9.0 yds/tgt · 65% comp · aDOT 10.8 · 2 prs · 0.5 sk · 54 tkl / 8 miss · 2 INT · 12 PD"><span class="dot">12</span><span class="nm">M. Humphrey <small>CB</small></span></div><div class="gm-fp def thin" style="left: 18%; top: 44%" title="Keyon Martin CBlast game 38% of snapsCornerback · 56th pct of group · thin sample · 120 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.57 lg 0.66Targets drawn10.1% lg 9.1%Missed tackle %8% lg 10%context (not rated): 14 tgt · 4.1 yds/tgt · 70% comp · aDOT 4.0 · 2 prs · 1.5 sk · 16 tkl / 1 miss · 0 INT · 2 PD"><span class="dot">56</span><span class="nm">K. Martin <small>NB</small></span></div><div class="gm-fp def r5" style="left: 34%; top: 19%" title="Kyle Hamilton Slast game 100% of snapsSafety · 81st pct of group · 876 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.37 lg 0.47Targets drawn5.6% lg 5.6%Missed tackle %6% lg 9%context (not rated): 50 tgt · 6.3 yds/tgt · 62% comp · aDOT 5.8 · 4 prs · 0.5 sk · 95 tkl / 6 miss · 1 INT · 8 PD"><span class="dot">81</span><span class="nm">K. Hamilton <small>S</small></span></div><div class="gm-fp def r4" style="left: 66%; top: 19%" title="Malaki Starks Slast game 100% of snapsSafety · 65th pct of group · 912 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.46 lg 0.47Targets drawn4.2% lg 5.6%Missed tackle %10% lg 9%context (not rated): 36 tgt · 11.5 yds/tgt · 75% comp · aDOT 11.2 · 4 prs · 1.0 sk · 77 tkl / 8 miss · 1 INT · 3 PD"><span class="dot">65</span><span class="nm">M. Starks <small>S</small></span></div>
+        <div class="gm-fp def r3" style="left: 26%; top: 51%" title="Trey Hendrickson LBon report – Fingerlast game 62% of snapsEdge · 51st pct of group · 302 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.4% lg 3.5%Sack rate1.2% lg 0.9%TFL rate1.2% lg 1.2%Missed tackle %12% lg 9%context (not rated): 10 prs · 4.0 sk · 10 tkl / 2 miss · 0 INT · 0 PD"><span class="dot">51<em>?</em></span><span class="nm">T. Hendrickson <small>EDGE</small></span></div><div class="gm-fp def r4" style="left: 44%; top: 51%" title="Nnamdi Madubuike DLlast game 78% of snapsInterior DL · 79th pct of group · 246 wtd snaps2026 wks 1-6 + ½·2025Pressure rate2.2% lg 1.8%Sack rate0.6% lg 0.5%TFL rate0.6% lg 0.8%Missed tackle %6% lg 11%context (not rated): 6 prs · 1.5 sk · 14 tkl / 0 miss"><span class="dot">79</span><span class="nm">N. Madubuike <small>DI</small></span></div><div class="gm-fp def r2" style="left: 56%; top: 51%" title="Travis Jones DLlast game 54% of snapsInterior DL · 39th pct of group · 588 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.3% lg 1.8%Sack rate0.4% lg 0.5%TFL rate1.3% lg 0.8%Missed tackle %13% lg 11%context (not rated): 0 tgt · 25.0 yds/tgt · 100% comp · aDOT -8.0 · 7 prs · 2.5 sk · 16 tkl / 3 miss · 0 INT · 2 PD"><span class="dot">39</span><span class="nm">T. Jones <small>DI</small></span></div><div class="gm-fp def r2" style="left: 75%; top: 51%" title="Mike Green LBlast game 38% of snapsEdge · 34th pct of group · 529 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.0% lg 3.5%Sack rate0.8% lg 0.9%TFL rate1.4% lg 1.2%Missed tackle %10% lg 9%context (not rated): 4 tgt · 13.3 yds/tgt · 67% comp · aDOT 0.8 · 15 prs · 3.8 sk · 27 tkl / 3 miss"><span class="dot">34</span><span class="nm">M. Green <small>EDGE</small></span></div><div class="gm-fp def r4" style="left: 41%; top: 37%" title="Roquan Smith LBlast game 100% of snapsLinebacker · 66th pct of group · 864 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.36 lg 0.38Targets drawn6.2% lg 5.6%Missed tackle %6% lg 8%Tackle rate12.3% lg 11.8%TFL rate0.5% lg 0.8%context (not rated): 54 tgt · 5.7 yds/tgt · 61% comp · aDOT 3.3 · 8 prs · 2.0 sk · 106 tkl / 6 miss · 1 INT · 2 PD"><span class="dot">66</span><span class="nm">R. Smith <small>LB</small></span></div><div class="gm-fp def r5" style="left: 59%; top: 37%" title="Trenton Simpson LBlast game 59% of snapsLinebacker · 98th pct of group · 432 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.31 lg 0.38Targets drawn6.5% lg 5.6%Missed tackle %4% lg 8%Tackle rate15.1% lg 11.8%TFL rate1.6% lg 0.8%context (not rated): 30 tgt · 4.2 yds/tgt · 71% comp · aDOT 3.4 · 4 prs · 2.2 sk · 70 tkl / 2 miss · 1 INT · 2 PD"><span class="dot">98</span><span class="nm">T. Simpson <small>LB</small></span></div><div class="gm-fp def r3" style="left: 7%; top: 42%" title="Nate Wiggins CBlast game 100% of snapsCornerback · 58th pct of group · 896 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.58 lg 0.66Targets drawn9.1% lg 9.1%Missed tackle %10% lg 10%context (not rated): 82 tgt · 6.3 yds/tgt · 58% comp · aDOT 9.7 · 1 prs · 55 tkl / 6 miss · 2 INT · 10 PD"><span class="dot">58</span><span class="nm">N. Wiggins <small>CB</small></span></div><div class="gm-fp def r1" style="left: 93%; top: 42%" title="Marlon Humphrey CBlast game 95% of snapsCornerback · 12th pct of group · 751 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.87 lg 0.66Targets drawn10.0% lg 9.1%Missed tackle %12% lg 10%context (not rated): 76 tgt · 9.0 yds/tgt · 65% comp · aDOT 10.8 · 2 prs · 0.5 sk · 54 tkl / 8 miss · 2 INT · 12 PD"><span class="dot">12</span><span class="nm">M. Humphrey <small>CB</small></span></div><div class="gm-fp def thin" style="left: 18%; top: 44%" title="Keyon Martin CBlast game 38% of snapsCornerback · 56th pct of group · thin sample · 120 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.57 lg 0.66Targets drawn10.1% lg 9.1%Missed tackle %8% lg 10%context (not rated): 14 tgt · 4.1 yds/tgt · 70% comp · aDOT 4.0 · 2 prs · 1.5 sk · 16 tkl / 1 miss · 0 INT · 2 PD"><span class="dot">56</span><span class="nm">K. Martin <small>NB</small></span></div><div class="gm-fp def r4" style="left: 34%; top: 19%" title="Malaki Starks Slast game 100% of snapsSafety · 65th pct of group · 912 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.46 lg 0.47Targets drawn4.2% lg 5.6%Missed tackle %10% lg 9%context (not rated): 36 tgt · 11.5 yds/tgt · 75% comp · aDOT 11.2 · 4 prs · 1.0 sk · 77 tkl / 8 miss · 1 INT · 3 PD"><span class="dot">65</span><span class="nm">M. Starks <small>S</small></span></div><div class="gm-fp def r5" style="left: 66%; top: 19%" title="Kyle Hamilton Slast game 100% of snapsSafety · 81st pct of group · 876 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.37 lg 0.47Targets drawn5.6% lg 5.6%Missed tackle %6% lg 9%context (not rated): 50 tgt · 6.3 yds/tgt · 62% comp · aDOT 5.8 · 4 prs · 0.5 sk · 95 tkl / 6 miss · 1 INT · 8 PD"><span class="dot">81</span><span class="nm">K. Hamilton <small>S</small></span></div>
         <div class="gm-fp off r5" style="left: 7%; top: 63%" title="Ja&amp;#x27;Marr Chase WRprojected: 7.1 tgt · 59 rec yds88th pct production among the position&#x27;s starter pool · 77 yds/g over 13.0 wtd games10.0 tgt/g · 0.1 car/g"><span class="dot">88</span><span class="nm">J. Chase <small>WR</small></span></div><div class="gm-fp off thin" style="left: 18%; top: 65%" title="Dohnte Meyers WRprojected: 3.0 tgt · 21 rec yds17th pct production among the position&#x27;s starter pool (outside the pool) · 28 yds/g over 5.0 wtd games3.6 tgt/g · 0.2 car/g"><span class="dot">17</span><span class="nm">D. Meyers <small>WR</small></span></div><div class="gm-fp off r1" style="left: 80%; top: 62%" title="Mike Gesicki TEprojected: 2.6 tgt · 17 rec yds19th pct production among the position&#x27;s starter pool · 31 yds/g over 10.0 wtd games3.8 tgt/g · 0.0 car/g"><span class="dot">19</span><span class="nm">M. Gesicki <small>TE</small></span></div><div class="gm-fp off r5" style="left: 93%; top: 63%" title="Tee Higgins WRprojected: 6.4 tgt · 58 rec yds84th pct production among the position&#x27;s starter pool · 68 yds/g over 12.5 wtd games7.4 tgt/g · 0.0 car/g"><span class="dot">84</span><span class="nm">T. Higgins <small>WR</small></span></div><div class="gm-fp off r4" style="left: 50%; top: 75%" title="Joe Burrow QBprojected: 34 att · 236 pass yds69th pct production among the position&#x27;s starter pool · 259 yds/g over 9.0 wtd games35.4 att/g"><span class="dot">69</span><span class="nm">J. Burrow <small>QB</small></span></div><div class="gm-fp off r4" style="left: 39%; top: 76%" title="Chase Brown RBprojected: 15.6 car · 55 rush · 4.8 tgt · 21 rec77th pct production among the position&#x27;s starter pool · 81 yds/g over 13.5 wtd games5.3 tgt/g · 13.9 car/g"><span class="dot">77</span><span class="nm">C. Brown <small>RB</small></span></div><div class="gm-fp off ol" style="left: 31%; top: 62%" title="Orlando Brown Jr. Tlast game 98% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LT</span></div><div class="gm-fp off ol" style="left: 40.5%; top: 62%" title="Dylan Fairchild Glast game 98% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LG</span></div><div class="gm-fp off ol" style="left: 50%; top: 62%" title="Ted Karras Clast game 98% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">C</span></div><div class="gm-fp off ol" style="left: 59.5%; top: 62%" title="Dalton Risner Glast game 98% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RG</span></div><div class="gm-fp off ol" style="left: 69%; top: 62%" title="Amarius Mims Tlast game 94% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RT</span></div>
       </div>
     </div>
@@ -2371,7 +2932,7 @@
         <div class="gm-ftag top">CIN defense</div>
         <div class="gm-los"></div>
         <div class="gm-ftag bot">BAL offense</div>
-        <div class="gm-fp def r3" style="left: 26%; top: 51%" title="Boye Mafe DElast game 74% of snapsEdge · 48th pct of group · 520 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.2% lg 3.5%Sack rate0.8% lg 0.9%TFL rate1.3% lg 1.2%Missed tackle %9% lg 9%context (not rated): 5 tgt · 11.3 yds/tgt · 80% comp · aDOT -0.8 · 16 prs · 4.0 sk · 21 tkl / 2 miss · 0 INT · 4 PD"><span class="dot">48</span><span class="nm">B. Mafe <small>EDGE</small></span></div><div class="gm-fp def r5" style="left: 44%; top: 51%" title="Dexter Lawrence DTon report – Not injury related - resting playerlast game 65% of snapsInterior DL · 83rd pct of group · 602 wtd snaps2026 wks 1-6 + ½·2025Pressure rate2.4% lg 1.8%Sack rate0.5% lg 0.5%TFL rate1.1% lg 0.8%Missed tackle %10% lg 11%context (not rated): 15 prs · 3.2 sk · 22 tkl / 2 miss · 0 INT · 2 PD"><span class="dot">83<em>?</em></span><span class="nm">D. Lawrence <small>DI</small></span></div><div class="gm-fp def r5" style="left: 56%; top: 51%" title="Jonathan Allen DTon report – Not injury related - resting playerlast game 56% of snapsInterior DL · 84th pct of group · 616 wtd snaps2026 wks 1-6 + ½·2025Pressure rate2.6% lg 1.8%Sack rate0.7% lg 0.5%TFL rate1.1% lg 0.8%Missed tackle %15% lg 11%context (not rated): 0 tgt · -2.0 yds/tgt · 100% comp · aDOT -2.0 · 18 prs · 4.8 sk · 40 tkl / 8 miss · 0 INT · 1 PD"><span class="dot">84<em>?</em></span><span class="nm">J. Allen <small>DI</small></span></div><div class="gm-fp def r2" style="left: 75%; top: 51%" title="Myles Murphy DElast game 68% of snapsEdge · 23rd pct of group · 551 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.0% lg 3.5%Sack rate0.8% lg 0.9%TFL rate0.8% lg 1.2%Missed tackle %10% lg 9%context (not rated): 2 tgt · 13.6 yds/tgt · 100% comp · 16 prs · 4.2 sk · 29 tkl / 4 miss · 0 INT · 2 PD"><span class="dot">23</span><span class="nm">M. Murphy <small>EDGE</small></span></div><div class="gm-fp def r1" style="left: 41%; top: 37%" title="Barrett Carter LBlast game 100% of snapsLinebacker · 2nd pct of group · 722 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.66 lg 0.38Targets drawn7.8% lg 5.6%Missed tackle %14% lg 8%Tackle rate12.5% lg 11.7%TFL rate0.6% lg 0.8%context (not rated): 60 tgt · 8.6 yds/tgt · 72% comp · aDOT 4.8 · 4 prs · 1.5 sk · 92 tkl / 16 miss · 0 INT · 4 PD"><span class="dot">2</span><span class="nm">B. Carter <small>LB</small></span></div><div class="gm-fp def r1" style="left: 59%; top: 37%" title="Demetrius Knight LBlast game 83% of snapsLinebacker · 20th pct of group · 678 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.51 lg 0.38Targets drawn6.5% lg 5.6%Missed tackle %10% lg 8%Tackle rate13.0% lg 11.7%TFL rate0.7% lg 0.8%context (not rated): 46 tgt · 8.1 yds/tgt · 77% comp · aDOT 4.6 · 6 prs · 1.5 sk · 90 tkl / 10 miss · 1 INT · 4 PD"><span class="dot">20</span><span class="nm">D. Knight <small>LB</small></span></div><div class="gm-fp def r5" style="left: 7%; top: 42%" title="DJ Turner CBlast game 97% of snapsCornerback · 88th pct of group · 810 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.46 lg 0.66Targets drawn7.2% lg 9.1%Missed tackle %12% lg 10%context (not rated): 55 tgt · 6.3 yds/tgt · 50% comp · aDOT 11.7 · 32 tkl / 5 miss · 1 INT · 14 PD"><span class="dot">88</span><span class="nm">D. Turner <small>CB</small></span></div><div class="gm-fp def r5" style="left: 93%; top: 42%" title="Daxton Hill CBlast game 97% of snapsCornerback · 85th pct of group · 829 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.51 lg 0.66Targets drawn8.1% lg 9.1%Missed tackle %8% lg 10%context (not rated): 66 tgt · 6.2 yds/tgt · 57% comp · aDOT 8.5 · 0 prs · 68 tkl / 6 miss · 0 INT · 10 PD"><span class="dot">85</span><span class="nm">D. Hill <small>CB</small></span></div><div class="gm-fp def r2" style="left: 18%; top: 44%" title="DJ Ivey CBlast game 55% of snapsCornerback · 29th pct of group · 152 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.70 lg 0.66Targets drawn10.5% lg 9.1%Missed tackle %8% lg 10%context (not rated): 18 tgt · 6.3 yds/tgt · 47% comp · aDOT 13.5 · 11 tkl / 0 miss · 0 INT · 4 PD"><span class="dot">29</span><span class="nm">D. Ivey <small>NB</small></span></div><div class="gm-fp def r1" style="left: 34%; top: 19%" title="Jordan Battle Slast game 100% of snapsSafety · 10th pct of group · 848 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.58 lg 0.47Targets drawn5.5% lg 5.6%Missed tackle %14% lg 9%context (not rated): 46 tgt · 10.9 yds/tgt · 61% comp · aDOT 10.8 · 1 prs · 90 tkl / 16 miss · 5 INT · 7 PD"><span class="dot">10</span><span class="nm">J. Battle <small>S</small></span></div><div class="gm-fp def r4" style="left: 66%; top: 19%" title="Bryan Cook Slast game 97% of snapsSafety · 60th pct of group · 650 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.47 lg 0.47Targets drawn5.4% lg 5.6%Missed tackle %8% lg 9%context (not rated): 34 tgt · 9.0 yds/tgt · 62% comp · aDOT 11.1 · 0 prs · 58 tkl / 4 miss · 0 INT · 3 PD"><span class="dot">60</span><span class="nm">B. Cook <small>S</small></span></div>
+        <div class="gm-fp def r3" style="left: 26%; top: 51%" title="Boye Mafe DElast game 74% of snapsEdge · 49th pct of group · 520 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.2% lg 3.5%Sack rate0.8% lg 0.9%TFL rate1.3% lg 1.2%Missed tackle %9% lg 9%context (not rated): 5 tgt · 11.3 yds/tgt · 80% comp · aDOT -0.8 · 16 prs · 4.0 sk · 21 tkl / 2 miss · 0 INT · 4 PD"><span class="dot">49</span><span class="nm">B. Mafe <small>EDGE</small></span></div><div class="gm-fp def r5" style="left: 44%; top: 51%" title="Dexter Lawrence DTon report – Not injury related - resting playerlast game 65% of snapsInterior DL · 83rd pct of group · 602 wtd snaps2026 wks 1-6 + ½·2025Pressure rate2.4% lg 1.8%Sack rate0.5% lg 0.5%TFL rate1.1% lg 0.8%Missed tackle %10% lg 11%context (not rated): 15 prs · 3.2 sk · 22 tkl / 2 miss · 0 INT · 2 PD"><span class="dot">83<em>?</em></span><span class="nm">D. Lawrence <small>DI</small></span></div><div class="gm-fp def r5" style="left: 56%; top: 51%" title="Jonathan Allen DTon report – Not injury related - resting playerlast game 56% of snapsInterior DL · 84th pct of group · 616 wtd snaps2026 wks 1-6 + ½·2025Pressure rate2.6% lg 1.8%Sack rate0.7% lg 0.5%TFL rate1.1% lg 0.8%Missed tackle %15% lg 11%context (not rated): 0 tgt · -2.0 yds/tgt · 100% comp · aDOT -2.0 · 18 prs · 4.8 sk · 40 tkl / 8 miss · 0 INT · 1 PD"><span class="dot">84<em>?</em></span><span class="nm">J. Allen <small>DI</small></span></div><div class="gm-fp def r2" style="left: 75%; top: 51%" title="Myles Murphy DElast game 68% of snapsEdge · 24th pct of group · 551 wtd snaps2026 wks 1-6 + ½·2025Pressure rate2.9% lg 3.5%Sack rate0.8% lg 0.9%TFL rate0.8% lg 1.2%Missed tackle %10% lg 9%context (not rated): 2 tgt · 13.6 yds/tgt · 100% comp · 16 prs · 4.2 sk · 29 tkl / 4 miss · 0 INT · 2 PD"><span class="dot">24</span><span class="nm">M. Murphy <small>EDGE</small></span></div><div class="gm-fp def r1" style="left: 41%; top: 37%" title="Barrett Carter LBlast game 100% of snapsLinebacker · 2nd pct of group · 722 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.66 lg 0.38Targets drawn7.8% lg 5.6%Missed tackle %14% lg 8%Tackle rate12.5% lg 11.8%TFL rate0.6% lg 0.8%context (not rated): 60 tgt · 8.6 yds/tgt · 72% comp · aDOT 4.8 · 4 prs · 1.5 sk · 92 tkl / 16 miss · 0 INT · 4 PD"><span class="dot">2</span><span class="nm">B. Carter <small>LB</small></span></div><div class="gm-fp def r2" style="left: 59%; top: 37%" title="Demetrius Knight LBlast game 83% of snapsLinebacker · 20th pct of group · 678 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.52 lg 0.38Targets drawn6.5% lg 5.6%Missed tackle %10% lg 8%Tackle rate13.1% lg 11.8%TFL rate0.7% lg 0.8%context (not rated): 46 tgt · 8.1 yds/tgt · 77% comp · aDOT 4.6 · 6 prs · 1.5 sk · 90 tkl / 10 miss · 1 INT · 4 PD"><span class="dot">20</span><span class="nm">D. Knight <small>LB</small></span></div><div class="gm-fp def r5" style="left: 7%; top: 42%" title="Daxton Hill CBlast game 97% of snapsCornerback · 85th pct of group · 829 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.51 lg 0.66Targets drawn8.1% lg 9.1%Missed tackle %8% lg 10%context (not rated): 66 tgt · 6.2 yds/tgt · 57% comp · aDOT 8.5 · 0 prs · 68 tkl / 6 miss · 0 INT · 10 PD"><span class="dot">85</span><span class="nm">D. Hill <small>CB</small></span></div><div class="gm-fp def r5" style="left: 93%; top: 42%" title="DJ Turner CBlast game 97% of snapsCornerback · 88th pct of group · 810 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.46 lg 0.66Targets drawn7.2% lg 9.1%Missed tackle %12% lg 10%context (not rated): 55 tgt · 6.3 yds/tgt · 50% comp · aDOT 11.7 · 32 tkl / 5 miss · 1 INT · 14 PD"><span class="dot">88</span><span class="nm">D. Turner <small>CB</small></span></div><div class="gm-fp def r2" style="left: 18%; top: 44%" title="DJ Ivey CBlast game 55% of snapsCornerback · 29th pct of group · 152 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.70 lg 0.66Targets drawn10.5% lg 9.1%Missed tackle %8% lg 10%context (not rated): 18 tgt · 6.3 yds/tgt · 47% comp · aDOT 13.5 · 11 tkl / 0 miss · 0 INT · 4 PD"><span class="dot">29</span><span class="nm">D. Ivey <small>NB</small></span></div><div class="gm-fp def r1" style="left: 34%; top: 19%" title="Jordan Battle Slast game 100% of snapsSafety · 10th pct of group · 848 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.58 lg 0.47Targets drawn5.5% lg 5.6%Missed tackle %14% lg 9%context (not rated): 46 tgt · 10.9 yds/tgt · 61% comp · aDOT 10.8 · 1 prs · 90 tkl / 16 miss · 5 INT · 7 PD"><span class="dot">10</span><span class="nm">J. Battle <small>S</small></span></div><div class="gm-fp def r4" style="left: 66%; top: 19%" title="Bryan Cook Slast game 97% of snapsSafety · 60th pct of group · 650 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.47 lg 0.47Targets drawn5.4% lg 5.6%Missed tackle %8% lg 9%context (not rated): 34 tgt · 9.0 yds/tgt · 62% comp · aDOT 11.1 · 0 prs · 58 tkl / 4 miss · 0 INT · 3 PD"><span class="dot">60</span><span class="nm">B. Cook <small>S</small></span></div>
         <div class="gm-fp off r5" style="left: 7%; top: 63%" title="Zay Flowers WRprojected: 7.4 tgt · 62 rec yds94th pct production among the position&#x27;s starter pool · 80 yds/g over 13.5 wtd games7.5 tgt/g · 0.6 car/g"><span class="dot">94</span><span class="nm">Z. Flowers <small>WR</small></span></div><div class="gm-fp off thin" style="left: 18%; top: 65%" title="Chris Moore WRprojected: 2.4 tgt · 17 rec yds4th pct production among the position&#x27;s starter pool (outside the pool) · 21 yds/g over 8.0 wtd games2.2 tgt/g · 0.1 car/g"><span class="dot">4</span><span class="nm">C. Moore <small>WR</small></span></div><div class="gm-fp off r1" style="left: 80%; top: 62%" title="Mark Andrews TEon report – Handprojected: 4.9 tgt · 22 rec yds3rd pct production among the position&#x27;s starter pool · 27 yds/g over 14.5 wtd games4.7 tgt/g · 0.3 car/g"><span class="dot">3<em>?</em></span><span class="nm">M. Andrews <small>TE</small></span></div><div class="gm-fp off r1" style="left: 93%; top: 63%" title="Rashod Bateman WRon report – Shoulderprojected: 3.7 tgt · 34 rec yds15th pct production among the position&#x27;s starter pool · 28 yds/g over 12.5 wtd games3.3 tgt/g · 0.0 car/g"><span class="dot">15<em>?</em></span><span class="nm">R. Bateman <small>WR</small></span></div><div class="gm-fp off thin" style="left: 50%; top: 75%" title="Tyler Huntley QBprojected: 31 att · 231 pass yds0th pct production among the position&#x27;s starter pool (outside the pool) · 142 yds/g over 5.5 wtd games19.2 att/g"><span class="dot">0</span><span class="nm">T. Huntley <small>QB</small></span></div><div class="gm-fp off r5" style="left: 39%; top: 76%" title="Derrick Henry RBprojected: 20.9 car · 83 rush · 1.6 tgt · 8 rec89th pct production among the position&#x27;s starter pool · 101 yds/g over 14.5 wtd games1.4 tgt/g · 19.6 car/g"><span class="dot">89</span><span class="nm">D. Henry <small>RB</small></span></div><div class="gm-fp off ol" style="left: 31%; top: 62%" title="Roger Rosengarten Tlast game 90% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LT</span></div><div class="gm-fp off ol" style="left: 40.5%; top: 62%" title="John Simpson Glast game 90% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LG<em>?</em></span></div><div class="gm-fp off ol" style="left: 50%; top: 62%" title="Emery Jones Glast game 90% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">C</span></div><div class="gm-fp off ol" style="left: 59.5%; top: 62%" title="Olaivavega Ioane Glast game 90% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RG<em>?</em></span></div><div class="gm-fp off ol" style="left: 69%; top: 62%" title="Ronnie Stanley Tlast game 89% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RT<em>?</em></span></div>
       </div>
     </div>
@@ -2382,7 +2943,7 @@
 
 
 
-<details class="hfa-card hfa-sec gm-injuries pp-sec" id="injuries" data-sec="injuries" open>
+<details class="hfa-card hfa-sec gm-injuries pp-sec" id="injuries" data-sec="injuries">
   <summary class="hfa-head pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <div class="hfa-eyebrow">Injury report</div>
@@ -2458,7 +3019,7 @@
 </div>
 
 <div class="gm-ir ">
-  <span class="gm-rate r3" title="47th percentile in the Edge group, 2026 wks 1-6 + ½·2025">47</span>
+  <span class="gm-rate r3" title="48th percentile in the Edge group, 2026 wks 1-6 + ½·2025">48</span>
   <div class="gm-irm">
     <div class="top"><b>Tavius Robinson</b><span class="flat">LB</span><span class="badge out">Out</span></div>
     <div class="meta">Pectoral &middot; Did Not Participate In Practice &middot; 49% of snaps last game</div>
@@ -2608,19 +3169,191 @@
 </details>
 
 
-<details class="hfa-card hfa-sec pp-sec pp-unknowns" id="before" data-sec="before" open>
+
+<details class="hfa-card hfa-sec pp-sec rv-grade" id="grade" data-sec="grade" open>
   <summary class="pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    <span class="pp-headtext"><span class="hfa-eyebrow">Before you bet it</span><span class="pp-h2">Check these first</span></span>
-    <span class="pp-headchips"><span class="badge warn">6 to check</span><span class="pp-open">open</span></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The grade</span><span class="pp-h2">The projection against the box score</span></span>
+    <span class="pp-headchips"><span class="badge good">projection B &middot; 76</span><span class="pp-open">open</span></span>
   </summary>
   <div class="pp-body">
-    <div class="pp-checks">
-      <div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Jackson is ruled out, but Sunday reporting has him close to returning — an unexpected activation would rewrite both sides of this plan.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Ronnie Stanley did not practice all week with no designation shown; his status governs the Baltimore pressure and Henry&#x27;s efficiency reads.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Cincinnati lists Dexter Lawrence, Jonathan Allen and B.J. Hill as non-injury rest DNPs.</p><details class="pp-more"><summary>more</summary><p>If any of them is actually limited, the soft-run-defense read strengthens; if all play full snaps, the Henry over is thinner.</p></details></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Every line here is from Kalshi, whose player markets are thin; check the volume behind a price before leaning on the gap between it and the model.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Bateman is cleared but his snap share is the open question — one week at 30% is an observation, not yet a settled role.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Broderick Washington (ankle) is questionable for Baltimore&#x27;s interior defensive line.</p></div></div>
+    <div class="rv-gradehead">
+      <div class="rv-letter good"><b>B</b><span>76 of 100</span></div>
+      <div class="rv-gradeparts">
+        <div class="rv-part"><span>Team volume &amp; yards</span><div class="rv-bar"><i style="width: 64%"></i></div><b>64</b></div>
+        <div class="rv-part"><span>Player lines <small>31/39 in range</small></span><div class="rv-bar"><i style="width: 79%"></i></div><b>79</b></div>
+        <div class="rv-mkts"><span class="badge good">Winner: CIN &#10003;</span><span class="badge good">Spread: CIN -3 &#10003;</span><span class="badge good">Total: Over 46.5 (proj 46.6) &#10003;</span></div>
+      </div>
     </div>
-    <p class="pp-disclaimer">The plan is a read written from the data as of Sun Oct 25, 9:08 AM Denver; lines, designations and the model's inputs move after that. Nothing here changes a projection or a price, and nothing on this site is betting advice.</p>
+    <div class="pp-card wide"><p class="pp-lead">A B (0.763) with a perfect market score: winner, spread and total all cashed, and 31 of 39 player lines graded as hits. The team-level score (0.635) suffers from one structural miss on each side — Cincinnati scored 35 on 24.8 projected and only 53 plays, while Baltimore&#x27;s 21.8 projected points came in at 13.</p><details class="pp-more"><summary>more</summary><p>Both misses run through the same place: the 20-yard line. Cincinnati went 5-for-5 on red-zone trips at +0.99 EPA/play inside it; Baltimore had three trips, zero touchdowns, -0.724 EPA/play, and turned a 13-0 cushion into two field goals and a failed fourth down at the 12. Volume was read well (BAL carries 27 vs 27.4 projected, pass attempts within three on both sides); efficiency inside the 20 was not, and the engine&#x27;s own note says that split is the least persistent thing it carries.</p></details></div>
+    <div class="rv-teams">
+      
+      <div class="rv-team" style="--pp-team: #241773">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy"><b>Ravens</b><span class="flat">projected &rarr; actual</span></div>
+        
+        <div class="rv-trow ">
+          <span>Points</span>
+          <em>21.8</em><i>&#8594;</i><b>13</b>
+          <small class="flat">-8.8</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 56%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Pass yds</span>
+          <em>231.3</em><i>&#8594;</i><b>298</b>
+          <small class="flat">+66.7</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 56%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Rush yds</span>
+          <em>124.4</em><i>&#8594;</i><b>83</b>
+          <small class="flat">-41.4</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 54%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Pass att</span>
+          <em>31.0</em><i>&#8594;</i><b>34</b>
+          <small class="flat">+3</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 81%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Carries</span>
+          <em>27.4</em><i>&#8594;</i><b>27</b>
+          <small class="flat">-0.4</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 97%"></i></div>
+        </div>
+        
+      </div>
+      
+      <div class="rv-team" style="--pp-team: #FB4F14">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy"><b>Bengals</b><span class="flat">projected &rarr; actual</span></div>
+        
+        <div class="rv-trow big">
+          <span>Points</span>
+          <em>24.8</em><i>&#8594;</i><b>35</b>
+          <small class="up">+10.2</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 49%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Pass yds</span>
+          <em>236.2</em><i>&#8594;</i><b>292</b>
+          <small class="flat">+55.8</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 63%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Rush yds</span>
+          <em>100.0</em><i>&#8594;</i><b>73</b>
+          <small class="flat">-27</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 70%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Pass att</span>
+          <em>33.6</em><i>&#8594;</i><b>30</b>
+          <small class="flat">-3.6</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 77%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Carries</span>
+          <em>25.6</em><i>&#8594;</i><b>20</b>
+          <small class="flat">-5.6</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 60%"></i></div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="rv-two">
+      <div class="rv-list good"><div class="pp-k">Nailed it</div><div class="rv-li"><b>Ja&#x27;Marr Chase</b> <span class="flat">CIN &middot; targets</span><span class="rv-nums">7.1 &#8594; <b>7</b></span></div><div class="rv-li"><b>Rashod Bateman</b> <span class="flat">BAL &middot; rec yds</span><span class="rv-nums">33.8 &#8594; <b>33</b></span></div><div class="rv-li"><b>Mark Andrews</b> <span class="flat">BAL &middot; rec yds</span><span class="rv-nums">21.7 &#8594; <b>23</b></span></div><div class="rv-li"><b>Chase Brown</b> <span class="flat">CIN &middot; targets</span><span class="rv-nums">4.8 &#8594; <b>5</b></span></div></div>
+      <div class="rv-list bad"><div class="pp-k">Missed most</div><div class="rv-li"><b>Tee Higgins</b> <span class="flat">CIN &middot; rec yds</span><span class="rv-nums">57.9 &#8594; <b>148</b></span></div><div class="rv-li"><b>Zay Flowers</b> <span class="flat">BAL &middot; rec yds</span><span class="rv-nums">62.4 &#8594; <b>137</b></span></div><div class="rv-li"><b>Derrick Henry</b> <span class="flat">BAL &middot; rush yds</span><span class="rv-nums">82.8 &#8594; <b>45</b></span></div><div class="rv-li"><b>Dohnte Meyers</b> <span class="flat">CIN &middot; rec yds</span><span class="rv-nums">21.4 &#8594; <b>0</b></span></div></div>
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">Why it missed</div>
+    <div class="rv-decided">
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy">mixed</span>
+        <p class="pp-lead">35 points on a 24.8 projection despite 53 plays (projected 61.3) and 73 rush yards (projected 100)</p>
+        <p class="pp-sub">Finishing, not movement: five red-zone trips, five touchdowns, +0.99 EPA/play inside the 20, and 0.592 EPA per dropback.</p>
+        <details class="pp-more"><summary>more</summary><p>Burrow&#x27;s 4/5 on deep throws and 15.5 CPOE did the rest; two Higgins catches (44 and 43 yards) set up two of the scores.</p></details>
+      </div>
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy">mixed</span>
+        <p class="pp-lead">13 points on 21.8 projected, with 298 passing yards against a 231 projection and 83 rush yards against 124</p>
+        <p class="pp-sub">Yards without touchdowns in reverse order — the yardage came from Huntley&#x27;s short game (adot 7.0, 212 YAC, 0/5 deep) while the ground game the projection leaned on died (27 carries, 3.07 a carry, -0.319 EPA/rush, Henry -5.96 rushing EPA).</p>
+        <details class="pp-more"><summary>more</summary><p>Seven pre-snap penalties stalled drives, and three red-zone trips produced no touchdowns.</p></details>
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy">signal</span>
+        <p class="pp-lead">Pass rate 0.597 against a 0.492 season rate and a 0.549 blend</p>
+        <p class="pp-sub">Game state plus the Jackson absence: 23 plays trailing at 60.9% pass, and even while leading BAL threw 57.5%.</p>
+        <details class="pp-more"><summary>more</summary><p>The blended run-lean read was wrong before the script turned.</p></details>
+      </div>
+      
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">What it got right</div>
+    <div class="rv-right"><span><i>&#10003;</i>CIN by 3 and the over at 46.5 — the final was CIN -22 and 48 points, both correct sides.</span><span><i>&#10003;</i>Baltimore&#x27;s volume: 27 carries (27.4 projected), 34 attempts (31), Huntley 23 completions (21.1).</span><span><i>&#10003;</i>Ja&#x27;Marr Chase targets (7.1 proj / 7 actual) and receptions (4.8 / 5), Bateman rec yds (33.8 / 33), Andrews rec yds (21.7 / 23), Chase Brown targets (4.8 / 5).</span><span><i>&#10003;</i>Sacks taken by Cincinnati (2.1 projected, 1 actual) and Burrow&#x27;s interception projection of 0.6 against a clean sheet.</span></div>
+    
   </div>
 </details>
+
+
+
+<details class="hfa-card hfa-sec pp-sec rv-next" id="next" data-sec="next" open>
+  <summary class="pp-head">
+    <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">Next time</span><span class="pp-h2">What carries into the next plan</span></span>
+    <span class="pp-headchips"><span class="badge acc">4 lessons</span><span class="pp-open">open</span></span>
+  </summary>
+  <div class="pp-body">
+    
+    <div class="pp-k">For the next plan on these clubs</div>
+    <div class="pp-checks">
+      <div class="pp-check rv-lesson"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="BAL" loading="lazy"><div><p class="pp-lead">Stop treating this as a run-first offense without Jackson.</p><details class="pp-more"><summary>more</summary><p>In the three Huntley weeks the pass rate has climbed to 59.7% here against a 49.2% season mark, and the ground game produced -0.319 EPA/rush. Project attempts off the script, not the identity.</p></details></div></div><div class="pp-check rv-lesson"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="BAL" loading="lazy"><div><p class="pp-lead">Bateman&#x27;s Week 6 snap dip was noise — 73.1% of snaps and team-leading air yards this week.</p><details class="pp-more"><summary>more</summary><p>Revert his role to the full-starter baseline rather than compounding one week&#x27;s observation.</p></details></div></div><div class="pp-check rv-lesson"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="CIN" loading="lazy"><div><p class="pp-lead">The &#x27;soft front&#x27; label built on 5.04 yards per carry allowed collapsed with Lawrence on the field (2 TFL, 3.07 allowed).</p><details class="pp-more"><summary>more</summary><p>Next plan should condition the run-defense read on interior DL availability rather than the season rate alone — but one game is one observation; don&#x27;t flip them to elite either.</p></details></div></div><div class="pp-check rv-lesson"><div><p class="pp-lead">Chase Brown missing 39.5 by half a yard with the lead script that was predicted is the bounce, not a bad read — the mechanism (42% pass while leading) arrived.</p><details class="pp-more"><summary>more</summary><p>Do not downgrade the volume logic; do downgrade the assumption that a 53-play game leaves room for 15-18 carries.</p></details></div></div>
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">How each club gets beaten <span class="flat">&middot; this game read with its season so far</span></div>
+    <div class="rv-blueprints">
+      
+      <div class="rv-bp" style="--pp-team: #FB4F14">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/cin.png" alt="" loading="lazy"><b>Bengals</b><span class="flat">3-2 entering</span><span class="badge mute">medium confidence</span></div>
+        <div class="rv-recur"><span class="badge bad">run game &times;3</span><span class="badge bad">pre-snap penalties &times;3</span><span class="badge bad">explosive passing &times;3</span></div>
+        <div class="rv-facet"><span class="rv-side defense">defense</span><div><b>Explosive passing against the back end</b><p class="pp-sub">&#x27;explosive passing&#x27; tag allowed in Weeks 2, 3 and 5 (5, 5 and 3 twenty-plus passes); here BAL hit a 48-yard TD and a 20-yard conversion on third-and-13 in the first quarter alone.</p></div></div><div class="rv-facet"><span class="rv-side defense">defense</span><div><b>The run game, on paper</b><p class="pp-sub">&#x27;run game&#x27; tag in Weeks 1, 3 and 5; season 5.04 yards per carry allowed, 25th in rush EPA.</p><details class="pp-more"><summary>more</summary><p>But this week they held Baltimore to 3.07 and -0.319 EPA/rush with Lawrence at 66.7% of snaps.</p></details></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Its own early-down stalls when behind</b><p class="pp-sub">First half: 19 plays, 73.7% pass, -0.279 EPA/play, three punts and an end-of-half sack; Week 2 at HOU was the same shape (0.305 success, five sacks).</p></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Self-inflicted drives — turnovers and flags</b><p class="pp-sub">Week 4 vs JAX: 2 turnovers, 11 flags for 108 yards, &#x27;abandoned the run&#x27; tag, a loss as a favorite.</p><details class="pp-more"><summary>more</summary><p>Week 2: 12 flags for 78 yards. Not present this week (1 flag, 0 turnovers).</p></details></div></div>
+        <div class="pp-expect"><span class="pp-k">What an opponent needs</span><p class="pp-lead">An offense that scores from beyond the 20: explosive-pass rate above the league&#x27;s 3.0 per game, a quarterback who can win outside the numbers (CIN allowed 6.87 YPA on the season), and ideally a rushing attack with explosive-run equity rather than grinder volume — a team that must drive 12 plays to score will leave field goals here.</p></div>
+      </div>
+      
+      <div class="rv-bp" style="--pp-team: #241773">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/bal.png" alt="" loading="lazy"><b>Ravens</b><span class="flat">4-2 entering</span><span class="badge mute">medium confidence</span></div>
+        <div class="rv-recur"><span class="badge bad">pre-snap penalties &times;4</span><span class="badge bad">third down &times;3</span><span class="badge bad">penalties &times;2</span><span class="badge bad">explosive passing &times;2</span></div>
+        <div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Pre-snap penalties killing its own drives</b><p class="pp-sub">&#x27;pre-snap penalties&#x27; tag in four of six prior weeks; 2.5/game season rate vs 1.55 league.</p><details class="pp-more"><summary>more</summary><p>Here 7 of 10 flags were pre-snap — false starts by Andrews, Hibner (at the CIN 11, before a FG), Stanley twice, Rosengarten, plus a delay of game at the BAL 13.</p></details></div></div><div class="rv-facet"><span class="rv-side defense">defense</span><div><b>Explosive passes allowed in the secondary</b><p class="pp-sub">5 allowed in Week 2, 5 in Week 4, 4 in Week 5; this week Higgins caught 44 and 43-yard balls on consecutive Cincinnati drives and Chase added a 30-yarder, with Hawkins out.</p></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Third down and red-zone offense without Jackson</b><p class="pp-sub">&#x27;third down&#x27; tag in Weeks 1, 3 and 4; 9-for-18 here plus 0-for-2 on fourth down and 0-for-3 red-zone touchdowns.</p><details class="pp-more"><summary>more</summary><p>Week 6 at CLE: 10 points, -0.094 EPA/play, 6-for-16 on third down.</p></details></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Pressure on a patched line</b><p class="pp-sub">&#x27;pressure allowed&#x27; tag Week 5 (4 sacks); 23.7% pressure in Week 6; 4 sacks and 6 QB hits here (25% sack-or-hit), three of them ending drives.</p></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Its back&#x27;s efficiency when the front is stacked</b><p class="pp-sub">Henry -5.96 rushing EPA on 17 carries here; rush EPA negative in Weeks 3 (-0.135), 4 (-0.164) and 6 (-0.564) — the run game is explosive-dependent, not steady.</p></div></div>
+        <div class="pp-expect"><span class="pp-k">What an opponent needs</span><p class="pp-lead">A quarterback who completes deep throws (CIN was 4/5; league explosive-pass baseline is 3.0 a game), a receiver who can run past the deep safety with Hawkins out, and a front that can win without blitzing — Cincinnati generated four sacks and 25% pressure while Baltimore faced only a 29.4%-blitz look from the other side.</p></div>
+      </div>
+      
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">Traps <span class="flat">&middot; where a line can fool you next time</span></div>
+    <div class="pp-checks">
+      <div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Props</span><p class="pp-lead">A soft season yards-per-carry number is not a soft front when the interior is healthy. Cincinnati entered allowing 5.04 a carry and held Henry to 2.6 with Lawrence at 66.7% of snaps and two TFL. Check the DL snap report before buying a rushing over off an allowed-YPC rank.</p><p class="pp-sub"><b>Trigger:</b> RB rush-yard over whose entire case is an opponent&#x27;s bottom-five YPC allowed, with no explosive-run profile from the back (Henry: zero 10-plus runs in this game, three negative rush-EPA weeks).</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Totals</span><p class="pp-lead">Yardage and points detach at the 20. Baltimore out-gained the field (57 plays outside the red zone at +0.031) and scored 13 because three trips made zero touchdowns. Buy the receiving yards, fade the team total and the anytime-TD prices against a defense whose red-zone TD rate allowed is under 40%.</p><p class="pp-sub"><b>Trigger:</b> A defense with red-zone EPA/play allowed below -0.4 facing an offense without a quarterback run threat — price the opponent&#x27;s team total toward field goals.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Props</span><p class="pp-lead">A backup quarterback&#x27;s passing under can lose on YAC even when every projection input holds. Huntley went 0/5 deep with -1.8 CPOE and still cleared 199.5 by 100 because he threw 34 times short and his receivers added 212 YAC in a chase script.</p><p class="pp-sub"><b>Trigger:</b> QB passing under on a short-adot passer who will be trailing — check the receiving corps&#x27; YAC profile (Flowers 101 YAC on 8 catches) before taking an efficiency-based under against volume.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Totals</span><p class="pp-lead">Pre-snap penalties are the one flag category with some persistence, and Baltimore has the tag in five of seven weeks now (7 pre-snap flags here). They cost drives specifically inside scoring range — Hibner at the CIN 11 before a 34-yard field goal.</p><p class="pp-sub"><b>Trigger:</b> A team at 2.5-plus pre-snap flags per game, on the road or in a loud divisional setting, with a red-zone touchdown rate already under 60%.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Props</span><p class="pp-lead">Game-state pass rates override season leans fast. BAL was tagged a run team at 49.2% and threw on 59.7% of snaps, including 57.5% while leading; CIN ran more than its season rate (42.1% pass while leading).</p><p class="pp-sub"><b>Trigger:</b> Any carry or attempt prop built off a season pass-rate lean when the pre-game spread is inside a field goal — the script, not the identity, sets the volume.</p></div></div>
+    </div>
+    
+    <p class="pp-disclaimer">The plan was a read written before kickoff; the report reads the game after it, from the play-by-play and the box score. Nothing here changes a projection or a price, and nothing on this site is betting advice.</p>
+  </div>
+</details>
+
 
 <div class="pl-modal" id="pl-modal" hidden data-src="/nfl/w/7/g/2026_07_CIN_BAL/players.html">
   <div class="pl-back"></div>
@@ -2632,7 +3365,7 @@
 </main>
   <footer class="hfa-foot">
     <p><strong>Huffalytics</strong> publishes NFL stats, game projections, team EPA rankings and graded player prop plans priced against Kalshi, rebuilt every week from play-by-play data. <a href="/about/">How the engine works</a>.</p>
-    <p>Data as of Tue Oct 27, 4:04 PM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/nfl/data/week.json">week.json</a> · <a href="/nfl/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
+    <p>Data as of Wed Oct 28, 8:02 AM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/nfl/data/week.json">week.json</a> · <a href="/nfl/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
   </footer>
 </div>
 <script>

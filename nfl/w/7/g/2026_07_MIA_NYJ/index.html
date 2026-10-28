@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dolphins at Jets: NFL Week 7 2026 Projection, Matchups and Injuries | Huffalytics</title>
-<meta name="description" content="Miami Dolphins at New York Jets, NFL week 7 2026: the projected score, each offense against the defense it meets (projected player lines, overall, run game with lanes, pass game), the starting elevens rated, and both injury reports.">
+<title>Dolphins at Jets: NFL Week 7 2026 Final, Game Report and the Plan Graded | Huffalytics</title>
+<meta name="description" content="Miami Dolphins 28, New York Jets 25, NFL week 7 2026: Miami, 0-5 and a 3.5-point dog, led wire to wire and won 28-25 — the game flew over a 39.5 total because both secondaries got torched on a handful of snaps, and the Jets left 11 points in the scoring zone (missed 40-yarder, red-zone pick, a 12-yard sack at the 3). The pre-game plan graded: script partly held, every call checked against the box score.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="keywords" content="NFL stats, NFL projections, NFL week 7 2026, Kalshi NFL, Kalshi player props, NFL player props, NFL team rankings, EPA per play, NFL betting model, NFL streaming picks, fantasy football projections">
 <meta name="author" content="Huffalytics">
@@ -1294,6 +1294,248 @@
     .gm-script { margin: -0.4rem 16px 1rem; }
     .pp-headchips .badge { display: none; }
   }
+
+  /* ---- the post-game look: the plan against the game (.rv-) ---- */
+  .gm-side.lost img { opacity: 0.45; filter: grayscale(0.6) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.55)); }
+  .gm-side.lost .gm-abbr { color: var(--hfa-muted); }
+  .gm-pts.final { color: var(--hfa-body); text-shadow: none; }
+  .gm-pts.final span { opacity: 0.55; }
+  .gm-pts.final span.w { opacity: 1; color: var(--hfa-accent); text-shadow: 0 0 28px rgba(255, 31, 47, 0.35); }
+  .gm-projwas { letter-spacing: 0.08em; }
+  .gm-verdict { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.4rem 1rem; margin: -0.6rem 1.1rem 1.2rem; padding: 0.55rem 1rem; border: 1px solid var(--hfa-accent); border-radius: 16px; background: var(--hfa-accent-soft); color: inherit; text-decoration: none; }
+  .gm-verdict.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.10); }
+  .gm-verdict.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.10); }
+  .gm-verdict.warn { border-color: rgba(128, 128, 128, 0.5); background: var(--hfa-tint); }
+  .gm-verdict-stamp { display: inline-flex; align-items: baseline; gap: 0.45rem; }
+  .gm-verdict-stamp i, .gm-verdict-v i { font-style: normal; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-muted); }
+  .gm-verdict-stamp b { font-size: 1.05rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; color: var(--hfa-body); }
+  .gm-verdict.good .gm-verdict-stamp b { color: var(--hfa-good); } .gm-verdict.bad .gm-verdict-stamp b { color: var(--hfa-bad); }
+  .gm-verdict-v { display: inline-flex; align-items: baseline; gap: 0.35rem; font-size: 0.9rem; }
+  .gm-verdict-v b { font-weight: 800; color: var(--hfa-body); }
+  .gm-verdict-v.mk { font-size: 0.74rem; color: var(--hfa-muted); padding: 0.1rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.14); }
+  .gm-letter { font-size: 1.1rem; } .gm-letter.good { color: var(--hfa-good) !important; } .gm-letter.bad { color: var(--hfa-bad) !important; }
+  .gm-tile.rv small { font-size: 0.66rem; color: var(--hfa-muted); }
+  .gm-tile.rv.over b { color: var(--hfa-good); } .gm-tile.rv.under b { color: var(--hfa-bad); }
+  .gm-tile.rv b.flat { color: var(--hfa-muted); }
+
+  .rv-stamp { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.4rem; padding: 0.8rem 1rem; margin: 0.3rem 0 0.9rem; border-radius: 16px; border: 2px solid rgba(128, 128, 128, 0.4); background: var(--hfa-tint); }
+  .rv-stamp.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.08); }
+  .rv-stamp.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.08); }
+  .rv-stamp-word { display: flex; flex-direction: column; line-height: 1; }
+  .rv-stamp-word span { font-size: 0.64rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: var(--hfa-muted); }
+  .rv-stamp-word b { font-size: 2rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; color: var(--hfa-body); margin-top: 0.2rem; }
+  .rv-stamp.good .rv-stamp-word b { color: var(--hfa-good); } .rv-stamp.bad .rv-stamp-word b { color: var(--hfa-bad); }
+  .rv-stamp-meta { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.9rem; }
+  .rv-stamp-meta b { color: var(--hfa-body); }
+  .rv-win { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 700; }
+  .rv-win img { width: 26px; height: 26px; object-fit: contain; }
+  .rv-vs { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 0.8rem; align-items: stretch; }
+  .rv-col { border: var(--hfa-hairline); border-radius: 14px; padding: 0.8rem 0.95rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-col .pp-hook-logos { margin-bottom: 0.4rem; } .rv-col .pp-hook-logos img { width: 40px; height: 40px; }
+  .rv-col .pp-quote { font-size: 1.2rem; }
+  .rv-col.plan .pp-quote { color: var(--hfa-body); }
+  .rv-col.game { border-color: rgba(255, 31, 47, 0.45); }
+  .rv-col.game.good { border-color: var(--hfa-good); } .rv-col.game.bad { border-color: var(--hfa-bad); }
+  .rv-arrow { align-self: center; font-size: 1.6rem; font-weight: 900; color: var(--hfa-accent); }
+  .rv-tally { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.55rem; margin-top: 0.9rem; }
+  .rv-tile { display: flex; flex-direction: column; gap: 0.15rem; border: var(--hfa-hairline); border-radius: 12px; padding: 0.6rem 0.75rem; background: var(--hfa-tint); color: inherit; text-decoration: none; min-width: 0; }
+  .rv-tile > span { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .rv-tile > b { font-size: 1.6rem; font-weight: 900; line-height: 1.1; color: var(--hfa-body); }
+  .rv-tile > b i { font-style: normal; }
+  .rv-tile > b small, .rv-tile > small { font-size: 0.72rem; font-weight: 600; color: var(--hfa-muted); }
+  .rv-tile.hot { border-color: rgba(255, 31, 47, 0.5); }
+  .rv-tile.lt b { font-size: 2rem; } .rv-tile.lt.good b { color: var(--hfa-good); } .rv-tile.lt.bad b { color: var(--hfa-bad); }
+  .rv-headline { font-size: 1.08rem; font-weight: 800; line-height: 1.35; margin: 0; letter-spacing: -0.01em; }
+  .rv-tile.mk em { font-style: normal; font-size: 0.8rem; font-weight: 700; }
+  .rv-bar { height: 5px; border-radius: 3px; background: rgba(128, 128, 128, 0.2); overflow: hidden; }
+  .rv-bar i { display: block; height: 100%; border-radius: 3px; background: var(--hfa-good); }
+  .rv-why { border-left: 4px solid var(--hfa-accent); }
+  .rv-fold { margin-top: 0.9rem; border-top: var(--hfa-hairline); padding-top: 0.7rem; }
+  .rv-fold > summary { list-style: none; cursor: pointer; font-size: 0.74rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin-bottom: 0.6rem; }
+  .rv-fold > summary::-webkit-details-marker { display: none; }
+  .rv-fold > summary::before { content: "+ "; } .rv-fold[open] > summary::before { content: "\2212  "; }
+  .rv-fold > summary .flat { text-transform: none; letter-spacing: 0; font-weight: 500; }
+  .rv-story { font-size: 0.92rem; line-height: 1.6; max-width: 52rem; }
+  .rv-story h1, .rv-story h2, .rv-story h3 { font-size: 1rem; color: var(--hfa-accent); margin: 1rem 0 0.3rem; }
+  .rv-story p { margin: 0 0 0.7rem; }
+
+  .rv-tl { list-style: none; margin: 0; padding: 0 0 0 0.2rem; display: flex; flex-direction: column; }
+  .rv-tl li { position: relative; display: grid; grid-template-columns: 5.2rem minmax(0, 1fr); gap: 0.8rem; padding: 0 0 0.9rem; }
+  .rv-tl li::before { content: ""; position: absolute; left: 2.6rem; top: 1.6rem; bottom: 0; width: 2px; background: rgba(128, 128, 128, 0.25); }
+  .rv-tl li:last-child::before { display: none; }
+  .rv-clock { align-self: start; justify-self: center; z-index: 1; font-size: 0.72rem; font-weight: 800; padding: 0.25rem 0.55rem; border-radius: 999px; background: var(--pp-team); color: #fff; white-space: nowrap; box-shadow: 0 0 0 3px var(--hfa-card); }
+  .rv-tlbody { border: var(--hfa-hairline); border-left: 4px solid var(--pp-team); border-radius: 12px; padding: 0.55rem 0.8rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-play { display: flex; align-items: flex-start; gap: 0.5rem; font-weight: 700; font-size: 0.94rem; line-height: 1.35; }
+  .rv-play img { width: 24px; height: 24px; object-fit: contain; flex: none; }
+  .rv-decided { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.6rem; }
+  .rv-dcard { border: var(--hfa-hairline); border-radius: 14px; padding: 0.7rem 0.85rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-dcard.tell { border-color: rgba(47, 212, 164, 0.5); }
+  .rv-flag { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.12rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); margin-bottom: 0.4rem; }
+  .rv-flag img { width: 14px; height: 14px; object-fit: contain; }
+  .rv-dcard.tell .rv-flag { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .rv-dcard .pp-lead { font-size: 0.92rem; font-weight: 700; }
+
+  .rv-gauge.held { border-color: rgba(47, 212, 164, 0.55); } .rv-gauge.miss { border-color: rgba(255, 176, 32, 0.55); }
+  .rv-mark { margin-left: auto; font-size: 0.85rem; }
+  .rv-gauge.held .rv-mark { color: var(--hfa-good); } .rv-gauge.miss .rv-mark { color: var(--hfa-bad); }
+  .rv-row { display: grid; grid-template-columns: 3.2rem auto 1fr; align-items: center; gap: 0.45rem; font-size: 0.8rem; }
+  .rv-row small { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-muted); }
+  .rv-row em { font-style: normal; font-weight: 800; text-transform: capitalize; }
+  .rv-row.played .pp-bars i.on { background: var(--hfa-body); }
+  .rv-gauge.held .rv-row.played .pp-bars i.on { background: var(--hfa-good); } .rv-gauge.miss .rv-row.played .pp-bars i.on { background: var(--hfa-bad); }
+  .rv-note { font-size: 0.7rem; color: var(--hfa-muted); }
+  .pp-leanbar .track i.called { background: transparent; border: 2px solid var(--hfa-body); box-shadow: none; }
+  .pp-leanbar .track i.played { background: var(--hfa-accent); border-color: var(--hfa-card); }
+  .rv-cvp { text-transform: capitalize; } .rv-cvp i { font-style: normal; color: var(--hfa-muted); }
+  .rv-legend { display: flex; gap: 1rem; font-size: 0.68rem; color: var(--hfa-muted); margin: 0.2rem 0 0; }
+  .rv-legend span { display: inline-flex; align-items: center; gap: 0.3rem; }
+  .rv-legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .rv-legend i.called { border: 2px solid var(--hfa-body); } .rv-legend i.played { background: var(--hfa-accent); }
+  .pp-path.took { border-color: rgba(47, 212, 164, 0.55); border-left-color: var(--pp-team); box-shadow: 0 0 0 1px rgba(47, 212, 164, 0.25) inset; }
+  .pp-path.not { opacity: 0.55; }
+  .pp-pathhead .badge { white-space: nowrap; }
+  .rv-swing { flex-direction: column; gap: 0.35rem; }
+  .rv-weight { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.12rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); }
+  .rv-swing.decisive { border-color: var(--hfa-accent); } .rv-swing.decisive .rv-weight { background: var(--hfa-accent); color: #fff; }
+  .rv-swing.contributed .rv-weight { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .rv-swing.minor { opacity: 0.85; }
+  .rv-went { font-size: 0.84rem; color: var(--hfa-muted); margin: 0; line-height: 1.4; } .rv-went b { color: var(--hfa-body); }
+  .pp-angle.cashed { border-color: rgba(47, 212, 164, 0.55); }
+  .pp-angletitle .badge { margin-left: 0.3rem; vertical-align: 0.1rem; }
+  .pp-leg .rv-res { font-size: 0.74rem; font-weight: 800; white-space: nowrap; }
+  .pp-leg.hit { background: rgba(47, 212, 164, 0.12); } .pp-leg.hit .rv-res { color: var(--hfa-good); }
+  .pp-leg.miss { background: rgba(255, 176, 32, 0.10); } .pp-leg.miss .rv-res { color: var(--hfa-bad); }
+  .pp-leg.void .rv-res { color: var(--hfa-muted); }
+
+  .rv-eh { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0.6rem; }
+  .rv-ehcol { border: var(--hfa-hairline); border-radius: 12px; padding: 0.6rem 0.8rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-ehcol .pp-lead { font-size: 0.9rem; }
+  .rv-ehcol.happened { border-width: 1px; border-color: rgba(128, 128, 128, 0.45); }
+  .rv-ehcol.happened.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.07); }
+  .rv-ehcol.happened.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.07); }
+  .rv-call.hit { border-left-color: var(--hfa-good); box-shadow: 0 0 0 1px rgba(47, 212, 164, 0.3) inset; }
+  .rv-call.miss { border-left-color: var(--hfa-bad); }
+  .rv-call.void { opacity: 0.6; border-left-color: rgba(128, 128, 128, 0.5); }
+  .rv-stamp-res { flex: none; display: inline-grid; place-items: center; min-width: 2rem; height: 2rem; padding: 0 0.3rem; border-radius: 999px; font-size: 0.95rem; font-weight: 900; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); }
+  .hfa .rv-stamp-res.hit { margin: 0; background: var(--hfa-good); color: #04130e; } .rv-stamp-res.miss { background: var(--hfa-bad); color: #1a1000; } .rv-stamp-res.void { font-size: 0.62rem; }
+  .rv-meter { margin: 0.25rem 0 0.45rem; }
+  .rv-meter .track { position: relative; height: 8px; border-radius: 4px; background: rgba(128, 128, 128, 0.18); }
+  .rv-meter .track .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: var(--hfa-muted); }
+  .rv-call.hit .rv-meter .fill { background: var(--hfa-good); } .rv-call.miss .rv-meter .fill { background: var(--hfa-bad); }
+  .rv-meter .track .line { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: var(--hfa-body); border-radius: 1px; }
+  .rv-meterlbl { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--hfa-muted); margin-top: 0.2rem; }
+  .rv-meterlbl b { color: var(--hfa-body); font-size: 0.85rem; }
+  .rv-read { margin-bottom: 0.35rem; display: inline-block; }
+  .rv-ig { color: var(--hfa-body); }
+  .rv-call .pp-probs { margin: 0.4rem 0; }
+  .rv-notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.5rem; }
+  .rv-note-card { border: var(--hfa-hairline); border-radius: 12px; padding: 0.55rem 0.75rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-note-card.signal { border-color: rgba(47, 212, 164, 0.45); }
+  .rv-notehead { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; }
+  .rv-notehead b { color: var(--hfa-body); font-size: 0.9rem; }
+
+  .rv-gradehead { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; padding: 0.3rem 0 0.4rem; }
+  .rv-letter { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 6rem; height: 6rem; border-radius: 22px; border: 2px solid rgba(128, 128, 128, 0.45); background: var(--hfa-tint); }
+  .rv-letter b { font-size: 3rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .rv-letter span { font-size: 0.66rem; font-weight: 700; color: var(--hfa-muted); }
+  .rv-letter.good { border-color: var(--hfa-good); } .rv-letter.good b { color: var(--hfa-good); }
+  .rv-letter.bad { border-color: var(--hfa-bad); } .rv-letter.bad b { color: var(--hfa-bad); }
+  .rv-gradeparts { flex: 1 1 18rem; display: flex; flex-direction: column; gap: 0.5rem; min-width: 0; }
+  .rv-part { display: grid; grid-template-columns: 11rem 1fr 2rem; align-items: center; gap: 0.6rem; font-size: 0.8rem; }
+  .rv-part span small { color: var(--hfa-muted); display: block; font-size: 0.68rem; }
+  .rv-part b { text-align: right; color: var(--hfa-body); }
+  .rv-part .rv-bar { height: 8px; }
+  .rv-mkts { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .rv-teams { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.6rem; margin-top: 0.9rem; }
+  .rv-team, .rv-bp { border: var(--hfa-hairline); border-top: 3px solid var(--pp-team); border-radius: 14px; padding: 0.7rem 0.85rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-teamhead { display: flex; align-items: center; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 0.5rem; }
+  .rv-teamhead img { width: 28px; height: 28px; object-fit: contain; }
+  .rv-teamhead b { color: var(--hfa-body); font-size: 1rem; }
+  .rv-teamhead .flat { font-size: 0.72rem; }
+  .rv-trow { display: grid; grid-template-columns: 5.2rem auto auto auto 1fr; grid-template-areas: "l p a v d" "bar bar bar bar bar"; align-items: baseline; gap: 0.15rem 0.45rem; padding: 0.35rem 0; border-top: var(--hfa-hairline); font-size: 0.84rem; }
+  .rv-trow span { grid-area: l; color: var(--hfa-muted); font-size: 0.74rem; }
+  .rv-trow em { font-style: normal; color: var(--hfa-muted); } .rv-trow i { font-style: normal; color: var(--hfa-muted); font-size: 0.72rem; }
+  .rv-trow b { color: var(--hfa-body); font-size: 1rem; } .rv-trow small { justify-self: end; font-weight: 700; }
+  .rv-trow .rv-bar { grid-area: bar; height: 4px; }
+  .rv-trow.big .rv-bar i { background: var(--hfa-bad); }
+  .rv-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.9rem; }
+  .rv-list { border: var(--hfa-hairline); border-radius: 14px; padding: 0.65rem 0.85rem; background: var(--hfa-tint); }
+  .rv-list.good .pp-k { color: var(--hfa-good); } .rv-list.bad .pp-k { color: var(--hfa-bad); }
+  .rv-li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem; padding: 0.3rem 0; border-top: var(--hfa-hairline); font-size: 0.84rem; }
+  .rv-li > b { color: var(--hfa-body); } .rv-li .flat { font-size: 0.72rem; }
+  .rv-nums { margin-left: auto; color: var(--hfa-muted); white-space: nowrap; } .rv-nums b { color: var(--hfa-body); }
+  .rv-right { display: flex; flex-direction: column; gap: 0.35rem; }
+  .rv-right span { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.4; }
+  .rv-right i { font-style: normal; color: var(--hfa-good); font-weight: 900; }
+
+  .rv-lesson img { width: 28px; height: 28px; object-fit: contain; flex: none; }
+  .rv-blueprints { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0.6rem; }
+  .rv-recur { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.45rem; }
+  .rv-facet { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); gap: 0.5rem; padding: 0.4rem 0; border-top: var(--hfa-hairline); font-size: 0.86rem; }
+  .rv-facet b { color: var(--hfa-body); }
+  .rv-side { align-self: start; text-align: center; font-size: 0.58rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.15rem 0.3rem; border-radius: 6px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); }
+  .rv-side.defense { background: rgba(255, 176, 32, 0.14); color: var(--hfa-bad); } .rv-side.offense { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .rv-bp .pp-expect { margin-top: 0.5rem; }
+  @media (max-width: 760px) {
+    .gm-verdict { margin: -0.4rem 16px 1rem; gap: 0.35rem 0.8rem; }
+    .gm-verdict-v.mk { display: none; }
+    .rv-vs { grid-template-columns: 1fr; }
+    .rv-arrow { transform: rotate(90deg); justify-self: center; line-height: 1; }
+    .rv-stamp-word b { font-size: 1.5rem; }
+    .rv-tally { grid-template-columns: 1fr 1fr; }
+    .rv-tally .rv-tile.mk { grid-column: 1 / -1; }
+    .rv-tl li { grid-template-columns: 1fr; gap: 0.3rem; }
+    .rv-tl li::before { display: none; }
+    .rv-clock { justify-self: start; }
+    .rv-decided, .rv-notes, .rv-teams, .rv-blueprints, .rv-two { grid-template-columns: 1fr; }
+    .rv-eh { grid-template-columns: 1fr; }
+    .rv-part { grid-template-columns: 8rem 1fr 2rem; }
+  }
+
+  /* ---- landing: the final reports band (.ld-rep) ---- */
+  .ld-reports.on { border-color: rgba(47, 212, 164, 0.5); background: linear-gradient(135deg, rgba(47, 212, 164, 0.12), var(--hfa-card) 55%); }
+  .ld-reports.on .ld-pulse { background: var(--hfa-good); animation: none; box-shadow: 0 0 0 4px rgba(47, 212, 164, 0.2); }
+  .ld-reports .ld-plans-head { flex-wrap: wrap; }
+  .ld-reports .ld-plans-head h2 b { color: var(--hfa-good); }
+  .ld-rep-title { flex: 1 1 18rem; min-width: 0; }
+  .ld-rep-sum { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .ld-rep-chip { display: inline-flex; align-items: baseline; gap: 0.3rem; padding: 0.3rem 0.7rem; border-radius: 999px; background: var(--hfa-tint); border: var(--hfa-hairline); font-size: 0.8rem; color: var(--hfa-muted); white-space: nowrap; }
+  .ld-rep-chip i { font-style: normal; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-right: 0.15rem; }
+  .ld-rep-chip b { font-weight: 900; font-size: 0.95rem; color: var(--hfa-body); } .ld-rep-chip b.up { color: var(--hfa-good); } .ld-rep-chip b.down { color: var(--hfa-bad); }
+  .ld-rep-chip.hot { border-color: rgba(255, 31, 47, 0.5); }
+  .ld-rep-grid { grid-auto-columns: 17rem; }
+  .ld-rep { display: flex; flex-direction: column; gap: 0.45rem; padding: 0.7rem 0.8rem; border-radius: 12px; background: var(--hfa-tint); border: var(--hfa-hairline); border-top: 3px solid rgba(128, 128, 128, 0.5); text-decoration: none; color: var(--hfa-body); transition: transform 0.12s, border-color 0.12s; scroll-snap-align: start; min-width: 0; }
+  .ld-rep:hover { transform: translateY(-2px); }
+  .ld-rep.good { border-top-color: var(--hfa-good); } .ld-rep.bad { border-top-color: var(--hfa-bad); }
+  .ld-rep-score { display: grid; grid-template-columns: 1fr 1fr auto; align-items: center; gap: 0.4rem; }
+  .ld-rep-score .t { display: inline-flex; align-items: center; gap: 0.3rem; opacity: 0.6; }
+  .ld-rep-score .t.w { opacity: 1; }
+  .ld-rep-score img { width: 22px; height: 22px; object-fit: contain; }
+  .ld-rep-score b { font-size: 0.82rem; font-weight: 800; color: var(--hfa-body); }
+  .ld-rep-score em { font-style: normal; font-size: 1.35rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .ld-rep-score .t.w em { color: var(--hfa-accent); }
+  .ld-rep-score small { font-size: 0.58rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep-verdict { align-self: flex-start; display: inline-flex; align-items: baseline; gap: 0.35rem; font-size: 0.72rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.15rem 0.55rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-body); }
+  .ld-rep-verdict i { font-style: normal; font-size: 0.56rem; font-weight: 800; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep.good .ld-rep-verdict { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); } .ld-rep.bad .ld-rep-verdict { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .ld-rep-head { font-size: 0.8rem; line-height: 1.4; color: var(--hfa-body); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; flex: 1 1 auto; }
+  .ld-rep-foot { display: flex; flex-wrap: wrap; gap: 0.3rem 0.8rem; padding-top: 0.4rem; border-top: var(--hfa-hairline); font-size: 0.8rem; }
+  .ld-rep-foot span { display: inline-flex; align-items: baseline; gap: 0.25rem; }
+  .ld-rep-foot i { font-style: normal; font-size: 0.56rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep-foot b { font-weight: 900; color: var(--hfa-body); } .ld-rep-foot b.up { color: var(--hfa-good); } .ld-rep-foot b.down { color: var(--hfa-bad); }
+  .ld-rep-foot b.g.good { color: var(--hfa-good); } .ld-rep-foot b.g.bad { color: var(--hfa-bad); }
+  @media (max-width: 760px) {
+    .ld-rep-grid { grid-auto-columns: 14.5rem; }
+    .ld-rep { padding: 0.55rem 0.6rem; }
+    .ld-rep-head { -webkit-line-clamp: 3; font-size: 0.76rem; }
+    .ld-rep-chip { font-size: 0.72rem; padding: 0.2rem 0.55rem; }
+    .rv-headline { font-size: 0.98rem; font-weight: 700; }
+    .ld-rep-score small { display: none; }
+    .ld-rep-score { grid-template-columns: 1fr 1fr; }
+    /* The live bands ride up under the intro, ahead of the game list. */
+    .ld-hero > .ld-hero-main { order: -2; }
+    .ld-hero > .ld-reports, .ld-hero > .ld-plans.on { order: -1; }
+  }
 </style>
 
 </head>
@@ -1327,12 +1569,12 @@
     <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
   </div>
   <main>
-<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#read" data-sec="read">The read</a><a href="#script" data-sec="script">The script</a><a href="#away" data-sec="away">MIA offense</a><a href="#home" data-sec="home">NYJ offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="#before" data-sec="before">Before you bet</a><a href="/nfl/w/7/">Week 7 board</a></nav>
+<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#result" data-sec="result">The result</a><a href="#game" data-sec="game">How it was decided</a><a href="#script" data-sec="script">The script</a><a href="#away" data-sec="away">MIA offense</a><a href="#home" data-sec="home">NYJ offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="#grade" data-sec="grade">The grade</a><a href="#next" data-sec="next">Next time</a><a href="/nfl/w/7/">Week 7 board</a></nav>
 
 <div class="hfa-card hfa-hero hfa-sec gm-hero" id="hero" data-sec="hero" style="--gm-away: #008E97; --gm-home: #003F2D;">
   <div class="gm-hero-top">
     <a class="gm-back" href="/nfl/w/7/">&#8249; Week 7 board</a>
-    <span class="hfa-eyebrow">NFL &middot; 2026 season &middot; week 7 &middot; final</span>
+    <span class="hfa-eyebrow">NFL &middot; 2026 season &middot; week 7 &middot; final &middot; reviewed</span>
   </div>
   <div class="gm-score">
     <div class="gm-side away">
@@ -1340,9 +1582,9 @@
       <div class="gm-id"><div class="gm-abbr">MIA</div><div class="gm-nick">Dolphins</div><i class="gm-under" style="background: #008E97"></i></div>
     </div>
     <div class="gm-mid">
-      <div class="gm-pts"><span>18.0</span><em>&ndash;</em><span>21.5</span></div><div class="gm-tag">projected</div>
+      <div class="gm-pts final"><span class="w">28</span><em>&ndash;</em><span class="">25</span></div><div class="gm-tag">final <span class="gm-projwas">&middot; projected 18.0&ndash;21.5</span></div>
     </div>
-    <div class="gm-side home">
+    <div class="gm-side home lost">
       <div class="gm-id"><div class="gm-abbr">NYJ</div><div class="gm-nick">Jets</div><i class="gm-under" style="background: #003F2D"></i></div>
       <img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="New York Jets logo" width="96" height="96">
     </div>
@@ -1351,128 +1593,339 @@
     <span class="gm-chip">Sunday Oct 25, 2026 <i>&middot; 11:00 AM Denver</i></span>
     <span class="gm-chip"><i>spread</i> <b>NYJ -3.5</b></span>
     <span class="gm-chip"><i>total</i> <b>39.5</b></span>
-    <span class="gm-chip final"><i>final</i> <b>MIA 28 &ndash; 25 NYJ</b></span>
+    
     <span class="gm-chip " title="Artificial turf. Passing is the same on grass and turf; rushing runs about 3.5% higher on turf (+3.7 yards a team) and a catch gains a tenth of a yard more after it. Points, the closing lines and the engine show no surface effect, so it is not an engine input."><i>field</i> <b>turf</b></span><span class="gm-chip " title="Forecast for the kickoff window, as of Sun 9:23 AM Denver. Wind above 10 mph trims the passing projection."><i>forecast</i> <b>67°F · wind 4 mph</b></span>
   </div>
   
-  <a class="gm-script" href="#script" title="The plan's script: pace, confidence and each side's lean — the section below has the rest">
-    <span class="gm-script-k">The script</span>
-    <span class="gm-script-v"><b>slow pace</b><span class="pp-bars sm"><i class="on"></i><i class=""></i><i class=""></i></span></span>
-    <span class="gm-script-v"><b>medium confidence</b><span class="pp-pips sm"><i class="on"></i><i class="on"></i><i class=""></i></span></span>
-    <span class="gm-script-v lean"><b>NYJ</b> run</span><span class="gm-script-v lean"><b>MIA</b> balanced</span>
+  <a class="gm-verdict warn" href="#result" title="The pre-game plan against the game: the report's verdict on the script, the calls graded off the box score, and the projection's grade">
+    <span class="gm-verdict-stamp"><i>The script</i><b>Partly held</b></span>
+    <span class="gm-verdict-v"><i>calls</i><b><span class="up">5</span>&ndash;<span class="down">6</span></b></span>
+    <span class="gm-verdict-v"><i>Edge+</i><b><span class="up">10</span>&ndash;<span class="down">1</span></b></span>
+    <span class="gm-verdict-v"><i>projection</i><b class="gm-letter bad">D</b></span>
+    <span class="gm-verdict-v mk">MIA covered (NYJ by 3.5)</span><span class="gm-verdict-v mk">Over 39.5 (53)</span>
   </a>
   
 </div>
 
 
-<details class="hfa-card hfa-sec pp-sec pp-read" id="read" data-sec="read" open>
+
+<details class="hfa-card hfa-sec pp-sec rv-result" id="result" data-sec="result" open>
   <summary class="pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    <span class="pp-headtext"><span class="hfa-eyebrow">The read &middot; written Sun Oct 25, 9:02 AM</span><span class="pp-h2">What the plan sees</span></span>
-    <span class="pp-headchips"><span class="badge acc">11 calls</span><span class="pp-open">open</span></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The result &middot; plan written Sun Oct 25, 9:02 AM &middot; report Tue Oct 27, 5:39 PM</span><span class="pp-h2">What the plan saw. What happened.</span></span>
+    <span class="pp-headchips"><span class="badge warn">script partly held</span><span class="pp-open">open</span></span>
   </summary>
   <div class="pp-body">
-    <div class="pp-hook">
-      <div class="pp-hook-logos"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy"><span class="pp-vs">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy"></div>
-      <blockquote class="pp-quote">Braelon Allen pounds a Miami front that stops nothing. Geno barely has to throw.</blockquote>
-      <p class="pp-headline">The Jets grind this out on the ground against the league&#x27;s worst run-EPA defense, while Miami&#x27;s offense moves and stalls again — the lever is Breece Hall&#x27;s pregame workout.</p>
+    <div class="rv-stamp warn">
+      <div class="rv-stamp-word"><span>The script</span><b>Partly held</b></div>
+      <div class="rv-stamp-meta">
+        <span>The game took <b>the underdog&#x27;s path</b></span>
+        <span class="rv-win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy">Dolphins won 28–25</span>
+      </div>
     </div>
-    <div class="pp-cards">
-      
-      <div class="pp-card">
-        <div class="pp-k">The read</div>
-        <p class="pp-lead">A low-total divisional slog between two offenses that fail in the same place: inside the 20.</p>
-        <details class="pp-more"><summary>more</summary><p>New York is favored by 3.5 with 21.5 implied points, and the clean path to them is Braelon Allen running at a Miami defense that ranks 32nd in rush EPA allowed and 32nd in rush success allowed. Miami, off the bye, meets the opposite problem — a Jets front that is 5th in rush EPA allowed and 9th in field EPA allowed between the 20s, which takes away the one thing Miami has done well (4.87 yards a carry, explosive runs in weeks 4 and 5) and leaves Malik Willis throwing into a secondary allowing 202 passing yards a game, 5th in the league.</p></details>
+    <div class="rv-vs">
+      <div class="rv-col plan">
+        <div class="pp-k">The plan said</div>
+        <div class="pp-hook-logos"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy"><span class="pp-vs">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy"></div>
+        <blockquote class="pp-quote">Braelon Allen pounds a Miami front that stops nothing. Geno barely has to throw.</blockquote>
+        <p class="pp-sub">The Jets grind this out on the ground against the league&#x27;s worst run-EPA defense, while Miami&#x27;s offense moves and stalls again — the lever is Breece Hall&#x27;s pregame workout.</p>
       </div>
-      
-      <div class="pp-card">
-        <div class="pp-k">Why</div>
-        <p class="pp-lead">Miami cannot rush the passer: a 3.3% sack rate generated and a 12.3% pressure rate, 27th.</p>
-        <details class="pp-more"><summary>more</summary><p>That hands Geno Smith a clean pocket, but a 3.5-point lead in a 39.5-point game means he throws about 30 times, not 40, and his target tree just got wider — Adonai Mitchell is back from a finger injury (Rotowire, Friday) and Omar Cooper Jr. took 82% of the snaps and seven targets in week 6. Garrett Wilson&#x27;s share is the casualty. On the other side, Miami&#x27;s season is 13, 13, 10, 10 and 24 points with a 40% red-zone touchdown rate; its yardage is real and its points are not, and Malik Washington has cleared 40 receiving yards in all five games regardless of how few snaps the offense gets. Both offenses have a stall habit — New York has gone three straight weeks without a red-zone touchdown, kicking four field goals at New England.</p></details>
+      <div class="rv-arrow" aria-hidden="true">&#8594;</div>
+      <div class="rv-col game warn">
+        <div class="pp-k">What happened</div>
+        <p class="rv-headline">Miami, 0-5 and a 3.5-point dog, led wire to wire and won 28-25 — the game flew over a 39.5 total because both secondaries got torched on a handful of snaps, and the Jets left 11 points in the scoring zone (missed 40-yarder, red-zone pick, a 12-yard sack at the 3).</p>
+        <p class="pp-sub">The plan correctly identified the two things that would decide the game — Allen as the whole backfield with Hall out, and whether either team could finish inside the 20 — and correctly refused to trust the Jets&#x27; red-zone offense. It got the lever backwards in two places: it assumed the Jets&#x27; top-5 rush-EPA front would take Miami&#x27;s run away and push Willis to 32 attempts (Miami ran 41 times and threw 21), and it assumed Miami could not pressure (6 QB hits, two drive-killing sacks).</p><details class="pp-more"><summary>more</summary><p>The underdog path is close to literally what happened — possessions, a long Miami gain, Willis&#x27;s legs, Jets stalling at the 20 — but the scoreboard went 28-25, not 19-17, because both teams hit YAC explosives. Of the misses, the Geno interception and Bell&#x27;s three catches are bounce; the Miami run lean and Gordon&#x27;s workload are reads the plan should change.</p></details>
       </div>
-      
-      <div class="pp-card">
-        <div class="pp-k">What would change it</div>
-        <p class="pp-lead">Breece Hall is questionable and will test the quad pregame (Rapoport, Sunday morning); if he plays, Allen&#x27;s carry count and goal-line equity both shrink.</p>
-        <details class="pp-more"><summary>more</summary><p>Miami falling behind by two scores early would force the pass volume its own coaches have avoided three weeks running. And an early New York turnover in its own half flips a 21-18 game into a shootout neither offense has shown it can sustain.</p></details>
-      </div>
-      
     </div>
+    <div class="rv-tally">
+      
+      <div class="rv-tile " title="The plan's calls graded off the box score at the Normal cushion">
+        <span>Normal calls</span>
+        <b><i class="up">5</i>&ndash;<i class="down">6</i></b>
+        <div class="rv-bar"><i style="width: 45%"></i></div>
+      </div>
+      
+      <div class="rv-tile " title="The plan's calls graded off the box score at the Edge cushion">
+        <span>Edge calls</span>
+        <b><i class="up">9</i>&ndash;<i class="down">2</i></b>
+        <div class="rv-bar"><i style="width: 82%"></i></div>
+      </div>
+      
+      <div class="rv-tile hot" title="The plan's calls graded off the box score at the Edge+ cushion">
+        <span>Edge+ calls</span>
+        <b><i class="up">10</i>&ndash;<i class="down">1</i></b>
+        <div class="rv-bar"><i style="width: 91%"></i></div>
+      </div>
+      
+      <a class="rv-tile lt bad" href="#grade" title="The projection graded: team volume and yardage, player lines and the market calls it implied"><span>Projection</span><b>D</b><small>47 of 100</small></a>
+      <div class="rv-tile" title="Projected player lines that landed in range"><span>Player lines</span><b>13<small>/41</small></b><small>in range</small></div>
+      <div class="rv-tile mk"><span>The market</span><em>MIA covered (NYJ by 3.5)</em><em>Over 39.5 (53)</em></div>
+    </div>
+    
+    <div class="pp-card wide rv-why">
+      <div class="pp-k">Why the script partly held</div>
+      <p class="pp-lead">Miami won it on possessions exactly as the underdog path described: 34:36 of clock, 41 carries, 3-for-3 on fourth down including the Willis sneak at the NYJ 49 with 2:00 left, and the Jets&#x27; scoring zone failed three times (missed 40-yarder at Q3 10:07, the red-zone interception at Q2 12:06, Robinson&#x27;s -12 sack at the MIA 3). Willis added 37 on five scrambles against a 48.3% blitz rate that produced two sacks, as written.</p>
+      <details class="pp-more"><summary>more</summary><p>But the mechanism diverged on points: Miami finished 3-for-3 in the red zone rather than stalling, New York scored three passing touchdowns rather than kicking three field goals, and checks show the pace played average (117 plays vs 121.5 league) with both leans wrong — NYJ passed at 60.4% against a called run lean, Miami ran to a 35.9% pass rate against a called balanced lean.</p></details>
+    </div>
+    
+    
+    <details class="rv-fold">
+      <summary>The plan's pre-game read <span class="flat">&middot; as written before kickoff</span></summary>
+      <div class="pp-cards">
+        <div class="pp-card"><div class="pp-k">The read</div><p class="pp-lead">A low-total divisional slog between two offenses that fail in the same place: inside the 20.</p><details class="pp-more"><summary>more</summary><p>New York is favored by 3.5 with 21.5 implied points, and the clean path to them is Braelon Allen running at a Miami defense that ranks 32nd in rush EPA allowed and 32nd in rush success allowed. Miami, off the bye, meets the opposite problem — a Jets front that is 5th in rush EPA allowed and 9th in field EPA allowed between the 20s, which takes away the one thing Miami has done well (4.87 yards a carry, explosive runs in weeks 4 and 5) and leaves Malik Willis throwing into a secondary allowing 202 passing yards a game, 5th in the league.</p></details></div><div class="pp-card"><div class="pp-k">Why</div><p class="pp-lead">Miami cannot rush the passer: a 3.3% sack rate generated and a 12.3% pressure rate, 27th.</p><details class="pp-more"><summary>more</summary><p>That hands Geno Smith a clean pocket, but a 3.5-point lead in a 39.5-point game means he throws about 30 times, not 40, and his target tree just got wider — Adonai Mitchell is back from a finger injury (Rotowire, Friday) and Omar Cooper Jr. took 82% of the snaps and seven targets in week 6. Garrett Wilson&#x27;s share is the casualty. On the other side, Miami&#x27;s season is 13, 13, 10, 10 and 24 points with a 40% red-zone touchdown rate; its yardage is real and its points are not, and Malik Washington has cleared 40 receiving yards in all five games regardless of how few snaps the offense gets. Both offenses have a stall habit — New York has gone three straight weeks without a red-zone touchdown, kicking four field goals at New England.</p></details></div><div class="pp-card"><div class="pp-k">What would change it</div><p class="pp-lead">Breece Hall is questionable and will test the quad pregame (Rapoport, Sunday morning); if he plays, Allen&#x27;s carry count and goal-line equity both shrink.</p><details class="pp-more"><summary>more</summary><p>Miami falling behind by two scores early would force the pass volume its own coaches have avoided three weeks running. And an early New York turnover in its own half flips a 21-18 game into a shootout neither offense has shown it can sustain.</p></details></div>
+      </div>
+    </details>
+    
   </div>
 </details>
 
 
-<details class="hfa-card hfa-sec pp-sec pp-script" id="script" data-sec="script" open>
+
+<details class="hfa-card hfa-sec pp-sec rv-game" id="game" data-sec="game" open>
   <summary class="pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    <span class="pp-headtext"><span class="hfa-eyebrow">The script</span><span class="pp-h2">How the game plays</span></span>
-    <span class="pp-headchips"><span class="badge mute">slow pace</span><span class="badge mute">medium confidence</span><span class="pp-open">open</span></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The game</span><span class="pp-h2">How it was decided</span></span>
+    <span class="pp-headchips"><span class="badge mute">7 turning points</span><span class="pp-open">open</span></span>
+  </summary>
+  <div class="pp-body">
+    
+    <div class="pp-k">Turning points</div>
+    <ol class="rv-tl">
+      
+      <li style="--pp-team: #003F2D">
+        <span class="rv-clock">Q1 10:53</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="NYJ" loading="lazy"><span>Geno Smith deep right to Omar Cooper for 52 to the MIA 13 (+3.24 EPA), two plays before the Taylor touchdown</span></div>
+          <p class="pp-sub">Set the template: the Jets&#x27; scoring came in one-play chunks against a Miami secondary that allows explosives, not from sustained drives.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #003F2D">
+        <span class="rv-clock">Q2 12:06</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="NYJ" loading="lazy"><span>Smith intercepted by Michael Taaffe at the MIA 15 on 1st-and-10 from the 21 (-4.87 EPA, -0.118 WPA)</span></div>
+          <p class="pp-sub">A minute earlier a Miami defensive holding flag had wiped out a Cam Johnson interception; the Jets got a second life and gave it back inside the red zone, the first of three scoring-zone failures.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #008E97">
+        <span class="rv-clock">Q2 03:14</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="MIA" loading="lazy"><span>Willis scrambles up the middle for 5 on 4th-and-2 at the NYJ 41 (+2.39 EPA), inside a 16-play, 87-yard, 8:38 drive</span></div>
+          <p class="pp-sub">The possession that broke the game open: Miami turned a 9-yard-line start into 21-7 and burned nearly nine minutes of a half the Jets never got back (34:36 to 25:18 TOP).</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #003F2D">
+        <span class="rv-clock">Q3 07:34</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="NYJ" loading="lazy"><span>Smith deep middle to Cooper for 60 to the MIA 10 on 3rd-and-7 (+5.08 EPA)</span></div>
+          <p class="pp-sub">The Jets&#x27; only answer all day — 83 yards in seven plays — and proof the deep shot, not the run, was their live lever.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #003F2D">
+        <span class="rv-clock">Q4 09:43</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="NYJ" loading="lazy"><span>Chop Robinson sacks Smith for -12 on 3rd-and-3 at the MIA 3 (-1.89 EPA, -0.13 WPA)</span></div>
+          <p class="pp-sub">Turned first-and-goal territory into a 33-yard field goal.</p>
+          <details class="pp-more"><summary>more</summary><p>In a three-point loss, with a 40-yard miss already banked, this is the game.</p></details>
+        </div>
+      </li>
+      
+      <li style="--pp-team: #008E97">
+        <span class="rv-clock">Q4 04:55</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="MIA" loading="lazy"><span>Willis short left to Caleb Douglas, 63 yards, TOUCHDOWN (+5.71 EPA, +0.176 WPA), roughing on Stephens after</span></div>
+          <p class="pp-sub">Three plays, 71 yards, 28-17; a 23-air-yard, 59-YAC game from a receiver with three targets decided the margin.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #008E97">
+        <span class="rv-clock">Q4 02:00</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="MIA" loading="lazy"><span>Willis up the middle for 2 on 4th-and-1 at the NYJ 49 (+1.37 EPA, +0.105 WPA)</span></div>
+          <p class="pp-sub">Miami&#x27;s third fourth-down conversion of the day ended it without the Jets touching the ball again.</p>
+          
+        </div>
+      </li>
+      
+    </ol>
+    
+    
+    <div class="pp-k pp-k-sec">What decided it <span class="flat">&middot; and whether the numbers showed it before kickoff</span></div>
+    <div class="rv-decided">
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag">pre-game tell</span>
+        <p class="pp-lead">Scoring-zone failure by the Jets versus perfect finishing by Miami</p>
+        <p class="pp-sub">NYJ: 4 red-zone trips, 3 TDs and a FG, plus a missed 40-yard FG at Q3 10:07 and the -12 sack at the MIA 3.</p>
+        <details class="pp-more"><summary>more</summary><p>MIA: 3 trips, 3 TDs, 0.519 EPA/play inside the 20 against a 40% season rate.</p><p><b>The tell.</b> NYJ carried &#x27;red zone stalls&#x27; and &#x27;yards without touchdowns&#x27; at NE (week 6: 3 trips, 0 TDs, 3 FGs) and 0-for-1 at CLE; Miami&#x27;s 40% was the league&#x27;s low end. The direction was readable, the reversal of Miami&#x27;s rate was not — red-zone rates are the least persistent number in the file.</p></details>
+      </div>
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag">in-game only</span>
+        <p class="pp-lead">Possession football: Miami&#x27;s 41 carries and 3-for-3 on fourth down</p>
+        <p class="pp-sub">63 plays to 57, 34:36 TOP, drives of 14 plays/7:35 and 16 plays/8:38, fourth-down conversions at the NYJ 2, the NYJ 41 and the NYJ 49.</p>
+        <details class="pp-more"><summary>more</summary><p><b>The tell.</b> Miami&#x27;s season rush EPA had turned positive in weeks 4 and 5 (+0.065, +0.110) with &#x27;own run game&#x27; tags, but the engine still blended a 54.2% pass rate; the Jets&#x27; front ranked well in rush EPA allowed, which argued the other way.</p></details>
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag">pre-game tell</span>
+        <p class="pp-lead">Explosive passing both ways on tiny attempt volume</p>
+        <p class="pp-sub">NYJ 4 passes of 20+ and 4-for-4 deep for 151; MIA 2 of 20+ including the 63-yard Douglas score, 137 YAC on 14 completions, 5.0 aDOT.</p>
+        <details class="pp-more"><summary>more</summary><p><b>The tell.</b> Miami&#x27;s defense was tagged for explosive passing in weeks 2, 3 and 5 and had allowed 1.058 EPA/dropback at SF; the Jets&#x27; own &#x27;own explosive passing&#x27; tags in weeks 1 and 3. Both low-aDOT offenses living on YAC is a totals signal a 39.5 number ignored.</p></details>
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag">pre-game tell</span>
+        <p class="pp-lead">Miami&#x27;s pass rush, which was supposed to be nonexistent, got home at the worst moment for New York</p>
+        <p class="pp-sub">2 sacks, 6 QB hits, 18.2% pressure rate allowed by NYJ — above the 15.8% league mark and above Miami&#x27;s 12.3% season generation.</p>
+        <details class="pp-more"><summary>more</summary><p>Robinson&#x27;s -12 and Herring&#x27;s -6 both killed scoring-zone drives.</p><p><b>The tell.</b> The read was on the Jets&#x27; side of it, not Miami&#x27;s: &#x27;pressure allowed&#x27; is the Jets&#x27; most recurring tag (weeks 2, 3, 4, 5), with Max Mitchell out and Parham questionable.</p></details>
+      </div>
+      
+    </div>
+    
+    
+    <details class="rv-fold">
+      <summary>The full story <span class="flat">&middot; the report's account, start to finish</span></summary>
+      <div class="rv-story"><h2>The short version</h2>
+<p>Miami, winless and getting 3.5, led for every second of game clock and won 28-25, and the 39.5 total cleared by thirteen and a half. The projection had the margin right (MIA +3.5 cashed) and the winner wrong, and graded out a D because the player layer fell apart: Miami ran 41 times against a 27.4 projection and threw 21 against 30.2, while New York's Cooper and Taylor and Miami's Gordon and Dulcich all doubled or tripled their lines. The decisive column was the scoring zone — Miami 3 trips, 3 touchdowns; New York 4 trips, 3 touchdowns, one 33-yard field goal that should have been seven, plus a missed 40-yarder and a red-zone interception.</p>
+<h2>How it unfolded</h2>
+<p>Miami's first possession was a 76-yard, seven-play drive built on a 25-yard Gordon run and a 32-yard shot to Dulcich (Q1 13:03, +2.84 EPA). The Jets answered in four plays, all of them one play: Cooper for 52 (Q1 10:53), Taylor for 13 and a tie. Then Miami took the game by the throat with clock. A 14-play, 7:35 drive ended with Gordon's one-yard plunge after a fourth-and-1 conversion at the NYJ 2; a 16-play, 8:38 drive from the Miami 9 ended with Willis's two-yard scramble at the two-minute warning of the half. In between, Geno Smith threw the game's only turnover — intercepted by Taaffe at the MIA 15 on first-and-10 from the 21 (-4.87 EPA) — a minute after a Miami defensive holding flag had erased a Cam Johnson pick. Two red-zone possessions, zero points.</p>
+<p>The second half was New York chasing with explosives and losing points at the end of drives. Sanders missed from 40. Cooper's 60-yarder on 3rd-and-7 set up a touchdown. The next drive reached first-and-goal territory — Allen ran to the MIA 1 at Q4 11:25 — and died when Chop Robinson sacked Smith for -12 on 3rd-and-3 at the 3, the single biggest defensive swing of the day (-0.13 WPA). Field goal, 21-17. Three plays later Miami answered with 71 yards in 1:25: Douglas, short left, 63 yards, touchdown. The Jets' late touchdown and two-point conversion got it to three, but Miami converted fourth-and-1 at the NYJ 49 with 2:00 left and the Jets never touched the ball again.</p>
+<h2>Why the game diverged from the projection</h2>
+<p>The Jets' projection was nearly exact in shape — 30 attempts against 29.9, 108 rush yards against 107, 25 points against 21.5. The miss was 67 pass yards, and it came from four deep attempts completed four times for 151 yards at +11.2 CPOE. That is efficiency on priced volume, and Miami's file said it was available: explosive-passing-allowed tags in weeks 2, 3 and 5.</p>
+<p>Miami's side was a volume break. The engine blended a 54.2% pass rate — already above Miami's own 51.5% season rate — and got 44.4%, with a 37.5% early-down rate against a 49.3% expectation. Part of that is script (Miami never trailed), but the tied-state split says more: 42.9% pass on 21 tied snaps. This is a team that wants to run, and with Achane out, Gordon took 25 carries at an 83% snap share. The 10-point team-total miss is a finishing story on top of that — 0.519 EPA/play inside the 20 and three touchdowns in three trips from a team at 40% for the season — plus one 63-yard catch-and-run that scored from outside the red zone entirely.</p>
+<h2>The plan against the game</h2>
+<p>The plan's underdog path reads like a summary of what happened — Miami wins on possessions, Jets stall at the 20, Willis's legs against a blitz that doesn't get home — but it arrived there through a different door. It expected the Jets' front to erase Miami's run and force Willis to 32 throws; instead Miami ran 41 times and threw 21, and the two leans in <code>checks</code> both came back wrong. It also wrote off Miami's pass rush, and that pass rush produced the play that decided the game. The result was a 1-point-off script with the wrong scoreboard: 28-25 instead of 19-17, because both offenses lived on YAC explosives rather than field goals.</p>
+<h2>Player by player</h2>
+<p>Gordon (25-103-1) and Allen (17-104, four 10-plus runs, 6 catches) were the volume stories, both products of an absent teammate. Dulcich took a 33% air-yards share on five targets and 86 yards; Washington, the projected target leader, saw three. On the Jets side, Mason Taylor's 40.9% air-yards share and two touchdowns and Cooper's 5-for-5 for 115 are role changes the usage model hasn't caught up to, while Garrett Wilson managed 2-26 on three targets in the most pass-friendly script he could ask for — 30 attempts, trailing all day. Douglas (2-70-2 on three targets) and Isaiah Davis (3-49 on -10 air yards) are the two lines to throw away.</p>
+<h2>The defenses</h2>
+<p>Charting here is snaps only — no coverage or pressure charting — but the pbp proxies are clear enough. Miami faced a 48.3% blitz rate and gave up 2 sacks and 2 QB hits; Willis answered with five scrambles for 37 yards, which is the structural counter to a blitz that doesn't finish. New York faced only a 19% blitz rate and gave up 6 QB hits and two sacks on four-man looks — pressure allowed is their most recurring tag (weeks 2 through 5) and it arrived at the MIA 23 and the MIA 3. Against the run, the Jets' front held Miami to 4.1 yards a carry but lost three fourth-and-shorts and 10.1 yards a pop to Allen's right side going the other way. Underneath, both secondaries tackled badly: 299 combined YAC on 37 completions at sub-5 aDOTs.</p>
+<h2>The blueprint</h2>
+<p>Miami gets beaten by deep shots against a secondary that has allowed explosives in four of six weeks, and historically by its own giveaways and pre-snap flags — which produced zero of each here. New York gets beaten by possession football and one scoring-zone pressure: let them have the field (0.24 field EPA) and make the single play at the 20. Both blueprints need the same thing from a future opponent — the ability to finish, not to move.</p>
+<h2>What the model should take from this</h2>
+<p>Three things. Miami's pass-rate blend needs to come down toward its own rate, and further in any leading script. A back whose complement is inactive should be re-weighted immediately, not shared. And red-zone trip conversion — the pivot of this whole afternoon — moved from 40% to 100% and from a three-week touchdown drought to three scores in one week, which is exactly why the engine keeps the touchdown split on the league constant. The grade punishes the player layer, and the player layer is where the fixable information is.</p></div>
+    </details>
+    
+  </div>
+</details>
+
+
+
+<details class="hfa-card hfa-sec pp-sec pp-script rv-script" id="script" data-sec="script" open>
+  <summary class="pp-head">
+    <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The script, graded</span><span class="pp-h2">Called against played</span></span>
+    <span class="pp-headchips"><span class="badge warn">script partly held</span><span class="pp-open">open</span></span>
   </summary>
   <div class="pp-body">
     <div class="pp-gauges">
-      <div class="pp-gauge" title="Plays and tempo the plan expects">
-        <div class="pp-k">Pace</div>
-        <div class="pp-bars"><i class="on"></i><i class=""></i><i class=""></i></div>
-        <b>slow</b>
+      
+      <div class="pp-gauge rv-gauge miss" title="Both teams ran 117 plays; two league-average offenses run 121.5">
+        <div class="pp-k">Pace <span class="rv-mark">&#10007;</span></div>
+        <div class="rv-row"><small>called</small><span class="pp-bars sm"><i class="on"></i><i class=""></i><i class=""></i></span><em>slow</em></div>
+        <div class="rv-row played"><small>played</small><span class="pp-bars sm"><i class="on"></i><i class="on"></i><i class=""></i></span><em>average</em></div>
+        <span class="rv-note">117 plays &middot; league 121.5</span>
       </div>
-      <div class="pp-gauge" title="How sure the plan is of its script">
-        <div class="pp-k">Confidence</div>
+      
+      <div class="pp-gauge" title="How sure the plan was of its script">
+        <div class="pp-k">The plan's confidence</div>
         <div class="pp-pips"><i class="on"></i><i class="on"></i><i class=""></i></div>
         <b>medium</b>
       </div>
       
-      <div class="pp-gauge lean" title="Season pass rate 55.2%, but with a lead against the worst run-EPA and run-success defense in the league, and Allen taking 86-94% of snaps in Hall&#x27;s absence, this is their most run-leaning spot of the year.">
-        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy"> NYJ leans</div>
-        <div class="pp-leanbar"><span>run</span><div class="track"><i style="left: 15%"></i></div><span>pass</span></div>
-        <b>run</b>
+      <div class="pp-gauge lean rv-gauge miss" title="Season pass rate 55.2%, but with a lead against the worst run-EPA and run-success defense in the league, and Allen taking 86-94% of snaps in Hall&#x27;s absence, this is their most run-leaning spot of the year.">
+        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy"> NYJ lean <span class="rv-mark">&#10007;</span></div>
+        <div class="pp-leanbar"><span>run</span><div class="track"><i class="called" style="left: 15%" title="called"></i><i class="played" style="left: 85%" title="played"></i></div><span>pass</span></div>
+        <b class="rv-cvp">run <i>&#8594;</i> pass</b><span class="rv-note">passed on 60% &middot; season 55%</span>
       </div>
       
-      <div class="pp-gauge lean" title="Season pass rate 51.5%.">
-        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy"> MIA leans</div>
-        <div class="pp-leanbar"><span>run</span><div class="track"><i style="left: 50%"></i></div><span>pass</span></div>
-        <b>balanced</b>
+      <div class="pp-gauge lean rv-gauge miss" title="Season pass rate 51.5%.">
+        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy"> MIA lean <span class="rv-mark">&#10007;</span></div>
+        <div class="pp-leanbar"><span>run</span><div class="track"><i class="called" style="left: 50%" title="called"></i><i class="played" style="left: 15%" title="played"></i></div><span>pass</span></div>
+        <b class="rv-cvp">balanced <i>&#8594;</i> run</b><span class="rv-note">passed on 36% &middot; season 52%</span>
       </div>
       
     </div>
-    <div class="pp-card wide">
-      <p class="pp-lead">New York should control this on the ground: Allen against a Miami defense that is last in rush EPA and rush success allowed is the cleanest matchup on the board, and it keeps Geno Smith&#x27;s attempt count near 30. Miami&#x27;s counter is its run game, and that is exactly what the Jets&#x27; front takes away — 5th in rush EPA allowed — so Willis ends up throwing into a secondary that gives up the fewest yards per game in the league outside the top four.</p>
-      <details class="pp-more"><summary>more</summary><p>Expect both offenses to move between the 20s and argue about field goals: Miami has a 40% red-zone touchdown rate, New York has gone three straight games without a red-zone touchdown. Low plays, low points, margin inside a touchdown.</p></details>
-    </div>
+    <div class="rv-legend"><span><i class="called"></i>called</span><span><i class="played"></i>played</span></div>
+    <div class="pp-k pp-k-sec">The two paths <span class="flat">&middot; the game took the underdog&#x27;s path</span></div>
     <div class="pp-paths">
       
-      <div class="pp-path fav" style="--pp-team: #003F2D">
-        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy"><span class="pp-k">If Jets win</span><span class="badge mute">favorite</span></div>
+      <div class="pp-path fav not" style="--pp-team: #003F2D">
+        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy"><span class="pp-k">If Jets win</span><span class="badge mute">didn't happen</span></div>
         <p class="pp-lead">New York runs 28-30 times with Allen, converts on third down better than it has, and wins 21-16 with the points arriving as a mix of short touchdowns and Sanders field goals.</p>
         <details class="pp-more"><summary>more</summary><p>Geno throws under 30 times, spreads it between Wilson, Cooper and Mitchell, and takes care of the ball against a defense that has essentially no takeaway rate.</p></details>
       </div>
       
-      <div class="pp-path dog" style="--pp-team: #008E97">
-        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy"><span class="pp-k">If Dolphins win</span><span class="badge mute">underdog</span></div>
+      <div class="pp-path dog took" style="--pp-team: #008E97">
+        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy"><span class="pp-k">If Dolphins win</span><span class="badge good">the way it went</span><span class="badge acc">won</span></div>
         <p class="pp-lead">Miami&#x27;s defense cannot pressure, but it does not have to: the Jets stall at the 20 again, kick three times, and Miami&#x27;s run game breaks one long one the way it did at Minnesota and Cincinnati.</p>
         <details class="pp-more"><summary>more</summary><p>Willis adds 50-plus with his legs against a blitz-heavy front that does not get home, Washington and Douglas move the chains, and Miami wins a 19-17 game on possessions.</p></details>
       </div>
       
     </div>
     
-    <div class="pp-k pp-k-sec">What swings it</div>
+    <div class="pp-k pp-k-sec">What the plan said would swing it <span class="flat">&middot; weighed after the game, biggest first</span></div>
     <div class="pp-swing">
-      <div class="pp-swingcard"><b class="n">1</b><div><p class="pp-lead">Breece Hall&#x27;s pregame quad test: if he plays, Allen loses carries and goal-line work the model has given him.</p></div></div><div class="pp-swingcard"><b class="n">2</b><div><p class="pp-lead">Miami&#x27;s run game vs a top-5 run-EPA front — if it is stuffed, Willis has to throw 32-plus into a stingy secondary.</p></div></div><div class="pp-swingcard"><b class="n">3</b><div><p class="pp-lead">Red-zone finishing both ways: New York has no red-zone touchdown in three weeks, Miami finishes 40% of trips.</p></div></div><div class="pp-swingcard"><b class="n">4</b><div><p class="pp-lead">Miami cannot pressure the quarterback (3.3% sack rate generated) — Geno gets a clean pocket all day.</p></div></div><div class="pp-swingcard"><b class="n">5</b><div><p class="pp-lead">Caleb Douglas returning from an ankle at a near-full snap share reshuffles Miami&#x27;s target tree.</p></div></div>
+      
+      <div class="pp-swingcard rv-swing decisive">
+        <span class="rv-weight">decisive</span>
+        <p class="pp-lead">Miami&#x27;s run game vs a top-5 run-EPA front — if it is stuffed, Willis has to throw 32-plus into a stingy secondary.</p>
+        <p class="rv-went"><b>Went:</b> The premise inverted: Miami was not stuffed, running 34 designed carries for 156 yards with two explosives, and Willis threw 21 times rather than the 32-plus the plan feared.</p>
+        <details class="pp-more"><summary>more</summary><p><b>In the game.</b> That volume choice is the single biggest divergence of the day.</p></details>
+      </div>
+      
+      <div class="pp-swingcard rv-swing decisive">
+        <span class="rv-weight">decisive</span>
+        <p class="pp-lead">Red-zone finishing both ways: New York has no red-zone touchdown in three weeks, Miami finishes 40% of trips.</p>
+        <p class="rv-went"><b>Went:</b> Both halves of it moved: Miami converted 3 of 3 trips (0.519 red-zone EPA/play) against a 40% season rate, and New York&#x27;s one failure — field goal after the sack at the 3, plus the missed 40-yarder — was the three-point margin.</p>
+        
+      </div>
+      
+      <div class="pp-swingcard rv-swing decisive">
+        <span class="rv-weight">decisive</span>
+        <p class="pp-lead">Miami cannot pressure the quarterback (3.3% sack rate generated) — Geno gets a clean pocket all day.</p>
+        <p class="rv-went"><b>Went:</b> Wrong in the way that cost the game: Miami produced 2 sacks and 6 QB hits (18.2% pressure allowed by NYJ, above the 15.8% league rate), and Robinson&#x27;s 12-yard sack on 3rd-and-3 at the MIA 3 was the biggest defensive WPA swing of the afternoon (-0.13).</p>
+        
+      </div>
+      
+      <div class="pp-swingcard rv-swing contributed">
+        <span class="rv-weight">contributed</span>
+        <p class="pp-lead">Breece Hall&#x27;s pregame quad test: if he plays, Allen loses carries and goal-line work the model has given him.</p>
+        <p class="rv-went"><b>Went:</b> Hall did not play; Allen took 17 carries for 104 with four 10-plus runs and seven targets at 78% snaps — the workload the plan priced, and it kept the Jets within one score.</p>
+        
+      </div>
+      
+      <div class="pp-swingcard rv-swing contributed">
+        <span class="rv-weight">contributed</span>
+        <p class="pp-lead">Caleb Douglas returning from an ankle at a near-full snap share reshuffles Miami&#x27;s target tree.</p>
+        <p class="rv-went"><b>Went:</b> Douglas played 67.7% of snaps but saw only 3 targets — a small role that still produced 2 touchdowns and 70 yards on 23 air yards and 59 YAC.</p>
+        <details class="pp-more"><summary>more</summary><p><b>In the game.</b> It reshuffled the scoreboard, not the target tree.</p></details>
+      </div>
+      
     </div>
     
     
-    <div class="pp-k pp-k-sec">Legs the same script produces <span class="flat">&middot; they move as one, which is what a same-game parlay pays for</span></div>
+    <div class="pp-k pp-k-sec">The legs the same script produced <span class="flat">&middot; graded off the box score</span></div>
     <div class="pp-angles">
       
-      <div class="pp-angle">
-        <div class="pp-angletitle">Jets grind it, clock runs</div>
-        <div class="pp-legs"><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>Braelon Allen</b><em>over 49.5 rush yds</em></span><span class="pp-leg under"><i class="arrow" aria-hidden="true">&#9660;</i><b>Garrett Wilson</b><em>under 5.5 receptions</em></span><span class="pp-leg under"><i class="arrow" aria-hidden="true">&#9660;</i><b>Geno Smith</b><em>under 0.5 INTs</em></span></div>
+      <div class="pp-angle ">
+        <div class="pp-angletitle">Jets grind it, clock runs <span class="badge mute">2 of 3 hit</span></div>
+        <div class="pp-legs"><span class="pp-leg over hit"><i class="arrow" aria-hidden="true">&#9650;</i><b>Braelon Allen</b><em>over 49.5 rush yds</em><span class="rv-res">&#10003; 104</span></span><span class="pp-leg under hit"><i class="arrow" aria-hidden="true">&#9660;</i><b>Garrett Wilson</b><em>under 5.5 receptions</em><span class="rv-res">&#10003; 2</span></span><span class="pp-leg under miss"><i class="arrow" aria-hidden="true">&#9660;</i><b>Geno Smith</b><em>under 0.5 INTs</em><span class="rv-res">&#10007; 1</span></span></div>
         <p class="pp-sub">One script: New York leads, runs at the league&#x27;s worst run-EPA defense with Allen as the whole backfield, keeps the attempt count near 30 and splits them three ways.</p>
         <details class="pp-more"><summary>more</summary><p>Fewer throws means fewer Wilson catches and fewer chances to give it away.</p></details>
       </div>
       
-      <div class="pp-angle">
-        <div class="pp-angletitle">Miami moves it short, finishes nothing</div>
-        <div class="pp-legs"><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>Malik Washington</b><em>over 39.5 rec yds</em></span><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>Malik Willis</b><em>over 29.5 rush yds</em></span><span class="pp-leg under"><i class="arrow" aria-hidden="true">&#9660;</i><b>Chris Bell</b><em>under 1.5 receptions</em></span></div>
+      <div class="pp-angle ">
+        <div class="pp-angletitle">Miami moves it short, finishes nothing <span class="badge mute">1 of 3 hit</span></div>
+        <div class="pp-legs"><span class="pp-leg over miss"><i class="arrow" aria-hidden="true">&#9650;</i><b>Malik Washington</b><em>over 39.5 rec yds</em><span class="rv-res">&#10007; 27</span></span><span class="pp-leg over hit"><i class="arrow" aria-hidden="true">&#9650;</i><b>Malik Willis</b><em>over 29.5 rush yds</em><span class="rv-res">&#10003; 37</span></span><span class="pp-leg under miss"><i class="arrow" aria-hidden="true">&#9660;</i><b>Chris Bell</b><em>under 1.5 receptions</em><span class="rv-res">&#10007; 3</span></span></div>
         <p class="pp-sub">A blitz-heavy front that does not finish the rush pushes Willis into scrambles and quick throws; those throws concentrate on Washington underneath and leave the downfield-only receiver without catches.</p>
         
       </div>
@@ -1491,154 +1944,221 @@
     <h2 class="gm-h2"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy"><span><em class="full">Dolphins</em><em class="short">MIA</em> offense</span><span class="vs">against the</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy"><span><em class="full">Jets</em><em class="short">NYJ</em> defense</span></h2>
   </summary>
   <div class="hfa-head gm-mhead">
-    <p class="lede">Projected MIA offense output &mdash; equivalently, what the NYJ defense allows. The engine blends each offense's season-to-date rates with the defense across from it, anchored on the market's implied points.</p>
+    <p class="lede">What the MIA offense put up against the NYJ defense, the projection beneath each number: <span class="up">green</span> beat it, <span class="down">amber</span> fell short (INTs judged the other way).</p>
   </div>
   
-<div class="pp-off">
-  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Dolphins offense</span><span class="badge mute">medium confidence</span></div>
+<div class="pp-off rv-off">
+  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Dolphins offense, graded</span><span class="badge bad">broke</span><span class="badge mute">calls 1&ndash;4</span></div>
   
-  <div class="pp-offcards">
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div>
-      <p class="pp-lead">0-5 with 13, 13, 10, 10 and 24 points: yards without points.</p>
-      <details class="pp-more"><summary>more</summary><p>Field EPA -0.113, a 40% red-zone touchdown rate, and the lowest play count in the league at 53.6 a game because third downs and possession keep going the other way. The run game is the functional half — 4.87 yards a carry with six explosive runs against Cincinnati — while Willis sits at a 56.2% completion rate.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div>
-      <p class="pp-lead">Gordon on early downs and at the goal line (three of Miami&#x27;s five touchdowns over weeks 3-5), Washington moving the chains underneath, and Willis&#x27;s legs — 39, 56 and 74 rushing yards in three of five starts, mostly on scrambles.</p>
-      
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div>
-      <p class="pp-lead">A front that stops the run forces Willis into a boom-bust passing game at a double-digit average depth with negative accuracy; add third-down failure (2-of-9 at Minnesota) and the drive count collapses.</p>
-      <details class="pp-more"><summary>more</summary><p>Nine accepted flags at Minnesota and four pre-snap against Cincinnati put them behind the sticks.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div>
-      <p class="pp-lead">The Jets are 5th in rush EPA allowed and 9th in field EPA allowed, and they blitz at 36.1% against an offense that has posted -0.367 EPA against the blitz.</p>
-      <details class="pp-more"><summary>more</summary><p>What the Jets do not do is finish the rush: a 42.9% blitz rate produced zero sacks at New England, which is a scramble lane for Willis. They also rank 27th in rush success allowed and 24th in rushing yards allowed per game, so the ground game is not fully dead.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div>
-      <p class="pp-lead">Achane is on IR for the season; Gordon is the lead back with Jaylen Wright cleared (full Friday, no designation) to take a real share back.</p>
-      <details class="pp-more"><summary>more</summary><p>Caleb Douglas returns from the ankle that cost him three games and should push back toward the 86-91% snap share he held in weeks 1-2, squeezing Chris Bell and Kevin Coleman. Willis practiced fully through a thumb issue. Across the line, New York is without edge Joseph Ossai for a second week and linebacker Mauigoa went to IR — depth losses against a run game that is Miami&#x27;s best asset.</p></details>
-    </div>
-    
+  <div class="rv-eh">
+    <div class="rv-ehcol"><span class="pp-k">Expected</span><p class="pp-lead">Around 57-60 plays, 29-32 attempts, a near-even run/pass split, Gordon at 12-15 carries with Wright taking 5-8, and the throws concentrated short — Washington, Douglas and Dulcich.</p><details class="pp-more"><summary>more</summary><p>Points likely in the teens unless the red-zone rate finally moves.</p></details></div>
+    <div class="rv-ehcol happened bad"><span class="pp-k">Happened</span><p class="pp-lead">Play count was right (63 vs 57-60) and the throws were short to the named group (5.0 aDOT; Dulcich 5, Bell 4, Washington 3), but everything volumetric broke: 21 attempts not 29-32, a 35.9% pass rate not near-even, Gordon at 25 carries not 12-15, and 28 points not &#x27;in the teens&#x27;.</p></div>
   </div>
   
   
-  <div class="pp-expect"><span class="pp-k">Expect</span><p class="pp-lead">Around 57-60 plays, 29-32 attempts, a near-even run/pass split, Gordon at 12-15 carries with Wright taking 5-8, and the throws concentrated short — Washington, Douglas and Dulcich.</p><details class="pp-more"><summary>more</summary><p>Points likely in the teens unless the red-zone rate finally moves.</p></details></div>
-  
-  
-  <div class="pp-k pp-k-sec">Who the plan moves <span class="flat">&middot; 3 up, 2 down &middot; one player, one market, one side of Kalshi's line when the plan was written</span></div>
-  <div class="pp-calls">
+  <div class="pp-k pp-k-sec">Who the plan moved <span class="flat">&middot; 3 up, 2 down &middot; graded off the box score, with whether the reason given showed up</span></div>
+  <div class="pp-calls rv-calls">
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Malik Washington</b><span class="pp-bet">over 39.5 rec yds</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 73%"></i></div><b>73%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+      
+      <div class="rv-meter" title="The line 39.5 against the actual 27">
+        <div class="track"><i class="fill" style="width: 54.7%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 39.5</span><b>27</b></div>
       </div>
+      
+      <span class="badge bad rv-read">wrong read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Washington was not the target leader — 3 targets, 13.2% air-yards share, behind Dulcich (5) and Bell (4) — and the attempt base the mechanism assumed (short and often) came in at 21.</p>
       <div class="pp-callmeta">
-        <span class="badge mute" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #16 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: over 39.5 rec yds"><i>Normal</i> 40+ <small>53&cent;</small></span><span class="rung" title="Edge: 25+ rec yds"><i>Edge</i> 25+ <small>73&cent;</small></span><span class="rung" title="Edge+: 15+ rec yds"><i>Edge+</i> 15+ <small>85&cent;</small></span>
+        <span class="rung miss" title="Normal: over 39.5 rec yds"><i>Normal</i> 40+ <small>53&cent;</small></span><span class="rung hit" title="Edge: 25+ rec yds"><i>Edge</i> 25+ <small>73&cent;</small></span><span class="rung hit" title="Edge+: 15+ rec yds"><i>Edge+</i> 15+ <small>85&cent;</small></span>
       </div>
-      <p class="pp-lead">He is the target leader in an offense that throws short and often, and his line survives even when Miami&#x27;s play count collapses.</p>
-      <details class="pp-more"><summary>why</summary><p>The Jets concede underneath catches and tackle rather than take the ball away.</p><p><b>Evidence.</b> 53, 43, 56, 67 and 43 receiving yards in five games — over this number every week — on 5-10 targets at a 73-98% snap share, including a 5-for-5, 67-yard day on a 17-attempt game at Minnesota. </p><p><b>Against it.</b> vs #16 pass EPA allowed; the engine&#x27;s mean is far above this line and the market sits near a coin flip, which is the gap — the market is pricing Miami&#x27;s low volume, not his share of it </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>He is the target leader in an offense that throws short and often, and his line survives even when Miami&#x27;s play count collapses. The Jets concede underneath catches and tackle rather than take the ball away.</p>
+        <p><b>In the game.</b> Two failures of the same read, not one.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 73%"></i></div><b>73%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+        </div>
+        <p><b>Evidence.</b> 53, 43, 56, 67 and 43 receiving yards in five games — over this number every week — on 5-10 targets at a 73-98% snap share, including a 5-for-5, 67-yard day on a 17-attempt game at Minnesota. </p>
+        <p><b>Against it.</b> vs #16 pass EPA allowed; the engine&#x27;s mean is far above this line and the market sits near a coin flip, which is the gap — the market is pricing Miami&#x27;s low volume, not his share of it </p>
+      </details>
     </div>
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Malik Willis</b><span class="pp-bet">over 29.5 rush yds</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 68%"></i></div><b>68%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+      
+      <div class="rv-meter" title="The line 29.5 against the actual 37">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 63.8%"></i></div>
+        <div class="rv-meterlbl"><span>line 29.5</span><b>37</b></div>
       </div>
+      
+      <span class="badge good rv-read">right read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Exactly the mechanism: 5 scrambles for 37 of his 39 rushing yards, against a 48.3% faced blitz rate that produced only 2 sacks and 2 QB hits.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on rush EPA allowed entering the week (#1 toughest)">D #5 rush EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: over 29.5 rush yds"><i>Normal</i> 30+ <small>52&cent;</small></span><span class="rung" title="Edge: 20+ rush yds"><i>Edge</i> 20+ <small>70&cent;</small></span><span class="rung" title="Edge+: 10+ rush yds"><i>Edge+</i> 10+ <small>88&cent;</small></span>
+        <span class="rung hit" title="Normal: over 29.5 rush yds"><i>Normal</i> 30+ <small>52&cent;</small></span><span class="rung hit" title="Edge: 20+ rush yds"><i>Edge</i> 20+ <small>70&cent;</small></span><span class="rung hit" title="Edge+: 10+ rush yds"><i>Edge+</i> 10+ <small>88&cent;</small></span>
       </div>
-      <p class="pp-lead">His rushing is scramble-driven, not designed, so a tough run front does not bind it: New York sends extra rushers on better than a third of dropbacks and rarely gets home, which is exactly where his yards come from.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> 39, 56 and 74 rushing yards in three of five starts (6-9 carries); the Jets blitzed 42.9% at New England for zero sacks and Miami has posted -0.367 EPA against the blitz, meaning more scrambles, not fewer. </p><p><b>Against it.</b> vs #5 rush EPA allowed — the rank attacks designed runs, and his carries are scrambles; the engine&#x27;s mean sits well above the line while the market prices it as a coin flip </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>His rushing is scramble-driven, not designed, so a tough run front does not bind it: New York sends extra rushers on better than a third of dropbacks and rarely gets home, which is exactly where his yards come from. </p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 68%"></i></div><b>68%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+        </div>
+        <p><b>Evidence.</b> 39, 56 and 74 rushing yards in three of five starts (6-9 carries); the Jets blitzed 42.9% at New England for zero sacks and Miami has posted -0.367 EPA against the blitz, meaning more scrambles, not fewer. </p>
+        <p><b>Against it.</b> vs #5 rush EPA allowed — the rank attacks designed runs, and his carries are scrambles; the engine&#x27;s mean sits well above the line while the market prices it as a coin flip </p>
+      </details>
     </div>
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Caleb Douglas</b><span class="pp-bet">over 2.5 receptions</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 64%"></i></div><b>64%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+      
+      <div class="rv-meter" title="The line 2.5 against the actual 2">
+        <div class="track"><i class="fill" style="width: 64.0%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 2.5</span><b>2</b></div>
       </div>
+      
+      <span class="badge bad rv-read">missed · read partly held</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> The snap share returned (67.7%) but the role did not — 3 targets, and the &#x27;not a downfield lottery ticket&#x27; framing produced a 63-yard catch-and-run touchdown.</p>
       <div class="pp-callmeta">
-        <span class="badge mute" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #16 pass EPA allowed</span>
-        <span class="badge mute">low</span>
-        <span class="rung" title="Normal: over 2.5 receptions"><i>Normal</i> 3+ <small>51&cent;</small></span><span class="rung" title="Edge / Edge+: 2+ receptions"><i>Edge / Edge+</i> 2+ <small>75&cent;</small></span>
+        <span class="rung miss" title="Normal: over 2.5 receptions"><i>Normal</i> 3+ <small>51&cent;</small></span><span class="rung hit" title="Edge / Edge+: 2+ receptions"><i>Edge / Edge+</i> 2+ <small>75&cent;</small></span>
       </div>
-      <p class="pp-lead">He returns from the ankle with no designation and the near-full snap share he held before it, into an offense whose throws are short and spread.</p>
-      <details class="pp-more"><summary>why</summary><p>A catchable role, not a downfield lottery ticket.</p><p><b>Evidence.</b> 91% and 86% snap shares in weeks 1-2 with 7 and 3 targets (5 and 2 catches, 94 yards in the opener); RotoBaller Saturday reports he is on track to lead the receiver room in snaps. </p><p><b>Against it.</b> vs #16 pass EPA allowed; engine mean is above this line and the market is near even — the risk is a role that has not been seen since week 2 </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>He returns from the ankle with no designation and the near-full snap share he held before it, into an offense whose throws are short and spread. A catchable role, not a downfield lottery ticket.</p>
+        <p><b>In the game.</b> Two receptions, 70 yards: right about the player being back, wrong about the shape.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 64%"></i></div><b>64%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+        </div>
+        <p><b>Evidence.</b> 91% and 86% snap shares in weeks 1-2 with 7 and 3 targets (5 and 2 catches, 94 yards in the opener); RotoBaller Saturday reports he is on track to lead the receiver room in snaps. </p>
+        <p><b>Against it.</b> vs #16 pass EPA allowed; engine mean is above this line and the market is near even — the risk is a role that has not been seen since week 2 </p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Ollie Gordon II</b><span class="pp-bet">under 59.5 rush yds</span></div>
-        <span class="badge mute">both</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 56%"></i></div><b>56%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+      
+      <div class="rv-meter" title="The line 59.5 against the actual 103">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 46.2%"></i></div>
+        <div class="rv-meterlbl"><span>line 59.5</span><b>103</b></div>
       </div>
+      
+      <span class="badge bad rv-read">wrong read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Wright took only 6 carries for 8 yards (-2.75 EPA) and never split the committee; Gordon got 25 for 103 and the Jets&#x27; front gave up 4.1 ypc and three fourth-and-short conversions.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on rush EPA allowed entering the week (#1 toughest)">D #5 rush EPA allowed</span>
-        <span class="badge mute">low</span>
-        <span class="rung" title="Normal: under 59.5 rush yds"><i>Normal</i> &lt;60 <small>53&cent;</small></span><span class="rung" title="Edge: &lt;90 rush yds"><i>Edge</i> &lt;90 <small>82&cent;</small></span><span class="rung" title="Edge+: &lt;120 rush yds"><i>Edge+</i> &lt;120 <small>95&cent;</small></span>
+        <span class="rung miss" title="Normal: under 59.5 rush yds"><i>Normal</i> &lt;60 <small>53&cent;</small></span><span class="rung miss" title="Edge: &lt;90 rush yds"><i>Edge</i> &lt;90 <small>82&cent;</small></span><span class="rung hit" title="Edge+: &lt;120 rush yds"><i>Edge+</i> &lt;120 <small>95&cent;</small></span>
       </div>
-      <p class="pp-lead">Jaylen Wright is cleared and takes carries back out of the committee, and what is left runs into a front that denies rushing value.</p>
-      <details class="pp-more"><summary>why</summary><p>His good games have been one long run apiece.</p><p><b>Evidence.</b> 53 of his 100 yards at Minnesota came on a single carry; 41 yards on 17 carries in week 3. Wright is full-participation with no designation (Rotowire, Friday) after 6 carries against Cincinnati.</p><p><b>Against it.</b> vs #5 rush EPA allowed, though the Jets are 19th in yards per carry and 24th in rushing yards allowed — our week-4 under on him broke on one explosive, so this stays low </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>Jaylen Wright is cleared and takes carries back out of the committee, and what is left runs into a front that denies rushing value. His good games have been one long run apiece.</p>
+        <p><b>In the game.</b> Both halves of the mechanism failed.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 56%"></i></div><b>56%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+        </div>
+        <p><b>Evidence.</b> 53 of his 100 yards at Minnesota came on a single carry; 41 yards on 17 carries in week 3. Wright is full-participation with no designation (Rotowire, Friday) after 6 carries against Cincinnati.</p>
+        <p><b>Against it.</b> vs #5 rush EPA allowed, though the Jets are 19th in yards per carry and 24th in rushing yards allowed — our week-4 under on him broke on one explosive, so this stays low </p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Chris Bell</b><span class="pp-bet">under 1.5 receptions</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 33%"></i></div><b>33%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+      
+      <div class="rv-meter" title="The line 1.5 against the actual 3">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 40.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 1.5</span><b>3</b></div>
       </div>
+      
+      <span class="badge bad rv-read">wrong read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Bell caught 3 of 4 targets for 25 with only 18 air yards — he was used underneath in a 5.0-aDOT game, not as the downfield-only piece, and Douglas&#x27;s return (3 targets) took nothing from him.</p>
       <div class="pp-callmeta">
-        <span class="badge mute" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #16 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 1.5 receptions"><i>Normal</i> &lt;2 <small>51&cent;</small></span><span class="rung" title="Edge: &lt;4 receptions"><i>Edge</i> &lt;4 <small>90&cent;</small></span><span class="rung" title="Edge+: &lt;6 receptions"><i>Edge+</i> &lt;6 <small>98&cent;</small></span>
+        <span class="rung miss" title="Normal: under 1.5 receptions"><i>Normal</i> &lt;2 <small>51&cent;</small></span><span class="rung hit" title="Edge: &lt;4 receptions"><i>Edge</i> &lt;4 <small>90&cent;</small></span><span class="rung hit" title="Edge+: &lt;6 receptions"><i>Edge+</i> &lt;6 <small>98&cent;</small></span>
       </div>
-      <p class="pp-lead">He is a downfield-only target on a team that does not complete downfield throws, and Douglas&#x27;s return takes snaps straight out of his role.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> Zero catches in three of five games (weeks 2, 4 and 5) including 0-for-3 on 70 air yards at Minnesota; his only real line, 4-67, came in week 3 with Douglas out. </p><p><b>Against it.</b> vs #16 pass EPA allowed; the engine&#x27;s mean is above this line — what its blend misses is that his targets are deep and uncaught, not a reception floor </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>He is a downfield-only target on a team that does not complete downfield throws, and Douglas&#x27;s return takes snaps straight out of his role. </p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 33%"></i></div><b>33%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+        </div>
+        <p><b>Evidence.</b> Zero catches in three of five games (weeks 2, 4 and 5) including 0-for-3 on 70 air yards at Minnesota; his only real line, 4-67, came in week 3 with Douglas out. </p>
+        <p><b>Against it.</b> vs #16 pass EPA allowed; the engine&#x27;s mean is above this line — what its blend misses is that his targets are deep and uncaught, not a reception floor </p>
+      </details>
     </div>
     
   </div>
+  
+  
+  <div class="pp-k pp-k-sec">Lines the report singled out <span class="flat">&middot; signal carries forward, noise doesn't</span></div>
+  <div class="rv-notes">
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Ollie Gordon II</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">25 carries, 103 rush yds, 1 TD vs 10.5 / 45.5 projected</span>
+      <p class="pp-sub">Achane inactive left him the backfield (83.1% snaps); Wright&#x27;s 6 carries went for 8 yards and -2.75 EPA, so the split never materialized.</p>
+      <details class="pp-more"><summary>more</summary><p>Volume, not efficiency — 4.1 ypc.</p></details>
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Greg Dulcich</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">5-5-86 on 5 targets vs 3.3 targets / 23.7 yds projected</span>
+      <p class="pp-sub">33% air-yards share in a 21-attempt game and +8.81 receiving EPA, including the 32-yard shot at Q1 13:03 and an 11-yard third-down conversion.</p>
+      <details class="pp-more"><summary>more</summary><p>He was the chain-mover in a short-passing scheme (5.0 aDOT).</p></details>
+    </div>
+    
+    <div class="rv-note-card ">
+      <div class="rv-notehead"><b>Caleb Douglas</b><span class="badge mute">noise</span></div>
+      <span class="pp-bet">2-70-2 on 3 targets</span>
+      <p class="pp-sub">23 air yards, 59 YAC — a 7-yard touchdown and a 63-yard catch-and-run.</p>
+      <details class="pp-more"><summary>more</summary><p>Two targets became two scores; the role (67.7% snaps, 3 looks) does not support repeating it.</p></details>
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Malik Washington</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">3 targets, 3-27 vs 7.3 targets / 68.8 yds projected</span>
+      <p class="pp-sub">The projected target leader finished fourth in looks behind Dulcich, Bell and Gordon in a 21-attempt game.</p>
+      <details class="pp-more"><summary>more</summary><p>The volume collapse is script-driven but his share fell too.</p></details>
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Malik Willis</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">14/21, 208, 2 TD, 0 INT; 8 carries, 37 rush yds, 1 rush TD; 0.654 EPA/dropback</span>
+      <p class="pp-sub">Five scrambles for 37 against a 48.3% blitz rate that produced only 2 sacks and 2 hits — the rushing is scramble-equity, repeatable; the -4.5 CPOE with 2 TDs says the passing line was YAC, not accuracy.</p>
+      
+    </div>
+    
+  </div>
+  
+  
+  <details class="rv-fold">
+    <summary>The plan's pre-game read on this offense <span class="flat">&middot; medium confidence</span></summary>
+    <div class="pp-offcards">
+      <div class="pp-offcard"><div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div><p class="pp-lead">0-5 with 13, 13, 10, 10 and 24 points: yards without points.</p><details class="pp-more"><summary>more</summary><p>Field EPA -0.113, a 40% red-zone touchdown rate, and the lowest play count in the league at 53.6 a game because third downs and possession keep going the other way. The run game is the functional half — 4.87 yards a carry with six explosive runs against Cincinnati — while Willis sits at a 56.2% completion rate.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div><p class="pp-lead">Gordon on early downs and at the goal line (three of Miami&#x27;s five touchdowns over weeks 3-5), Washington moving the chains underneath, and Willis&#x27;s legs — 39, 56 and 74 rushing yards in three of five starts, mostly on scrambles.</p></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div><p class="pp-lead">A front that stops the run forces Willis into a boom-bust passing game at a double-digit average depth with negative accuracy; add third-down failure (2-of-9 at Minnesota) and the drive count collapses.</p><details class="pp-more"><summary>more</summary><p>Nine accepted flags at Minnesota and four pre-snap against Cincinnati put them behind the sticks.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div><p class="pp-lead">The Jets are 5th in rush EPA allowed and 9th in field EPA allowed, and they blitz at 36.1% against an offense that has posted -0.367 EPA against the blitz.</p><details class="pp-more"><summary>more</summary><p>What the Jets do not do is finish the rush: a 42.9% blitz rate produced zero sacks at New England, which is a scramble lane for Willis. They also rank 27th in rush success allowed and 24th in rushing yards allowed per game, so the ground game is not fully dead.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div><p class="pp-lead">Achane is on IR for the season; Gordon is the lead back with Jaylen Wright cleared (full Friday, no designation) to take a real share back.</p><details class="pp-more"><summary>more</summary><p>Caleb Douglas returns from the ankle that cost him three games and should push back toward the 86-91% snap share he held in weeks 1-2, squeezing Chris Bell and Kevin Coleman. Willis practiced fully through a thumb issue. Across the line, New York is without edge Joseph Ossai for a second week and linebacker Mauigoa went to IR — depth losses against a run game that is Miami&#x27;s best asset.</p></details></div>
+    </div>
+  </details>
   
 </div>
 
   <div class="gm-tiles">
-    <div class="gm-tile big"><b>18.0<i class="act over" title="Actual">(28)</i></b><span>Points</span></div><div class="gm-tile "><b>60</b><span>Plays</span></div><div class="gm-tile "><b>202<i class="act over" title="Actual">(208)</i></b><span>Pass yds</span></div><div class="gm-tile "><b>117<i class="act over" title="Actual">(156)</i></b><span>Rush yds</span></div><div class="gm-tile "><b>2.2</b><span>Sacks taken</span></div><div class="gm-tile "><b>0.6<i class="act over" title="Actual">(0)</i></b><span>INTs thrown</span></div>
+    <div class="gm-tile rv big over"><b>28</b><span>Points</span><small>projected 18.0</small></div><div class="gm-tile rv  "><b class="flat">60</b><span>Plays</span><small>projected</small></div><div class="gm-tile rv  over"><b>208</b><span>Pass yds</span><small>projected 202</small></div><div class="gm-tile rv  over"><b>156</b><span>Rush yds</span><small>projected 117</small></div><div class="gm-tile rv  "><b class="flat">2.2</b><span>Sacks taken</span><small>projected</small></div><div class="gm-tile rv  over"><b>0</b><span>INTs thrown</span><small>projected 0.6</small></div>
   </div>
   <div class="gm-split">
     <div class="gm-players">
@@ -1915,173 +2435,250 @@
     <h2 class="gm-h2"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy"><span><em class="full">Jets</em><em class="short">NYJ</em> offense</span><span class="vs">against the</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy"><span><em class="full">Dolphins</em><em class="short">MIA</em> defense</span></h2>
   </summary>
   <div class="hfa-head gm-mhead">
-    <p class="lede">Projected NYJ offense output &mdash; equivalently, what the MIA defense allows. The engine blends each offense's season-to-date rates with the defense across from it, anchored on the market's implied points.</p>
+    <p class="lede">What the NYJ offense put up against the MIA defense, the projection beneath each number: <span class="up">green</span> beat it, <span class="down">amber</span> fell short (INTs judged the other way).</p>
   </div>
   
-<div class="pp-off">
-  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Jets offense</span><span class="badge mute">medium confidence</span></div>
+<div class="pp-off rv-off">
+  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Jets offense, graded</span><span class="badge warn">partly held</span><span class="badge mute">calls 4&ndash;2</span></div>
   
-  <div class="pp-offcards">
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div>
-      <p class="pp-lead">A possession offense that moves between the 20s and dies at them: field EPA -0.051 against red-zone EPA -0.273, a 41.7% red-zone touchdown rate, and three straight games without a red-zone touchdown (four field goals at New England in week 6).</p>
-      <details class="pp-more"><summary>more</summary><p>Geno Smith is efficient when clean (+3.5 CPOE, 252 yards on 30 attempts in week 6) and sacked constantly when not — 4, 5, 3 and 3 sacks in weeks 2-6.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div>
-      <p class="pp-lead">Allen&#x27;s volume on early downs plus Geno&#x27;s short and intermediate game; explosives come in ones (Cooper&#x27;s 48-yard score in week 6, Williams&#x27; 58-yarder in week 4).</p>
-      <details class="pp-more"><summary>more</summary><p>Points often arrive as Sanders field goals — he has four, three and two make games already.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div>
-      <p class="pp-lead">Interior pressure.</p>
-      <details class="pp-more"><summary>more</summary><p>&#x27;Pressure allowed&#x27; is their tag in four of six weeks, and in week 4 Chicago hit Geno on 44.4% of dropbacks with the league&#x27;s softest rush. Short-yardage and fourth-down failure (0-for-2 at New England) ends drives that already reached scoring range.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div>
-      <p class="pp-lead">Miami cannot do the one thing that beats them: it generates a 3.3% sack rate and a 12.3% pressure rate (27th), and ranks 30th in pass EPA allowed, 31st in overall EPA allowed, 32nd in rush EPA and rush success allowed.</p>
-      <details class="pp-more"><summary>more</summary><p>Miami&#x27;s run defense is better in yards per carry (3.66, 8th) than in EPA — it gives up the conversions, not the chunks.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div>
-      <p class="pp-lead">Hall is questionable and unlikely to play per Rapoport on Sunday morning, which makes Allen the backfield again with Isaiah Davis in relief.</p>
-      <details class="pp-more"><summary>more</summary><p>Mitchell returns from a finger injury with no designation and takes Tim Patrick&#x27;s snaps, splitting the tree further with Cooper. Left guard Dylan Parham is questionable in his first week back from a week-3 knee; Max Mitchell is out — the line that has allowed pressure every week is still patched. On Miami&#x27;s side, corner Reese Taylor is out and edge Rob Beal Jr. doubtful, thinning an already toothless front.</p></details>
-    </div>
-    
+  <div class="rv-eh">
+    <div class="rv-ehcol"><span class="pp-k">Expected</span><p class="pp-lead">Pass rate in the low 50s on roughly 60 plays, 28-31 attempts, Allen at 18-21 carries with goal-line work, and the receiving yards split three or four ways rather than concentrated on Wilson.</p><details class="pp-more"><summary>more</summary><p>Yards come on the ground and underneath; the open question is whether they convert trips into touchdowns for the first time in a month.</p></details></div>
+    <div class="rv-ehcol happened warn"><span class="pp-k">Happened</span><p class="pp-lead">Attempts landed exactly (30 vs the 28-31 called) and the receiving yards split four ways as described (Cooper 115, Taylor 62, Davis 49, Allen 30, Wilson 26), but the pass rate was 60.4% not low-50s because they trailed every snap, Allen got 17 carries rather than 18-21, and the touchdowns came through the air, not from goal-line runs.</p></div>
   </div>
   
   
-  <div class="pp-expect"><span class="pp-k">Expect</span><p class="pp-lead">Pass rate in the low 50s on roughly 60 plays, 28-31 attempts, Allen at 18-21 carries with goal-line work, and the receiving yards split three or four ways rather than concentrated on Wilson.</p><details class="pp-more"><summary>more</summary><p>Yards come on the ground and underneath; the open question is whether they convert trips into touchdowns for the first time in a month.</p></details></div>
-  
-  
-  <div class="pp-k pp-k-sec">Who the plan moves <span class="flat">&middot; 2 up, 4 down &middot; one player, one market, one side of Kalshi's line when the plan was written</span></div>
-  <div class="pp-calls">
+  <div class="pp-k pp-k-sec">Who the plan moved <span class="flat">&middot; 2 up, 4 down &middot; graded off the box score, with whether the reason given showed up</span></div>
+  <div class="pp-calls rv-calls">
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Braelon Allen</b><span class="pp-bet">over 49.5 rush yds</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 48%"></i></div><b>48%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 0%"></i></div><b>–%</b></div>
+      
+      <div class="rv-meter" title="The line 49.5 against the actual 104">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 38.1%"></i></div>
+        <div class="rv-meterlbl"><span>line 49.5</span><b>104</b></div>
       </div>
+      
+      <span class="badge good rv-read">hit · read partly held</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Hall&#x27;s absence and the backfield monopoly carried it to 104 yards on 17 carries with four explosive runs, but the &#x27;favorite&#x27;s lead script adds carries late&#x27; clause never existed — the Jets trailed for all 57 snaps and still fed him.</p>
       <div class="pp-callmeta">
-        <span class="badge good" title="The opposing defense's rank on rush EPA allowed entering the week (#1 toughest)">D #32 rush EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: over 49.5 rush yds"><i>Normal</i> 50+ <small>75&cent;</small></span><span class="rung" title="Edge / Edge+: 40+ rush yds"><i>Edge / Edge+</i> 40+ <small>84&cent;</small></span>
+        <span class="rung hit" title="Normal: over 49.5 rush yds"><i>Normal</i> 50+ <small>75&cent;</small></span><span class="rung hit" title="Edge / Edge+: 40+ rush yds"><i>Edge / Edge+</i> 40+ <small>84&cent;</small></span>
       </div>
-      <p class="pp-lead">With Hall unlikely to play, Allen is the entire backfield again, and he draws the league&#x27;s worst defense at stopping runs from being successful.</p>
-      <details class="pp-more"><summary>why</summary><p>A favorite&#x27;s lead script adds carries late.</p><p><b>Evidence.</b> 14, 24 and 17 carries at 94%, 86% and 87% snap shares in weeks 4-6 with Hall out; 59, 116 and 78 rushing yards. Rapoport (Sun a.m.) has Hall unlikely after three straight absences.</p><p><b>Against it.</b> vs #32 rush EPA allowed (also 32nd in rush success allowed); the engine still prices Hall 12.2 carries, so its mean understates Allen&#x27;s volume if Hall sits </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>With Hall unlikely to play, Allen is the entire backfield again, and he draws the league&#x27;s worst defense at stopping runs from being successful. A favorite&#x27;s lead script adds carries late.</p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 48%"></i></div><b>48%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 0%"></i></div><b>–%</b></div>
+        </div>
+        <p><b>Evidence.</b> 14, 24 and 17 carries at 94%, 86% and 87% snap shares in weeks 4-6 with Hall out; 59, 116 and 78 rushing yards. Rapoport (Sun a.m.) has Hall unlikely after three straight absences.</p>
+        <p><b>Against it.</b> vs #32 rush EPA allowed (also 32nd in rush success allowed); the engine still prices Hall 12.2 carries, so its mean understates Allen&#x27;s volume if Hall sits </p>
+      </details>
     </div>
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Braelon Allen</b><span class="pp-bet">to score</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 37%"></i></div><b>37%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 46%"></i></div><b>46%</b></div>
+      
+      <div class="rv-meter" title="The line 0.0 against the actual 0">
+        <div class="track"><i class="fill" style="width: 0.0%"></i><i class="line" style="left: 0.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 0.0</span><b>0</b></div>
       </div>
+      
+      <span class="badge bad rv-read">missed · read partly held</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> The goal-line access was real — Allen ran to the MIA 1 at Q4 11:25 — but the drive died on Robinson&#x27;s sack at the 3 and ended in a 33-yard field goal; all three Jets touchdowns went to receivers, with Taylor taking the short ones.</p>
       <div class="pp-callmeta">
-        <span class="badge good" title="The opposing defense's rank on EPA allowed entering the week (#1 toughest)">D #31 EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal / Edge / Edge+: to score"><i>Normal / Edge / Edge+</i> TD <small>48&cent;</small></span>
+        <span class="rung miss" title="Normal / Edge / Edge+: to score"><i>Normal / Edge / Edge+</i> TD <small>48&cent;</small></span>
       </div>
-      <p class="pp-lead">The Jets&#x27; scoring problem is finishing, not reaching the 20, and Allen has the goal-line work to himself with Hall out.</p>
-      <details class="pp-more"><summary>why</summary><p>Miami gives up successful runs at a worse rate than any defense in the league.</p><p><b>Evidence.</b> Miami allows a 58.8% red-zone touchdown rate and ranks 32nd in rush EPA and rush success allowed; Allen scored in weeks 2 and 5 and took 17-24 carries in each of the last three games. </p><p><b>Against it.</b> vs #31 EPA allowed; anytime_td calls are 13-of-20 (65%) on the season&#x27;s record </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>The Jets&#x27; scoring problem is finishing, not reaching the 20, and Allen has the goal-line work to himself with Hall out. Miami gives up successful runs at a worse rate than any defense in the league.</p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 37%"></i></div><b>37%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 46%"></i></div><b>46%</b></div>
+        </div>
+        <p><b>Evidence.</b> Miami allows a 58.8% red-zone touchdown rate and ranks 32nd in rush EPA and rush success allowed; Allen scored in weeks 2 and 5 and took 17-24 carries in each of the last three games. </p>
+        <p><b>Against it.</b> vs #31 EPA allowed; anytime_td calls are 13-of-20 (65%) on the season&#x27;s record </p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Garrett Wilson</b><span class="pp-bet">under 5.5 receptions</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 79%"></i></div><b>79%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+      
+      <div class="rv-meter" title="The line 5.5 against the actual 2">
+        <div class="track"><i class="fill" style="width: 29.1%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 5.5</span><b>2</b></div>
       </div>
+      
+      <span class="badge good rv-read">right read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> The target-tree argument was the right one: Taylor 7, Allen 7, Cooper 5, Wilson 3 for 2-26.</p>
       <div class="pp-callmeta">
-        <span class="badge good" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #30 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 5.5 receptions"><i>Normal</i> &lt;6 <small>50&cent;</small></span><span class="rung" title="Edge: &lt;9 receptions"><i>Edge</i> &lt;9 <small>88&cent;</small></span><span class="rung" title="Edge+: &lt;12 receptions"><i>Edge+</i> &lt;12 <small>98&cent;</small></span>
+        <span class="rung hit" title="Normal: under 5.5 receptions"><i>Normal</i> &lt;6 <small>50&cent;</small></span><span class="rung hit" title="Edge: &lt;9 receptions"><i>Edge</i> &lt;9 <small>88&cent;</small></span><span class="rung hit" title="Edge+: &lt;12 receptions"><i>Edge+</i> &lt;12 <small>98&cent;</small></span>
       </div>
-      <p class="pp-lead">The target tree is no longer his alone: Cooper has the WR2 job and Mitchell is back from the finger.</p>
-      <details class="pp-more"><summary>why</summary><p>In a run-leaning lead script there are not enough throws to feed three.</p><p><b>Evidence.</b> 4 targets in week 4 and 6 in week 6 (Cooper 7, Taylor 6); our week-6 review flagged his 22.1% air-yards share and told us to price his share lower until a second week confirms the split. </p><p><b>Against it.</b> vs #30 pass EPA allowed — the soft matchup is the counterargument, but the engine&#x27;s mean sits a reception and a half under this line while the market has it near even </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>The target tree is no longer his alone: Cooper has the WR2 job and Mitchell is back from the finger. In a run-leaning lead script there are not enough throws to feed three.</p>
+        <p><b>In the game.</b> It held despite the opposite script — 30 attempts while trailing wire to wire should have been his best case.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 79%"></i></div><b>79%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+        </div>
+        <p><b>Evidence.</b> 4 targets in week 4 and 6 in week 6 (Cooper 7, Taylor 6); our week-6 review flagged his 22.1% air-yards share and told us to price his share lower until a second week confirms the split. </p>
+        <p><b>Against it.</b> vs #30 pass EPA allowed — the soft matchup is the counterargument, but the engine&#x27;s mean sits a reception and a half under this line while the market has it near even </p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Kenyon Sadiq</b><span class="pp-bet">under 19.5 rec yds</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 69%"></i></div><b>69%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 54%"></i></div><b>54%</b></div>
+      
+      <div class="rv-meter" title="The line 19.5 against the actual 6">
+        <div class="track"><i class="fill" style="width: 24.6%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 19.5</span><b>6</b></div>
       </div>
+      
+      <span class="badge good rv-read">right read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Sadiq played 37.3% of snaps, saw one target for 6 yards on a -3 air-yard throw; Taylor absorbed the tight-end work (61 air yards, 40.9% share).</p>
       <div class="pp-callmeta">
-        <span class="badge good" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #30 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 19.5 rec yds"><i>Normal</i> &lt;20 <small>54&cent;</small></span><span class="rung" title="Edge: &lt;50 rec yds"><i>Edge</i> &lt;50 <small>88&cent;</small></span><span class="rung" title="Edge+: &lt;80 rec yds"><i>Edge+</i> &lt;80 <small>97&cent;</small></span>
+        <span class="rung hit" title="Normal: under 19.5 rec yds"><i>Normal</i> &lt;20 <small>54&cent;</small></span><span class="rung hit" title="Edge: &lt;50 rec yds"><i>Edge</i> &lt;50 <small>88&cent;</small></span><span class="rung hit" title="Edge+: &lt;80 rec yds"><i>Edge+</i> &lt;80 <small>97&cent;</small></span>
       </div>
-      <p class="pp-lead">He is the third or fourth option at tight end&#x27;s expense now that Mitchell is back and Cooper has the snaps, and his big game came only when four receivers were out.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> 35% and 19% snap shares in weeks 5-6 for 3 targets each and 12 and 3 yards; his 105-yard week-3 line came with Taylor, Mitchell, Smith and Cooper all out. Our week-4 under on him cashed at zero.</p><p><b>Against it.</b> vs #30 pass EPA allowed; engine mean is well under the line, the market has him near even </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>He is the third or fourth option at tight end&#x27;s expense now that Mitchell is back and Cooper has the snaps, and his big game came only when four receivers were out. </p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 69%"></i></div><b>69%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 54%"></i></div><b>54%</b></div>
+        </div>
+        <p><b>Evidence.</b> 35% and 19% snap shares in weeks 5-6 for 3 targets each and 12 and 3 yards; his 105-yard week-3 line came with Taylor, Mitchell, Smith and Cooper all out. Our week-4 under on him cashed at zero.</p>
+        <p><b>Against it.</b> vs #30 pass EPA allowed; engine mean is well under the line, the market has him near even </p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Adonai Mitchell</b><span class="pp-bet">under 2.5 receptions</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 69%"></i></div><b>69%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 58%"></i></div><b>58%</b></div>
+      
+      <div class="rv-meter" title="The line 2.5 against the actual 0">
+        <div class="track"><i class="fill" style="width: 0.0%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 2.5</span><b>0</b></div>
       </div>
+      
+      <span class="badge good rv-read">right read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Mitchell played 44.1% and drew 3 targets for zero catches and -2.31 EPA, including the incompletion at Q4 6:23 that helped force a punt.</p>
       <div class="pp-callmeta">
-        <span class="badge good" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #30 pass EPA allowed</span>
-        <span class="badge mute">low</span>
-        <span class="rung" title="Normal: under 2.5 receptions"><i>Normal</i> &lt;3 <small>59&cent;</small></span><span class="rung" title="Edge: &lt;5 receptions"><i>Edge</i> &lt;5 <small>92&cent;</small></span><span class="rung" title="Edge+: &lt;6 receptions"><i>Edge+</i> &lt;6 <small>98&cent;</small></span>
+        <span class="rung hit" title="Normal: under 2.5 receptions"><i>Normal</i> &lt;3 <small>59&cent;</small></span><span class="rung hit" title="Edge: &lt;5 receptions"><i>Edge</i> &lt;5 <small>92&cent;</small></span><span class="rung hit" title="Edge+: &lt;6 receptions"><i>Edge+</i> &lt;6 <small>98&cent;</small></span>
       </div>
-      <p class="pp-lead">First game back after four weeks out, in a room that has reorganized without him; the beat read has him fourth in the pecking order rather than reclaiming a 12-target role.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> RotoBaller Saturday calls him a WR4 for week 7; his 12-target game came in week 2 with Taylor out, and he had 3 targets in week 1. The Jets project near 30 attempts split four ways.</p><p><b>Against it.</b> vs #30 pass EPA allowed; engine mean is under this line while the market prices it closer to even </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>First game back after four weeks out, in a room that has reorganized without him; the beat read has him fourth in the pecking order rather than reclaiming a 12-target role. </p>
+        <p><b>In the game.</b> Fourth in the pecking order as described.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 69%"></i></div><b>69%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 58%"></i></div><b>58%</b></div>
+        </div>
+        <p><b>Evidence.</b> RotoBaller Saturday calls him a WR4 for week 7; his 12-target game came in week 2 with Taylor out, and he had 3 targets in week 1. The Jets project near 30 attempts split four ways.</p>
+        <p><b>Against it.</b> vs #30 pass EPA allowed; engine mean is under this line while the market prices it closer to even </p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Geno Smith</b><span class="pp-bet">under 0.5 INTs</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 48%"></i></div><b>48%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+      
+      <div class="rv-meter" title="The line 0.5 against the actual 1">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 40.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 0.5</span><b>1</b></div>
       </div>
+      
+      <span class="badge bad rv-read">wrong read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Smith threw it 30 times from behind all game and was picked by Taaffe at the MIA 15; Miami nearly had a second (Cam Johnson&#x27;s at Q2 11:10, erased by a Miami defensive holding).</p>
       <div class="pp-callmeta">
-        <span class="badge good" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #30 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 0.5 INTs"><i>Normal</i> &lt;1 <small>53&cent;</small></span><span class="rung" title="Edge: &lt;2 INTs"><i>Edge</i> &lt;2 <small>86&cent;</small></span><span class="rung" title="Edge+: &lt;3 INTs"><i>Edge+</i> &lt;3 <small>98&cent;</small></span>
+        <span class="rung miss" title="Normal: under 0.5 INTs"><i>Normal</i> &lt;1 <small>53&cent;</small></span><span class="rung hit" title="Edge: &lt;2 INTs"><i>Edge</i> &lt;2 <small>86&cent;</small></span><span class="rung hit" title="Edge+: &lt;3 INTs"><i>Edge+</i> &lt;3 <small>98&cent;</small></span>
       </div>
-      <p class="pp-lead">This is a takeaway-volume call: Miami almost never intercepts the ball, and a favorite leaning on the run does not throw enough from behind to hand it over.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> One interception in six games for Smith; Miami&#x27;s defense has generated an interception on roughly 0.5% of attempts this season, the lowest input in the matchup, with the Jets projected near 30 attempts. </p><p><b>Against it.</b> vs #30 pass EPA allowed; the engine projects well above one in two and the market is near even — the engine&#x27;s weakest number is attempt volume for a favorite, per the interception study </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>This is a takeaway-volume call: Miami almost never intercepts the ball, and a favorite leaning on the run does not throw enough from behind to hand it over. </p>
+        <p><b>In the game.</b> The &#x27;favorite leaning on the run&#x27; premise never applied.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 48%"></i></div><b>48%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+        </div>
+        <p><b>Evidence.</b> One interception in six games for Smith; Miami&#x27;s defense has generated an interception on roughly 0.5% of attempts this season, the lowest input in the matchup, with the Jets projected near 30 attempts. </p>
+        <p><b>Against it.</b> vs #30 pass EPA allowed; the engine projects well above one in two and the market is near even — the engine&#x27;s weakest number is attempt volume for a favorite, per the interception study </p>
+      </details>
     </div>
     
   </div>
+  
+  
+  <div class="pp-k pp-k-sec">Lines the report singled out <span class="flat">&middot; signal carries forward, noise doesn't</span></div>
+  <div class="rv-notes">
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Omar Cooper Jr.</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">5-5-115, 1 TD on 5 targets vs 1.9 / 24.6 projected</span>
+      <p class="pp-sub">Second straight elevated role (64.4% snaps); he was the deep element in a 4.8-aDOT offense, taking the 52 and 60-yard shots.</p>
+      <details class="pp-more"><summary>more</summary><p>Role is real, the deep conversion rate is not.</p></details>
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Mason Taylor</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">5-62-2 TD on 7 targets, 61 air yards (40.9% share)</span>
+      <p class="pp-sub">Primary red-zone and intermediate target — both touchdowns plus the two-point conversion, and the Q2 interception came on a throw to him.</p>
+      <details class="pp-more"><summary>more</summary><p>The air-yards share is the number the model is under-pricing.</p></details>
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Braelon Allen</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">17-104 rushing with 4 explosive runs, 6-30 receiving on 7 targets, no TD</span>
+      <p class="pp-sub">Full backfield with Hall out (78% snaps), 10.1 ypc to the right side; reached the MIA 1 in Q4 but the drive died on a sack two plays later.</p>
+      <details class="pp-more"><summary>more</summary><p>Touchdown equity existed and didn&#x27;t convert.</p></details>
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Garrett Wilson</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">2-26 on 3 targets vs 6.6 targets projected</span>
+      <p class="pp-sub">Target tree genuinely reorganized — Taylor 7, Allen 7, Cooper 5 — and it happened in a 30-attempt, trailing-all-game script, which is the best case for his volume.</p>
+      <details class="pp-more"><summary>more</summary><p>That&#x27;s the alarming part.</p></details>
+    </div>
+    
+    <div class="rv-note-card ">
+      <div class="rv-notehead"><b>Isaiah Davis</b><span class="badge mute">noise</span></div>
+      <span class="pp-bet">3-49 receiving on 3 targets including 41 on 4th-and-4</span>
+      <p class="pp-sub">-10 air yards, 59 YAC — a checkdown role that produced one broken play (Q4 4:10, +5.07 EPA) at 22% snaps.</p>
+      <details class="pp-more"><summary>more</summary><p>Not a repeatable line.</p></details>
+    </div>
+    
+  </div>
+  
+  
+  <details class="rv-fold">
+    <summary>The plan's pre-game read on this offense <span class="flat">&middot; medium confidence</span></summary>
+    <div class="pp-offcards">
+      <div class="pp-offcard"><div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div><p class="pp-lead">A possession offense that moves between the 20s and dies at them: field EPA -0.051 against red-zone EPA -0.273, a 41.7% red-zone touchdown rate, and three straight games without a red-zone touchdown (four field goals at New England in week 6).</p><details class="pp-more"><summary>more</summary><p>Geno Smith is efficient when clean (+3.5 CPOE, 252 yards on 30 attempts in week 6) and sacked constantly when not — 4, 5, 3 and 3 sacks in weeks 2-6.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div><p class="pp-lead">Allen&#x27;s volume on early downs plus Geno&#x27;s short and intermediate game; explosives come in ones (Cooper&#x27;s 48-yard score in week 6, Williams&#x27; 58-yarder in week 4).</p><details class="pp-more"><summary>more</summary><p>Points often arrive as Sanders field goals — he has four, three and two make games already.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div><p class="pp-lead">Interior pressure.</p><details class="pp-more"><summary>more</summary><p>&#x27;Pressure allowed&#x27; is their tag in four of six weeks, and in week 4 Chicago hit Geno on 44.4% of dropbacks with the league&#x27;s softest rush. Short-yardage and fourth-down failure (0-for-2 at New England) ends drives that already reached scoring range.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div><p class="pp-lead">Miami cannot do the one thing that beats them: it generates a 3.3% sack rate and a 12.3% pressure rate (27th), and ranks 30th in pass EPA allowed, 31st in overall EPA allowed, 32nd in rush EPA and rush success allowed.</p><details class="pp-more"><summary>more</summary><p>Miami&#x27;s run defense is better in yards per carry (3.66, 8th) than in EPA — it gives up the conversions, not the chunks.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div><p class="pp-lead">Hall is questionable and unlikely to play per Rapoport on Sunday morning, which makes Allen the backfield again with Isaiah Davis in relief.</p><details class="pp-more"><summary>more</summary><p>Mitchell returns from a finger injury with no designation and takes Tim Patrick&#x27;s snaps, splitting the tree further with Cooper. Left guard Dylan Parham is questionable in his first week back from a week-3 knee; Max Mitchell is out — the line that has allowed pressure every week is still patched. On Miami&#x27;s side, corner Reese Taylor is out and edge Rob Beal Jr. doubtful, thinning an already toothless front.</p></details></div>
+    </div>
+  </details>
   
 </div>
 
   <div class="gm-tiles">
-    <div class="gm-tile big"><b>21.5<i class="act over" title="Actual">(25)</i></b><span>Points</span></div><div class="gm-tile "><b>60</b><span>Plays</span></div><div class="gm-tile "><b>220<i class="act over" title="Actual">(287)</i></b><span>Pass yds</span></div><div class="gm-tile "><b>107<i class="act over" title="Actual">(109)</i></b><span>Rush yds</span></div><div class="gm-tile "><b>2.5</b><span>Sacks taken</span></div><div class="gm-tile "><b>0.7<i class="act under" title="Actual">(1)</i></b><span>INTs thrown</span></div>
+    <div class="gm-tile rv big over"><b>25</b><span>Points</span><small>projected 21.5</small></div><div class="gm-tile rv  "><b class="flat">60</b><span>Plays</span><small>projected</small></div><div class="gm-tile rv  over"><b>287</b><span>Pass yds</span><small>projected 220</small></div><div class="gm-tile rv  over"><b>109</b><span>Rush yds</span><small>projected 107</small></div><div class="gm-tile rv  "><b class="flat">2.5</b><span>Sacks taken</span><small>projected</small></div><div class="gm-tile rv  under"><b>1</b><span>INTs thrown</span><small>projected 0.7</small></div>
   </div>
   <div class="gm-split">
     <div class="gm-players">
@@ -2318,7 +2915,7 @@
         <div class="gm-row">
           <div class="gm-cell off"><i class="rk bad">#28</i><b>18.7%</b><div class="gm-bar bad"><i style="width: 87%"></i></div></div>
           <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Pressure rate</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Pressure rate</b><p>Sacks or quarterback hits per dropback, the play-by-play pressure proxy.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
-          <div class="gm-cell def"><b>12.3%</b><i class="rk bad">#27</i><div class="gm-bar bad"><i style="width: 24%"></i></div></div>
+          <div class="gm-cell def"><b>12.3%</b><i class="rk bad">#28</i><div class="gm-bar bad"><i style="width: 21%"></i></div></div>
         </div>
         
         <div class="gm-row">
@@ -2354,7 +2951,7 @@
 
 
 
-<details class="hfa-card hfa-sec gm-starters pp-sec" id="starters" data-sec="starters" open>
+<details class="hfa-card hfa-sec gm-starters pp-sec" id="starters" data-sec="starters">
   <summary class="hfa-head pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <div class="hfa-eyebrow">Starters on the field</div>
@@ -2372,7 +2969,7 @@
         <div class="gm-ftag top">NYJ defense</div>
         <div class="gm-los"></div>
         <div class="gm-ftag bot">MIA offense</div>
-        <div class="gm-fp def r5" style="left: 26%; top: 51%" title="David Bailey DElast game 97% of snapsEdge · 83rd pct of group · 318 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.9% lg 3.5%Sack rate1.4% lg 0.9%TFL rate1.7% lg 1.2%Missed tackle %7% lg 9%context (not rated): 7 tgt · 4.0 yds/tgt · 29% comp · aDOT 4.6 · 13 prs · 5.0 sk · 30 tkl / 2 miss · 0 INT · 1 PD"><span class="dot">83</span><span class="nm">D. Bailey <small>EDGE</small></span></div><div class="gm-fp def r2" style="left: 44%; top: 51%" title="T&amp;#x27;Vondre Sweat DLon report – Elbowlast game 62% of snapsInterior DL · 32nd pct of group · 398 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.2% lg 1.8%Sack rate0.3% lg 0.5%TFL rate1.0% lg 0.8%Missed tackle %9% lg 11%context (not rated): 0 tgt · 7.0 yds/tgt · 100% comp · aDOT -3.0 · 4 prs · 1.0 sk · 14 tkl / 1 miss · 0 INT · 0 PD"><span class="dot">32<em>?</em></span><span class="nm">T. Sweat <small>DI</small></span></div><div class="gm-fp def r2" style="left: 56%; top: 51%" title="Harrison Phillips DLon report – Not injury related - resting playerlast game 54% of snapsInterior DL · 26th pct of group · 568 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.1% lg 1.8%Sack rate0.1% lg 0.5%TFL rate0.5% lg 0.8%Missed tackle %7% lg 11%context (not rated): 0 tgt · 0.0 yds/tgt · 0% comp · aDOT -4.0 · 6 prs · 0.2 sk · 20 tkl / 0 miss · 0 INT · 1 PD"><span class="dot">26<em>?</em></span><span class="nm">H. Phillips <small>DI</small></span></div><div class="gm-fp def r2" style="left: 75%; top: 51%" title="Kingsley Enagbare DElast game 75% of snapsEdge · 29th pct of group · 450 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.0% lg 3.5%Sack rate0.7% lg 0.9%TFL rate1.5% lg 1.2%Missed tackle %11% lg 9%context (not rated): 4 tgt · 4.8 yds/tgt · 78% comp · aDOT 3.3 · 12 prs · 3.0 sk · 32 tkl / 4 miss"><span class="dot">29</span><span class="nm">K. Enagbare <small>EDGE</small></span></div><div class="gm-fp def r4" style="left: 41%; top: 37%" title="Demario Davis LBon report – Not injury related - resting playerlast game 100% of snapsLinebacker · 73rd pct of group · 944 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.34 lg 0.38Targets drawn5.0% lg 5.6%Missed tackle %8% lg 8%Tackle rate12.1% lg 11.7%TFL rate0.7% lg 0.8%context (not rated): 46 tgt · 6.7 yds/tgt · 75% comp · aDOT 3.3 · 6 prs · 2.2 sk · 115 tkl / 10 miss · 0 INT · 4 PD"><span class="dot">73<em>?</em></span><span class="nm">D. Davis <small>LB</small></span></div><div class="gm-fp def r3" style="left: 59%; top: 37%" title="Jamien Sherwood LBlast game 94% of snapsLinebacker · 58th pct of group · 940 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.45 lg 0.38Targets drawn6.0% lg 5.6%Missed tackle %6% lg 8%Tackle rate12.9% lg 11.7%TFL rate0.7% lg 0.8%context (not rated): 56 tgt · 7.7 yds/tgt · 73% comp · aDOT 4.7 · 8 prs · 1.0 sk · 123 tkl / 8 miss · 0 INT · 7 PD"><span class="dot">58</span><span class="nm">J. Sherwood <small>LB</small></span></div><div class="gm-fp def r3" style="left: 7%; top: 42%" title="Azareye&amp;#x27;h Thomas CBlast game 100% of snapsCornerback · 40th pct of group · 558 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.55 lg 0.66Targets drawn9.2% lg 9.1%Missed tackle %15% lg 10%context (not rated): 52 tgt · 5.7 yds/tgt · 55% comp · aDOT 9.2 · 1 prs · 36 tkl / 8 miss · 0 INT · 8 PD"><span class="dot">40</span><span class="nm">A. Thomas <small>CB</small></span></div><div class="gm-fp def r4" style="left: 93%; top: 42%" title="Brandon Stephens CBlast game 96% of snapsCornerback · 70th pct of group · 920 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.62 lg 0.66Targets drawn8.5% lg 9.1%Missed tackle %8% lg 10%context (not rated): 78 tgt · 7.3 yds/tgt · 59% comp · aDOT 9.3 · 0 prs · 52 tkl / 4 miss · 0 INT · 8 PD"><span class="dot">70</span><span class="nm">B. Stephens <small>CB</small></span></div><div class="gm-fp def thin" style="left: 18%; top: 44%" title="D&amp;#x27;Angelo Ponds CBlast game 16% of snapsCornerback · 47th pct of group · thin sample · 33 wtd snaps2026 wks 1-6 + ½·2025context (not rated): 3 tgt · 16.0 yds/tgt · 67% comp · aDOT 15.0 · 1 prs · 3 tkl / 0 miss"><span class="dot">47</span><span class="nm">D. Ponds <small>NB</small></span></div><div class="gm-fp def r5" style="left: 34%; top: 19%" title="Minkah Fitzpatrick Slast game 100% of snapsSafety · 84th pct of group · 658 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.41 lg 0.47Targets drawn5.1% lg 5.6%Missed tackle %7% lg 9%context (not rated): 32 tgt · 7.9 yds/tgt · 62% comp · aDOT 9.9 · 2 prs · 0.5 sk · 64 tkl / 4 miss · 2 INT · 5 PD"><span class="dot">84</span><span class="nm">M. Fitzpatrick <small>S</small></span></div><div class="gm-fp def r5" style="left: 66%; top: 19%" title="Dane Belton Slast game 100% of snapsSafety · 98th pct of group · 756 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.36 lg 0.47Targets drawn5.2% lg 5.6%Missed tackle %3% lg 9%context (not rated): 39 tgt · 6.5 yds/tgt · 56% comp · aDOT 8.8 · 2 prs · 2.0 sk · 103 tkl / 2 miss · 0 INT · 6 PD"><span class="dot">98</span><span class="nm">D. Belton <small>S</small></span></div>
+        <div class="gm-fp def r5" style="left: 26%; top: 51%" title="David Bailey DElast game 97% of snapsEdge · 83rd pct of group · 318 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.9% lg 3.5%Sack rate1.4% lg 0.9%TFL rate1.7% lg 1.2%Missed tackle %7% lg 9%context (not rated): 7 tgt · 4.0 yds/tgt · 29% comp · aDOT 4.6 · 13 prs · 5.0 sk · 30 tkl / 2 miss · 0 INT · 1 PD"><span class="dot">83</span><span class="nm">D. Bailey <small>EDGE</small></span></div><div class="gm-fp def r2" style="left: 44%; top: 51%" title="T&amp;#x27;Vondre Sweat DLon report – Elbowlast game 62% of snapsInterior DL · 32nd pct of group · 398 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.2% lg 1.8%Sack rate0.3% lg 0.5%TFL rate1.0% lg 0.8%Missed tackle %9% lg 11%context (not rated): 0 tgt · 7.0 yds/tgt · 100% comp · aDOT -3.0 · 4 prs · 1.0 sk · 14 tkl / 1 miss · 0 INT · 0 PD"><span class="dot">32<em>?</em></span><span class="nm">T. Sweat <small>DI</small></span></div><div class="gm-fp def r2" style="left: 56%; top: 51%" title="Harrison Phillips DLon report – Not injury related - resting playerlast game 54% of snapsInterior DL · 26th pct of group · 568 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.1% lg 1.8%Sack rate0.1% lg 0.5%TFL rate0.5% lg 0.8%Missed tackle %7% lg 11%context (not rated): 0 tgt · 0.0 yds/tgt · 0% comp · aDOT -4.0 · 6 prs · 0.2 sk · 20 tkl / 0 miss · 0 INT · 1 PD"><span class="dot">26<em>?</em></span><span class="nm">H. Phillips <small>DI</small></span></div><div class="gm-fp def r2" style="left: 75%; top: 51%" title="Kingsley Enagbare DElast game 75% of snapsEdge · 31st pct of group · 450 wtd snaps2026 wks 1-6 + ½·2025Pressure rate2.9% lg 3.5%Sack rate0.7% lg 0.9%TFL rate1.5% lg 1.2%Missed tackle %11% lg 9%context (not rated): 4 tgt · 4.8 yds/tgt · 78% comp · aDOT 3.3 · 12 prs · 3.0 sk · 32 tkl / 4 miss"><span class="dot">31</span><span class="nm">K. Enagbare <small>EDGE</small></span></div><div class="gm-fp def r4" style="left: 41%; top: 37%" title="Demario Davis LBon report – Not injury related - resting playerlast game 100% of snapsLinebacker · 74th pct of group · 944 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.34 lg 0.38Targets drawn5.0% lg 5.6%Missed tackle %8% lg 8%Tackle rate12.1% lg 11.8%TFL rate0.7% lg 0.8%context (not rated): 46 tgt · 6.7 yds/tgt · 75% comp · aDOT 3.3 · 6 prs · 2.2 sk · 115 tkl / 10 miss · 0 INT · 4 PD"><span class="dot">74<em>?</em></span><span class="nm">D. Davis <small>LB</small></span></div><div class="gm-fp def r3" style="left: 59%; top: 37%" title="Jamien Sherwood LBlast game 94% of snapsLinebacker · 58th pct of group · 940 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.45 lg 0.38Targets drawn6.0% lg 5.6%Missed tackle %6% lg 8%Tackle rate12.9% lg 11.8%TFL rate0.7% lg 0.8%context (not rated): 56 tgt · 7.7 yds/tgt · 73% comp · aDOT 4.7 · 8 prs · 1.0 sk · 123 tkl / 8 miss · 0 INT · 7 PD"><span class="dot">58</span><span class="nm">J. Sherwood <small>LB</small></span></div><div class="gm-fp def r3" style="left: 7%; top: 42%" title="Azareye&amp;#x27;h Thomas CBlast game 100% of snapsCornerback · 40th pct of group · 558 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.55 lg 0.66Targets drawn9.2% lg 9.1%Missed tackle %15% lg 10%context (not rated): 52 tgt · 5.7 yds/tgt · 55% comp · aDOT 9.2 · 1 prs · 36 tkl / 8 miss · 0 INT · 8 PD"><span class="dot">40</span><span class="nm">A. Thomas <small>CB</small></span></div><div class="gm-fp def r4" style="left: 93%; top: 42%" title="Brandon Stephens CBlast game 96% of snapsCornerback · 70th pct of group · 920 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.62 lg 0.66Targets drawn8.5% lg 9.1%Missed tackle %8% lg 10%context (not rated): 78 tgt · 7.3 yds/tgt · 59% comp · aDOT 9.3 · 0 prs · 52 tkl / 4 miss · 0 INT · 8 PD"><span class="dot">70</span><span class="nm">B. Stephens <small>CB</small></span></div><div class="gm-fp def thin" style="left: 18%; top: 44%" title="D&amp;#x27;Angelo Ponds CBlast game 16% of snapsCornerback · 47th pct of group · thin sample · 33 wtd snaps2026 wks 1-6 + ½·2025context (not rated): 3 tgt · 16.0 yds/tgt · 67% comp · aDOT 15.0 · 1 prs · 3 tkl / 0 miss"><span class="dot">47</span><span class="nm">D. Ponds <small>NB</small></span></div><div class="gm-fp def r5" style="left: 34%; top: 19%" title="Minkah Fitzpatrick Slast game 100% of snapsSafety · 84th pct of group · 658 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.41 lg 0.47Targets drawn5.1% lg 5.6%Missed tackle %7% lg 9%context (not rated): 32 tgt · 7.9 yds/tgt · 62% comp · aDOT 9.9 · 2 prs · 0.5 sk · 64 tkl / 4 miss · 2 INT · 5 PD"><span class="dot">84</span><span class="nm">M. Fitzpatrick <small>S</small></span></div><div class="gm-fp def r5" style="left: 66%; top: 19%" title="Dane Belton Slast game 100% of snapsSafety · 98th pct of group · 756 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.36 lg 0.47Targets drawn5.2% lg 5.6%Missed tackle %3% lg 9%context (not rated): 39 tgt · 6.5 yds/tgt · 56% comp · aDOT 8.8 · 2 prs · 2.0 sk · 103 tkl / 2 miss · 0 INT · 6 PD"><span class="dot">98</span><span class="nm">D. Belton <small>S</small></span></div>
         <div class="gm-fp off r2" style="left: 7%; top: 63%" title="Malik Washington WRprojected: 7.3 tgt · 69 rec yds23rd pct production among the position&#x27;s starter pool · 31 yds/g over 13.5 wtd games5.1 tgt/g · 1.1 car/g"><span class="dot">23</span><span class="nm">M. Washington <small>WR</small></span></div><div class="gm-fp off thin" style="left: 18%; top: 65%" title="Kevin Coleman Jr. WRprojected: 4.5 tgt · 14 rec yds0th pct production among the position&#x27;s starter pool (outside the pool) · 9 yds/g over 4.0 wtd games4.2 tgt/g · 0.0 car/g"><span class="dot">0</span><span class="nm">K. Coleman Jr. <small>WR</small></span></div><div class="gm-fp off r2" style="left: 80%; top: 62%" title="Greg Dulcich TEprojected: 3.3 tgt · 24 rec yds38th pct production among the position&#x27;s starter pool · 35 yds/g over 8.5 wtd games3.9 tgt/g · 0.1 car/g"><span class="dot">38</span><span class="nm">G. Dulcich <small>TE</small></span></div><div class="gm-fp off none" style="left: 93%; top: 63%" title="Caleb Douglas WRon report – Ankleprojected: 5.1 tgt · 47 rec ydsno production sample yet"><span class="dot">WR<em>?</em></span><span class="nm">C. Douglas <small>WR</small></span></div><div class="gm-fp off thin" style="left: 50%; top: 75%" title="Malik Willis QBon report – Thumbprojected: 30 att · 202 pass yds6th pct production among the position&#x27;s starter pool (outside the pool) · 187 yds/g over 7.0 wtd games21.1 att/g"><span class="dot">6<em>?</em></span><span class="nm">M. Willis <small>QB</small></span></div><div class="gm-fp off r1" style="left: 39%; top: 76%" title="Ollie Gordon II RBprojected: 10.5 car · 45 rush · 1.2 tgt · 2 rec3rd pct production among the position&#x27;s starter pool · 29 yds/g over 12.5 wtd games0.8 tgt/g · 6.6 car/g"><span class="dot">3</span><span class="nm">O. Gordon II <small>RB</small></span></div><div class="gm-fp off ol" style="left: 31%; top: 62%" title="Austin Jackson Tlast game 100% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LT</span></div><div class="gm-fp off ol" style="left: 40.5%; top: 62%" title="Kadyn Proctor Glast game 100% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LG</span></div><div class="gm-fp off ol" style="left: 50%; top: 62%" title="Aaron Brewer Clast game 100% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">C</span></div><div class="gm-fp off ol" style="left: 59.5%; top: 62%" title="Jonah Savaiinaea Glast game 27% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RG<em>?</em></span></div><div class="gm-fp off ol" style="left: 69%; top: 62%" title="Patrick Paul Tlast game 100% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RT</span></div>
       </div>
     </div>
@@ -2383,7 +2980,7 @@
         <div class="gm-ftag top">MIA defense</div>
         <div class="gm-los"></div>
         <div class="gm-ftag bot">NYJ offense</div>
-        <div class="gm-fp def r1" style="left: 26%; top: 51%" title="Joshua Uche DElast game 68% of snapsEdge · 18th pct of group · 319 wtd snaps2026 wks 1-6 + ½·2025Pressure rate2.4% lg 3.5%Sack rate0.6% lg 0.9%TFL rate1.0% lg 1.2%Missed tackle %4% lg 9%context (not rated): 4 tgt · 3.4 yds/tgt · 62% comp · aDOT 1.4 · 6 prs · 1.5 sk · 24 tkl / 0 miss · 0 INT · 0 PD"><span class="dot">18</span><span class="nm">J. Uche <small>EDGE</small></span></div><div class="gm-fp def r4" style="left: 44%; top: 51%" title="Zach Sieler DLlast game 77% of snapsInterior DL · 78th pct of group · 628 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.8% lg 1.8%Sack rate0.7% lg 0.5%TFL rate1.4% lg 0.8%Missed tackle %9% lg 11%context (not rated): 4 tgt · 4.9 yds/tgt · 71% comp · aDOT -4.1 · 11 prs · 4.8 sk · 24 tkl / 2 miss · 0 INT · 0 PD"><span class="dot">78</span><span class="nm">Z. Sieler <small>DI</small></span></div><div class="gm-fp def r3" style="left: 56%; top: 51%" title="Zeek Biggers DLlast game 64% of snapsInterior DL · 41st pct of group · 299 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.8% lg 1.8%Sack rate0.3% lg 0.5%TFL rate0.4% lg 0.8%Missed tackle %11% lg 11%context (not rated): 2 tgt · 0.0 yds/tgt · 0% comp · aDOT 0.5 · 6 prs · 0.8 sk · 12 tkl / 2 miss"><span class="dot">41</span><span class="nm">Z. Biggers <small>DI</small></span></div><div class="gm-fp def r4" style="left: 75%; top: 51%" title="Chop Robinson DElast game 55% of snapsEdge · 71st pct of group · 374 wtd snaps2026 wks 1-6 + ½·2025Pressure rate4.2% lg 3.5%Sack rate0.8% lg 0.9%TFL rate0.9% lg 1.2%Missed tackle %10% lg 9%context (not rated): 5 tgt · 5.9 yds/tgt · 100% comp · aDOT -1.4 · 17 prs · 3.0 sk · 16 tkl / 2 miss · 0 INT · 0 PD"><span class="dot">71</span><span class="nm">C. Robinson <small>EDGE</small></span></div><div class="gm-fp def r2" style="left: 41%; top: 37%" title="Jacob Rodriguez LBlast game 98% of snapsLinebacker · 33rd pct of group · 311 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.56 lg 0.38Targets drawn8.3% lg 5.6%Missed tackle %7% lg 8%Tackle rate16.2% lg 11.7%TFL rate0.9% lg 0.8%context (not rated): 30 tgt · 6.7 yds/tgt · 67% comp · aDOT 5.1 · 1 prs · 57 tkl / 4 miss · 1 INT · 1 PD"><span class="dot">33</span><span class="nm">J. Rodriguez <small>LB</small></span></div><div class="gm-fp def r3" style="left: 59%; top: 37%" title="Jordyn Brooks LBon report – Footlast game 68% of snapsLinebacker · 53rd pct of group · 778 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.57 lg 0.38Targets drawn7.6% lg 5.6%Missed tackle %4% lg 8%Tackle rate16.4% lg 11.7%TFL rate0.8% lg 0.8%context (not rated): 62 tgt · 7.5 yds/tgt · 74% comp · aDOT 4.3 · 4 prs · 1.8 sk · 134 tkl / 5 miss · 0 INT · 2 PD"><span class="dot">53<em>?</em></span><span class="nm">J. Brooks <small>LB</small></span></div><div class="gm-fp def r4" style="left: 7%; top: 42%" title="Chris Johnson CBlast game 97% of snapsCornerback · 64th pct of group · 304 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.60 lg 0.66Targets drawn8.1% lg 9.1%Missed tackle %11% lg 10%context (not rated): 23 tgt · 7.5 yds/tgt · 74% comp · aDOT 6.7 · 31 tkl / 4 miss · 0 INT · 2 PD"><span class="dot">64</span><span class="nm">C. Johnson <small>CB</small></span></div><div class="gm-fp def r3" style="left: 93%; top: 42%" title="Jason Marshall CBlast game 86% of snapsCornerback · 49th pct of group · 386 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.75 lg 0.66Targets drawn8.1% lg 9.1%Missed tackle %9% lg 10%context (not rated): 30 tgt · 10.1 yds/tgt · 77% comp · aDOT 9.6 · 0 prs · 30 tkl / 3 miss · 0 INT · 2 PD"><span class="dot">49</span><span class="nm">J. Marshall <small>CB</small></span></div><div class="gm-fp def r5" style="left: 18%; top: 44%" title="Julius Brents CBon report – Heellast game 61% of snapsCornerback · 88th pct of group · 258 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.46 lg 0.66Targets drawn8.0% lg 9.1%Missed tackle %10% lg 10%context (not rated): 19 tgt · 4.7 yds/tgt · 68% comp · aDOT 7.5 · 26 tkl / 3 miss · 0 INT · 2 PD"><span class="dot">88<em>?</em></span><span class="nm">J. Brents <small>NB</small></span></div><div class="gm-fp def r4" style="left: 34%; top: 19%" title="Dante Trader Slast game 98% of snapsSafety · 80th pct of group · 450 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.42 lg 0.47Targets drawn4.3% lg 5.6%Missed tackle %8% lg 9%context (not rated): 18 tgt · 10.3 yds/tgt · 63% comp · aDOT 12.6 · 50 tkl / 4 miss · 1 INT · 4 PD"><span class="dot">80</span><span class="nm">D. Trader <small>S</small></span></div><div class="gm-fp def r3" style="left: 66%; top: 19%" title="Michael Taaffe Slast game 94% of snapsSafety · 41st pct of group · 287 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.58 lg 0.47Targets drawn5.8% lg 5.6%Missed tackle %7% lg 9%context (not rated): 17 tgt · 10.7 yds/tgt · 59% comp · aDOT 11.2 · 1 prs · 30 tkl / 2 miss · 1 INT · 1 PD"><span class="dot">41</span><span class="nm">M. Taaffe <small>S</small></span></div>
+        <div class="gm-fp def r1" style="left: 26%; top: 51%" title="Joshua Uche DElast game 68% of snapsEdge · 19th pct of group · 319 wtd snaps2026 wks 1-6 + ½·2025Pressure rate2.4% lg 3.5%Sack rate0.6% lg 0.9%TFL rate1.0% lg 1.2%Missed tackle %4% lg 9%context (not rated): 4 tgt · 3.4 yds/tgt · 62% comp · aDOT 1.4 · 6 prs · 1.5 sk · 24 tkl / 0 miss · 0 INT · 0 PD"><span class="dot">19</span><span class="nm">J. Uche <small>EDGE</small></span></div><div class="gm-fp def r4" style="left: 44%; top: 51%" title="Zach Sieler DLlast game 77% of snapsInterior DL · 78th pct of group · 628 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.8% lg 1.8%Sack rate0.7% lg 0.5%TFL rate1.4% lg 0.8%Missed tackle %9% lg 11%context (not rated): 4 tgt · 4.9 yds/tgt · 71% comp · aDOT -4.1 · 11 prs · 4.8 sk · 24 tkl / 2 miss · 0 INT · 0 PD"><span class="dot">78</span><span class="nm">Z. Sieler <small>DI</small></span></div><div class="gm-fp def r3" style="left: 56%; top: 51%" title="Zeek Biggers DLlast game 64% of snapsInterior DL · 41st pct of group · 299 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.8% lg 1.8%Sack rate0.3% lg 0.5%TFL rate0.4% lg 0.8%Missed tackle %11% lg 11%context (not rated): 2 tgt · 0.0 yds/tgt · 0% comp · aDOT 0.5 · 6 prs · 0.8 sk · 12 tkl / 2 miss"><span class="dot">41</span><span class="nm">Z. Biggers <small>DI</small></span></div><div class="gm-fp def r4" style="left: 75%; top: 51%" title="Chop Robinson DElast game 55% of snapsEdge · 71st pct of group · 374 wtd snaps2026 wks 1-6 + ½·2025Pressure rate4.2% lg 3.5%Sack rate0.8% lg 0.9%TFL rate0.9% lg 1.2%Missed tackle %10% lg 9%context (not rated): 5 tgt · 5.9 yds/tgt · 100% comp · aDOT -1.4 · 17 prs · 3.0 sk · 16 tkl / 2 miss · 0 INT · 0 PD"><span class="dot">71</span><span class="nm">C. Robinson <small>EDGE</small></span></div><div class="gm-fp def r2" style="left: 41%; top: 37%" title="Jacob Rodriguez LBlast game 98% of snapsLinebacker · 31st pct of group · 311 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.56 lg 0.38Targets drawn8.3% lg 5.6%Missed tackle %7% lg 8%Tackle rate16.2% lg 11.8%TFL rate0.9% lg 0.8%context (not rated): 30 tgt · 6.7 yds/tgt · 67% comp · aDOT 5.1 · 1 prs · 57 tkl / 4 miss · 1 INT · 1 PD"><span class="dot">31</span><span class="nm">J. Rodriguez <small>LB</small></span></div><div class="gm-fp def r3" style="left: 59%; top: 37%" title="Jordyn Brooks LBon report – Footlast game 68% of snapsLinebacker · 52nd pct of group · 778 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.57 lg 0.38Targets drawn7.6% lg 5.6%Missed tackle %4% lg 8%Tackle rate16.4% lg 11.8%TFL rate0.8% lg 0.8%context (not rated): 62 tgt · 7.5 yds/tgt · 74% comp · aDOT 4.3 · 4 prs · 1.8 sk · 134 tkl / 5 miss · 0 INT · 2 PD"><span class="dot">52<em>?</em></span><span class="nm">J. Brooks <small>LB</small></span></div><div class="gm-fp def r4" style="left: 7%; top: 42%" title="Chris Johnson CBlast game 97% of snapsCornerback · 64th pct of group · 304 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.60 lg 0.66Targets drawn8.1% lg 9.1%Missed tackle %11% lg 10%context (not rated): 23 tgt · 7.5 yds/tgt · 74% comp · aDOT 6.7 · 31 tkl / 4 miss · 0 INT · 2 PD"><span class="dot">64</span><span class="nm">C. Johnson <small>CB</small></span></div><div class="gm-fp def r3" style="left: 93%; top: 42%" title="Jason Marshall CBlast game 86% of snapsCornerback · 49th pct of group · 386 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.75 lg 0.66Targets drawn8.1% lg 9.1%Missed tackle %9% lg 10%context (not rated): 30 tgt · 10.1 yds/tgt · 77% comp · aDOT 9.6 · 0 prs · 30 tkl / 3 miss · 0 INT · 2 PD"><span class="dot">49</span><span class="nm">J. Marshall <small>CB</small></span></div><div class="gm-fp def r5" style="left: 18%; top: 44%" title="Julius Brents CBon report – Heellast game 61% of snapsCornerback · 88th pct of group · 258 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.46 lg 0.66Targets drawn8.0% lg 9.1%Missed tackle %10% lg 10%context (not rated): 19 tgt · 4.7 yds/tgt · 68% comp · aDOT 7.5 · 26 tkl / 3 miss · 0 INT · 2 PD"><span class="dot">88<em>?</em></span><span class="nm">J. Brents <small>NB</small></span></div><div class="gm-fp def r4" style="left: 34%; top: 19%" title="Dante Trader Slast game 98% of snapsSafety · 80th pct of group · 450 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.42 lg 0.47Targets drawn4.3% lg 5.6%Missed tackle %8% lg 9%context (not rated): 18 tgt · 10.3 yds/tgt · 63% comp · aDOT 12.6 · 50 tkl / 4 miss · 1 INT · 4 PD"><span class="dot">80</span><span class="nm">D. Trader <small>S</small></span></div><div class="gm-fp def r3" style="left: 66%; top: 19%" title="Michael Taaffe Slast game 94% of snapsSafety · 41st pct of group · 287 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.58 lg 0.47Targets drawn5.8% lg 5.6%Missed tackle %7% lg 9%context (not rated): 17 tgt · 10.7 yds/tgt · 59% comp · aDOT 11.2 · 1 prs · 30 tkl / 2 miss · 1 INT · 1 PD"><span class="dot">41</span><span class="nm">M. Taaffe <small>S</small></span></div>
         <div class="gm-fp off r5" style="left: 7%; top: 63%" title="Garrett Wilson WRprojected: 6.6 tgt · 53 rec yds81st pct production among the position&#x27;s starter pool · 65 yds/g over 9.5 wtd games8.2 tgt/g · 0.0 car/g"><span class="dot">81</span><span class="nm">G. Wilson <small>WR</small></span></div><div class="gm-fp off r1" style="left: 18%; top: 65%" title="Isaiah Williams WRprojected: 2.1 tgt · 28 rec yds2nd pct production among the position&#x27;s starter pool · 18 yds/g over 13.5 wtd games2.4 tgt/g · 0.3 car/g"><span class="dot">2</span><span class="nm">I. Williams <small>WR</small></span></div><div class="gm-fp off thin" style="left: 80%; top: 62%" title="Kenyon Sadiq TEprojected: 3.2 tgt · 13 rec yds3rd pct production among the position&#x27;s starter pool (outside the pool) · 26 yds/g over 6.0 wtd games4.0 tgt/g · 0.2 car/g"><span class="dot">3</span><span class="nm">K. Sadiq <small>TE</small></span></div><div class="gm-fp off r2" style="left: 93%; top: 63%" title="Adonai Mitchell WRon report – Fingerprojected: 3.5 tgt · 28 rec yds34th pct production among the position&#x27;s starter pool · 35 yds/g over 10.0 wtd games5.2 tgt/g · 0.1 car/g"><span class="dot">34<em>?</em></span><span class="nm">A. Mitchell <small>WR</small></span></div><div class="gm-fp off r1" style="left: 50%; top: 75%" title="Geno Smith QBprojected: 30 att · 220 pass yds12th pct production among the position&#x27;s starter pool · 218 yds/g over 13.5 wtd games29.7 att/g"><span class="dot">12</span><span class="nm">G. Smith <small>QB</small></span></div><div class="gm-fp off r5" style="left: 39%; top: 76%" title="Breece Hall RBQuestionable – Quadricepprojected: 12.2 car · 42 rush · 2.5 tgt · 24 rec83rd pct production among the position&#x27;s starter pool · 88 yds/g over 11.0 wtd games3.1 tgt/g · 15.7 car/g"><span class="dot">83<em>Q</em></span><span class="nm">B. Hall <small>RB</small></span></div><div class="gm-fp off ol" style="left: 31%; top: 62%" title="Armand Membou Tlast game 91% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LT</span></div><div class="gm-fp off ol" style="left: 40.5%; top: 62%" title="Jordan Meredith OLlast game 91% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LG</span></div><div class="gm-fp off ol" style="left: 50%; top: 62%" title="Josh Myers Clast game 91% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">C</span></div><div class="gm-fp off ol" style="left: 59.5%; top: 62%" title="Joe Tippmann Clast game 91% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RG</span></div><div class="gm-fp off ol" style="left: 69%; top: 62%" title="Olu Fashanu OLlast game 91% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RT</span></div>
       </div>
     </div>
@@ -2394,7 +2991,7 @@
 
 
 
-<details class="hfa-card hfa-sec gm-injuries pp-sec" id="injuries" data-sec="injuries" open>
+<details class="hfa-card hfa-sec gm-injuries pp-sec" id="injuries" data-sec="injuries">
   <summary class="hfa-head pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <div class="hfa-eyebrow">Injury report</div>
@@ -2462,7 +3059,7 @@
 </div>
           <div><div class="gm-irside def">NYJ &middot; LB</div>
 <div class="gm-ir dim">
-  <span class="gm-rate r4" title="73rd percentile in the Linebacker group, 2026 wks 1-6 + ½·2025">73</span>
+  <span class="gm-rate r4" title="74th percentile in the Linebacker group, 2026 wks 1-6 + ½·2025">74</span>
   <div class="gm-irm">
     <div class="top"><b>Demario Davis</b><span class="flat">LB</span><span class="badge mute">Full practice</span></div>
     <div class="meta">Not injury related - resting player &middot; 100% of snaps last game</div>
@@ -2470,7 +3067,7 @@
 </div>
 
 <div class="gm-ir ">
-  <span class="gm-rate r3" title="47th percentile in the Linebacker group, 2026 wks 1-6 + ½·2025">47</span>
+  <span class="gm-rate r3" title="45th percentile in the Linebacker group, 2026 wks 1-6 + ½·2025">45</span>
   <div class="gm-irm">
     <div class="top"><b>Francisco Mauigoa</b><span class="flat">LB</span><span class="badge out">Out</span></div>
     <div class="meta">Quadricep &middot; Did Not Participate In Practice</div>
@@ -2494,7 +3091,7 @@
 </div>
           <div><div class="gm-irside def">NYJ &middot; DL</div>
 <div class="gm-ir dim">
-  <span class="gm-rate r3" title="40th percentile in the Edge group, 2026 wks 1-6 + ½·2025">40</span>
+  <span class="gm-rate r3" title="41st percentile in the Edge group, 2026 wks 1-6 + ½·2025">41</span>
   <div class="gm-irm">
     <div class="top"><b>Will McDonald IV</b><span class="flat">LB</span><span class="badge mute">Full practice</span></div>
     <div class="meta">Toe &middot; 34% of snaps last game</div>
@@ -2518,7 +3115,7 @@
 </div>
 
 <div class="gm-ir ">
-  <span class="gm-rate r1" title="13th percentile in the Edge group, 2026 wks 1-6 + ½·2025">13</span>
+  <span class="gm-rate r1" title="14th percentile in the Edge group, 2026 wks 1-6 + ½·2025">14</span>
   <div class="gm-irm">
     <div class="top"><b>Joseph Ossai</b><span class="flat">LB</span><span class="badge out">Out</span></div>
     <div class="meta">Ankle &middot; Did Not Participate In Practice &middot; 31% of snaps last game</div>
@@ -2595,7 +3192,7 @@
 </div>
           <div><div class="gm-irside def">MIA &middot; LB</div>
 <div class="gm-ir dim">
-  <span class="gm-rate thin" title="93rd percentile in the Linebacker group, 2026 wks 1-6 + ½·2025 (thin sample)">93</span>
+  <span class="gm-rate thin" title="91st percentile in the Linebacker group, 2026 wks 1-6 + ½·2025 (thin sample)">91</span>
   <div class="gm-irm">
     <div class="top"><b>Jackson Woodard</b><span class="flat">LB</span><span class="badge mute">Full practice</span></div>
     <div class="meta">Ankle &middot; 15% of snaps last game</div>
@@ -2603,7 +3200,7 @@
 </div>
 
 <div class="gm-ir dim">
-  <span class="gm-rate r3" title="53rd percentile in the Linebacker group, 2026 wks 1-6 + ½·2025">53</span>
+  <span class="gm-rate r3" title="52nd percentile in the Linebacker group, 2026 wks 1-6 + ½·2025">52</span>
   <div class="gm-irm">
     <div class="top"><b>Jordyn Brooks</b><span class="flat">LB</span><span class="badge mute">Full practice</span></div>
     <div class="meta">Foot &middot; 68% of snaps last game</div>
@@ -2660,19 +3257,198 @@
 </details>
 
 
-<details class="hfa-card hfa-sec pp-sec pp-unknowns" id="before" data-sec="before" open>
+
+<details class="hfa-card hfa-sec pp-sec rv-grade" id="grade" data-sec="grade" open>
   <summary class="pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    <span class="pp-headtext"><span class="hfa-eyebrow">Before you bet it</span><span class="pp-h2">Check these first</span></span>
-    <span class="pp-headchips"><span class="badge warn">6 to check</span><span class="pp-open">open</span></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The grade</span><span class="pp-h2">The projection against the box score</span></span>
+    <span class="pp-headchips"><span class="badge bad">projection D &middot; 47</span><span class="pp-open">open</span></span>
   </summary>
   <div class="pp-body">
-    <div class="pp-checks">
-      <div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Breece Hall&#x27;s status is the biggest unpriced item — questionable, limited all week, &#x27;unlikely&#x27; per Rapoport Sunday morning with a pregame workout planned.</p><details class="pp-more"><summary>more</summary><p>Every Allen call shrinks if he plays, and a teammate&#x27;s full share rarely transfers cleanly.</p></details></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Caleb Douglas&#x27;s actual snap and target share in his first game back from the ankle; the week 1-2 role is three games old and the reporting (RotoBaller, Saturday) is an expectation, not a ruling.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">How New York splits targets with Mitchell back, Cooper coming off a 7-target, 82%-snap game, and Tim Patrick still on the field — one week of Cooper is one observation.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Dylan Parham&#x27;s knee (questionable, limited) at left guard with Max Mitchell out: the line is not in the model, and the Jets&#x27; pressure-allowed tag is their most recurring item.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Kalshi quotes are thin on player markets; several of these lines have a single price behind them, and Breece Hall&#x27;s markets carry no price at all.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Willie Gay Jr. is questionable for Miami&#x27;s defense (illness) and Rob Beal Jr. doubtful — minor, but it thins an already weak front.</p></div></div>
+    <div class="rv-gradehead">
+      <div class="rv-letter bad"><b>D</b><span>47 of 100</span></div>
+      <div class="rv-gradeparts">
+        <div class="rv-part"><span>Team volume &amp; yards</span><div class="rv-bar"><i style="width: 66%"></i></div><b>66</b></div>
+        <div class="rv-part"><span>Player lines <small>13/41 in range</small></span><div class="rv-bar"><i style="width: 30%"></i></div><b>30</b></div>
+        <div class="rv-mkts"><span class="badge bad">Winner: NYJ &#10007;</span><span class="badge good">Spread: MIA +3.5 &#10003;</span><span class="badge bad">Total: Under 39.5 (proj 39.5) &#10007;</span></div>
+      </div>
     </div>
-    <p class="pp-disclaimer">The plan is a read written from the data as of Sun Oct 25, 8:58 AM Denver; lines, designations and the model's inputs move after that. Nothing here changes a projection or a price, and nothing on this site is betting advice.</p>
+    <div class="pp-card wide"><p class="pp-lead">Grade D (0.468), with a team score of 0.66 dragged down by a player score of 0.298 and a 1-of-3 market card (spread MIA +3.5 right, winner and under wrong). The Jets&#x27; side was close to perfect in shape — 30 pass attempts against 29.9 projected, 108 rush yards against 107, 25 points against 21.5 — and missed only on yards per throw, because Geno Smith went 4-for-4 on deep balls for 151 yards with a +11.2 CPOE.</p><details class="pp-more"><summary>more</summary><p>Miami&#x27;s side broke on volume: the engine blended a 54.2% pass rate and got 44.4% (37.5% on early downs against a 49.3% expectation), so 41 carries instead of 27.4 and 21 attempts instead of 30.2 — the carries line scored 0.03. Points missed by 10 because Miami went 3-for-3 in the red zone after entering at a 40% season rate and because one 63-yard catch-and-run accounted for a touchdown drive in three plays. The player misses were concentration misses, not volume misses: Gordon, Dulcich, Cooper and Allen all blew through lines while Washington, Wilson and Mitchell were starved.</p></details></div>
+    <div class="rv-teams">
+      
+      <div class="rv-team" style="--pp-team: #008E97">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy"><b>Dolphins</b><span class="flat">projected &rarr; actual</span></div>
+        
+        <div class="rv-trow big">
+          <span>Points</span>
+          <em>18.0</em><i>&#8594;</i><b>28</b>
+          <small class="up">+10</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 50%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Pass yds</span>
+          <em>202.1</em><i>&#8594;</i><b>208</b>
+          <small class="flat">+5.9</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 96%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Rush yds</span>
+          <em>117.4</em><i>&#8594;</i><b>156</b>
+          <small class="flat">+38.6</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 57%"></i></div>
+        </div>
+        
+        <div class="rv-trow big">
+          <span>Pass att</span>
+          <em>30.2</em><i>&#8594;</i><b>21</b>
+          <small class="down">-9.2</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 43%"></i></div>
+        </div>
+        
+        <div class="rv-trow big">
+          <span>Carries</span>
+          <em>27.4</em><i>&#8594;</i><b>41</b>
+          <small class="up">+13.6</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 3%"></i></div>
+        </div>
+        
+      </div>
+      
+      <div class="rv-team" style="--pp-team: #003F2D">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy"><b>Jets</b><span class="flat">projected &rarr; actual</span></div>
+        
+        <div class="rv-trow ">
+          <span>Points</span>
+          <em>21.5</em><i>&#8594;</i><b>25</b>
+          <small class="flat">+3.5</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 82%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Pass yds</span>
+          <em>220.4</em><i>&#8594;</i><b>287</b>
+          <small class="flat">+66.6</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 56%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Rush yds</span>
+          <em>107.0</em><i>&#8594;</i><b>108</b>
+          <small class="flat">+1</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 99%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Pass att</span>
+          <em>29.9</em><i>&#8594;</i><b>30</b>
+          <small class="flat">+0.1</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 99%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Carries</span>
+          <em>27.6</em><i>&#8594;</i><b>21</b>
+          <small class="flat">-6.6</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 53%"></i></div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="rv-two">
+      <div class="rv-list good"><div class="pp-k">Nailed it</div><div class="rv-li"><b>Geno Smith</b> <span class="flat">NYJ &middot; pass att</span><span class="rv-nums">29.9 &#8594; <b>30</b></span></div><div class="rv-li"><b>Malik Willis</b> <span class="flat">MIA &middot; pass yds</span><span class="rv-nums">202.1 &#8594; <b>208</b></span></div><div class="rv-li"><b>Malik Willis</b> <span class="flat">MIA &middot; rush yds</span><span class="rv-nums">34.6 &#8594; <b>37</b></span></div><div class="rv-li"><b>Adonai Mitchell</b> <span class="flat">NYJ &middot; targets</span><span class="rv-nums">3.5 &#8594; <b>3</b></span></div></div>
+      <div class="rv-list bad"><div class="pp-k">Missed most</div><div class="rv-li"><b>Geno Smith</b> <span class="flat">NYJ &middot; pass yds</span><span class="rv-nums">220.4 &#8594; <b>287</b></span></div><div class="rv-li"><b>Omar Cooper Jr.</b> <span class="flat">NYJ &middot; rec yds</span><span class="rv-nums">24.6 &#8594; <b>115</b></span></div><div class="rv-li"><b>Ollie Gordon II</b> <span class="flat">MIA &middot; rush yds</span><span class="rv-nums">45.5 &#8594; <b>103</b></span></div><div class="rv-li"><b>Braelon Allen</b> <span class="flat">NYJ &middot; rush yds</span><span class="rv-nums">51.3 &#8594; <b>104</b></span></div></div>
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">Why it missed</div>
+    <div class="rv-decided">
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy">signal</span>
+        <p class="pp-lead">41 carries / 21 attempts versus 27.4 / 30.2 projected</p>
+        <p class="pp-sub">Game script plus a real lean: Miami led for 2,905 of 3,600 seconds and never trailed, but even in the tied state it passed on only 42.9% of 21 plays, and early-down pass rate (0.375) sat 12 points under expectation.</p>
+        <details class="pp-more"><summary>more</summary><p>The engine&#x27;s 0.542 blend was above Miami&#x27;s own 0.515 season rate to begin with.</p></details>
+      </div>
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy">mixed</span>
+        <p class="pp-lead">28 points versus 18.0 projected</p>
+        <p class="pp-sub">Finishing, not movement: 3 red-zone trips, 3 touchdowns, 0.519 EPA/play inside the 20 against a 40% season trip rate, plus a 63-yard Douglas score (5.71 EPA) that never required a trip at all.</p>
+        <details class="pp-more"><summary>more</summary><p>Also 3-for-3 on fourth downs.</p></details>
+      </div>
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy">mixed</span>
+        <p class="pp-lead">287 pass yards versus 220.4</p>
+        <p class="pp-sub">Efficiency on identical volume — 30 attempts as projected, but 4 explosive passes and 151 yards on four deep attempts (52 and 60 to Cooper), plus 162 YAC.</p>
+        <details class="pp-more"><summary>more</summary><p>Miami has carried an &#x27;explosive passing&#x27; allowed tag in weeks 2, 3 and 5.</p></details>
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy">signal</span>
+        <p class="pp-lead">Target distribution: Cooper 115 yards on a 24.6 projection, Taylor 62 and 2 TD on 16.7, Wilson 26 on 53</p>
+        <p class="pp-sub">Role change the usage shares hadn&#x27;t absorbed — Taylor took a 40.9% air-yards share and Cooper 5-for-5 on 5 targets while Wilson saw three.</p>
+        
+      </div>
+      
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">What it got right</div>
+    <div class="rv-right"><span><i>&#10003;</i>MIA +3.5 — the model had the margin inside the number even while picking the wrong winner.</span><span><i>&#10003;</i>Miami&#x27;s team pass yards (202.1 projected, 208 actual) and Willis&#x27;s rush yards (34.6 projected, 37 actual on five scrambles).</span><span><i>&#10003;</i>Geno Smith&#x27;s attempt count (29.9 vs 30) and the Jets&#x27; rush yards (107 vs 108) despite a completely different game state than assumed.</span><span><i>&#10003;</i>The low-usage Jets calls: Wilson 2 catches, Mitchell 0, Sadiq 6 yards — the secondary target tree was read correctly.</span></div>
+    
   </div>
 </details>
+
+
+
+<details class="hfa-card hfa-sec pp-sec rv-next" id="next" data-sec="next" open>
+  <summary class="pp-head">
+    <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">Next time</span><span class="pp-h2">What carries into the next plan</span></span>
+    <span class="pp-headchips"><span class="badge acc">4 lessons</span><span class="pp-open">open</span></span>
+  </summary>
+  <div class="pp-body">
+    
+    <div class="pp-k">For the next plan on these clubs</div>
+    <div class="pp-checks">
+      <div class="pp-check rv-lesson"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="MIA" loading="lazy"><div><p class="pp-lead">Stop blending Miami toward the league pass rate.</p><details class="pp-more"><summary>more</summary><p>With any lead this offense runs well under expectation (37.5% early-down pass rate vs a 49.3% expectation, 42.9% even when tied); plan Willis&#x27;s attempts in the low 20s unless they are trailing by two scores.</p></details></div></div><div class="pp-check rv-lesson"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="MIA" loading="lazy"><div><p class="pp-lead">With Achane out, Gordon is a bellcow, not a committee back — 25 carries and 83% of snaps while Wright got 6.</p><details class="pp-more"><summary>more</summary><p>Any plan that splits this backfield needs the second back to actually be producing, which he wasn&#x27;t (-2.75 rushing EPA).</p></details></div></div><div class="pp-check rv-lesson"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="NYJ" loading="lazy"><div><p class="pp-lead">Price the pressure-allowed tag as a scoring-zone tax: the two sacks Miami got (a front generating a 3.3% season sack rate) came at the MIA 23 and the MIA 3 and cost roughly nine points.</p><details class="pp-more"><summary>more</summary><p>Downgrade Jets team totals in any spot with OL absences, independent of the opponent&#x27;s rush grade.</p></details></div></div><div class="pp-check rv-lesson"><div><p class="pp-lead">Do not over-react to the red-zone premise in either direction — Miami&#x27;s 40% became 3-for-3 and New York&#x27;s three-week touchdown drought became 3-for-4.</p><details class="pp-more"><summary>more</summary><p>One game of trip conversion is noise; the plan&#x27;s instinct to build the script around it should be weakened, not re-tuned.</p></details></div></div>
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">How each club gets beaten <span class="flat">&middot; this game read with its season so far</span></div>
+    <div class="rv-blueprints">
+      
+      <div class="rv-bp" style="--pp-team: #008E97">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/mia.png" alt="" loading="lazy"><b>Dolphins</b><span class="flat">0-5 entering</span><span class="badge mute">medium confidence</span></div>
+        <div class="rv-recur"><span class="badge bad">turnovers &times;3</span><span class="badge bad">explosive passing &times;3</span><span class="badge bad">no pass rush &times;2</span><span class="badge bad">pressure allowed &times;2</span><span class="badge bad">red zone defense &times;2</span><span class="badge bad">pre-snap penalties &times;2</span></div>
+        <div class="rv-facet"><span class="rv-side defense">defense</span><div><b>Explosive passing against the secondary</b><p class="pp-sub">Tagged weeks 2 (5 explosives, 1.058 EPA/dropback to SF), 3 (3, KC) and 5 (CIN); this week 4 explosives allowed and 4-for-4 on deep throws for 151 yards, with Cooper taking 52 and 60.</p></div></div><div class="rv-facet"><span class="rv-side defense">defense</span><div><b>No pass rush for most of a season</b><p class="pp-sub">Weeks 1 and 2 tagged &#x27;no pass rush&#x27; (0 sacks in each); 3.3% season sack rate generated.</p><details class="pp-more"><summary>more</summary><p>This week was the outlier — 2 sacks, 6 hits.</p></details></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Its own turnovers</b><p class="pp-sub">Three tagged weeks: 2 at LV, 2 vs KC, 3 vs CIN.</p><details class="pp-more"><summary>more</summary><p>This week: zero, on 28 dropbacks.</p></details></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Red-zone and third-down stalls</b><p class="pp-sub">0-for-2 red zone at SF, 1-for-2 at LV and MIN; 2-for-10 third downs at LV, 2-for-9 at MIN.</p><details class="pp-more"><summary>more</summary><p>This week 5-of-12 on third down but 3-for-3 in the red zone and 3-for-3 on fourth down.</p></details></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Pre-snap penalties on offense</b><p class="pp-sub">4 pre-snap at MIN, 4 vs CIN, 1.8/game season versus a 1.55 league rate; zero pre-snap flags this week.</p></div></div>
+        <div class="pp-expect"><span class="pp-k">What an opponent needs</span><p class="pp-lead">An offense that can hit structured deep throws (deep completion rate and 20+ explosives above league) and that protects well enough to not need the rush to be bad — Miami&#x27;s front generates little but did produce two drive-killing sacks against a line already tagged for pressure allowed in four of six weeks.</p><details class="pp-more"><summary>more</summary><p>Takeaway-dependent plans against this Miami team should be discounted by one game&#x27;s worth now.</p></details></div>
+      </div>
+      
+      <div class="rv-bp" style="--pp-team: #003F2D">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png" alt="" loading="lazy"><b>Jets</b><span class="flat">2-4 entering</span><span class="badge mute">medium confidence</span></div>
+        <div class="rv-recur"><span class="badge bad">pressure allowed &times;4</span><span class="badge bad">explosive passing &times;3</span><span class="badge bad">third down &times;2</span><span class="badge bad">pre-snap penalties &times;2</span><span class="badge bad">penalties &times;2</span><span class="badge bad">defensive penalties &times;2</span><span class="badge bad">no pass rush &times;2</span></div>
+        <div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Pressure allowed, especially in the scoring zone</b><p class="pp-sub">Tagged weeks 2, 3, 4 (44.4% pressure at CHI) and 5 (4 sacks vs CLE); this week 2 sacks, 6 hits, 18.2%, with Robinson&#x27;s -12 at the MIA 3 (Q4 9:43, -0.13 WPA) and Herring&#x27;s -6 at the MIA 23 (Q3 11:36) each erasing a scoring chance.</p></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Failure to finish drives</b><p class="pp-sub">Week 4 at CHI 0-for-1 red zone, week 5 vs CLE 0-for-1, week 6 at NE 3 trips, 0 TDs, 3 FGs (&#x27;yards without touchdowns&#x27;).</p><details class="pp-more"><summary>more</summary><p>This week 3-of-4 with TDs but a missed 40-yard FG and the sack-ruined goal-to-go — 25 points from 0.238 EPA/play.</p></details></div></div><div class="rv-facet"><span class="rv-side defense">defense</span><div><b>The run game against its front, and chunk runs allowed</b><p class="pp-sub">Week 4 &#x27;run game&#x27; tag vs CHI (6 explosive rushes allowed); this week Miami ran 34 designed carries for 156 with 2 explosives, 4.9 ypc to the left side, and converted three fourth-and-shorts on the ground.</p></div></div><div class="rv-facet"><span class="rv-side defense">defense</span><div><b>YAC surrendered underneath</b><p class="pp-sub">Miami&#x27;s 137 YAC on 14 completions at a 5.0 aDOT, including Douglas&#x27;s 59 YAC on the 63-yard touchdown and Dulcich&#x27;s 51 on five catches.</p></div></div><div class="rv-facet"><span class="rv-side both">both</span><div><b>Penalties, including pre-snap</b><p class="pp-sub">13 flags vs GB (week 2), 12 at CHI (week 4), 2.5 pre-snap per game against a 1.55 league rate; this week 6 for 36 with 2 pre-snap (a false start on 3rd-and-long at Q4 6:23 helped end a punt drive) and a roughing on Stephens after the Douglas score.</p></div></div>
+        <div class="pp-expect"><span class="pp-k">What an opponent needs</span><p class="pp-lead">To cash this blueprint you need (a) an interior rush that can finish once, not a blitz package — Miami faced 48.3% blitz and the Jets&#x27; 18.9% blitz on Miami, and the sacks came on four-man looks; (b) willingness to run 35+ times and go for fourth-and-short to shorten the game; (c) a YAC-first passing game, since the Jets tackle poorly underneath.</p><details class="pp-more"><summary>more</summary><p>A team that needs sustained third-down offense is the wrong profile — NYJ held opponents to 7-of-13 here.</p></details></div>
+      </div>
+      
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">Traps <span class="flat">&middot; where a line can fool you next time</span></div>
+    <div class="pp-checks">
+      <div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Props</span><p class="pp-lead">When a projection blends a pass rate above a team&#x27;s own season rate and that team gets an early lead, cut QB attempts hard. Miami&#x27;s blend was 54.2% against a 51.5% season rate and it threw on 44.4% of snaps — 37.5% on early downs versus a 49.3% expectation — while never trailing for a single play.</p><p class="pp-sub"><b>Trigger:</b> Engine pass-rate blend above the team&#x27;s season rate + favorable early script (team leads at the half) → fade QB attempts/completions and WR receptions; take RB rush-yard overs.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Props</span><p class="pp-lead">A bellcow emerges silently when the change-of-pace back is out. With Achane inactive, Gordon took 25 carries (83% snaps) against a 10.5 projection while Wright managed 6 for 8 yards.</p><p class="pp-sub"><b>Trigger:</b> Second back ruled out and the lead back&#x27;s projected carries under 12 — the usage share model lags a full-workload reallocation by a week.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Totals</span><p class="pp-lead">Two low-aDOT offenses that both allow explosive passes is an over, not an under, no matter the total. Combined aDOT was 4.9; the game still produced 53 points on 299 YAC and six 20-plus plays.</p><p class="pp-sub"><b>Trigger:</b> Both teams carrying &#x27;explosive passing allowed&#x27; tags in 2+ weeks and a total under 42 → lean over; the yards arrive after the catch, which the low aDOT disguises.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Totals</span><p class="pp-lead">Red-zone touchdown rates don&#x27;t carry. Miami entered at 40% and went 3-for-3; the Jets entered with no red-zone TD in three weeks and scored three. Don&#x27;t price a team total off a six-game red-zone sample.</p><p class="pp-sub"><b>Trigger:</b> Any plan whose core is &#x27;they&#x27;ll settle for field goals again&#x27; — demand a defensive mechanism (pressure rate, goal-line run defense), not a trip-rate trend.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Sides</span><p class="pp-lead">Pressure-allowed tags are a scoring-zone tax, not just a sack-prop angle. The Jets&#x27; tag in four of six weeks showed up as -12 at the 3 and -6 at the 23 — nine points, in a three-point loss.</p><p class="pp-sub"><b>Trigger:</b> Offense with a recurring pressure-allowed tag + OL injuries (Max Mitchell out, Parham limited) facing even a weak rush → shade the team total down and the opponent&#x27;s cover up.</p></div></div>
+    </div>
+    
+    <p class="pp-disclaimer">The plan was a read written before kickoff; the report reads the game after it, from the play-by-play and the box score. Nothing here changes a projection or a price, and nothing on this site is betting advice.</p>
+  </div>
+</details>
+
 
 <div class="pl-modal" id="pl-modal" hidden data-src="/nfl/w/7/g/2026_07_MIA_NYJ/players.html">
   <div class="pl-back"></div>
@@ -2684,7 +3460,7 @@
 </main>
   <footer class="hfa-foot">
     <p><strong>Huffalytics</strong> publishes NFL stats, game projections, team EPA rankings and graded player prop plans priced against Kalshi, rebuilt every week from play-by-play data. <a href="/about/">How the engine works</a>.</p>
-    <p>Data as of Tue Oct 27, 4:04 PM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/nfl/data/week.json">week.json</a> · <a href="/nfl/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
+    <p>Data as of Wed Oct 28, 8:02 AM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/nfl/data/week.json">week.json</a> · <a href="/nfl/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
   </footer>
 </div>
 <script>

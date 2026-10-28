@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Patriots at Bears: NFL Week 7 2026 Projection, Matchups and Injuries | Huffalytics</title>
-<meta name="description" content="New England Patriots at Chicago Bears, NFL week 7 2026: the projected score, each offense against the defense it meets (projected player lines, overall, run game with lanes, pass game), the starting elevens rated, and both injury reports.">
+<title>Patriots at Bears: NFL Week 7 2026 Final, Game Report and the Plan Graded | Huffalytics</title>
+<meta name="description" content="New England Patriots 24, Chicago Bears 30, NFL week 7 2026: Chicago 30, New England 24 — the Bears covered -3 and the game sailed over 50.5 at 54 despite the model nailing both team totals (NE 23.8/24, CHI 26.8/30), because the yards arrived in a completely different shape: 629 combined passing yards on 64 attempts, eight Chicago explosives, and a New England run game that was abandoned (17 carries vs 26 projected) after the Bears led from 9:58 of the first quarter to the end. The pre-game plan graded: script partly held, every call checked against the box score.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="keywords" content="NFL stats, NFL projections, NFL week 7 2026, Kalshi NFL, Kalshi player props, NFL player props, NFL team rankings, EPA per play, NFL betting model, NFL streaming picks, fantasy football projections">
 <meta name="author" content="Huffalytics">
@@ -1294,6 +1294,248 @@
     .gm-script { margin: -0.4rem 16px 1rem; }
     .pp-headchips .badge { display: none; }
   }
+
+  /* ---- the post-game look: the plan against the game (.rv-) ---- */
+  .gm-side.lost img { opacity: 0.45; filter: grayscale(0.6) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.55)); }
+  .gm-side.lost .gm-abbr { color: var(--hfa-muted); }
+  .gm-pts.final { color: var(--hfa-body); text-shadow: none; }
+  .gm-pts.final span { opacity: 0.55; }
+  .gm-pts.final span.w { opacity: 1; color: var(--hfa-accent); text-shadow: 0 0 28px rgba(255, 31, 47, 0.35); }
+  .gm-projwas { letter-spacing: 0.08em; }
+  .gm-verdict { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.4rem 1rem; margin: -0.6rem 1.1rem 1.2rem; padding: 0.55rem 1rem; border: 1px solid var(--hfa-accent); border-radius: 16px; background: var(--hfa-accent-soft); color: inherit; text-decoration: none; }
+  .gm-verdict.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.10); }
+  .gm-verdict.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.10); }
+  .gm-verdict.warn { border-color: rgba(128, 128, 128, 0.5); background: var(--hfa-tint); }
+  .gm-verdict-stamp { display: inline-flex; align-items: baseline; gap: 0.45rem; }
+  .gm-verdict-stamp i, .gm-verdict-v i { font-style: normal; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-muted); }
+  .gm-verdict-stamp b { font-size: 1.05rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; color: var(--hfa-body); }
+  .gm-verdict.good .gm-verdict-stamp b { color: var(--hfa-good); } .gm-verdict.bad .gm-verdict-stamp b { color: var(--hfa-bad); }
+  .gm-verdict-v { display: inline-flex; align-items: baseline; gap: 0.35rem; font-size: 0.9rem; }
+  .gm-verdict-v b { font-weight: 800; color: var(--hfa-body); }
+  .gm-verdict-v.mk { font-size: 0.74rem; color: var(--hfa-muted); padding: 0.1rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.14); }
+  .gm-letter { font-size: 1.1rem; } .gm-letter.good { color: var(--hfa-good) !important; } .gm-letter.bad { color: var(--hfa-bad) !important; }
+  .gm-tile.rv small { font-size: 0.66rem; color: var(--hfa-muted); }
+  .gm-tile.rv.over b { color: var(--hfa-good); } .gm-tile.rv.under b { color: var(--hfa-bad); }
+  .gm-tile.rv b.flat { color: var(--hfa-muted); }
+
+  .rv-stamp { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.4rem; padding: 0.8rem 1rem; margin: 0.3rem 0 0.9rem; border-radius: 16px; border: 2px solid rgba(128, 128, 128, 0.4); background: var(--hfa-tint); }
+  .rv-stamp.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.08); }
+  .rv-stamp.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.08); }
+  .rv-stamp-word { display: flex; flex-direction: column; line-height: 1; }
+  .rv-stamp-word span { font-size: 0.64rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: var(--hfa-muted); }
+  .rv-stamp-word b { font-size: 2rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; color: var(--hfa-body); margin-top: 0.2rem; }
+  .rv-stamp.good .rv-stamp-word b { color: var(--hfa-good); } .rv-stamp.bad .rv-stamp-word b { color: var(--hfa-bad); }
+  .rv-stamp-meta { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.9rem; }
+  .rv-stamp-meta b { color: var(--hfa-body); }
+  .rv-win { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 700; }
+  .rv-win img { width: 26px; height: 26px; object-fit: contain; }
+  .rv-vs { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 0.8rem; align-items: stretch; }
+  .rv-col { border: var(--hfa-hairline); border-radius: 14px; padding: 0.8rem 0.95rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-col .pp-hook-logos { margin-bottom: 0.4rem; } .rv-col .pp-hook-logos img { width: 40px; height: 40px; }
+  .rv-col .pp-quote { font-size: 1.2rem; }
+  .rv-col.plan .pp-quote { color: var(--hfa-body); }
+  .rv-col.game { border-color: rgba(255, 31, 47, 0.45); }
+  .rv-col.game.good { border-color: var(--hfa-good); } .rv-col.game.bad { border-color: var(--hfa-bad); }
+  .rv-arrow { align-self: center; font-size: 1.6rem; font-weight: 900; color: var(--hfa-accent); }
+  .rv-tally { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.55rem; margin-top: 0.9rem; }
+  .rv-tile { display: flex; flex-direction: column; gap: 0.15rem; border: var(--hfa-hairline); border-radius: 12px; padding: 0.6rem 0.75rem; background: var(--hfa-tint); color: inherit; text-decoration: none; min-width: 0; }
+  .rv-tile > span { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .rv-tile > b { font-size: 1.6rem; font-weight: 900; line-height: 1.1; color: var(--hfa-body); }
+  .rv-tile > b i { font-style: normal; }
+  .rv-tile > b small, .rv-tile > small { font-size: 0.72rem; font-weight: 600; color: var(--hfa-muted); }
+  .rv-tile.hot { border-color: rgba(255, 31, 47, 0.5); }
+  .rv-tile.lt b { font-size: 2rem; } .rv-tile.lt.good b { color: var(--hfa-good); } .rv-tile.lt.bad b { color: var(--hfa-bad); }
+  .rv-headline { font-size: 1.08rem; font-weight: 800; line-height: 1.35; margin: 0; letter-spacing: -0.01em; }
+  .rv-tile.mk em { font-style: normal; font-size: 0.8rem; font-weight: 700; }
+  .rv-bar { height: 5px; border-radius: 3px; background: rgba(128, 128, 128, 0.2); overflow: hidden; }
+  .rv-bar i { display: block; height: 100%; border-radius: 3px; background: var(--hfa-good); }
+  .rv-why { border-left: 4px solid var(--hfa-accent); }
+  .rv-fold { margin-top: 0.9rem; border-top: var(--hfa-hairline); padding-top: 0.7rem; }
+  .rv-fold > summary { list-style: none; cursor: pointer; font-size: 0.74rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin-bottom: 0.6rem; }
+  .rv-fold > summary::-webkit-details-marker { display: none; }
+  .rv-fold > summary::before { content: "+ "; } .rv-fold[open] > summary::before { content: "\2212  "; }
+  .rv-fold > summary .flat { text-transform: none; letter-spacing: 0; font-weight: 500; }
+  .rv-story { font-size: 0.92rem; line-height: 1.6; max-width: 52rem; }
+  .rv-story h1, .rv-story h2, .rv-story h3 { font-size: 1rem; color: var(--hfa-accent); margin: 1rem 0 0.3rem; }
+  .rv-story p { margin: 0 0 0.7rem; }
+
+  .rv-tl { list-style: none; margin: 0; padding: 0 0 0 0.2rem; display: flex; flex-direction: column; }
+  .rv-tl li { position: relative; display: grid; grid-template-columns: 5.2rem minmax(0, 1fr); gap: 0.8rem; padding: 0 0 0.9rem; }
+  .rv-tl li::before { content: ""; position: absolute; left: 2.6rem; top: 1.6rem; bottom: 0; width: 2px; background: rgba(128, 128, 128, 0.25); }
+  .rv-tl li:last-child::before { display: none; }
+  .rv-clock { align-self: start; justify-self: center; z-index: 1; font-size: 0.72rem; font-weight: 800; padding: 0.25rem 0.55rem; border-radius: 999px; background: var(--pp-team); color: #fff; white-space: nowrap; box-shadow: 0 0 0 3px var(--hfa-card); }
+  .rv-tlbody { border: var(--hfa-hairline); border-left: 4px solid var(--pp-team); border-radius: 12px; padding: 0.55rem 0.8rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-play { display: flex; align-items: flex-start; gap: 0.5rem; font-weight: 700; font-size: 0.94rem; line-height: 1.35; }
+  .rv-play img { width: 24px; height: 24px; object-fit: contain; flex: none; }
+  .rv-decided { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.6rem; }
+  .rv-dcard { border: var(--hfa-hairline); border-radius: 14px; padding: 0.7rem 0.85rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-dcard.tell { border-color: rgba(47, 212, 164, 0.5); }
+  .rv-flag { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.12rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); margin-bottom: 0.4rem; }
+  .rv-flag img { width: 14px; height: 14px; object-fit: contain; }
+  .rv-dcard.tell .rv-flag { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .rv-dcard .pp-lead { font-size: 0.92rem; font-weight: 700; }
+
+  .rv-gauge.held { border-color: rgba(47, 212, 164, 0.55); } .rv-gauge.miss { border-color: rgba(255, 176, 32, 0.55); }
+  .rv-mark { margin-left: auto; font-size: 0.85rem; }
+  .rv-gauge.held .rv-mark { color: var(--hfa-good); } .rv-gauge.miss .rv-mark { color: var(--hfa-bad); }
+  .rv-row { display: grid; grid-template-columns: 3.2rem auto 1fr; align-items: center; gap: 0.45rem; font-size: 0.8rem; }
+  .rv-row small { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-muted); }
+  .rv-row em { font-style: normal; font-weight: 800; text-transform: capitalize; }
+  .rv-row.played .pp-bars i.on { background: var(--hfa-body); }
+  .rv-gauge.held .rv-row.played .pp-bars i.on { background: var(--hfa-good); } .rv-gauge.miss .rv-row.played .pp-bars i.on { background: var(--hfa-bad); }
+  .rv-note { font-size: 0.7rem; color: var(--hfa-muted); }
+  .pp-leanbar .track i.called { background: transparent; border: 2px solid var(--hfa-body); box-shadow: none; }
+  .pp-leanbar .track i.played { background: var(--hfa-accent); border-color: var(--hfa-card); }
+  .rv-cvp { text-transform: capitalize; } .rv-cvp i { font-style: normal; color: var(--hfa-muted); }
+  .rv-legend { display: flex; gap: 1rem; font-size: 0.68rem; color: var(--hfa-muted); margin: 0.2rem 0 0; }
+  .rv-legend span { display: inline-flex; align-items: center; gap: 0.3rem; }
+  .rv-legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .rv-legend i.called { border: 2px solid var(--hfa-body); } .rv-legend i.played { background: var(--hfa-accent); }
+  .pp-path.took { border-color: rgba(47, 212, 164, 0.55); border-left-color: var(--pp-team); box-shadow: 0 0 0 1px rgba(47, 212, 164, 0.25) inset; }
+  .pp-path.not { opacity: 0.55; }
+  .pp-pathhead .badge { white-space: nowrap; }
+  .rv-swing { flex-direction: column; gap: 0.35rem; }
+  .rv-weight { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.12rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); }
+  .rv-swing.decisive { border-color: var(--hfa-accent); } .rv-swing.decisive .rv-weight { background: var(--hfa-accent); color: #fff; }
+  .rv-swing.contributed .rv-weight { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .rv-swing.minor { opacity: 0.85; }
+  .rv-went { font-size: 0.84rem; color: var(--hfa-muted); margin: 0; line-height: 1.4; } .rv-went b { color: var(--hfa-body); }
+  .pp-angle.cashed { border-color: rgba(47, 212, 164, 0.55); }
+  .pp-angletitle .badge { margin-left: 0.3rem; vertical-align: 0.1rem; }
+  .pp-leg .rv-res { font-size: 0.74rem; font-weight: 800; white-space: nowrap; }
+  .pp-leg.hit { background: rgba(47, 212, 164, 0.12); } .pp-leg.hit .rv-res { color: var(--hfa-good); }
+  .pp-leg.miss { background: rgba(255, 176, 32, 0.10); } .pp-leg.miss .rv-res { color: var(--hfa-bad); }
+  .pp-leg.void .rv-res { color: var(--hfa-muted); }
+
+  .rv-eh { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0.6rem; }
+  .rv-ehcol { border: var(--hfa-hairline); border-radius: 12px; padding: 0.6rem 0.8rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-ehcol .pp-lead { font-size: 0.9rem; }
+  .rv-ehcol.happened { border-width: 1px; border-color: rgba(128, 128, 128, 0.45); }
+  .rv-ehcol.happened.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.07); }
+  .rv-ehcol.happened.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.07); }
+  .rv-call.hit { border-left-color: var(--hfa-good); box-shadow: 0 0 0 1px rgba(47, 212, 164, 0.3) inset; }
+  .rv-call.miss { border-left-color: var(--hfa-bad); }
+  .rv-call.void { opacity: 0.6; border-left-color: rgba(128, 128, 128, 0.5); }
+  .rv-stamp-res { flex: none; display: inline-grid; place-items: center; min-width: 2rem; height: 2rem; padding: 0 0.3rem; border-radius: 999px; font-size: 0.95rem; font-weight: 900; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); }
+  .hfa .rv-stamp-res.hit { margin: 0; background: var(--hfa-good); color: #04130e; } .rv-stamp-res.miss { background: var(--hfa-bad); color: #1a1000; } .rv-stamp-res.void { font-size: 0.62rem; }
+  .rv-meter { margin: 0.25rem 0 0.45rem; }
+  .rv-meter .track { position: relative; height: 8px; border-radius: 4px; background: rgba(128, 128, 128, 0.18); }
+  .rv-meter .track .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: var(--hfa-muted); }
+  .rv-call.hit .rv-meter .fill { background: var(--hfa-good); } .rv-call.miss .rv-meter .fill { background: var(--hfa-bad); }
+  .rv-meter .track .line { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: var(--hfa-body); border-radius: 1px; }
+  .rv-meterlbl { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--hfa-muted); margin-top: 0.2rem; }
+  .rv-meterlbl b { color: var(--hfa-body); font-size: 0.85rem; }
+  .rv-read { margin-bottom: 0.35rem; display: inline-block; }
+  .rv-ig { color: var(--hfa-body); }
+  .rv-call .pp-probs { margin: 0.4rem 0; }
+  .rv-notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.5rem; }
+  .rv-note-card { border: var(--hfa-hairline); border-radius: 12px; padding: 0.55rem 0.75rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-note-card.signal { border-color: rgba(47, 212, 164, 0.45); }
+  .rv-notehead { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; }
+  .rv-notehead b { color: var(--hfa-body); font-size: 0.9rem; }
+
+  .rv-gradehead { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; padding: 0.3rem 0 0.4rem; }
+  .rv-letter { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 6rem; height: 6rem; border-radius: 22px; border: 2px solid rgba(128, 128, 128, 0.45); background: var(--hfa-tint); }
+  .rv-letter b { font-size: 3rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .rv-letter span { font-size: 0.66rem; font-weight: 700; color: var(--hfa-muted); }
+  .rv-letter.good { border-color: var(--hfa-good); } .rv-letter.good b { color: var(--hfa-good); }
+  .rv-letter.bad { border-color: var(--hfa-bad); } .rv-letter.bad b { color: var(--hfa-bad); }
+  .rv-gradeparts { flex: 1 1 18rem; display: flex; flex-direction: column; gap: 0.5rem; min-width: 0; }
+  .rv-part { display: grid; grid-template-columns: 11rem 1fr 2rem; align-items: center; gap: 0.6rem; font-size: 0.8rem; }
+  .rv-part span small { color: var(--hfa-muted); display: block; font-size: 0.68rem; }
+  .rv-part b { text-align: right; color: var(--hfa-body); }
+  .rv-part .rv-bar { height: 8px; }
+  .rv-mkts { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .rv-teams { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.6rem; margin-top: 0.9rem; }
+  .rv-team, .rv-bp { border: var(--hfa-hairline); border-top: 3px solid var(--pp-team); border-radius: 14px; padding: 0.7rem 0.85rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-teamhead { display: flex; align-items: center; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 0.5rem; }
+  .rv-teamhead img { width: 28px; height: 28px; object-fit: contain; }
+  .rv-teamhead b { color: var(--hfa-body); font-size: 1rem; }
+  .rv-teamhead .flat { font-size: 0.72rem; }
+  .rv-trow { display: grid; grid-template-columns: 5.2rem auto auto auto 1fr; grid-template-areas: "l p a v d" "bar bar bar bar bar"; align-items: baseline; gap: 0.15rem 0.45rem; padding: 0.35rem 0; border-top: var(--hfa-hairline); font-size: 0.84rem; }
+  .rv-trow span { grid-area: l; color: var(--hfa-muted); font-size: 0.74rem; }
+  .rv-trow em { font-style: normal; color: var(--hfa-muted); } .rv-trow i { font-style: normal; color: var(--hfa-muted); font-size: 0.72rem; }
+  .rv-trow b { color: var(--hfa-body); font-size: 1rem; } .rv-trow small { justify-self: end; font-weight: 700; }
+  .rv-trow .rv-bar { grid-area: bar; height: 4px; }
+  .rv-trow.big .rv-bar i { background: var(--hfa-bad); }
+  .rv-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.9rem; }
+  .rv-list { border: var(--hfa-hairline); border-radius: 14px; padding: 0.65rem 0.85rem; background: var(--hfa-tint); }
+  .rv-list.good .pp-k { color: var(--hfa-good); } .rv-list.bad .pp-k { color: var(--hfa-bad); }
+  .rv-li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem; padding: 0.3rem 0; border-top: var(--hfa-hairline); font-size: 0.84rem; }
+  .rv-li > b { color: var(--hfa-body); } .rv-li .flat { font-size: 0.72rem; }
+  .rv-nums { margin-left: auto; color: var(--hfa-muted); white-space: nowrap; } .rv-nums b { color: var(--hfa-body); }
+  .rv-right { display: flex; flex-direction: column; gap: 0.35rem; }
+  .rv-right span { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.4; }
+  .rv-right i { font-style: normal; color: var(--hfa-good); font-weight: 900; }
+
+  .rv-lesson img { width: 28px; height: 28px; object-fit: contain; flex: none; }
+  .rv-blueprints { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0.6rem; }
+  .rv-recur { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.45rem; }
+  .rv-facet { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); gap: 0.5rem; padding: 0.4rem 0; border-top: var(--hfa-hairline); font-size: 0.86rem; }
+  .rv-facet b { color: var(--hfa-body); }
+  .rv-side { align-self: start; text-align: center; font-size: 0.58rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.15rem 0.3rem; border-radius: 6px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); }
+  .rv-side.defense { background: rgba(255, 176, 32, 0.14); color: var(--hfa-bad); } .rv-side.offense { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .rv-bp .pp-expect { margin-top: 0.5rem; }
+  @media (max-width: 760px) {
+    .gm-verdict { margin: -0.4rem 16px 1rem; gap: 0.35rem 0.8rem; }
+    .gm-verdict-v.mk { display: none; }
+    .rv-vs { grid-template-columns: 1fr; }
+    .rv-arrow { transform: rotate(90deg); justify-self: center; line-height: 1; }
+    .rv-stamp-word b { font-size: 1.5rem; }
+    .rv-tally { grid-template-columns: 1fr 1fr; }
+    .rv-tally .rv-tile.mk { grid-column: 1 / -1; }
+    .rv-tl li { grid-template-columns: 1fr; gap: 0.3rem; }
+    .rv-tl li::before { display: none; }
+    .rv-clock { justify-self: start; }
+    .rv-decided, .rv-notes, .rv-teams, .rv-blueprints, .rv-two { grid-template-columns: 1fr; }
+    .rv-eh { grid-template-columns: 1fr; }
+    .rv-part { grid-template-columns: 8rem 1fr 2rem; }
+  }
+
+  /* ---- landing: the final reports band (.ld-rep) ---- */
+  .ld-reports.on { border-color: rgba(47, 212, 164, 0.5); background: linear-gradient(135deg, rgba(47, 212, 164, 0.12), var(--hfa-card) 55%); }
+  .ld-reports.on .ld-pulse { background: var(--hfa-good); animation: none; box-shadow: 0 0 0 4px rgba(47, 212, 164, 0.2); }
+  .ld-reports .ld-plans-head { flex-wrap: wrap; }
+  .ld-reports .ld-plans-head h2 b { color: var(--hfa-good); }
+  .ld-rep-title { flex: 1 1 18rem; min-width: 0; }
+  .ld-rep-sum { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .ld-rep-chip { display: inline-flex; align-items: baseline; gap: 0.3rem; padding: 0.3rem 0.7rem; border-radius: 999px; background: var(--hfa-tint); border: var(--hfa-hairline); font-size: 0.8rem; color: var(--hfa-muted); white-space: nowrap; }
+  .ld-rep-chip i { font-style: normal; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-right: 0.15rem; }
+  .ld-rep-chip b { font-weight: 900; font-size: 0.95rem; color: var(--hfa-body); } .ld-rep-chip b.up { color: var(--hfa-good); } .ld-rep-chip b.down { color: var(--hfa-bad); }
+  .ld-rep-chip.hot { border-color: rgba(255, 31, 47, 0.5); }
+  .ld-rep-grid { grid-auto-columns: 17rem; }
+  .ld-rep { display: flex; flex-direction: column; gap: 0.45rem; padding: 0.7rem 0.8rem; border-radius: 12px; background: var(--hfa-tint); border: var(--hfa-hairline); border-top: 3px solid rgba(128, 128, 128, 0.5); text-decoration: none; color: var(--hfa-body); transition: transform 0.12s, border-color 0.12s; scroll-snap-align: start; min-width: 0; }
+  .ld-rep:hover { transform: translateY(-2px); }
+  .ld-rep.good { border-top-color: var(--hfa-good); } .ld-rep.bad { border-top-color: var(--hfa-bad); }
+  .ld-rep-score { display: grid; grid-template-columns: 1fr 1fr auto; align-items: center; gap: 0.4rem; }
+  .ld-rep-score .t { display: inline-flex; align-items: center; gap: 0.3rem; opacity: 0.6; }
+  .ld-rep-score .t.w { opacity: 1; }
+  .ld-rep-score img { width: 22px; height: 22px; object-fit: contain; }
+  .ld-rep-score b { font-size: 0.82rem; font-weight: 800; color: var(--hfa-body); }
+  .ld-rep-score em { font-style: normal; font-size: 1.35rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .ld-rep-score .t.w em { color: var(--hfa-accent); }
+  .ld-rep-score small { font-size: 0.58rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep-verdict { align-self: flex-start; display: inline-flex; align-items: baseline; gap: 0.35rem; font-size: 0.72rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.15rem 0.55rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-body); }
+  .ld-rep-verdict i { font-style: normal; font-size: 0.56rem; font-weight: 800; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep.good .ld-rep-verdict { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); } .ld-rep.bad .ld-rep-verdict { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .ld-rep-head { font-size: 0.8rem; line-height: 1.4; color: var(--hfa-body); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; flex: 1 1 auto; }
+  .ld-rep-foot { display: flex; flex-wrap: wrap; gap: 0.3rem 0.8rem; padding-top: 0.4rem; border-top: var(--hfa-hairline); font-size: 0.8rem; }
+  .ld-rep-foot span { display: inline-flex; align-items: baseline; gap: 0.25rem; }
+  .ld-rep-foot i { font-style: normal; font-size: 0.56rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep-foot b { font-weight: 900; color: var(--hfa-body); } .ld-rep-foot b.up { color: var(--hfa-good); } .ld-rep-foot b.down { color: var(--hfa-bad); }
+  .ld-rep-foot b.g.good { color: var(--hfa-good); } .ld-rep-foot b.g.bad { color: var(--hfa-bad); }
+  @media (max-width: 760px) {
+    .ld-rep-grid { grid-auto-columns: 14.5rem; }
+    .ld-rep { padding: 0.55rem 0.6rem; }
+    .ld-rep-head { -webkit-line-clamp: 3; font-size: 0.76rem; }
+    .ld-rep-chip { font-size: 0.72rem; padding: 0.2rem 0.55rem; }
+    .rv-headline { font-size: 0.98rem; font-weight: 700; }
+    .ld-rep-score small { display: none; }
+    .ld-rep-score { grid-template-columns: 1fr 1fr; }
+    /* The live bands ride up under the intro, ahead of the game list. */
+    .ld-hero > .ld-hero-main { order: -2; }
+    .ld-hero > .ld-reports, .ld-hero > .ld-plans.on { order: -1; }
+  }
 </style>
 
 </head>
@@ -1327,20 +1569,20 @@
     <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
   </div>
   <main>
-<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#read" data-sec="read">The read</a><a href="#script" data-sec="script">The script</a><a href="#away" data-sec="away">NE offense</a><a href="#home" data-sec="home">CHI offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="#before" data-sec="before">Before you bet</a><a href="/nfl/w/7/">Week 7 board</a></nav>
+<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#result" data-sec="result">The result</a><a href="#game" data-sec="game">How it was decided</a><a href="#script" data-sec="script">The script</a><a href="#away" data-sec="away">NE offense</a><a href="#home" data-sec="home">CHI offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="#grade" data-sec="grade">The grade</a><a href="#next" data-sec="next">Next time</a><a href="/nfl/w/7/">Week 7 board</a></nav>
 
 <div class="hfa-card hfa-hero hfa-sec gm-hero" id="hero" data-sec="hero" style="--gm-away: #002244; --gm-home: #0B162A;">
   <div class="gm-hero-top">
     <a class="gm-back" href="/nfl/w/7/">&#8249; Week 7 board</a>
-    <span class="hfa-eyebrow">NFL &middot; 2026 season &middot; week 7 &middot; final</span>
+    <span class="hfa-eyebrow">NFL &middot; 2026 season &middot; week 7 &middot; final &middot; reviewed</span>
   </div>
   <div class="gm-score">
-    <div class="gm-side away">
+    <div class="gm-side away lost">
       <img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="New England Patriots logo" width="96" height="96">
       <div class="gm-id"><div class="gm-abbr">NE</div><div class="gm-nick">Patriots</div><i class="gm-under" style="background: #002244"></i></div>
     </div>
     <div class="gm-mid">
-      <div class="gm-pts"><span>23.8</span><em>&ndash;</em><span>26.8</span></div><div class="gm-tag">projected</div>
+      <div class="gm-pts final"><span class="">24</span><em>&ndash;</em><span class="w">30</span></div><div class="gm-tag">final <span class="gm-projwas">&middot; projected 23.8&ndash;26.8</span></div>
     </div>
     <div class="gm-side home">
       <div class="gm-id"><div class="gm-abbr">CHI</div><div class="gm-nick">Bears</div><i class="gm-under" style="background: #0B162A"></i></div>
@@ -1351,135 +1593,344 @@
     <span class="gm-chip">Thursday Oct 22, 2026 <i>&middot; 6:15 PM Denver</i></span>
     <span class="gm-chip"><i>spread</i> <b>CHI -3</b></span>
     <span class="gm-chip"><i>total</i> <b>50.5</b></span>
-    <span class="gm-chip final"><i>final</i> <b>NE 24 &ndash; 30 CHI</b></span>
+    
     <span class="gm-chip " title="Natural grass. Passing is the same on grass and turf; rushing runs about 3.5% higher on turf (+3.7 yards a team) and a catch gains a tenth of a yard more after it. Points, the closing lines and the engine show no surface effect, so it is not an engine input."><i>field</i> <b>grass</b></span><span class="gm-chip " title="Forecast for the kickoff window, as of Thu 11:00 AM Denver. Wind above 10 mph trims the passing projection."><i>forecast</i> <b>55°F · wind 6 mph</b></span>
   </div>
   
-  <a class="gm-script" href="#script" title="The plan's script: pace, confidence and each side's lean — the section below has the rest">
-    <span class="gm-script-k">The script</span>
-    <span class="gm-script-v"><b>fast pace</b><span class="pp-bars sm"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
-    <span class="gm-script-v"><b>medium confidence</b><span class="pp-pips sm"><i class="on"></i><i class="on"></i><i class=""></i></span></span>
-    <span class="gm-script-v lean"><b>CHI</b> balanced</span><span class="gm-script-v lean"><b>NE</b> run</span>
+  <a class="gm-verdict warn" href="#result" title="The pre-game plan against the game: the report's verdict on the script, the calls graded off the box score, and the projection's grade">
+    <span class="gm-verdict-stamp"><i>The script</i><b>Partly held</b></span>
+    <span class="gm-verdict-v"><i>calls</i><b><span class="up">1</span>&ndash;<span class="down">9</span></b></span>
+    <span class="gm-verdict-v"><i>Edge+</i><b><span class="up">7</span>&ndash;<span class="down">3</span></b></span>
+    <span class="gm-verdict-v"><i>projection</i><b class="gm-letter warn">C</b></span>
+    <span class="gm-verdict-v mk">CHI covered (CHI by 3)</span><span class="gm-verdict-v mk">Over 50.5 (54)</span>
   </a>
   
 </div>
 
 
-<details class="hfa-card hfa-sec pp-sec pp-read" id="read" data-sec="read" open>
+
+<details class="hfa-card hfa-sec pp-sec rv-result" id="result" data-sec="result" open>
   <summary class="pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    <span class="pp-headtext"><span class="hfa-eyebrow">The read &middot; written Wed Oct 21, 11:26 AM</span><span class="pp-h2">What the plan sees</span></span>
-    <span class="pp-headchips"><span class="badge acc">10 calls</span><span class="pp-open">open</span></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The result &middot; plan written Wed Oct 21, 11:26 AM &middot; report Tue Oct 27, 5:58 PM</span><span class="pp-h2">What the plan saw. What happened.</span></span>
+    <span class="pp-headchips"><span class="badge warn">script partly held</span><span class="pp-open">open</span></span>
   </summary>
   <div class="pp-body">
-    <div class="pp-hook">
-      <div class="pp-hook-logos"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy"><span class="pp-vs">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy"></div>
-      <blockquote class="pp-quote">Chicago wins the snap count. New England answers on the ground, and Maye throws into traffic.</blockquote>
-      <p class="pp-headline">Chicago&#x27;s volume offense meets a Patriots defense that holds at the 20; New England&#x27;s lever is running at the league&#x27;s softest rush-EPA front with two guards out.</p>
+    <div class="rv-stamp warn">
+      <div class="rv-stamp-word"><span>The script</span><b>Partly held</b></div>
+      <div class="rv-stamp-meta">
+        <span>The game took <b>the favorite&#x27;s path</b></span>
+        <span class="rv-win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy">Bears won 30–24</span>
+      </div>
     </div>
-    <div class="pp-cards">
-      
-      <div class="pp-card">
-        <div class="pp-k">The read</div>
-        <p class="pp-lead">Chicago at home by three in a 50.5-point game, with the Bears&#x27; edge being snaps rather than efficiency: 72.5 plays a game against a New England defense that has faced only 57.2.</p>
-        <details class="pp-more"><summary>more</summary><p>New England&#x27;s counter is the one clean mismatch on the board — Chicago ranks 31st in rush EPA allowed and 29th in rush success allowed, and the front is without Montez Sweat (suspended) and Dayo Odeyingbo (IR) with T.J. Edwards not practicing. Expect a close, play-heavy game that lands near the number, with both sides moving the ball between the 20s and the scoring split decided inside them.</p></details>
+    <div class="rv-vs">
+      <div class="rv-col plan">
+        <div class="pp-k">The plan said</div>
+        <div class="pp-hook-logos"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy"><span class="pp-vs">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy"></div>
+        <blockquote class="pp-quote">Chicago wins the snap count. New England answers on the ground, and Maye throws into traffic.</blockquote>
+        <p class="pp-sub">Chicago&#x27;s volume offense meets a Patriots defense that holds at the 20; New England&#x27;s lever is running at the league&#x27;s softest rush-EPA front with two guards out.</p>
       </div>
-      
-      <div class="pp-card">
-        <div class="pp-k">Why</div>
-        <p class="pp-lead">The Bears&#x27; pass defense is the most misread line here: 2nd in pass EPA and 2nd in pass success allowed, but 31st in yards per attempt.</p>
-        <details class="pp-more"><summary>more</summary><p>That is a unit that concedes chunks and still gets off the field — which argues for receiving volume on the underneath layer and against New England&#x27;s full passing total. Maye also plays behind patched guards (Vera-Tucker and Ben Brown both doubtful per Vrabel, Tuesday, via ESPN&#x27;s Reiss) against a defense that sends extra rushers more than 40% of the time. On the other side, Chicago&#x27;s own identity is a 3.9-to-6-yard throw with high completion rate; New England generates pressure at a top-6 rate and is 7th in points allowed to tight ends, and its red-zone TD rate allowed ranks 10th. Chicago moves it and settles for kicks more often than its implied total suggests. Kyle Monangai has not practiced (FantasyPros, Tuesday), concentrating goal-line work on Swift while Roschon Johnson absorbs the rest.</p></details>
+      <div class="rv-arrow" aria-hidden="true">&#8594;</div>
+      <div class="rv-col game warn">
+        <div class="pp-k">What happened</div>
+        <p class="rv-headline">Chicago 30, New England 24 — the Bears covered -3 and the game sailed over 50.5 at 54 despite the model nailing both team totals (NE 23.8/24, CHI 26.8/30), because the yards arrived in a completely different shape: 629 combined passing yards on 64 attempts, eight Chicago explosives, and a New England run game that was abandoned (17 carries vs 26 projected) after the Bears led from 9:58 of the first quarter to the end.</p>
+        <p class="pp-sub">The plan read Chicago almost exactly right in shape — 68 snaps, Swift grinding, time of possession, Maye giving one away, a close scoreboard — and the favorite path it wrote is very close to the game that was played. What it got wrong was both of its own levers: New England was never going to run at the soft Bears front because New England cannot run at all, and the &#x27;points slower than the total implies&#x27; line was undone by 629 combined passing yards and Chicago&#x27;s 3-of-4 red-zone finishing.</p><details class="pp-more"><summary>more</summary><p>The calls went 1-9, but the misses split: Swift&#x27;s receiving role and Brown&#x27;s target-without-production pattern arrived as described, while the Stevenson/Henderson run-lever calls and the Chicago red-zone unders were reads, not bounces. The one genuine bounce was Burden&#x27;s 130 yards on four targets, which no plan prices.</p></details>
       </div>
-      
-      <div class="pp-card">
-        <div class="pp-k">What would change it</div>
-        <p class="pp-lead">Monangai practicing Wednesday, which reshuffles the Bears&#x27; backfield outright.</p>
-        <details class="pp-more"><summary>more</summary><p>A.J. Brown&#x27;s ankle designation on a short week — limited both days — and whether he plays a full role or a decoy one. Carlton Davis&#x27;s neck: if he returns, Chicago&#x27;s chunk plays get harder. And if New England&#x27;s giveaway habit (five of six weeks tagged) returns, the Bears&#x27; short fields turn this into a comfortable home win.</p></details>
-      </div>
-      
     </div>
+    <div class="rv-tally">
+      
+      <div class="rv-tile " title="The plan's calls graded off the box score at the Normal cushion">
+        <span>Normal calls</span>
+        <b><i class="up">1</i>&ndash;<i class="down">9</i></b>
+        <div class="rv-bar"><i style="width: 10%"></i></div>
+      </div>
+      
+      <div class="rv-tile " title="The plan's calls graded off the box score at the Edge cushion">
+        <span>Edge calls</span>
+        <b><i class="up">5</i>&ndash;<i class="down">5</i></b>
+        <div class="rv-bar"><i style="width: 50%"></i></div>
+      </div>
+      
+      <div class="rv-tile hot" title="The plan's calls graded off the box score at the Edge+ cushion">
+        <span>Edge+ calls</span>
+        <b><i class="up">7</i>&ndash;<i class="down">3</i></b>
+        <div class="rv-bar"><i style="width: 70%"></i></div>
+      </div>
+      
+      <a class="rv-tile lt warn" href="#grade" title="The projection graded: team volume and yardage, player lines and the market calls it implied"><span>Projection</span><b>C</b><small>60 of 100</small></a>
+      <div class="rv-tile" title="Projected player lines that landed in range"><span>Player lines</span><b>29<small>/50</small></b><small>in range</small></div>
+      <div class="rv-tile mk"><span>The market</span><em>CHI covered (CHI by 3)</em><em>Over 50.5 (54)</em></div>
+    </div>
+    
+    <div class="pp-card wide rv-why">
+      <div class="pp-k">Why the script partly held</div>
+      <p class="pp-lead">Chicago&#x27;s favorite path is nearly a transcript: 68 snaps to New England&#x27;s 52, 31:47 of possession, Swift at 26 touches, 3 red-zone touchdowns instead of field goals, and Maye&#x27;s interception at the CHI 15 on Q2 3:32. But the mechanism diverged in two places that matter — New England&#x27;s interior was not overwhelmed (2 sacks, 14.3% sack/hit rate against a 37.8% blitz), and nothing about this was slow: 54 points, eight Chicago explosives, and checks show the lean calls both broke (CHI 0.545 actual pass rate vs &#x27;balanced&#x27;, NE 0.66 vs &#x27;run&#x27;).</p>
+      <details class="pp-more"><summary>more</summary><p>Pace was called fast and came in average (116 plays vs a 121.5 league pair), so the over cashed on yards per play, not snaps.</p></details>
+    </div>
+    
+    
+    <details class="rv-fold">
+      <summary>The plan's pre-game read <span class="flat">&middot; as written before kickoff</span></summary>
+      <div class="pp-cards">
+        <div class="pp-card"><div class="pp-k">The read</div><p class="pp-lead">Chicago at home by three in a 50.5-point game, with the Bears&#x27; edge being snaps rather than efficiency: 72.5 plays a game against a New England defense that has faced only 57.2.</p><details class="pp-more"><summary>more</summary><p>New England&#x27;s counter is the one clean mismatch on the board — Chicago ranks 31st in rush EPA allowed and 29th in rush success allowed, and the front is without Montez Sweat (suspended) and Dayo Odeyingbo (IR) with T.J. Edwards not practicing. Expect a close, play-heavy game that lands near the number, with both sides moving the ball between the 20s and the scoring split decided inside them.</p></details></div><div class="pp-card"><div class="pp-k">Why</div><p class="pp-lead">The Bears&#x27; pass defense is the most misread line here: 2nd in pass EPA and 2nd in pass success allowed, but 31st in yards per attempt.</p><details class="pp-more"><summary>more</summary><p>That is a unit that concedes chunks and still gets off the field — which argues for receiving volume on the underneath layer and against New England&#x27;s full passing total. Maye also plays behind patched guards (Vera-Tucker and Ben Brown both doubtful per Vrabel, Tuesday, via ESPN&#x27;s Reiss) against a defense that sends extra rushers more than 40% of the time. On the other side, Chicago&#x27;s own identity is a 3.9-to-6-yard throw with high completion rate; New England generates pressure at a top-6 rate and is 7th in points allowed to tight ends, and its red-zone TD rate allowed ranks 10th. Chicago moves it and settles for kicks more often than its implied total suggests. Kyle Monangai has not practiced (FantasyPros, Tuesday), concentrating goal-line work on Swift while Roschon Johnson absorbs the rest.</p></details></div><div class="pp-card"><div class="pp-k">What would change it</div><p class="pp-lead">Monangai practicing Wednesday, which reshuffles the Bears&#x27; backfield outright.</p><details class="pp-more"><summary>more</summary><p>A.J. Brown&#x27;s ankle designation on a short week — limited both days — and whether he plays a full role or a decoy one. Carlton Davis&#x27;s neck: if he returns, Chicago&#x27;s chunk plays get harder. And if New England&#x27;s giveaway habit (five of six weeks tagged) returns, the Bears&#x27; short fields turn this into a comfortable home win.</p></details></div>
+      </div>
+    </details>
+    
   </div>
 </details>
 
 
-<details class="hfa-card hfa-sec pp-sec pp-script" id="script" data-sec="script" open>
+
+<details class="hfa-card hfa-sec pp-sec rv-game" id="game" data-sec="game" open>
   <summary class="pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    <span class="pp-headtext"><span class="hfa-eyebrow">The script</span><span class="pp-h2">How the game plays</span></span>
-    <span class="pp-headchips"><span class="badge mute">fast pace</span><span class="badge mute">medium confidence</span><span class="pp-open">open</span></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The game</span><span class="pp-h2">How it was decided</span></span>
+    <span class="pp-headchips"><span class="badge mute">6 turning points</span><span class="pp-open">open</span></span>
+  </summary>
+  <div class="pp-body">
+    
+    <div class="pp-k">Turning points</div>
+    <ol class="rv-tl">
+      
+      <li style="--pp-team: #002244">
+        <span class="rv-clock">Q1 11:35</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="NE" loading="lazy"><span>Maye sacked by K.Gordon on 4th-and-5 at the CHI 46, turnover on downs (EPA -2.88)</span></div>
+          <p class="pp-sub">New England&#x27;s opening drive reached midfield and ended with a free Chicago possession at the 46; the Bears turned it into a 43-yard field goal and never trailed again.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #0B162A">
+        <span class="rv-clock">Q1 02:32</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="CHI" loading="lazy"><span>Williams deep left to Burden for 58 to the NE 4 (EPA +4.39)</span></div>
+          <p class="pp-sub">One snap turned a 3-0 game into a 10-0 lead (Swift 4-yard run at 1:43) and established the explosive-pass mechanism that produced 308 yards.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #002244">
+        <span class="rv-clock">Q2 03:32</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="NE" loading="lazy"><span>Maye deep right for Raridon intercepted by D&#x27;Marco Jackson in the end zone, touchback (EPA -5.27, WPA -0.103)</span></div>
+          <p class="pp-sub">NE had driven 53 yards to the CHI 15 trailing 13-7; the giveaway cost a probable score and handed Chicago an 11-play, 70-yard answer drive.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #002244">
+        <span class="rv-clock">Q2 02:21</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="NE" loading="lazy"><span>Roughing the passer on G.Jacas, 15 yards, on a 22-yard Burden completion (EPA +2.49)</span></div>
+          <p class="pp-sub">Free yardage on a two-minute drive that ended with Burden&#x27;s 24-yard touchdown on 3rd-and-17 at 0:21 — a 13-7 game became 20-7 on a drive New England twice had stopped.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #002244">
+        <span class="rv-clock">Q3 03:52</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="NE" loading="lazy"><span>Maye deep right to Raridon for a 30-yard touchdown (EPA +3.54, WPA +0.106)</span></div>
+          <p class="pp-sub">Capped a 10-play, 90-yard drive and cut it to 27-21; the highest-WPA play of the game and the only point at which New England was genuinely live.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #0B162A">
+        <span class="rv-clock">Q4 01:39</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="CHI" loading="lazy"><span>Santos 58-yard field goal, 30-21</span></div>
+          <p class="pp-sub">After NE&#x27;s defense forced a punt-length stall, the kick pushed it to a two-score game with 1:39 left, reducing New England&#x27;s final drive to a 47-yard field goal with 0:42 on the clock.</p>
+          
+        </div>
+      </li>
+      
+    </ol>
+    
+    
+    <div class="pp-k pp-k-sec">What decided it <span class="flat">&middot; and whether the numbers showed it before kickoff</span></div>
+    <div class="rv-decided">
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag">pre-game tell</span>
+        <p class="pp-lead">Chicago&#x27;s explosive passing against a depleted New England secondary</p>
+        <p class="pp-sub">8 passes of 20-plus (league mean 3.0), 5/8 on deep throws for 144 yards; Cameron Lewis charted 3/3 for 74 and a TD, Devin Bush 4/4 for 63 and a TD; Byard gave up 64 on 3 targets including the 58-yarder</p>
+        <details class="pp-more"><summary>more</summary><p><b>The tell.</b> NE&#x27;s defense allowed 3, 5 and 4 explosive passes in weeks 1, 4 and 5 and carried &#x27;explosive passing&#x27; as a how-they-got-beat tag in week 4, with Davis, Prunty and Canada all ruled out at corner.</p></details>
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag">pre-game tell</span>
+        <p class="pp-lead">New England&#x27;s one giveaway, in the one place it costs full value</p>
+        <p class="pp-sub">Maye&#x27;s end-zone interception at Q2 3:32 from the CHI 15, EPA -5.27; NE red-zone EPA/play -0.715 on 4 snaps, 1 TD on 2 trips</p>
+        <details class="pp-more"><summary>more</summary><p><b>The tell.</b> &#x27;Turnovers&#x27; is tagged in five of New England&#x27;s six prior games, the loudest recurring item in its file.</p></details>
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag">pre-game tell</span>
+        <p class="pp-lead">The script killed the Patriots&#x27; run game before it existed</p>
+        <p class="pp-sub">CHI led for 3,298 of 3,600 seconds; NE ran 15 times for -0.404 EPA/rush and 20% success, while CHI&#x27;s 68 snaps and 31:47 of possession squeezed NE to 52 plays</p>
+        <details class="pp-more"><summary>more</summary><p><b>The tell.</b> NE&#x27;s own rush EPA was negative in all six prior weeks (-0.451 to -0.002); the &#x27;soft Bears run front&#x27; was a matchup argument that NE&#x27;s own numbers never supported.</p></details>
+      </div>
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag">in-game only</span>
+        <p class="pp-lead">Chicago finished its trips; New England didn&#x27;t</p>
+        <p class="pp-sub">CHI 4 red-zone trips, 3 TDs, +0.079 EPA/play, plus 2-for-2 on fourth down (Swift at Q2 8:57, Loveland at Q4 9:40); NE 2 trips, 1 TD</p>
+        <details class="pp-more"><summary>more</summary><p><b>The tell.</b> Nothing pointed here — CHI had been tagged for red-zone stalls in three of six weeks and NE had held opponents to 0 TDs on 3 trips in week 6; red-zone rates are the least persistent item in the dossier and this is the proof.</p></details>
+      </div>
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag">in-game only</span>
+        <p class="pp-lead">New England&#x27;s penalties on defensive downs</p>
+        <p class="pp-sub">10 flags for 71 yards, 6 pre-snap; the 15-yard roughing at Q2 2:21 and defensive holding at Q2 2:58 both extended the touchdown drive before halftime</p>
+        <details class="pp-more"><summary>more</summary><p><b>The tell.</b> NE&#x27;s pre-snap rate (1.17/game) was below league; the big-yardage flags here were in-play roughness, which the study says doesn&#x27;t persist.</p></details>
+      </div>
+      
+    </div>
+    
+    
+    <details class="rv-fold">
+      <summary>The full story <span class="flat">&middot; the report's account, start to finish</span></summary>
+      <div class="rv-story"><h2>The short version</h2>
+<p>Chicago never trailed, never turned it over, and won 30-24 as a 3-point favorite with the total sailing over 50.5. The model's scoreboard work was close to perfect — 23.8 projected for New England against 24 scored, 26.8 for Chicago against 30, pass attempts within a single throw for both quarterbacks — but the game it priced and the game that happened shared almost no internal structure. The projection imagined 54 combined carries and 464 passing yards; the actual split was 47 carries and 629 passing yards, with eight Chicago explosive passes against a league average of three.</p>
+<h2>How it unfolded</h2>
+<p>New England's first possession reached the Chicago 46 and died there on a fourth-and-5 sack by Kyler Gordon (Q1 11:35, EPA -2.88), gifting the Bears the ball at midfield for Santos's 43-yard field goal. Chicago's second scoring drive needed one play: Burden behind Kevin Byard for 58 to the 4 at Q1 2:32, Swift in from four yards at 1:43, 10-0. New England answered with a 9-play, 68-yard march capped by Maye's scramble to the 1 and a goal-line score, but the second quarter was where the game got decided. Trailing 13-7 with a drive at the Chicago 15, Maye threw for Raridon into the end zone and D'Marco Jackson intercepted it (Q2 3:32, EPA -5.27). Chicago's answer drive was twice stopped and twice extended — a defensive holding on Woods at 2:58, Gabe Jacas's 15-yard roughing on a 22-yard Burden completion at 2:21 — and ended with Burden's 24-yard touchdown on 3rd-and-17 at 0:21. Maye's 48-yard throw to Stevenson with three seconds left (EPA +6.54) made it 20-14 instead of 20-7.</p>
+<p>The second half was Chicago bleeding clock and New England chasing. The Bears' 10-play, 82-yard opening drive produced Loveland's 12-yard score; the Patriots answered with their best possession of the night, 10 plays and 90 yards, Raridon 30 yards for the touchdown at Q3 3:52 (WPA +0.106). From there Chicago ran 13 plays over 6:56 (missed 53-yard field goal), then 11 more over 4:48 ending in Santos's 58-yarder at Q4 1:39 — the kick that made the last New England drive academic.</p>
+<h2>Why the game diverged from the projection</h2>
+<p>Two mechanisms. First, game state: Chicago led for 3,298 of 3,600 seconds, so New England ran 45 of its 52 snaps trailing and threw at a 67.3% rate against a 55.5% blend. That alone explains the 9-carry miss. But it is not the whole story — the Patriots' 15 designed runs produced -0.404 EPA per rush and a 20% success rate, continuing a season in which their rush EPA has been negative in every single game. The soft-front argument was always a matchup abstraction that their own numbers refused.</p>
+<p>Second, efficiency over the top. The engine blended 7.07 and 7.68 yards per attempt; the game produced 9.3 and 10.4. Chicago went 5-for-8 on deep throws for 144 yards against a secondary without Carlton Davis, Prunty and Canada, and the charting shows New England answered by blitzing on 61% of dropbacks against a quarterback whose season EPA vs the blitz is +0.176. Three sacks came out of that; so did 0.396 EPA per dropback.</p>
+<h2>The plan against the game</h2>
+<p>The plan's favorite path reads like a transcript of Chicago's night — 68 snaps, time of possession, Swift grinding, Maye giving one away — and it still went 1-9 on calls, because both of its levers were wrong in the same direction. It asked New England to run (actual pass rate 0.66) and asked Chicago to stall inside the 20 (3 touchdowns on 4 trips). The pace call went the other way too: 116 plays against a 121.5 league pair is average, so the over cashed on yards per play rather than snaps. The two calls whose reasoning survived were the ones built on role rather than efficiency — Swift's checkdown volume and Brown's targets-before-production — and both still landed on the wrong side of their numbers by small margins.</p>
+<h2>Player by player</h2>
+<p>The distribution misses, not the volume misses, sank the player score (0.358, 29 of 50 lines). Loveland saw 12 targets and 47.5% of Chicago's air yards against a projection of 5.6; Hunter Henry caught all seven of his against a 4.1 projection; Stevenson's value was 93 receiving yards on five targets, not 22 rushing on six carries. A.J. Brown played 90.7% of snaps and carried 149 air yards (52.8% share) into three catches for 48 — high-volume, low-conversion, exactly his week-6 shape. Burden's 4-for-130 is the line to ignore: 32.5 yards per target on 60.9% of snaps is a bounce, and Odunze (94.2% snaps, five targets, three fourth-quarter 21-yarders) is the more stable piece of that room. Kalif Raymond played 69.6% of snaps for two targets and nothing — a usage-share artifact the engine keeps paying.</p>
+<h2>The defenses</h2>
+<p>New England's front did its job: Chicago gained 116 yards on 30 carries at 3.87 per attempt with -0.125 EPA per rush, and Barmore, Leonard Taylor and Marcus Jones each got a sack. The breakdown was behind them. Cameron Lewis allowed 3-of-3 for 74 and a touchdown, Devin Bush's counterpart on the other side — New England's Marcus Jones — missed three tackles, and Byard gave up 64 on three targets. Chicago's defense was the mirror image: Gordon's fourth-down sack and Jackson's end-zone interception were the two plays that mattered, while Maye completed 21 of 24 short throws for 257 yards and +15.3 CPOE against a 37.8% blitz rate.</p>
+<h2>The blueprint</h2>
+<p>To beat New England you throw past it and don't give it anything back — that is four of seven weeks now with explosive-pass damage on the dropback-EPA line while the field numbers stay respectable. To beat Chicago you need a four-man rush that gets home; this week's opponent instead sent five-plus on 61% of snaps without the corners to support it, and conceded eight 20-plus plays doing so. Chicago's famous red-zone problem and turnover problem both simply did not appear, which is the honest caveat: those are the least persistent items in the file.</p>
+<h2>What the model should take from this</h2>
+<p>One real read: New England's carry projection should be built off its trailing-state rate and its own rush efficiency, not off the opponent's run-defense rank. One real read on the other side: Loveland's target share is structural, Raymond's snap share is not. And one thing to leave alone — the red-zone finishing swing that turned a correct 3-point projected margin into a 6-point loss is noise, and the engine was right to keep the touchdown split on the league constant.</p></div>
+    </details>
+    
+  </div>
+</details>
+
+
+
+<details class="hfa-card hfa-sec pp-sec pp-script rv-script" id="script" data-sec="script" open>
+  <summary class="pp-head">
+    <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The script, graded</span><span class="pp-h2">Called against played</span></span>
+    <span class="pp-headchips"><span class="badge warn">script partly held</span><span class="pp-open">open</span></span>
   </summary>
   <div class="pp-body">
     <div class="pp-gauges">
-      <div class="pp-gauge" title="Plays and tempo the plan expects">
-        <div class="pp-k">Pace</div>
-        <div class="pp-bars"><i class="on"></i><i class="on"></i><i class="on"></i></div>
-        <b>fast</b>
+      
+      <div class="pp-gauge rv-gauge miss" title="Both teams ran 116 plays; two league-average offenses run 121.5">
+        <div class="pp-k">Pace <span class="rv-mark">&#10007;</span></div>
+        <div class="rv-row"><small>called</small><span class="pp-bars sm"><i class="on"></i><i class="on"></i><i class="on"></i></span><em>fast</em></div>
+        <div class="rv-row played"><small>played</small><span class="pp-bars sm"><i class="on"></i><i class="on"></i><i class=""></i></span><em>average</em></div>
+        <span class="rv-note">116 plays &middot; league 121.5</span>
       </div>
-      <div class="pp-gauge" title="How sure the plan is of its script">
-        <div class="pp-k">Confidence</div>
+      
+      <div class="pp-gauge" title="How sure the plan was of its script">
+        <div class="pp-k">The plan's confidence</div>
         <div class="pp-pips"><i class="on"></i><i class="on"></i><i class=""></i></div>
         <b>medium</b>
       </div>
       
-      <div class="pp-gauge lean" title="Season pass rate .503, but New England&#x27;s run defense (12th in yards per carry, 9th in rush yards allowed) and Monangai&#x27;s likely absence push them toward the quick game rather than the 54-carry script they used against the Jets.">
-        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy"> CHI leans</div>
-        <div class="pp-leanbar"><span>run</span><div class="track"><i style="left: 50%"></i></div><span>pass</span></div>
-        <b>balanced</b>
+      <div class="pp-gauge lean rv-gauge miss" title="Season pass rate .503, but New England&#x27;s run defense (12th in yards per carry, 9th in rush yards allowed) and Monangai&#x27;s likely absence push them toward the quick game rather than the 54-carry script they used against the Jets.">
+        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy"> CHI lean <span class="rv-mark">&#10007;</span></div>
+        <div class="pp-leanbar"><span>run</span><div class="track"><i class="called" style="left: 50%" title="called"></i><i class="played" style="left: 85%" title="played"></i></div><span>pass</span></div>
+        <b class="rv-cvp">balanced <i>&#8594;</i> pass</b><span class="rv-note">passed on 55% &middot; season 50%</span>
       </div>
       
-      <div class="pp-gauge lean" title="Relative to a .516 season pass rate, the matchup tilts them: Chicago is 31st in rush EPA and 29th in rush success allowed, without Sweat and Odeyingbo, while its pass defense is 2nd in EPA allowed.">
-        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy"> NE leans</div>
-        <div class="pp-leanbar"><span>run</span><div class="track"><i style="left: 15%"></i></div><span>pass</span></div>
-        <b>run</b>
+      <div class="pp-gauge lean rv-gauge miss" title="Relative to a .516 season pass rate, the matchup tilts them: Chicago is 31st in rush EPA and 29th in rush success allowed, without Sweat and Odeyingbo, while its pass defense is 2nd in EPA allowed.">
+        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy"> NE lean <span class="rv-mark">&#10007;</span></div>
+        <div class="pp-leanbar"><span>run</span><div class="track"><i class="called" style="left: 15%" title="called"></i><i class="played" style="left: 85%" title="played"></i></div><span>pass</span></div>
+        <b class="rv-cvp">run <i>&#8594;</i> pass</b><span class="rv-note">passed on 66% &middot; season 52%</span>
       </div>
       
     </div>
-    <div class="pp-card wide">
-      <p class="pp-lead">Chicago controls the snap count the way it has all season, moving the ball on short, high-completion throws and taking what the run game gives against a Patriots front that holds up better than its reputation. New England answers by running at a Bears defense that is last in the league in rush EPA allowed and short two edge starters, and by working the underneath layer with Doubs and Hollins gone.</p>
-      <details class="pp-more"><summary>more</summary><p>Chicago&#x27;s trouble is finishing: it has stalled inside the 20 in three separate weeks and meets a defense that is 10th in red-zone touchdown rate allowed. New England&#x27;s trouble is itself — giveaways in five of six weeks and two replacement guards against a blitz-heavy front. Close game, lots of snaps, points arriving slower than the total implies.</p></details>
-    </div>
+    <div class="rv-legend"><span><i class="called"></i>called</span><span><i class="played"></i>played</span></div>
+    <div class="pp-k pp-k-sec">The two paths <span class="flat">&middot; the game took the favorite&#x27;s path</span></div>
     <div class="pp-paths">
       
-      <div class="pp-path fav" style="--pp-team: #0B162A">
-        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy"><span class="pp-k">If Bears win</span><span class="badge mute">favorite</span></div>
+      <div class="pp-path fav took" style="--pp-team: #0B162A">
+        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy"><span class="pp-k">If Bears win</span><span class="badge good">the way it went</span><span class="badge acc">won</span></div>
         <p class="pp-lead">Chicago wins time of possession again, 68-plus snaps, Williams completing a high rate at a short depth, Swift and Johnson grinding the clock, and the Bears convert three or four red-zone trips instead of kicking.</p>
         <details class="pp-more"><summary>more</summary><p>New England&#x27;s interior gets beaten by pressure, Maye gives one away, and it finishes a comfortable 27-20 rather than a nervy one.</p></details>
       </div>
       
-      <div class="pp-path dog" style="--pp-team: #002244">
-        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy"><span class="pp-k">If Patriots win</span><span class="badge mute">underdog</span></div>
+      <div class="pp-path dog not" style="--pp-team: #002244">
+        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy"><span class="pp-k">If Patriots win</span><span class="badge mute">didn't happen</span></div>
         <p class="pp-lead">New England runs it 28-plus times at the soft Bears front, stays on schedule, and hits two or three chunk plays against a defense that allows the most yards per attempt in the league.</p>
         <details class="pp-more"><summary>more</summary><p>Maye keeps the ball clean for a third straight week, the Patriots convert in the red zone like they have the last three weeks, and they win outright in a 26-24 game decided on the final possession.</p></details>
       </div>
       
     </div>
     
-    <div class="pp-k pp-k-sec">What swings it</div>
+    <div class="pp-k pp-k-sec">What the plan said would swing it <span class="flat">&middot; weighed after the game, biggest first</span></div>
     <div class="pp-swing">
-      <div class="pp-swingcard"><b class="n">1</b><div><p class="pp-lead">Monangai&#x27;s thumb: two straight DNPs point to Swift plus Roschon Johnson, which concentrates goal-line work on Swift.</p></div></div><div class="pp-swingcard"><b class="n">2</b><div><p class="pp-lead">New England starting two replacement guards against a defense that sends extra rushers on over 40% of dropbacks.</p></div></div><div class="pp-swingcard"><b class="n">3</b><div><p class="pp-lead">Red-zone finishing: Chicago has stalled inside the 20 three times; the Patriots are 10th in red-zone touchdown rate allowed.</p></div></div><div class="pp-swingcard"><b class="n">4</b><div><p class="pp-lead">A.J. Brown&#x27;s ankle on a three-day turnaround — limited Monday and Tuesday, role uncertain even if active.</p></div></div><div class="pp-swingcard"><b class="n">5</b><div><p class="pp-lead">New England giveaways, tagged in five of six weeks, turning into Bears short fields.</p></div></div>
+      
+      <div class="pp-swingcard rv-swing decisive">
+        <span class="rv-weight">decisive</span>
+        <p class="pp-lead">Red-zone finishing: Chicago has stalled inside the 20 three times; the Patriots are 10th in red-zone touchdown rate allowed.</p>
+        <p class="rv-went"><b>Went:</b> It broke the plan&#x27;s way on direction but not on side: Chicago finished 3 of 4 trips for touchdowns (+0.079 EPA inside the 20) while New England went 1 of 2 with -0.715 EPA/play and threw an end-zone interception — a 13-point swing in a 6-point game.</p>
+        
+      </div>
+      
+      <div class="pp-swingcard rv-swing contributed">
+        <span class="rv-weight">contributed</span>
+        <p class="pp-lead">Monangai&#x27;s thumb: two straight DNPs point to Swift plus Roschon Johnson, which concentrates goal-line work on Swift.</p>
+        <p class="rv-went"><b>Went:</b> Monangai out did concentrate the backfield: Swift 22 carries and 85.5% snaps, Roschon Johnson 2 carries on 14.5%, and the goal-line score came on Swift&#x27;s 4-yard run at Q1 1:43.</p>
+        
+      </div>
+      
+      <div class="pp-swingcard rv-swing contributed">
+        <span class="rv-weight">contributed</span>
+        <p class="pp-lead">New England giveaways, tagged in five of six weeks, turning into Bears short fields.</p>
+        <p class="rv-went"><b>Went:</b> One giveaway, and it was a touchback rather than a short field — the cost was the 53 yards of drive erased (-5.27 EPA), not Chicago field position.</p>
+        
+      </div>
+      
+      <div class="pp-swingcard rv-swing minor">
+        <span class="rv-weight">minor</span>
+        <p class="pp-lead">New England starting two replacement guards against a defense that sends extra rushers on over 40% of dropbacks.</p>
+        <p class="rv-went"><b>Went:</b> The replacement guards held up — Chicago blitzed only 37.8% (4.59 rushers), Maye took 2 sacks and 5 hits on 35 dropbacks and posted 0.393 EPA/dropback.</p>
+        
+      </div>
+      
+      <div class="pp-swingcard rv-swing minor">
+        <span class="rv-weight">minor</span>
+        <p class="pp-lead">A.J. Brown&#x27;s ankle on a three-day turnaround — limited Monday and Tuesday, role uncertain even if active.</p>
+        <p class="rv-went"><b>Went:</b> Brown played 90.7% of snaps and drew 6 targets for 149 air yards; his limited status showed in conversion (3-48), not availability.</p>
+        
+      </div>
+      
     </div>
     
     
-    <div class="pp-k pp-k-sec">Legs the same script produces <span class="flat">&middot; they move as one, which is what a same-game parlay pays for</span></div>
+    <div class="pp-k pp-k-sec">The legs the same script produced <span class="flat">&middot; graded off the box score</span></div>
     <div class="pp-angles">
       
-      <div class="pp-angle">
-        <div class="pp-angletitle">New England runs it, Chicago answers underneath</div>
-        <div class="pp-legs"><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>Rhamondre Stevenson</b><em>over 39.5 rush yds</em></span><span class="pp-leg under"><i class="arrow" aria-hidden="true">&#9660;</i><b>D&#x27;Andre Swift</b><em>under 59.5 rush yds</em></span><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>D&#x27;Andre Swift</b><em>over 14.5 rec yds</em></span></div>
+      <div class="pp-angle ">
+        <div class="pp-angletitle">New England runs it, Chicago answers underneath <span class="badge mute">0 of 3 hit</span></div>
+        <div class="pp-legs"><span class="pp-leg over miss"><i class="arrow" aria-hidden="true">&#9650;</i><b>Rhamondre Stevenson</b><em>over 39.5 rush yds</em><span class="rv-res">&#10007; 22</span></span><span class="pp-leg under miss"><i class="arrow" aria-hidden="true">&#9660;</i><b>D&#x27;Andre Swift</b><em>under 59.5 rush yds</em><span class="rv-res">&#10007; 78</span></span><span class="pp-leg over miss"><i class="arrow" aria-hidden="true">&#9650;</i><b>D&#x27;Andre Swift</b><em>over 14.5 rec yds</em><span class="rv-res">&#10007; 12</span></span></div>
         <p class="pp-sub">One script: the Patriots attack the league&#x27;s worst rush-EPA front while the Bears, facing a top-12 run defense and a top-6 pressure rate, move the ball with quick throws and checkdowns to the back instead of on the ground.</p>
         
       </div>
       
-      <div class="pp-angle">
-        <div class="pp-angletitle">The thinned receiver room eats the short throws</div>
-        <div class="pp-legs"><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>DeMario Douglas</b><em>over 39.5 rec yds</em></span><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>Efton Chism III</b><em>over 1.5 receptions</em></span><span class="pp-leg under"><i class="arrow" aria-hidden="true">&#9660;</i><b>A.J. Brown</b><em>under 59.5 rec yds</em></span></div>
+      <div class="pp-angle ">
+        <div class="pp-angletitle">The thinned receiver room eats the short throws <span class="badge mute">1 of 3 hit</span></div>
+        <div class="pp-legs"><span class="pp-leg over miss"><i class="arrow" aria-hidden="true">&#9650;</i><b>DeMario Douglas</b><em>over 39.5 rec yds</em><span class="rv-res">&#10007; 23</span></span><span class="pp-leg over miss"><i class="arrow" aria-hidden="true">&#9650;</i><b>Efton Chism III</b><em>over 1.5 receptions</em><span class="rv-res">&#10007; 1</span></span><span class="pp-leg under hit"><i class="arrow" aria-hidden="true">&#9660;</i><b>A.J. Brown</b><em>under 59.5 rec yds</em><span class="rv-res">&#10003; 48</span></span></div>
         <p class="pp-sub">With Doubs and Hollins out and Brown on a limited ankle in a short week, the underneath volume routes to Douglas and Chism while the alpha&#x27;s share shows up as targets rather than yards — the same distribution we saw in week 6.</p>
         
       </div>
       
-      <div class="pp-angle">
-        <div class="pp-angletitle">Field goals, not sevens, for the Bears</div>
-        <div class="pp-legs"><span class="pp-leg under"><i class="arrow" aria-hidden="true">&#9660;</i><b>Caleb Williams</b><em>under 1.5 pass TDs</em></span><span class="pp-leg under"><i class="arrow" aria-hidden="true">&#9660;</i><b>Colston Loveland</b><em>under 39.5 rec yds</em></span><span class="pp-leg under"><i class="arrow" aria-hidden="true">&#9660;</i><b>D&#x27;Andre Swift</b><em>under 59.5 rush yds</em></span></div>
+      <div class="pp-angle ">
+        <div class="pp-angletitle">Field goals, not sevens, for the Bears <span class="badge mute">0 of 3 hit</span></div>
+        <div class="pp-legs"><span class="pp-leg under miss"><i class="arrow" aria-hidden="true">&#9660;</i><b>Caleb Williams</b><em>under 1.5 pass TDs</em><span class="rv-res">&#10007; 2</span></span><span class="pp-leg under miss"><i class="arrow" aria-hidden="true">&#9660;</i><b>Colston Loveland</b><em>under 39.5 rec yds</em><span class="rv-res">&#10007; 69</span></span><span class="pp-leg under miss"><i class="arrow" aria-hidden="true">&#9660;</i><b>D&#x27;Andre Swift</b><em>under 59.5 rush yds</em><span class="rv-res">&#10007; 78</span></span></div>
         <p class="pp-sub">Chicago moves it between the 20s and stalls at them against a defense that is top-10 in red-zone touchdown rate allowed and stingy to tight ends; the touchdowns that do come arrive on short runs, not through the air.</p>
         
       </div>
@@ -1498,173 +1949,250 @@
     <h2 class="gm-h2"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy"><span><em class="full">Patriots</em><em class="short">NE</em> offense</span><span class="vs">against the</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy"><span><em class="full">Bears</em><em class="short">CHI</em> defense</span></h2>
   </summary>
   <div class="hfa-head gm-mhead">
-    <p class="lede">Projected NE offense output &mdash; equivalently, what the CHI defense allows. The engine blends each offense's season-to-date rates with the defense across from it, anchored on the market's implied points.</p>
+    <p class="lede">What the NE offense put up against the CHI defense, the projection beneath each number: <span class="up">green</span> beat it, <span class="down">amber</span> fell short (INTs judged the other way).</p>
   </div>
   
-<div class="pp-off">
-  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Patriots offense</span><span class="badge mute">medium confidence</span></div>
+<div class="pp-off rv-off">
+  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Patriots offense, graded</span><span class="badge bad">broke</span><span class="badge mute">calls 1&ndash;5</span></div>
   
-  <div class="pp-offcards">
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div>
-      <p class="pp-lead">A chunk-play offense that moves between the 20s: field EPA +0.063, 7.98 yards per attempt, and three or more explosive passes in five straight weeks, paired with a modest committee run game at 4.19 a carry.</p>
-      
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div>
-      <p class="pp-lead">Explosives and fourth-down aggression, with a red-zone rate that has swung from 1-for-7 over three weeks to 8 touchdowns on 12 trips since; three passing touchdowns in each of the last two games.</p>
-      
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div>
-      <p class="pp-lead">Its own giveaways (tagged five of six weeks) and interior run stuffing — week 3 at Jacksonville was 83 yards on 26 carries and 0-for-4 in the red zone with three turnovers.</p>
-      
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div>
-      <p class="pp-lead">Chicago is 2nd in pass EPA and 2nd in pass success allowed while sitting 31st in yards per attempt: a defense that concedes the occasional chunk and still forces punts.</p>
-      <details class="pp-more"><summary>more</summary><p>The run is where it breaks — 31st in rush EPA, 29th in rush success, without Sweat and Odeyingbo and with Edwards not practicing.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div>
-      <p class="pp-lead">Doubs (IR) and Hollins (IR) are gone from the receiver room, pushing snaps to Chism, Kyle Williams and Douglas; A.J. Brown is questionable and limited both days on an ankle.</p>
-      <details class="pp-more"><summary>more</summary><p>Both starting guards, Vera-Tucker and Ben Brown, are doubtful (Vrabel, Tuesday, via ESPN), with Rouse and Pryor projected to start, and Moses is limited — pressure and run efficiency are the risk, not a projection change. Chicago&#x27;s missing edge rushers are the direct benefit to the run game.</p></details>
-    </div>
-    
+  <div class="rv-eh">
+    <div class="rv-ehcol"><span class="pp-k">Expected</span><p class="pp-lead">Pass rate near their season mark or slightly under, 27-30 carries split Stevenson/Henderson/Kiner with Maye scrambles, and receiving volume concentrated underneath to Douglas, Henry and Chism.</p><details class="pp-more"><summary>more</summary><p>Yards should arrive; the touchdown share is the uncertain half.</p></details></div>
+    <div class="rv-ehcol happened bad"><span class="pp-k">Happened</span><p class="pp-lead">Expected pass rate at or under 0.516 with 27-30 carries; actual 0.66 pass rate, 15 rushes, 70 rush yards. Receiving volume also went elsewhere: Henry 7 targets and Stevenson 5 instead of Douglas (4) and Chism (1).</p></div>
   </div>
   
   
-  <div class="pp-expect"><span class="pp-k">Expect</span><p class="pp-lead">Pass rate near their season mark or slightly under, 27-30 carries split Stevenson/Henderson/Kiner with Maye scrambles, and receiving volume concentrated underneath to Douglas, Henry and Chism.</p><details class="pp-more"><summary>more</summary><p>Yards should arrive; the touchdown share is the uncertain half.</p></details></div>
-  
-  
-  <div class="pp-k pp-k-sec">Who the plan moves <span class="flat">&middot; 4 up, 2 down &middot; one player, one market, one side of Kalshi's line when the plan was written</span></div>
-  <div class="pp-calls">
+  <div class="pp-k pp-k-sec">Who the plan moved <span class="flat">&middot; 4 up, 2 down &middot; graded off the box score, with whether the reason given showed up</span></div>
+  <div class="pp-calls rv-calls">
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Efton Chism III</b><span class="pp-bet">over 1.5 receptions</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 67%"></i></div><b>67%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 57%"></i></div><b>57%</b></div>
+      
+      <div class="rv-meter" title="The line 1.5 against the actual 1">
+        <div class="track"><i class="fill" style="width: 53.3%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 1.5</span><b>1</b></div>
       </div>
+      
+      <span class="badge bad rv-read">wrong read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Chism played 63% of snaps but saw one target for 16 yards; the underneath concentration the mechanism predicted went to Hunter Henry (7/7/71) instead.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #2 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal / Edge / Edge+: over 1.5 receptions"><i>Normal / Edge / Edge+</i> 2+ <small>49&cent;</small></span>
+        <span class="rung miss" title="Normal / Edge / Edge+: over 1.5 receptions"><i>Normal / Edge / Edge+</i> 2+ <small>49&cent;</small></span>
       </div>
-      <p class="pp-lead">Doubs on IR moves him into a near-full-time role, and this is a two-catch bar on a short-area target in an offense that throws underneath by design.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> Snap share 45%, 76%, 62% in weeks 4-6; 6 targets for 5-57 against Las Vegas; Rotowire (Mon) named him a direct beneficiary of Doubs&#x27;s absence. </p><p><b>Against it.</b> vs #2 pass EPA allowed — a receptions line is a volume question, not an efficiency one, and the Bears&#x27; weakness is yardage, not catches; engine mean above the line, market near even. </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>Doubs on IR moves him into a near-full-time role, and this is a two-catch bar on a short-area target in an offense that throws underneath by design. </p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 67%"></i></div><b>67%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 57%"></i></div><b>57%</b></div>
+        </div>
+        <p><b>Evidence.</b> Snap share 45%, 76%, 62% in weeks 4-6; 6 targets for 5-57 against Las Vegas; Rotowire (Mon) named him a direct beneficiary of Doubs&#x27;s absence. </p>
+        <p><b>Against it.</b> vs #2 pass EPA allowed — a receptions line is a volume question, not an efficiency one, and the Bears&#x27; weakness is yardage, not catches; engine mean above the line, market near even. </p>
+      </details>
     </div>
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>DeMario Douglas</b><span class="pp-bet">over 39.5 rec yds</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 65%"></i></div><b>65%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 46%"></i></div><b>46%</b></div>
+      
+      <div class="rv-meter" title="The line 39.5 against the actual 23">
+        <div class="track"><i class="fill" style="width: 46.6%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 39.5</span><b>23</b></div>
       </div>
+      
+      <span class="badge bad rv-read">missed · read partly held</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Douglas got 4 targets for 23 on 64.8% snaps — the role was there, the quick-game yardage wasn&#x27;t; New England&#x27;s short game produced 257 yards on 24 attempts, just not through him.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #2 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: over 39.5 rec yds"><i>Normal</i> 40+ <small>49&cent;</small></span><span class="rung" title="Edge: 25+ rec yds"><i>Edge</i> 25+ <small>68&cent;</small></span><span class="rung" title="Edge+: 15+ rec yds"><i>Edge+</i> 15+ <small>82&cent;</small></span>
+        <span class="rung miss" title="Normal: over 39.5 rec yds"><i>Normal</i> 40+ <small>49&cent;</small></span><span class="rung miss" title="Edge: 25+ rec yds"><i>Edge</i> 25+ <small>68&cent;</small></span><span class="rung hit" title="Edge+: 15+ rec yds"><i>Edge+</i> 15+ <small>82&cent;</small></span>
       </div>
-      <p class="pp-lead">With Doubs and Hollins both out for the year, the underneath targets concentrate on him.</p>
-      <details class="pp-more"><summary>why</summary><p>Chicago suppresses success rate but leads the league in yards allowed per throw, so the ball gets out quickly and still travels.</p><p><b>Evidence.</b> 8 targets, 7-86 and a TD in week 6 on a 59% snap share; 5 targets for 65 and two scores in week 5. Season-high target counts have come in the two weeks since the receiver room thinned.</p><p><b>Against it.</b> vs #2 pass EPA allowed — the rank rests on success rate and the same defense is 31st in yards per attempt; engine mean sits well above the posted line while the market prices him under 50% to clear. </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>With Doubs and Hollins both out for the year, the underneath targets concentrate on him. Chicago suppresses success rate but leads the league in yards allowed per throw, so the ball gets out quickly and still travels.</p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 65%"></i></div><b>65%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 46%"></i></div><b>46%</b></div>
+        </div>
+        <p><b>Evidence.</b> 8 targets, 7-86 and a TD in week 6 on a 59% snap share; 5 targets for 65 and two scores in week 5. Season-high target counts have come in the two weeks since the receiver room thinned.</p>
+        <p><b>Against it.</b> vs #2 pass EPA allowed — the rank rests on success rate and the same defense is 31st in yards per attempt; engine mean sits well above the posted line while the market prices him under 50% to clear. </p>
+      </details>
     </div>
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>TreVeyon Henderson</b><span class="pp-bet">over 29.5 rush+rec yds</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 58%"></i></div><b>58%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 46%"></i></div><b>46%</b></div>
+      
+      <div class="rv-meter" title="The line 29.5 against the actual 23">
+        <div class="track"><i class="fill" style="width: 62.4%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 29.5</span><b>23</b></div>
       </div>
+      
+      <span class="badge bad rv-read">wrong read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Henderson played 24.1% of snaps and got 3 carries for 9 plus 2 catches; the committee the call assumed never existed because New England ran 15 times total.</p>
       <div class="pp-callmeta">
-        <span class="badge good" title="The opposing defense's rank on rush EPA allowed entering the week (#1 toughest)">D #31 rush EPA allowed</span>
-        <span class="badge mute">low</span>
-        <span class="rung" title="Normal / Edge / Edge+: over 29.5 rush+rec yds"><i>Normal / Edge / Edge+</i> 30+ <small>57&cent;</small></span>
+        <span class="rung miss" title="Normal / Edge / Edge+: over 29.5 rush+rec yds"><i>Normal / Edge / Edge+</i> 30+ <small>57&cent;</small></span>
       </div>
-      <p class="pp-lead">The second share of a committee attacking the softest run front in the league; a low combined bar that one explosive run clears, and the ankle was a full practice participant.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> 7-31 rushing plus a 9-yard catch in week 6 at a 24% snap share; 14 carries at Buffalo. Full participation Monday and Tuesday after the high-ankle sprain.</p><p><b>Against it.</b> vs #31 rush EPA allowed; engine mean sits above the line while the market prices him under 50% — the gap is the share, and the fumble in week 6 is the risk to it. </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>The second share of a committee attacking the softest run front in the league; a low combined bar that one explosive run clears, and the ankle was a full practice participant. </p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 58%"></i></div><b>58%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 46%"></i></div><b>46%</b></div>
+        </div>
+        <p><b>Evidence.</b> 7-31 rushing plus a 9-yard catch in week 6 at a 24% snap share; 14 carries at Buffalo. Full participation Monday and Tuesday after the high-ankle sprain.</p>
+        <p><b>Against it.</b> vs #31 rush EPA allowed; engine mean sits above the line while the market prices him under 50% — the gap is the share, and the fumble in week 6 is the risk to it. </p>
+      </details>
     </div>
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Rhamondre Stevenson</b><span class="pp-bet">over 39.5 rush yds</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 39%"></i></div><b>39%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 54%"></i></div><b>54%</b></div>
+      
+      <div class="rv-meter" title="The line 39.5 against the actual 22">
+        <div class="track"><i class="fill" style="width: 44.6%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 39.5</span><b>22</b></div>
       </div>
+      
+      <span class="badge bad rv-read">wrong read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Six carries for 22 yards and -2.21 rushing EPA.</p>
       <div class="pp-callmeta">
-        <span class="badge good" title="The opposing defense's rank on rush EPA allowed entering the week (#1 toughest)">D #31 rush EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: over 39.5 rush yds"><i>Normal</i> 40+ <small>54&cent;</small></span><span class="rung" title="Edge: 30+ rush yds"><i>Edge</i> 30+ <small>69&cent;</small></span><span class="rung" title="Edge+: 20+ rush yds"><i>Edge+</i> 20+ <small>84&cent;</small></span>
+        <span class="rung miss" title="Normal: over 39.5 rush yds"><i>Normal</i> 40+ <small>54&cent;</small></span><span class="rung miss" title="Edge: 30+ rush yds"><i>Edge</i> 30+ <small>69&cent;</small></span><span class="rung hit" title="Edge+: 20+ rush yds"><i>Edge+</i> 20+ <small>84&cent;</small></span>
       </div>
-      <p class="pp-lead">He&#x27;s the early-down back against the league&#x27;s worst rush-EPA defense, which is also missing both its starting edge rushers.</p>
-      <details class="pp-more"><summary>why</summary><p>Our model consistently under-rates backs facing weak run fronts.</p><p><b>Evidence.</b> 13-14 carries in each of the last three weeks; Chicago allows 4.49 a carry and ranks 29th in rush success, with Sweat suspended, Odeyingbo on IR and Edwards not practicing. </p><p><b>Against it.</b> vs #31 rush EPA allowed; the engine projects him below the line on a 9.5-carry share that his last three games (13, 13, 14) contradict, while the market has him just over even money. </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>He&#x27;s the early-down back against the league&#x27;s worst rush-EPA defense, which is also missing both its starting edge rushers. Our model consistently under-rates backs facing weak run fronts.</p>
+        <p><b>In the game.</b> The premise — volume at a weak run front — died at kickoff with Chicago leading from 9:58 of the first quarter.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 39%"></i></div><b>39%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 54%"></i></div><b>54%</b></div>
+        </div>
+        <p><b>Evidence.</b> 13-14 carries in each of the last three weeks; Chicago allows 4.49 a carry and ranks 29th in rush success, with Sweat suspended, Odeyingbo on IR and Edwards not practicing. </p>
+        <p><b>Against it.</b> vs #31 rush EPA allowed; the engine projects him below the line on a 9.5-carry share that his last three games (13, 13, 14) contradict, while the market has him just over even money. </p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>A.J. Brown</b><span class="pp-bet">under 59.5 rec yds</span></div>
-        <span class="badge mute">efficiency</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 97%"></i></div><b>97%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 40%"></i></div><b>40%</b></div>
+      
+      <div class="rv-meter" title="The line 59.5 against the actual 48">
+        <div class="track"><i class="fill" style="width: 64.5%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 59.5</span><b>48</b></div>
       </div>
+      
+      <span class="badge good rv-read">right read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Precisely the mechanism: team-high 6 targets and 52.8% of the air yards (149) converted into 3 catches for 48 on a short week.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #2 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 59.5 rec yds"><i>Normal</i> &lt;60 <small>40&cent;</small></span><span class="rung" title="Edge: &lt;100 rec yds"><i>Edge</i> &lt;100 <small>75&cent;</small></span><span class="rung" title="Edge+: &lt;140 rec yds"><i>Edge+</i> &lt;140 <small>92&cent;</small></span>
+        <span class="rung hit" title="Normal: under 59.5 rec yds"><i>Normal</i> &lt;60 <small>40&cent;</small></span><span class="rung hit" title="Edge: &lt;100 rec yds"><i>Edge</i> &lt;100 <small>75&cent;</small></span><span class="rung hit" title="Edge+: &lt;140 rec yds"><i>Edge+</i> &lt;140 <small>92&cent;</small></span>
       </div>
-      <p class="pp-lead">Second game back off a four-game ankle absence on a three-day turnaround, limited in both sessions.</p>
-      <details class="pp-more"><summary>why</summary><p>The targets arrive before the production does — that is exactly how his return week went.</p><p><b>Evidence.</b> 3-27 on 10 targets at a 76.5% snap share in week 6 with -7.39 receiving EPA; 3-26 in week 1. Limited Monday and Tuesday (Rotowire), though he told reporters the ankle feels good.</p><p><b>Against it.</b> vs #2 pass EPA allowed, the toughest rank on the board; the engine&#x27;s mean is far below the line (its share math is stale), while the market has him better than 59% to clear — this is an efficiency call, the weaker kind. </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>Second game back off a four-game ankle absence on a three-day turnaround, limited in both sessions. The targets arrive before the production does — that is exactly how his return week went.</p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 97%"></i></div><b>97%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 40%"></i></div><b>40%</b></div>
+        </div>
+        <p><b>Evidence.</b> 3-27 on 10 targets at a 76.5% snap share in week 6 with -7.39 receiving EPA; 3-26 in week 1. Limited Monday and Tuesday (Rotowire), though he told reporters the ankle feels good.</p>
+        <p><b>Against it.</b> vs #2 pass EPA allowed, the toughest rank on the board; the engine&#x27;s mean is far below the line (its share math is stale), while the market has him better than 59% to clear — this is an efficiency call, the weaker kind. </p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Drake Maye</b><span class="pp-bet">under 249.5 pass yds</span></div>
-        <span class="badge mute">both</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 60%"></i></div><b>60%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+      
+      <div class="rv-meter" title="The line 249.5 against the actual 321">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 62.2%"></i></div>
+        <div class="rv-meterlbl"><span>line 249.5</span><b>321</b></div>
       </div>
+      
+      <span class="badge bad rv-read">wrong read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> The attempt count was right (31 vs an expected lower number) but everything else inverted: 10.4 yards per attempt, +15.3 CPOE, 175 YAC and a 48-yard screen touchdown.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #2 pass EPA allowed</span>
-        <span class="badge mute">low</span>
-        <span class="rung" title="Normal: under 249.5 pass yds"><i>Normal</i> &lt;250 <small>51&cent;</small></span><span class="rung" title="Edge: &lt;325 pass yds"><i>Edge</i> &lt;325 <small>85&cent;</small></span><span class="rung" title="Edge+: &lt;375 pass yds"><i>Edge+</i> &lt;375 <small>96&cent;</small></span>
+        <span class="rung miss" title="Normal: under 249.5 pass yds"><i>Normal</i> &lt;250 <small>51&cent;</small></span><span class="rung hit" title="Edge: &lt;325 pass yds"><i>Edge</i> &lt;325 <small>85&cent;</small></span><span class="rung hit" title="Edge+: &lt;375 pass yds"><i>Edge+</i> &lt;375 <small>96&cent;</small></span>
       </div>
-      <p class="pp-lead">Chicago is second in the league at making throws fail, and New England starts two replacement guards against a front that sends extra rushers on over 40% of dropbacks — short drops, fewer attempts in a run-lean plan.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> 235 and 269 yards in his last two; Vera-Tucker and Ben Brown both doubtful (Vrabel, Tuesday), Moses limited. Chicago allows a .370 completion success rate, 2nd in the league.</p><p><b>Against it.</b> vs #2 pass EPA allowed — the metric that decides a passing line, even though the same defense sits 31st in yards per attempt; engine mean below the line, market near even. Our record on passing-yardage calls is the weakest of any market, so size it accordingly.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>Chicago is second in the league at making throws fail, and New England starts two replacement guards against a front that sends extra rushers on over 40% of dropbacks — short drops, fewer attempts in a run-lean plan. </p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 60%"></i></div><b>60%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+        </div>
+        <p><b>Evidence.</b> 235 and 269 yards in his last two; Vera-Tucker and Ben Brown both doubtful (Vrabel, Tuesday), Moses limited. Chicago allows a .370 completion success rate, 2nd in the league.</p>
+        <p><b>Against it.</b> vs #2 pass EPA allowed — the metric that decides a passing line, even though the same defense sits 31st in yards per attempt; engine mean below the line, market near even. Our record on passing-yardage calls is the weakest of any market, so size it accordingly.</p>
+      </details>
     </div>
     
   </div>
+  
+  
+  <div class="pp-k pp-k-sec">Lines the report singled out <span class="flat">&middot; signal carries forward, noise doesn't</span></div>
+  <div class="rv-notes">
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Drake Maye</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">24/31, 321 yards, 2 pass TD, 1 INT, 4 carries/26, 1 rush TD; +15.3 CPOE, 0.393 EPA/dropback</span>
+      <p class="pp-sub">Attempts matched projection; the yardage came from YAC (175 team) and a 48-yard checkdown score, plus 3/6 deep.</p>
+      <details class="pp-more"><summary>more</summary><p>Trailing the whole way guaranteed the volume floor.</p></details>
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Rhamondre Stevenson</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">6 carries/22, 5 targets/5 rec/93 yards, 1 rec TD on 68.5% snaps</span>
+      <p class="pp-sub">Rushing EPA -2.21 on six carries; his value was entirely receiving in a trailing script, headlined by the 48-yard TD at Q2 0:03 against LB Devin Bush (4/4, 63 yards, TD allowed).</p>
+      
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Hunter Henry</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">7 targets, 7 catches, 71 yards (projected 4.1/2.8/30.5)</span>
+      <p class="pp-sub">New England&#x27;s underneath volume concentrated at TE rather than slot WR with Doubs and Hollins out; 75.9% snaps, 37 air yards, 34 YAC.</p>
+      
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>A.J. Brown</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">6 targets, 3 catches, 48 yards, 149 air yards (52.8% air-yards share) on 90.7% snaps</span>
+      <p class="pp-sub">Full-time alpha usage with all the downfield volume and poor conversion — the targets arrive before the production.</p>
+      
+    </div>
+    
+    <div class="rv-note-card ">
+      <div class="rv-notehead"><b>Eli Raridon</b><span class="badge mute">noise</span></div>
+      <span class="pp-bet">4 targets, 3-56, TD (projected 2.4/1.6/13.9), 53.7% snaps</span>
+      <p class="pp-sub">Second-TE packages get real route volume in this offense; 40 air yards and the 30-yard score at Q3 3:52.</p>
+      
+    </div>
+    
+  </div>
+  
+  
+  <details class="rv-fold">
+    <summary>The plan's pre-game read on this offense <span class="flat">&middot; medium confidence</span></summary>
+    <div class="pp-offcards">
+      <div class="pp-offcard"><div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div><p class="pp-lead">A chunk-play offense that moves between the 20s: field EPA +0.063, 7.98 yards per attempt, and three or more explosive passes in five straight weeks, paired with a modest committee run game at 4.19 a carry.</p></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div><p class="pp-lead">Explosives and fourth-down aggression, with a red-zone rate that has swung from 1-for-7 over three weeks to 8 touchdowns on 12 trips since; three passing touchdowns in each of the last two games.</p></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div><p class="pp-lead">Its own giveaways (tagged five of six weeks) and interior run stuffing — week 3 at Jacksonville was 83 yards on 26 carries and 0-for-4 in the red zone with three turnovers.</p></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div><p class="pp-lead">Chicago is 2nd in pass EPA and 2nd in pass success allowed while sitting 31st in yards per attempt: a defense that concedes the occasional chunk and still forces punts.</p><details class="pp-more"><summary>more</summary><p>The run is where it breaks — 31st in rush EPA, 29th in rush success, without Sweat and Odeyingbo and with Edwards not practicing.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div><p class="pp-lead">Doubs (IR) and Hollins (IR) are gone from the receiver room, pushing snaps to Chism, Kyle Williams and Douglas; A.J. Brown is questionable and limited both days on an ankle.</p><details class="pp-more"><summary>more</summary><p>Both starting guards, Vera-Tucker and Ben Brown, are doubtful (Vrabel, Tuesday, via ESPN), with Rouse and Pryor projected to start, and Moses is limited — pressure and run efficiency are the risk, not a projection change. Chicago&#x27;s missing edge rushers are the direct benefit to the run game.</p></details></div>
+    </div>
+  </details>
   
 </div>
 
   <div class="gm-tiles">
-    <div class="gm-tile big"><b>23.8<i class="act over" title="Actual">(24)</i></b><span>Points</span></div><div class="gm-tile "><b>59</b><span>Plays</span></div><div class="gm-tile "><b>234<i class="act over" title="Actual">(321)</i></b><span>Pass yds</span></div><div class="gm-tile "><b>106<i class="act under" title="Actual">(70)</i></b><span>Rush yds</span></div><div class="gm-tile "><b>2.1</b><span>Sacks taken</span></div><div class="gm-tile "><b>0.7<i class="act under" title="Actual">(1)</i></b><span>INTs thrown</span></div>
+    <div class="gm-tile rv big over"><b>24</b><span>Points</span><small>projected 23.8</small></div><div class="gm-tile rv  "><b class="flat">59</b><span>Plays</span><small>projected</small></div><div class="gm-tile rv  over"><b>321</b><span>Pass yds</span><small>projected 234</small></div><div class="gm-tile rv  under"><b>70</b><span>Rush yds</span><small>projected 106</small></div><div class="gm-tile rv  "><b class="flat">2.1</b><span>Sacks taken</span><small>projected</small></div><div class="gm-tile rv  under"><b>1</b><span>INTs thrown</span><small>projected 0.7</small></div>
   </div>
   <div class="gm-split">
     <div class="gm-players">
@@ -1941,135 +2469,192 @@
     <h2 class="gm-h2"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy"><span><em class="full">Bears</em><em class="short">CHI</em> offense</span><span class="vs">against the</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy"><span><em class="full">Patriots</em><em class="short">NE</em> defense</span></h2>
   </summary>
   <div class="hfa-head gm-mhead">
-    <p class="lede">Projected CHI offense output &mdash; equivalently, what the NE defense allows. The engine blends each offense's season-to-date rates with the defense across from it, anchored on the market's implied points.</p>
+    <p class="lede">What the CHI offense put up against the NE defense, the projection beneath each number: <span class="up">green</span> beat it, <span class="down">amber</span> fell short (INTs judged the other way).</p>
   </div>
   
-<div class="pp-off">
-  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Bears offense</span><span class="badge mute">medium confidence</span></div>
+<div class="pp-off rv-off">
+  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Bears offense, graded</span><span class="badge warn">partly held</span><span class="badge mute">calls 0&ndash;4</span></div>
   
-  <div class="pp-offcards">
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div>
-      <p class="pp-lead">A volume offense: 72.5 plays a game, 68.8% completions at a very short depth (3.9 aDOT and 193 YAC in week 6), field EPA +0.063 but red-zone EPA negative at -0.032.</p>
-      
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div>
-      <p class="pp-lead">Sustained drives and short rushing scores — three of four red-zone touchdowns against Atlanta came on the ground — plus the occasional YAC explosive from Burden or Loveland.</p>
-      
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div>
-      <p class="pp-lead">Pressure that gets home and its own turnovers: 3 points at 24.4% pressure against Minnesota, 7 at Green Bay with five giveaways.</p>
-      <details class="pp-more"><summary>more</summary><p>Red-zone stalls are tagged in three separate weeks.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div>
-      <p class="pp-lead">New England generates pressure at a top-6 rate and ranks 7th in points allowed to tight ends and 10th in red-zone touchdown rate allowed, but it is middling between the 20s (15th in pass EPA, 14th in pass yards allowed) and gives up explosives weekly.</p>
-      <details class="pp-more"><summary>more</summary><p>Chicago&#x27;s quick game should move it; finishing is the question. Note our week-6 review: a passing under on pressure grounds was a read error against this offense&#x27;s 3.9 aDOT.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div>
-      <p class="pp-lead">Monangai (thumb/toe) has not practiced in two sessions and looks unlikely, handing the backfield to Swift with Johnson in the complementary role; Jonah Jackson is questionable with a hip, with Newman next up, and Braxton Jones is on IR.</p>
-      <details class="pp-more"><summary>more</summary><p>On the other side, Carlton Davis is questionable (limited Tuesday) — if he sits, Charles Woods, the lowest-rated corner who played last week, stays on the field and the chunk-play path opens.</p></details>
-    </div>
-    
+  <div class="rv-eh">
+    <div class="rv-ehcol"><span class="pp-k">Expected</span><p class="pp-lead">62-68 snaps, pass rate around .52-.55 at a short depth, Swift at 15-18 touches with real checkdown work, Burden and Loveland leading targets and Odunze carrying the air yards at low volume.</p><details class="pp-more"><summary>more</summary><p>Points nearer the low 20s than the implied total.</p></details></div>
+    <div class="rv-ehcol happened warn"><span class="pp-k">Happened</span><p class="pp-lead">Snaps (68) and pass rate (0.545) landed in range and Loveland led targets with 12, but Swift took 26 touches rather than 15-18, Burden&#x27;s 4 targets produced 130 yards, and &#x27;points nearer the low 20s&#x27; finished at 30.</p></div>
   </div>
   
   
-  <div class="pp-expect"><span class="pp-k">Expect</span><p class="pp-lead">62-68 snaps, pass rate around .52-.55 at a short depth, Swift at 15-18 touches with real checkdown work, Burden and Loveland leading targets and Odunze carrying the air yards at low volume.</p><details class="pp-more"><summary>more</summary><p>Points nearer the low 20s than the implied total.</p></details></div>
-  
-  
-  <div class="pp-k pp-k-sec">Who the plan moves <span class="flat">&middot; 1 up, 3 down &middot; one player, one market, one side of Kalshi's line when the plan was written</span></div>
-  <div class="pp-calls">
+  <div class="pp-k pp-k-sec">Who the plan moved <span class="flat">&middot; 1 up, 3 down &middot; graded off the box score, with whether the reason given showed up</span></div>
+  <div class="pp-calls rv-calls">
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>D&#x27;Andre Swift</b><span class="pp-bet">over 14.5 rec yds</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 64%"></i></div><b>64%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 57%"></i></div><b>57%</b></div>
+      
+      <div class="rv-meter" title="The line 14.5 against the actual 12">
+        <div class="track"><i class="fill" style="width: 66.2%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 14.5</span><b>12</b></div>
       </div>
+      
+      <span class="badge warn rv-read">read held · result didn&#x27;t</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> The checkdown role arrived exactly as described — 4 targets at -10 air yards on an offense that faced a 61% blitz rate — but the yards after catch (22 total, -2.38 EPA) left him 2.5 short.</p>
       <div class="pp-callmeta">
-        <span class="badge mute" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #15 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal / Edge / Edge+: over 14.5 rec yds"><i>Normal / Edge / Edge+</i> 15+ <small>64&cent;</small></span>
+        <span class="rung miss" title="Normal / Edge / Edge+: over 14.5 rec yds"><i>Normal / Edge / Edge+</i> 15+ <small>64&cent;</small></span>
       </div>
-      <p class="pp-lead">New England pressures at a top-6 rate and Chicago&#x27;s answer is the back underneath; with the other back sidelined, Swift owns the checkdowns on a 65-plus snap offense.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> 5 targets for 26 against Atlanta, 5-54 vs Minnesota, 4-30 at Green Bay. Our week-6 call on this same mechanism hit at 26 yards.</p><p><b>Against it.</b> vs #15 pass EPA allowed; the engine&#x27;s mean is above the line and the market is already leaning that way, so this is the volume rung, not a price edge. Opponent strength has no measured effect on backs&#x27; receiving.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>New England pressures at a top-6 rate and Chicago&#x27;s answer is the back underneath; with the other back sidelined, Swift owns the checkdowns on a 65-plus snap offense. </p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 64%"></i></div><b>64%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 57%"></i></div><b>57%</b></div>
+        </div>
+        <p><b>Evidence.</b> 5 targets for 26 against Atlanta, 5-54 vs Minnesota, 4-30 at Green Bay. Our week-6 call on this same mechanism hit at 26 yards.</p>
+        <p><b>Against it.</b> vs #15 pass EPA allowed; the engine&#x27;s mean is above the line and the market is already leaning that way, so this is the volume rung, not a price edge. Opponent strength has no measured effect on backs&#x27; receiving.</p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Caleb Williams</b><span class="pp-bet">under 1.5 pass TDs</span></div>
-        <span class="badge mute">both</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 69%"></i></div><b>69%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 44%"></i></div><b>44%</b></div>
+      
+      <div class="rv-meter" title="The line 1.5 against the actual 2">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 60.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 1.5</span><b>2</b></div>
       </div>
+      
+      <span class="badge bad rv-read">wrong read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Both Chicago passing scores came in the red zone or just outside it — Burden 24 yards on 3rd-and-17 at Q2 0:21 and Loveland 12 at Q3 9:48 — and the red-zone-defense premise about New England simply didn&#x27;t hold.</p>
       <div class="pp-callmeta">
-        <span class="badge mute" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #15 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 1.5 pass TDs"><i>Normal</i> &lt;2 <small>45&cent;</small></span><span class="rung" title="Edge: &lt;4 pass TDs"><i>Edge</i> &lt;4 <small>91&cent;</small></span><span class="rung" title="Edge+: &lt;5 pass TDs"><i>Edge+</i> &lt;5 <small>99&cent;</small></span>
+        <span class="rung miss" title="Normal: under 1.5 pass TDs"><i>Normal</i> &lt;2 <small>45&cent;</small></span><span class="rung hit" title="Edge: &lt;4 pass TDs"><i>Edge</i> &lt;4 <small>91&cent;</small></span><span class="rung hit" title="Edge+: &lt;5 pass TDs"><i>Edge+</i> &lt;5 <small>99&cent;</small></span>
       </div>
-      <p class="pp-lead">Chicago&#x27;s scores arrive on the ground near the goal line and its drives have been dying inside the 20 all year, against a defense that ranks top-10 in red-zone touchdown rate allowed.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> Red-zone TD rate .526 with red-zone EPA -0.032; three of four scores vs Atlanta were short runs. Williams has 2, 0 and 1 passing TD in his three starts.</p><p><b>Against it.</b> vs #15 pass EPA allowed; the engine&#x27;s mean is clearly below the line while the market prices better than a coin flip to go over — that gap is the call. Rests on the finishing half of the split, so direction over conviction.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>Chicago&#x27;s scores arrive on the ground near the goal line and its drives have been dying inside the 20 all year, against a defense that ranks top-10 in red-zone touchdown rate allowed. </p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 69%"></i></div><b>69%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 44%"></i></div><b>44%</b></div>
+        </div>
+        <p><b>Evidence.</b> Red-zone TD rate .526 with red-zone EPA -0.032; three of four scores vs Atlanta were short runs. Williams has 2, 0 and 1 passing TD in his three starts.</p>
+        <p><b>Against it.</b> vs #15 pass EPA allowed; the engine&#x27;s mean is clearly below the line while the market prices better than a coin flip to go over — that gap is the call. Rests on the finishing half of the split, so direction over conviction.</p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>D&#x27;Andre Swift</b><span class="pp-bet">under 59.5 rush yds</span></div>
-        <span class="badge mute">both</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 69%"></i></div><b>69%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+      
+      <div class="rv-meter" title="The line 59.5 against the actual 78">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 61.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 59.5</span><b>78</b></div>
       </div>
+      
+      <span class="badge bad rv-read">missed · read partly held</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> The efficiency half held (3.55 ypc, -1.41 rush EPA, 2 stuffs) but the volume half was mispriced: 22 carries against a 14.9 projection because Chicago led wire to wire.</p>
       <div class="pp-callmeta">
-        <span class="badge mute" title="The opposing defense's rank on rush EPA allowed entering the week (#1 toughest)">D #13 rush EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 59.5 rush yds"><i>Normal</i> &lt;60 <small>48&cent;</small></span><span class="rung" title="Edge: &lt;100 rush yds"><i>Edge</i> &lt;100 <small>84&cent;</small></span><span class="rung" title="Edge+: &lt;140 rush yds"><i>Edge+</i> &lt;140 <small>98&cent;</small></span>
+        <span class="rung miss" title="Normal: under 59.5 rush yds"><i>Normal</i> &lt;60 <small>48&cent;</small></span><span class="rung hit" title="Edge: &lt;100 rush yds"><i>Edge</i> &lt;100 <small>84&cent;</small></span><span class="rung hit" title="Edge+: &lt;140 rush yds"><i>Edge+</i> &lt;140 <small>98&cent;</small></span>
       </div>
-      <p class="pp-lead">Extra volume from the backup&#x27;s absence hasn&#x27;t fixed his yards per carry, and New England&#x27;s front is a top-12 run defense by yards allowed per attempt.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> 16-44 (2.75 a carry) vs Atlanta, 15-58 vs the Jets, 16-45 vs Minnesota; Johnson took 13 carries last week. New England allows 3.94 a carry and 91.8 rush yards a game.</p><p><b>Against it.</b> vs #13 rush EPA allowed; the engine&#x27;s mean sits well below the line while the market is near even — the same under came in at 44 yards in our week-6 review on this mechanism. </p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>Extra volume from the backup&#x27;s absence hasn&#x27;t fixed his yards per carry, and New England&#x27;s front is a top-12 run defense by yards allowed per attempt. </p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 69%"></i></div><b>69%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+        </div>
+        <p><b>Evidence.</b> 16-44 (2.75 a carry) vs Atlanta, 15-58 vs the Jets, 16-45 vs Minnesota; Johnson took 13 carries last week. New England allows 3.94 a carry and 91.8 rush yards a game.</p>
+        <p><b>Against it.</b> vs #13 rush EPA allowed; the engine&#x27;s mean sits well below the line while the market is near even — the same under came in at 44 yards in our week-6 review on this mechanism. </p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Colston Loveland</b><span class="pp-bet">under 39.5 rec yds</span></div>
-        <span class="badge mute">both</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 66%"></i></div><b>66%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 44%"></i></div><b>44%</b></div>
+      
+      <div class="rv-meter" title="The line 39.5 against the actual 69">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 45.8%"></i></div>
+        <div class="rv-meterlbl"><span>line 39.5</span><b>69</b></div>
       </div>
+      
+      <span class="badge bad rv-read">wrong read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Twelve targets, 112 air yards and 47.5% of the team&#x27;s air-yard share — the &#x27;short and in traffic&#x27; description and the TE-suppression claim both failed, including a 22-yard throw at Q3 11:04.</p>
       <div class="pp-callmeta">
-        <span class="badge mute" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #15 pass EPA allowed</span>
-        <span class="badge mute">low</span>
-        <span class="rung" title="Normal: under 39.5 rec yds"><i>Normal</i> &lt;40 <small>44&cent;</small></span><span class="rung" title="Edge: &lt;80 rec yds"><i>Edge</i> &lt;80 <small>84&cent;</small></span><span class="rung" title="Edge+: &lt;110 rec yds"><i>Edge+</i> &lt;110 <small>96&cent;</small></span>
+        <span class="rung miss" title="Normal: under 39.5 rec yds"><i>Normal</i> &lt;40 <small>44&cent;</small></span><span class="rung hit" title="Edge: &lt;80 rec yds"><i>Edge</i> &lt;80 <small>84&cent;</small></span><span class="rung hit" title="Edge+: &lt;110 rec yds"><i>Edge+</i> &lt;110 <small>96&cent;</small></span>
       </div>
-      <p class="pp-lead">His targets come short and in traffic, and New England is one of the stingiest defenses in the league to tight ends — the one positional matchup that carries any signal.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> 31, 57, 19 and 65 yards in his last four; 27.5% air-yards share against Atlanta but a 3.9 team aDOT. New England ranks 7th in points allowed to tight ends.</p><p><b>Against it.</b> vs #15 pass EPA allowed; engine mean sits far under the line while the market prices him 56% to clear. Noted: unders on him broke in both our week-4 and week-6 reviews — the read here is the positional matchup, not the old &#x27;no targets&#x27; claim.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>His targets come short and in traffic, and New England is one of the stingiest defenses in the league to tight ends — the one positional matchup that carries any signal. </p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 66%"></i></div><b>66%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 44%"></i></div><b>44%</b></div>
+        </div>
+        <p><b>Evidence.</b> 31, 57, 19 and 65 yards in his last four; 27.5% air-yards share against Atlanta but a 3.9 team aDOT. New England ranks 7th in points allowed to tight ends.</p>
+        <p><b>Against it.</b> vs #15 pass EPA allowed; engine mean sits far under the line while the market prices him 56% to clear. Noted: unders on him broke in both our week-4 and week-6 reviews — the read here is the positional matchup, not the old &#x27;no targets&#x27; claim.</p>
+      </details>
     </div>
     
   </div>
+  
+  
+  <div class="pp-k pp-k-sec">Lines the report singled out <span class="flat">&middot; signal carries forward, noise doesn't</span></div>
+  <div class="rv-notes">
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Colston Loveland</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">12 targets, 7-69, TD, 84.1% snaps, 47.5% air-yards share</span>
+      <p class="pp-sub">He is the primary read, not a matchup-dependent piece; targets came on 2nd-and-14 (Q3 11:04) and 4th-and-2 (Q4 9:40).</p>
+      
+    </div>
+    
+    <div class="rv-note-card ">
+      <div class="rv-notehead"><b>Luther Burden III</b><span class="badge mute">noise</span></div>
+      <span class="pp-bet">4 targets, 4-130, TD on 60.9% snaps</span>
+      <p class="pp-sub">Two explosives (58, 26) and a 24-yard TD on 3rd-and-17; 32.5 yards per target is unrepeatable at that snap share.</p>
+      
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>D&#x27;Andre Swift</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">22 carries/78/TD, 4 targets/4-12 (projected 14.9 carries)</span>
+      <p class="pp-sub">Monangai out plus wire-to-wire lead; 3.55 ypc and -1.41 rush EPA, so the production was volume, and the checkdown work (-10 air yards) was low-value.</p>
+      
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Rome Odunze</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">5 targets, 4-69, 63 air yards on 94.2% snaps</span>
+      <p class="pp-sub">Full-time field-stretcher at modest target volume — three of his catches were 21-yarders on third-and-long, all in the fourth quarter.</p>
+      
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Kalif Raymond</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">2 targets, 0 catches, 0 yards on 69.6% snaps (projected 30 rec yards)</span>
+      <p class="pp-sub">High snap share without target share; -2.19 receiving EPA.</p>
+      <details class="pp-more"><summary>more</summary><p>The engine&#x27;s usage share overrates him.</p></details>
+    </div>
+    
+  </div>
+  
+  
+  <details class="rv-fold">
+    <summary>The plan's pre-game read on this offense <span class="flat">&middot; medium confidence</span></summary>
+    <div class="pp-offcards">
+      <div class="pp-offcard"><div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div><p class="pp-lead">A volume offense: 72.5 plays a game, 68.8% completions at a very short depth (3.9 aDOT and 193 YAC in week 6), field EPA +0.063 but red-zone EPA negative at -0.032.</p></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div><p class="pp-lead">Sustained drives and short rushing scores — three of four red-zone touchdowns against Atlanta came on the ground — plus the occasional YAC explosive from Burden or Loveland.</p></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div><p class="pp-lead">Pressure that gets home and its own turnovers: 3 points at 24.4% pressure against Minnesota, 7 at Green Bay with five giveaways.</p><details class="pp-more"><summary>more</summary><p>Red-zone stalls are tagged in three separate weeks.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div><p class="pp-lead">New England generates pressure at a top-6 rate and ranks 7th in points allowed to tight ends and 10th in red-zone touchdown rate allowed, but it is middling between the 20s (15th in pass EPA, 14th in pass yards allowed) and gives up explosives weekly.</p><details class="pp-more"><summary>more</summary><p>Chicago&#x27;s quick game should move it; finishing is the question. Note our week-6 review: a passing under on pressure grounds was a read error against this offense&#x27;s 3.9 aDOT.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div><p class="pp-lead">Monangai (thumb/toe) has not practiced in two sessions and looks unlikely, handing the backfield to Swift with Johnson in the complementary role; Jonah Jackson is questionable with a hip, with Newman next up, and Braxton Jones is on IR.</p><details class="pp-more"><summary>more</summary><p>On the other side, Carlton Davis is questionable (limited Tuesday) — if he sits, Charles Woods, the lowest-rated corner who played last week, stays on the field and the chunk-play path opens.</p></details></div>
+    </div>
+  </details>
   
 </div>
 
   <div class="gm-tiles">
-    <div class="gm-tile big"><b>26.8<i class="act over" title="Actual">(30)</i></b><span>Points</span></div><div class="gm-tile "><b>63</b><span>Plays</span></div><div class="gm-tile "><b>230<i class="act over" title="Actual">(308)</i></b><span>Pass yds</span></div><div class="gm-tile "><b>113<i class="act over" title="Actual">(116)</i></b><span>Rush yds</span></div><div class="gm-tile "><b>2.2</b><span>Sacks taken</span></div><div class="gm-tile "><b>0.6<i class="act over" title="Actual">(0)</i></b><span>INTs thrown</span></div>
+    <div class="gm-tile rv big over"><b>30</b><span>Points</span><small>projected 26.8</small></div><div class="gm-tile rv  "><b class="flat">63</b><span>Plays</span><small>projected</small></div><div class="gm-tile rv  over"><b>308</b><span>Pass yds</span><small>projected 230</small></div><div class="gm-tile rv  over"><b>116</b><span>Rush yds</span><small>projected 113</small></div><div class="gm-tile rv  "><b class="flat">2.2</b><span>Sacks taken</span><small>projected</small></div><div class="gm-tile rv  over"><b>0</b><span>INTs thrown</span><small>projected 0.6</small></div>
   </div>
   <div class="gm-split">
     <div class="gm-players">
@@ -2342,7 +2927,7 @@
 
 
 
-<details class="hfa-card hfa-sec gm-starters pp-sec" id="starters" data-sec="starters" open>
+<details class="hfa-card hfa-sec gm-starters pp-sec" id="starters" data-sec="starters">
   <summary class="hfa-head pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <div class="hfa-eyebrow">Starters on the field</div>
@@ -2360,7 +2945,7 @@
         <div class="gm-ftag top">CHI defense</div>
         <div class="gm-los"></div>
         <div class="gm-ftag bot">NE offense</div>
-        <div class="gm-fp def r5" style="left: 26%; top: 51%" title="Austin Booker DLlast game 53% of snapsEdge · 81st pct of group · 454 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.8% lg 3.5%Sack rate1.3% lg 0.9%TFL rate1.5% lg 1.2%Missed tackle %8% lg 9%context (not rated): 18 prs · 6.2 sk · 26 tkl / 2 miss · 0 INT · 2 PD"><span class="dot">81</span><span class="nm">A. Booker <small>EDGE</small></span></div><div class="gm-fp def r3" style="left: 44%; top: 51%" title="Grady Jarrett DLlast game 51% of snapsInterior DL · 47th pct of group · 529 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.9% lg 1.8%Sack rate0.2% lg 0.5%TFL rate0.4% lg 0.8%Missed tackle %10% lg 11%context (not rated): 0 tgt · 5.0 yds/tgt · 100% comp · aDOT -4.0 · 10 prs · 0.8 sk · 20 tkl / 2 miss · 0 INT · 2 PD"><span class="dot">47</span><span class="nm">G. Jarrett <small>DI</small></span></div><div class="gm-fp def r2" style="left: 56%; top: 51%" title="James Lynch DLlast game 48% of snapsInterior DL · 34th pct of group · 299 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.5% lg 1.8%Sack rate0.2% lg 0.5%TFL rate0.6% lg 0.8%Missed tackle %9% lg 11%context (not rated): 1 tgt · 0.0 yds/tgt · 0% comp · aDOT -4.0 · 4 prs · 0.2 sk · 6 tkl / 0 miss · 0 INT · 2 PD"><span class="dot">34</span><span class="nm">J. Lynch <small>DI</small></span></div><div class="gm-fp def thin" style="left: 75%; top: 51%" title="Daniel Hardy DLlast game 44% of snapsEdge · 62nd pct of group · thin sample · 68 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.5% lg 3.5%Sack rate1.1% lg 0.9%TFL rate1.3% lg 1.2%Missed tackle %9% lg 9%context (not rated): 2 tgt · 0.7 yds/tgt · 33% comp · aDOT 4.3 · 2 prs · 1.0 sk · 5 tkl / 0 miss · 0 INT · 1 PD"><span class="dot">62</span><span class="nm">D. Hardy <small>EDGE</small></span></div><div class="gm-fp def r5" style="left: 41%; top: 37%" title="D&amp;#x27;Marco Jackson LBlast game 60% of snapsLinebacker · 86th pct of group · 294 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.18 lg 0.38Targets drawn4.6% lg 5.6%Missed tackle %8% lg 8%Tackle rate9.0% lg 11.7%TFL rate0.5% lg 0.8%context (not rated): 12 tgt · 2.1 yds/tgt · 50% comp · aDOT 2.7 · 1 prs · 0.5 sk · 22 tkl / 2 miss · 0 INT · 2 PD"><span class="dot">86</span><span class="nm">D. Jackson <small>LB</small></span></div><div class="gm-fp def r5" style="left: 59%; top: 37%" title="Devin Bush Jr. LBlast game 57% of snapsLinebacker · 96th pct of group · 732 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.29 lg 0.38Targets drawn5.3% lg 5.6%Missed tackle %5% lg 8%Tackle rate13.0% lg 11.7%TFL rate1.1% lg 0.8%context (not rated): 38 tgt · 5.2 yds/tgt · 63% comp · aDOT 2.8 · 7 prs · 2.0 sk · 97 tkl / 4 miss · 2 INT · 5 PD"><span class="dot">96</span><span class="nm">D. Bush Jr. <small>LB</small></span></div><div class="gm-fp def r1" style="left: 7%; top: 42%" title="Malik Muhammad DBlast game 60% of snapsSafety · 2nd pct of group · 257 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.80 lg 0.47Targets drawn9.0% lg 5.6%Missed tackle %12% lg 9%context (not rated): 28 tgt · 9.1 yds/tgt · 57% comp · aDOT 9.5 · 2 prs · 1.0 sk · 18 tkl / 3 miss · 1 INT · 4 PD"><span class="dot">2</span><span class="nm">M. Muhammad <small>CB</small></span></div><div class="gm-fp def r3" style="left: 93%; top: 42%" title="Cameron Lewis DBlast game 48% of snapsSafety · 48th pct of group · 404 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.45 lg 0.47Targets drawn6.9% lg 5.6%Missed tackle %7% lg 9%context (not rated): 30 tgt · 6.1 yds/tgt · 68% comp · aDOT 6.2 · 3 prs · 41 tkl / 3 miss · 0 INT · 2 PD"><span class="dot">48</span><span class="nm">C. Lewis <small>CB</small></span></div><div class="gm-fp def thin" style="left: 18%; top: 44%" title="Elijah Hicks DBlast game 38% of snapsSafety · 65th pct of group · thin sample · 82 wtd snaps2026 wks 1-6 + ½·2025Missed tackle %8% lg 9%context (not rated): 8 tgt · 8.1 yds/tgt · 73% comp · aDOT 6.6 · 1 prs · 13 tkl / 1 miss"><span class="dot">65</span><span class="nm">E. Hicks <small>NB</small></span></div><div class="gm-fp def r3" style="left: 34%; top: 19%" title="Dillon Thieneman DBlast game 60% of snapsSafety · 59th pct of group · 309 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.46 lg 0.47Targets drawn6.2% lg 5.6%Missed tackle %6% lg 9%context (not rated): 20 tgt · 7.0 yds/tgt · 45% comp · aDOT 9.1 · 2 prs · 1.0 sk · 39 tkl / 2 miss · 1 INT · 5 PD"><span class="dot">59</span><span class="nm">D. Thieneman <small>S</small></span></div><div class="gm-fp def r1" style="left: 66%; top: 19%" title="Jaylon Johnson DBlast game 60% of snapsSafety · 0th pct of group · 448 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.98 lg 0.47Targets drawn7.6% lg 5.6%Missed tackle %17% lg 9%context (not rated): 37 tgt · 13.9 yds/tgt · 77% comp · aDOT 13.6 · 1 prs · 25 tkl / 7 miss · 0 INT · 3 PD"><span class="dot">0</span><span class="nm">J. Johnson <small>S</small></span></div>
+        <div class="gm-fp def r5" style="left: 26%; top: 51%" title="Austin Booker DLlast game 53% of snapsEdge · 82nd pct of group · 454 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.8% lg 3.5%Sack rate1.3% lg 0.9%TFL rate1.5% lg 1.2%Missed tackle %8% lg 9%context (not rated): 18 prs · 6.2 sk · 26 tkl / 2 miss · 0 INT · 2 PD"><span class="dot">82</span><span class="nm">A. Booker <small>EDGE</small></span></div><div class="gm-fp def r3" style="left: 44%; top: 51%" title="Grady Jarrett DLlast game 51% of snapsInterior DL · 47th pct of group · 529 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.9% lg 1.8%Sack rate0.2% lg 0.5%TFL rate0.4% lg 0.8%Missed tackle %10% lg 11%context (not rated): 0 tgt · 5.0 yds/tgt · 100% comp · aDOT -4.0 · 10 prs · 0.8 sk · 20 tkl / 2 miss · 0 INT · 2 PD"><span class="dot">47</span><span class="nm">G. Jarrett <small>DI</small></span></div><div class="gm-fp def r2" style="left: 56%; top: 51%" title="James Lynch DLlast game 48% of snapsInterior DL · 34th pct of group · 299 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.5% lg 1.8%Sack rate0.2% lg 0.5%TFL rate0.6% lg 0.8%Missed tackle %9% lg 11%context (not rated): 1 tgt · 0.0 yds/tgt · 0% comp · aDOT -4.0 · 4 prs · 0.2 sk · 6 tkl / 0 miss · 0 INT · 2 PD"><span class="dot">34</span><span class="nm">J. Lynch <small>DI</small></span></div><div class="gm-fp def thin" style="left: 75%; top: 51%" title="Daniel Hardy DLlast game 44% of snapsEdge · 63rd pct of group · thin sample · 68 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.5% lg 3.5%Sack rate1.1% lg 0.9%TFL rate1.3% lg 1.2%Missed tackle %9% lg 9%context (not rated): 2 tgt · 0.7 yds/tgt · 33% comp · aDOT 4.3 · 2 prs · 1.0 sk · 5 tkl / 0 miss · 0 INT · 1 PD"><span class="dot">63</span><span class="nm">D. Hardy <small>EDGE</small></span></div><div class="gm-fp def r5" style="left: 41%; top: 37%" title="D&amp;#x27;Marco Jackson LBlast game 60% of snapsLinebacker · 85th pct of group · 294 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.19 lg 0.38Targets drawn4.6% lg 5.6%Missed tackle %8% lg 8%Tackle rate9.1% lg 11.8%TFL rate0.5% lg 0.8%context (not rated): 12 tgt · 2.1 yds/tgt · 50% comp · aDOT 2.7 · 1 prs · 0.5 sk · 22 tkl / 2 miss · 0 INT · 2 PD"><span class="dot">85</span><span class="nm">D. Jackson <small>LB</small></span></div><div class="gm-fp def r5" style="left: 59%; top: 37%" title="Devin Bush Jr. LBlast game 57% of snapsLinebacker · 95th pct of group · 732 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.29 lg 0.38Targets drawn5.3% lg 5.6%Missed tackle %5% lg 8%Tackle rate13.0% lg 11.8%TFL rate1.1% lg 0.8%context (not rated): 38 tgt · 5.2 yds/tgt · 63% comp · aDOT 2.8 · 7 prs · 2.0 sk · 97 tkl / 4 miss · 2 INT · 5 PD"><span class="dot">95</span><span class="nm">D. Bush Jr. <small>LB</small></span></div><div class="gm-fp def r1" style="left: 7%; top: 42%" title="Malik Muhammad DBlast game 60% of snapsSafety · 2nd pct of group · 257 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.80 lg 0.47Targets drawn9.0% lg 5.6%Missed tackle %12% lg 9%context (not rated): 28 tgt · 9.1 yds/tgt · 57% comp · aDOT 9.5 · 2 prs · 1.0 sk · 18 tkl / 3 miss · 1 INT · 4 PD"><span class="dot">2</span><span class="nm">M. Muhammad <small>CB</small></span></div><div class="gm-fp def r3" style="left: 93%; top: 42%" title="Cameron Lewis DBlast game 48% of snapsSafety · 48th pct of group · 404 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.45 lg 0.47Targets drawn6.9% lg 5.6%Missed tackle %7% lg 9%context (not rated): 30 tgt · 6.1 yds/tgt · 68% comp · aDOT 6.2 · 3 prs · 41 tkl / 3 miss · 0 INT · 2 PD"><span class="dot">48</span><span class="nm">C. Lewis <small>CB</small></span></div><div class="gm-fp def thin" style="left: 18%; top: 44%" title="Elijah Hicks DBlast game 38% of snapsSafety · 65th pct of group · thin sample · 82 wtd snaps2026 wks 1-6 + ½·2025Missed tackle %8% lg 9%context (not rated): 8 tgt · 8.1 yds/tgt · 73% comp · aDOT 6.6 · 1 prs · 13 tkl / 1 miss"><span class="dot">65</span><span class="nm">E. Hicks <small>NB</small></span></div><div class="gm-fp def r3" style="left: 34%; top: 19%" title="Dillon Thieneman DBlast game 60% of snapsSafety · 59th pct of group · 309 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.46 lg 0.47Targets drawn6.2% lg 5.6%Missed tackle %6% lg 9%context (not rated): 20 tgt · 7.0 yds/tgt · 45% comp · aDOT 9.1 · 2 prs · 1.0 sk · 39 tkl / 2 miss · 1 INT · 5 PD"><span class="dot">59</span><span class="nm">D. Thieneman <small>S</small></span></div><div class="gm-fp def r1" style="left: 66%; top: 19%" title="Jaylon Johnson DBlast game 60% of snapsSafety · 0th pct of group · 448 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.98 lg 0.47Targets drawn7.6% lg 5.6%Missed tackle %17% lg 9%context (not rated): 37 tgt · 13.9 yds/tgt · 77% comp · aDOT 13.6 · 1 prs · 25 tkl / 7 miss · 0 INT · 3 PD"><span class="dot">0</span><span class="nm">J. Johnson <small>S</small></span></div>
         <div class="gm-fp off r2" style="left: 7%; top: 63%" title="DeMario Douglas WRprojected: 4.9 tgt · 40 rec yds26th pct production among the position&#x27;s starter pool · 33 yds/g over 14.0 wtd games3.8 tgt/g · 0.2 car/g"><span class="dot">26</span><span class="nm">D. Douglas <small>WR</small></span></div><div class="gm-fp off r3" style="left: 18%; top: 65%" title="Mack Hollins WRprojected: 3.2 tgt · 32 rec yds52nd pct production among the position&#x27;s starter pool · 44 yds/g over 11.0 wtd games4.8 tgt/g · 0.0 car/g"><span class="dot">52</span><span class="nm">M. Hollins <small>WR</small></span></div><div class="gm-fp off r3" style="left: 80%; top: 62%" title="Hunter Henry TEprojected: 4.1 tgt · 31 rec yds56th pct production among the position&#x27;s starter pool · 42 yds/g over 14.5 wtd games4.7 tgt/g · 0.0 car/g"><span class="dot">56</span><span class="nm">H. Henry <small>TE</small></span></div><div class="gm-fp off r3" style="left: 93%; top: 63%" title="Romeo Doubs WRprojected: 3.7 tgt · 38 rec yds53rd pct production among the position&#x27;s starter pool · 44 yds/g over 14.0 wtd games4.8 tgt/g · 0.0 car/g"><span class="dot">53</span><span class="nm">R. Doubs <small>WR</small></span></div><div class="gm-fp off r5" style="left: 50%; top: 75%" title="Drake Maye QBon report – Shoulderprojected: 30 att · 234 pass yds84th pct production among the position&#x27;s starter pool · 281 yds/g over 14.5 wtd games29.6 att/g"><span class="dot">84<em>?</em></span><span class="nm">D. Maye <small>QB</small></span></div><div class="gm-fp off r3" style="left: 39%; top: 76%" title="Rhamondre Stevenson RBprojected: 9.5 car · 32 rush · 2.6 tgt · 14 rec56th pct production among the position&#x27;s starter pool · 65 yds/g over 13.0 wtd games2.9 tgt/g · 10.5 car/g"><span class="dot">56</span><span class="nm">R. Stevenson <small>RB</small></span></div><div class="gm-fp off ol" style="left: 31%; top: 62%" title="Will Campbell Tlast game 100% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LT<em>?</em></span></div><div class="gm-fp off ol" style="left: 40.5%; top: 62%" title="Alijah Vera-Tucker Glast game 32% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LG<em>O</em></span></div><div class="gm-fp off ol" style="left: 50%; top: 62%" title="Ben Brown Clast game 79% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">C<em>O</em></span></div><div class="gm-fp off ol" style="left: 59.5%; top: 62%" title="Jared Wilson OLlast game 100% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RG</span></div><div class="gm-fp off ol" style="left: 69%; top: 62%" title="Caleb Lomu Tlast game 88% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RT</span></div>
       </div>
     </div>
@@ -2371,7 +2956,7 @@
         <div class="gm-ftag top">NE defense</div>
         <div class="gm-los"></div>
         <div class="gm-ftag bot">CHI offense</div>
-        <div class="gm-fp def r5" style="left: 26%; top: 51%" title="Elijah Ponder LBlast game 71% of snapsEdge · 96th pct of group · 376 wtd snaps2026 wks 1-6 + ½·2025Pressure rate4.4% lg 3.5%Sack rate1.7% lg 0.9%TFL rate2.1% lg 1.2%Missed tackle %4% lg 9%context (not rated): 2 tgt · 8.8 yds/tgt · 100% comp · aDOT 0.8 · 18 prs · 7.5 sk · 24 tkl / 0 miss"><span class="dot">96</span><span class="nm">E. Ponder <small>EDGE</small></span></div><div class="gm-fp def r4" style="left: 44%; top: 51%" title="Milton Williams DTlast game 68% of snapsInterior DL · 73rd pct of group · 466 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.9% lg 1.8%Sack rate0.6% lg 0.5%TFL rate1.0% lg 0.8%Missed tackle %8% lg 11%context (not rated): 1 tgt · 4.0 yds/tgt · 50% comp · aDOT -4.0 · 9 prs · 2.8 sk · 18 tkl / 1 miss · 0 INT · 0 PD"><span class="dot">73</span><span class="nm">M. Williams <small>DI</small></span></div><div class="gm-fp def r1" style="left: 56%; top: 51%" title="Cory Durden DTlast game 43% of snapsInterior DL · 14th pct of group · 364 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.0% lg 1.8%Sack rate0.1% lg 0.5%TFL rate0.7% lg 0.8%Missed tackle %13% lg 11%context (not rated): 0 tgt · 2.0 yds/tgt · 100% comp · aDOT -9.0 · 2 prs · 12 tkl / 2 miss"><span class="dot">14</span><span class="nm">C. Durden <small>DI</small></span></div><div class="gm-fp def r3" style="left: 75%; top: 51%" title="Dre&amp;#x27;Mont Jones LBon report – Shoulderlast game 66% of snapsEdge · 54th pct of group · 578 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.3% lg 3.5%Sack rate0.8% lg 0.9%TFL rate1.0% lg 1.2%Missed tackle %4% lg 9%context (not rated): 4 tgt · 4.8 yds/tgt · 67% comp · aDOT -2.0 · 19 prs · 4.5 sk · 26 tkl / 0 miss · 0 INT · 0 PD"><span class="dot">54<em>?</em></span><span class="nm">D. Jones <small>EDGE</small></span></div><div class="gm-fp def r3" style="left: 41%; top: 37%" title="Robert Spillane LBlast game 91% of snapsLinebacker · 44th pct of group · 720 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.43 lg 0.38Targets drawn5.6% lg 5.6%Missed tackle %8% lg 8%Tackle rate12.0% lg 11.7%TFL rate0.5% lg 0.8%context (not rated): 40 tgt · 8.0 yds/tgt · 79% comp · aDOT 4.4 · 5 prs · 0.5 sk · 87 tkl / 8 miss · 1 INT · 2 PD"><span class="dot">44</span><span class="nm">R. Spillane <small>LB</small></span></div><div class="gm-fp def r2" style="left: 59%; top: 37%" title="Christian Elliss LBQuestionable – Chestlast game 91% of snapsLinebacker · 29th pct of group · 600 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.51 lg 0.38Targets drawn6.9% lg 5.6%Missed tackle %7% lg 8%Tackle rate13.6% lg 11.7%TFL rate0.3% lg 0.8%context (not rated): 44 tgt · 7.5 yds/tgt · 76% comp · aDOT 2.8 · 7 prs · 1.0 sk · 84 tkl / 6 miss · 0 INT · 2 PD"><span class="dot">29<em>Q</em></span><span class="nm">C. Elliss <small>LB</small></span></div><div class="gm-fp def r3" style="left: 7%; top: 42%" title="Christian Gonzalez CBQuestionable – Illnesslast game 91% of snapsCornerback · 57th pct of group · 620 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.57 lg 0.66Targets drawn10.1% lg 9.1%Missed tackle %8% lg 10%context (not rated): 64 tgt · 5.3 yds/tgt · 54% comp · aDOT 9.8 · 48 tkl / 4 miss · 0 INT · 10 PD"><span class="dot">57<em>Q</em></span><span class="nm">C. Gonzalez <small>CB</small></span></div><div class="gm-fp def r2" style="left: 93%; top: 42%" title="Marcus Jones CBlast game 88% of snapsCornerback · 32nd pct of group · 658 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.77 lg 0.66Targets drawn10.2% lg 9.1%Missed tackle %6% lg 10%context (not rated): 69 tgt · 7.6 yds/tgt · 64% comp · aDOT 7.8 · 2 prs · 1.0 sk · 60 tkl / 3 miss · 2 INT · 10 PD"><span class="dot">32</span><span class="nm">M. Jones <small>CB</small></span></div><div class="gm-fp def r2" style="left: 18%; top: 44%" title="Charles Woods CBlast game 59% of snapsCornerback · 27th pct of group · 242 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.78 lg 0.66Targets drawn9.7% lg 9.1%Missed tackle %9% lg 10%context (not rated): 24 tgt · 8.4 yds/tgt · 63% comp · aDOT 9.2 · 28 tkl / 2 miss · 1 INT · 4 PD"><span class="dot">27</span><span class="nm">C. Woods <small>NB</small></span></div><div class="gm-fp def r4" style="left: 34%; top: 19%" title="Kevin Byard SQuestionable – Chestlast game 91% of snapsSafety · 73rd pct of group · 886 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.43 lg 0.47Targets drawn4.5% lg 5.6%Missed tackle %9% lg 9%context (not rated): 38 tgt · 9.7 yds/tgt · 64% comp · aDOT 11.1 · 2 prs · 66 tkl / 6 miss · 4 INT · 6 PD"><span class="dot">73<em>Q</em></span><span class="nm">K. Byard <small>S</small></span></div><div class="gm-fp def r3" style="left: 66%; top: 19%" title="Craig Woodson SQuestionable – Shoulderlast game 91% of snapsSafety · 56th pct of group · 742 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.52 lg 0.47Targets drawn5.4% lg 5.6%Missed tackle %7% lg 9%context (not rated): 40 tgt · 9.9 yds/tgt · 61% comp · aDOT 12.1 · 2 prs · 62 tkl / 4 miss · 1 INT · 4 PD"><span class="dot">56<em>Q</em></span><span class="nm">C. Woodson <small>S</small></span></div>
+        <div class="gm-fp def r5" style="left: 26%; top: 51%" title="Elijah Ponder LBlast game 71% of snapsEdge · 96th pct of group · 376 wtd snaps2026 wks 1-6 + ½·2025Pressure rate4.4% lg 3.5%Sack rate1.7% lg 0.9%TFL rate2.1% lg 1.2%Missed tackle %4% lg 9%context (not rated): 2 tgt · 8.8 yds/tgt · 100% comp · aDOT 0.8 · 18 prs · 7.5 sk · 24 tkl / 0 miss"><span class="dot">96</span><span class="nm">E. Ponder <small>EDGE</small></span></div><div class="gm-fp def r4" style="left: 44%; top: 51%" title="Milton Williams DTlast game 68% of snapsInterior DL · 73rd pct of group · 466 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.9% lg 1.8%Sack rate0.6% lg 0.5%TFL rate1.0% lg 0.8%Missed tackle %8% lg 11%context (not rated): 1 tgt · 4.0 yds/tgt · 50% comp · aDOT -4.0 · 9 prs · 2.8 sk · 18 tkl / 1 miss · 0 INT · 0 PD"><span class="dot">73</span><span class="nm">M. Williams <small>DI</small></span></div><div class="gm-fp def r1" style="left: 56%; top: 51%" title="Cory Durden DTlast game 43% of snapsInterior DL · 14th pct of group · 364 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.0% lg 1.8%Sack rate0.1% lg 0.5%TFL rate0.7% lg 0.8%Missed tackle %13% lg 11%context (not rated): 0 tgt · 2.0 yds/tgt · 100% comp · aDOT -9.0 · 2 prs · 12 tkl / 2 miss"><span class="dot">14</span><span class="nm">C. Durden <small>DI</small></span></div><div class="gm-fp def r3" style="left: 75%; top: 51%" title="Dre&amp;#x27;Mont Jones LBon report – Shoulderlast game 66% of snapsEdge · 56th pct of group · 578 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.3% lg 3.5%Sack rate0.8% lg 0.9%TFL rate1.0% lg 1.2%Missed tackle %4% lg 9%context (not rated): 4 tgt · 4.8 yds/tgt · 67% comp · aDOT -2.0 · 19 prs · 4.5 sk · 26 tkl / 0 miss · 0 INT · 0 PD"><span class="dot">56<em>?</em></span><span class="nm">D. Jones <small>EDGE</small></span></div><div class="gm-fp def r3" style="left: 41%; top: 37%" title="Robert Spillane LBlast game 91% of snapsLinebacker · 43rd pct of group · 720 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.43 lg 0.38Targets drawn5.6% lg 5.6%Missed tackle %8% lg 8%Tackle rate12.0% lg 11.8%TFL rate0.5% lg 0.8%context (not rated): 40 tgt · 8.0 yds/tgt · 79% comp · aDOT 4.4 · 5 prs · 0.5 sk · 87 tkl / 8 miss · 1 INT · 2 PD"><span class="dot">43</span><span class="nm">R. Spillane <small>LB</small></span></div><div class="gm-fp def r2" style="left: 59%; top: 37%" title="Christian Elliss LBQuestionable – Chestlast game 91% of snapsLinebacker · 28th pct of group · 600 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.51 lg 0.38Targets drawn6.9% lg 5.6%Missed tackle %7% lg 8%Tackle rate13.6% lg 11.8%TFL rate0.3% lg 0.8%context (not rated): 44 tgt · 7.5 yds/tgt · 76% comp · aDOT 2.8 · 7 prs · 1.0 sk · 84 tkl / 6 miss · 0 INT · 2 PD"><span class="dot">28<em>Q</em></span><span class="nm">C. Elliss <small>LB</small></span></div><div class="gm-fp def r3" style="left: 7%; top: 42%" title="Christian Gonzalez CBQuestionable – Illnesslast game 91% of snapsCornerback · 57th pct of group · 620 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.57 lg 0.66Targets drawn10.1% lg 9.1%Missed tackle %8% lg 10%context (not rated): 64 tgt · 5.3 yds/tgt · 54% comp · aDOT 9.8 · 48 tkl / 4 miss · 0 INT · 10 PD"><span class="dot">57<em>Q</em></span><span class="nm">C. Gonzalez <small>CB</small></span></div><div class="gm-fp def r2" style="left: 93%; top: 42%" title="Marcus Jones CBlast game 88% of snapsCornerback · 32nd pct of group · 658 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.77 lg 0.66Targets drawn10.2% lg 9.1%Missed tackle %6% lg 10%context (not rated): 69 tgt · 7.6 yds/tgt · 64% comp · aDOT 7.8 · 2 prs · 1.0 sk · 60 tkl / 3 miss · 2 INT · 10 PD"><span class="dot">32</span><span class="nm">M. Jones <small>CB</small></span></div><div class="gm-fp def r2" style="left: 18%; top: 44%" title="Charles Woods CBlast game 59% of snapsCornerback · 27th pct of group · 242 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.78 lg 0.66Targets drawn9.7% lg 9.1%Missed tackle %9% lg 10%context (not rated): 24 tgt · 8.4 yds/tgt · 63% comp · aDOT 9.2 · 28 tkl / 2 miss · 1 INT · 4 PD"><span class="dot">27</span><span class="nm">C. Woods <small>NB</small></span></div><div class="gm-fp def r4" style="left: 34%; top: 19%" title="Kevin Byard SQuestionable – Chestlast game 91% of snapsSafety · 73rd pct of group · 886 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.43 lg 0.47Targets drawn4.5% lg 5.6%Missed tackle %9% lg 9%context (not rated): 38 tgt · 9.7 yds/tgt · 64% comp · aDOT 11.1 · 2 prs · 66 tkl / 6 miss · 4 INT · 6 PD"><span class="dot">73<em>Q</em></span><span class="nm">K. Byard <small>S</small></span></div><div class="gm-fp def r3" style="left: 66%; top: 19%" title="Craig Woodson SQuestionable – Shoulderlast game 91% of snapsSafety · 56th pct of group · 742 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.52 lg 0.47Targets drawn5.4% lg 5.6%Missed tackle %7% lg 9%context (not rated): 40 tgt · 9.9 yds/tgt · 61% comp · aDOT 12.1 · 2 prs · 62 tkl / 4 miss · 1 INT · 4 PD"><span class="dot">56<em>Q</em></span><span class="nm">C. Woodson <small>S</small></span></div>
         <div class="gm-fp off r4" style="left: 7%; top: 63%" title="Luther Burden III WRprojected: 6.7 tgt · 55 rec yds64th pct production among the position&#x27;s starter pool · 51 yds/g over 13.5 wtd games5.4 tgt/g · 0.7 car/g"><span class="dot">64</span><span class="nm">L. Burden III <small>WR</small></span></div><div class="gm-fp off r1" style="left: 18%; top: 65%" title="Kalif Raymond WRprojected: 4.3 tgt · 30 rec yds19th pct production among the position&#x27;s starter pool · 29 yds/g over 13.5 wtd games3.3 tgt/g · 0.1 car/g"><span class="dot">19</span><span class="nm">K. Raymond <small>WR</small></span></div><div class="gm-fp off r3" style="left: 80%; top: 62%" title="Colston Loveland TEprojected: 5.6 tgt · 28 rec yds44th pct production among the position&#x27;s starter pool · 38 yds/g over 14.0 wtd games5.1 tgt/g · 0.0 car/g"><span class="dot">44</span><span class="nm">C. Loveland <small>TE</small></span></div><div class="gm-fp off r4" style="left: 93%; top: 63%" title="Rome Odunze WRprojected: 5.9 tgt · 49 rec yds68th pct production among the position&#x27;s starter pool · 54 yds/g over 12.0 wtd games6.5 tgt/g · 0.0 car/g"><span class="dot">68</span><span class="nm">R. Odunze <small>WR</small></span></div><div class="gm-fp off r4" style="left: 50%; top: 75%" title="Caleb Williams QBprojected: 33 att · 230 pass yds72nd pct production among the position&#x27;s starter pool · 260 yds/g over 11.5 wtd games32.6 att/g"><span class="dot">72</span><span class="nm">C. Williams <small>QB</small></span></div><div class="gm-fp off r5" style="left: 39%; top: 76%" title="D&amp;#x27;Andre Swift RBprojected: 14.9 car · 61 rush · 3.8 tgt · 24 rec81st pct production among the position&#x27;s starter pool · 88 yds/g over 14.0 wtd games3.2 tgt/g · 14.7 car/g"><span class="dot">81</span><span class="nm">D. Swift <small>RB</small></span></div><div class="gm-fp off ol" style="left: 31%; top: 62%" title="Darnell Wright OLlast game 100% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LT</span></div><div class="gm-fp off ol" style="left: 40.5%; top: 62%" title="Joe Thuney OLlast game 100% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LG</span></div><div class="gm-fp off ol" style="left: 50%; top: 62%" title="Garrett Bradbury OLlast game 91% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">C</span></div><div class="gm-fp off ol" style="left: 59.5%; top: 62%" title="Theo Benedet OLlast game 78% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RG</span></div><div class="gm-fp off ol" style="left: 69%; top: 62%" title="Jonah Jackson OLlast game 65% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RT<em>?</em></span></div>
       </div>
     </div>
@@ -2382,7 +2967,7 @@
 
 
 
-<details class="hfa-card hfa-sec gm-injuries pp-sec" id="injuries" data-sec="injuries" open>
+<details class="hfa-card hfa-sec gm-injuries pp-sec" id="injuries" data-sec="injuries">
   <summary class="hfa-head pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <div class="hfa-eyebrow">Injury report</div>
@@ -2450,7 +3035,7 @@
 </div>
           <div><div class="gm-irside def">CHI &middot; LB</div>
 <div class="gm-ir ">
-  <span class="gm-rate r1" title="12th percentile in the Linebacker group, 2026 wks 1-6 + ½·2025">12</span>
+  <span class="gm-rate r1" title="11th percentile in the Linebacker group, 2026 wks 1-6 + ½·2025">11</span>
   <div class="gm-irm">
     <div class="top"><b>T.J. Edwards</b><span class="flat">LB</span><span class="badge out">Doubtful</span></div>
     <div class="meta">Hamstring &middot; Limited Participation in Practice &middot; 33% of snaps last game</div>
@@ -2599,7 +3184,7 @@
 </div>
           <div><div class="gm-irside def">NE &middot; LB</div>
 <div class="gm-ir ">
-  <span class="gm-rate r2" title="29th percentile in the Linebacker group, 2026 wks 1-6 + ½·2025">29</span>
+  <span class="gm-rate r2" title="28th percentile in the Linebacker group, 2026 wks 1-6 + ½·2025">28</span>
   <div class="gm-irm">
     <div class="top"><b>Christian Elliss</b><span class="flat">LB</span><span class="badge q">Questionable</span></div>
     <div class="meta">Chest &middot; Full Participation in Practice &middot; 91% of snaps last game</div>
@@ -2623,7 +3208,7 @@
 </div>
           <div><div class="gm-irside def">NE &middot; DL</div>
 <div class="gm-ir dim">
-  <span class="gm-rate r3" title="54th percentile in the Edge group, 2026 wks 1-6 + ½·2025">54</span>
+  <span class="gm-rate r3" title="56th percentile in the Edge group, 2026 wks 1-6 + ½·2025">56</span>
   <div class="gm-irm">
     <div class="top"><b>Dre&#x27;Mont Jones</b><span class="flat">LB</span><span class="badge mute">Full practice</span></div>
     <div class="meta">Shoulder &middot; 66% of snaps last game</div>
@@ -2648,19 +3233,198 @@
 </details>
 
 
-<details class="hfa-card hfa-sec pp-sec pp-unknowns" id="before" data-sec="before" open>
+
+<details class="hfa-card hfa-sec pp-sec rv-grade" id="grade" data-sec="grade" open>
   <summary class="pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    <span class="pp-headtext"><span class="hfa-eyebrow">Before you bet it</span><span class="pp-h2">Check these first</span></span>
-    <span class="pp-headchips"><span class="badge warn">6 to check</span><span class="pp-open">open</span></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The grade</span><span class="pp-h2">The projection against the box score</span></span>
+    <span class="pp-headchips"><span class="badge warn">projection C &middot; 60</span><span class="pp-open">open</span></span>
   </summary>
   <div class="pp-body">
-    <div class="pp-checks">
-      <div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Kyle Monangai&#x27;s status — two straight DNPs with a thumb/toe issue; if he plays Thursday, Swift&#x27;s carry and goal-line share both shrink and the Bears&#x27; backfield calls change.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">A.J. Brown&#x27;s final designation after Wednesday&#x27;s practice, and his snap/route load if active on a three-day turnaround.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Whether Vera-Tucker and Ben Brown are actually ruled out; both were called unlikely by Vrabel Tuesday but not ruled out, and the line is not an input to the projection either way.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Carlton Davis (neck) — limited Tuesday after two missed games; his return would materially change New England&#x27;s coverage on Burden and Odunze.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">T.J. Edwards and Jack Sanborn both DNP; Chicago&#x27;s front-seven depth against the run is the pivot for the Patriots&#x27; rushing calls.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Kalshi is the market here and its player markets are thin — check whether there is real volume behind each quoted price before leaning on a gap, and note Monangai&#x27;s lines carry no book price at all.</p></div></div>
+    <div class="rv-gradehead">
+      <div class="rv-letter warn"><b>C</b><span>60 of 100</span></div>
+      <div class="rv-gradeparts">
+        <div class="rv-part"><span>Team volume &amp; yards</span><div class="rv-bar"><i style="width: 75%"></i></div><b>75</b></div>
+        <div class="rv-part"><span>Player lines <small>29/50 in range</small></span><div class="rv-bar"><i style="width: 36%"></i></div><b>36</b></div>
+        <div class="rv-mkts"><span class="badge good">Winner: CHI &#10003;</span><span class="badge bad">Spread: NE +3 &#10007;</span><span class="badge good">Total: Over 50.5 (proj 50.6) &#10003;</span></div>
+      </div>
     </div>
-    <p class="pp-disclaimer">The plan is a read written from the data as of Wed Oct 21, 11:22 AM Denver; lines, designations and the model's inputs move after that. Nothing here changes a projection or a price, and nothing on this site is betting advice.</p>
+    <div class="pp-card wide"><p class="pp-lead">The grade is a C (0.598) with a split personality: team score 0.753, player score 0.358, market 2-of-3. The team-total work was excellent — NE projected 23.8 and scored 24, CHI 26.8 and scored 30, pass attempts 30.4/31 and 32.6/33 — so the model priced the scoreboard almost exactly while mispricing every yard underneath it.</p><details class="pp-more"><summary>more</summary><p>Both passing-yardage lines blew out (Maye 321 vs 233.7, Williams 308 vs 230.2) because the engine blended a 7.68 and 7.07 yards-per-attempt matchup and got 10.4 and 9.3; the explosive layer (8 CHI 20-plus plays against a league mean of 3.0) is where the extra 165 passing yards lived. The carry miss for New England (17 vs 26) is nearly pure game state — NE led for zero seconds and ran 45 of 52 snaps trailing, with pass rate 0.673 against a 0.555 blend. The player score collapsed on distribution, not volume: the right number of throws went to the wrong people (Henry 7 targets on a 4.1 projection, Loveland 12 on 5.6, Burden 130 yards on 4 targets, Raymond 0 on a 30-yard line).</p></details></div>
+    <div class="rv-teams">
+      
+      <div class="rv-team" style="--pp-team: #002244">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy"><b>Patriots</b><span class="flat">projected &rarr; actual</span></div>
+        
+        <div class="rv-trow ">
+          <span>Points</span>
+          <em>23.8</em><i>&#8594;</i><b>24</b>
+          <small class="flat">+0.2</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 99%"></i></div>
+        </div>
+        
+        <div class="rv-trow big">
+          <span>Pass yds</span>
+          <em>233.7</em><i>&#8594;</i><b>321</b>
+          <small class="up">+87.3</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 42%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Rush yds</span>
+          <em>105.7</em><i>&#8594;</i><b>70</b>
+          <small class="flat">-35.7</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 60%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Pass att</span>
+          <em>30.4</em><i>&#8594;</i><b>31</b>
+          <small class="flat">+0.6</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 96%"></i></div>
+        </div>
+        
+        <div class="rv-trow big">
+          <span>Carries</span>
+          <em>26.0</em><i>&#8594;</i><b>17</b>
+          <small class="down">-9</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 36%"></i></div>
+        </div>
+        
+      </div>
+      
+      <div class="rv-team" style="--pp-team: #0B162A">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy"><b>Bears</b><span class="flat">projected &rarr; actual</span></div>
+        
+        <div class="rv-trow ">
+          <span>Points</span>
+          <em>26.8</em><i>&#8594;</i><b>30</b>
+          <small class="flat">+3.2</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 84%"></i></div>
+        </div>
+        
+        <div class="rv-trow big">
+          <span>Pass yds</span>
+          <em>230.2</em><i>&#8594;</i><b>308</b>
+          <small class="up">+77.8</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 48%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Rush yds</span>
+          <em>113.1</em><i>&#8594;</i><b>116</b>
+          <small class="flat">+2.9</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 97%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Pass att</span>
+          <em>32.6</em><i>&#8594;</i><b>33</b>
+          <small class="flat">+0.4</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 98%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Carries</span>
+          <em>28.4</em><i>&#8594;</i><b>30</b>
+          <small class="flat">+1.6</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 89%"></i></div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="rv-two">
+      <div class="rv-list good"><div class="pp-k">Nailed it</div><div class="rv-li"><b>Caleb Williams</b> <span class="flat">CHI &middot; pass att</span><span class="rv-nums">32.6 &#8594; <b>33</b></span></div><div class="rv-li"><b>Drake Maye</b> <span class="flat">NE &middot; pass att</span><span class="rv-nums">30.4 &#8594; <b>31</b></span></div><div class="rv-li"><b>D&#x27;Andre Swift</b> <span class="flat">CHI &middot; targets</span><span class="rv-nums">3.8 &#8594; <b>4</b></span></div><div class="rv-li"><b>Drake Maye</b> <span class="flat">NE &middot; rush yds</span><span class="rv-nums">24.2 &#8594; <b>26</b></span></div></div>
+      <div class="rv-list bad"><div class="pp-k">Missed most</div><div class="rv-li"><b>Drake Maye</b> <span class="flat">NE &middot; pass yds</span><span class="rv-nums">233.7 &#8594; <b>321</b></span></div><div class="rv-li"><b>Caleb Williams</b> <span class="flat">CHI &middot; pass yds</span><span class="rv-nums">230.2 &#8594; <b>308</b></span></div><div class="rv-li"><b>Luther Burden III</b> <span class="flat">CHI &middot; rec yds</span><span class="rv-nums">55.1 &#8594; <b>130</b></span></div><div class="rv-li"><b>Hunter Henry</b> <span class="flat">NE &middot; rec yds</span><span class="rv-nums">30.5 &#8594; <b>71</b></span></div></div>
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">Why it missed</div>
+    <div class="rv-decided">
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy">mixed</span>
+        <p class="pp-lead">Carries 17 vs 26.0 projected, rush yards 70 vs 105.7, pass rate 67.3% vs a 55.5% blend</p>
+        <p class="pp-sub">Game script — NE trailed on 45 of 52 snaps and never held a lead; but the deeper cause is efficiency, NE&#x27;s rush EPA was -0.404/att with a 20% rush success rate, extending a season in which its rush EPA has been negative in all six prior weeks</p>
+        
+      </div>
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy">mixed</span>
+        <p class="pp-lead">Pass yards 321 vs 233.7</p>
+        <p class="pp-sub">Efficiency, not volume: attempts hit the projection (31 vs 30.4) while Maye posted +15.3 CPOE, 24/31, 0.393 EPA/dropback and 175 YAC, including a 48-yard screen-and-run TD to Stevenson at Q2 0:03</p>
+        
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy">signal</span>
+        <p class="pp-lead">Pass yards 308 vs 230.2 with 8 explosive passes</p>
+        <p class="pp-sub">Explosive passing against a New England secondary missing Carlton Davis, Prunty and Canada — Burden 58 (Q1 2:32) and 26 (Q1 11:30), Odunze 21s at Q4 13:14, 4:59 and 3:32, Loveland 22 (Q3 11:04); Williams went 5/8 on deep throws for 144</p>
+        
+      </div>
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy">noise</span>
+        <p class="pp-lead">Points 30 vs 26.8 — red-zone finishing</p>
+        <p class="pp-sub">CHI converted 3 of 4 red-zone trips into touchdowns (+0.079 EPA/play inside the 20) after being tagged with red-zone stalls in three of six prior weeks; the engine kept the TD split on the league constant, which was the right call methodologically and wrong this night</p>
+        
+      </div>
+      
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">What it got right</div>
+    <div class="rv-right"><span><i>&#10003;</i>Both team totals and the total itself: 23.8/24 and 26.8/30, over 50.5 cashed at 54</span><span><i>&#10003;</i>Pass attempts for both quarterbacks within 0.6 (Maye 31, Williams 33)</span><span><i>&#10003;</i>CHI rushing yards 116 vs 113.1 projected and 30 carries vs 28.4 — the Bears&#x27; grinding volume script was read correctly</span><span><i>&#10003;</i>Maye&#x27;s rushing line (4 carries/26 yards vs 4.5/24.2), scrambles included</span><span><i>&#10003;</i>Chicago as the winner</span></div>
+    
   </div>
 </details>
+
+
+
+<details class="hfa-card hfa-sec pp-sec rv-next" id="next" data-sec="next" open>
+  <summary class="pp-head">
+    <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">Next time</span><span class="pp-h2">What carries into the next plan</span></span>
+    <span class="pp-headchips"><span class="badge acc">4 lessons</span><span class="pp-open">open</span></span>
+  </summary>
+  <div class="pp-body">
+    
+    <div class="pp-k">For the next plan on these clubs</div>
+    <div class="pp-checks">
+      <div class="pp-check rv-lesson"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="NE" loading="lazy"><div><p class="pp-lead">Stop writing run scripts for this offense.</p><details class="pp-more"><summary>more</summary><p>Rush EPA has been negative in all seven games now and the team has not led for a meaningful stretch in two of its losses; project carries off the trailing-state rate (0.66 pass here) rather than the season blend.</p></details></div></div><div class="pp-check rv-lesson"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="NE" loading="lazy"><div><p class="pp-lead">The secondary, not the front, is the matchup to price.</p><details class="pp-more"><summary>more</summary><p>With Davis, Prunty and Canada out it surrendered 8 explosives and 308 yards; a blitz-heavy plan against a QB with positive EPA vs the blitz is an over, not an under.</p></details></div></div><div class="pp-check rv-lesson"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="CHI" loading="lazy"><div><p class="pp-lead">Treat the red-zone-stall tag as noise until there are more weeks behind it: 3-for-4 here against a defense that had held three trips to zero touchdowns the prior week.</p><details class="pp-more"><summary>more</summary><p>Do not build another unders package on it.</p></details></div></div><div class="pp-check rv-lesson"><div><p class="pp-lead">Burden&#x27;s 4-target, 130-yard line is the bounce — one 58-yard shot and a 3rd-and-17 touchdown.</p><details class="pp-more"><summary>more</summary><p>Keep his projection tied to snap share (60.9%) and target share, and do not raise it off this game.</p></details></div></div>
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">How each club gets beaten <span class="flat">&middot; this game read with its season so far</span></div>
+    <div class="rv-blueprints">
+      
+      <div class="rv-bp" style="--pp-team: #002244">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ne.png" alt="" loading="lazy"><b>Patriots</b><span class="flat">4-2 entering</span><span class="badge mute">high confidence</span></div>
+        <div class="rv-recur"><span class="badge bad">turnovers &times;5</span><span class="badge bad">run game &times;2</span></div>
+        <div class="rv-facet"><span class="rv-side defense">defense</span><div><b>Explosive passing over a thin secondary</b><p class="pp-sub">Allowed 8 20-plus pass plays here; 5 in week 4 vs BUF (tagged &#x27;explosive passing&#x27;), 4 vs LV week 5, 3 vs SEA week 1.</p><details class="pp-more"><summary>more</summary><p>Season pass-EPA allowed 0.226 (wk1), 0.228 (wk3), 0.178 (wk6) — the dropback number is always the leak</p></details></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Its own turnovers</b><p class="pp-sub">&#x27;Turnovers&#x27; tagged in 5 of 6 weeks (3 in wk1, 2 in wk2, 3 in wk3, 2 in wk4, 2 in wk6); this week one INT at the CHI 15 worth -5.27 EPA</p></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>No run game to fall back on when behind</b><p class="pp-sub">Rush EPA negative in every game: -0.451, -0.002, -0.129, -0.075, -0.185, -0.219, and -0.404 here on 15 carries with 20% success</p></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Red-zone inconsistency</b><p class="pp-sub">0/4 trips in wk3 at JAX, 0/1 wk2, 2/4 wk6; here 1 TD on 2 trips with -0.715 EPA/play inside the 20</p></div></div><div class="rv-facet"><span class="rv-side both">both</span><div><b>Volume starvation — opponents keep the ball</b><p class="pp-sub">CHI held it 31:47 and ran 68 plays to NE&#x27;s 52; NE&#x27;s opponents have averaged just 49.8 plays by engine input, so when an opponent does control the snap count the model&#x27;s play projection overshoots</p></div></div>
+        <div class="pp-expect"><span class="pp-k">What an opponent needs</span><p class="pp-lead">A quarterback who will push past 8 aDOT and a defense that doesn&#x27;t need to win the turnover battle; two receivers who can win outside against backups while a 12-target tight end holds the middle.</p><details class="pp-more"><summary>more</summary><p>A ground-only team should not expect to cash this.</p></details></div>
+      </div>
+      
+      <div class="rv-bp" style="--pp-team: #0B162A">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/chi.png" alt="" loading="lazy"><b>Bears</b><span class="flat">4-2 entering</span><span class="badge mute">medium confidence</span></div>
+        <div class="rv-recur"><span class="badge bad">pressure allowed &times;3</span><span class="badge bad">turnovers &times;3</span><span class="badge bad">red zone stalls &times;3</span><span class="badge bad">explosive passing &times;2</span><span class="badge bad">pre-snap penalties &times;2</span><span class="badge bad">red zone defense &times;2</span></div>
+        <div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Pressure allowed</b><p class="pp-sub">&#x27;Pressure allowed&#x27; tagged weeks 2, 5 and 6 — 4 sacks vs MIN, 4 vs GB, 4 vs ATL; 3 sacks and 6 QB hits here (15.4% sack/hit) despite New England blitzing on 61% of dropbacks</p></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Turnovers in bunches</b><p class="pp-sub">5 giveaways at GB week 5, 2 vs MIN, 2 vs NYJ; zero tonight, which is the single cleanest reason this one stayed in hand</p></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Red-zone stalls</b><p class="pp-sub">0/3 wk2, 2/7 wk4 (&#x27;yards without touchdowns&#x27;), 1/3 wk5; 3/4 tonight — the trait did not show</p></div></div><div class="rv-facet"><span class="rv-side defense">defense</span><div><b>Its defense gives up chunk plays</b><p class="pp-sub">6 explosive passes allowed wk1, 6 wk5, 4 wk6; Maye hit 2 here plus a 48-yard catch-and-run TD, and 24/31 with +15.3 CPOE on short throws (21/24, 257 yards short)</p></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Third down, offense</b><p class="pp-sub">4-of-14 tonight, 4/15 at GB, 5/16 vs MIN — they survive on explosives and fourth downs (2/2) rather than on-schedule conversions</p></div></div>
+        <div class="pp-expect"><span class="pp-k">What an opponent needs</span><p class="pp-lead">A front that gets home on four (Chicago faced 4.85 rushers and still produced explosives) plus a secondary that can play outside without help.</p><details class="pp-more"><summary>more</summary><p>Blitzing this offense without corners is the trap version of this blueprint.</p></details></div>
+      </div>
+      
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">Traps <span class="flat">&middot; where a line can fool you next time</span></div>
+    <div class="pp-checks">
+      <div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Props</span><p class="pp-lead">Do not project a run script for a team whose own rush EPA is negative every week, no matter how soft the opposing front ranks. New England was supposed to run 26-30 times at the league&#x27;s worst rush-EPA defense and ran 15 for 70 yards.</p><p class="pp-sub"><b>Trigger:</b> Offense with rush EPA below -0.10 in 5+ games and an opponent favored by 3 or more — fade the RB rushing overs and take the QB passing over instead.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Totals</span><p class="pp-lead">Red-zone tags are the least persistent thing in the file. Chicago, tagged for red-zone stalls three times in six weeks, went 3-for-4 against a defense that had allowed 0 TDs on 3 trips the prior week.</p><p class="pp-sub"><b>Trigger:</b> Any &#x27;they stall inside the 20&#x27; vs &#x27;bend-don&#x27;t-break&#x27; pairing — price the total off field EPA and drive count, not off red-zone TD rate.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Props</span><p class="pp-lead">A 4-target, 130-yard receiving line is a bounce, not a role. Burden&#x27;s night was one 58-yard shot and a 24-yard TD on 3rd-and-17; his snap share was 60.9% and Loveland (12 targets) is the actual volume.</p><p class="pp-sub"><b>Trigger:</b> When a WR&#x27;s receiving yards exceed 25 per target in one game, buy the opponent&#x27;s under the following week unless target share also moved.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Totals</span><p class="pp-lead">Heavy blitz against a quarterback with positive EPA vs the blitz is an over signal. New England blitzed 61% and surrendered 0.396 EPA/dropback and 8 explosives.</p><p class="pp-sub"><b>Trigger:</b> Defense blitz rate above 40% + opposing QB season EPA vs blitz above 0.15 + two or more starting corners out.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Props</span><p class="pp-lead">When a team has led for essentially the entire game, pass-rate projections for the trailing side must be re-blended toward its trailing rate, not its season rate. NE&#x27;s blend was 0.555; it threw at 0.673 and the carry projection missed by 9.</p><p class="pp-sub"><b>Trigger:</b> Underdog of 3+ with below-median rush efficiency: shade RB carries down 20% and QB attempts/receiving yards up.</p></div></div>
+    </div>
+    
+    <p class="pp-disclaimer">The plan was a read written before kickoff; the report reads the game after it, from the play-by-play and the box score. Nothing here changes a projection or a price, and nothing on this site is betting advice.</p>
+  </div>
+</details>
+
 
 <div class="pl-modal" id="pl-modal" hidden data-src="/nfl/w/7/g/2026_07_NE_CHI/players.html">
   <div class="pl-back"></div>
@@ -2672,7 +3436,7 @@
 </main>
   <footer class="hfa-foot">
     <p><strong>Huffalytics</strong> publishes NFL stats, game projections, team EPA rankings and graded player prop plans priced against Kalshi, rebuilt every week from play-by-play data. <a href="/about/">How the engine works</a>.</p>
-    <p>Data as of Tue Oct 27, 4:04 PM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/nfl/data/week.json">week.json</a> · <a href="/nfl/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
+    <p>Data as of Wed Oct 28, 8:02 AM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/nfl/data/week.json">week.json</a> · <a href="/nfl/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
   </footer>
 </div>
 <script>

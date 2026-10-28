@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chiefs at Seahawks: NFL Week 7 2026 Projection, Matchups and Injuries | Huffalytics</title>
-<meta name="description" content="Kansas City Chiefs at Seattle Seahawks, NFL week 7 2026: the projected score, each offense against the defense it meets (projected player lines, overall, run game with lanes, pass game), the starting elevens rated, and both injury reports.">
+<title>Chiefs at Seahawks: NFL Week 7 2026 Final, Game Report and the Plan Graded | Huffalytics</title>
+<meta name="description" content="Kansas City Chiefs 3, Seattle Seahawks 20, NFL week 7 2026: Seattle 20, Kansas City 3: the Seahawks covered -3 and the game went under 43.5 by 20 points because Kansas City never once crossed the Seattle 20 — zero red-zone trips, 3-of-13 on third down, two missed field goals — while Seattle turned a wire-to-wire lead into 41 carries and 35:51 of possession. The pre-game plan graded: script partly held, every call checked against the box score.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="keywords" content="NFL stats, NFL projections, NFL week 7 2026, Kalshi NFL, Kalshi player props, NFL player props, NFL team rankings, EPA per play, NFL betting model, NFL streaming picks, fantasy football projections">
 <meta name="author" content="Huffalytics">
@@ -1294,6 +1294,248 @@
     .gm-script { margin: -0.4rem 16px 1rem; }
     .pp-headchips .badge { display: none; }
   }
+
+  /* ---- the post-game look: the plan against the game (.rv-) ---- */
+  .gm-side.lost img { opacity: 0.45; filter: grayscale(0.6) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.55)); }
+  .gm-side.lost .gm-abbr { color: var(--hfa-muted); }
+  .gm-pts.final { color: var(--hfa-body); text-shadow: none; }
+  .gm-pts.final span { opacity: 0.55; }
+  .gm-pts.final span.w { opacity: 1; color: var(--hfa-accent); text-shadow: 0 0 28px rgba(255, 31, 47, 0.35); }
+  .gm-projwas { letter-spacing: 0.08em; }
+  .gm-verdict { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.4rem 1rem; margin: -0.6rem 1.1rem 1.2rem; padding: 0.55rem 1rem; border: 1px solid var(--hfa-accent); border-radius: 16px; background: var(--hfa-accent-soft); color: inherit; text-decoration: none; }
+  .gm-verdict.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.10); }
+  .gm-verdict.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.10); }
+  .gm-verdict.warn { border-color: rgba(128, 128, 128, 0.5); background: var(--hfa-tint); }
+  .gm-verdict-stamp { display: inline-flex; align-items: baseline; gap: 0.45rem; }
+  .gm-verdict-stamp i, .gm-verdict-v i { font-style: normal; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-muted); }
+  .gm-verdict-stamp b { font-size: 1.05rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; color: var(--hfa-body); }
+  .gm-verdict.good .gm-verdict-stamp b { color: var(--hfa-good); } .gm-verdict.bad .gm-verdict-stamp b { color: var(--hfa-bad); }
+  .gm-verdict-v { display: inline-flex; align-items: baseline; gap: 0.35rem; font-size: 0.9rem; }
+  .gm-verdict-v b { font-weight: 800; color: var(--hfa-body); }
+  .gm-verdict-v.mk { font-size: 0.74rem; color: var(--hfa-muted); padding: 0.1rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.14); }
+  .gm-letter { font-size: 1.1rem; } .gm-letter.good { color: var(--hfa-good) !important; } .gm-letter.bad { color: var(--hfa-bad) !important; }
+  .gm-tile.rv small { font-size: 0.66rem; color: var(--hfa-muted); }
+  .gm-tile.rv.over b { color: var(--hfa-good); } .gm-tile.rv.under b { color: var(--hfa-bad); }
+  .gm-tile.rv b.flat { color: var(--hfa-muted); }
+
+  .rv-stamp { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.4rem; padding: 0.8rem 1rem; margin: 0.3rem 0 0.9rem; border-radius: 16px; border: 2px solid rgba(128, 128, 128, 0.4); background: var(--hfa-tint); }
+  .rv-stamp.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.08); }
+  .rv-stamp.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.08); }
+  .rv-stamp-word { display: flex; flex-direction: column; line-height: 1; }
+  .rv-stamp-word span { font-size: 0.64rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: var(--hfa-muted); }
+  .rv-stamp-word b { font-size: 2rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; color: var(--hfa-body); margin-top: 0.2rem; }
+  .rv-stamp.good .rv-stamp-word b { color: var(--hfa-good); } .rv-stamp.bad .rv-stamp-word b { color: var(--hfa-bad); }
+  .rv-stamp-meta { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.9rem; }
+  .rv-stamp-meta b { color: var(--hfa-body); }
+  .rv-win { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 700; }
+  .rv-win img { width: 26px; height: 26px; object-fit: contain; }
+  .rv-vs { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 0.8rem; align-items: stretch; }
+  .rv-col { border: var(--hfa-hairline); border-radius: 14px; padding: 0.8rem 0.95rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-col .pp-hook-logos { margin-bottom: 0.4rem; } .rv-col .pp-hook-logos img { width: 40px; height: 40px; }
+  .rv-col .pp-quote { font-size: 1.2rem; }
+  .rv-col.plan .pp-quote { color: var(--hfa-body); }
+  .rv-col.game { border-color: rgba(255, 31, 47, 0.45); }
+  .rv-col.game.good { border-color: var(--hfa-good); } .rv-col.game.bad { border-color: var(--hfa-bad); }
+  .rv-arrow { align-self: center; font-size: 1.6rem; font-weight: 900; color: var(--hfa-accent); }
+  .rv-tally { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.55rem; margin-top: 0.9rem; }
+  .rv-tile { display: flex; flex-direction: column; gap: 0.15rem; border: var(--hfa-hairline); border-radius: 12px; padding: 0.6rem 0.75rem; background: var(--hfa-tint); color: inherit; text-decoration: none; min-width: 0; }
+  .rv-tile > span { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .rv-tile > b { font-size: 1.6rem; font-weight: 900; line-height: 1.1; color: var(--hfa-body); }
+  .rv-tile > b i { font-style: normal; }
+  .rv-tile > b small, .rv-tile > small { font-size: 0.72rem; font-weight: 600; color: var(--hfa-muted); }
+  .rv-tile.hot { border-color: rgba(255, 31, 47, 0.5); }
+  .rv-tile.lt b { font-size: 2rem; } .rv-tile.lt.good b { color: var(--hfa-good); } .rv-tile.lt.bad b { color: var(--hfa-bad); }
+  .rv-headline { font-size: 1.08rem; font-weight: 800; line-height: 1.35; margin: 0; letter-spacing: -0.01em; }
+  .rv-tile.mk em { font-style: normal; font-size: 0.8rem; font-weight: 700; }
+  .rv-bar { height: 5px; border-radius: 3px; background: rgba(128, 128, 128, 0.2); overflow: hidden; }
+  .rv-bar i { display: block; height: 100%; border-radius: 3px; background: var(--hfa-good); }
+  .rv-why { border-left: 4px solid var(--hfa-accent); }
+  .rv-fold { margin-top: 0.9rem; border-top: var(--hfa-hairline); padding-top: 0.7rem; }
+  .rv-fold > summary { list-style: none; cursor: pointer; font-size: 0.74rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin-bottom: 0.6rem; }
+  .rv-fold > summary::-webkit-details-marker { display: none; }
+  .rv-fold > summary::before { content: "+ "; } .rv-fold[open] > summary::before { content: "\2212  "; }
+  .rv-fold > summary .flat { text-transform: none; letter-spacing: 0; font-weight: 500; }
+  .rv-story { font-size: 0.92rem; line-height: 1.6; max-width: 52rem; }
+  .rv-story h1, .rv-story h2, .rv-story h3 { font-size: 1rem; color: var(--hfa-accent); margin: 1rem 0 0.3rem; }
+  .rv-story p { margin: 0 0 0.7rem; }
+
+  .rv-tl { list-style: none; margin: 0; padding: 0 0 0 0.2rem; display: flex; flex-direction: column; }
+  .rv-tl li { position: relative; display: grid; grid-template-columns: 5.2rem minmax(0, 1fr); gap: 0.8rem; padding: 0 0 0.9rem; }
+  .rv-tl li::before { content: ""; position: absolute; left: 2.6rem; top: 1.6rem; bottom: 0; width: 2px; background: rgba(128, 128, 128, 0.25); }
+  .rv-tl li:last-child::before { display: none; }
+  .rv-clock { align-self: start; justify-self: center; z-index: 1; font-size: 0.72rem; font-weight: 800; padding: 0.25rem 0.55rem; border-radius: 999px; background: var(--pp-team); color: #fff; white-space: nowrap; box-shadow: 0 0 0 3px var(--hfa-card); }
+  .rv-tlbody { border: var(--hfa-hairline); border-left: 4px solid var(--pp-team); border-radius: 12px; padding: 0.55rem 0.8rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-play { display: flex; align-items: flex-start; gap: 0.5rem; font-weight: 700; font-size: 0.94rem; line-height: 1.35; }
+  .rv-play img { width: 24px; height: 24px; object-fit: contain; flex: none; }
+  .rv-decided { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.6rem; }
+  .rv-dcard { border: var(--hfa-hairline); border-radius: 14px; padding: 0.7rem 0.85rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-dcard.tell { border-color: rgba(47, 212, 164, 0.5); }
+  .rv-flag { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.12rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); margin-bottom: 0.4rem; }
+  .rv-flag img { width: 14px; height: 14px; object-fit: contain; }
+  .rv-dcard.tell .rv-flag { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .rv-dcard .pp-lead { font-size: 0.92rem; font-weight: 700; }
+
+  .rv-gauge.held { border-color: rgba(47, 212, 164, 0.55); } .rv-gauge.miss { border-color: rgba(255, 176, 32, 0.55); }
+  .rv-mark { margin-left: auto; font-size: 0.85rem; }
+  .rv-gauge.held .rv-mark { color: var(--hfa-good); } .rv-gauge.miss .rv-mark { color: var(--hfa-bad); }
+  .rv-row { display: grid; grid-template-columns: 3.2rem auto 1fr; align-items: center; gap: 0.45rem; font-size: 0.8rem; }
+  .rv-row small { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-muted); }
+  .rv-row em { font-style: normal; font-weight: 800; text-transform: capitalize; }
+  .rv-row.played .pp-bars i.on { background: var(--hfa-body); }
+  .rv-gauge.held .rv-row.played .pp-bars i.on { background: var(--hfa-good); } .rv-gauge.miss .rv-row.played .pp-bars i.on { background: var(--hfa-bad); }
+  .rv-note { font-size: 0.7rem; color: var(--hfa-muted); }
+  .pp-leanbar .track i.called { background: transparent; border: 2px solid var(--hfa-body); box-shadow: none; }
+  .pp-leanbar .track i.played { background: var(--hfa-accent); border-color: var(--hfa-card); }
+  .rv-cvp { text-transform: capitalize; } .rv-cvp i { font-style: normal; color: var(--hfa-muted); }
+  .rv-legend { display: flex; gap: 1rem; font-size: 0.68rem; color: var(--hfa-muted); margin: 0.2rem 0 0; }
+  .rv-legend span { display: inline-flex; align-items: center; gap: 0.3rem; }
+  .rv-legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .rv-legend i.called { border: 2px solid var(--hfa-body); } .rv-legend i.played { background: var(--hfa-accent); }
+  .pp-path.took { border-color: rgba(47, 212, 164, 0.55); border-left-color: var(--pp-team); box-shadow: 0 0 0 1px rgba(47, 212, 164, 0.25) inset; }
+  .pp-path.not { opacity: 0.55; }
+  .pp-pathhead .badge { white-space: nowrap; }
+  .rv-swing { flex-direction: column; gap: 0.35rem; }
+  .rv-weight { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.12rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); }
+  .rv-swing.decisive { border-color: var(--hfa-accent); } .rv-swing.decisive .rv-weight { background: var(--hfa-accent); color: #fff; }
+  .rv-swing.contributed .rv-weight { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .rv-swing.minor { opacity: 0.85; }
+  .rv-went { font-size: 0.84rem; color: var(--hfa-muted); margin: 0; line-height: 1.4; } .rv-went b { color: var(--hfa-body); }
+  .pp-angle.cashed { border-color: rgba(47, 212, 164, 0.55); }
+  .pp-angletitle .badge { margin-left: 0.3rem; vertical-align: 0.1rem; }
+  .pp-leg .rv-res { font-size: 0.74rem; font-weight: 800; white-space: nowrap; }
+  .pp-leg.hit { background: rgba(47, 212, 164, 0.12); } .pp-leg.hit .rv-res { color: var(--hfa-good); }
+  .pp-leg.miss { background: rgba(255, 176, 32, 0.10); } .pp-leg.miss .rv-res { color: var(--hfa-bad); }
+  .pp-leg.void .rv-res { color: var(--hfa-muted); }
+
+  .rv-eh { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0.6rem; }
+  .rv-ehcol { border: var(--hfa-hairline); border-radius: 12px; padding: 0.6rem 0.8rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-ehcol .pp-lead { font-size: 0.9rem; }
+  .rv-ehcol.happened { border-width: 1px; border-color: rgba(128, 128, 128, 0.45); }
+  .rv-ehcol.happened.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.07); }
+  .rv-ehcol.happened.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.07); }
+  .rv-call.hit { border-left-color: var(--hfa-good); box-shadow: 0 0 0 1px rgba(47, 212, 164, 0.3) inset; }
+  .rv-call.miss { border-left-color: var(--hfa-bad); }
+  .rv-call.void { opacity: 0.6; border-left-color: rgba(128, 128, 128, 0.5); }
+  .rv-stamp-res { flex: none; display: inline-grid; place-items: center; min-width: 2rem; height: 2rem; padding: 0 0.3rem; border-radius: 999px; font-size: 0.95rem; font-weight: 900; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); }
+  .hfa .rv-stamp-res.hit { margin: 0; background: var(--hfa-good); color: #04130e; } .rv-stamp-res.miss { background: var(--hfa-bad); color: #1a1000; } .rv-stamp-res.void { font-size: 0.62rem; }
+  .rv-meter { margin: 0.25rem 0 0.45rem; }
+  .rv-meter .track { position: relative; height: 8px; border-radius: 4px; background: rgba(128, 128, 128, 0.18); }
+  .rv-meter .track .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: var(--hfa-muted); }
+  .rv-call.hit .rv-meter .fill { background: var(--hfa-good); } .rv-call.miss .rv-meter .fill { background: var(--hfa-bad); }
+  .rv-meter .track .line { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: var(--hfa-body); border-radius: 1px; }
+  .rv-meterlbl { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--hfa-muted); margin-top: 0.2rem; }
+  .rv-meterlbl b { color: var(--hfa-body); font-size: 0.85rem; }
+  .rv-read { margin-bottom: 0.35rem; display: inline-block; }
+  .rv-ig { color: var(--hfa-body); }
+  .rv-call .pp-probs { margin: 0.4rem 0; }
+  .rv-notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.5rem; }
+  .rv-note-card { border: var(--hfa-hairline); border-radius: 12px; padding: 0.55rem 0.75rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-note-card.signal { border-color: rgba(47, 212, 164, 0.45); }
+  .rv-notehead { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; }
+  .rv-notehead b { color: var(--hfa-body); font-size: 0.9rem; }
+
+  .rv-gradehead { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; padding: 0.3rem 0 0.4rem; }
+  .rv-letter { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 6rem; height: 6rem; border-radius: 22px; border: 2px solid rgba(128, 128, 128, 0.45); background: var(--hfa-tint); }
+  .rv-letter b { font-size: 3rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .rv-letter span { font-size: 0.66rem; font-weight: 700; color: var(--hfa-muted); }
+  .rv-letter.good { border-color: var(--hfa-good); } .rv-letter.good b { color: var(--hfa-good); }
+  .rv-letter.bad { border-color: var(--hfa-bad); } .rv-letter.bad b { color: var(--hfa-bad); }
+  .rv-gradeparts { flex: 1 1 18rem; display: flex; flex-direction: column; gap: 0.5rem; min-width: 0; }
+  .rv-part { display: grid; grid-template-columns: 11rem 1fr 2rem; align-items: center; gap: 0.6rem; font-size: 0.8rem; }
+  .rv-part span small { color: var(--hfa-muted); display: block; font-size: 0.68rem; }
+  .rv-part b { text-align: right; color: var(--hfa-body); }
+  .rv-part .rv-bar { height: 8px; }
+  .rv-mkts { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .rv-teams { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.6rem; margin-top: 0.9rem; }
+  .rv-team, .rv-bp { border: var(--hfa-hairline); border-top: 3px solid var(--pp-team); border-radius: 14px; padding: 0.7rem 0.85rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-teamhead { display: flex; align-items: center; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 0.5rem; }
+  .rv-teamhead img { width: 28px; height: 28px; object-fit: contain; }
+  .rv-teamhead b { color: var(--hfa-body); font-size: 1rem; }
+  .rv-teamhead .flat { font-size: 0.72rem; }
+  .rv-trow { display: grid; grid-template-columns: 5.2rem auto auto auto 1fr; grid-template-areas: "l p a v d" "bar bar bar bar bar"; align-items: baseline; gap: 0.15rem 0.45rem; padding: 0.35rem 0; border-top: var(--hfa-hairline); font-size: 0.84rem; }
+  .rv-trow span { grid-area: l; color: var(--hfa-muted); font-size: 0.74rem; }
+  .rv-trow em { font-style: normal; color: var(--hfa-muted); } .rv-trow i { font-style: normal; color: var(--hfa-muted); font-size: 0.72rem; }
+  .rv-trow b { color: var(--hfa-body); font-size: 1rem; } .rv-trow small { justify-self: end; font-weight: 700; }
+  .rv-trow .rv-bar { grid-area: bar; height: 4px; }
+  .rv-trow.big .rv-bar i { background: var(--hfa-bad); }
+  .rv-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.9rem; }
+  .rv-list { border: var(--hfa-hairline); border-radius: 14px; padding: 0.65rem 0.85rem; background: var(--hfa-tint); }
+  .rv-list.good .pp-k { color: var(--hfa-good); } .rv-list.bad .pp-k { color: var(--hfa-bad); }
+  .rv-li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem; padding: 0.3rem 0; border-top: var(--hfa-hairline); font-size: 0.84rem; }
+  .rv-li > b { color: var(--hfa-body); } .rv-li .flat { font-size: 0.72rem; }
+  .rv-nums { margin-left: auto; color: var(--hfa-muted); white-space: nowrap; } .rv-nums b { color: var(--hfa-body); }
+  .rv-right { display: flex; flex-direction: column; gap: 0.35rem; }
+  .rv-right span { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.4; }
+  .rv-right i { font-style: normal; color: var(--hfa-good); font-weight: 900; }
+
+  .rv-lesson img { width: 28px; height: 28px; object-fit: contain; flex: none; }
+  .rv-blueprints { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0.6rem; }
+  .rv-recur { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.45rem; }
+  .rv-facet { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); gap: 0.5rem; padding: 0.4rem 0; border-top: var(--hfa-hairline); font-size: 0.86rem; }
+  .rv-facet b { color: var(--hfa-body); }
+  .rv-side { align-self: start; text-align: center; font-size: 0.58rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.15rem 0.3rem; border-radius: 6px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); }
+  .rv-side.defense { background: rgba(255, 176, 32, 0.14); color: var(--hfa-bad); } .rv-side.offense { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .rv-bp .pp-expect { margin-top: 0.5rem; }
+  @media (max-width: 760px) {
+    .gm-verdict { margin: -0.4rem 16px 1rem; gap: 0.35rem 0.8rem; }
+    .gm-verdict-v.mk { display: none; }
+    .rv-vs { grid-template-columns: 1fr; }
+    .rv-arrow { transform: rotate(90deg); justify-self: center; line-height: 1; }
+    .rv-stamp-word b { font-size: 1.5rem; }
+    .rv-tally { grid-template-columns: 1fr 1fr; }
+    .rv-tally .rv-tile.mk { grid-column: 1 / -1; }
+    .rv-tl li { grid-template-columns: 1fr; gap: 0.3rem; }
+    .rv-tl li::before { display: none; }
+    .rv-clock { justify-self: start; }
+    .rv-decided, .rv-notes, .rv-teams, .rv-blueprints, .rv-two { grid-template-columns: 1fr; }
+    .rv-eh { grid-template-columns: 1fr; }
+    .rv-part { grid-template-columns: 8rem 1fr 2rem; }
+  }
+
+  /* ---- landing: the final reports band (.ld-rep) ---- */
+  .ld-reports.on { border-color: rgba(47, 212, 164, 0.5); background: linear-gradient(135deg, rgba(47, 212, 164, 0.12), var(--hfa-card) 55%); }
+  .ld-reports.on .ld-pulse { background: var(--hfa-good); animation: none; box-shadow: 0 0 0 4px rgba(47, 212, 164, 0.2); }
+  .ld-reports .ld-plans-head { flex-wrap: wrap; }
+  .ld-reports .ld-plans-head h2 b { color: var(--hfa-good); }
+  .ld-rep-title { flex: 1 1 18rem; min-width: 0; }
+  .ld-rep-sum { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .ld-rep-chip { display: inline-flex; align-items: baseline; gap: 0.3rem; padding: 0.3rem 0.7rem; border-radius: 999px; background: var(--hfa-tint); border: var(--hfa-hairline); font-size: 0.8rem; color: var(--hfa-muted); white-space: nowrap; }
+  .ld-rep-chip i { font-style: normal; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-right: 0.15rem; }
+  .ld-rep-chip b { font-weight: 900; font-size: 0.95rem; color: var(--hfa-body); } .ld-rep-chip b.up { color: var(--hfa-good); } .ld-rep-chip b.down { color: var(--hfa-bad); }
+  .ld-rep-chip.hot { border-color: rgba(255, 31, 47, 0.5); }
+  .ld-rep-grid { grid-auto-columns: 17rem; }
+  .ld-rep { display: flex; flex-direction: column; gap: 0.45rem; padding: 0.7rem 0.8rem; border-radius: 12px; background: var(--hfa-tint); border: var(--hfa-hairline); border-top: 3px solid rgba(128, 128, 128, 0.5); text-decoration: none; color: var(--hfa-body); transition: transform 0.12s, border-color 0.12s; scroll-snap-align: start; min-width: 0; }
+  .ld-rep:hover { transform: translateY(-2px); }
+  .ld-rep.good { border-top-color: var(--hfa-good); } .ld-rep.bad { border-top-color: var(--hfa-bad); }
+  .ld-rep-score { display: grid; grid-template-columns: 1fr 1fr auto; align-items: center; gap: 0.4rem; }
+  .ld-rep-score .t { display: inline-flex; align-items: center; gap: 0.3rem; opacity: 0.6; }
+  .ld-rep-score .t.w { opacity: 1; }
+  .ld-rep-score img { width: 22px; height: 22px; object-fit: contain; }
+  .ld-rep-score b { font-size: 0.82rem; font-weight: 800; color: var(--hfa-body); }
+  .ld-rep-score em { font-style: normal; font-size: 1.35rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .ld-rep-score .t.w em { color: var(--hfa-accent); }
+  .ld-rep-score small { font-size: 0.58rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep-verdict { align-self: flex-start; display: inline-flex; align-items: baseline; gap: 0.35rem; font-size: 0.72rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.15rem 0.55rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-body); }
+  .ld-rep-verdict i { font-style: normal; font-size: 0.56rem; font-weight: 800; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep.good .ld-rep-verdict { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); } .ld-rep.bad .ld-rep-verdict { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .ld-rep-head { font-size: 0.8rem; line-height: 1.4; color: var(--hfa-body); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; flex: 1 1 auto; }
+  .ld-rep-foot { display: flex; flex-wrap: wrap; gap: 0.3rem 0.8rem; padding-top: 0.4rem; border-top: var(--hfa-hairline); font-size: 0.8rem; }
+  .ld-rep-foot span { display: inline-flex; align-items: baseline; gap: 0.25rem; }
+  .ld-rep-foot i { font-style: normal; font-size: 0.56rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep-foot b { font-weight: 900; color: var(--hfa-body); } .ld-rep-foot b.up { color: var(--hfa-good); } .ld-rep-foot b.down { color: var(--hfa-bad); }
+  .ld-rep-foot b.g.good { color: var(--hfa-good); } .ld-rep-foot b.g.bad { color: var(--hfa-bad); }
+  @media (max-width: 760px) {
+    .ld-rep-grid { grid-auto-columns: 14.5rem; }
+    .ld-rep { padding: 0.55rem 0.6rem; }
+    .ld-rep-head { -webkit-line-clamp: 3; font-size: 0.76rem; }
+    .ld-rep-chip { font-size: 0.72rem; padding: 0.2rem 0.55rem; }
+    .rv-headline { font-size: 0.98rem; font-weight: 700; }
+    .ld-rep-score small { display: none; }
+    .ld-rep-score { grid-template-columns: 1fr 1fr; }
+    /* The live bands ride up under the intro, ahead of the game list. */
+    .ld-hero > .ld-hero-main { order: -2; }
+    .ld-hero > .ld-reports, .ld-hero > .ld-plans.on { order: -1; }
+  }
 </style>
 
 </head>
@@ -1327,20 +1569,20 @@
     <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
   </div>
   <main>
-<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#read" data-sec="read">The read</a><a href="#script" data-sec="script">The script</a><a href="#away" data-sec="away">KC offense</a><a href="#home" data-sec="home">SEA offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="#before" data-sec="before">Before you bet</a><a href="/nfl/w/7/">Week 7 board</a></nav>
+<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#result" data-sec="result">The result</a><a href="#game" data-sec="game">How it was decided</a><a href="#script" data-sec="script">The script</a><a href="#away" data-sec="away">KC offense</a><a href="#home" data-sec="home">SEA offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="#grade" data-sec="grade">The grade</a><a href="#next" data-sec="next">Next time</a><a href="/nfl/w/7/">Week 7 board</a></nav>
 
 <div class="hfa-card hfa-hero hfa-sec gm-hero" id="hero" data-sec="hero" style="--gm-away: #E31837; --gm-home: #002244;">
   <div class="gm-hero-top">
     <a class="gm-back" href="/nfl/w/7/">&#8249; Week 7 board</a>
-    <span class="hfa-eyebrow">NFL &middot; 2026 season &middot; week 7 &middot; final</span>
+    <span class="hfa-eyebrow">NFL &middot; 2026 season &middot; week 7 &middot; final &middot; reviewed</span>
   </div>
   <div class="gm-score">
-    <div class="gm-side away">
+    <div class="gm-side away lost">
       <img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="Kansas City Chiefs logo" width="96" height="96">
       <div class="gm-id"><div class="gm-abbr">KC</div><div class="gm-nick">Chiefs</div><i class="gm-under" style="background: #E31837"></i></div>
     </div>
     <div class="gm-mid">
-      <div class="gm-pts"><span>20.2</span><em>&ndash;</em><span>23.2</span></div><div class="gm-tag">projected</div>
+      <div class="gm-pts final"><span class="">3</span><em>&ndash;</em><span class="w">20</span></div><div class="gm-tag">final <span class="gm-projwas">&middot; projected 20.2&ndash;23.2</span></div>
     </div>
     <div class="gm-side home">
       <div class="gm-id"><div class="gm-abbr">SEA</div><div class="gm-nick">Seahawks</div><i class="gm-under" style="background: #002244"></i></div>
@@ -1351,135 +1593,342 @@
     <span class="gm-chip">Sunday Oct 25, 2026 <i>&middot; 6:20 PM Denver</i></span>
     <span class="gm-chip"><i>spread</i> <b>SEA -3</b></span>
     <span class="gm-chip"><i>total</i> <b>43.5</b></span>
-    <span class="gm-chip final"><i>final</i> <b>KC 3 &ndash; 20 SEA</b></span>
+    
     <span class="gm-chip " title="Artificial turf. Passing is the same on grass and turf; rushing runs about 3.5% higher on turf (+3.7 yards a team) and a catch gains a tenth of a yard more after it. Points, the closing lines and the engine show no surface effect, so it is not an engine input."><i>field</i> <b>turf</b></span><span class="gm-chip " title="Forecast for the kickoff window, as of Sun 6:06 PM Denver. Wind above 10 mph trims the passing projection."><i>forecast</i> <b>50°F · wind 3 mph</b></span>
   </div>
   
-  <a class="gm-script" href="#script" title="The plan's script: pace, confidence and each side's lean — the section below has the rest">
-    <span class="gm-script-k">The script</span>
-    <span class="gm-script-v"><b>average pace</b><span class="pp-bars sm"><i class="on"></i><i class="on"></i><i class=""></i></span></span>
-    <span class="gm-script-v"><b>medium confidence</b><span class="pp-pips sm"><i class="on"></i><i class="on"></i><i class=""></i></span></span>
-    <span class="gm-script-v lean"><b>KC</b> balanced</span><span class="gm-script-v lean"><b>SEA</b> pass</span>
+  <a class="gm-verdict warn" href="#result" title="The pre-game plan against the game: the report's verdict on the script, the calls graded off the box score, and the projection's grade">
+    <span class="gm-verdict-stamp"><i>The script</i><b>Partly held</b></span>
+    <span class="gm-verdict-v"><i>calls</i><b><span class="up">6</span>&ndash;<span class="down">4</span></b></span>
+    <span class="gm-verdict-v"><i>Edge+</i><b><span class="up">8</span>&ndash;<span class="down">2</span></b></span>
+    <span class="gm-verdict-v"><i>projection</i><b class="gm-letter warn">C</b></span>
+    <span class="gm-verdict-v mk">SEA covered (SEA by 3)</span><span class="gm-verdict-v mk">Under 43.5 (23)</span>
   </a>
   
 </div>
 
 
-<details class="hfa-card hfa-sec pp-sec pp-read" id="read" data-sec="read" open>
+
+<details class="hfa-card hfa-sec pp-sec rv-result" id="result" data-sec="result" open>
   <summary class="pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    <span class="pp-headtext"><span class="hfa-eyebrow">The read &middot; written Sun Oct 25, 6:05 PM</span><span class="pp-h2">What the plan sees</span></span>
-    <span class="pp-headchips"><span class="badge acc">10 calls</span><span class="pp-open">open</span></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The result &middot; plan written Sun Oct 25, 6:05 PM &middot; report Tue Oct 27, 5:43 PM</span><span class="pp-h2">What the plan saw. What happened.</span></span>
+    <span class="pp-headchips"><span class="badge warn">script partly held</span><span class="pp-open">open</span></span>
   </summary>
   <div class="pp-body">
-    <div class="pp-hook">
-      <div class="pp-hook-logos"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy"><span class="pp-vs">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy"></div>
-      <blockquote class="pp-quote">Seattle squeezes the field and folds at the goal line. Walker gets in.</blockquote>
-      <p class="pp-headline">Two defenses that make you earn every yard between the 20s — the difference is Seattle concedes touchdowns on the few trips it allows while Kansas City gives up field goals.</p>
+    <div class="rv-stamp warn">
+      <div class="rv-stamp-word"><span>The script</span><b>Partly held</b></div>
+      <div class="rv-stamp-meta">
+        <span>The game took <b>the favorite&#x27;s path</b></span>
+        <span class="rv-win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy">Seahawks won 20–3</span>
+      </div>
     </div>
-    <div class="pp-cards">
+    <div class="rv-vs">
+      <div class="rv-col plan">
+        <div class="pp-k">The plan said</div>
+        <div class="pp-hook-logos"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy"><span class="pp-vs">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy"></div>
+        <blockquote class="pp-quote">Seattle squeezes the field and folds at the goal line. Walker gets in.</blockquote>
+        <p class="pp-sub">Two defenses that make you earn every yard between the 20s — the difference is Seattle concedes touchdowns on the few trips it allows while Kansas City gives up field goals.</p>
+      </div>
+      <div class="rv-arrow" aria-hidden="true">&#8594;</div>
+      <div class="rv-col game warn">
+        <div class="pp-k">What happened</div>
+        <p class="rv-headline">Seattle 20, Kansas City 3: the Seahawks covered -3 and the game went under 43.5 by 20 points because Kansas City never once crossed the Seattle 20 — zero red-zone trips, 3-of-13 on third down, two missed field goals — while Seattle turned a wire-to-wire lead into 41 carries and 35:51 of possession.</p>
+        <p class="pp-sub">The plan read the shape of the game well — a grind, a total under 43, drives ending in kicks, Seattle winning on the back of Smith-Njigba&#x27;s air yards while Kansas City could not reach the end zone — and the final was 20-3 under a 43.5 total. What it got wrong was the mechanism on both sides of the ball: it expected Seattle to be forced into 33-37 attempts because it couldn&#x27;t run, and Seattle instead ran 41 times for 153 behind a wire-to-wire lead, while KC&#x27;s lean flipped the other way (68% pass against a 52.9% season rate).</p><details class="pp-more"><summary>more</summary><p>It also leaned on Seattle&#x27;s soft red-zone defense as the source of KC&#x27;s points, and KC never took a snap inside the 20, which made the plan&#x27;s two highest-confidence offensive ideas (Walker&#x27;s goal-line work, KC&#x27;s trips finishing as sevens) untestable rather than wrong. The call record of 6-4 understates how right the core read was and overstates the backfield reads, which were a role change (Charbonnet out) plus script, not a bad process.</p></details>
+      </div>
+    </div>
+    <div class="rv-tally">
       
-      <div class="pp-card">
-        <div class="pp-k">The read</div>
-        <p class="pp-lead">This is a low-total game between the best field defense in the league and one of the best goal-line defenses, and they are not the same team.</p>
-        <details class="pp-more"><summary>more</summary><p>Seattle has allowed the fewest yards per attempt and the least EPA per play between the 20s, but opponents have scored touchdowns on better than four of five red-zone trips — 7-for-7 across weeks 4 through 6. Kansas City is the mirror image: 24th-ish between the 20s by rank but third in red-zone touchdown rate allowed, with three opponent trips in week 6 producing zero touchdowns and two kicks. So the shape is: few drives, hard yards, and Seattle&#x27;s points arriving as threes while Kansas City&#x27;s arrive as sevens.</p></details>
+      <div class="rv-tile " title="The plan's calls graded off the box score at the Normal cushion">
+        <span>Normal calls</span>
+        <b><i class="up">6</i>&ndash;<i class="down">4</i></b>
+        <div class="rv-bar"><i style="width: 60%"></i></div>
       </div>
       
-      <div class="pp-card">
-        <div class="pp-k">Why</div>
-        <p class="pp-lead">Kansas City&#x27;s whole engine is Kenneth Walker and a clean pocket — league-low pressure allowed, 5.5 yards a carry, three-to-six explosive runs in every game.</p>
-        <details class="pp-more"><summary>more</summary><p>Seattle takes the run away between the 20s (first in rush EPA allowed) and generates the third-most pressure in the league against a Chiefs line now without Jaylon Moore (concussion, ruled out Sunday per Rotowire) on top of Josh Simmons on IR, with Rice and Thornton gone from the target tree. That caps Mahomes&#x27; yardage and KC&#x27;s trip count — but it does not help Seattle once Kansas City reaches the 20, which is where Walker has scored six times in five games and where Seattle&#x27;s one real weakness lives. Going the other way, Seattle cannot run (negative rush EPA in all six games) into a Chiefs front allowing 3.5 a carry, so Darnold throws, Jaxon Smith-Njigba eats his usual 40-plus percent of the air yards, and the drives die around the 20 against a bend-don&#x27;t-break defense that has conceded one red-zone touchdown in three trips twice already. Three giveaways in each of weeks 3, 5 and 6 are the tail on that.</p></details>
+      <div class="rv-tile " title="The plan's calls graded off the box score at the Edge cushion">
+        <span>Edge calls</span>
+        <b><i class="up">8</i>&ndash;<i class="down">2</i></b>
+        <div class="rv-bar"><i style="width: 80%"></i></div>
       </div>
       
-      <div class="pp-card">
-        <div class="pp-k">What would change it</div>
-        <p class="pp-lead">Kansas City scoring first and leading: then Walker&#x27;s carries climb, Seattle throws 45 times and the whole Chiefs passing-under case thins.</p>
-        <details class="pp-more"><summary>more</summary><p>A Walker explosive run — his distribution has a fat right tail no front has closed — also blows up the yardage reads. And every price here is the exchange&#x27;s, with thin volume behind it.</p></details>
+      <div class="rv-tile hot" title="The plan's calls graded off the box score at the Edge+ cushion">
+        <span>Edge+ calls</span>
+        <b><i class="up">8</i>&ndash;<i class="down">2</i></b>
+        <div class="rv-bar"><i style="width: 80%"></i></div>
       </div>
+      
+      <a class="rv-tile lt warn" href="#grade" title="The projection graded: team volume and yardage, player lines and the market calls it implied"><span>Projection</span><b>C</b><small>58 of 100</small></a>
+      <div class="rv-tile" title="Projected player lines that landed in range"><span>Player lines</span><b>28<small>/39</small></b><small>in range</small></div>
+      <div class="rv-tile mk"><span>The market</span><em>SEA covered (SEA by 3)</em><em>Under 43.5 (23)</em></div>
+    </div>
+    
+    <div class="pp-card wide rv-why">
+      <div class="pp-k">Why the script partly held</div>
+      <p class="pp-lead">The favorite path&#x27;s outcome landed almost exactly — Mahomes made to throw into Seattle&#x27;s best unit (33 attempts, 165 yards, 4.7 aDOT), Walker held under four a carry (14 for 36, 2.6), Smith-Njigba carrying the air yards (76% share), Myers kicking — but the path&#x27;s engine was wrong: Seattle got there with 41 carries and 35:51 of possession rather than 30-plus Darnold attempts, and KC&#x27;s offense was stopped before the red zone, not at it. `checks` confirms pace held (119 plays against a 121.5 league baseline) while both leans broke: KC passed at 68% versus a 52.9% season rate, Seattle passed at 40.6% versus 56.2%. The two long Seattle drives of the first half (14 plays/96 yards/8:26, 10 plays/66 yards) were the possession tilt the plan described, achieved by the opposite method.</p>
       
     </div>
+    
+    
+    <details class="rv-fold">
+      <summary>The plan's pre-game read <span class="flat">&middot; as written before kickoff</span></summary>
+      <div class="pp-cards">
+        <div class="pp-card"><div class="pp-k">The read</div><p class="pp-lead">This is a low-total game between the best field defense in the league and one of the best goal-line defenses, and they are not the same team.</p><details class="pp-more"><summary>more</summary><p>Seattle has allowed the fewest yards per attempt and the least EPA per play between the 20s, but opponents have scored touchdowns on better than four of five red-zone trips — 7-for-7 across weeks 4 through 6. Kansas City is the mirror image: 24th-ish between the 20s by rank but third in red-zone touchdown rate allowed, with three opponent trips in week 6 producing zero touchdowns and two kicks. So the shape is: few drives, hard yards, and Seattle&#x27;s points arriving as threes while Kansas City&#x27;s arrive as sevens.</p></details></div><div class="pp-card"><div class="pp-k">Why</div><p class="pp-lead">Kansas City&#x27;s whole engine is Kenneth Walker and a clean pocket — league-low pressure allowed, 5.5 yards a carry, three-to-six explosive runs in every game.</p><details class="pp-more"><summary>more</summary><p>Seattle takes the run away between the 20s (first in rush EPA allowed) and generates the third-most pressure in the league against a Chiefs line now without Jaylon Moore (concussion, ruled out Sunday per Rotowire) on top of Josh Simmons on IR, with Rice and Thornton gone from the target tree. That caps Mahomes&#x27; yardage and KC&#x27;s trip count — but it does not help Seattle once Kansas City reaches the 20, which is where Walker has scored six times in five games and where Seattle&#x27;s one real weakness lives. Going the other way, Seattle cannot run (negative rush EPA in all six games) into a Chiefs front allowing 3.5 a carry, so Darnold throws, Jaxon Smith-Njigba eats his usual 40-plus percent of the air yards, and the drives die around the 20 against a bend-don&#x27;t-break defense that has conceded one red-zone touchdown in three trips twice already. Three giveaways in each of weeks 3, 5 and 6 are the tail on that.</p></details></div><div class="pp-card"><div class="pp-k">What would change it</div><p class="pp-lead">Kansas City scoring first and leading: then Walker&#x27;s carries climb, Seattle throws 45 times and the whole Chiefs passing-under case thins.</p><details class="pp-more"><summary>more</summary><p>A Walker explosive run — his distribution has a fat right tail no front has closed — also blows up the yardage reads. And every price here is the exchange&#x27;s, with thin volume behind it.</p></details></div>
+      </div>
+    </details>
+    
   </div>
 </details>
 
 
-<details class="hfa-card hfa-sec pp-sec pp-script" id="script" data-sec="script" open>
+
+<details class="hfa-card hfa-sec pp-sec rv-game" id="game" data-sec="game" open>
   <summary class="pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    <span class="pp-headtext"><span class="hfa-eyebrow">The script</span><span class="pp-h2">How the game plays</span></span>
-    <span class="pp-headchips"><span class="badge mute">average pace</span><span class="badge mute">medium confidence</span><span class="pp-open">open</span></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The game</span><span class="pp-h2">How it was decided</span></span>
+    <span class="pp-headchips"><span class="badge mute">6 turning points</span><span class="pp-open">open</span></span>
+  </summary>
+  <div class="pp-body">
+    
+    <div class="pp-k">Turning points</div>
+    <ol class="rv-tl">
+      
+      <li style="--pp-team: #002244">
+        <span class="rv-clock">Q2 11:19</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="SEA" loading="lazy"><span>Darnold 33 yards to Smith-Njigba on 3rd-and-7 from the SEA 47 (EPA +3.29, WPA +0.111)</span></div>
+          <p class="pp-sub">The signature play of a 14-play, 96-yard, 8:26 drive out of the shadow of the goal line that produced the game&#x27;s first points and the possession tilt that never reversed.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #E31837">
+        <span class="rv-clock">Q2 06:09</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="KC" loading="lazy"><span>Mahomes intercepted by Okada at the SEA 34 on 2nd-and-10 (EPA -3.78, WPA -0.137)</span></div>
+          <p class="pp-sub">Came two plays after KC converted 4th-and-1 at the SEA 49; the only drive all night that had reached scoring range with the game tied-ish died on a short left throw to Royals.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #002244">
+        <span class="rv-clock">Q2 01:49</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="SEA" loading="lazy"><span>Darnold 27 yards to Smith-Njigba for a touchdown on 3rd-and-9 (EPA +4.64)</span></div>
+          <p class="pp-sub">Seattle&#x27;s only offensive touchdown of the first three quarters and the play that made it 10-0 — notably scored from outside the 20, where Seattle&#x27;s night lived.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #002244">
+        <span class="rv-clock">Q2 00:23</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="SEA" loading="lazy"><span>Darnold intercepted at the KC goal line by Nohl Williams, returned 65 yards to the SEA 44 (EPA -5.61, WPA -0.115)</span></div>
+          <p class="pp-sub">The one swing KC got and the one Seattle giveaway; KC&#x27;s response was a 4-yard Walker run and a missed 58-yard field goal, which is the whole game in two plays.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #E31837">
+        <span class="rv-clock">Q4 08:38</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="KC" loading="lazy"><span>Butker misses a 45-yard field goal after an 11-play, 70-yard drive</span></div>
+          <p class="pp-sub">Trailing 13-3 with the ball at midfield-plus and six-plus minutes of possession invested, KC&#x27;s best sustained drive produced nothing; win probability never came back.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #002244">
+        <span class="rv-clock">Q4 03:52</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="SEA" loading="lazy"><span>Emanuel Wilson 21 yards left tackle for a touchdown on 3rd-and-4 (EPA +3.70)</span></div>
+          <p class="pp-sub">Capped a 9-play, 65-yard, 4:46 drive and turned a two-score game into a 17-point final, the only explosive run of the night on either side that mattered.</p>
+          
+        </div>
+      </li>
+      
+    </ol>
+    
+    
+    <div class="pp-k pp-k-sec">What decided it <span class="flat">&middot; and whether the numbers showed it before kickoff</span></div>
+    <div class="rv-decided">
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag">pre-game tell</span>
+        <p class="pp-lead">Kansas City never reached the red zone</p>
+        <p class="pp-sub">0 trips, 0 plays inside the 20 on 53 snaps; 3-of-13 on third down; points came from a 50-yard field goal (Q3 1:47) with 58- and 45-yard attempts missed</p>
+        <details class="pp-more"><summary>more</summary><p><b>The tell.</b> KC&#x27;s week 6 profile against LAC: 4 red-zone trips, 1 TD, -0.748 RZ EPA, 3-of-10 on third down, tagged &#x27;red zone stalls&#x27; and &#x27;yards without touchdowns&#x27; — and Seattle entered allowing 5.23 net yards per attempt and 3.51 per carry, the stiffest field defense in the dossier.</p></details>
+      </div>
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag">in-game only</span>
+        <p class="pp-lead">Possession: 41 Seattle carries and 35:51 of clock</p>
+        <p class="pp-sub">SEA 69 plays to KC 53; 46 SEA plays while leading at a 41.3% pass rate; three drives of 8:26, 6:51 and 4:46</p>
+        <details class="pp-more"><summary>more</summary><p><b>The tell.</b> Nothing in the inputs pointed here — Seattle&#x27;s season pass rate was 0.562 and its rush EPA had been negative in all six prior games. The lead, plus Charbonnet being out, created the workload; this was script, not identity.</p></details>
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag">pre-game tell</span>
+        <p class="pp-lead">Smith-Njigba carried an offense that otherwise did nothing through the air</p>
+        <p class="pp-sub">9/12 for 150 and the TD, 76% of Seattle&#x27;s air yards, 12.44 receiving EPA; Kupp, Shaheed, Horton combined 4 catches for 21 yards</p>
+        <details class="pp-more"><summary>more</summary><p><b>The tell.</b> The engine already had him at 9.5 targets and 90.6 yards; the add-on was KC&#x27;s 14.1% season pressure rate — a defense that can&#x27;t speed the pocket lets a single alpha eat on 3rd-and-long.</p></details>
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag">pre-game tell</span>
+        <p class="pp-lead">Kansas City&#x27;s passing game was compressed, not sacked</p>
+        <p class="pp-sub">4.7 aDOT, -9.8 CPOE, 2-of-6 deep, 0 explosive passes, 7 QB hits on 36 dropbacks but only 1 sack; Rice and Thornton unavailable, Worthy 3/6 for 11</p>
+        <details class="pp-more"><summary>more</summary><p><b>The tell.</b> Rice (hamstring) and Moore (concussion) listed out, Thornton did not play — one real perimeter option against a defense allowing 5.23 Y/A. The plan&#x27;s Mahomes under was the right expression of it.</p></details>
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag">pre-game tell</span>
+        <p class="pp-lead">Seattle&#x27;s own red-zone impotence kept the number under</p>
+        <p class="pp-sub">3 trips, 0 TDs, 2 FGs, -1.13 EPA/play inside the 20 against 0.349 field EPA; both Seattle touchdowns were scored from outside the 20 (28- and 21-yard lines)</p>
+        <details class="pp-more"><summary>more</summary><p><b>The tell.</b> KC&#x27;s defense had allowed 0 TDs on 3 red-zone trips in week 6 and 1-of-3 in week 4 (tagged &#x27;bend don&#x27;t break&#x27;); SEA&#x27;s own week 1 was 0-for-2 inside the 20. The under was live even in a blowout.</p></details>
+      </div>
+      
+    </div>
+    
+    
+    <details class="rv-fold">
+      <summary>The full story <span class="flat">&middot; the report's account, start to finish</span></summary>
+      <div class="rv-story"><h2>The short version</h2>
+<p>Seattle 20, Kansas City 3. The Seahawks covered -3 comfortably and the total missed by twenty, and the reason is a single number: Kansas City recorded zero red-zone trips on 53 snaps. The projection had the Chiefs at 20.2 points and 27.6 carries; they got three points on 16 carries, because they never led for a second and never got inside the Seattle 20. Seattle's own night was more modest than the scoreboard — 20 points on 410 yards, 0-for-3 inside the red zone — but it owned the ball for 35:51.</p>
+<h2>How it unfolded</h2>
+<p>The first quarter was two punts apiece with both offenses moving in bursts; Mahomes hit Allen for 18 and Gray for 19, and KC's second drive reached the Seattle 48 before stalling. Then Seattle's 14-play, 96-yard, 8:26 march out of its own 7 set the tone — three third-down conversions, the longest a 33-yard Smith-Njigba catch on 3rd-and-7 (Q2 11:19, +3.29 EPA) — and ended in a 25-yard Myers field goal. Kansas City answered by converting 4th-and-1 at the Seattle 49 and then handing it back: Mahomes's 2nd-and-10 throw to Royals was intercepted by Okada at the SEA 34 (Q2 6:09, -3.78 EPA, -0.137 WPA). Seattle went 66 yards in ten plays and scored on the 27-yard Smith-Njigba touchdown on 3rd-and-9 (Q2 1:49).</p>
+<p>The only swing Kansas City earned came at the end of the half, when Darnold's 2nd-and-3 throw at the goal line was picked by Nohl Williams and returned 65 yards; KC got the ball at the SEA 44 with seven seconds and missed from 58. From there the second half was Seattle bleeding clock — a 12-play, 6:51 field-goal drive to open the third — and KC trading long, empty possessions: 13 plays and 44 yards for a 50-yard field goal, then 11 plays and 70 yards for a missed 45-yarder at Q4 8:38. Emanuel Wilson's 21-yard run off left tackle on 3rd-and-4 (Q4 3:52) ended it.</p>
+<h2>Why the game diverged from the projection</h2>
+<p>The team-level grade is 0.5 and it hangs on two inversions. Kansas City was blended at 4.0 yards per carry and 6.85 per attempt and produced 3.1 and 5.0. The passing game wasn't sacked into submission — one sack on 36 dropbacks — it was compressed: 4.7 aDOT, -9.8 CPOE, 2-of-6 deep, 131 of 165 yards after the catch, zero explosive passes. With Rice and Thornton unavailable, Worthy absorbed 40% of the air yards for 11 receiving yards. The second inversion is volume. Seattle was projected for 26.6 carries and 32.9 attempts and ran 41 times while throwing 28, because it led wire-to-wire; Kansas City was projected for 27.6 carries and ran 16, because it trailed on 38 of 53 snaps and passed at 73.7% in that state. The engine's blended pass rates (0.545 KC, 0.571 SEA) are neutral-script numbers, and this was not a neutral script.</p>
+<p>What the projection got right matters too: Seattle's points (23.2 vs 20), its pass yards (225.6 vs 257), the under, and the winner. The market score of 0.667 is honest — the side was a coin flip at the number and the total was the real edge.</p>
+<h2>The plan against the game</h2>
+<p>The plan's picture of the final scoreboard was close to perfect and its picture of the machinery was backwards. It had Mahomes held under 225 (165), Walker held near four a carry (2.6), Smith-Njigba carrying the air yards (76%), Myers kicking, and the game ending in kicks rather than end zones. But it got there by assuming Seattle would be forced to throw 33-37 times with a dead run game, and Seattle instead ran 41 times for 153 — <code>checks</code> has both leans broken, KC at 68% pass against a 52.9% season rate and Seattle at 40.6% against 56.2%, with pace right on the league figure. Two of its highest-conviction offensive ideas — Walker's goal-line work and KC trips finishing as sevens against Seattle's soft red-zone defense — were never tested, because the Chiefs did not reach the 20 once.</p>
+<h2>Player by player</h2>
+<p>Smith-Njigba was the game: 9-for-12, 150 yards, the touchdown, 12.44 receiving EPA, three of Seattle's four explosive passes. The rest of the receiver room produced 4 catches for 21 yards between Kupp, Shaheed and Horton, which is the trap in any Seattle secondary-option prop. AJ Barner was the hidden volume at a 79.7% snap share with 41 of his 42 yards after the catch. Emanuel Wilson's 24 carries are the role note to carry forward — Charbonnet out, and the only committee partner, Holani, got five carries and two TFLs. For Kansas City, Kelce led the team with eight targets but averaged 5.5 yards per target; Noah Gray was the only positive-EPA receiver on the roster (+3.48 on three targets); Walker's 14 carries contained zero runs of 10-plus after three-or-more such runs in every prior game.</p>
+<h2>The defenses</h2>
+<p>Seattle's defense did what its season-long numbers said it would — it took away yards per attempt and left the Chiefs with a dink game that 3-of-13 on third down could not sustain — while its own red zone remained a sieve-in-waiting that never got tested. Kansas City's defense gave up 0.349 EPA per play between the 20s and then held Seattle to 0-for-3 inside the 20 with -1.13 EPA/play there; both Seattle touchdowns were scored from outside the red zone, at the 28 and the 21. That is textbook bend-don't-break, and it is the third straight week KC has held in the red zone (0-for-3 against LAC in week 6). It kept the number under 43.5 in a 17-point game.</p>
+<h2>What the model should take from this</h2>
+<p>Three things. First, the blended pass rate needs a lead-probability adjustment for road dogs: the 11.6-carry KC miss and the 14.4-carry Seattle miss are the same error with opposite signs. Second, Kansas City's red-zone problem is no longer a one-week sample — week 6's 1-of-4 with -0.748 EPA, and now no trips at all — and should discount KC team totals and touchdown props against top-ten yards-per-attempt defenses regardless of how their field EPA grades. Third, a single alpha receiver's air-yards share against a non-pressuring defense survives even a run-script game; Smith-Njigba cleared his receptions line in a game his team threw 28 times. The missed field goals from 58 and 45 and Seattle's 0-for-3 inside the 20 are bounce — do not build on them.</p></div>
+    </details>
+    
+  </div>
+</details>
+
+
+
+<details class="hfa-card hfa-sec pp-sec pp-script rv-script" id="script" data-sec="script" open>
+  <summary class="pp-head">
+    <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The script, graded</span><span class="pp-h2">Called against played</span></span>
+    <span class="pp-headchips"><span class="badge warn">script partly held</span><span class="pp-open">open</span></span>
   </summary>
   <div class="pp-body">
     <div class="pp-gauges">
-      <div class="pp-gauge" title="Plays and tempo the plan expects">
-        <div class="pp-k">Pace</div>
-        <div class="pp-bars"><i class="on"></i><i class="on"></i><i class=""></i></div>
-        <b>average</b>
+      
+      <div class="pp-gauge rv-gauge held" title="Both teams ran 119 plays; two league-average offenses run 121.5">
+        <div class="pp-k">Pace <span class="rv-mark">&#10003;</span></div>
+        <div class="rv-row"><small>called</small><span class="pp-bars sm"><i class="on"></i><i class="on"></i><i class=""></i></span><em>average</em></div>
+        <div class="rv-row played"><small>played</small><span class="pp-bars sm"><i class="on"></i><i class="on"></i><i class=""></i></span><em>average</em></div>
+        <span class="rv-note">119 plays &middot; league 121.5</span>
       </div>
-      <div class="pp-gauge" title="How sure the plan is of its script">
-        <div class="pp-k">Confidence</div>
+      
+      <div class="pp-gauge" title="How sure the plan was of its script">
+        <div class="pp-k">The plan's confidence</div>
         <div class="pp-pips"><i class="on"></i><i class="on"></i><i class=""></i></div>
         <b>medium</b>
       </div>
       
-      <div class="pp-gauge lean" title="They lean run by habit and will again, but as a road dog without Rice and Thornton and against the league&#x27;s stiffest run front between the 20s, the pass rate drifts up toward neutral rather than the 52-53% of their wins at home.">
-        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy"> KC leans</div>
-        <div class="pp-leanbar"><span>run</span><div class="track"><i style="left: 50%"></i></div><span>pass</span></div>
-        <b>balanced</b>
+      <div class="pp-gauge lean rv-gauge miss" title="They lean run by habit and will again, but as a road dog without Rice and Thornton and against the league&#x27;s stiffest run front between the 20s, the pass rate drifts up toward neutral rather than the 52-53% of their wins at home.">
+        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy"> KC lean <span class="rv-mark">&#10007;</span></div>
+        <div class="pp-leanbar"><span>run</span><div class="track"><i class="called" style="left: 50%" title="called"></i><i class="played" style="left: 85%" title="played"></i></div><span>pass</span></div>
+        <b class="rv-cvp">balanced <i>&#8594;</i> pass</b><span class="rv-note">passed on 68% &middot; season 53%</span>
       </div>
       
-      <div class="pp-gauge lean" title="Their ground game has produced negative rush EPA in all six games and meets a front allowing 3.5 a carry; Seattle has thrown at 68-70% every time it could not run, and that is this script.">
-        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy"> SEA leans</div>
-        <div class="pp-leanbar"><span>run</span><div class="track"><i style="left: 85%"></i></div><span>pass</span></div>
-        <b>pass</b>
+      <div class="pp-gauge lean rv-gauge miss" title="Their ground game has produced negative rush EPA in all six games and meets a front allowing 3.5 a carry; Seattle has thrown at 68-70% every time it could not run, and that is this script.">
+        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy"> SEA lean <span class="rv-mark">&#10007;</span></div>
+        <div class="pp-leanbar"><span>run</span><div class="track"><i class="called" style="left: 85%" title="called"></i><i class="played" style="left: 15%" title="played"></i></div><span>pass</span></div>
+        <b class="rv-cvp">pass <i>&#8594;</i> run</b><span class="rv-note">passed on 41% &middot; season 56%</span>
       </div>
       
     </div>
-    <div class="pp-card wide">
-      <p class="pp-lead">Expect a grind: two defenses that make offenses earn the field, a total under 43, and drives that end in kicks more often than ends zones. Seattle should control possession through the air because it cannot run on Kansas City&#x27;s front, and its stalls at the 20 against a defense that holds there turn yards into field goals.</p>
-      <details class="pp-more"><summary>more</summary><p>Kansas City gets fewer drives than usual, leans on Walker, and converts the trips it does get because Seattle concedes touchdowns once you cross the 20. A one-score game decided by whether Darnold gives it away again or Walker breaks one.</p></details>
-    </div>
+    <div class="rv-legend"><span><i class="called"></i>called</span><span><i class="played"></i>played</span></div>
+    <div class="pp-k pp-k-sec">The two paths <span class="flat">&middot; the game took the favorite&#x27;s path</span></div>
     <div class="pp-paths">
       
-      <div class="pp-path fav" style="--pp-team: #002244">
-        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy"><span class="pp-k">If Seahawks win</span><span class="badge mute">favorite</span></div>
+      <div class="pp-path fav took" style="--pp-team: #002244">
+        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy"><span class="pp-k">If Seahawks win</span><span class="badge good">the way it went</span><span class="badge acc">won</span></div>
         <p class="pp-lead">Seattle wins by making Mahomes throw into its best unit: pressure from a four-man front, Walker held near four a carry between the 20s, and 30-plus Darnold attempts with Smith-Njigba carrying the air yards.</p>
         <details class="pp-more"><summary>more</summary><p>The scoreboard looks like 23-17 with Myers kicking three times.</p></details>
       </div>
       
-      <div class="pp-path dog" style="--pp-team: #E31837">
-        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy"><span class="pp-k">If Chiefs win</span><span class="badge mute">underdog</span></div>
+      <div class="pp-path dog not" style="--pp-team: #E31837">
+        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy"><span class="pp-k">If Chiefs win</span><span class="badge mute">didn't happen</span></div>
         <p class="pp-lead">Kansas City wins by converting the few possessions it gets: Walker breaks an edge run, KC turns two red-zone trips into touchdowns against Seattle&#x27;s goal-line defense, and a Darnold giveaway in Seattle territory flips the field.</p>
         <details class="pp-more"><summary>more</summary><p>That version is 23-20 Chiefs with KC under 60 plays.</p></details>
       </div>
       
     </div>
     
-    <div class="pp-k pp-k-sec">What swings it</div>
+    <div class="pp-k pp-k-sec">What the plan said would swing it <span class="flat">&middot; weighed after the game, biggest first</span></div>
     <div class="pp-swing">
-      <div class="pp-swingcard"><b class="n">1</b><div><p class="pp-lead">Seattle&#x27;s red-zone defense: opponents have scored a touchdown on nearly every trip since week 4, which is where Kansas City&#x27;s points come from.</p></div></div><div class="pp-swingcard"><b class="n">2</b><div><p class="pp-lead">Darnold&#x27;s giveaways — three turnovers in each of weeks 3, 5 and 6, all under pressure on third down.</p></div></div><div class="pp-swingcard"><b class="n">3</b><div><p class="pp-lead">Kansas City&#x27;s patched right tackle spot (Moore out, Simmons on IR) against Seattle&#x27;s four-man rush.</p></div></div><div class="pp-swingcard"><b class="n">4</b><div><p class="pp-lead">Walker&#x27;s explosive-run tail: he has had three or more runs of 10-plus in every game this season.</p></div></div><div class="pp-swingcard"><b class="n">5</b><div><p class="pp-lead">Whether Kansas City leads; its back&#x27;s carry count and Seattle&#x27;s attempt total both hinge on it.</p></div></div>
+      
+      <div class="pp-swingcard rv-swing decisive">
+        <span class="rv-weight">decisive</span>
+        <p class="pp-lead">Whether Kansas City leads; its back&#x27;s carry count and Seattle&#x27;s attempt total both hinge on it.</p>
+        <p class="rv-went"><b>Went:</b> KC led for 0 seconds and trailed for 38 of its 53 snaps at a 73.7% pass rate; Walker&#x27;s carries fell to 14, KC&#x27;s team carries to 16, and Seattle&#x27;s attempt total fell to 28 as it ran out the clock with 46 leading plays.</p>
+        
+      </div>
+      
+      <div class="pp-swingcard rv-swing contributed">
+        <span class="rv-weight">contributed</span>
+        <p class="pp-lead">Darnold&#x27;s giveaways — three turnovers in each of weeks 3, 5 and 6, all under pressure on third down.</p>
+        <p class="rv-went"><b>Went:</b> Darnold gave it away once, at the KC goal line on 2nd-and-3 (Q2 0:23, -5.61 EPA) with a 65-yard return, costing Seattle at least four points — but it arrived from a clean pocket (2 QB hits all night) rather than under third-down pressure, and Seattle won by 17 anyway.</p>
+        
+      </div>
+      
+      <div class="pp-swingcard rv-swing contributed">
+        <span class="rv-weight">contributed</span>
+        <p class="pp-lead">Kansas City&#x27;s patched right tackle spot (Moore out, Simmons on IR) against Seattle&#x27;s four-man rush.</p>
+        <p class="rv-went"><b>Went:</b> The patched line held up against sacks (1 on 36 dropbacks) but conceded 7 QB hits and a 19.4% pressure rate, and Suamataia&#x27;s holding flag at Q4 11:44 erased a 6-yard run on a drive that ended in a missed 45-yarder.</p>
+        
+      </div>
+      
+      <div class="pp-swingcard rv-swing contributed">
+        <span class="rv-weight">contributed</span>
+        <p class="pp-lead">Walker&#x27;s explosive-run tail: he has had three or more runs of 10-plus in every game this season.</p>
+        <p class="rv-went"><b>Went:</b> The explosive-run tail never showed: Walker had 0 runs of 10-plus and KC had 0 explosive rushes on 16 carries, which removed the underdog path&#x27;s only stated route to points.</p>
+        
+      </div>
+      
+      <div class="pp-swingcard rv-swing minor">
+        <span class="rv-weight">minor</span>
+        <p class="pp-lead">Seattle&#x27;s red-zone defense: opponents have scored a touchdown on nearly every trip since week 4, which is where Kansas City&#x27;s points come from.</p>
+        <p class="rv-went"><b>Went:</b> Seattle&#x27;s generous red-zone defense was never tested — Kansas City recorded zero red-zone trips and zero plays inside the 20 on 53 snaps, so the factor the plan called the source of KC&#x27;s points simply never came up.</p>
+        
+      </div>
+      
     </div>
     
     
-    <div class="pp-k pp-k-sec">Legs the same script produces <span class="flat">&middot; they move as one, which is what a same-game parlay pays for</span></div>
+    <div class="pp-k pp-k-sec">The legs the same script produced <span class="flat">&middot; graded off the box score</span></div>
     <div class="pp-angles">
       
-      <div class="pp-angle">
-        <div class="pp-angletitle">KC&#x27;s few drives end in Walker, not Butker</div>
-        <div class="pp-legs"><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>Kenneth Walker III</b><em>to score</em></span><span class="pp-leg under"><i class="arrow" aria-hidden="true">&#9660;</i><b>Patrick Mahomes</b><em>under 224.5 pass yds</em></span></div>
+      <div class="pp-angle ">
+        <div class="pp-angletitle">KC&#x27;s few drives end in Walker, not Butker <span class="badge mute">1 of 2 hit</span></div>
+        <div class="pp-legs"><span class="pp-leg over miss"><i class="arrow" aria-hidden="true">&#9650;</i><b>Kenneth Walker III</b><em>to score</em><span class="rv-res">&#10007; 0</span></span><span class="pp-leg under hit"><i class="arrow" aria-hidden="true">&#9660;</i><b>Patrick Mahomes</b><em>under 224.5 pass yds</em><span class="rv-res">&#10003; 165</span></span></div>
         <p class="pp-sub">One script: Seattle takes the passing yards away between the 20s, Kansas City gets fewer and shorter possessions, and the trips it does earn finish on the ground against a defense that has conceded a touchdown on nearly every red-zone trip since week 4.</p>
         
       </div>
       
-      <div class="pp-angle">
-        <div class="pp-angletitle">Seattle moves it and settles for threes</div>
-        <div class="pp-legs"><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>Jaxon Smith-Njigba</b><em>over 6.5 receptions</em></span><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>Cooper Kupp</b><em>over 2.5 receptions</em></span></div>
+      <div class="pp-angle ">
+        <div class="pp-angletitle">Seattle moves it and settles for threes <span class="badge mute">1 of 2 hit</span></div>
+        <div class="pp-legs"><span class="pp-leg over hit"><i class="arrow" aria-hidden="true">&#9650;</i><b>Jaxon Smith-Njigba</b><em>over 6.5 receptions</em><span class="rv-res">&#10003; 9</span></span><span class="pp-leg over miss"><i class="arrow" aria-hidden="true">&#9650;</i><b>Cooper Kupp</b><em>over 2.5 receptions</em><span class="rv-res">&#10007; 2</span></span></div>
         <p class="pp-sub">A dead run game forces dropbacks, the catches concentrate in the two highest-snap receivers against a defense that does not pressure, and the drives die at a Chiefs 20 that has allowed one touchdown in its last several trips allowed.</p>
         
       </div>
       
-      <div class="pp-angle">
-        <div class="pp-angletitle">Seattle throws because it has to</div>
-        <div class="pp-legs"><span class="pp-leg under"><i class="arrow" aria-hidden="true">&#9660;</i><b>Emanuel Wilson</b><em>under 49.5 rush yds</em></span><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>Sam Darnold</b><em>over 0.5 INTs</em></span><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>Jaxon Smith-Njigba</b><em>over 6.5 receptions</em></span></div>
+      <div class="pp-angle ">
+        <div class="pp-angletitle">Seattle throws because it has to <span class="badge mute">2 of 3 hit</span></div>
+        <div class="pp-legs"><span class="pp-leg under miss"><i class="arrow" aria-hidden="true">&#9660;</i><b>Emanuel Wilson</b><em>under 49.5 rush yds</em><span class="rv-res">&#10007; 100</span></span><span class="pp-leg over hit"><i class="arrow" aria-hidden="true">&#9650;</i><b>Sam Darnold</b><em>over 0.5 INTs</em><span class="rv-res">&#10003; 1</span></span><span class="pp-leg over hit"><i class="arrow" aria-hidden="true">&#9650;</i><b>Jaxon Smith-Njigba</b><em>over 6.5 receptions</em><span class="rv-res">&#10003; 9</span></span></div>
         <p class="pp-sub">The same mechanism drives all three: Kansas City&#x27;s front holds the run, Seattle&#x27;s committee back never gets volume, the attempt total climbs, and this quarterback&#x27;s third-down throws under pressure have produced two picks in each of three straight games.</p>
         
       </div>
@@ -1498,154 +1947,221 @@
     <h2 class="gm-h2"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy"><span><em class="full">Chiefs</em><em class="short">KC</em> offense</span><span class="vs">against the</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy"><span><em class="full">Seahawks</em><em class="short">SEA</em> defense</span></h2>
   </summary>
   <div class="hfa-head gm-mhead">
-    <p class="lede">Projected KC offense output &mdash; equivalently, what the SEA defense allows. The engine blends each offense's season-to-date rates with the defense across from it, anchored on the market's implied points.</p>
+    <p class="lede">What the KC offense put up against the SEA defense, the projection beneath each number: <span class="up">green</span> beat it, <span class="down">amber</span> fell short (INTs judged the other way).</p>
   </div>
   
-<div class="pp-off">
-  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Chiefs offense</span><span class="badge mute">medium confidence</span></div>
+<div class="pp-off rv-off">
+  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Chiefs offense, graded</span><span class="badge warn">partly held</span><span class="badge mute">calls 4&ndash;1</span></div>
   
-  <div class="pp-offcards">
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div>
-      <p class="pp-lead">The league&#x27;s most efficient offense between the 20s (0.218 field EPA) built on Walker and a pristine pocket — 3.4% sack rate, 11.4% pressure allowed, 5.51 yards a carry with 3-6 explosive runs every week.</p>
-      <details class="pp-more"><summary>more</summary><p>Scoring is capped by finishing: 3-of-5 red-zone trips in weeks 1-3, 1-of-4 in week 6.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div>
-      <p class="pp-lead">Walker on the ground, including at the goal line (two rushing TDs in week 6, two in week 4), plus short, YAC-heavy throws — 3.6 aDOT and +9.4 CPOE against the Chargers — with Worthy the only concentrated perimeter air-yards share.</p>
-      
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div>
-      <p class="pp-lead">A front that holds the edge and a defense that holds its own 20.</p>
-      <details class="pp-more"><summary>more</summary><p>Miami capped them at 2.8 a carry up the middle in week 3; their own red-zone attrition and 7-8 flags a game have been the recurring drag (penalties tagged twice).</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div>
-      <p class="pp-lead">Seattle is first in rush EPA allowed, first in yards per attempt allowed and third in pressure generated — the hardest field defense KC has met.</p>
-      <details class="pp-more"><summary>more</summary><p>But Seattle is 31st in red-zone touchdown rate allowed and 32nd in red-zone EPA allowed: the trips KC earns should finish as sevens, not threes. Seattle is also missing its starting linebacker next to Ernest Jones.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div>
-      <p class="pp-lead">Rice is out (hamstring, Rotowire Friday), Thornton on IR, so the tree is Worthy, Kelce, Gray and Royals.</p>
-      <details class="pp-more"><summary>more</summary><p>Jaylon Moore is out with a concussion (Rotowire, Sunday morning) with Simmons already on IR — a patched right tackle against Leonard Williams, Byron Murphy and DeMarcus Lawrence, who is active after a veteran rest day. Kelce practiced limited all week (ankle) but carries no designation.</p></details>
-    </div>
-    
+  <div class="rv-eh">
+    <div class="rv-ehcol"><span class="pp-k">Expected</span><p class="pp-lead">Around 30 attempts at a short aDOT, 58-61 plays, Walker at 18-21 carries with the goal-line work, Worthy as the lone real perimeter share and Kelce/Gray underneath on modest volume.</p><details class="pp-more"><summary>more</summary><p>Yards come hard; points come in the red zone.</p></details></div>
+    <div class="rv-ehcol happened warn"><span class="pp-k">Happened</span><p class="pp-lead">The attempt total and aDOT landed (33 attempts, 4.7 aDOT; Worthy the lone perimeter share, Kelce and Gray underneath on 8 and 3 targets), but the plan&#x27;s 58-61 plays became 53, Walker&#x27;s 18-21 carries became 14, and &#x27;points come in the red zone&#x27; became zero trips and three points.</p></div>
   </div>
   
   
-  <div class="pp-expect"><span class="pp-k">Expect</span><p class="pp-lead">Around 30 attempts at a short aDOT, 58-61 plays, Walker at 18-21 carries with the goal-line work, Worthy as the lone real perimeter share and Kelce/Gray underneath on modest volume.</p><details class="pp-more"><summary>more</summary><p>Yards come hard; points come in the red zone.</p></details></div>
-  
-  
-  <div class="pp-k pp-k-sec">Who the plan moves <span class="flat">&middot; 2 up, 3 down &middot; one player, one market, one side of Kalshi's line when the plan was written</span></div>
-  <div class="pp-calls">
+  <div class="pp-k pp-k-sec">Who the plan moved <span class="flat">&middot; 2 up, 3 down &middot; graded off the box score, with whether the reason given showed up</span></div>
+  <div class="pp-calls rv-calls">
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Noah Gray</b><span class="pp-bet">over 1.5 receptions</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 68%"></i></div><b>68%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 57%"></i></div><b>57%</b></div>
+      
+      <div class="rv-meter" title="The line 1.5 against the actual 3">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 40.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 1.5</span><b>3</b></div>
       </div>
+      
+      <span class="badge good rv-read">right read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Gray caught all three targets for 44 yards on a 52.8% snap share in exactly the two-TE usage the plan described with Rice and Thornton unavailable; his 19-yard catch at Q1 4:00 was KC&#x27;s longest completion of the first half.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #3 pass EPA allowed</span>
-        <span class="badge mute">low</span>
-        <span class="rung" title="Normal / Edge / Edge+: over 1.5 receptions"><i>Normal / Edge / Edge+</i> 2+ <small>60&cent;</small></span>
+        <span class="rung hit" title="Normal / Edge / Edge+: over 1.5 receptions"><i>Normal / Edge / Edge+</i> 2+ <small>60&cent;</small></span>
       </div>
-      <p class="pp-lead">With two receivers gone from the tree, Kansas City plays more two-tight-end football and Gray has drawn three targets in three straight games on a rising snap share.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> Targets of 3, 3, 3 in weeks 3, 4 and 6 at 63-68% of snaps, with three catches for 53 against the Chargers. Rice is out and Thornton is on IR.</p><p><b>Against it.</b> vs #13 pass EPA allowed for the market; note Seattle is 3rd in fantasy points allowed to tight ends, which is why this is a catches call on a low line and not a yardage one. The engine is well above the line, the market barely over.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>With two receivers gone from the tree, Kansas City plays more two-tight-end football and Gray has drawn three targets in three straight games on a rising snap share. </p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 68%"></i></div><b>68%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 57%"></i></div><b>57%</b></div>
+        </div>
+        <p><b>Evidence.</b> Targets of 3, 3, 3 in weeks 3, 4 and 6 at 63-68% of snaps, with three catches for 53 against the Chargers. Rice is out and Thornton is on IR.</p>
+        <p><b>Against it.</b> vs #13 pass EPA allowed for the market; note Seattle is 3rd in fantasy points allowed to tight ends, which is why this is a catches call on a low line and not a yardage one. The engine is well above the line, the market barely over.</p>
+      </details>
     </div>
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Kenneth Walker III</b><span class="pp-bet">to score</span></div>
-        <span class="badge mute">both</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 56%"></i></div><b>56%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 54%"></i></div><b>54%</b></div>
+      
+      <div class="rv-meter" title="The line 0.0 against the actual 0">
+        <div class="track"><i class="fill" style="width: 0.0%"></i><i class="line" style="left: 0.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 0.0</span><b>0</b></div>
       </div>
+      
+      <span class="badge bad rv-read">wrong read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> The mechanism required Kansas City to reach the red zone; it recorded zero trips and zero snaps inside the 20.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on EPA allowed entering the week (#1 toughest)">D #2 EPA allowed</span>
-        <span class="badge mute">high</span>
-        <span class="rung" title="Normal / Edge / Edge+: to score"><i>Normal / Edge / Edge+</i> TD <small>56&cent;</small></span>
+        <span class="rung miss" title="Normal / Edge / Edge+: to score"><i>Normal / Edge / Edge+</i> TD <small>56&cent;</small></span>
       </div>
-      <p class="pp-lead">Seattle makes you work for every yard and then hands over the goal line: opponents have turned nearly every trip inside the 20 into a touchdown.</p>
-      <details class="pp-more"><summary>why</summary><p>Walker is the short-yardage and goal-line answer.</p><p><b>Evidence.</b> Seattle has allowed a red-zone TD on 81.8% of trips (opponents 7-for-7 across weeks 4-6, +0.42 EPA/play inside the 20). Walker has six touchdowns in five games, including two apiece in weeks 4 and 6, with 18+ carries every week.</p><p><b>Against it.</b> vs #2 EPA allowed overall, but the call rests on the finishing half of the split (SEA 31st in red-zone TD rate allowed), not on moving the ball; anytime_td calls are the plans&#x27; best market this season at 65%. Engine and market both sit near a coin flip; neither prices the goal-line concession.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>Seattle makes you work for every yard and then hands over the goal line: opponents have turned nearly every trip inside the 20 into a touchdown. Walker is the short-yardage and goal-line answer.</p>
+        <p><b>In the game.</b> Walker got 14 carries for 36 yards and his longest work came on a converted 4th-and-1 at the SEA 49 (Q2 6:49).</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 56%"></i></div><b>56%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 54%"></i></div><b>54%</b></div>
+        </div>
+        <p><b>Evidence.</b> Seattle has allowed a red-zone TD on 81.8% of trips (opponents 7-for-7 across weeks 4-6, +0.42 EPA/play inside the 20). Walker has six touchdowns in five games, including two apiece in weeks 4 and 6, with 18+ carries every week.</p>
+        <p><b>Against it.</b> vs #2 EPA allowed overall, but the call rests on the finishing half of the split (SEA 31st in red-zone TD rate allowed), not on moving the ball; anytime_td calls are the plans&#x27; best market this season at 65%. Engine and market both sit near a coin flip; neither prices the goal-line concession.</p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Jalen Royals</b><span class="pp-bet">under 19.5 rec yds</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 71%"></i></div><b>71%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 48%"></i></div><b>48%</b></div>
+      
+      <div class="rv-meter" title="The line 19.5 against the actual 0">
+        <div class="track"><i class="fill" style="width: 0.0%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 19.5</span><b>0</b></div>
       </div>
+      
+      <span class="badge good rv-read">right read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Royals drew 2 targets for 0 yards on a 67.9% snap share, fourth in line behind Kelce (8), Worthy (6) and Walker (5), precisely the share argument — and one of those targets was the Okada interception.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #3 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 19.5 rec yds"><i>Normal</i> &lt;20 <small>46&cent;</small></span><span class="rung" title="Edge: &lt;50 rec yds"><i>Edge</i> &lt;50 <small>86&cent;</small></span><span class="rung" title="Edge+: &lt;70 rec yds"><i>Edge+</i> &lt;70 <small>95&cent;</small></span>
+        <span class="rung hit" title="Normal: under 19.5 rec yds"><i>Normal</i> &lt;20 <small>46&cent;</small></span><span class="rung hit" title="Edge: &lt;50 rec yds"><i>Edge</i> &lt;50 <small>86&cent;</small></span><span class="rung hit" title="Edge+: &lt;70 rec yds"><i>Edge+</i> &lt;70 <small>95&cent;</small></span>
       </div>
-      <p class="pp-lead">He is fourth in line for a small pie: Kansas City throws around thirty times, Worthy owns the perimeter share and the tight ends work underneath.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> Four targets for 24 yards on a 74% snap share against the Chargers, two targets or fewer in every other game. Seattle allows 156.8 passing yards a game, fewest in the league.</p><p><b>Against it.</b> vs #3 pass EPA allowed. The engine is far under at 11.9 while the market prices him over the line — the clearest disagreement on the card, and the rank sits on the engine&#x27;s side.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>He is fourth in line for a small pie: Kansas City throws around thirty times, Worthy owns the perimeter share and the tight ends work underneath. </p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 71%"></i></div><b>71%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 48%"></i></div><b>48%</b></div>
+        </div>
+        <p><b>Evidence.</b> Four targets for 24 yards on a 74% snap share against the Chargers, two targets or fewer in every other game. Seattle allows 156.8 passing yards a game, fewest in the league.</p>
+        <p><b>Against it.</b> vs #3 pass EPA allowed. The engine is far under at 11.9 while the market prices him over the line — the clearest disagreement on the card, and the rank sits on the engine&#x27;s side.</p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Travis Kelce</b><span class="pp-bet">under 49.5 rec yds</span></div>
-        <span class="badge mute">both</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 60%"></i></div><b>60%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 55%"></i></div><b>55%</b></div>
+      
+      <div class="rv-meter" title="The line 49.5 against the actual 44">
+        <div class="track"><i class="fill" style="width: 71.1%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 49.5</span><b>44</b></div>
       </div>
+      
+      <span class="badge good rv-read">hit · read partly held</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> The number came in at 44, but via a different route: Kelce led the team with 8 targets rather than seeing suppressed volume, and the yardage was capped by 5.5 yards per target in a 4.7-aDOT passing game.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #3 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 49.5 rec yds"><i>Normal</i> &lt;50 <small>55&cent;</small></span><span class="rung" title="Edge: &lt;90 rec yds"><i>Edge</i> &lt;90 <small>89&cent;</small></span><span class="rung" title="Edge+: &lt;120 rec yds"><i>Edge+</i> &lt;120 <small>97&cent;</small></span>
+        <span class="rung hit" title="Normal: under 49.5 rec yds"><i>Normal</i> &lt;50 <small>55&cent;</small></span><span class="rung hit" title="Edge: &lt;90 rec yds"><i>Edge</i> &lt;90 <small>89&cent;</small></span><span class="rung hit" title="Edge+: &lt;120 rec yds"><i>Edge+</i> &lt;120 <small>97&cent;</small></span>
       </div>
-      <p class="pp-lead">Seattle is one of the few defenses that genuinely shuts down tight ends, and his yardage tracks a team attempt total that should sit around thirty in a low-total road game.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> Seattle allows 9.1 fantasy points per game to tight ends (3rd); Kelce has gone 2-15, 4-53 and 2-59 in three of his last four, at a 66% snap share in week 6, and practiced limited all week with an ankle. </p><p><b>Against it.</b> vs #13 pass EPA allowed, but the tight-end-specific rank (3rd) is the one that carries for this position. Engine sits under the line at 46.2 while the market prices it near even — the market is paying for his name, not his air-yards share.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>Seattle is one of the few defenses that genuinely shuts down tight ends, and his yardage tracks a team attempt total that should sit around thirty in a low-total road game. </p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 60%"></i></div><b>60%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 55%"></i></div><b>55%</b></div>
+        </div>
+        <p><b>Evidence.</b> Seattle allows 9.1 fantasy points per game to tight ends (3rd); Kelce has gone 2-15, 4-53 and 2-59 in three of his last four, at a 66% snap share in week 6, and practiced limited all week with an ankle. </p>
+        <p><b>Against it.</b> vs #13 pass EPA allowed, but the tight-end-specific rank (3rd) is the one that carries for this position. Engine sits under the line at 46.2 while the market prices it near even — the market is paying for his name, not his air-yards share.</p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Patrick Mahomes</b><span class="pp-bet">under 224.5 pass yds</span></div>
-        <span class="badge mute">both</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 59%"></i></div><b>59%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+      
+      <div class="rv-meter" title="The line 224.5 against the actual 165">
+        <div class="track"><i class="fill" style="width: 58.8%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 224.5</span><b>165</b></div>
       </div>
+      
+      <span class="badge good rv-read">right read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> 165 yards on 33 attempts, 5.0 per attempt, -9.8 CPOE, 2-of-6 deep and 7 QB hits — the receiver-room and yards-per-attempt argument is exactly what produced the number.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #3 pass EPA allowed</span>
-        <span class="badge mute">high</span>
-        <span class="rung" title="Normal: under 224.5 pass yds"><i>Normal</i> &lt;225 <small>53&cent;</small></span><span class="rung" title="Edge: &lt;300 pass yds"><i>Edge</i> &lt;300 <small>88&cent;</small></span><span class="rung" title="Edge+: &lt;350 pass yds"><i>Edge+</i> &lt;350 <small>97&cent;</small></span>
+        <span class="rung hit" title="Normal: under 224.5 pass yds"><i>Normal</i> &lt;225 <small>53&cent;</small></span><span class="rung hit" title="Edge: &lt;300 pass yds"><i>Edge</i> &lt;300 <small>88&cent;</small></span><span class="rung hit" title="Edge+: &lt;350 pass yds"><i>Edge+</i> &lt;350 <small>97&cent;</small></span>
       </div>
-      <p class="pp-lead">The toughest yards-per-attempt defense in football, a four-man rush that gets home, and a receiver room down to one perimeter option with the right tackle spot patched together.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> Seattle allows 5.23 yards per attempt (1st) and 156.8 passing yards a game (1st) with 21.4% pressure generated (3rd); Rice is out and Thornton on IR; Jaylon Moore ruled out Sunday (concussion) with Simmons on IR. KC has thrown 24, 30 and 30 times in its last three games.</p><p><b>Against it.</b> vs #3 pass EPA allowed — the rank is the whole case, and passing overs against top-5 pass defenses have gone 1-for-3 for the plans. Engine is already below the line at 213 and the market has it near even; the blend still carries KC&#x27;s inflated 8.3 yards per attempt.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>The toughest yards-per-attempt defense in football, a four-man rush that gets home, and a receiver room down to one perimeter option with the right tackle spot patched together. </p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 59%"></i></div><b>59%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+        </div>
+        <p><b>Evidence.</b> Seattle allows 5.23 yards per attempt (1st) and 156.8 passing yards a game (1st) with 21.4% pressure generated (3rd); Rice is out and Thornton on IR; Jaylon Moore ruled out Sunday (concussion) with Simmons on IR. KC has thrown 24, 30 and 30 times in its last three games.</p>
+        <p><b>Against it.</b> vs #3 pass EPA allowed — the rank is the whole case, and passing overs against top-5 pass defenses have gone 1-for-3 for the plans. Engine is already below the line at 213 and the market has it near even; the blend still carries KC&#x27;s inflated 8.3 yards per attempt.</p>
+      </details>
     </div>
     
   </div>
+  
+  
+  <div class="pp-k pp-k-sec">Lines the report singled out <span class="flat">&middot; signal carries forward, noise doesn't</span></div>
+  <div class="rv-notes">
+    
+    <div class="rv-note-card ">
+      <div class="rv-notehead"><b>Kenneth Walker III</b><span class="badge mute">noise</span></div>
+      <span class="pp-bet">14 carries for 36, 4 catches for 21 (proj 20.6/93.5)</span>
+      <p class="pp-sub">Trailing all night: KC ran 16 times total, 0 explosive runs, 20% rush success.</p>
+      <details class="pp-more"><summary>more</summary><p>His receiving work appeared exactly as the volume shift predicts.</p></details>
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Patrick Mahomes</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">19/33, 165 yards, 0 TD, 1 INT; 7 QB hits, 2 scrambles for 14</span>
+      <p class="pp-sub">Compressed aDOT (4.7) and -9.8 CPOE against the stiffest Y/A defense he has faced, with 131 of 165 yards coming after the catch and only 6 deep attempts.</p>
+      
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Travis Kelce</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">4/8 for 44 (proj 4.0/37.3)</span>
+      <p class="pp-sub">Team-high targets on an 83% snap share, but 5.5 yards per target — the volume is there, the yardage ceiling is the aDOT.</p>
+      <details class="pp-more"><summary>more</summary><p>Reception props are safer than yardage props in this role.</p></details>
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Noah Gray</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">3/3 for 44 (proj 2.3/22.1), 52.8% snaps</span>
+      <p class="pp-sub">Two-TE usage with Rice and Thornton unavailable; his 19-yard catch (Q1 4:00, EPA +1.95) was KC&#x27;s biggest pass play. +3.48 receiving EPA, the only positive on the team.</p>
+      
+    </div>
+    
+    <div class="rv-note-card ">
+      <div class="rv-notehead"><b>Xavier Worthy</b><span class="badge mute">noise</span></div>
+      <span class="pp-bet">3/6 for 11 on 86.8% snaps (proj 4.5/46.9)</span>
+      <p class="pp-sub">40% air-yards share with -0.81 EPA; the deep shots came (Q1 1:59 incompletion broken up by Hall) and nothing landed — 2-of-6 deep as a team.</p>
+      
+    </div>
+    
+  </div>
+  
+  
+  <details class="rv-fold">
+    <summary>The plan's pre-game read on this offense <span class="flat">&middot; medium confidence</span></summary>
+    <div class="pp-offcards">
+      <div class="pp-offcard"><div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div><p class="pp-lead">The league&#x27;s most efficient offense between the 20s (0.218 field EPA) built on Walker and a pristine pocket — 3.4% sack rate, 11.4% pressure allowed, 5.51 yards a carry with 3-6 explosive runs every week.</p><details class="pp-more"><summary>more</summary><p>Scoring is capped by finishing: 3-of-5 red-zone trips in weeks 1-3, 1-of-4 in week 6.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div><p class="pp-lead">Walker on the ground, including at the goal line (two rushing TDs in week 6, two in week 4), plus short, YAC-heavy throws — 3.6 aDOT and +9.4 CPOE against the Chargers — with Worthy the only concentrated perimeter air-yards share.</p></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div><p class="pp-lead">A front that holds the edge and a defense that holds its own 20.</p><details class="pp-more"><summary>more</summary><p>Miami capped them at 2.8 a carry up the middle in week 3; their own red-zone attrition and 7-8 flags a game have been the recurring drag (penalties tagged twice).</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div><p class="pp-lead">Seattle is first in rush EPA allowed, first in yards per attempt allowed and third in pressure generated — the hardest field defense KC has met.</p><details class="pp-more"><summary>more</summary><p>But Seattle is 31st in red-zone touchdown rate allowed and 32nd in red-zone EPA allowed: the trips KC earns should finish as sevens, not threes. Seattle is also missing its starting linebacker next to Ernest Jones.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div><p class="pp-lead">Rice is out (hamstring, Rotowire Friday), Thornton on IR, so the tree is Worthy, Kelce, Gray and Royals.</p><details class="pp-more"><summary>more</summary><p>Jaylon Moore is out with a concussion (Rotowire, Sunday morning) with Simmons already on IR — a patched right tackle against Leonard Williams, Byron Murphy and DeMarcus Lawrence, who is active after a veteran rest day. Kelce practiced limited all week (ankle) but carries no designation.</p></details></div>
+    </div>
+  </details>
   
 </div>
 
   <div class="gm-tiles">
-    <div class="gm-tile big"><b>20.2<i class="act under" title="Actual">(3)</i></b><span>Points</span></div><div class="gm-tile "><b>61</b><span>Plays</span></div><div class="gm-tile "><b>213<i class="act under" title="Actual">(165)</i></b><span>Pass yds</span></div><div class="gm-tile "><b>110<i class="act under" title="Actual">(50)</i></b><span>Rush yds</span></div><div class="gm-tile "><b>1.9</b><span>Sacks taken</span></div><div class="gm-tile "><b>0.8<i class="act under" title="Actual">(1)</i></b><span>INTs thrown</span></div>
+    <div class="gm-tile rv big under"><b>3</b><span>Points</span><small>projected 20.2</small></div><div class="gm-tile rv  "><b class="flat">61</b><span>Plays</span><small>projected</small></div><div class="gm-tile rv  under"><b>165</b><span>Pass yds</span><small>projected 213</small></div><div class="gm-tile rv  under"><b>50</b><span>Rush yds</span><small>projected 110</small></div><div class="gm-tile rv  "><b class="flat">1.9</b><span>Sacks taken</span><small>projected</small></div><div class="gm-tile rv  under"><b>1</b><span>INTs thrown</span><small>projected 0.8</small></div>
   </div>
   <div class="gm-split">
     <div class="gm-players">
@@ -1922,154 +2438,221 @@
     <h2 class="gm-h2"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy"><span><em class="full">Seahawks</em><em class="short">SEA</em> offense</span><span class="vs">against the</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy"><span><em class="full">Chiefs</em><em class="short">KC</em> defense</span></h2>
   </summary>
   <div class="hfa-head gm-mhead">
-    <p class="lede">Projected SEA offense output &mdash; equivalently, what the KC defense allows. The engine blends each offense's season-to-date rates with the defense across from it, anchored on the market's implied points.</p>
+    <p class="lede">What the SEA offense put up against the KC defense, the projection beneath each number: <span class="up">green</span> beat it, <span class="down">amber</span> fell short (INTs judged the other way).</p>
   </div>
   
-<div class="pp-off">
-  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Seahawks offense</span><span class="badge mute">medium confidence</span></div>
+<div class="pp-off rv-off">
+  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Seahawks offense, graded</span><span class="badge bad">broke</span><span class="badge mute">calls 2&ndash;3</span></div>
   
-  <div class="pp-offcards">
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div>
-      <p class="pp-lead">A below-water offense between the 20s (-0.134 field EPA) that finishes what little it gets — 0.600 red-zone TD rate — and funnels everything to Smith-Njigba, who has taken 41-53% of the air yards in every game.</p>
-      <details class="pp-more"><summary>more</summary><p>Pressure allowed is the recurring wound: tagged in weeks 4, 5 and 6, five sacks in each of the last two.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div>
-      <p class="pp-lead">Concentration and explosives to Smith-Njigba, plus Myers: he has 12 field goals in six games, five of them in week 5.</p>
-      <details class="pp-more"><summary>more</summary><p>Wilson is the short-score back with Charbonnet and Price unavailable.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div>
-      <p class="pp-lead">A four-man rush and their own hands.</p>
-      <details class="pp-more"><summary>more</summary><p>Three giveaways at Washington, four against San Francisco, three at Denver; 2.667 pre-snap flags a game is worst-in-class territory and turns first downs into long yardage.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div>
-      <p class="pp-lead">Kansas City does not rush the passer consistently (14.1% pressure, 22nd), which means Darnold gets time and the volume is there — KC has allowed 73 and 80 plays in games this season.</p>
-      <details class="pp-more"><summary>more</summary><p>What KC does do is hold at its own 20: third in red-zone TD rate allowed, fifth in red-zone EPA allowed, and 3.5 yards a carry against the run. Seattle should move and then kick. KC&#x27;s own flag profile (31st in accepted penalties, 31st in pre-snap) hands out free yards that lengthen Seattle&#x27;s drives.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div>
-      <p class="pp-lead">Charbonnet was ruled out Friday (Macdonald via Rotowire) and Price is on IR, leaving Wilson and Holani in a true committee — Wilson took 14 carries on a 31.8% snap share at Denver.</p>
-      <details class="pp-more"><summary>more</summary><p>Arroyo is done for the year. Lock is inactive as the emergency third quarterback (Rotowire, Sunday). On the Chiefs&#x27; side, Sneed is active after not flying with the team.</p></details>
-    </div>
-    
+  <div class="rv-eh">
+    <div class="rv-ehcol"><span class="pp-k">Expected</span><p class="pp-lead">33-37 attempts at a 60-plus percent pass rate, Smith-Njigba at 9-12 targets, Kupp and Shaheed splitting the rest, Wilson capped near 15 carries, and a scoring profile tilted to field goals.</p></div>
+    <div class="rv-ehcol happened bad"><span class="pp-k">Happened</span><p class="pp-lead">Only the Smith-Njigba line held (12 targets, inside the 9-12 range). Seattle threw 28 times at a 43.5% pass rate, not 33-37 at 60-plus; Wilson blew past the 15-carry cap with 24 for 100; Kupp and Shaheed combined for 4 catches and 21 yards.</p></div>
   </div>
   
   
-  <div class="pp-expect"><span class="pp-k">Expect</span><p class="pp-lead">33-37 attempts at a 60-plus percent pass rate, Smith-Njigba at 9-12 targets, Kupp and Shaheed splitting the rest, Wilson capped near 15 carries, and a scoring profile tilted to field goals.</p></div>
-  
-  
-  <div class="pp-k pp-k-sec">Who the plan moves <span class="flat">&middot; 3 up, 2 down &middot; one player, one market, one side of Kalshi's line when the plan was written</span></div>
-  <div class="pp-calls">
+  <div class="pp-k pp-k-sec">Who the plan moved <span class="flat">&middot; 3 up, 2 down &middot; graded off the box score, with whether the reason given showed up</span></div>
+  <div class="pp-calls rv-calls">
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Cooper Kupp</b><span class="pp-bet">over 2.5 receptions</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 63%"></i></div><b>63%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+      
+      <div class="rv-meter" title="The line 2.5 against the actual 2">
+        <div class="track"><i class="fill" style="width: 64.0%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 2.5</span><b>2</b></div>
       </div>
+      
+      <span class="badge bad rv-read">wrong read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Kupp played 65% of snaps but saw only 2 targets.</p>
       <div class="pp-callmeta">
-        <span class="badge mute" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #13 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: over 2.5 receptions"><i>Normal</i> 3+ <small>50&cent;</small></span><span class="rung" title="Edge / Edge+: 2+ receptions"><i>Edge / Edge+</i> 2+ <small>74&cent;</small></span>
+        <span class="rung miss" title="Normal: over 2.5 receptions"><i>Normal</i> 3+ <small>50&cent;</small></span><span class="rung hit" title="Edge / Edge+: 2+ receptions"><i>Edge / Edge+</i> 2+ <small>74&cent;</small></span>
       </div>
-      <p class="pp-lead">Kansas City concedes possession throws underneath because it does not get home with four, and Kupp&#x27;s snap share has climbed as Seattle hunts for a second option behind its alpha.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> 85% snaps and 10 targets at Denver, 81% against San Francisco; KC has allowed 73 and 80-play games with zero sacks and gave up 21 combined targets to Las Vegas&#x27; tight ends in week 4. KC&#x27;s pressure rate is 14.1% (22nd).</p><p><b>Against it.</b> vs #13 pass EPA allowed. Engine has him above the line at 3.4 catches while the market prices a coin flip — the gap is the attempt base this script produces.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>Kansas City concedes possession throws underneath because it does not get home with four, and Kupp&#x27;s snap share has climbed as Seattle hunts for a second option behind its alpha. </p>
+        <p><b>In the game.</b> The premise — KC conceding underneath volume because it can&#x27;t get home — was true (6.7% pressure allowed) but the volume went to Smith-Njigba (12 of 28) and Barner (5), and Seattle only threw 28 times.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 63%"></i></div><b>63%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+        </div>
+        <p><b>Evidence.</b> 85% snaps and 10 targets at Denver, 81% against San Francisco; KC has allowed 73 and 80-play games with zero sacks and gave up 21 combined targets to Las Vegas&#x27; tight ends in week 4. KC&#x27;s pressure rate is 14.1% (22nd).</p>
+        <p><b>Against it.</b> vs #13 pass EPA allowed. Engine has him above the line at 3.4 catches while the market prices a coin flip — the gap is the attempt base this script produces.</p>
+      </details>
     </div>
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Sam Darnold</b><span class="pp-bet">over 0.5 INTs</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 55%"></i></div><b>55%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 54%"></i></div><b>54%</b></div>
+      
+      <div class="rv-meter" title="The line 0.5 against the actual 1">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 40.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 0.5</span><b>1</b></div>
       </div>
+      
+      <span class="badge good rv-read">hit · read partly held</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> The interception came, but not through the stated route: Darnold had 30 dropbacks (not 35-plus), faced 2 QB hits, and the pick was a 2nd-and-3 throw at the goal line, not a third-down throw under pressure.</p>
       <div class="pp-callmeta">
-        <span class="badge mute" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #13 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal / Edge / Edge+: over 0.5 INTs"><i>Normal / Edge / Edge+</i> 1+ <small>54&cent;</small></span>
+        <span class="rung hit" title="Normal / Edge / Edge+: over 0.5 INTs"><i>Normal / Edge / Edge+</i> 1+ <small>54&cent;</small></span>
       </div>
-      <p class="pp-lead">A dead run game pushes Seattle into 35-plus dropbacks, and this quarterback has given it away in three straight games with drives dying near a defense that holds at its own 20.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> Two interceptions in each of weeks 3, 5 and 6 (seven total in five starts) at a 3.5% INT rate; KC generates picks on 3.9% of attempts against a 2.2% league rate and holds opponents to a 0.364 red-zone TD rate, so the stalls happen in scoring range. </p><p><b>Against it.</b> vs #13 pass EPA allowed. The over is MORE picks: this is the volume mechanism doctrine requires — Seattle forced to throw, not a read on his arm. Engine 0.80 expected, market slightly under it; pass_int calls are 57% on the season.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>A dead run game pushes Seattle into 35-plus dropbacks, and this quarterback has given it away in three straight games with drives dying near a defense that holds at its own 20. </p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 55%"></i></div><b>55%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 54%"></i></div><b>54%</b></div>
+        </div>
+        <p><b>Evidence.</b> Two interceptions in each of weeks 3, 5 and 6 (seven total in five starts) at a 3.5% INT rate; KC generates picks on 3.9% of attempts against a 2.2% league rate and holds opponents to a 0.364 red-zone TD rate, so the stalls happen in scoring range. </p>
+        <p><b>Against it.</b> vs #13 pass EPA allowed. The over is MORE picks: this is the volume mechanism doctrine requires — Seattle forced to throw, not a read on his arm. Engine 0.80 expected, market slightly under it; pass_int calls are 57% on the season.</p>
+      </details>
     </div>
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Jaxon Smith-Njigba</b><span class="pp-bet">over 6.5 receptions</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 56%"></i></div><b>56%</b></div>
+      
+      <div class="rv-meter" title="The line 6.5 against the actual 9">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 57.8%"></i></div>
+        <div class="rv-meterlbl"><span>line 6.5</span><b>9</b></div>
       </div>
+      
+      <span class="badge good rv-read">hit · read partly held</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Nine catches on 12 targets with a 76% air-yards share — the concentration and the clean pocket (0 sacks allowed) held exactly as written — but the premise that Seattle &#x27;cannot run on this front&#x27; failed outright: 41 carries, 153 yards, and he still cleared the line.</p>
       <div class="pp-callmeta">
-        <span class="badge mute" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #13 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: over 6.5 receptions"><i>Normal</i> 7+ <small>58&cent;</small></span><span class="rung" title="Edge: 5+ receptions"><i>Edge</i> 5+ <small>84&cent;</small></span><span class="rung" title="Edge+: 4+ receptions"><i>Edge+</i> 4+ <small>91&cent;</small></span>
+        <span class="rung hit" title="Normal: over 6.5 receptions"><i>Normal</i> 7+ <small>58&cent;</small></span><span class="rung hit" title="Edge: 5+ receptions"><i>Edge</i> 5+ <small>84&cent;</small></span><span class="rung hit" title="Edge+: 4+ receptions"><i>Edge+</i> 4+ <small>91&cent;</small></span>
       </div>
-      <p class="pp-lead">Seattle cannot run on this front, so Darnold throws, and roughly half of everything he throws goes to one man regardless of script.</p>
-      <details class="pp-more"><summary>why</summary><p>Kansas City&#x27;s rush rarely speeds up the pocket.</p><p><b>Evidence.</b> 43-53% air-yards share in all six games; 11, 11, 14, 6, 8 and 16 targets, with 12 catches at Denver. Seattle&#x27;s rush EPA has been negative in all six weeks against a KC front allowing 3.52 yards a carry (5th).</p><p><b>Against it.</b> vs #13 pass EPA allowed — mid-pack, so the rank does not bind. The engine&#x27;s 7.1 catches sits above the line and the market is already leaning over; the added edge is the forced-dropback script the blend prices at a 57% pass rate.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>Seattle cannot run on this front, so Darnold throws, and roughly half of everything he throws goes to one man regardless of script. Kansas City&#x27;s rush rarely speeds up the pocket.</p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 52%"></i></div><b>52%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 56%"></i></div><b>56%</b></div>
+        </div>
+        <p><b>Evidence.</b> 43-53% air-yards share in all six games; 11, 11, 14, 6, 8 and 16 targets, with 12 catches at Denver. Seattle&#x27;s rush EPA has been negative in all six weeks against a KC front allowing 3.52 yards a carry (5th).</p>
+        <p><b>Against it.</b> vs #13 pass EPA allowed — mid-pack, so the rank does not bind. The engine&#x27;s 7.1 catches sits above the line and the market is already leaning over; the added edge is the forced-dropback script the blend prices at a 57% pass rate.</p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>AJ Barner</b><span class="pp-bet">under 24.5 rec yds</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 60%"></i></div><b>60%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+      
+      <div class="rv-meter" title="The line 24.5 against the actual 42">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 46.7%"></i></div>
+        <div class="rv-meterlbl"><span>line 24.5</span><b>42</b></div>
       </div>
+      
+      <span class="badge bad rv-read">wrong read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Barner played 79.7% of snaps, caught 4 of 5 for 42 with 41 of those yards after the catch, and added 3 carries including the 4th-and-1 direct snap at Q4 0:38 — he was a featured underneath outlet in a run-script game, not a blocker in a trailing script.</p>
       <div class="pp-callmeta">
-        <span class="badge mute" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #13 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 24.5 rec yds"><i>Normal</i> &lt;25 <small>50&cent;</small></span><span class="rung" title="Edge: &lt;50 rec yds"><i>Edge</i> &lt;50 <small>82&cent;</small></span><span class="rung" title="Edge+: &lt;70 rec yds"><i>Edge+</i> &lt;70 <small>94&cent;</small></span>
+        <span class="rung miss" title="Normal: under 24.5 rec yds"><i>Normal</i> &lt;25 <small>50&cent;</small></span><span class="rung hit" title="Edge: &lt;50 rec yds"><i>Edge</i> &lt;50 <small>82&cent;</small></span><span class="rung hit" title="Edge+: &lt;70 rec yds"><i>Edge+</i> &lt;70 <small>94&cent;</small></span>
       </div>
-      <p class="pp-lead">He is a blocker first whose only big line came in a desperate trailing script, and Kansas City&#x27;s defense gives up catches to tight ends without giving up chunks.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> 1-12, 3-20 and 3-16 in weeks 4, 5 and 6 on 90%-plus snaps; his nine-target game at Washington came on a 10-yard air-yards diet with 69 YAC in a 46-attempt night. </p><p><b>Against it.</b> vs #13 pass EPA allowed; KC is 30th in fantasy points allowed to tight ends, which is the counterargument — this is a yardage call, and his air yards are near zero. Engine 19.7 under the line, market at even.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>He is a blocker first whose only big line came in a desperate trailing script, and Kansas City&#x27;s defense gives up catches to tight ends without giving up chunks. </p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 60%"></i></div><b>60%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+        </div>
+        <p><b>Evidence.</b> 1-12, 3-20 and 3-16 in weeks 4, 5 and 6 on 90%-plus snaps; his nine-target game at Washington came on a 10-yard air-yards diet with 69 YAC in a 46-attempt night. </p>
+        <p><b>Against it.</b> vs #13 pass EPA allowed; KC is 30th in fantasy points allowed to tight ends, which is the counterargument — this is a yardage call, and his air yards are near zero. Engine 19.7 under the line, market at even.</p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Emanuel Wilson</b><span class="pp-bet">under 49.5 rush yds</span></div>
-        <span class="badge mute">both</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 49%"></i></div><b>49%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 46%"></i></div><b>46%</b></div>
+      
+      <div class="rv-meter" title="The line 49.5 against the actual 100">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 39.6%"></i></div>
+        <div class="rv-meterlbl"><span>line 49.5</span><b>100</b></div>
       </div>
+      
+      <span class="badge bad rv-read">wrong read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Wilson was not a committee back: 24 of Seattle&#x27;s 41 carries for 100 yards with Charbonnet out, and the &#x27;if Seattle is not ahead the carries never arrive&#x27; condition inverted — Seattle led for 2,304 seconds and ran 46 plays while ahead.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on rush EPA allowed entering the week (#1 toughest)">D #8 rush EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 49.5 rush yds"><i>Normal</i> &lt;50 <small>47&cent;</small></span><span class="rung" title="Edge: &lt;70 rush yds"><i>Edge</i> &lt;70 <small>71&cent;</small></span><span class="rung" title="Edge+: &lt;80 rush yds"><i>Edge+</i> &lt;80 <small>79&cent;</small></span>
+        <span class="rung miss" title="Normal: under 49.5 rush yds"><i>Normal</i> &lt;50 <small>47&cent;</small></span><span class="rung miss" title="Edge: &lt;70 rush yds"><i>Edge</i> &lt;70 <small>71&cent;</small></span><span class="rung miss" title="Edge+: &lt;80 rush yds"><i>Edge+</i> &lt;80 <small>79&cent;</small></span>
       </div>
-      <p class="pp-lead">He is a committee back, not a workhorse, and Seattle&#x27;s ground game has lost money every week into a front that squeezes the middle.</p>
-      <details class="pp-more"><summary>why</summary><p>If Seattle is not ahead, the carries never arrive.</p><p><b>Evidence.</b> 14 carries for 52 at Denver on a 31.8% snap share with Holani at 57.6%; Seattle&#x27;s rush EPA has been negative in all six games (3.90 YPC). KC allows 3.52 yards a carry (5th) and -0.155 rush EPA (8th). Our week-6 review flagged the 18-21 carry assumption as the broken read.</p><p><b>Against it.</b> vs #8 rush EPA allowed. Engine has him above the line at 53.8 on 16.7 carries; the market is leaning over. The blend never conditions the carry count on a game Seattle may not lead.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>He is a committee back, not a workhorse, and Seattle&#x27;s ground game has lost money every week into a front that squeezes the middle. If Seattle is not ahead, the carries never arrive.</p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 49%"></i></div><b>49%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 46%"></i></div><b>46%</b></div>
+        </div>
+        <p><b>Evidence.</b> 14 carries for 52 at Denver on a 31.8% snap share with Holani at 57.6%; Seattle&#x27;s rush EPA has been negative in all six games (3.90 YPC). KC allows 3.52 yards a carry (5th) and -0.155 rush EPA (8th). Our week-6 review flagged the 18-21 carry assumption as the broken read.</p>
+        <p><b>Against it.</b> vs #8 rush EPA allowed. Engine has him above the line at 53.8 on 16.7 carries; the market is leaning over. The blend never conditions the carry count on a game Seattle may not lead.</p>
+      </details>
     </div>
     
   </div>
+  
+  
+  <div class="pp-k pp-k-sec">Lines the report singled out <span class="flat">&middot; signal carries forward, noise doesn't</span></div>
+  <div class="rv-notes">
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Jaxon Smith-Njigba</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">9/12 for 150 and a TD, plus 2 carries for 13 (proj 6.8/90.6)</span>
+      <p class="pp-sub">76% air-yards share, 12.44 EPA; three of Seattle&#x27;s four explosive passes were his, all on third down or in the two-minute window, against a defense that produced 2 QB hits all night.</p>
+      
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Emanuel Wilson</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">24 carries, 100 yards, TD (proj 14.4/45.5)</span>
+      <p class="pp-sub">Charbonnet out plus a wire-to-wire lead; 14 of 24 carries up the middle at 2.8 YPC with one 21-yard TD run off left tackle — the yardage is volume and one explosive, not efficiency (0.31 total rush EPA, 2 TFLs).</p>
+      
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>AJ Barner</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">4/5 for 42 with 41 YAC, plus 3 carries (proj 3.1/19.3)</span>
+      <p class="pp-sub">79.7% snap share in a run-heavy, under-center game (58% under center); KC concedes catches underneath without chunks, and all his yardage was after the catch.</p>
+      
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Rashid Shaheed</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">2/3 for 1 yard, 31.9% snaps (proj 3.0/30.6)</span>
+      <p class="pp-sub">-4 air yards on three targets and -6.79 EPA, including the goal-line interception.</p>
+      <details class="pp-more"><summary>more</summary><p>In a run-script game the secondary Seattle receivers are unplayable.</p></details>
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Cooper Kupp</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">2/2 for 20, 65.2% snaps (proj 3.2/28.0)</span>
+      <p class="pp-sub">Only 28 team attempts and 12 going to Smith-Njigba left nothing; the snap share is real but the target funnel is not.</p>
+      
+    </div>
+    
+  </div>
+  
+  
+  <details class="rv-fold">
+    <summary>The plan's pre-game read on this offense <span class="flat">&middot; medium confidence</span></summary>
+    <div class="pp-offcards">
+      <div class="pp-offcard"><div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div><p class="pp-lead">A below-water offense between the 20s (-0.134 field EPA) that finishes what little it gets — 0.600 red-zone TD rate — and funnels everything to Smith-Njigba, who has taken 41-53% of the air yards in every game.</p><details class="pp-more"><summary>more</summary><p>Pressure allowed is the recurring wound: tagged in weeks 4, 5 and 6, five sacks in each of the last two.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div><p class="pp-lead">Concentration and explosives to Smith-Njigba, plus Myers: he has 12 field goals in six games, five of them in week 5.</p><details class="pp-more"><summary>more</summary><p>Wilson is the short-score back with Charbonnet and Price unavailable.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div><p class="pp-lead">A four-man rush and their own hands.</p><details class="pp-more"><summary>more</summary><p>Three giveaways at Washington, four against San Francisco, three at Denver; 2.667 pre-snap flags a game is worst-in-class territory and turns first downs into long yardage.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div><p class="pp-lead">Kansas City does not rush the passer consistently (14.1% pressure, 22nd), which means Darnold gets time and the volume is there — KC has allowed 73 and 80 plays in games this season.</p><details class="pp-more"><summary>more</summary><p>What KC does do is hold at its own 20: third in red-zone TD rate allowed, fifth in red-zone EPA allowed, and 3.5 yards a carry against the run. Seattle should move and then kick. KC&#x27;s own flag profile (31st in accepted penalties, 31st in pre-snap) hands out free yards that lengthen Seattle&#x27;s drives.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div><p class="pp-lead">Charbonnet was ruled out Friday (Macdonald via Rotowire) and Price is on IR, leaving Wilson and Holani in a true committee — Wilson took 14 carries on a 31.8% snap share at Denver.</p><details class="pp-more"><summary>more</summary><p>Arroyo is done for the year. Lock is inactive as the emergency third quarterback (Rotowire, Sunday). On the Chiefs&#x27; side, Sneed is active after not flying with the team.</p></details></div>
+    </div>
+  </details>
   
 </div>
 
   <div class="gm-tiles">
-    <div class="gm-tile big"><b>23.2<i class="act under" title="Actual">(20)</i></b><span>Points</span></div><div class="gm-tile "><b>62</b><span>Plays</span></div><div class="gm-tile "><b>226<i class="act over" title="Actual">(257)</i></b><span>Pass yds</span></div><div class="gm-tile "><b>98<i class="act over" title="Actual">(153)</i></b><span>Rush yds</span></div><div class="gm-tile "><b>2.5</b><span>Sacks taken</span></div><div class="gm-tile "><b>0.8<i class="act under" title="Actual">(1)</i></b><span>INTs thrown</span></div>
+    <div class="gm-tile rv big under"><b>20</b><span>Points</span><small>projected 23.2</small></div><div class="gm-tile rv  "><b class="flat">62</b><span>Plays</span><small>projected</small></div><div class="gm-tile rv  over"><b>257</b><span>Pass yds</span><small>projected 226</small></div><div class="gm-tile rv  over"><b>153</b><span>Rush yds</span><small>projected 98</small></div><div class="gm-tile rv  "><b class="flat">2.5</b><span>Sacks taken</span><small>projected</small></div><div class="gm-tile rv  under"><b>1</b><span>INTs thrown</span><small>projected 0.8</small></div>
   </div>
   <div class="gm-split">
     <div class="gm-players">
@@ -2219,7 +2802,7 @@
         </div>
         
         <div class="gm-row">
-          <div class="gm-cell off"><i class="rk bad">#28</i><b>41.3</b><div class="gm-bar bad"><i style="width: 13%"></i></div></div>
+          <div class="gm-cell off"><i class="rk bad">#27</i><b>41.3</b><div class="gm-bar bad"><i style="width: 16%"></i></div></div>
           <div class="gm-lbl"><details class="stat"><summary title="What this stat is">O-line grade</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>O-line grade</b><p>A composite of the line&#x27;s pass protection and run blocking, offense only.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><span class="flat na">offense only</span></div>
         </div>
@@ -2342,7 +2925,7 @@
 
 
 
-<details class="hfa-card hfa-sec gm-starters pp-sec" id="starters" data-sec="starters" open>
+<details class="hfa-card hfa-sec gm-starters pp-sec" id="starters" data-sec="starters">
   <summary class="hfa-head pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <div class="hfa-eyebrow">Starters on the field</div>
@@ -2360,7 +2943,7 @@
         <div class="gm-ftag top">SEA defense</div>
         <div class="gm-los"></div>
         <div class="gm-ftag bot">KC offense</div>
-        <div class="gm-fp def r5" style="left: 26%; top: 51%" title="DeMarcus Lawrence LBQuestionable – Kneelast game 40% of snapsEdge · 89th pct of group · 545 wtd snaps2026 wks 1-6 + ½·2025Pressure rate5.2% lg 3.5%Sack rate0.6% lg 0.9%TFL rate1.5% lg 1.2%Missed tackle %12% lg 9%context (not rated): 4 tgt · 2.6 yds/tgt · 62% comp · aDOT -0.5 · 31 prs · 3.0 sk · 38 tkl / 6 miss · 0 INT · 2 PD"><span class="dot">89<em>Q</em></span><span class="nm">D. Lawrence <small>EDGE</small></span></div><div class="gm-fp def r5" style="left: 44%; top: 51%" title="Leonard Williams DTlast game 59% of snapsInterior DL · 96th pct of group · 681 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.5% lg 1.8%Sack rate0.9% lg 0.5%TFL rate1.4% lg 0.8%Missed tackle %10% lg 11%context (not rated): 2 tgt · 2.0 yds/tgt · 67% comp · aDOT -2.0 · 26 prs · 6.5 sk · 48 tkl / 6 miss · 0 INT · 0 PD"><span class="dot">96</span><span class="nm">L. Williams <small>DI</small></span></div><div class="gm-fp def r5" style="left: 56%; top: 51%" title="Byron Murphy DTlast game 52% of snapsInterior DL · 91st pct of group · 651 wtd snaps2026 wks 1-6 + ½·2025Pressure rate2.4% lg 1.8%Sack rate0.9% lg 0.5%TFL rate1.2% lg 0.8%Missed tackle %6% lg 11%context (not rated): 2 tgt · 2.6 yds/tgt · 100% comp · aDOT -5.2 · 16 prs · 6.5 sk · 36 tkl / 1 miss"><span class="dot">91</span><span class="nm">B. Murphy <small>DI</small></span></div><div class="gm-fp def r4" style="left: 75%; top: 51%" title="Uchenna Nwosu LBQuestionable – Hiplast game 35% of snapsEdge · 65th pct of group · 490 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.9% lg 3.5%Sack rate0.9% lg 0.9%TFL rate1.1% lg 1.2%Missed tackle %10% lg 9%context (not rated): 10 tgt · 2.5 yds/tgt · 47% comp · aDOT -1.6 · 20 prs · 4.5 sk · 32 tkl / 4 miss · 0 INT · 4 PD"><span class="dot">65<em>Q</em></span><span class="nm">U. Nwosu <small>EDGE</small></span></div><div class="gm-fp def r3" style="left: 41%; top: 37%" title="Ernest Jones LBlast game 71% of snapsLinebacker · 54th pct of group · 832 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.44 lg 0.38Targets drawn7.2% lg 5.6%Missed tackle %6% lg 8%Tackle rate14.2% lg 11.7%TFL rate0.6% lg 0.8%context (not rated): 62 tgt · 6.1 yds/tgt · 64% comp · aDOT 4.2 · 5 prs · 3.2 sk · 122 tkl / 7 miss · 4 INT · 6 PD"><span class="dot">54</span><span class="nm">E. Jones <small>LB</small></span></div><div class="gm-fp def r3" style="left: 59%; top: 37%" title="Tyrice Knight LBon report – Obliquelast game 60% of snapsLinebacker · 55th pct of group · 228 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.46 lg 0.38Targets drawn5.4% lg 5.6%Missed tackle %9% lg 8%Tackle rate13.0% lg 11.7%TFL rate1.1% lg 0.8%context (not rated): 12 tgt · 9.7 yds/tgt · 96% comp · aDOT 2.4 · 1 prs · 1.0 sk · 32 tkl / 3 miss"><span class="dot">55<em>?</em></span><span class="nm">T. Knight <small>LB</small></span></div><div class="gm-fp def r5" style="left: 7%; top: 42%" title="Devon Witherspoon CBlast game 69% of snapsCornerback · 89th pct of group · 736 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.49 lg 0.66Targets drawn8.8% lg 9.1%Missed tackle %6% lg 10%context (not rated): 64 tgt · 5.1 yds/tgt · 66% comp · aDOT 6.7 · 4 prs · 0.2 sk · 73 tkl / 4 miss · 0 INT · 6 PD"><span class="dot">89</span><span class="nm">D. Witherspoon <small>CB</small></span></div><div class="gm-fp def r4" style="left: 93%; top: 42%" title="Josh Jobe CBlast game 69% of snapsCornerback · 68th pct of group · 786 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.57 lg 0.66Targets drawn9.0% lg 9.1%Missed tackle %9% lg 10%context (not rated): 70 tgt · 6.2 yds/tgt · 57% comp · aDOT 10.5 · 1 prs · 0.2 sk · 51 tkl / 4 miss · 2 INT · 7 PD"><span class="dot">68</span><span class="nm">J. Jobe <small>CB</small></span></div><div class="gm-fp def r3" style="left: 18%; top: 44%" title="Nehemiah Pritchett CBlast game 9% of snapsCornerback · 48th pct of group · 204 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.68 lg 0.66Targets drawn9.4% lg 9.1%Missed tackle %8% lg 10%context (not rated): 20 tgt · 7.3 yds/tgt · 56% comp · aDOT 10.3 · 14 tkl / 1 miss · 2 INT · 5 PD"><span class="dot">48</span><span class="nm">N. Pritchett <small>NB</small></span></div><div class="gm-fp def r5" style="left: 34%; top: 19%" title="Julian Love Slast game 71% of snapsSafety · 99th pct of group · 537 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.26 lg 0.47Targets drawn4.5% lg 5.6%Missed tackle %5% lg 9%context (not rated): 22 tgt · 4.8 yds/tgt · 42% comp · aDOT 10.8 · 0 prs · 0.5 sk · 40 tkl / 1 miss · 2 INT · 9 PD"><span class="dot">99</span><span class="nm">J. Love <small>S</small></span></div><div class="gm-fp def r4" style="left: 66%; top: 19%" title="Ty Okada Slast game 69% of snapsSafety · 71st pct of group · 486 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.43 lg 0.47Targets drawn5.5% lg 5.6%Missed tackle %7% lg 9%context (not rated): 26 tgt · 7.6 yds/tgt · 72% comp · aDOT 7.9 · 2 prs · 0.8 sk · 40 tkl / 2 miss · 0 INT · 3 PD"><span class="dot">71</span><span class="nm">T. Okada <small>S</small></span></div>
+        <div class="gm-fp def r5" style="left: 26%; top: 51%" title="DeMarcus Lawrence LBQuestionable – Kneelast game 40% of snapsEdge · 89th pct of group · 545 wtd snaps2026 wks 1-6 + ½·2025Pressure rate5.2% lg 3.5%Sack rate0.6% lg 0.9%TFL rate1.5% lg 1.2%Missed tackle %12% lg 9%context (not rated): 4 tgt · 2.6 yds/tgt · 62% comp · aDOT -0.5 · 31 prs · 3.0 sk · 38 tkl / 6 miss · 0 INT · 2 PD"><span class="dot">89<em>Q</em></span><span class="nm">D. Lawrence <small>EDGE</small></span></div><div class="gm-fp def r5" style="left: 44%; top: 51%" title="Leonard Williams DTlast game 59% of snapsInterior DL · 96th pct of group · 681 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.5% lg 1.8%Sack rate0.9% lg 0.5%TFL rate1.4% lg 0.8%Missed tackle %10% lg 11%context (not rated): 2 tgt · 2.0 yds/tgt · 67% comp · aDOT -2.0 · 26 prs · 6.5 sk · 48 tkl / 6 miss · 0 INT · 0 PD"><span class="dot">96</span><span class="nm">L. Williams <small>DI</small></span></div><div class="gm-fp def r5" style="left: 56%; top: 51%" title="Byron Murphy DTlast game 52% of snapsInterior DL · 91st pct of group · 651 wtd snaps2026 wks 1-6 + ½·2025Pressure rate2.4% lg 1.8%Sack rate0.9% lg 0.5%TFL rate1.2% lg 0.8%Missed tackle %6% lg 11%context (not rated): 2 tgt · 2.6 yds/tgt · 100% comp · aDOT -5.2 · 16 prs · 6.5 sk · 36 tkl / 1 miss"><span class="dot">91</span><span class="nm">B. Murphy <small>DI</small></span></div><div class="gm-fp def r4" style="left: 75%; top: 51%" title="Uchenna Nwosu LBQuestionable – Hiplast game 35% of snapsEdge · 65th pct of group · 490 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.9% lg 3.5%Sack rate0.9% lg 0.9%TFL rate1.1% lg 1.2%Missed tackle %10% lg 9%context (not rated): 10 tgt · 2.5 yds/tgt · 47% comp · aDOT -1.6 · 20 prs · 4.5 sk · 32 tkl / 4 miss · 0 INT · 4 PD"><span class="dot">65<em>Q</em></span><span class="nm">U. Nwosu <small>EDGE</small></span></div><div class="gm-fp def r3" style="left: 41%; top: 37%" title="Ernest Jones LBlast game 71% of snapsLinebacker · 54th pct of group · 832 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.45 lg 0.38Targets drawn7.2% lg 5.6%Missed tackle %6% lg 8%Tackle rate14.2% lg 11.8%TFL rate0.6% lg 0.8%context (not rated): 62 tgt · 6.1 yds/tgt · 64% comp · aDOT 4.2 · 5 prs · 3.2 sk · 122 tkl / 7 miss · 4 INT · 6 PD"><span class="dot">54</span><span class="nm">E. Jones <small>LB</small></span></div><div class="gm-fp def r3" style="left: 59%; top: 37%" title="Tyrice Knight LBon report – Obliquelast game 60% of snapsLinebacker · 54th pct of group · 228 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.46 lg 0.38Targets drawn5.4% lg 5.6%Missed tackle %9% lg 8%Tackle rate13.0% lg 11.8%TFL rate1.1% lg 0.8%context (not rated): 12 tgt · 9.7 yds/tgt · 96% comp · aDOT 2.4 · 1 prs · 1.0 sk · 32 tkl / 3 miss"><span class="dot">54<em>?</em></span><span class="nm">T. Knight <small>LB</small></span></div><div class="gm-fp def r5" style="left: 7%; top: 42%" title="Devon Witherspoon CBlast game 69% of snapsCornerback · 89th pct of group · 736 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.49 lg 0.66Targets drawn8.8% lg 9.1%Missed tackle %6% lg 10%context (not rated): 64 tgt · 5.1 yds/tgt · 66% comp · aDOT 6.7 · 4 prs · 0.2 sk · 73 tkl / 4 miss · 0 INT · 6 PD"><span class="dot">89</span><span class="nm">D. Witherspoon <small>CB</small></span></div><div class="gm-fp def r4" style="left: 93%; top: 42%" title="Josh Jobe CBlast game 69% of snapsCornerback · 68th pct of group · 786 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.57 lg 0.66Targets drawn9.0% lg 9.1%Missed tackle %9% lg 10%context (not rated): 70 tgt · 6.2 yds/tgt · 57% comp · aDOT 10.5 · 1 prs · 0.2 sk · 51 tkl / 4 miss · 2 INT · 7 PD"><span class="dot">68</span><span class="nm">J. Jobe <small>CB</small></span></div><div class="gm-fp def r3" style="left: 18%; top: 44%" title="Nehemiah Pritchett CBlast game 9% of snapsCornerback · 48th pct of group · 204 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.68 lg 0.66Targets drawn9.4% lg 9.1%Missed tackle %8% lg 10%context (not rated): 20 tgt · 7.3 yds/tgt · 56% comp · aDOT 10.3 · 14 tkl / 1 miss · 2 INT · 5 PD"><span class="dot">48</span><span class="nm">N. Pritchett <small>NB</small></span></div><div class="gm-fp def r5" style="left: 34%; top: 19%" title="Julian Love Slast game 71% of snapsSafety · 99th pct of group · 537 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.26 lg 0.47Targets drawn4.5% lg 5.6%Missed tackle %5% lg 9%context (not rated): 22 tgt · 4.8 yds/tgt · 42% comp · aDOT 10.8 · 0 prs · 0.5 sk · 40 tkl / 1 miss · 2 INT · 9 PD"><span class="dot">99</span><span class="nm">J. Love <small>S</small></span></div><div class="gm-fp def r4" style="left: 66%; top: 19%" title="Ty Okada Slast game 69% of snapsSafety · 71st pct of group · 486 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.43 lg 0.47Targets drawn5.5% lg 5.6%Missed tackle %7% lg 9%context (not rated): 26 tgt · 7.6 yds/tgt · 72% comp · aDOT 7.9 · 2 prs · 0.8 sk · 40 tkl / 2 miss · 0 INT · 3 PD"><span class="dot">71</span><span class="nm">T. Okada <small>S</small></span></div>
         <div class="gm-fp off r3" style="left: 7%; top: 63%" title="Xavier Worthy WRprojected: 7.2 tgt · 47 rec yds41st pct production among the position&#x27;s starter pool · 39 yds/g over 12.0 wtd games5.5 tgt/g · 0.5 car/g"><span class="dot">41</span><span class="nm">X. Worthy <small>WR</small></span></div><div class="gm-fp off thin" style="left: 18%; top: 65%" title="Jalen Royals WRprojected: 2.7 tgt · 10 rec yds0th pct production among the position&#x27;s starter pool (outside the pool) · 7 yds/g over 6.0 wtd games1.8 tgt/g · 0.0 car/g"><span class="dot">0</span><span class="nm">J. Royals <small>WR</small></span></div><div class="gm-fp off r5" style="left: 80%; top: 62%" title="Travis Kelce TEon report – Ankleprojected: 5.6 tgt · 37 rec yds84th pct production among the position&#x27;s starter pool · 54 yds/g over 13.5 wtd games6.0 tgt/g · 0.0 car/g"><span class="dot">84<em>?</em></span><span class="nm">T. Kelce <small>TE</small></span></div><div class="gm-fp off r3" style="left: 93%; top: 63%" title="Tyquan Thornton WRprojected: 3.8 tgt · 38 rec yds50th pct production among the position&#x27;s starter pool · 44 yds/g over 10.0 wtd games3.4 tgt/g · 0.0 car/g"><span class="dot">50</span><span class="nm">T. Thornton <small>WR</small></span></div><div class="gm-fp off r5" style="left: 50%; top: 75%" title="Patrick Mahomes QBon report – Kneeprojected: 31 att · 213 pass yds88th pct production among the position&#x27;s starter pool · 281 yds/g over 12.0 wtd games34.1 att/g"><span class="dot">88<em>?</em></span><span class="nm">P. Mahomes <small>QB</small></span></div><div class="gm-fp off r5" style="left: 39%; top: 76%" title="Kenneth Walker III RBprojected: 20.6 car · 94 rush · 4.2 tgt · 13 rec91st pct production among the position&#x27;s starter pool · 105 yds/g over 13.5 wtd games3.0 tgt/g · 16.0 car/g"><span class="dot">91</span><span class="nm">K. Walker III <small>RB</small></span></div><div class="gm-fp off ol" style="left: 31%; top: 62%" title="Kahlil Benson Tlast game 90% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LT</span></div><div class="gm-fp off ol" style="left: 40.5%; top: 62%" title="Trey Smith Glast game 90% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LG<em>?</em></span></div><div class="gm-fp off ol" style="left: 50%; top: 62%" title="Creed Humphrey Clast game 90% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">C</span></div><div class="gm-fp off ol" style="left: 59.5%; top: 62%" title="Kingsley Suamataia OLlast game 81% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RG</span></div><div class="gm-fp off ol" style="left: 69%; top: 62%" title="Jaylon Moore OLlast game 46% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RT<em>O</em></span></div>
       </div>
     </div>
@@ -2371,7 +2954,7 @@
         <div class="gm-ftag top">KC defense</div>
         <div class="gm-los"></div>
         <div class="gm-ftag bot">SEA offense</div>
-        <div class="gm-fp def r4" style="left: 26%; top: 51%" title="George Karlaftis III DElast game 81% of snapsEdge · 78th pct of group · 670 wtd snaps2026 wks 1-6 + ½·2025Pressure rate4.3% lg 3.5%Sack rate0.7% lg 0.9%TFL rate1.3% lg 1.2%Missed tackle %8% lg 9%context (not rated): 12 tgt · 4.0 yds/tgt · 78% comp · aDOT -2.5 · 30 prs · 4.0 sk · 42 tkl / 4 miss · 1 INT · 5 PD"><span class="dot">78</span><span class="nm">G. Karlaftis III <small>EDGE</small></span></div><div class="gm-fp def r5" style="left: 44%; top: 51%" title="Chris Jones DTlast game 75% of snapsInterior DL · 94th pct of group · 622 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.1% lg 1.8%Sack rate0.6% lg 0.5%TFL rate1.1% lg 0.8%Missed tackle %9% lg 11%context (not rated): 1 tgt · 4.0 yds/tgt · 100% comp · aDOT -2.0 · 22 prs · 4.0 sk · 21 tkl / 2 miss · 0 INT · 3 PD"><span class="dot">94</span><span class="nm">C. Jones <small>DI</small></span></div><div class="gm-fp def r1" style="left: 56%; top: 51%" title="Khyiris Tonga NTlast game 37% of snapsInterior DL · 0th pct of group · 312 wtd snaps2026 wks 1-6 + ½·2025Pressure rate0.9% lg 1.8%Sack rate0.1% lg 0.5%TFL rate0.5% lg 0.8%Missed tackle %18% lg 11%context (not rated): 1 tgt · -1.0 yds/tgt · 50% comp · aDOT -4.0 · 2 prs · 4 tkl / 2 miss · 0 INT · 1 PD"><span class="dot">0</span><span class="nm">K. Tonga <small>DI</small></span></div><div class="gm-fp def r3" style="left: 75%; top: 51%" title="Felix Anudike-Uzomah DElast game 60% of snapsEdge · 48th pct of group · 172 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.2% lg 3.5%Sack rate0.7% lg 0.9%TFL rate1.2% lg 1.2%Missed tackle %7% lg 9%context (not rated): 2 tgt · 6.5 yds/tgt · 50% comp · aDOT 0.5 · 5 prs · 1.0 sk · 8 tkl / 0 miss"><span class="dot">48</span><span class="nm">F. Anudike-Uzomah <small>EDGE</small></span></div><div class="gm-fp def r3" style="left: 41%; top: 37%" title="Nick Bolton LBlast game 100% of snapsLinebacker · 56th pct of group · 846 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.41 lg 0.38Targets drawn6.1% lg 5.6%Missed tackle %8% lg 8%Tackle rate13.3% lg 11.7%TFL rate0.8% lg 0.8%context (not rated): 52 tgt · 6.7 yds/tgt · 78% comp · aDOT 3.6 · 6 prs · 0.5 sk · 116 tkl / 10 miss · 0 INT · 5 PD"><span class="dot">56</span><span class="nm">N. Bolton <small>LB</small></span></div><div class="gm-fp def r5" style="left: 59%; top: 37%" title="Drue Tranquill LBlast game 91% of snapsLinebacker · 98th pct of group · 734 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.33 lg 0.38Targets drawn4.4% lg 5.6%Missed tackle %3% lg 8%Tackle rate11.5% lg 11.7%TFL rate1.3% lg 0.8%context (not rated): 30 tgt · 7.7 yds/tgt · 69% comp · aDOT 3.8 · 6 prs · 1.0 sk · 84 tkl / 2 miss · 0 INT · 2 PD"><span class="dot">98</span><span class="nm">D. Tranquill <small>LB</small></span></div><div class="gm-fp def r3" style="left: 7%; top: 42%" title="Mansoor Delane CBlast game 96% of snapsCornerback · 52nd pct of group · 218 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.74 lg 0.66Targets drawn8.9% lg 9.1%Missed tackle %7% lg 10%context (not rated): 19 tgt · 9.2 yds/tgt · 68% comp · aDOT 13.0 · 22 tkl / 1 miss · 1 INT · 3 PD"><span class="dot">52</span><span class="nm">M. Delane <small>CB</small></span></div><div class="gm-fp def r1" style="left: 93%; top: 42%" title="L&amp;#x27;Jarius Sneed CBQuestionable – Kneelast game 49% of snapsCornerback · 8th pct of group · 424 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.84 lg 0.66Targets drawn11.5% lg 9.1%Missed tackle %10% lg 10%context (not rated): 52 tgt · 7.4 yds/tgt · 73% comp · aDOT 7.3 · 1 prs · 43 tkl / 5 miss · 0 INT · 4 PD"><span class="dot">8<em>Q</em></span><span class="nm">L. Sneed <small>CB</small></span></div><div class="gm-fp def r5" style="left: 18%; top: 44%" title="Christian Roland-Wallace CBlast game 29% of snapsCornerback · 83rd pct of group · 170 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.66 lg 0.66Targets drawn8.2% lg 9.1%Missed tackle %5% lg 10%context (not rated): 12 tgt · 8.9 yds/tgt · 88% comp · aDOT 6.4 · 22 tkl / 0 miss · 0 INT · 2 PD"><span class="dot">83</span><span class="nm">C. Roland-Wallace <small>NB</small></span></div><div class="gm-fp def r4" style="left: 34%; top: 19%" title="Chamarri Conner DBon report – Kneelast game 100% of snapsSafety · 74th pct of group · 642 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.36 lg 0.47Targets drawn5.2% lg 5.6%Missed tackle %10% lg 9%context (not rated): 32 tgt · 6.5 yds/tgt · 71% comp · aDOT 4.6 · 3 prs · 2.0 sk · 59 tkl / 6 miss · 0 INT · 2 PD"><span class="dot">74<em>?</em></span><span class="nm">C. Conner <small>S</small></span></div><div class="gm-fp def r1" style="left: 66%; top: 19%" title="Nohl Williams DBlast game 79% of snapsSafety · 19th pct of group · 536 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.49 lg 0.47Targets drawn7.9% lg 5.6%Missed tackle %9% lg 9%context (not rated): 46 tgt · 5.8 yds/tgt · 47% comp · aDOT 9.7 · 2 prs · 1.5 sk · 40 tkl / 4 miss · 0 INT · 10 PD"><span class="dot">19</span><span class="nm">N. Williams <small>S</small></span></div>
+        <div class="gm-fp def r4" style="left: 26%; top: 51%" title="George Karlaftis III DElast game 81% of snapsEdge · 79th pct of group · 670 wtd snaps2026 wks 1-6 + ½·2025Pressure rate4.3% lg 3.5%Sack rate0.7% lg 0.9%TFL rate1.3% lg 1.2%Missed tackle %8% lg 9%context (not rated): 12 tgt · 4.0 yds/tgt · 78% comp · aDOT -2.5 · 30 prs · 4.0 sk · 42 tkl / 4 miss · 1 INT · 5 PD"><span class="dot">79</span><span class="nm">G. Karlaftis III <small>EDGE</small></span></div><div class="gm-fp def r5" style="left: 44%; top: 51%" title="Chris Jones DTlast game 75% of snapsInterior DL · 94th pct of group · 622 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.1% lg 1.8%Sack rate0.6% lg 0.5%TFL rate1.1% lg 0.8%Missed tackle %9% lg 11%context (not rated): 1 tgt · 4.0 yds/tgt · 100% comp · aDOT -2.0 · 22 prs · 4.0 sk · 21 tkl / 2 miss · 0 INT · 3 PD"><span class="dot">94</span><span class="nm">C. Jones <small>DI</small></span></div><div class="gm-fp def r1" style="left: 56%; top: 51%" title="Khyiris Tonga NTlast game 37% of snapsInterior DL · 0th pct of group · 312 wtd snaps2026 wks 1-6 + ½·2025Pressure rate0.9% lg 1.8%Sack rate0.1% lg 0.5%TFL rate0.5% lg 0.8%Missed tackle %18% lg 11%context (not rated): 1 tgt · -1.0 yds/tgt · 50% comp · aDOT -4.0 · 2 prs · 4 tkl / 2 miss · 0 INT · 1 PD"><span class="dot">0</span><span class="nm">K. Tonga <small>DI</small></span></div><div class="gm-fp def r3" style="left: 75%; top: 51%" title="Felix Anudike-Uzomah DElast game 60% of snapsEdge · 47th pct of group · 172 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.2% lg 3.5%Sack rate0.7% lg 0.9%TFL rate1.2% lg 1.2%Missed tackle %7% lg 9%context (not rated): 2 tgt · 6.5 yds/tgt · 50% comp · aDOT 0.5 · 5 prs · 1.0 sk · 8 tkl / 0 miss"><span class="dot">47</span><span class="nm">F. Anudike-Uzomah <small>EDGE</small></span></div><div class="gm-fp def r3" style="left: 41%; top: 37%" title="Nick Bolton LBlast game 100% of snapsLinebacker · 57th pct of group · 846 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.41 lg 0.38Targets drawn6.1% lg 5.6%Missed tackle %8% lg 8%Tackle rate13.4% lg 11.8%TFL rate0.8% lg 0.8%context (not rated): 52 tgt · 6.7 yds/tgt · 78% comp · aDOT 3.6 · 6 prs · 0.5 sk · 116 tkl / 10 miss · 0 INT · 5 PD"><span class="dot">57</span><span class="nm">N. Bolton <small>LB</small></span></div><div class="gm-fp def r5" style="left: 59%; top: 37%" title="Drue Tranquill LBlast game 91% of snapsLinebacker · 98th pct of group · 734 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.33 lg 0.38Targets drawn4.4% lg 5.6%Missed tackle %3% lg 8%Tackle rate11.6% lg 11.8%TFL rate1.3% lg 0.8%context (not rated): 30 tgt · 7.7 yds/tgt · 69% comp · aDOT 3.8 · 6 prs · 1.0 sk · 84 tkl / 2 miss · 0 INT · 2 PD"><span class="dot">98</span><span class="nm">D. Tranquill <small>LB</small></span></div><div class="gm-fp def r3" style="left: 7%; top: 42%" title="Mansoor Delane CBlast game 96% of snapsCornerback · 52nd pct of group · 218 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.74 lg 0.66Targets drawn8.9% lg 9.1%Missed tackle %7% lg 10%context (not rated): 19 tgt · 9.2 yds/tgt · 68% comp · aDOT 13.0 · 22 tkl / 1 miss · 1 INT · 3 PD"><span class="dot">52</span><span class="nm">M. Delane <small>CB</small></span></div><div class="gm-fp def r1" style="left: 93%; top: 42%" title="L&amp;#x27;Jarius Sneed CBQuestionable – Kneelast game 49% of snapsCornerback · 8th pct of group · 424 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.84 lg 0.66Targets drawn11.5% lg 9.1%Missed tackle %10% lg 10%context (not rated): 52 tgt · 7.4 yds/tgt · 73% comp · aDOT 7.3 · 1 prs · 43 tkl / 5 miss · 0 INT · 4 PD"><span class="dot">8<em>Q</em></span><span class="nm">L. Sneed <small>CB</small></span></div><div class="gm-fp def r5" style="left: 18%; top: 44%" title="Christian Roland-Wallace CBlast game 29% of snapsCornerback · 83rd pct of group · 170 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.66 lg 0.66Targets drawn8.2% lg 9.1%Missed tackle %5% lg 10%context (not rated): 12 tgt · 8.9 yds/tgt · 88% comp · aDOT 6.4 · 22 tkl / 0 miss · 0 INT · 2 PD"><span class="dot">83</span><span class="nm">C. Roland-Wallace <small>NB</small></span></div><div class="gm-fp def r4" style="left: 34%; top: 19%" title="Chamarri Conner DBon report – Kneelast game 100% of snapsSafety · 74th pct of group · 642 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.36 lg 0.47Targets drawn5.2% lg 5.6%Missed tackle %10% lg 9%context (not rated): 32 tgt · 6.5 yds/tgt · 71% comp · aDOT 4.6 · 3 prs · 2.0 sk · 59 tkl / 6 miss · 0 INT · 2 PD"><span class="dot">74<em>?</em></span><span class="nm">C. Conner <small>S</small></span></div><div class="gm-fp def r1" style="left: 66%; top: 19%" title="Nohl Williams DBlast game 79% of snapsSafety · 19th pct of group · 536 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.49 lg 0.47Targets drawn7.9% lg 5.6%Missed tackle %9% lg 9%context (not rated): 46 tgt · 5.8 yds/tgt · 47% comp · aDOT 9.7 · 2 prs · 1.5 sk · 40 tkl / 4 miss · 0 INT · 10 PD"><span class="dot">19</span><span class="nm">N. Williams <small>S</small></span></div>
         <div class="gm-fp off r5" style="left: 7%; top: 63%" title="Jaxon Smith-Njigba WRprojected: 9.5 tgt · 91 rec yds99th pct production among the position&#x27;s starter pool · 111 yds/g over 14.5 wtd games10.2 tgt/g · 0.3 car/g"><span class="dot">99</span><span class="nm">J. Smith-Njigba <small>WR</small></span></div><div class="gm-fp off r2" style="left: 18%; top: 65%" title="Cooper Kupp WRprojected: 4.6 tgt · 28 rec yds31st pct production among the position&#x27;s starter pool · 34 yds/g over 14.0 wtd games4.3 tgt/g · 0.0 car/g"><span class="dot">31</span><span class="nm">C. Kupp <small>WR</small></span></div><div class="gm-fp off r1" style="left: 80%; top: 62%" title="AJ Barner TEprojected: 4.2 tgt · 19 rec yds9th pct production among the position&#x27;s starter pool · 27 yds/g over 14.5 wtd games4.0 tgt/g · 0.4 car/g"><span class="dot">9</span><span class="nm">A. Barner <small>TE</small></span></div><div class="gm-fp off r2" style="left: 93%; top: 63%" title="Rashid Shaheed WRon report – Hipprojected: 4.8 tgt · 31 rec yds30th pct production among the position&#x27;s starter pool · 34 yds/g over 15.0 wtd games4.9 tgt/g · 0.6 car/g"><span class="dot">30<em>?</em></span><span class="nm">R. Shaheed <small>WR</small></span></div><div class="gm-fp off r2" style="left: 50%; top: 75%" title="Sam Darnold QBprojected: 33 att · 226 pass yds38th pct production among the position&#x27;s starter pool · 233 yds/g over 13.5 wtd games28.7 att/g"><span class="dot">38</span><span class="nm">S. Darnold <small>QB</small></span></div><div class="gm-fp off r2" style="left: 39%; top: 76%" title="Emanuel Wilson RBprojected: 14.4 car · 45 rush · 2.0 tgt · 12 rec28th pct production among the position&#x27;s starter pool · 45 yds/g over 14.5 wtd games1.1 tgt/g · 10.3 car/g"><span class="dot">28</span><span class="nm">E. Wilson <small>RB</small></span></div><div class="gm-fp off ol" style="left: 31%; top: 62%" title="Abraham Lucas Tlast game 100% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LT</span></div><div class="gm-fp off ol" style="left: 40.5%; top: 62%" title="Grey Zabel Glast game 100% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LG</span></div><div class="gm-fp off ol" style="left: 50%; top: 62%" title="Jalen Sundell Clast game 100% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">C</span></div><div class="gm-fp off ol" style="left: 59.5%; top: 62%" title="Christian Haynes Glast game 69% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RG</span></div><div class="gm-fp off ol" style="left: 69%; top: 62%" title="Charles Cross Tlast game 100% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RT</span></div>
       </div>
     </div>
@@ -2382,7 +2965,7 @@
 
 
 
-<details class="hfa-card hfa-sec gm-injuries pp-sec" id="injuries" data-sec="injuries" open>
+<details class="hfa-card hfa-sec gm-injuries pp-sec" id="injuries" data-sec="injuries">
   <summary class="hfa-head pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <div class="hfa-eyebrow">Injury report</div>
@@ -2474,7 +3057,7 @@
 </div>
           <div><div class="gm-irside def">SEA &middot; LB</div>
 <div class="gm-ir dim">
-  <span class="gm-rate r3" title="55th percentile in the Linebacker group, 2026 wks 1-6 + ½·2025">55</span>
+  <span class="gm-rate r3" title="54th percentile in the Linebacker group, 2026 wks 1-6 + ½·2025">54</span>
   <div class="gm-irm">
     <div class="top"><b>Tyrice Knight</b><span class="flat">LB</span><span class="badge mute">Full practice</span></div>
     <div class="meta">Oblique &middot; 60% of snaps last game</div>
@@ -2482,7 +3065,7 @@
 </div>
 
 <div class="gm-ir ">
-  <span class="gm-rate thin" title="51st percentile in the Linebacker group, 2026 wks 1-6 + ½·2025 (thin sample)">51</span>
+  <span class="gm-rate thin" title="49th percentile in the Linebacker group, 2026 wks 1-6 + ½·2025 (thin sample)">49</span>
   <div class="gm-irm">
     <div class="top"><b>Chazz Surratt</b><span class="flat">LB</span><span class="badge out">Out</span></div>
     <div class="meta">Calf &middot; Did Not Participate In Practice &middot; 3% of snaps last game</div>
@@ -2490,18 +3073,18 @@
 </div>
 
 <div class="gm-ir ">
-  <span class="gm-rate thin" title="37th percentile in the Linebacker group, 2026 wks 1-6 + ½·2025 (thin sample)">37</span>
+  <span class="gm-rate r2" title="35th percentile in the Linebacker group, 2026 wks 1-6 + ½·2025">35</span>
   <div class="gm-irm">
-    <div class="top"><b>Connor O&#x27;Toole</b><span class="flat">LB</span><span class="badge q">Questionable</span></div>
-    <div class="meta">Hamstring &middot; Limited Participation in Practice &middot; 1% of snaps last game</div>
+    <div class="top"><b>Drake Thomas</b><span class="flat">LB</span><span class="badge out">Out</span></div>
+    <div class="meta">Ankle &middot; Did Not Participate In Practice &middot; 73% of snaps last game</div>
   </div>
 </div>
 
 <div class="gm-ir ">
-  <span class="gm-rate r2" title="36th percentile in the Linebacker group, 2026 wks 1-6 + ½·2025">36</span>
+  <span class="gm-rate thin" title="35th percentile in the Linebacker group, 2026 wks 1-6 + ½·2025 (thin sample)">35</span>
   <div class="gm-irm">
-    <div class="top"><b>Drake Thomas</b><span class="flat">LB</span><span class="badge out">Out</span></div>
-    <div class="meta">Ankle &middot; Did Not Participate In Practice &middot; 73% of snaps last game</div>
+    <div class="top"><b>Connor O&#x27;Toole</b><span class="flat">LB</span><span class="badge q">Questionable</span></div>
+    <div class="meta">Hamstring &middot; Limited Participation in Practice &middot; 1% of snaps last game</div>
   </div>
 </div>
 </div>
@@ -2615,7 +3198,7 @@
 </div>
           <div><div class="gm-irside def">KC &middot; LB</div>
 <div class="gm-ir ">
-  <span class="gm-rate thin" title="51st percentile in the Linebacker group, 2026 wks 1-6 + ½·2025 (thin sample)">51</span>
+  <span class="gm-rate thin" title="50th percentile in the Linebacker group, 2026 wks 1-6 + ½·2025 (thin sample)">50</span>
   <div class="gm-irm">
     <div class="top"><b>Cooper McDonald</b><span class="flat">LB</span><span class="badge q">Questionable</span></div>
     <div class="meta">Knee &middot; Limited Participation in Practice</div>
@@ -2656,19 +3239,198 @@
 </details>
 
 
-<details class="hfa-card hfa-sec pp-sec pp-unknowns" id="before" data-sec="before" open>
+
+<details class="hfa-card hfa-sec pp-sec rv-grade" id="grade" data-sec="grade" open>
   <summary class="pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    <span class="pp-headtext"><span class="hfa-eyebrow">Before you bet it</span><span class="pp-h2">Check these first</span></span>
-    <span class="pp-headchips"><span class="badge warn">6 to check</span><span class="pp-open">open</span></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The grade</span><span class="pp-h2">The projection against the box score</span></span>
+    <span class="pp-headchips"><span class="badge warn">projection C &middot; 58</span><span class="pp-open">open</span></span>
   </summary>
   <div class="pp-body">
-    <div class="pp-checks">
-      <div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Every price here is the Kalshi exchange&#x27;s with a single quote behind it; player markets there are thin, so check whether there is real volume before leaning on any engine-versus-market gap.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Walker&#x27;s carry count is script-dependent — Kansas City is a road dog, and in the one game it never led (week 2) it threw 47 times.</p><details class="pp-more"><summary>more</summary><p>If KC trails by two scores his rushing volume drops and his receiving work appears instead.</p></details></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Kelce carries no designation but practiced limited all week with an ankle; confirm his snap share, which fell to 66% in week 6.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Jaydn Ott was signed to the active roster Saturday as the No. 3 back and is not in the projection; a surprise role would eat Emmett Johnson&#x27;s work, not Walker&#x27;s.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Seattle&#x27;s edge rotation — Lawrence and Nwosu were both reported active Sunday afternoon, but their snap shares have been 40% and 35%; a reduced rotation would soften the pressure case against KC&#x27;s patched line.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Whether Seattle actually diversifies beyond Smith-Njigba as RotoBaller suggested on Friday, which is the swing on the Kupp and Shaheed volume reads.</p></div></div>
+    <div class="rv-gradehead">
+      <div class="rv-letter warn"><b>C</b><span>58 of 100</span></div>
+      <div class="rv-gradeparts">
+        <div class="rv-part"><span>Team volume &amp; yards</span><div class="rv-bar"><i style="width: 50%"></i></div><b>50</b></div>
+        <div class="rv-part"><span>Player lines <small>28/39 in range</small></span><div class="rv-bar"><i style="width: 65%"></i></div><b>65</b></div>
+        <div class="rv-mkts"><span class="badge good">Winner: SEA &#10003;</span><span class="badge bad">Spread: KC +3 &#10007;</span><span class="badge good">Total: Under 43.5 (proj 43.4) &#10003;</span></div>
+      </div>
     </div>
-    <p class="pp-disclaimer">The plan is a read written from the data as of Sun Oct 25, 6:01 PM Denver; lines, designations and the model's inputs move after that. Nothing here changes a projection or a price, and nothing on this site is betting advice.</p>
+    <div class="pp-card wide"><p class="pp-lead">The grade is a C (0.584) and it is almost entirely a KC team-level failure plus a volume inversion on both sides. The market calls were 2-of-3 (winner SEA, under 43.5 at a projected 43.4; the KC +3 side lost), and SEA&#x27;s points (23.2 proj / 20 actual) and pass yards (225.6 / 257) were close.</p><details class="pp-more"><summary>more</summary><p>What broke was KC&#x27;s 20.2 projected points against 3 actual — the engine blended KC to 6.85 Y/A and 4.0 YPC and the Chiefs produced 5.0 Y/A, 3.1 YPC and not a single snap inside the Seattle 20 — and the run/pass volume split: KC was projected 27.6 carries and ran 16, Seattle was projected 26.6 and ran 41. Both volume misses trace to one thing the engine cannot see, a game state in which KC led for 0 seconds. Player grading was better (28 of 39 lines), with the misses concentrated in the two backfields and the Smith-Njigba ceiling.</p></details></div>
+    <div class="rv-teams">
+      
+      <div class="rv-team" style="--pp-team: #E31837">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy"><b>Chiefs</b><span class="flat">projected &rarr; actual</span></div>
+        
+        <div class="rv-trow big">
+          <span>Points</span>
+          <em>20.2</em><i>&#8594;</i><b>3</b>
+          <small class="down">-17.2</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 14%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Pass yds</span>
+          <em>213.3</em><i>&#8594;</i><b>165</b>
+          <small class="flat">-48.3</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 68%"></i></div>
+        </div>
+        
+        <div class="rv-trow big">
+          <span>Rush yds</span>
+          <em>110.3</em><i>&#8594;</i><b>50</b>
+          <small class="down">-60.3</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 33%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Pass att</span>
+          <em>31.2</em><i>&#8594;</i><b>33</b>
+          <small class="flat">+1.8</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 89%"></i></div>
+        </div>
+        
+        <div class="rv-trow big">
+          <span>Carries</span>
+          <em>27.6</em><i>&#8594;</i><b>16</b>
+          <small class="down">-11.6</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 17%"></i></div>
+        </div>
+        
+      </div>
+      
+      <div class="rv-team" style="--pp-team: #002244">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy"><b>Seahawks</b><span class="flat">projected &rarr; actual</span></div>
+        
+        <div class="rv-trow ">
+          <span>Points</span>
+          <em>23.2</em><i>&#8594;</i><b>20</b>
+          <small class="flat">-3.2</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 84%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Pass yds</span>
+          <em>225.6</em><i>&#8594;</i><b>257</b>
+          <small class="flat">+31.4</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 79%"></i></div>
+        </div>
+        
+        <div class="rv-trow big">
+          <span>Rush yds</span>
+          <em>98.4</em><i>&#8594;</i><b>153</b>
+          <small class="up">+54.6</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 39%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Pass att</span>
+          <em>32.9</em><i>&#8594;</i><b>28</b>
+          <small class="flat">-4.9</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 69%"></i></div>
+        </div>
+        
+        <div class="rv-trow big">
+          <span>Carries</span>
+          <em>26.6</em><i>&#8594;</i><b>41</b>
+          <small class="up">+14.4</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 0%"></i></div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="rv-two">
+      <div class="rv-list good"><div class="pp-k">Nailed it</div><div class="rv-li"><b>Travis Kelce</b> <span class="flat">KC &middot; rec</span><span class="rv-nums">4.0 &#8594; <b>4</b></span></div><div class="rv-li"><b>George Holani</b> <span class="flat">SEA &middot; carries</span><span class="rv-nums">4.9 &#8594; <b>5</b></span></div><div class="rv-li"><b>Emmett Johnson</b> <span class="flat">KC &middot; rec yds</span><span class="rv-nums">16.3 &#8594; <b>17</b></span></div><div class="rv-li"><b>George Holani</b> <span class="flat">SEA &middot; targets</span><span class="rv-nums">2.1 &#8594; <b>2</b></span></div></div>
+      <div class="rv-list bad"><div class="pp-k">Missed most</div><div class="rv-li"><b>Kenneth Walker III</b> <span class="flat">KC &middot; rush yds</span><span class="rv-nums">93.5 &#8594; <b>36</b></span></div><div class="rv-li"><b>Emanuel Wilson</b> <span class="flat">SEA &middot; rush yds</span><span class="rv-nums">45.5 &#8594; <b>100</b></span></div><div class="rv-li"><b>Jaxon Smith-Njigba</b> <span class="flat">SEA &middot; rec yds</span><span class="rv-nums">90.6 &#8594; <b>150</b></span></div><div class="rv-li"><b>Xavier Worthy</b> <span class="flat">KC &middot; rec yds</span><span class="rv-nums">46.9 &#8594; <b>11</b></span></div></div>
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">Why it missed</div>
+    <div class="rv-decided">
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy">mixed</span>
+        <p class="pp-lead">20.2 projected points, 3 actual; zero red-zone trips on 53 plays</p>
+        <p class="pp-sub">Efficiency and finishing, not volume: 33 attempts came (proj 31.2) but at a 4.7 aDOT with -9.8 CPOE and zero 20-plus passes, 3-of-13 on third down, and the two longest drives ended in a missed 45-yarder (Q4 8:38) and a missed 58-yarder (Q2 0:01).</p>
+        <details class="pp-more"><summary>more</summary><p>The engine blended KC&#x27;s 0.218 field EPA against Seattle&#x27;s -0.232 allowed; Seattle&#x27;s number won, KC posted -0.13 field EPA.</p></details>
+      </div>
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy">mixed</span>
+        <p class="pp-lead">27.6 projected carries, 16 actual; Walker 93.5 proj rush yards, 36 actual</p>
+        <p class="pp-sub">Game script plus front: 38 of KC&#x27;s 53 plays came while trailing, at a 73.7% pass rate, and the rush success rate was 0.20 with 0 runs of 10-plus.</p>
+        <details class="pp-more"><summary>more</summary><p>The blended 0.545 pass rate assumed a neutral script KC never saw.</p></details>
+      </div>
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy">mixed</span>
+        <p class="pp-lead">26.6 projected carries, 41 actual; 98.4 rush yards, 153 actual</p>
+        <p class="pp-sub">Volume shift off the lead and a role change: Charbonnet out made Emanuel Wilson a workhorse (24 carries, 100 yards vs 14.4/45.5 projected), and Seattle ran 46 plays while leading at a 41% pass rate.</p>
+        <details class="pp-more"><summary>more</summary><p>Efficiency was unremarkable (-0.119 rush EPA, 3.73 YPC); this was opportunity, not a run-game breakout.</p></details>
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy">signal</span>
+        <p class="pp-lead">Smith-Njigba 90.6 projected rec yards, 150 actual on 12 targets</p>
+        <p class="pp-sub">Target concentration beyond the share model: 76% air-yards share and 12 of 28 attempts, with KC generating only 2 QB hits and a 6.7% pressure rate so Darnold had time to work the intermediate middle (33-yard and 27-yard conversions in Q2).</p>
+        
+      </div>
+      
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">What it got right</div>
+    <div class="rv-right"><span><i>&#10003;</i>SEA to win and the under 43.5 (projected 43.4 against an actual 23) — the grind script was correctly priced.</span><span><i>&#10003;</i>SEA points within 3.2 and SEA pass yards within 32 despite the team running 41 times.</span><span><i>&#10003;</i>Mahomes pass yards projected 213 against a 165 actual — direction and magnitude both on the right side of the market number.</span><span><i>&#10003;</i>Kelce receptions (4.0 proj / 4 actual), Holani carries (4.9/5) and targets (2.1/2), Emmett Johnson rec yards (16.3/17).</span><span><i>&#10003;</i>KC pass attempts 31.2 projected against 33 actual — the attempt volume held even as the carries evaporated.</span></div>
+    
   </div>
 </details>
+
+
+
+<details class="hfa-card hfa-sec pp-sec rv-next" id="next" data-sec="next" open>
+  <summary class="pp-head">
+    <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">Next time</span><span class="pp-h2">What carries into the next plan</span></span>
+    <span class="pp-headchips"><span class="badge acc">4 lessons</span><span class="pp-open">open</span></span>
+  </summary>
+  <div class="pp-body">
+    
+    <div class="pp-k">For the next plan on these clubs</div>
+    <div class="pp-checks">
+      <div class="pp-check rv-lesson"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="SEA" loading="lazy"><div><p class="pp-lead">Emanuel Wilson is the workhorse, not a committee piece, while Charbonnet is out: 24 of 41 carries and a 47.8% snap share with Holani (5 carries) and Velus Jones (5) as mop-up.</p><details class="pp-more"><summary>more</summary><p>Price his rushing floor off team carries with a lead, not off a split.</p></details></div></div><div class="pp-check rv-lesson"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="SEA" loading="lazy"><div><p class="pp-lead">Stop treating &#x27;Seattle can&#x27;t run, so it must throw&#x27; as a given.</p><details class="pp-more"><summary>more</summary><p>Its rush EPA was still negative (-0.119) here and it ran 41 times anyway because it led — the pass rate follows the scoreboard, and the plan&#x27;s Kupp/Shaheed volume reads die with it.</p></details></div></div><div class="pp-check rv-lesson"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="KC" loading="lazy"><div><p class="pp-lead">The red-zone problem has graduated: after 1-of-4 with -0.748 EPA in week 6, KC made zero trips here.</p><details class="pp-more"><summary>more</summary><p>Until the perimeter room is healthy, downgrade KC team totals and KC touchdown props against top-ten yards-per-attempt defenses even when yardage projections look normal.</p></details></div></div><div class="pp-check rv-lesson"><div><p class="pp-lead">Do not over-react to the field goals: KC missed from 58 and 45 and Seattle went 0-for-3 inside the 20 with both touchdowns scored from outside it.</p><details class="pp-more"><summary>more</summary><p>Those are bounce, not trend — the repeatable parts are KC&#x27;s 3-of-13 third downs and Seattle&#x27;s four pre-snap flags.</p></details></div></div>
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">How each club gets beaten <span class="flat">&middot; this game read with its season so far</span></div>
+    <div class="rv-blueprints">
+      
+      <div class="rv-bp" style="--pp-team: #E31837">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/kc.png" alt="" loading="lazy"><b>Chiefs</b><span class="flat">5-0 entering</span><span class="badge mute">high confidence</span></div>
+        <div class="rv-recur"><span class="badge bad">penalties &times;2</span></div>
+        <div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Stalls before and inside the 20 — this is now the dominant failure mode</b><p class="pp-sub">Week 6: 4 trips, 1 TD, -0.748 RZ EPA with 0.319 field EPA (&#x27;yards without touchdowns&#x27;).</p><details class="pp-more"><summary>more</summary><p>Week 3: 5 trips, 3 TDs but -0.093 RZ EPA. This week: zero trips at all, 3 points on 53 plays</p></details></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>A defense that takes away yards per attempt forces a short, low-CPOE passing game</b><p class="pp-sub">4.7 aDOT, -9.8 CPOE, 0 explosive passes, 131 of 165 pass yards as YAC; Worthy 3 catches on 6 targets for 11 with a 0.401 air-yards share</p></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Third down</b><p class="pp-sub">3-of-13 here; 3-of-10 in week 6, 3-of-9 in week 3 — the conversion rate has been below 35% in three of the last four</p></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Pass protection at the patched right tackle spot</b><p class="pp-sub">7 QB hits on 36 dropbacks (19.4% pressure) against a four-man-average rush (4.24 rushers, 23.7% blitz faced); Suamataia holding wiped out a 6-yard Walker run at Q4 11:44; Moore out with a concussion</p></div></div><div class="rv-facet"><span class="rv-side defense">defense</span><div><b>Explosive passing against the secondary when the front doesn&#x27;t get home</b><p class="pp-sub">Week 4 LV: 6 passes of 20-plus allowed, tagged &#x27;explosive passing&#x27;; week 3 MIA: 3 explosives with a 2.4% pressure rate, tagged &#x27;no pass rush&#x27;.</p><details class="pp-more"><summary>more</summary><p>This week: 4 SEA explosives, 2 QB hits generated</p></details></div></div>
+        <div class="pp-expect"><span class="pp-k">What an opponent needs</span><p class="pp-lead">To beat KC you need a receiver who can win intermediate on third-and-long against a front that doesn&#x27;t pressure (KC generated a 6.7% pressure rate on Darnold), plus the patience to take field goals; to beat the Chiefs&#x27; offense you need a defense above league in yards per attempt allowed that can compress the aDOT, because KC&#x27;s offense has been able to move between the 20s against almost everyone and has stopped finishing.</p></div>
+      </div>
+      
+      <div class="rv-bp" style="--pp-team: #002244">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/sea.png" alt="" loading="lazy"><b>Seahawks</b><span class="flat">3-3 entering</span><span class="badge mute">medium confidence</span></div>
+        <div class="rv-recur"><span class="badge bad">third down &times;3</span><span class="badge bad">turnovers &times;3</span><span class="badge bad">pressure allowed &times;3</span><span class="badge bad">penalties &times;2</span><span class="badge bad">pre-snap penalties &times;2</span><span class="badge bad">defensive penalties &times;2</span></div>
+        <div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Pressure allowed and the sacks that follow</b><p class="pp-sub">Tagged &#x27;pressure allowed&#x27; in weeks 4, 5 and 6: 30.8%, 22.9% and 26.8% pressure, 3, 5 and 5 sacks.</p><details class="pp-more"><summary>more</summary><p>KC produced none of it — 0 sacks, 2 QB hits, 6.7%</p></details></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Darnold giveaways</b><p class="pp-sub">3 turnovers in each of weeks 3, 5 and 6; this week one interception, thrown at the KC goal line on 2nd-and-3 (Q2 0:23) and returned 65 yards — a 5.61-EPA, 7-point swing Seattle survived</p></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Pre-snap penalties</b><p class="pp-sub">All four accepted flags here were pre-snap (false starts by Zabel, Bradford and Sundell, plus delay of game at the KC 12 in Q3); 7 pre-snap in week 1, 5 in week 3, 3 in week 4 — 2.67/game entering vs a 1.55 league rate</p></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Red-zone finishing</b><p class="pp-sub">0-for-3 with -1.13 EPA/play inside the 20 this week; 0-for-2 in week 1.</p><details class="pp-more"><summary>more</summary><p>Both touchdowns came from outside the 20</p></details></div></div><div class="rv-facet"><span class="rv-side defense">defense</span><div><b>Giving up chunk plays to the run and pass when the game is in doubt</b><p class="pp-sub">Week 4 LAC: 4 explosive passes and 3 explosive runs allowed, tagged &#x27;run game&#x27;; week 5 SF: 3 and 3 with 3-for-3 red-zone TDs allowed, tagged &#x27;red zone defense&#x27;</p></div></div>
+        <div class="pp-expect"><span class="pp-k">What an opponent needs</span><p class="pp-lead">To cash the Seattle blueprint you need a four-man rush that generates pressure above ~22% without blitzing (the LAC/SF/DEN model) so Darnold&#x27;s third-down throws come under duress, and an offense efficient enough between the 20s to actually reach the soft part of the defense.</p><details class="pp-more"><summary>more</summary><p>A team that merely wants the turnovers, without a rush, gets what KC got — one picked-off red-zone throw and nothing else.</p></details></div>
+      </div>
+      
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">Traps <span class="flat">&middot; where a line can fool you next time</span></div>
+    <div class="pp-checks">
+      <div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Props</span><p class="pp-lead">Pre-game &#x27;this team can&#x27;t run, so it must throw&#x27; reads are script claims, not identity claims. Seattle&#x27;s rush EPA had been negative in all six prior games and it ran 41 times at a 43.5% pass rate — because it led for 2,304 of 3,600 seconds. Check who is likely to lead before pricing a forced-dropback total.</p><p class="pp-sub"><b>Trigger:</b> A home favorite with a bad-rush-EPA tag whose backup RB inherits a vacated role (Charbonnet out) — buy the RB rush-yard over, not the under.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Props</span><p class="pp-lead">A passing-yards under driven by &#x27;the rush gets home&#x27; can hit for the wrong reason. Mahomes was hit 7 times but sacked once and still threw 33 times; the yards died at a 4.7 aDOT with -9.8 CPOE. Price QB unders off receiver availability and yards-per-attempt allowed, not sack rate.</p><p class="pp-sub"><b>Trigger:</b> Team down to one perimeter receiver (Rice, Thornton out) facing a defense allowing under 5.5 Y/A — attempts stay, yards per attempt collapses.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Totals</span><p class="pp-lead">Bend-don&#x27;t-break defenses make unders live even in blowouts. Seattle gained 0.349 EPA/play between the 20s and -1.13 inside it; 0-for-3 in the red zone turned a 410-yard night into 20 points.</p><p class="pp-sub"><b>Trigger:</b> Both teams carrying red-zone-stall or bend-don&#x27;t-break tags in the prior two weeks — take the under even when you expect one side to win comfortably.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Props</span><p class="pp-lead">Anytime-TD props on a goal-line back are bets on the offense reaching the goal line. KC had zero red-zone plays; Walker&#x27;s role was never the question.</p><p class="pp-sub"><b>Trigger:</b> Road underdog whose last-four red-zone trip count is trending down facing a top-five Y/A and YPC defense — fade the TD prop regardless of how soft the opponent&#x27;s goal-line defense has looked.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Props</span><p class="pp-lead">A single alpha receiver&#x27;s air-yards share is the most reliable prop input when the opposing defense can&#x27;t pressure. Smith-Njigba took 76% of Seattle&#x27;s air yards and 12 of 28 attempts in a run-heavy game and still went 9/150.</p><p class="pp-sub"><b>Trigger:</b> Receiver above 45% air-yards share against a defense under 15% season pressure rate — the receptions/yards over survives even a negative volume script.</p></div></div>
+    </div>
+    
+    <p class="pp-disclaimer">The plan was a read written before kickoff; the report reads the game after it, from the play-by-play and the box score. Nothing here changes a projection or a price, and nothing on this site is betting advice.</p>
+  </div>
+</details>
+
 
 <div class="pl-modal" id="pl-modal" hidden data-src="/nfl/w/7/g/2026_07_KC_SEA/players.html">
   <div class="pl-back"></div>
@@ -2680,7 +3442,7 @@
 </main>
   <footer class="hfa-foot">
     <p><strong>Huffalytics</strong> publishes NFL stats, game projections, team EPA rankings and graded player prop plans priced against Kalshi, rebuilt every week from play-by-play data. <a href="/about/">How the engine works</a>.</p>
-    <p>Data as of Tue Oct 27, 4:04 PM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/nfl/data/week.json">week.json</a> · <a href="/nfl/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
+    <p>Data as of Wed Oct 28, 8:02 AM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/nfl/data/week.json">week.json</a> · <a href="/nfl/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
   </footer>
 </div>
 <script>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Packers at Lions: NFL Week 7 2026 Projection, Matchups and Injuries | Huffalytics</title>
-<meta name="description" content="Green Bay Packers at Detroit Lions, NFL week 7 2026: the projected score, each offense against the defense it meets (projected player lines, overall, run game with lanes, pass game), the starting elevens rated, and both injury reports.">
+<title>Packers at Lions: NFL Week 7 2026 Final, Game Report and the Plan Graded | Huffalytics</title>
+<meta name="description" content="Green Bay Packers 17, Detroit Lions 20, NFL week 7 2026: Detroit 20, Green Bay 17 on a 22-yard field goal with one second left: GB covered +3.5 and the total landed 18.5 points under 55.5, because two offenses that moved the ball freely between the 20s (GB 0.164 field EPA, DET 0.089) combined to go 3-for-10 in the red zone with a missed 26-yarder, a blocked 35-yarder and four failed fourth downs. The pre-game plan graded: script partly held, every call checked against the box score.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="keywords" content="NFL stats, NFL projections, NFL week 7 2026, Kalshi NFL, Kalshi player props, NFL player props, NFL team rankings, EPA per play, NFL betting model, NFL streaming picks, fantasy football projections">
 <meta name="author" content="Huffalytics">
@@ -1294,6 +1294,248 @@
     .gm-script { margin: -0.4rem 16px 1rem; }
     .pp-headchips .badge { display: none; }
   }
+
+  /* ---- the post-game look: the plan against the game (.rv-) ---- */
+  .gm-side.lost img { opacity: 0.45; filter: grayscale(0.6) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.55)); }
+  .gm-side.lost .gm-abbr { color: var(--hfa-muted); }
+  .gm-pts.final { color: var(--hfa-body); text-shadow: none; }
+  .gm-pts.final span { opacity: 0.55; }
+  .gm-pts.final span.w { opacity: 1; color: var(--hfa-accent); text-shadow: 0 0 28px rgba(255, 31, 47, 0.35); }
+  .gm-projwas { letter-spacing: 0.08em; }
+  .gm-verdict { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.4rem 1rem; margin: -0.6rem 1.1rem 1.2rem; padding: 0.55rem 1rem; border: 1px solid var(--hfa-accent); border-radius: 16px; background: var(--hfa-accent-soft); color: inherit; text-decoration: none; }
+  .gm-verdict.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.10); }
+  .gm-verdict.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.10); }
+  .gm-verdict.warn { border-color: rgba(128, 128, 128, 0.5); background: var(--hfa-tint); }
+  .gm-verdict-stamp { display: inline-flex; align-items: baseline; gap: 0.45rem; }
+  .gm-verdict-stamp i, .gm-verdict-v i { font-style: normal; font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--hfa-muted); }
+  .gm-verdict-stamp b { font-size: 1.05rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; color: var(--hfa-body); }
+  .gm-verdict.good .gm-verdict-stamp b { color: var(--hfa-good); } .gm-verdict.bad .gm-verdict-stamp b { color: var(--hfa-bad); }
+  .gm-verdict-v { display: inline-flex; align-items: baseline; gap: 0.35rem; font-size: 0.9rem; }
+  .gm-verdict-v b { font-weight: 800; color: var(--hfa-body); }
+  .gm-verdict-v.mk { font-size: 0.74rem; color: var(--hfa-muted); padding: 0.1rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.14); }
+  .gm-letter { font-size: 1.1rem; } .gm-letter.good { color: var(--hfa-good) !important; } .gm-letter.bad { color: var(--hfa-bad) !important; }
+  .gm-tile.rv small { font-size: 0.66rem; color: var(--hfa-muted); }
+  .gm-tile.rv.over b { color: var(--hfa-good); } .gm-tile.rv.under b { color: var(--hfa-bad); }
+  .gm-tile.rv b.flat { color: var(--hfa-muted); }
+
+  .rv-stamp { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.4rem; padding: 0.8rem 1rem; margin: 0.3rem 0 0.9rem; border-radius: 16px; border: 2px solid rgba(128, 128, 128, 0.4); background: var(--hfa-tint); }
+  .rv-stamp.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.08); }
+  .rv-stamp.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.08); }
+  .rv-stamp-word { display: flex; flex-direction: column; line-height: 1; }
+  .rv-stamp-word span { font-size: 0.64rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: var(--hfa-muted); }
+  .rv-stamp-word b { font-size: 2rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; color: var(--hfa-body); margin-top: 0.2rem; }
+  .rv-stamp.good .rv-stamp-word b { color: var(--hfa-good); } .rv-stamp.bad .rv-stamp-word b { color: var(--hfa-bad); }
+  .rv-stamp-meta { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.9rem; }
+  .rv-stamp-meta b { color: var(--hfa-body); }
+  .rv-win { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 700; }
+  .rv-win img { width: 26px; height: 26px; object-fit: contain; }
+  .rv-vs { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 0.8rem; align-items: stretch; }
+  .rv-col { border: var(--hfa-hairline); border-radius: 14px; padding: 0.8rem 0.95rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-col .pp-hook-logos { margin-bottom: 0.4rem; } .rv-col .pp-hook-logos img { width: 40px; height: 40px; }
+  .rv-col .pp-quote { font-size: 1.2rem; }
+  .rv-col.plan .pp-quote { color: var(--hfa-body); }
+  .rv-col.game { border-color: rgba(255, 31, 47, 0.45); }
+  .rv-col.game.good { border-color: var(--hfa-good); } .rv-col.game.bad { border-color: var(--hfa-bad); }
+  .rv-arrow { align-self: center; font-size: 1.6rem; font-weight: 900; color: var(--hfa-accent); }
+  .rv-tally { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.55rem; margin-top: 0.9rem; }
+  .rv-tile { display: flex; flex-direction: column; gap: 0.15rem; border: var(--hfa-hairline); border-radius: 12px; padding: 0.6rem 0.75rem; background: var(--hfa-tint); color: inherit; text-decoration: none; min-width: 0; }
+  .rv-tile > span { font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .rv-tile > b { font-size: 1.6rem; font-weight: 900; line-height: 1.1; color: var(--hfa-body); }
+  .rv-tile > b i { font-style: normal; }
+  .rv-tile > b small, .rv-tile > small { font-size: 0.72rem; font-weight: 600; color: var(--hfa-muted); }
+  .rv-tile.hot { border-color: rgba(255, 31, 47, 0.5); }
+  .rv-tile.lt b { font-size: 2rem; } .rv-tile.lt.good b { color: var(--hfa-good); } .rv-tile.lt.bad b { color: var(--hfa-bad); }
+  .rv-headline { font-size: 1.08rem; font-weight: 800; line-height: 1.35; margin: 0; letter-spacing: -0.01em; }
+  .rv-tile.mk em { font-style: normal; font-size: 0.8rem; font-weight: 700; }
+  .rv-bar { height: 5px; border-radius: 3px; background: rgba(128, 128, 128, 0.2); overflow: hidden; }
+  .rv-bar i { display: block; height: 100%; border-radius: 3px; background: var(--hfa-good); }
+  .rv-why { border-left: 4px solid var(--hfa-accent); }
+  .rv-fold { margin-top: 0.9rem; border-top: var(--hfa-hairline); padding-top: 0.7rem; }
+  .rv-fold > summary { list-style: none; cursor: pointer; font-size: 0.74rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-accent); margin-bottom: 0.6rem; }
+  .rv-fold > summary::-webkit-details-marker { display: none; }
+  .rv-fold > summary::before { content: "+ "; } .rv-fold[open] > summary::before { content: "\2212  "; }
+  .rv-fold > summary .flat { text-transform: none; letter-spacing: 0; font-weight: 500; }
+  .rv-story { font-size: 0.92rem; line-height: 1.6; max-width: 52rem; }
+  .rv-story h1, .rv-story h2, .rv-story h3 { font-size: 1rem; color: var(--hfa-accent); margin: 1rem 0 0.3rem; }
+  .rv-story p { margin: 0 0 0.7rem; }
+
+  .rv-tl { list-style: none; margin: 0; padding: 0 0 0 0.2rem; display: flex; flex-direction: column; }
+  .rv-tl li { position: relative; display: grid; grid-template-columns: 5.2rem minmax(0, 1fr); gap: 0.8rem; padding: 0 0 0.9rem; }
+  .rv-tl li::before { content: ""; position: absolute; left: 2.6rem; top: 1.6rem; bottom: 0; width: 2px; background: rgba(128, 128, 128, 0.25); }
+  .rv-tl li:last-child::before { display: none; }
+  .rv-clock { align-self: start; justify-self: center; z-index: 1; font-size: 0.72rem; font-weight: 800; padding: 0.25rem 0.55rem; border-radius: 999px; background: var(--pp-team); color: #fff; white-space: nowrap; box-shadow: 0 0 0 3px var(--hfa-card); }
+  .rv-tlbody { border: var(--hfa-hairline); border-left: 4px solid var(--pp-team); border-radius: 12px; padding: 0.55rem 0.8rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-play { display: flex; align-items: flex-start; gap: 0.5rem; font-weight: 700; font-size: 0.94rem; line-height: 1.35; }
+  .rv-play img { width: 24px; height: 24px; object-fit: contain; flex: none; }
+  .rv-decided { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.6rem; }
+  .rv-dcard { border: var(--hfa-hairline); border-radius: 14px; padding: 0.7rem 0.85rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-dcard.tell { border-color: rgba(47, 212, 164, 0.5); }
+  .rv-flag { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.12rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); margin-bottom: 0.4rem; }
+  .rv-flag img { width: 14px; height: 14px; object-fit: contain; }
+  .rv-dcard.tell .rv-flag { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); }
+  .rv-dcard .pp-lead { font-size: 0.92rem; font-weight: 700; }
+
+  .rv-gauge.held { border-color: rgba(47, 212, 164, 0.55); } .rv-gauge.miss { border-color: rgba(255, 176, 32, 0.55); }
+  .rv-mark { margin-left: auto; font-size: 0.85rem; }
+  .rv-gauge.held .rv-mark { color: var(--hfa-good); } .rv-gauge.miss .rv-mark { color: var(--hfa-bad); }
+  .rv-row { display: grid; grid-template-columns: 3.2rem auto 1fr; align-items: center; gap: 0.45rem; font-size: 0.8rem; }
+  .rv-row small { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--hfa-muted); }
+  .rv-row em { font-style: normal; font-weight: 800; text-transform: capitalize; }
+  .rv-row.played .pp-bars i.on { background: var(--hfa-body); }
+  .rv-gauge.held .rv-row.played .pp-bars i.on { background: var(--hfa-good); } .rv-gauge.miss .rv-row.played .pp-bars i.on { background: var(--hfa-bad); }
+  .rv-note { font-size: 0.7rem; color: var(--hfa-muted); }
+  .pp-leanbar .track i.called { background: transparent; border: 2px solid var(--hfa-body); box-shadow: none; }
+  .pp-leanbar .track i.played { background: var(--hfa-accent); border-color: var(--hfa-card); }
+  .rv-cvp { text-transform: capitalize; } .rv-cvp i { font-style: normal; color: var(--hfa-muted); }
+  .rv-legend { display: flex; gap: 1rem; font-size: 0.68rem; color: var(--hfa-muted); margin: 0.2rem 0 0; }
+  .rv-legend span { display: inline-flex; align-items: center; gap: 0.3rem; }
+  .rv-legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .rv-legend i.called { border: 2px solid var(--hfa-body); } .rv-legend i.played { background: var(--hfa-accent); }
+  .pp-path.took { border-color: rgba(47, 212, 164, 0.55); border-left-color: var(--pp-team); box-shadow: 0 0 0 1px rgba(47, 212, 164, 0.25) inset; }
+  .pp-path.not { opacity: 0.55; }
+  .pp-pathhead .badge { white-space: nowrap; }
+  .rv-swing { flex-direction: column; gap: 0.35rem; }
+  .rv-weight { font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.12rem 0.5rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); }
+  .rv-swing.decisive { border-color: var(--hfa-accent); } .rv-swing.decisive .rv-weight { background: var(--hfa-accent); color: #fff; }
+  .rv-swing.contributed .rv-weight { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .rv-swing.minor { opacity: 0.85; }
+  .rv-went { font-size: 0.84rem; color: var(--hfa-muted); margin: 0; line-height: 1.4; } .rv-went b { color: var(--hfa-body); }
+  .pp-angle.cashed { border-color: rgba(47, 212, 164, 0.55); }
+  .pp-angletitle .badge { margin-left: 0.3rem; vertical-align: 0.1rem; }
+  .pp-leg .rv-res { font-size: 0.74rem; font-weight: 800; white-space: nowrap; }
+  .pp-leg.hit { background: rgba(47, 212, 164, 0.12); } .pp-leg.hit .rv-res { color: var(--hfa-good); }
+  .pp-leg.miss { background: rgba(255, 176, 32, 0.10); } .pp-leg.miss .rv-res { color: var(--hfa-bad); }
+  .pp-leg.void .rv-res { color: var(--hfa-muted); }
+
+  .rv-eh { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0.6rem; }
+  .rv-ehcol { border: var(--hfa-hairline); border-radius: 12px; padding: 0.6rem 0.8rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-ehcol .pp-lead { font-size: 0.9rem; }
+  .rv-ehcol.happened { border-width: 1px; border-color: rgba(128, 128, 128, 0.45); }
+  .rv-ehcol.happened.good { border-color: var(--hfa-good); background: rgba(47, 212, 164, 0.07); }
+  .rv-ehcol.happened.bad { border-color: var(--hfa-bad); background: rgba(255, 176, 32, 0.07); }
+  .rv-call.hit { border-left-color: var(--hfa-good); box-shadow: 0 0 0 1px rgba(47, 212, 164, 0.3) inset; }
+  .rv-call.miss { border-left-color: var(--hfa-bad); }
+  .rv-call.void { opacity: 0.6; border-left-color: rgba(128, 128, 128, 0.5); }
+  .rv-stamp-res { flex: none; display: inline-grid; place-items: center; min-width: 2rem; height: 2rem; padding: 0 0.3rem; border-radius: 999px; font-size: 0.95rem; font-weight: 900; background: rgba(128, 128, 128, 0.18); color: var(--hfa-muted); }
+  .hfa .rv-stamp-res.hit { margin: 0; background: var(--hfa-good); color: #04130e; } .rv-stamp-res.miss { background: var(--hfa-bad); color: #1a1000; } .rv-stamp-res.void { font-size: 0.62rem; }
+  .rv-meter { margin: 0.25rem 0 0.45rem; }
+  .rv-meter .track { position: relative; height: 8px; border-radius: 4px; background: rgba(128, 128, 128, 0.18); }
+  .rv-meter .track .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: var(--hfa-muted); }
+  .rv-call.hit .rv-meter .fill { background: var(--hfa-good); } .rv-call.miss .rv-meter .fill { background: var(--hfa-bad); }
+  .rv-meter .track .line { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: var(--hfa-body); border-radius: 1px; }
+  .rv-meterlbl { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--hfa-muted); margin-top: 0.2rem; }
+  .rv-meterlbl b { color: var(--hfa-body); font-size: 0.85rem; }
+  .rv-read { margin-bottom: 0.35rem; display: inline-block; }
+  .rv-ig { color: var(--hfa-body); }
+  .rv-call .pp-probs { margin: 0.4rem 0; }
+  .rv-notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.5rem; }
+  .rv-note-card { border: var(--hfa-hairline); border-radius: 12px; padding: 0.55rem 0.75rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-note-card.signal { border-color: rgba(47, 212, 164, 0.45); }
+  .rv-notehead { display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; }
+  .rv-notehead b { color: var(--hfa-body); font-size: 0.9rem; }
+
+  .rv-gradehead { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; padding: 0.3rem 0 0.4rem; }
+  .rv-letter { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 6rem; height: 6rem; border-radius: 22px; border: 2px solid rgba(128, 128, 128, 0.45); background: var(--hfa-tint); }
+  .rv-letter b { font-size: 3rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .rv-letter span { font-size: 0.66rem; font-weight: 700; color: var(--hfa-muted); }
+  .rv-letter.good { border-color: var(--hfa-good); } .rv-letter.good b { color: var(--hfa-good); }
+  .rv-letter.bad { border-color: var(--hfa-bad); } .rv-letter.bad b { color: var(--hfa-bad); }
+  .rv-gradeparts { flex: 1 1 18rem; display: flex; flex-direction: column; gap: 0.5rem; min-width: 0; }
+  .rv-part { display: grid; grid-template-columns: 11rem 1fr 2rem; align-items: center; gap: 0.6rem; font-size: 0.8rem; }
+  .rv-part span small { color: var(--hfa-muted); display: block; font-size: 0.68rem; }
+  .rv-part b { text-align: right; color: var(--hfa-body); }
+  .rv-part .rv-bar { height: 8px; }
+  .rv-mkts { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .rv-teams { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.6rem; margin-top: 0.9rem; }
+  .rv-team, .rv-bp { border: var(--hfa-hairline); border-top: 3px solid var(--pp-team); border-radius: 14px; padding: 0.7rem 0.85rem; background: var(--hfa-tint); min-width: 0; }
+  .rv-teamhead { display: flex; align-items: center; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 0.5rem; }
+  .rv-teamhead img { width: 28px; height: 28px; object-fit: contain; }
+  .rv-teamhead b { color: var(--hfa-body); font-size: 1rem; }
+  .rv-teamhead .flat { font-size: 0.72rem; }
+  .rv-trow { display: grid; grid-template-columns: 5.2rem auto auto auto 1fr; grid-template-areas: "l p a v d" "bar bar bar bar bar"; align-items: baseline; gap: 0.15rem 0.45rem; padding: 0.35rem 0; border-top: var(--hfa-hairline); font-size: 0.84rem; }
+  .rv-trow span { grid-area: l; color: var(--hfa-muted); font-size: 0.74rem; }
+  .rv-trow em { font-style: normal; color: var(--hfa-muted); } .rv-trow i { font-style: normal; color: var(--hfa-muted); font-size: 0.72rem; }
+  .rv-trow b { color: var(--hfa-body); font-size: 1rem; } .rv-trow small { justify-self: end; font-weight: 700; }
+  .rv-trow .rv-bar { grid-area: bar; height: 4px; }
+  .rv-trow.big .rv-bar i { background: var(--hfa-bad); }
+  .rv-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-top: 0.9rem; }
+  .rv-list { border: var(--hfa-hairline); border-radius: 14px; padding: 0.65rem 0.85rem; background: var(--hfa-tint); }
+  .rv-list.good .pp-k { color: var(--hfa-good); } .rv-list.bad .pp-k { color: var(--hfa-bad); }
+  .rv-li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem; padding: 0.3rem 0; border-top: var(--hfa-hairline); font-size: 0.84rem; }
+  .rv-li > b { color: var(--hfa-body); } .rv-li .flat { font-size: 0.72rem; }
+  .rv-nums { margin-left: auto; color: var(--hfa-muted); white-space: nowrap; } .rv-nums b { color: var(--hfa-body); }
+  .rv-right { display: flex; flex-direction: column; gap: 0.35rem; }
+  .rv-right span { display: flex; gap: 0.5rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.4; }
+  .rv-right i { font-style: normal; color: var(--hfa-good); font-weight: 900; }
+
+  .rv-lesson img { width: 28px; height: 28px; object-fit: contain; flex: none; }
+  .rv-blueprints { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0.6rem; }
+  .rv-recur { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.45rem; }
+  .rv-facet { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); gap: 0.5rem; padding: 0.4rem 0; border-top: var(--hfa-hairline); font-size: 0.86rem; }
+  .rv-facet b { color: var(--hfa-body); }
+  .rv-side { align-self: start; text-align: center; font-size: 0.58rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.15rem 0.3rem; border-radius: 6px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-muted); }
+  .rv-side.defense { background: rgba(255, 176, 32, 0.14); color: var(--hfa-bad); } .rv-side.offense { background: var(--hfa-accent-soft); color: var(--hfa-accent); }
+  .rv-bp .pp-expect { margin-top: 0.5rem; }
+  @media (max-width: 760px) {
+    .gm-verdict { margin: -0.4rem 16px 1rem; gap: 0.35rem 0.8rem; }
+    .gm-verdict-v.mk { display: none; }
+    .rv-vs { grid-template-columns: 1fr; }
+    .rv-arrow { transform: rotate(90deg); justify-self: center; line-height: 1; }
+    .rv-stamp-word b { font-size: 1.5rem; }
+    .rv-tally { grid-template-columns: 1fr 1fr; }
+    .rv-tally .rv-tile.mk { grid-column: 1 / -1; }
+    .rv-tl li { grid-template-columns: 1fr; gap: 0.3rem; }
+    .rv-tl li::before { display: none; }
+    .rv-clock { justify-self: start; }
+    .rv-decided, .rv-notes, .rv-teams, .rv-blueprints, .rv-two { grid-template-columns: 1fr; }
+    .rv-eh { grid-template-columns: 1fr; }
+    .rv-part { grid-template-columns: 8rem 1fr 2rem; }
+  }
+
+  /* ---- landing: the final reports band (.ld-rep) ---- */
+  .ld-reports.on { border-color: rgba(47, 212, 164, 0.5); background: linear-gradient(135deg, rgba(47, 212, 164, 0.12), var(--hfa-card) 55%); }
+  .ld-reports.on .ld-pulse { background: var(--hfa-good); animation: none; box-shadow: 0 0 0 4px rgba(47, 212, 164, 0.2); }
+  .ld-reports .ld-plans-head { flex-wrap: wrap; }
+  .ld-reports .ld-plans-head h2 b { color: var(--hfa-good); }
+  .ld-rep-title { flex: 1 1 18rem; min-width: 0; }
+  .ld-rep-sum { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .ld-rep-chip { display: inline-flex; align-items: baseline; gap: 0.3rem; padding: 0.3rem 0.7rem; border-radius: 999px; background: var(--hfa-tint); border: var(--hfa-hairline); font-size: 0.8rem; color: var(--hfa-muted); white-space: nowrap; }
+  .ld-rep-chip i { font-style: normal; font-size: 0.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-right: 0.15rem; }
+  .ld-rep-chip b { font-weight: 900; font-size: 0.95rem; color: var(--hfa-body); } .ld-rep-chip b.up { color: var(--hfa-good); } .ld-rep-chip b.down { color: var(--hfa-bad); }
+  .ld-rep-chip.hot { border-color: rgba(255, 31, 47, 0.5); }
+  .ld-rep-grid { grid-auto-columns: 17rem; }
+  .ld-rep { display: flex; flex-direction: column; gap: 0.45rem; padding: 0.7rem 0.8rem; border-radius: 12px; background: var(--hfa-tint); border: var(--hfa-hairline); border-top: 3px solid rgba(128, 128, 128, 0.5); text-decoration: none; color: var(--hfa-body); transition: transform 0.12s, border-color 0.12s; scroll-snap-align: start; min-width: 0; }
+  .ld-rep:hover { transform: translateY(-2px); }
+  .ld-rep.good { border-top-color: var(--hfa-good); } .ld-rep.bad { border-top-color: var(--hfa-bad); }
+  .ld-rep-score { display: grid; grid-template-columns: 1fr 1fr auto; align-items: center; gap: 0.4rem; }
+  .ld-rep-score .t { display: inline-flex; align-items: center; gap: 0.3rem; opacity: 0.6; }
+  .ld-rep-score .t.w { opacity: 1; }
+  .ld-rep-score img { width: 22px; height: 22px; object-fit: contain; }
+  .ld-rep-score b { font-size: 0.82rem; font-weight: 800; color: var(--hfa-body); }
+  .ld-rep-score em { font-style: normal; font-size: 1.35rem; font-weight: 900; line-height: 1; color: var(--hfa-body); }
+  .ld-rep-score .t.w em { color: var(--hfa-accent); }
+  .ld-rep-score small { font-size: 0.58rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep-verdict { align-self: flex-start; display: inline-flex; align-items: baseline; gap: 0.35rem; font-size: 0.72rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.15rem 0.55rem; border-radius: 999px; background: rgba(128, 128, 128, 0.16); color: var(--hfa-body); }
+  .ld-rep-verdict i { font-style: normal; font-size: 0.56rem; font-weight: 800; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep.good .ld-rep-verdict { background: rgba(47, 212, 164, 0.16); color: var(--hfa-good); } .ld-rep.bad .ld-rep-verdict { background: rgba(255, 176, 32, 0.16); color: var(--hfa-bad); }
+  .ld-rep-head { font-size: 0.8rem; line-height: 1.4; color: var(--hfa-body); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; flex: 1 1 auto; }
+  .ld-rep-foot { display: flex; flex-wrap: wrap; gap: 0.3rem 0.8rem; padding-top: 0.4rem; border-top: var(--hfa-hairline); font-size: 0.8rem; }
+  .ld-rep-foot span { display: inline-flex; align-items: baseline; gap: 0.25rem; }
+  .ld-rep-foot i { font-style: normal; font-size: 0.56rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hfa-muted); }
+  .ld-rep-foot b { font-weight: 900; color: var(--hfa-body); } .ld-rep-foot b.up { color: var(--hfa-good); } .ld-rep-foot b.down { color: var(--hfa-bad); }
+  .ld-rep-foot b.g.good { color: var(--hfa-good); } .ld-rep-foot b.g.bad { color: var(--hfa-bad); }
+  @media (max-width: 760px) {
+    .ld-rep-grid { grid-auto-columns: 14.5rem; }
+    .ld-rep { padding: 0.55rem 0.6rem; }
+    .ld-rep-head { -webkit-line-clamp: 3; font-size: 0.76rem; }
+    .ld-rep-chip { font-size: 0.72rem; padding: 0.2rem 0.55rem; }
+    .rv-headline { font-size: 0.98rem; font-weight: 700; }
+    .ld-rep-score small { display: none; }
+    .ld-rep-score { grid-template-columns: 1fr 1fr; }
+    /* The live bands ride up under the intro, ahead of the game list. */
+    .ld-hero > .ld-hero-main { order: -2; }
+    .ld-hero > .ld-reports, .ld-hero > .ld-plans.on { order: -1; }
+  }
 </style>
 
 </head>
@@ -1327,20 +1569,20 @@
     <button class="hfa-theme" type="button" id="hfa-theme" title="Light / dark" aria-label="Toggle light or dark">◐</button>
   </div>
   <main>
-<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#read" data-sec="read">The read</a><a href="#script" data-sec="script">The script</a><a href="#away" data-sec="away">GB offense</a><a href="#home" data-sec="home">DET offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="#before" data-sec="before">Before you bet</a><a href="/nfl/w/7/">Week 7 board</a></nav>
+<nav class="hfa-jump" aria-label="Sections"><a href="#hero" data-sec="hero">Game</a><a href="#result" data-sec="result">The result</a><a href="#game" data-sec="game">How it was decided</a><a href="#script" data-sec="script">The script</a><a href="#away" data-sec="away">GB offense</a><a href="#home" data-sec="home">DET offense</a><a href="#starters" data-sec="starters">Starters</a><a href="#injuries" data-sec="injuries">Injuries</a><a href="#grade" data-sec="grade">The grade</a><a href="#next" data-sec="next">Next time</a><a href="/nfl/w/7/">Week 7 board</a></nav>
 
 <div class="hfa-card hfa-hero hfa-sec gm-hero" id="hero" data-sec="hero" style="--gm-away: #203731; --gm-home: #0076B6;">
   <div class="gm-hero-top">
     <a class="gm-back" href="/nfl/w/7/">&#8249; Week 7 board</a>
-    <span class="hfa-eyebrow">NFL &middot; 2026 season &middot; week 7 &middot; final</span>
+    <span class="hfa-eyebrow">NFL &middot; 2026 season &middot; week 7 &middot; final &middot; reviewed</span>
   </div>
   <div class="gm-score">
-    <div class="gm-side away">
+    <div class="gm-side away lost">
       <img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="Green Bay Packers logo" width="96" height="96">
       <div class="gm-id"><div class="gm-abbr">GB</div><div class="gm-nick">Packers</div><i class="gm-under" style="background: #203731"></i></div>
     </div>
     <div class="gm-mid">
-      <div class="gm-pts"><span>26.0</span><em>&ndash;</em><span>29.5</span></div><div class="gm-tag">projected</div>
+      <div class="gm-pts final"><span class="">17</span><em>&ndash;</em><span class="w">20</span></div><div class="gm-tag">final <span class="gm-projwas">&middot; projected 26.0&ndash;29.5</span></div>
     </div>
     <div class="gm-side home">
       <div class="gm-id"><div class="gm-abbr">DET</div><div class="gm-nick">Lions</div><i class="gm-under" style="background: #0076B6"></i></div>
@@ -1351,128 +1593,335 @@
     <span class="gm-chip">Sunday Oct 25, 2026 <i>&middot; 2:25 PM Denver</i></span>
     <span class="gm-chip"><i>spread</i> <b>DET -3.5</b></span>
     <span class="gm-chip"><i>total</i> <b>55.5</b></span>
-    <span class="gm-chip final"><i>final</i> <b>GB 17 &ndash; 20 DET</b></span>
+    
     <span class="gm-chip " title="Artificial turf. Passing is the same on grass and turf; rushing runs about 3.5% higher on turf (+3.7 yards a team) and a catch gains a tenth of a yard more after it. Points, the closing lines and the engine show no surface effect, so it is not an engine input."><i>field</i> <b>turf</b></span><span class="gm-chip " title="Played under a roof: the weather outside does not reach the field."><i>roof</i> <b>dome</b></span>
   </div>
   
-  <a class="gm-script" href="#script" title="The plan's script: pace, confidence and each side's lean — the section below has the rest">
-    <span class="gm-script-k">The script</span>
-    <span class="gm-script-v"><b>fast pace</b><span class="pp-bars sm"><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
-    <span class="gm-script-v"><b>medium confidence</b><span class="pp-pips sm"><i class="on"></i><i class="on"></i><i class=""></i></span></span>
-    <span class="gm-script-v lean"><b>DET</b> run</span><span class="gm-script-v lean"><b>GB</b> pass</span>
+  <a class="gm-verdict warn" href="#result" title="The pre-game plan against the game: the report's verdict on the script, the calls graded off the box score, and the projection's grade">
+    <span class="gm-verdict-stamp"><i>The script</i><b>Partly held</b></span>
+    <span class="gm-verdict-v"><i>calls</i><b><span class="up">7</span>&ndash;<span class="down">4</span></b></span>
+    <span class="gm-verdict-v"><i>Edge+</i><b><span class="up">10</span>&ndash;<span class="down">1</span></b></span>
+    <span class="gm-verdict-v"><i>projection</i><b class="gm-letter good">B</b></span>
+    <span class="gm-verdict-v mk">GB covered (DET by 3.5)</span><span class="gm-verdict-v mk">Under 55.5 (37)</span>
   </a>
   
 </div>
 
 
-<details class="hfa-card hfa-sec pp-sec pp-read" id="read" data-sec="read" open>
+
+<details class="hfa-card hfa-sec pp-sec rv-result" id="result" data-sec="result" open>
   <summary class="pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    <span class="pp-headtext"><span class="hfa-eyebrow">The read &middot; written Sun Oct 25, 1:09 PM</span><span class="pp-h2">What the plan sees</span></span>
-    <span class="pp-headchips"><span class="badge acc">11 calls</span><span class="pp-open">open</span></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The result &middot; plan written Sun Oct 25, 1:09 PM &middot; report Tue Oct 27, 5:34 PM</span><span class="pp-h2">What the plan saw. What happened.</span></span>
+    <span class="pp-headchips"><span class="badge warn">script partly held</span><span class="pp-open">open</span></span>
   </summary>
   <div class="pp-body">
-    <div class="pp-hook">
-      <div class="pp-hook-logos"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy"><span class="pp-vs">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy"></div>
-      <blockquote class="pp-quote">Gibbs runs through a patched-up Packers front. Love throws to keep pace.</blockquote>
-      <p class="pp-headline">Detroit should win this on the ground against a Green Bay front missing four of its best bodies, while Love answers through the air against the league&#x27;s softest pass defense. The lever is who leads: a Lions lead turns Gibbs into the game and shuts Goff&#x27;s volume down.</p>
+    <div class="rv-stamp warn">
+      <div class="rv-stamp-word"><span>The script</span><b>Partly held</b></div>
+      <div class="rv-stamp-meta">
+        <span>The game took <b>the favorite&#x27;s path</b></span>
+        <span class="rv-win"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy">Lions won 20–17</span>
+      </div>
     </div>
-    <div class="pp-cards">
-      
-      <div class="pp-card">
-        <div class="pp-k">The read</div>
-        <p class="pp-lead">Detroit by a field goal and change in a dome with a fat total, and the two offenses get there by opposite routes.</p>
-        <details class="pp-more"><summary>more</summary><p>The Lions&#x27; path is Jahmyr Gibbs against a Packers front that has lost Hargrave, Ford, Brinson and Cooper to IR and now Zaire Franklin (every defensive snap in five of six games) to a shin injury — a unit already 28th in rush EPA allowed and 30th in fantasy points allowed to backs. Green Bay&#x27;s path is the air: Detroit is 29th in pass EPA allowed, 32nd in passing yards allowed (321 a game) and 28th in red-zone touchdown rate allowed, and Love has thrown exactly two touchdowns in five of six starts.</p></details>
+    <div class="rv-vs">
+      <div class="rv-col plan">
+        <div class="pp-k">The plan said</div>
+        <div class="pp-hook-logos"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy"><span class="pp-vs">vs</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy"></div>
+        <blockquote class="pp-quote">Gibbs runs through a patched-up Packers front. Love throws to keep pace.</blockquote>
+        <p class="pp-sub">Detroit should win this on the ground against a Green Bay front missing four of its best bodies, while Love answers through the air against the league&#x27;s softest pass defense. The lever is who leads: a Lions lead turns Gibbs into the game and shuts Goff&#x27;s volume down.</p>
       </div>
-      
-      <div class="pp-card">
-        <div class="pp-k">Why</div>
-        <p class="pp-lead">The split at the 20 runs in opposite directions.</p>
-        <details class="pp-more"><summary>more</summary><p>Green Bay&#x27;s defense is excellent between the 20s (5th in field EPA allowed, 3rd in yards per attempt) and poor at the goal line (25th in red-zone TD rate allowed, 29th in red-zone EPA) — so Detroit&#x27;s yardage should come hard and its points should come as touchdowns, which is a Goff passing-yardage under and a Gibbs scoring read, not a Goff shootout. Detroit&#x27;s defense is the mirror: it gives up the field and the end zone both, but it generates pressure (9th) and leads the league in sacks, so Green Bay&#x27;s yardage is live while its protection — Banks questionable, a line that has leaked 23%-plus pressure — is the thing that can break the drives. Add Green Bay&#x27;s own pre-snap flags (2.3 a game) against a Detroit defense that is first in the league in fewest penalties: free yards flow one way here, and it isn&#x27;t Green Bay&#x27;s.</p></details>
+      <div class="rv-arrow" aria-hidden="true">&#8594;</div>
+      <div class="rv-col game warn">
+        <div class="pp-k">What happened</div>
+        <p class="rv-headline">Detroit 20, Green Bay 17 on a 22-yard field goal with one second left: GB covered +3.5 and the total landed 18.5 points under 55.5, because two offenses that moved the ball freely between the 20s (GB 0.164 field EPA, DET 0.089) combined to go 3-for-10 in the red zone with a missed 26-yarder, a blocked 35-yarder and four failed fourth downs.</p>
+        <p class="pp-sub">The plan read the structure of this game very well and the scoreboard badly. It called the pace (131 plays vs 121.5 league pair), both leans (DET 50.0% pass against a 60.6% season rate, GB 70.8% against 65.6%), Detroit leading and feeding Gibbs 29 carries, and Green Bay throwing 45 times to stay with it — the favorite path essentially as written, minus the points.</p><details class="pp-more"><summary>more</summary><p>What it missed was that both offenses would stop at the 20: it wrote &#x27;touchdowns rather than field goals&#x27; for Detroit and got 2 TDs on 6 trips, and its Love and Golden overs died in the same place. The Goff and St. Brown unders were the real read errors — both were built on volume suppression, and Detroit suppressed volume (32 attempts) while Goff still threw for 303 on 6-of-9 deep.</p></details>
       </div>
-      
-      <div class="pp-card">
-        <div class="pp-k">What would change it</div>
-        <p class="pp-lead">Green Bay scoring first.</p>
-        <details class="pp-more"><summary>more</summary><p>Our week-4 and week-6 reviews both showed that this Packers team runs more and throws less than its identity suggests when it leads — and Detroit&#x27;s own reviews show its carries evaporate the instant it trails. A Lions deficit flips Gibbs&#x27;s rushing call into a Goff volume game and kills the Lions unders.</p></details>
-      </div>
-      
     </div>
+    <div class="rv-tally">
+      
+      <div class="rv-tile " title="The plan's calls graded off the box score at the Normal cushion">
+        <span>Normal calls</span>
+        <b><i class="up">7</i>&ndash;<i class="down">4</i></b>
+        <div class="rv-bar"><i style="width: 64%"></i></div>
+      </div>
+      
+      <div class="rv-tile " title="The plan's calls graded off the box score at the Edge cushion">
+        <span>Edge calls</span>
+        <b><i class="up">9</i>&ndash;<i class="down">2</i></b>
+        <div class="rv-bar"><i style="width: 82%"></i></div>
+      </div>
+      
+      <div class="rv-tile hot" title="The plan's calls graded off the box score at the Edge+ cushion">
+        <span>Edge+ calls</span>
+        <b><i class="up">10</i>&ndash;<i class="down">1</i></b>
+        <div class="rv-bar"><i style="width: 91%"></i></div>
+      </div>
+      
+      <a class="rv-tile lt good" href="#grade" title="The projection graded: team volume and yardage, player lines and the market calls it implied"><span>Projection</span><b>B</b><small>77 of 100</small></a>
+      <div class="rv-tile" title="Projected player lines that landed in range"><span>Player lines</span><b>23<small>/34</small></b><small>in range</small></div>
+      <div class="rv-tile mk"><span>The market</span><em>GB covered (DET by 3.5)</em><em>Under 55.5 (37)</em></div>
+    </div>
+    
+    <div class="pp-card wide rv-why">
+      <div class="pp-k">Why the script partly held</div>
+      <p class="pp-lead">Detroit scored on its second possession (Williams 16-yard TD, Q1 7:08), led for 2,154 of 3,600 seconds, and ran it 33 times with Gibbs at 29 carries — the favorite path&#x27;s shape exactly, and checks confirm both leans held (DET 50.0% pass, GB 70.8%) with pace &#x27;fast&#x27; as called. But the mechanism inside it broke: Detroit&#x27;s lead snaps produced -0.384 EPA/play, its points came as 2 TD + 2 FG from six red-zone trips with two failed fourth downs, and Goff&#x27;s 303 yards arrived on 32 attempts rather than the 40-plus the underdog path required.</p>
+      <details class="pp-more"><summary>more</summary><p>Green Bay did what the underdog path described — six explosive passes, three converted fourth downs — and still only reached 17 because of a missed 26-yarder, a blocked 35-yarder and a 4th-and-4 stop at the DET 7.</p></details>
+    </div>
+    
+    
+    <details class="rv-fold">
+      <summary>The plan's pre-game read <span class="flat">&middot; as written before kickoff</span></summary>
+      <div class="pp-cards">
+        <div class="pp-card"><div class="pp-k">The read</div><p class="pp-lead">Detroit by a field goal and change in a dome with a fat total, and the two offenses get there by opposite routes.</p><details class="pp-more"><summary>more</summary><p>The Lions&#x27; path is Jahmyr Gibbs against a Packers front that has lost Hargrave, Ford, Brinson and Cooper to IR and now Zaire Franklin (every defensive snap in five of six games) to a shin injury — a unit already 28th in rush EPA allowed and 30th in fantasy points allowed to backs. Green Bay&#x27;s path is the air: Detroit is 29th in pass EPA allowed, 32nd in passing yards allowed (321 a game) and 28th in red-zone touchdown rate allowed, and Love has thrown exactly two touchdowns in five of six starts.</p></details></div><div class="pp-card"><div class="pp-k">Why</div><p class="pp-lead">The split at the 20 runs in opposite directions.</p><details class="pp-more"><summary>more</summary><p>Green Bay&#x27;s defense is excellent between the 20s (5th in field EPA allowed, 3rd in yards per attempt) and poor at the goal line (25th in red-zone TD rate allowed, 29th in red-zone EPA) — so Detroit&#x27;s yardage should come hard and its points should come as touchdowns, which is a Goff passing-yardage under and a Gibbs scoring read, not a Goff shootout. Detroit&#x27;s defense is the mirror: it gives up the field and the end zone both, but it generates pressure (9th) and leads the league in sacks, so Green Bay&#x27;s yardage is live while its protection — Banks questionable, a line that has leaked 23%-plus pressure — is the thing that can break the drives. Add Green Bay&#x27;s own pre-snap flags (2.3 a game) against a Detroit defense that is first in the league in fewest penalties: free yards flow one way here, and it isn&#x27;t Green Bay&#x27;s.</p></details></div><div class="pp-card"><div class="pp-k">What would change it</div><p class="pp-lead">Green Bay scoring first.</p><details class="pp-more"><summary>more</summary><p>Our week-4 and week-6 reviews both showed that this Packers team runs more and throws less than its identity suggests when it leads — and Detroit&#x27;s own reviews show its carries evaporate the instant it trails. A Lions deficit flips Gibbs&#x27;s rushing call into a Goff volume game and kills the Lions unders.</p></details></div>
+      </div>
+    </details>
+    
   </div>
 </details>
 
 
-<details class="hfa-card hfa-sec pp-sec pp-script" id="script" data-sec="script" open>
+
+<details class="hfa-card hfa-sec pp-sec rv-game" id="game" data-sec="game" open>
   <summary class="pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    <span class="pp-headtext"><span class="hfa-eyebrow">The script</span><span class="pp-h2">How the game plays</span></span>
-    <span class="pp-headchips"><span class="badge mute">fast pace</span><span class="badge mute">medium confidence</span><span class="pp-open">open</span></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The game</span><span class="pp-h2">How it was decided</span></span>
+    <span class="pp-headchips"><span class="badge mute">6 turning points</span><span class="pp-open">open</span></span>
+  </summary>
+  <div class="pp-body">
+    
+    <div class="pp-k">Turning points</div>
+    <ol class="rv-tl">
+      
+      <li style="--pp-team: #203731">
+        <span class="rv-clock">Q1 10:26</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="GB" loading="lazy"><span>Delay of game in field-goal formation at the DET 3, then a missed 26-yard field goal to end a 9-play, 62-yard opening drive</span></div>
+          <p class="pp-sub">First of three kicking-game failures; a 62-yard drive produced nothing in a game decided by three points.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #203731">
+        <span class="rv-clock">Q2 04:20</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="GB" loading="lazy"><span>4th-and-4 at the DET 7, Love short right to Golden for no gain (-3.01 EPA, -0.128 WPA)</span></div>
+          <p class="pp-sub">Ended a 13-play, 73-yard drive at the goal line.</p>
+          <details class="pp-more"><summary>more</summary><p>GB&#x27;s fourth-down aggression had already produced three conversions worth +13 EPA; this one left four points on the field.</p></details>
+        </div>
+      </li>
+      
+      <li style="--pp-team: #0076B6">
+        <span class="rv-clock">Q2 00:30</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="DET" loading="lazy"><span>Gibbs up the middle to the GB 6, fumble forced by McDuffie, recovered by Cox (-4.50 EPA)</span></div>
+          <p class="pp-sub">Wiped out a 12-play, 85-yard drive that would have made it 17-7 at the half.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #0076B6">
+        <span class="rv-clock">Q3 14:16</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="DET" loading="lazy"><span>Aborted snap, Goff fumbles at the DET 41, recovered by McDuffie (-5.87 EPA, -0.17 WPA)</span></div>
+          <p class="pp-sub">Biggest single swing of the game; GB needed five plays and 42 yards to take its only lead, 14-10, on the Jacobs 25-yard touchdown at 12:22.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #0076B6">
+        <span class="rv-clock">Q4 04:53</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="DET" loading="lazy"><span>4th-and-1 at its own 24, Gibbs up the middle for -2 (Nixon) (-3.58 EPA)</span></div>
+          <p class="pp-sub">Handed GB the ball at the DET 22 at 17-17; GB went three-and-out and had a 35-yard field goal blocked at 3:25.</p>
+          
+        </div>
+      </li>
+      
+      <li style="--pp-team: #0076B6">
+        <span class="rv-clock">Q4 02:45</span>
+        <div class="rv-tlbody">
+          <div class="rv-play"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="DET" loading="lazy"><span>Goff to LaPorta for 18 plus roughing the passer on Brooks, 15 yards (+2.38 EPA, +0.141 WPA)</span></div>
+          <p class="pp-sub">Turned a 2nd-and-8 at the DET 27 into field-goal range on one snap; Bates&#x27; 22-yarder with :01 left won it.</p>
+          
+        </div>
+      </li>
+      
+    </ol>
+    
+    
+    <div class="pp-k pp-k-sec">What decided it <span class="flat">&middot; and whether the numbers showed it before kickoff</span></div>
+    <div class="rv-decided">
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag">pre-game tell</span>
+        <p class="pp-lead">Red-zone finishing on both sides</p>
+        <p class="pp-sub">GB 4 trips / 1 TD / 0 FG, -0.629 EPA on 11 red-zone snaps; DET 6 trips / 2 TD / 2 FG, -0.438 EPA on 14.</p>
+        <details class="pp-more"><summary>more</summary><p>Field EPA was positive for both (GB +0.164, DET +0.089).</p><p><b>The tell.</b> GB&#x27;s offense came in at -0.100 red-zone EPA/play with a 56.2% TD rate and had &#x27;red zone stalls&#x27; tagged in week 1 (1-of-4) and 2-of-4 games in weeks 3 and 6. The engine notes the TD-rate split barely persists, so this was a soft tell, not a given.</p></details>
+      </div>
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag">in-game only</span>
+        <p class="pp-lead">Green Bay&#x27;s defensive penalties on Detroit&#x27;s scoring drives</p>
+        <p class="pp-sub">GB 8 flags for 81 yards: unnecessary roughness 12 (Q3 7:46) and roughing the passer 15 (Q3 4:09) on Detroit&#x27;s possessions, then roughing on Brooks for 15 (Q4 2:45) and a neutral-zone infraction for 5 (Q4 2:00) on the winning drive.</p>
+        <details class="pp-more"><summary>more</summary><p>Detroit drew 5 flags for 55 yards.</p><p><b>The tell.</b> GB&#x27;s pre-snap rate (2.33/game, league 1.55) was flagged three weeks running, but the damage here was roughing and unnecessary roughness — the least persistent category. Not a repeatable read.</p></details>
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag">pre-game tell</span>
+        <p class="pp-lead">Detroit&#x27;s deep passing against a secondary that concedes chunks</p>
+        <p class="pp-sub">Goff 6-of-9 deep for 156 yards; St. Brown 40 (Q1 0:53) and 28 (Q1 8:31), Jameson Williams 30 (Q3 10:15) and 24 (Q1 7:51).</p>
+        <details class="pp-more"><summary>more</summary><p>303 yards on 32 attempts, 0.279 EPA/dropback with a 6.1% pressure rate.</p><p><b>The tell.</b> GB allowed &#x27;explosive passing&#x27; in week 3 (ATL) and ran a 29.3% blitz rate with only 0.179 pressure generated by its own offense&#x27;s standard; the engine had DET&#x27;s offense at 7.78 Y/A versus GB&#x27;s defense allowing 5.95 — the blend split the difference and the game landed on DET&#x27;s number.</p></details>
+      </div>
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag">in-game only</span>
+        <p class="pp-lead">Special teams</p>
+        <p class="pp-sub">GB missed 26 (after a delay of game), made 43, had 35 blocked; DET made 40 and the 22-yard winner.</p>
+        <details class="pp-more"><summary>more</summary><p>Two GB misses inside 36 yards in a three-point game.</p><p><b>The tell.</b> Nothing in the dossier pointed at it; treat as variance.</p></details>
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag">pre-game tell</span>
+        <p class="pp-lead">The run game produced yards without value for Detroit</p>
+        <p class="pp-sub">33 carries, 119 yards, but -0.415 EPA/rush with 4 Gibbs stuffs; DET&#x27;s EPA/play when leading was -0.384 across 34 snaps at a 55.9% pass rate, and second-half EPA/play was -0.144 against +0.150 in the first.</p>
+        <details class="pp-more"><summary>more</summary><p><b>The tell.</b> DET&#x27;s season rush EPA was negative in four of five prior games (week 2 -0.249, week 4 -0.144); its scoring comes from the pass. Leaning on Gibbs with a lead lowers variance and the scoring ceiling at once.</p></details>
+      </div>
+      
+    </div>
+    
+    
+    <details class="rv-fold">
+      <summary>The full story <span class="flat">&middot; the report's account, start to finish</span></summary>
+      <div class="rv-story"><h2>The short version</h2>
+<p>Detroit won 20-17 on a 22-yard Bates field goal with one second left, Green Bay covered +3.5, and the total cleared the under by 18.5 points. Both teams moved the ball — Green Bay 0.164 EPA/play between the 20s, Detroit 0.089, 131 combined snaps at a pace above the league pair — and neither could finish: three touchdowns and three made field goals from ten combined red-zone trips, with a missed 26-yarder, a blocked 35-yarder and four failed fourth downs attached. The margin came from Green Bay's flags: three contact fouls on Detroit's possessions, the last a roughing on Karl Brooks at Q4 2:45 that turned 2nd-and-8 at the DET 27 into field-goal range in one snap.</p>
+<h2>How it unfolded</h2>
+<p>Green Bay opened with a 62-yard drive that died on a delay of game in field-goal formation and a missed 26-yarder (Q1 10:26). Detroit answered in six plays and 80 yards, with 28 to St. Brown and 24 to Jameson Williams before the 16-yard touchdown. Green Bay's response drive was the game in miniature: a 4th-and-2 conversion to Kraft for 22 (+4.51 EPA) and a 14-yard touchdown to Kraft on 3rd-and-9. St. Brown's 40-yard catch with :53 left set up a 40-yard field goal.</p>
+<p>The second quarter produced 86 plays' worth of nothing. Green Bay's 13-play, 73-yard drive — including a 4th-and-3 conversion to Watson for 28 — ended on 4th-and-4 at the DET 7 (-3.01 EPA). Detroit's 12-play, 85-yard answer ended with Gibbs fumbling at the GB 6 with :30 left.</p>
+<p>The third quarter decided the shape. Goff's aborted snap at his own 41 (Q3 14:16, -5.87 EPA, the largest single swing of the day) gave Green Bay the ball at the DET 42, and Jacobs' 25-yard catch made it 14-10. Detroit took it back on a 10-play drive capped by Williams' second score, then stalled on 4th-and-5 from the 6 at 1:09. In the fourth, Green Bay's 13-play, 56-yard drive produced a 43-yard tie, Detroit's 4th-and-1 from its own 24 was stuffed for -2, Green Bay's 35-yard go-ahead attempt was blocked, and the Lions covered 57 yards in eight plays — 15 of them free on the roughing flag.</p>
+<h2>Why the game diverged from the projection</h2>
+<p>The market card was perfect and the team totals were not: 26.0 and 29.5 projected, 17 and 20 delivered. The yards arrived (GB 274 passing on 264.5, DET 119 rushing on 110.1); the finishing did not. Green Bay's -0.629 red-zone EPA/play on 11 snaps and Detroit's -0.438 on 14 are the entire miss. The one structural error was volume shape — 45 GB attempts against 36.1, the only 'big' flag, driven by 55 of 67 snaps spent trailing with a run game at -0.238 EPA/rush. Detroit's 303 passing yards on 32 attempts was the inverse: the blend put DET at 6.91 Y/A splitting its 7.78 offense against GB's 5.95 defense, and the game landed on Detroit's number with 6-of-9 deep completions. The GB backfield projection was simply wrong — three projected backs inactive, Jacobs unlisted at 52% of snaps.</p>
+<h2>The plan against the game</h2>
+<p>The plan nailed the architecture and missed the scoreboard. Pace was called fast and came in at 131 plays; both leans held (Detroit 50.0% pass against a 60.6% season rate, Green Bay 70.8% against 65.6%); Detroit led, fed Gibbs 29 carries and Green Bay threw 45 times chasing — the favorite path as written. The two failures were paired and instructive. The plan's unders on Goff and St. Brown both assumed volume suppression would suppress production; volume was suppressed (32 attempts, below its own 32-35 band) and Goff still threw for 303 and St. Brown for 153, because Detroit's yards come in chunks, not snaps. And the favorite path's promise — 'touchdowns rather than field goals' — inverted completely.</p>
+<h2>Player by player</h2>
+<p>Golden is the instructive line: 12 targets, 165 air yards, a 36% share, and 39 receiving yards with zero YAC and -8.01 EPA. The role call was right; deep-target yardage is a coin flip. Love's 274 on 45 attempts with -0.5 CPOE was volume without efficiency; he faced one sack and six hits, a 13.0% pressure rate below league. Jacobs took the lead back role and the receiving-back role nobody had priced. On the other side, St. Brown's 9-153 on 11 targets came without a chasing script, Williams turned nine targets into 91 and two scores, and LaPorta's 97.1% snap share bought two targets. Gibbs' 116 yards hid -6.64 rushing EPA, four stuffs and the two short-yardage failures that nearly cost Detroit the game.</p>
+<h2>The defenses</h2>
+<p>Charting is snap counts only here — no pressure or coverage data — so the proxies carry it. Green Bay generated one sack and one QB hit on 33 Goff dropbacks (6.1%), which is the same picture as week 3 against Atlanta, and gave up four 20-plus throws. It also held Gibbs to 3.6 a carry with four stuffs and stopped two fourth downs, which was not the pregame expectation of a front missing bodies. Detroit, faced with a 10.2 aDOT and 12 deep attempts, surrendered six explosives and three fourth-down conversions worth +13.3 EPA and still allowed 17 points — the bend-don't-break profile its four 'red zone defense' tags describe, confirmed again at 1-of-4.</p>
+<h2>What the model should take from this</h2>
+<p>Three things. Detroit's passing production is detached from Detroit's passing volume — price Goff and St. Brown off explosive-play rate, not attempts. Green Bay's engine input for its own run game (2.87 YPC, 1.70 before contact) should push its pass rate higher in any trailing projection; 45 attempts was not a surprise given the script. And the red-zone collapse on both sides, plus two missed kicks inside 36 yards, is noise that happened to decide a side — the field-EPA numbers, not the trip counts, are what should carry into next week.</p></div>
+    </details>
+    
+  </div>
+</details>
+
+
+
+<details class="hfa-card hfa-sec pp-sec pp-script rv-script" id="script" data-sec="script" open>
+  <summary class="pp-head">
+    <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The script, graded</span><span class="pp-h2">Called against played</span></span>
+    <span class="pp-headchips"><span class="badge warn">script partly held</span><span class="pp-open">open</span></span>
   </summary>
   <div class="pp-body">
     <div class="pp-gauges">
-      <div class="pp-gauge" title="Plays and tempo the plan expects">
-        <div class="pp-k">Pace</div>
-        <div class="pp-bars"><i class="on"></i><i class="on"></i><i class="on"></i></div>
-        <b>fast</b>
+      
+      <div class="pp-gauge rv-gauge held" title="Both teams ran 131 plays; two league-average offenses run 121.5">
+        <div class="pp-k">Pace <span class="rv-mark">&#10003;</span></div>
+        <div class="rv-row"><small>called</small><span class="pp-bars sm"><i class="on"></i><i class="on"></i><i class="on"></i></span><em>fast</em></div>
+        <div class="rv-row played"><small>played</small><span class="pp-bars sm"><i class="on"></i><i class="on"></i><i class="on"></i></span><em>fast</em></div>
+        <span class="rv-note">131 plays &middot; league 121.5</span>
       </div>
-      <div class="pp-gauge" title="How sure the plan is of its script">
-        <div class="pp-k">Confidence</div>
+      
+      <div class="pp-gauge" title="How sure the plan was of its script">
+        <div class="pp-k">The plan's confidence</div>
         <div class="pp-pips"><i class="on"></i><i class="on"></i><i class=""></i></div>
         <b>medium</b>
       </div>
       
-      <div class="pp-gauge lean" title="Season pass rate 60.6%, but the lead plus a Green Bay front missing four interior/linebacker bodies pushes Detroit below it; it ran at 37.5% pass when ahead in week 3.">
-        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy"> DET leans</div>
-        <div class="pp-leanbar"><span>run</span><div class="track"><i style="left: 15%"></i></div><span>pass</span></div>
-        <b>run</b>
+      <div class="pp-gauge lean rv-gauge held" title="Season pass rate 60.6%, but the lead plus a Green Bay front missing four interior/linebacker bodies pushes Detroit below it; it ran at 37.5% pass when ahead in week 3.">
+        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy"> DET lean <span class="rv-mark">&#10003;</span></div>
+        <div class="pp-leanbar"><span>run</span><div class="track"><i class="called" style="left: 15%" title="called"></i><i class="played" style="left: 15%" title="played"></i></div><span>pass</span></div>
+        <b class="rv-cvp">run <i>&#8594;</i> run</b><span class="rv-note">passed on 50% &middot; season 61%</span>
       </div>
       
-      <div class="pp-gauge lean" title="Already a 65.6% pass team with no run game (2.87 yards per carry), and as a road dog into the league&#x27;s worst pass defense it should throw more, not less.">
-        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy"> GB leans</div>
-        <div class="pp-leanbar"><span>run</span><div class="track"><i style="left: 85%"></i></div><span>pass</span></div>
-        <b>pass</b>
+      <div class="pp-gauge lean rv-gauge held" title="Already a 65.6% pass team with no run game (2.87 yards per carry), and as a road dog into the league&#x27;s worst pass defense it should throw more, not less.">
+        <div class="pp-k"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy"> GB lean <span class="rv-mark">&#10003;</span></div>
+        <div class="pp-leanbar"><span>run</span><div class="track"><i class="called" style="left: 85%" title="called"></i><i class="played" style="left: 85%" title="played"></i></div><span>pass</span></div>
+        <b class="rv-cvp">pass <i>&#8594;</i> pass</b><span class="rv-note">passed on 71% &middot; season 66%</span>
       </div>
       
     </div>
-    <div class="pp-card wide">
-      <p class="pp-lead">Detroit controls this with the run and short game: Gibbs against a Green Bay front without Franklin, Cooper, Hargrave, Ford and Brinson is the cleanest matchup on the card. Green Bay answers through the air — Detroit cannot cover anyone, and Love should get his yards and his touchdowns.</p>
-      <details class="pp-more"><summary>more</summary><p>The likely shape is Detroit ahead by a score most of the way, converting its fewer, longer drives into touchdowns rather than field goals, while Green Bay throws 38-42 times to stay with it. Pace should run above the league pair in a dome with a 55.5 total.</p></details>
-    </div>
+    <div class="rv-legend"><span><i class="called"></i>called</span><span><i class="played"></i>played</span></div>
+    <div class="pp-k pp-k-sec">The two paths <span class="flat">&middot; the game took the favorite&#x27;s path</span></div>
     <div class="pp-paths">
       
-      <div class="pp-path fav" style="--pp-team: #0076B6">
-        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy"><span class="pp-k">If Lions win</span><span class="badge mute">favorite</span></div>
+      <div class="pp-path fav took" style="--pp-team: #0076B6">
+        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy"><span class="pp-k">If Lions win</span><span class="badge good">the way it went</span><span class="badge acc">won</span></div>
         <p class="pp-lead">Detroit scores on its opening possessions, leans on Gibbs for 22-26 carries and keeps Goff at a short aDOT.</p>
         <details class="pp-more"><summary>more</summary><p>Green Bay&#x27;s drives stall on pre-snap flags and Detroit&#x27;s pass rush, and the Lions win 30-23 with Gibbs touching it 28 times and finding the end zone.</p></details>
       </div>
       
-      <div class="pp-path dog" style="--pp-team: #203731">
-        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy"><span class="pp-k">If Packers win</span><span class="badge mute">underdog</span></div>
+      <div class="pp-path dog not" style="--pp-team: #203731">
+        <div class="pp-pathhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy"><span class="pp-k">If Packers win</span><span class="badge mute">didn't happen</span></div>
         <p class="pp-lead">Green Bay hits two or three explosive throws early — Golden and Watson against a secondary that gives up chunks weekly — and leads.</p>
         <details class="pp-more"><summary>more</summary><p>Detroit abandons the run exactly as it did at Carolina, Goff goes past 40 attempts for 300-plus, and the game turns into a 31-30 track meet with Gibbs under 15 carries.</p></details>
       </div>
       
     </div>
     
-    <div class="pp-k pp-k-sec">What swings it</div>
+    <div class="pp-k pp-k-sec">What the plan said would swing it <span class="flat">&middot; weighed after the game, biggest first</span></div>
     <div class="pp-swing">
-      <div class="pp-swingcard"><b class="n">1</b><div><p class="pp-lead">Who scores first: a Detroit lead is 24-plus Gibbs carries; a Detroit deficit has meant 50-plus Goff attempts twice this season.</p></div></div><div class="pp-swingcard"><b class="n">2</b><div><p class="pp-lead">Green Bay&#x27;s front seven: Franklin ruled out Friday on top of four defenders on IR, the same shape as the week-3 game Atlanta ran for 242.</p></div></div><div class="pp-swingcard"><b class="n">3</b><div><p class="pp-lead">Detroit&#x27;s pass rush against a Green Bay line with Banks questionable — the Lions lead the league in sacks and are 9th in pressure.</p></div></div><div class="pp-swingcard"><b class="n">4</b><div><p class="pp-lead">Pre-snap penalties: Green Bay averages 2.3 a game, Detroit&#x27;s defense has committed none all season and is first in flags.</p></div></div><div class="pp-swingcard"><b class="n">5</b><div><p class="pp-lead">Brian Branch activated off IR Saturday for his season debut — the one piece that could stiffen a last-ranked Detroit pass defense.</p></div></div>
+      
+      <div class="pp-swingcard rv-swing contributed">
+        <span class="rv-weight">contributed</span>
+        <p class="pp-lead">Who scores first: a Detroit lead is 24-plus Gibbs carries; a Detroit deficit has meant 50-plus Goff attempts twice this season.</p>
+        <p class="rv-went"><b>Went:</b> Detroit scored first and led almost throughout; the predicted consequence followed exactly — Gibbs 29 carries, Goff 32 attempts, Detroit&#x27;s second half at 38.5% pass.</p>
+        <details class="pp-more"><summary>more</summary><p><b>In the game.</b> It shaped volume but did not decide the three-point margin.</p></details>
+      </div>
+      
+      <div class="pp-swingcard rv-swing contributed">
+        <span class="rv-weight">contributed</span>
+        <p class="pp-lead">Pre-snap penalties: Green Bay averages 2.3 a game, Detroit&#x27;s defense has committed none all season and is first in flags.</p>
+        <p class="rv-went"><b>Went:</b> The pre-snap framing was wrong in both directions: Green Bay committed only two pre-snap flags, Detroit committed two of its own (Sewell false start Q2 14:26, Mahogany at the GB 6 in Q4), and Detroit&#x27;s defense — &#x27;zero pre-snap all season&#x27; per the plan — drew an unnecessary roughness for 15 on Barnes (Q4 10:02).</p>
+        <details class="pp-more"><summary>more</summary><p><b>In the game.</b> Penalties mattered enormously (GB 8 for 81, including the roughing on Brooks that set up the winner at Q4 2:45) but not the category named.</p></details>
+      </div>
+      
+      <div class="pp-swingcard rv-swing minor">
+        <span class="rv-weight">minor</span>
+        <p class="pp-lead">Green Bay&#x27;s front seven: Franklin ruled out Friday on top of four defenders on IR, the same shape as the week-3 game Atlanta ran for 242.</p>
+        <p class="rv-went"><b>Went:</b> The thinned Green Bay front held: Detroit ran 33 times for 119 (3.6 YPC) at -0.415 EPA/rush with four Gibbs stuffs, and was stopped on 4th-and-1 at its own 24 (Q4 4:53).</p>
+        <details class="pp-more"><summary>more</summary><p><b>In the game.</b> The week-3 Atlanta template did not repeat.</p></details>
+      </div>
+      
+      <div class="pp-swingcard rv-swing minor">
+        <span class="rv-weight">minor</span>
+        <p class="pp-lead">Detroit&#x27;s pass rush against a Green Bay line with Banks questionable — the Lions lead the league in sacks and are 9th in pressure.</p>
+        <p class="rv-went"><b>Went:</b> Detroit&#x27;s league-leading rush produced one sack (Hutchinson, Q2 12:36) and six QB hits across 46 Love dropbacks — a 13.0% pressure rate, below the 15.8% league figure.</p>
+        <details class="pp-more"><summary>more</summary><p><b>In the game.</b> Love was not the pressured quarterback the plan feared.</p></details>
+      </div>
+      
+      <div class="pp-swingcard rv-swing minor">
+        <span class="rv-weight">minor</span>
+        <p class="pp-lead">Brian Branch activated off IR Saturday for his season debut — the one piece that could stiffen a last-ranked Detroit pass defense.</p>
+        <p class="rv-went"><b>Went:</b> Branch played 66.2% of snaps and intercepted Love on 3rd-and-21 from the GB 8 (Q4 14:50), worth -0.38 EPA and -0.012 WPA — the lowest-leverage turnover in the game.</p>
+        <details class="pp-more"><summary>more</summary><p><b>In the game.</b> Green Bay still hit six explosive passes.</p></details>
+      </div>
+      
     </div>
     
     
-    <div class="pp-k pp-k-sec">Legs the same script produces <span class="flat">&middot; they move as one, which is what a same-game parlay pays for</span></div>
+    <div class="pp-k pp-k-sec">The legs the same script produced <span class="flat">&middot; graded off the box score</span></div>
     <div class="pp-angles">
       
-      <div class="pp-angle">
-        <div class="pp-angletitle">Lions lead and grind</div>
-        <div class="pp-legs"><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>Jahmyr Gibbs</b><em>over 99.5 rush yds</em></span><span class="pp-leg under"><i class="arrow" aria-hidden="true">&#9660;</i><b>Jared Goff</b><em>under 274.5 pass yds</em></span><span class="pp-leg under"><i class="arrow" aria-hidden="true">&#9660;</i><b>Amon-Ra St. Brown</b><em>under 79.5 rec yds</em></span></div>
+      <div class="pp-angle ">
+        <div class="pp-angletitle">Lions lead and grind <span class="badge mute">1 of 3 hit</span></div>
+        <div class="pp-legs"><span class="pp-leg over hit"><i class="arrow" aria-hidden="true">&#9650;</i><b>Jahmyr Gibbs</b><em>over 99.5 rush yds</em><span class="rv-res">&#10003; 116</span></span><span class="pp-leg under miss"><i class="arrow" aria-hidden="true">&#9660;</i><b>Jared Goff</b><em>under 274.5 pass yds</em><span class="rv-res">&#10007; 303</span></span><span class="pp-leg under miss"><i class="arrow" aria-hidden="true">&#9660;</i><b>Amon-Ra St. Brown</b><em>under 79.5 rec yds</em><span class="rv-res">&#10007; 153</span></span></div>
         <p class="pp-sub">One script: Detroit ahead, running at a Green Bay front without Franklin and four IR bodies.</p>
         <details class="pp-more"><summary>more</summary><p>Every Gibbs carry is a Goff attempt that never happens, and St. Brown&#x27;s yardage has only come from chase volume.</p></details>
       </div>
       
-      <div class="pp-angle">
-        <div class="pp-angletitle">Green Bay throws to stay in it</div>
-        <div class="pp-legs"><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>Jordan Love</b><em>over 274.5 pass yds</em></span><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>Matthew Golden</b><em>over 69.5 rec yds</em></span><span class="pp-leg over"><i class="arrow" aria-hidden="true">&#9650;</i><b>Jordan Love</b><em>over 1.5 pass TDs</em></span></div>
+      <div class="pp-angle ">
+        <div class="pp-angletitle">Green Bay throws to stay in it <span class="badge mute">1 of 3 hit</span></div>
+        <div class="pp-legs"><span class="pp-leg over miss"><i class="arrow" aria-hidden="true">&#9650;</i><b>Jordan Love</b><em>over 274.5 pass yds</em><span class="rv-res">&#10007; 274</span></span><span class="pp-leg over miss"><i class="arrow" aria-hidden="true">&#9650;</i><b>Matthew Golden</b><em>over 69.5 rec yds</em><span class="rv-res">&#10007; 39</span></span><span class="pp-leg over hit"><i class="arrow" aria-hidden="true">&#9650;</i><b>Jordan Love</b><em>over 1.5 pass TDs</em><span class="rv-res">&#10003; 2</span></span></div>
         <p class="pp-sub">The mirror image of the same game: a road dog with no run game throwing into the league&#x27;s worst pass defense, with Golden carrying the air-yards share and Detroit conceding touchdowns on three of four red-zone trips.</p>
         
       </div>
@@ -1491,154 +1940,214 @@
     <h2 class="gm-h2"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy"><span><em class="full">Packers</em><em class="short">GB</em> offense</span><span class="vs">against the</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy"><span><em class="full">Lions</em><em class="short">DET</em> defense</span></h2>
   </summary>
   <div class="hfa-head gm-mhead">
-    <p class="lede">Projected GB offense output &mdash; equivalently, what the DET defense allows. The engine blends each offense's season-to-date rates with the defense across from it, anchored on the market's implied points.</p>
+    <p class="lede">What the GB offense put up against the DET defense, the projection beneath each number: <span class="up">green</span> beat it, <span class="down">amber</span> fell short (INTs judged the other way).</p>
   </div>
   
-<div class="pp-off">
-  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Packers offense</span><span class="badge mute">medium confidence</span></div>
+<div class="pp-off rv-off">
+  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Packers offense, graded</span><span class="badge warn">partly held</span><span class="badge mute">calls 3&ndash;2</span></div>
   
-  <div class="pp-offcards">
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div>
-      <p class="pp-lead">A pass-only offense: 65.6% pass rate, 7.45 yards per attempt, five or more explosive throws in three of six weeks, and a run game at 2.87 yards per carry with the worst yards-before-contact figure in the file.</p>
-      
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div>
-      <p class="pp-lead">Explosive throws to Golden (13 targets, 104 yards in week 6) and Watson, plus Kraft as the YAC checkdown; the red zone has repeatedly turned into Smack field goals.</p>
-      
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div>
-      <p class="pp-lead">Pressure and its own flags — 5.0 accepted penalties and 2.3 pre-snap flags a game, third-down failures in three weeks, and red-zone stalls (two touchdowns on four trips in three separate games).</p>
-      
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div>
-      <p class="pp-lead">Detroit is last in passing yards allowed and 29th in pass EPA, 31st in points allowed to receivers and 32nd to tight ends, and 28th in red-zone touchdown rate allowed — everything Green Bay does well is available.</p>
-      <details class="pp-more"><summary>more</summary><p>What Detroit does take away is the pocket: 9th in pressure generated and the league lead in sacks, against a line that has allowed hits all season. Detroit also commits essentially no penalties (first in flags, zero pre-snap), so the free yards Green Bay has lived on elsewhere are not here.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div>
-      <p class="pp-lead">Watson (ankle), Golden (shoulder) and Savion Williams (ankle) are all cleared with no designation (Rotowire, Friday); Melton is questionable.</p>
-      <details class="pp-more"><summary>more</summary><p>Banks is questionable at left guard and has missed four games — Tomlinson continues if he sits, and with no line input in the projection that is a reason to shade Love&#x27;s efficiency down, not his volume. Reed and Moore remain on IR, which is why Golden&#x27;s target floor is what it is.</p></details>
-    </div>
-    
+  <div class="rv-eh">
+    <div class="rv-ehcol"><span class="pp-k">Expected</span><p class="pp-lead">38-42 attempts at a pass rate above 65% as the road dog, Golden and Watson splitting 18-21 targets, Kraft underneath, and a three-way backfield with little yardage in it.</p></div>
+    <div class="rv-ehcol happened warn"><span class="pp-k">Happened</span><p class="pp-lead">45 attempts at 68.8% pass beat the 38-42 range, Golden and Watson took 20 targets inside the called 18-21, and Kraft worked underneath for 6 targets. The backfield call broke: not three-way with no yardage, but Jacobs at 52% of snaps for 16 touches and 91 yards.</p></div>
   </div>
   
   
-  <div class="pp-expect"><span class="pp-k">Expect</span><p class="pp-lead">38-42 attempts at a pass rate above 65% as the road dog, Golden and Watson splitting 18-21 targets, Kraft underneath, and a three-way backfield with little yardage in it.</p></div>
-  
-  
-  <div class="pp-k pp-k-sec">Who the plan moves <span class="flat">&middot; 4 up, 1 down &middot; one player, one market, one side of Kalshi's line when the plan was written</span></div>
-  <div class="pp-calls">
+  <div class="pp-k pp-k-sec">Who the plan moved <span class="flat">&middot; 4 up, 1 down &middot; graded off the box score, with whether the reason given showed up</span></div>
+  <div class="pp-calls rv-calls">
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>MarShawn Lloyd</b><span class="pp-bet">over 9.5 rush yds</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 84%"></i></div><b>84%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+      
+      <div class="rv-meter" title="The line 9.5 against the actual 20">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 38.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 9.5</span><b>20</b></div>
       </div>
+      
+      <span class="badge good rv-read">right read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Lloyd cleared on 6 carries for 20 even with Jacobs taking the lead role — exactly the &#x27;low rung clears in any committee&#x27; logic the call rested on.</p>
       <div class="pp-callmeta">
-        <span class="badge mute" title="The opposing defense's rank on rush EPA allowed entering the week (#1 toughest)">D #19 rush EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal / Edge / Edge+: over 9.5 rush yds"><i>Normal / Edge / Edge+</i> 10+ <small>51&cent;</small></span>
+        <span class="rung hit" title="Normal / Edge / Edge+: over 9.5 rush yds"><i>Normal / Edge / Edge+</i> 10+ <small>51&cent;</small></span>
       </div>
-      <p class="pp-lead">A very low rung on a back who has cleared it in every game this season, even in the weeks the committee squeezed him and the run game produced nothing.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> Rushing lines of 37, 20, 11, 13, 31 and 10 on 13/6/4/7/10/8 carries; snap share has held between 23% and 55% all year. </p><p><b>Against it.</b> vs #19 rush EPA allowed. Far under the model&#x27;s mean and the market prices it as a coin flip — the gap is volume the exchange may simply not have traded.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>A very low rung on a back who has cleared it in every game this season, even in the weeks the committee squeezed him and the run game produced nothing. </p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 84%"></i></div><b>84%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+        </div>
+        <p><b>Evidence.</b> Rushing lines of 37, 20, 11, 13, 31 and 10 on 13/6/4/7/10/8 carries; snap share has held between 23% and 55% all year. </p>
+        <p><b>Against it.</b> vs #19 rush EPA allowed. Far under the model&#x27;s mean and the market prices it as a coin flip — the gap is volume the exchange may simply not have traded.</p>
+      </details>
     </div>
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Jordan Love</b><span class="pp-bet">over 1.5 pass TDs</span></div>
-        <span class="badge mute">efficiency</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 58%"></i></div><b>58%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 64%"></i></div><b>64%</b></div>
+      
+      <div class="rv-meter" title="The line 1.5 against the actual 2">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 60.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 1.5</span><b>2</b></div>
       </div>
+      
+      <span class="badge good rv-read">hit · read partly held</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Two touchdowns came, but only the Kraft 14-yarder (Q1 1:04) came from inside the 20; the Jacobs score was a 25-yard catch-and-run on 3rd-and-6 from outside it, and GB finished 1-of-4 in the red zone with -0.629 EPA.</p>
       <div class="pp-callmeta">
-        <span class="badge good" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #29 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: over 1.5 pass TDs"><i>Normal</i> 2+ <small>64&cent;</small></span><span class="rung" title="Edge / Edge+: 1+ pass TDs"><i>Edge / Edge+</i> 1+ <small>90&cent;</small></span>
+        <span class="rung hit" title="Normal: over 1.5 pass TDs"><i>Normal</i> 2+ <small>64&cent;</small></span><span class="rung hit" title="Edge / Edge+: 1+ pass TDs"><i>Edge / Edge+</i> 1+ <small>90&cent;</small></span>
       </div>
-      <p class="pp-lead">This rests on the finishing half: Detroit surrenders touchdowns on three of every four red-zone trips.</p>
-      <details class="pp-more"><summary>why</summary><p>Love has thrown exactly two in five of six starts and now gets the most generous end-zone defense he&#x27;s seen.</p><p><b>Evidence.</b> Two pass TDs in weeks 1-5, one in week 6 on 41 attempts; Detroit has allowed 14 passing TDs in five games and a 0.75 red-zone TD rate. </p><p><b>Against it.</b> vs #29 pass EPA allowed, #28 red-zone TD rate allowed. Model mean sits above the line, market agrees it&#x27;s live — the add is the red-zone split, not the yardage.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>This rests on the finishing half: Detroit surrenders touchdowns on three of every four red-zone trips. Love has thrown exactly two in five of six starts and now gets the most generous end-zone defense he&#x27;s seen.</p>
+        <p><b>In the game.</b> The call hit around the mechanism, not through it.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 58%"></i></div><b>58%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 64%"></i></div><b>64%</b></div>
+        </div>
+        <p><b>Evidence.</b> Two pass TDs in weeks 1-5, one in week 6 on 41 attempts; Detroit has allowed 14 passing TDs in five games and a 0.75 red-zone TD rate. </p>
+        <p><b>Against it.</b> vs #29 pass EPA allowed, #28 red-zone TD rate allowed. Model mean sits above the line, market agrees it&#x27;s live — the add is the red-zone split, not the yardage.</p>
+      </details>
     </div>
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Matthew Golden</b><span class="pp-bet">over 69.5 rec yds</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 49%"></i></div><b>49%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 56%"></i></div><b>56%</b></div>
+      
+      <div class="rv-meter" title="The line 69.5 against the actual 39">
+        <div class="track"><i class="fill" style="width: 44.9%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 69.5</span><b>39</b></div>
       </div>
+      
+      <span class="badge warn rv-read">read held · result didn&#x27;t</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> The mechanism was role and coverage, and both appeared: 12 targets, a 36% air-yards share, Green Bay chasing.</p>
       <div class="pp-callmeta">
-        <span class="badge good" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #29 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: over 69.5 rec yds"><i>Normal</i> 70+ <small>56&cent;</small></span><span class="rung" title="Edge: 50+ rec yds"><i>Edge</i> 50+ <small>72&cent;</small></span><span class="rung" title="Edge+: 40+ rec yds"><i>Edge+</i> 40+ <small>80&cent;</small></span>
+        <span class="rung miss" title="Normal: over 69.5 rec yds"><i>Normal</i> 70+ <small>56&cent;</small></span><span class="rung miss" title="Edge: 50+ rec yds"><i>Edge</i> 50+ <small>72&cent;</small></span><span class="rung miss" title="Edge+: 40+ rec yds"><i>Edge+</i> 40+ <small>80&cent;</small></span>
       </div>
-      <p class="pp-lead">With Reed and Moore gone he is the unambiguous target and air-yards leader, and he meets the softest coverage unit in the league in a dome with Green Bay likely chasing.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> Targets of 12, 6, 12, 7, 7, 13 with 104 yards on 13 targets in week 6; 501 yards on 51 targets through six games; Detroit allows 321 passing yards per game. </p><p><b>Against it.</b> vs #29 pass EPA allowed (#31 in points allowed to receivers). Above both the model&#x27;s mean and the market&#x27;s implied number; our week-6 call on this same mechanism cashed with the read intact.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>With Reed and Moore gone he is the unambiguous target and air-yards leader, and he meets the softest coverage unit in the league in a dome with Green Bay likely chasing. </p>
+        <p><b>In the game.</b> The miss was pure efficiency — 6 catches, zero YAC, -8.01 EPA on 165 air yards.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 49%"></i></div><b>49%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 56%"></i></div><b>56%</b></div>
+        </div>
+        <p><b>Evidence.</b> Targets of 12, 6, 12, 7, 7, 13 with 104 yards on 13 targets in week 6; 501 yards on 51 targets through six games; Detroit allows 321 passing yards per game. </p>
+        <p><b>Against it.</b> vs #29 pass EPA allowed (#31 in points allowed to receivers). Above both the model&#x27;s mean and the market&#x27;s implied number; our week-6 call on this same mechanism cashed with the read intact.</p>
+      </details>
     </div>
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Jordan Love</b><span class="pp-bet">over 274.5 pass yds</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 42%"></i></div><b>42%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 56%"></i></div><b>56%</b></div>
+      
+      <div class="rv-meter" title="The line 274.5 against the actual 274">
+        <div class="track"><i class="fill" style="width: 79.9%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 274.5</span><b>274</b></div>
       </div>
+      
+      <span class="badge warn rv-read">read held · result didn&#x27;t</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> The volume premise landed beyond expectation (45 attempts, 46 dropbacks, only one sack) and the result came to 274 against a 274.5 line.</p>
       <div class="pp-callmeta">
-        <span class="badge good" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #29 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: over 274.5 pass yds"><i>Normal</i> 275+ <small>58&cent;</small></span><span class="rung" title="Edge: 225+ pass yds"><i>Edge</i> 225+ <small>80&cent;</small></span><span class="rung" title="Edge+: 200+ pass yds"><i>Edge+</i> 200+ <small>88&cent;</small></span>
+        <span class="rung miss" title="Normal: over 274.5 pass yds"><i>Normal</i> 275+ <small>58&cent;</small></span><span class="rung hit" title="Edge: 225+ pass yds"><i>Edge</i> 225+ <small>80&cent;</small></span><span class="rung hit" title="Edge+: 200+ pass yds"><i>Edge+</i> 200+ <small>88&cent;</small></span>
       </div>
-      <p class="pp-lead">As a road dog with no run game, Green Bay&#x27;s attempts go up, and the defense it meets gives up yards to everyone.</p>
-      <details class="pp-more"><summary>why</summary><p>The risk is the pass rush, not the coverage.</p><p><b>Evidence.</b> 42, 53 and 41 attempts in the three games Green Bay didn&#x27;t lead; 2.87 yards per carry on the season; Detroit allows 321 passing yards and 7.55 yards per attempt. </p><p><b>Against it.</b> vs #29 pass EPA allowed. Above the model&#x27;s mean, which leans on a blend that caps attempts near 36 — in a chasing script he&#x27;s thrown 41-plus three times. Our week-4 version of this call broke only because Green Bay led wire to wire.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>As a road dog with no run game, Green Bay&#x27;s attempts go up, and the defense it meets gives up yards to everyone. The risk is the pass rush, not the coverage.</p>
+        <p><b>In the game.</b> The half-yard was the bounce, not the read.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 42%"></i></div><b>42%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 56%"></i></div><b>56%</b></div>
+        </div>
+        <p><b>Evidence.</b> 42, 53 and 41 attempts in the three games Green Bay didn&#x27;t lead; 2.87 yards per carry on the season; Detroit allows 321 passing yards and 7.55 yards per attempt. </p>
+        <p><b>Against it.</b> vs #29 pass EPA allowed. Above the model&#x27;s mean, which leans on a blend that caps attempts near 36 — in a chasing script he&#x27;s thrown 41-plus three times. Our week-4 version of this call broke only because Green Bay led wire to wire.</p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Tucker Kraft</b><span class="pp-bet">under 49.5 rec yds</span></div>
-        <span class="badge mute">both</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 65%"></i></div><b>65%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 46%"></i></div><b>46%</b></div>
+      
+      <div class="rv-meter" title="The line 49.5 against the actual 48">
+        <div class="track"><i class="fill" style="width: 77.6%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 49.5</span><b>48</b></div>
       </div>
+      
+      <span class="badge good rv-read">hit · read partly held</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Kraft landed at 48 on 6 targets, but not as a pure checkdown — 50 air yards including a 22-yard fourth-down conversion (Q1 3:39) and the 14-yard touchdown.</p>
       <div class="pp-callmeta">
-        <span class="badge good" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #29 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 49.5 rec yds"><i>Normal</i> &lt;50 <small>48&cent;</small></span><span class="rung" title="Edge: &lt;80 rec yds"><i>Edge</i> &lt;80 <small>79&cent;</small></span><span class="rung" title="Edge+: &lt;110 rec yds"><i>Edge+</i> &lt;110 <small>93&cent;</small></span>
+        <span class="rung hit" title="Normal: under 49.5 rec yds"><i>Normal</i> &lt;50 <small>48&cent;</small></span><span class="rung hit" title="Edge: &lt;80 rec yds"><i>Edge</i> &lt;80 <small>79&cent;</small></span><span class="rung hit" title="Edge+: &lt;110 rec yds"><i>Edge+</i> &lt;110 <small>93&cent;</small></span>
       </div>
-      <p class="pp-lead">He is the checkdown in front of the rush, not a chunk producer — his targets come with almost no air yards, so he needs a double-digit catch day to reach this.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> 65, 15, 26, 42, 64, 37 yards; 3 air yards on 7 targets in week 4, 36 on 8 in week 3. </p><p><b>Against it.</b> vs #29 pass EPA allowed and a defense soft to tight ends — that&#x27;s the risk — but the model&#x27;s mean sits well under the line and the market is above it. Our week-4 under on him cashed.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>He is the checkdown in front of the rush, not a chunk producer — his targets come with almost no air yards, so he needs a double-digit catch day to reach this. </p>
+        <p><b>In the game.</b> Right number, partly wrong route.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 65%"></i></div><b>65%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 46%"></i></div><b>46%</b></div>
+        </div>
+        <p><b>Evidence.</b> 65, 15, 26, 42, 64, 37 yards; 3 air yards on 7 targets in week 4, 36 on 8 in week 3. </p>
+        <p><b>Against it.</b> vs #29 pass EPA allowed and a defense soft to tight ends — that&#x27;s the risk — but the model&#x27;s mean sits well under the line and the market is above it. Our week-4 under on him cashed.</p>
+      </details>
     </div>
     
   </div>
+  
+  
+  <div class="pp-k pp-k-sec">Lines the report singled out <span class="flat">&middot; signal carries forward, noise doesn't</span></div>
+  <div class="rv-notes">
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Jordan Love</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">45 att / 27 comp / 274 yds / 2 TD / 1 INT, 46 dropbacks, 0.151 EPA/dropback</span>
+      <p class="pp-sub">Trailing script (55 of 67 snaps) pushed attempts nine over projection; yardage landed on the number because of a -0.5 CPOE and 4-of-12 deep.</p>
+      <details class="pp-more"><summary>more</summary><p>Only 1 sack and 6 hits — the pressure risk never materialized.</p></details>
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Matthew Golden</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">12 targets, 6-39-0, 165 air yards (36% share), 0 YAC, -8.01 EPA</span>
+      <p class="pp-sub">Role fully intact — he is the air-yards leader with Reed and Moore out — but the throws were deep and incomplete.</p>
+      <details class="pp-more"><summary>more</summary><p>Volume repeatable, yardage distribution is high-variance.</p></details>
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Josh Jacobs</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">11 carries 36 yds, 7 targets, 5-55-1 TD, 52.2% snaps (unprojected)</span>
+      <p class="pp-sub">Lead back and primary receiving back in a trailing script; the 25-yard touchdown (Q3 12:22) came on 3rd-and-6 from outside the red zone.</p>
+      
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Tucker Kraft</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">6 targets, 4-48, 1 TD, 50 air yards, 88.1% snaps</span>
+      <p class="pp-sub">Exactly the projected underneath role plus one 22-yard fourth-down conversion and the 14-yard touchdown; the cheapest reliable target share on the roster.</p>
+      
+    </div>
+    
+  </div>
+  
+  
+  <details class="rv-fold">
+    <summary>The plan's pre-game read on this offense <span class="flat">&middot; medium confidence</span></summary>
+    <div class="pp-offcards">
+      <div class="pp-offcard"><div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div><p class="pp-lead">A pass-only offense: 65.6% pass rate, 7.45 yards per attempt, five or more explosive throws in three of six weeks, and a run game at 2.87 yards per carry with the worst yards-before-contact figure in the file.</p></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div><p class="pp-lead">Explosive throws to Golden (13 targets, 104 yards in week 6) and Watson, plus Kraft as the YAC checkdown; the red zone has repeatedly turned into Smack field goals.</p></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div><p class="pp-lead">Pressure and its own flags — 5.0 accepted penalties and 2.3 pre-snap flags a game, third-down failures in three weeks, and red-zone stalls (two touchdowns on four trips in three separate games).</p></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div><p class="pp-lead">Detroit is last in passing yards allowed and 29th in pass EPA, 31st in points allowed to receivers and 32nd to tight ends, and 28th in red-zone touchdown rate allowed — everything Green Bay does well is available.</p><details class="pp-more"><summary>more</summary><p>What Detroit does take away is the pocket: 9th in pressure generated and the league lead in sacks, against a line that has allowed hits all season. Detroit also commits essentially no penalties (first in flags, zero pre-snap), so the free yards Green Bay has lived on elsewhere are not here.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div><p class="pp-lead">Watson (ankle), Golden (shoulder) and Savion Williams (ankle) are all cleared with no designation (Rotowire, Friday); Melton is questionable.</p><details class="pp-more"><summary>more</summary><p>Banks is questionable at left guard and has missed four games — Tomlinson continues if he sits, and with no line input in the projection that is a reason to shade Love&#x27;s efficiency down, not his volume. Reed and Moore remain on IR, which is why Golden&#x27;s target floor is what it is.</p></details></div>
+    </div>
+  </details>
   
 </div>
 
   <div class="gm-tiles">
-    <div class="gm-tile big"><b>26.0<i class="act under" title="Actual">(17)</i></b><span>Points</span></div><div class="gm-tile "><b>63</b><span>Plays</span></div><div class="gm-tile "><b>264<i class="act over" title="Actual">(274)</i></b><span>Pass yds</span></div><div class="gm-tile "><b>91<i class="act under" title="Actual">(24)</i></b><span>Rush yds</span></div><div class="gm-tile "><b>2.7</b><span>Sacks taken</span></div><div class="gm-tile "><b>0.7<i class="act under" title="Actual">(1)</i></b><span>INTs thrown</span></div>
+    <div class="gm-tile rv big under"><b>17</b><span>Points</span><small>projected 26.0</small></div><div class="gm-tile rv  "><b class="flat">63</b><span>Plays</span><small>projected</small></div><div class="gm-tile rv  over"><b>274</b><span>Pass yds</span><small>projected 264</small></div><div class="gm-tile rv  under"><b>24</b><span>Rush yds</span><small>projected 91</small></div><div class="gm-tile rv  "><b class="flat">2.7</b><span>Sacks taken</span><small>projected</small></div><div class="gm-tile rv  under"><b>1</b><span>INTs thrown</span><small>projected 0.7</small></div>
   </div>
   <div class="gm-split">
     <div class="gm-players">
@@ -1670,7 +2179,7 @@
         <table class="gm-ptable">
           <thead><tr><th>Receivers</th><th class="num">Tgt</th><th class="num">Rec</th><th class="num">Yds</th><th class="num">TD</th></tr></thead>
           <tbody>
-            <tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0040667" title="Season log, scoring timeline and the defense he faces">Matthew Golden</button><span class="badge mute">LP</span></td><td class="num ">8.1<i class="act over">(12)</i></td><td class="num ">5.0<i class="act over">(6)</i></td><td class="num ">71<i class="act under">(39)</i></td><td class="num ">0.6<i class="act under">(0)</i></td></tr><tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0038124" title="Season log, scoring timeline and the defense he faces">Christian Watson</button><span class="badge mute">LP</span></td><td class="num ">7.0<i class="act over">(8)</i></td><td class="num ">4.2<i class="act over">(5)</i></td><td class="num ">67<i class="act under">(57)</i></td><td class="num ">0.6<i class="act under">(0)</i></td></tr><tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0040009" title="Season log, scoring timeline and the defense he faces">Savion Williams</button><span class="badge mute">LP</span></td><td class="num ">1.2<i class="act over">(3)</i></td><td class="num ">0.9<i class="act over">(3)</i></td><td class="num ">10<i class="act over">(47)</i></td><td class="num ">0.1<i class="act under">(0)</i></td></tr><tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0038090" title="Season log, scoring timeline and the defense he faces">Skyy Moore</button></td><td class="num ">2.3</td><td class="num ">1.4</td><td class="num ">6</td><td class="num zero">0</td></tr>
+            <tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0040667" title="Season log, scoring timeline and the defense he faces">Matthew Golden</button><span class="badge mute">LP</span></td><td class="num ">8.0<i class="act over">(12)</i></td><td class="num ">5.0<i class="act over">(6)</i></td><td class="num ">71<i class="act under">(39)</i></td><td class="num ">0.6<i class="act under">(0)</i></td></tr><tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0038124" title="Season log, scoring timeline and the defense he faces">Christian Watson</button><span class="badge mute">LP</span></td><td class="num ">6.9<i class="act over">(8)</i></td><td class="num ">4.2<i class="act over">(5)</i></td><td class="num ">67<i class="act under">(57)</i></td><td class="num ">0.6<i class="act under">(0)</i></td></tr><tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0040009" title="Season log, scoring timeline and the defense he faces">Savion Williams</button><span class="badge mute">LP</span></td><td class="num ">1.2<i class="act over">(3)</i></td><td class="num ">0.9<i class="act over">(3)</i></td><td class="num ">10<i class="act over">(47)</i></td><td class="num ">0.1<i class="act under">(0)</i></td></tr><tr><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0038090" title="Season log, scoring timeline and the defense he faces">Skyy Moore</button></td><td class="num ">2.3</td><td class="num ">1.4</td><td class="num ">6</td><td class="num zero">0</td></tr>
             <tr class="more" hidden><td class="name"><span class="gm-pos WR">WR</span><button type="button" class="pl-open" data-pid="00-0037091" title="Season log, scoring timeline and the defense he faces">Bo Melton</button><span class="badge mute">Q</span></td><td class="num ">1.6<i class="act over">(2)</i></td><td class="num ">0.9<i class="act over">(1)</i></td><td class="num ">4<i class="act over">(4)</i></td><td class="num zero">0<i class="act under">(0)</i></td></tr>
             
           </tbody>
@@ -1788,7 +2297,7 @@
         </div>
         
         <div class="gm-row">
-          <div class="gm-cell off"><i class="rk bad">#27</i><b>41.7</b><div class="gm-bar bad"><i style="width: 16%"></i></div></div>
+          <div class="gm-cell off"><i class="rk bad">#29</i><b>41.1</b><div class="gm-bar bad"><i style="width: 10%"></i></div></div>
           <div class="gm-lbl"><details class="stat"><summary title="What this stat is">O-line grade</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>O-line grade</b><p>A composite of the line&#x27;s pass protection and run blocking, offense only.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><span class="flat na">offense only</span></div>
         </div>
@@ -1873,7 +2382,7 @@
         </div>
         
         <div class="gm-row">
-          <div class="gm-cell off"><i class="rk bad">#26</i><b>17.9%</b><div class="gm-bar bad"><i style="width: 81%"></i></div></div>
+          <div class="gm-cell off"><i class="rk bad">#27</i><b>18.5%</b><div class="gm-bar bad"><i style="width: 84%"></i></div></div>
           <div class="gm-lbl"><details class="stat"><summary title="What this stat is">Pressure rate</summary><div class="stat-pop"><button type="button" class="sheet-close" aria-label="Close">&times;</button><b>Pressure rate</b><p>Sacks or quarterback hits per dropback, the play-by-play pressure proxy.</p><p class="rk">Ranks run 1 to 32 on each side, best first: green is a top-10 unit, amber a bottom-10 one.</p></div></details></div>
           <div class="gm-cell def"><b>18.5%</b><i class="rk ">#9</i><div class="gm-bar "><i style="width: 75%"></i></div></div>
         </div>
@@ -1915,173 +2424,243 @@
     <h2 class="gm-h2"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy"><span><em class="full">Lions</em><em class="short">DET</em> offense</span><span class="vs">against the</span><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy"><span><em class="full">Packers</em><em class="short">GB</em> defense</span></h2>
   </summary>
   <div class="hfa-head gm-mhead">
-    <p class="lede">Projected DET offense output &mdash; equivalently, what the GB defense allows. The engine blends each offense's season-to-date rates with the defense across from it, anchored on the market's implied points.</p>
+    <p class="lede">What the DET offense put up against the GB defense, the projection beneath each number: <span class="up">green</span> beat it, <span class="down">amber</span> fell short (INTs judged the other way).</p>
   </div>
   
-<div class="pp-off">
-  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Lions offense</span><span class="badge mute">medium confidence</span></div>
+<div class="pp-off rv-off">
+  <div class="pp-offhead"><span class="hfa-eyebrow">The plan on the Lions offense, graded</span><span class="badge warn">partly held</span><span class="badge mute">calls 4&ndash;2</span></div>
   
-  <div class="pp-offcards">
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div>
-      <p class="pp-lead">Efficient and balanced: 0.04 field EPA per play, 4.39 yards per carry, 66 plays a game, and the best finishing offense in the dossier — 76.5% of red-zone trips end in touchdowns against a 57.6% league rate.</p>
-      
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div>
-      <p class="pp-lead">Gibbs on the ground and at the goal line (7 touchdowns in five games), with Goff distributing short to St. Brown, LaPorta and Gibbs; explosive shots to Jameson Williams and TeSlaa are the chunk layer.</p>
-      
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div>
-      <p class="pp-lead">Pressure and its own trailing script.</p>
-      <details class="pp-more"><summary>more</summary><p>Buffalo (week 2) got 4 sacks and 10 hits behind a patchwork line; at Carolina (week 4) the Lions ran 15 times for 46 and threw 52 times for 412 and still lost on red-zone and pre-snap failures.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div>
-      <p class="pp-lead">Green Bay is the exact inverse of what hurts Detroit: it is 6th in pass EPA allowed and 3rd in yards per attempt allowed, so the throwing game runs uphill, but 28th in rush EPA allowed and 30th in points allowed to backs, with its goal-line defense 25th in red-zone TD rate allowed.</p>
-      <details class="pp-more"><summary>more</summary><p>The ground game is the path and the touchdowns should come with it.</p></details>
-    </div>
-    
-    <div class="pp-offcard">
-      <div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div>
-      <p class="pp-lead">Detroit is without Bartch (88% of snaps, IR) on the line and White, Harper and Maddox on defense; Branch was activated Saturday for his debut and Ya-Sin is cleared with no designation (Rotowire, Friday).</p>
-      <details class="pp-more"><summary>more</summary><p>The Green Bay front it faces is missing Franklin (ruled out Friday, 100% snaps), Cooper, Hargrave, Ford and Brinson — the run-defense context that matters most here.</p></details>
-    </div>
-    
+  <div class="rv-eh">
+    <div class="rv-ehcol"><span class="pp-k">Expected</span><p class="pp-lead">Pass rate near 55%, 32-35 attempts, Gibbs at 22-26 carries plus five catches, and points arriving as touchdowns rather than field goals.</p></div>
+    <div class="rv-ehcol happened warn"><span class="pp-k">Happened</span><p class="pp-lead">Volume matched (32 attempts, 49.3% pass rate just under the 55% called, Gibbs 29 carries and 5 catches), but the stated payoff — &#x27;points arriving as touchdowns rather than field goals&#x27; — inverted: six red-zone trips, two touchdowns, two field goals, two failed fourth downs, -0.438 red-zone EPA/play.</p></div>
   </div>
   
   
-  <div class="pp-expect"><span class="pp-k">Expect</span><p class="pp-lead">Pass rate near 55%, 32-35 attempts, Gibbs at 22-26 carries plus five catches, and points arriving as touchdowns rather than field goals.</p></div>
-  
-  
-  <div class="pp-k pp-k-sec">Who the plan moves <span class="flat">&middot; 2 up, 4 down &middot; one player, one market, one side of Kalshi's line when the plan was written</span></div>
-  <div class="pp-calls">
+  <div class="pp-k pp-k-sec">Who the plan moved <span class="flat">&middot; 2 up, 4 down &middot; graded off the box score, with whether the reason given showed up</span></div>
+  <div class="pp-calls rv-calls">
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Jahmyr Gibbs</b><span class="pp-bet">over 4.5 receptions</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 54%"></i></div><b>54%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 56%"></i></div><b>56%</b></div>
+      
+      <div class="rv-meter" title="The line 4.5 against the actual 5">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 72.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 4.5</span><b>5</b></div>
       </div>
+      
+      <span class="badge good rv-read">right read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Gibbs saw 6 targets for 5 catches as the checkdown on a 32-attempt day — the safety-valve role the call described, in the exact script it described.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #6 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: over 4.5 receptions"><i>Normal</i> 5+ <small>57&cent;</small></span><span class="rung" title="Edge: 4+ receptions"><i>Edge</i> 4+ <small>72&cent;</small></span><span class="rung" title="Edge+: 3+ receptions"><i>Edge+</i> 3+ <small>87&cent;</small></span>
+        <span class="rung hit" title="Normal: over 4.5 receptions"><i>Normal</i> 5+ <small>57&cent;</small></span><span class="rung hit" title="Edge: 4+ receptions"><i>Edge</i> 4+ <small>72&cent;</small></span><span class="rung hit" title="Edge+: 3+ receptions"><i>Edge+</i> 3+ <small>87&cent;</small></span>
       </div>
-      <p class="pp-lead">He is the safety valve on every script, and against a Green Bay defense that holds up between the 20s Detroit&#x27;s short game runs through the back.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> Receptions of 5, 6, 7, 4, 5 on 5-8 targets every week; 69-87% snap shares. </p><p><b>Against it.</b> vs #6 pass EPA allowed, but the rank bites receivers, not backs — opponent coverage quality has no measurable effect on a back&#x27;s receiving. Above both means.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>He is the safety valve on every script, and against a Green Bay defense that holds up between the 20s Detroit&#x27;s short game runs through the back. </p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 54%"></i></div><b>54%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 56%"></i></div><b>56%</b></div>
+        </div>
+        <p><b>Evidence.</b> Receptions of 5, 6, 7, 4, 5 on 5-8 targets every week; 69-87% snap shares. </p>
+        <p><b>Against it.</b> vs #6 pass EPA allowed, but the rank bites receivers, not backs — opponent coverage quality has no measurable effect on a back&#x27;s receiving. Above both means.</p>
+      </details>
     </div>
     
-    <div class="pp-call over">
+    <div class="pp-call over rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9650;</span>
         <div class="pp-callwho"><b>Jahmyr Gibbs</b><span class="pp-bet">over 99.5 rush yds</span></div>
-        <span class="badge mute">both</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 41%"></i></div><b>41%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 46%"></i></div><b>46%</b></div>
+      
+      <div class="rv-meter" title="The line 99.5 against the actual 116">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 68.6%"></i></div>
+        <div class="rv-meterlbl"><span>line 99.5</span><b>116</b></div>
       </div>
+      
+      
+      
       <div class="pp-callmeta">
-        <span class="badge good" title="The opposing defense's rank on rush EPA allowed entering the week (#1 toughest)">D #28 rush EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: over 99.5 rush yds"><i>Normal</i> 100+ <small>45&cent;</small></span><span class="rung" title="Edge: 80+ rush yds"><i>Edge</i> 80+ <small>64&cent;</small></span><span class="rung" title="Edge+: 60+ rush yds"><i>Edge+</i> 60+ <small>81&cent;</small></span>
+        <span class="rung hit" title="Normal: over 99.5 rush yds"><i>Normal</i> 100+ <small>45&cent;</small></span><span class="rung hit" title="Edge: 80+ rush yds"><i>Edge</i> 80+ <small>64&cent;</small></span><span class="rung hit" title="Edge+: 60+ rush yds"><i>Edge+</i> 60+ <small>81&cent;</small></span>
       </div>
-      <p class="pp-lead">Green Bay&#x27;s front is missing its every-down linebacker plus four men on IR, and it was already one of the league&#x27;s softest by rush efficiency.</p>
-      <details class="pp-more"><summary>why</summary><p>Detroit&#x27;s whole path here is handing it to Gibbs with a lead.</p><p><b>Evidence.</b> Gibbs 29-156 (wk1), 20-99 (wk3), 25-151 (wk5); Franklin ruled out Friday after playing 100% of snaps in five of six; Atlanta ran 41-242 on this front in week 3 with its interior out. </p><p><b>Against it.</b> vs #28 rush EPA allowed (#30 in points allowed to backs). Sits level with the model&#x27;s own mean and just above the market&#x27;s; backs under-respond to run-defense quality, which is where the edge lives.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>Green Bay&#x27;s front is missing its every-down linebacker plus four men on IR, and it was already one of the league&#x27;s softest by rush efficiency. Detroit&#x27;s whole path here is handing it to Gibbs with a lead.</p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 41%"></i></div><b>41%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 46%"></i></div><b>46%</b></div>
+        </div>
+        <p><b>Evidence.</b> Gibbs 29-156 (wk1), 20-99 (wk3), 25-151 (wk5); Franklin ruled out Friday after playing 100% of snaps in five of six; Atlanta ran 41-242 on this front in week 3 with its interior out. </p>
+        <p><b>Against it.</b> vs #28 rush EPA allowed (#30 in points allowed to backs). Sits level with the model&#x27;s own mean and just above the market&#x27;s; backs under-respond to run-defense quality, which is where the edge lives.</p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Amon-Ra St. Brown</b><span class="pp-bet">under 79.5 rec yds</span></div>
-        <span class="badge mute">both</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 79%"></i></div><b>79%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+      
+      <div class="rv-meter" title="The line 79.5 against the actual 153">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 41.6%"></i></div>
+        <div class="rv-meterlbl"><span>line 79.5</span><b>153</b></div>
       </div>
+      
+      <span class="badge bad rv-read">wrong read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> The premise was that St. Brown needs a chasing script; Detroit led most of the day, threw 32 times, and he still took 11 targets and 139 air yards for 153 yards, including 40 (Q1 0:53) and 28 (Q1 8:31) on deep shots while tied or ahead.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #6 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 79.5 rec yds"><i>Normal</i> &lt;80 <small>50&cent;</small></span><span class="rung" title="Edge: &lt;120 rec yds"><i>Edge</i> &lt;120 <small>80&cent;</small></span><span class="rung" title="Edge+: &lt;160 rec yds"><i>Edge+</i> &lt;160 <small>96&cent;</small></span>
+        <span class="rung miss" title="Normal: under 79.5 rec yds"><i>Normal</i> &lt;80 <small>50&cent;</small></span><span class="rung miss" title="Edge: &lt;120 rec yds"><i>Edge</i> &lt;120 <small>80&cent;</small></span><span class="rung hit" title="Edge+: &lt;160 rec yds"><i>Edge+</i> &lt;160 <small>96&cent;</small></span>
       </div>
-      <p class="pp-lead">His yardage needs a chasing script, and Detroit is favored into a defense that squeezes everything between the 20s.</p>
-      <details class="pp-more"><summary>why</summary><p>One big week and four quiet ones is the real shape of his line.</p><p><b>Evidence.</b> 67, 142, 19, 75, 69 receiving yards — one game above this number, and that came trailing by double digits at Buffalo; Green Bay allows 5.95 yards per attempt. </p><p><b>Against it.</b> vs #6 pass EPA allowed, #3 in yards per attempt allowed. Well above the model&#x27;s mean and above the market&#x27;s too — both the rank and the script point the same way.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>His yardage needs a chasing script, and Detroit is favored into a defense that squeezes everything between the 20s. One big week and four quiet ones is the real shape of his line.</p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 79%"></i></div><b>79%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+        </div>
+        <p><b>Evidence.</b> 67, 142, 19, 75, 69 receiving yards — one game above this number, and that came trailing by double digits at Buffalo; Green Bay allows 5.95 yards per attempt. </p>
+        <p><b>Against it.</b> vs #6 pass EPA allowed, #3 in yards per attempt allowed. Well above the model&#x27;s mean and above the market&#x27;s too — both the rank and the script point the same way.</p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call miss">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Jared Goff</b><span class="pp-bet">under 274.5 pass yds</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res miss">&#10007;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 73%"></i></div><b>73%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 44%"></i></div><b>44%</b></div>
+      
+      <div class="rv-meter" title="The line 274.5 against the actual 303">
+        <div class="track"><i class="fill" style="width: 80.0%"></i><i class="line" style="left: 72.5%"></i></div>
+        <div class="rv-meterlbl"><span>line 274.5</span><b>303</b></div>
       </div>
+      
+      <span class="badge bad rv-read">missed · read partly held</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> The volume half held — 32 attempts, at or below the plan&#x27;s own 32-35 band, with Detroit running 33 times.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #6 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 274.5 pass yds"><i>Normal</i> &lt;275 <small>45&cent;</small></span><span class="rung" title="Edge: &lt;350 pass yds"><i>Edge</i> &lt;350 <small>83&cent;</small></span><span class="rung" title="Edge+: &lt;400 pass yds"><i>Edge+</i> &lt;400 <small>95&cent;</small></span>
+        <span class="rung miss" title="Normal: under 274.5 pass yds"><i>Normal</i> &lt;275 <small>45&cent;</small></span><span class="rung hit" title="Edge: &lt;350 pass yds"><i>Edge</i> &lt;350 <small>83&cent;</small></span><span class="rung hit" title="Edge+: &lt;400 pass yds"><i>Edge+</i> &lt;400 <small>95&cent;</small></span>
       </div>
-      <p class="pp-lead">Detroit&#x27;s path here is the ground game against a thinned front, and Green Bay&#x27;s pass defense is the one thing it actually does well.</p>
-      <details class="pp-more"><summary>why</summary><p>Goff only reaches this number when Detroit is behind.</p><p><b>Evidence.</b> 269, 271 and 206 yards in the three games Detroit led or stayed level; 412 came on 52 attempts while trailing at Carolina; Green Bay allows 209 passing yards a game. </p><p><b>Against it.</b> vs #6 pass EPA allowed. Model mean is well under the line; the market has it near a coin flip and is paying for the dome and the total rather than the matchup.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>Detroit&#x27;s path here is the ground game against a thinned front, and Green Bay&#x27;s pass defense is the one thing it actually does well. Goff only reaches this number when Detroit is behind.</p>
+        <p><b>In the game.</b> The efficiency assumption broke: 9.5 Y/A and 6-of-9 deep for 156 yards against a defense the plan had rated as GB&#x27;s strength.</p>
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 73%"></i></div><b>73%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 44%"></i></div><b>44%</b></div>
+        </div>
+        <p><b>Evidence.</b> 269, 271 and 206 yards in the three games Detroit led or stayed level; 412 came on 52 attempts while trailing at Carolina; Green Bay allows 209 passing yards a game. </p>
+        <p><b>Against it.</b> vs #6 pass EPA allowed. Model mean is well under the line; the market has it near a coin flip and is paying for the dome and the total rather than the matchup.</p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Sam LaPorta</b><span class="pp-bet">under 49.5 rec yds</span></div>
-        <span class="badge mute">both</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 60%"></i></div><b>60%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+      
+      <div class="rv-meter" title="The line 49.5 against the actual 18">
+        <div class="track"><i class="fill" style="width: 29.1%"></i><i class="line" style="left: 80.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 49.5</span><b>18</b></div>
       </div>
+      
+      <span class="badge good rv-read">right read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> LaPorta played 97.1% of snaps and saw two targets for 18 yards; Detroit never chased and the targets went to St. Brown and Williams (20 of 32).</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #6 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 49.5 rec yds"><i>Normal</i> &lt;50 <small>50&cent;</small></span><span class="rung" title="Edge: &lt;90 rec yds"><i>Edge</i> &lt;90 <small>88&cent;</small></span><span class="rung" title="Edge+: &lt;120 rec yds"><i>Edge+</i> &lt;120 <small>96&cent;</small></span>
+        <span class="rung hit" title="Normal: under 49.5 rec yds"><i>Normal</i> &lt;50 <small>50&cent;</small></span><span class="rung hit" title="Edge: &lt;90 rec yds"><i>Edge</i> &lt;90 <small>88&cent;</small></span><span class="rung hit" title="Edge+: &lt;120 rec yds"><i>Edge+</i> &lt;120 <small>96&cent;</small></span>
       </div>
-      <p class="pp-lead">The one coverage group Green Bay genuinely shuts down is tight ends, and LaPorta&#x27;s big games came from volume Detroit only generates when it is chasing points.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> 48, 52, 44, 84, 88 yards; the 84 came on 13 targets in a 52-attempt game at Carolina; Green Bay is top-five in fantasy points allowed to the position. </p><p><b>Against it.</b> vs #6 pass EPA allowed, #5 in points allowed to tight ends — the one position where a stingy defense actually predicts. Below the line on the model&#x27;s mean, above it on the market&#x27;s.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>The one coverage group Green Bay genuinely shuts down is tight ends, and LaPorta&#x27;s big games came from volume Detroit only generates when it is chasing points. </p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 60%"></i></div><b>60%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 50%"></i></div><b>50%</b></div>
+        </div>
+        <p><b>Evidence.</b> 48, 52, 44, 84, 88 yards; the 84 came on 13 targets in a 52-attempt game at Carolina; Green Bay is top-five in fantasy points allowed to the position. </p>
+        <p><b>Against it.</b> vs #6 pass EPA allowed, #5 in points allowed to tight ends — the one position where a stingy defense actually predicts. Below the line on the model&#x27;s mean, above it on the market&#x27;s.</p>
+      </details>
     </div>
     
-    <div class="pp-call under">
+    <div class="pp-call under rv-call hit">
       <div class="pp-callhead">
         <span class="pp-dir" aria-hidden="true">&#9660;</span>
         <div class="pp-callwho"><b>Jared Goff</b><span class="pp-bet">under 0.5 INTs</span></div>
-        <span class="badge mute">volume</span>
+        <span class="rv-stamp-res hit">&#10003;</span>
       </div>
-      <div class="pp-probs">
-        <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 44%"></i></div><b>44%</b></div>
-        <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 55%"></i></div><b>55%</b></div>
+      
+      <div class="rv-meter" title="The line 0.5 against the actual 0">
+        <div class="track"><i class="fill" style="width: 0.0%"></i><i class="line" style="left: 40.0%"></i></div>
+        <div class="rv-meterlbl"><span>line 0.5</span><b>0</b></div>
       </div>
+      
+      <span class="badge good rv-read">right read</span>
+      <p class="pp-lead"><b class="rv-ig">In the game.</b> Goff threw 32 times with no interception and a 6.1% pressure rate; the low-volume, protected-favorite premise is exactly what produced it.</p>
       <div class="pp-callmeta">
-        <span class="badge bad" title="The opposing defense's rank on pass EPA allowed entering the week (#1 toughest)">D #6 pass EPA allowed</span>
-        <span class="badge mute">medium</span>
-        <span class="rung" title="Normal: under 0.5 INTs"><i>Normal</i> &lt;1 <small>55&cent;</small></span><span class="rung" title="Edge: &lt;2 INTs"><i>Edge</i> &lt;2 <small>87&cent;</small></span><span class="rung" title="Edge+: &lt;3 INTs"><i>Edge+</i> &lt;3 <small>98&cent;</small></span>
+        <span class="rung hit" title="Normal: under 0.5 INTs"><i>Normal</i> &lt;1 <small>55&cent;</small></span><span class="rung hit" title="Edge: &lt;2 INTs"><i>Edge</i> &lt;2 <small>87&cent;</small></span><span class="rung hit" title="Edge+: &lt;3 INTs"><i>Edge+</i> &lt;3 <small>98&cent;</small></span>
       </div>
-      <p class="pp-lead">This is a volume read: as the favorite leaning on the run, Goff throws fewer times than projected, and he has not been intercepted once this season.</p>
-      <details class="pp-more"><summary>why</summary><p><b>Evidence.</b> Zero interceptions on 191 attempts across five games; Detroit&#x27;s projected attempts here are its lowest script of the year with a lead. </p><p><b>Against it.</b> vs #6 pass EPA allowed. The model&#x27;s mean is well above the half-rung and the market is already below it — the attempts projection is the part that runs hot for favorites.</p></details>
+      <details class="pp-more"><summary>the plan's reason</summary>
+        <p>This is a volume read: as the favorite leaning on the run, Goff throws fewer times than projected, and he has not been intercepted once this season. </p>
+        
+        <div class="pp-probs">
+          <div class="pp-prob"><span>engine</span><div class="meter"><i style="width: 44%"></i></div><b>44%</b></div>
+          <div class="pp-prob mkt"><span>Kalshi</span><div class="meter"><i style="width: 55%"></i></div><b>55%</b></div>
+        </div>
+        <p><b>Evidence.</b> Zero interceptions on 191 attempts across five games; Detroit&#x27;s projected attempts here are its lowest script of the year with a lead. </p>
+        <p><b>Against it.</b> vs #6 pass EPA allowed. The model&#x27;s mean is well above the half-rung and the market is already below it — the attempts projection is the part that runs hot for favorites.</p>
+      </details>
     </div>
     
   </div>
+  
+  
+  <div class="pp-k pp-k-sec">Lines the report singled out <span class="flat">&middot; signal carries forward, noise doesn't</span></div>
+  <div class="rv-notes">
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Amon-Ra St. Brown</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">11 targets, 9-153, 139 air yards (56% share), 47 YAC, +8.85 EPA</span>
+      <p class="pp-sub">Got there without a chasing script — 40-yard and 28-yard deep completions in the first quarter with Detroit tied or ahead.</p>
+      <details class="pp-more"><summary>more</summary><p>The &#x27;needs volume to produce&#x27; read is wrong; he produces on 32-attempt games.</p></details>
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Jameson Williams</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">9 targets, 5-91, 2 TD, 83.8% snaps</span>
+      <p class="pp-sub">Both scores were short (16 and 10 yards) off a 30-yard chunk earlier on the same drive; 35.9% air-yards share is a real role increase over the 5.0-target projection.</p>
+      
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Jahmyr Gibbs</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">29 carries 116 yds, 5-27 receiving, 0 TD, -6.64 rush EPA, 4 stuffs, 3 runs of 10+</span>
+      <p class="pp-sub">Volume came from the lead (DET led 2,154 seconds) but the efficiency did not — the yardage was lumpy, and the goal-line/short-yardage work produced a fumble at the 6 and a stuffed 4th-and-1.</p>
+      
+    </div>
+    
+    <div class="rv-note-card signal">
+      <div class="rv-notehead"><b>Sam LaPorta</b><span class="badge good">signal</span></div>
+      <span class="pp-bet">2 targets, 1-18, 97.1% snap share</span>
+      <p class="pp-sub">Snaps without targets in a 32-attempt game where two receivers took 20 of them.</p>
+      <details class="pp-more"><summary>more</summary><p>Low-volume risk is structural when Detroit runs at a 49% pass rate.</p></details>
+    </div>
+    
+  </div>
+  
+  
+  <details class="rv-fold">
+    <summary>The plan's pre-game read on this offense <span class="flat">&middot; medium confidence</span></summary>
+    <div class="pp-offcards">
+      <div class="pp-offcard"><div class="pp-k"><i class="pp-ic id" aria-hidden="true"></i>Identity</div><p class="pp-lead">Efficient and balanced: 0.04 field EPA per play, 4.39 yards per carry, 66 plays a game, and the best finishing offense in the dossier — 76.5% of red-zone trips end in touchdowns against a 57.6% league rate.</p></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic score" aria-hidden="true"></i>How it scores</div><p class="pp-lead">Gibbs on the ground and at the goal line (7 touchdowns in five games), with Goff distributing short to St. Brown, LaPorta and Gibbs; explosive shots to Jameson Williams and TeSlaa are the chunk layer.</p></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic stop" aria-hidden="true"></i>What stops it</div><p class="pp-lead">Pressure and its own trailing script.</p><details class="pp-more"><summary>more</summary><p>Buffalo (week 2) got 4 sacks and 10 hits behind a patchwork line; at Carolina (week 4) the Lions ran 15 times for 46 and threw 52 times for 412 and still lost on red-zone and pre-snap failures.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic vs" aria-hidden="true"></i>This matchup</div><p class="pp-lead">Green Bay is the exact inverse of what hurts Detroit: it is 6th in pass EPA allowed and 3rd in yards per attempt allowed, so the throwing game runs uphill, but 28th in rush EPA allowed and 30th in points allowed to backs, with its goal-line defense 25th in red-zone TD rate allowed.</p><details class="pp-more"><summary>more</summary><p>The ground game is the path and the touchdowns should come with it.</p></details></div><div class="pp-offcard"><div class="pp-k"><i class="pp-ic inj" aria-hidden="true"></i>Injuries</div><p class="pp-lead">Detroit is without Bartch (88% of snaps, IR) on the line and White, Harper and Maddox on defense; Branch was activated Saturday for his debut and Ya-Sin is cleared with no designation (Rotowire, Friday).</p><details class="pp-more"><summary>more</summary><p>The Green Bay front it faces is missing Franklin (ruled out Friday, 100% snaps), Cooper, Hargrave, Ford and Brinson — the run-defense context that matters most here.</p></details></div>
+    </div>
+  </details>
   
 </div>
 
   <div class="gm-tiles">
-    <div class="gm-tile big"><b>29.5<i class="act under" title="Actual">(20)</i></b><span>Points</span></div><div class="gm-tile "><b>64</b><span>Plays</span></div><div class="gm-tile "><b>237<i class="act over" title="Actual">(303)</i></b><span>Pass yds</span></div><div class="gm-tile "><b>110<i class="act over" title="Actual">(119)</i></b><span>Rush yds</span></div><div class="gm-tile "><b>2.4</b><span>Sacks taken</span></div><div class="gm-tile "><b>0.8<i class="act over" title="Actual">(0)</i></b><span>INTs thrown</span></div>
+    <div class="gm-tile rv big under"><b>20</b><span>Points</span><small>projected 29.5</small></div><div class="gm-tile rv  "><b class="flat">64</b><span>Plays</span><small>projected</small></div><div class="gm-tile rv  over"><b>303</b><span>Pass yds</span><small>projected 237</small></div><div class="gm-tile rv  over"><b>119</b><span>Rush yds</span><small>projected 110</small></div><div class="gm-tile rv  "><b class="flat">2.4</b><span>Sacks taken</span><small>projected</small></div><div class="gm-tile rv  over"><b>0</b><span>INTs thrown</span><small>projected 0.8</small></div>
   </div>
   <div class="gm-split">
     <div class="gm-players">
@@ -2354,7 +2933,7 @@
 
 
 
-<details class="hfa-card hfa-sec gm-starters pp-sec" id="starters" data-sec="starters" open>
+<details class="hfa-card hfa-sec gm-starters pp-sec" id="starters" data-sec="starters">
   <summary class="hfa-head pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <div class="hfa-eyebrow">Starters on the field</div>
@@ -2372,8 +2951,8 @@
         <div class="gm-ftag top">DET defense</div>
         <div class="gm-los"></div>
         <div class="gm-ftag bot">GB offense</div>
-        <div class="gm-fp def r5" style="left: 26%; top: 51%" title="Aidan Hutchinson DElast game 90% of snapsEdge · 87th pct of group · 840 wtd snaps2026 wks 1-6 + ½·2025Pressure rate4.6% lg 3.5%Sack rate1.3% lg 0.9%TFL rate1.2% lg 1.2%Missed tackle %8% lg 9%context (not rated): 3 tgt · 2.0 yds/tgt · 33% comp · aDOT 0.2 · 40 prs · 11.2 sk · 39 tkl / 3 miss · 0 INT · 2 PD"><span class="dot">87</span><span class="nm">A. Hutchinson <small>EDGE</small></span></div><div class="gm-fp def r4" style="left: 44%; top: 51%" title="Alim McNeill DLlast game 71% of snapsInterior DL · 75th pct of group · 573 wtd snaps2026 wks 1-6 + ½·2025Pressure rate2.0% lg 1.8%Sack rate0.6% lg 0.5%TFL rate0.9% lg 0.8%Missed tackle %9% lg 11%context (not rated): 0 tgt · 1.0 yds/tgt · 100% comp · aDOT -4.0 · 12 prs · 4.0 sk · 14 tkl / 1 miss · 0 INT · 2 PD"><span class="dot">75</span><span class="nm">A. McNeill <small>DI</small></span></div><div class="gm-fp def r1" style="left: 56%; top: 51%" title="Tyleik Williams DLlast game 48% of snapsInterior DL · 10th pct of group · 420 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.0% lg 1.8%Sack rate0.2% lg 0.5%TFL rate0.4% lg 0.8%Missed tackle %12% lg 11%context (not rated): 3 prs · 0.5 sk · 6 tkl / 1 miss · 0 INT · 2 PD"><span class="dot">10</span><span class="nm">T. Williams <small>DI</small></span></div><div class="gm-fp def r2" style="left: 75%; top: 51%" title="D.J. Wonnum DElast game 49% of snapsEdge · 25th pct of group · 556 wtd snaps2026 wks 1-6 + ½·2025Pressure rate2.4% lg 3.5%Sack rate1.1% lg 0.9%TFL rate1.1% lg 1.2%Missed tackle %7% lg 9%context (not rated): 4 tgt · 3.3 yds/tgt · 43% comp · aDOT 3.7 · 12 prs · 6.5 sk · 26 tkl / 2 miss · 0 INT · 2 PD"><span class="dot">25</span><span class="nm">D. Wonnum <small>EDGE</small></span></div><div class="gm-fp def r4" style="left: 41%; top: 37%" title="Jack Campbell LBlast game 100% of snapsLinebacker · 67th pct of group · 926 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.45 lg 0.38Targets drawn6.6% lg 5.6%Missed tackle %4% lg 8%Tackle rate13.4% lg 11.7%TFL rate0.6% lg 0.8%context (not rated): 63 tgt · 6.8 yds/tgt · 67% comp · aDOT 5.6 · 9 prs · 2.5 sk · 127 tkl / 4 miss · 0 INT · 2 PD"><span class="dot">67</span><span class="nm">J. Campbell <small>LB</small></span></div><div class="gm-fp def r5" style="left: 59%; top: 37%" title="Derrick Barnes LBlast game 82% of snapsLinebacker · 84th pct of group · 783 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.35 lg 0.38Targets drawn4.5% lg 5.6%Missed tackle %5% lg 8%Tackle rate8.6% lg 11.7%TFL rate0.9% lg 0.8%context (not rated): 34 tgt · 8.0 yds/tgt · 66% comp · aDOT 3.9 · 6 prs · 5.0 sk · 62 tkl / 2 miss · 2 INT · 4 PD"><span class="dot">84</span><span class="nm">D. Barnes <small>LB</small></span></div><div class="gm-fp def r1" style="left: 7%; top: 42%" title="Roger McCreary CBlast game 100% of snapsCornerback · 16th pct of group · 441 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.85 lg 0.66Targets drawn10.4% lg 9.1%Missed tackle %8% lg 10%context (not rated): 48 tgt · 8.4 yds/tgt · 65% comp · aDOT 8.9 · 2 prs · 1.5 sk · 36 tkl / 3 miss · 0 INT · 8 PD"><span class="dot">16</span><span class="nm">R. McCreary <small>CB</small></span></div><div class="gm-fp def r3" style="left: 93%; top: 42%" title="D.J. Reed CBlast game 99% of snapsCornerback · 56th pct of group · 661 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.75 lg 0.66Targets drawn8.2% lg 9.1%Missed tackle %7% lg 10%context (not rated): 53 tgt · 9.5 yds/tgt · 59% comp · aDOT 14.1 · 1 prs · 59 tkl / 4 miss · 1 INT · 6 PD"><span class="dot">56</span><span class="nm">D. Reed <small>CB</small></span></div><div class="gm-fp def thin" style="left: 18%; top: 44%" title="Keith Abney CBlast game 81% of snapsCornerback · 90th pct of group · thin sample · 84 wtd snaps2026 wks 1-6 + ½·2025Missed tackle %7% lg 10%context (not rated): 6 tgt · 2.3 yds/tgt · 50% comp · aDOT 13.0 · 8 tkl / 0 miss · 1 INT · 1 PD"><span class="dot">90</span><span class="nm">K. Abney <small>NB</small></span></div><div class="gm-fp def r2" style="left: 34%; top: 19%" title="Chuck Clark Slast game 99% of snapsSafety · 27th pct of group · 536 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.58 lg 0.47Targets drawn6.7% lg 5.6%Missed tackle %7% lg 9%context (not rated): 38 tgt · 8.8 yds/tgt · 60% comp · aDOT 8.8 · 2 prs · 1.0 sk · 59 tkl / 4 miss · 1 INT · 2 PD"><span class="dot">27</span><span class="nm">C. Clark <small>S</small></span></div><div class="gm-fp def thin" style="left: 66%; top: 19%" title="Jalen Mills DBlast game 30% of snapsSafety · 62nd pct of group · thin sample · 82 wtd snaps2026 wks 1-6 + ½·2025Missed tackle %8% lg 9%context (not rated): 6 tgt · 7.3 yds/tgt · 75% comp · aDOT 8.6 · 7 tkl / 0 miss · 0 INT · 0 PD"><span class="dot">62</span><span class="nm">J. Mills <small>S</small></span></div>
-        <div class="gm-fp off r4" style="left: 7%; top: 63%" title="Matthew Golden WRon report – Shoulderprojected: 8.1 tgt · 71 rec yds66th pct production among the position&#x27;s starter pool · 52 yds/g over 13.0 wtd games6.1 tgt/g · 0.5 car/g"><span class="dot">66<em>?</em></span><span class="nm">M. Golden <small>WR</small></span></div><div class="gm-fp off thin" style="left: 18%; top: 65%" title="Skyy Moore WRprojected: 2.3 tgt · 6 rec yds0th pct production among the position&#x27;s starter pool (outside the pool) · 6 yds/g over 13.5 wtd games1.3 tgt/g · 0.1 car/g"><span class="dot">0</span><span class="nm">S. Moore <small>WR</small></span></div><div class="gm-fp off r4" style="left: 80%; top: 62%" title="Tucker Kraft TEprojected: 5.8 tgt · 37 rec yds78th pct production among the position&#x27;s starter pool · 49 yds/g over 10.0 wtd games5.9 tgt/g · 0.2 car/g"><span class="dot">78</span><span class="nm">T. Kraft <small>TE</small></span></div><div class="gm-fp off r5" style="left: 93%; top: 63%" title="Christian Watson WRon report – Ankleprojected: 7.0 tgt · 67 rec yds90th pct production among the position&#x27;s starter pool · 77 yds/g over 11.0 wtd games6.9 tgt/g · 0.0 car/g"><span class="dot">90<em>?</em></span><span class="nm">C. Watson <small>WR</small></span></div><div class="gm-fp off r4" style="left: 50%; top: 75%" title="Jordan Love QBon report – Backprojected: 36 att · 264 pass yds66th pct production among the position&#x27;s starter pool · 258 yds/g over 13.5 wtd games33.0 att/g"><span class="dot">66<em>?</em></span><span class="nm">J. Love <small>QB</small></span></div><div class="gm-fp off thin" style="left: 39%; top: 76%" title="MarShawn Lloyd RBprojected: 8.8 car · 29 rush · 2.4 tgt · 11 rec6th pct production among the position&#x27;s starter pool (outside the pool) · 30 yds/g over 6.0 wtd games2.3 tgt/g · 8.0 car/g"><span class="dot">6</span><span class="nm">M. Lloyd <small>RB</small></span></div><div class="gm-fp off ol" style="left: 31%; top: 62%" title="Jordan Morgan Tlast game 96% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LT</span></div><div class="gm-fp off ol" style="left: 40.5%; top: 62%" title="Laken Tomlinson Glast game 96% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LG</span></div><div class="gm-fp off ol" style="left: 50%; top: 62%" title="Sean Rhyan Clast game 96% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">C</span></div><div class="gm-fp off ol" style="left: 59.5%; top: 62%" title="Travis Glover Glast game 96% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RG</span></div><div class="gm-fp off ol" style="left: 69%; top: 62%" title="Anthony Belton Glast game 96% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RT</span></div>
+        <div class="gm-fp def r5" style="left: 26%; top: 51%" title="Aidan Hutchinson DElast game 90% of snapsEdge · 87th pct of group · 840 wtd snaps2026 wks 1-6 + ½·2025Pressure rate4.6% lg 3.5%Sack rate1.3% lg 0.9%TFL rate1.2% lg 1.2%Missed tackle %8% lg 9%context (not rated): 3 tgt · 2.0 yds/tgt · 33% comp · aDOT 0.2 · 40 prs · 11.2 sk · 39 tkl / 3 miss · 0 INT · 2 PD"><span class="dot">87</span><span class="nm">A. Hutchinson <small>EDGE</small></span></div><div class="gm-fp def r4" style="left: 44%; top: 51%" title="Alim McNeill DLlast game 71% of snapsInterior DL · 75th pct of group · 573 wtd snaps2026 wks 1-6 + ½·2025Pressure rate2.0% lg 1.8%Sack rate0.6% lg 0.5%TFL rate0.9% lg 0.8%Missed tackle %9% lg 11%context (not rated): 0 tgt · 1.0 yds/tgt · 100% comp · aDOT -4.0 · 12 prs · 4.0 sk · 14 tkl / 1 miss · 0 INT · 2 PD"><span class="dot">75</span><span class="nm">A. McNeill <small>DI</small></span></div><div class="gm-fp def r1" style="left: 56%; top: 51%" title="Tyleik Williams DLlast game 48% of snapsInterior DL · 10th pct of group · 420 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.0% lg 1.8%Sack rate0.2% lg 0.5%TFL rate0.4% lg 0.8%Missed tackle %12% lg 11%context (not rated): 3 prs · 0.5 sk · 6 tkl / 1 miss · 0 INT · 2 PD"><span class="dot">10</span><span class="nm">T. Williams <small>DI</small></span></div><div class="gm-fp def r2" style="left: 75%; top: 51%" title="D.J. Wonnum DElast game 49% of snapsEdge · 27th pct of group · 556 wtd snaps2026 wks 1-6 + ½·2025Pressure rate2.4% lg 3.5%Sack rate1.1% lg 0.9%TFL rate1.1% lg 1.2%Missed tackle %7% lg 9%context (not rated): 4 tgt · 3.3 yds/tgt · 43% comp · aDOT 3.7 · 12 prs · 6.5 sk · 26 tkl / 2 miss · 0 INT · 2 PD"><span class="dot">27</span><span class="nm">D. Wonnum <small>EDGE</small></span></div><div class="gm-fp def r4" style="left: 41%; top: 37%" title="Jack Campbell LBlast game 100% of snapsLinebacker · 67th pct of group · 926 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.45 lg 0.38Targets drawn6.6% lg 5.6%Missed tackle %4% lg 8%Tackle rate13.4% lg 11.8%TFL rate0.6% lg 0.8%context (not rated): 63 tgt · 6.8 yds/tgt · 67% comp · aDOT 5.6 · 9 prs · 2.5 sk · 127 tkl / 4 miss · 0 INT · 2 PD"><span class="dot">67</span><span class="nm">J. Campbell <small>LB</small></span></div><div class="gm-fp def r5" style="left: 59%; top: 37%" title="Derrick Barnes LBlast game 82% of snapsLinebacker · 84th pct of group · 783 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.35 lg 0.38Targets drawn4.5% lg 5.6%Missed tackle %5% lg 8%Tackle rate8.6% lg 11.8%TFL rate0.9% lg 0.8%context (not rated): 34 tgt · 8.0 yds/tgt · 66% comp · aDOT 3.9 · 6 prs · 5.0 sk · 62 tkl / 2 miss · 2 INT · 4 PD"><span class="dot">84</span><span class="nm">D. Barnes <small>LB</small></span></div><div class="gm-fp def r1" style="left: 7%; top: 42%" title="Roger McCreary CBlast game 100% of snapsCornerback · 16th pct of group · 441 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.85 lg 0.66Targets drawn10.4% lg 9.1%Missed tackle %8% lg 10%context (not rated): 48 tgt · 8.4 yds/tgt · 65% comp · aDOT 8.9 · 2 prs · 1.5 sk · 36 tkl / 3 miss · 0 INT · 8 PD"><span class="dot">16</span><span class="nm">R. McCreary <small>CB</small></span></div><div class="gm-fp def r3" style="left: 93%; top: 42%" title="D.J. Reed CBlast game 99% of snapsCornerback · 56th pct of group · 661 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.75 lg 0.66Targets drawn8.2% lg 9.1%Missed tackle %7% lg 10%context (not rated): 53 tgt · 9.5 yds/tgt · 59% comp · aDOT 14.1 · 1 prs · 59 tkl / 4 miss · 1 INT · 6 PD"><span class="dot">56</span><span class="nm">D. Reed <small>CB</small></span></div><div class="gm-fp def thin" style="left: 18%; top: 44%" title="Keith Abney CBlast game 81% of snapsCornerback · 90th pct of group · thin sample · 84 wtd snaps2026 wks 1-6 + ½·2025Missed tackle %7% lg 10%context (not rated): 6 tgt · 2.3 yds/tgt · 50% comp · aDOT 13.0 · 8 tkl / 0 miss · 1 INT · 1 PD"><span class="dot">90</span><span class="nm">K. Abney <small>NB</small></span></div><div class="gm-fp def r2" style="left: 34%; top: 19%" title="Chuck Clark Slast game 99% of snapsSafety · 27th pct of group · 536 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.58 lg 0.47Targets drawn6.7% lg 5.6%Missed tackle %7% lg 9%context (not rated): 38 tgt · 8.8 yds/tgt · 60% comp · aDOT 8.8 · 2 prs · 1.0 sk · 59 tkl / 4 miss · 1 INT · 2 PD"><span class="dot">27</span><span class="nm">C. Clark <small>S</small></span></div><div class="gm-fp def thin" style="left: 66%; top: 19%" title="Jalen Mills DBlast game 30% of snapsSafety · 62nd pct of group · thin sample · 82 wtd snaps2026 wks 1-6 + ½·2025Missed tackle %8% lg 9%context (not rated): 6 tgt · 7.3 yds/tgt · 75% comp · aDOT 8.6 · 7 tkl / 0 miss · 0 INT · 0 PD"><span class="dot">62</span><span class="nm">J. Mills <small>S</small></span></div>
+        <div class="gm-fp off r4" style="left: 7%; top: 63%" title="Matthew Golden WRon report – Shoulderprojected: 8.0 tgt · 71 rec yds66th pct production among the position&#x27;s starter pool · 52 yds/g over 13.0 wtd games6.1 tgt/g · 0.5 car/g"><span class="dot">66<em>?</em></span><span class="nm">M. Golden <small>WR</small></span></div><div class="gm-fp off thin" style="left: 18%; top: 65%" title="Skyy Moore WRprojected: 2.3 tgt · 6 rec yds0th pct production among the position&#x27;s starter pool (outside the pool) · 6 yds/g over 13.5 wtd games1.3 tgt/g · 0.1 car/g"><span class="dot">0</span><span class="nm">S. Moore <small>WR</small></span></div><div class="gm-fp off r4" style="left: 80%; top: 62%" title="Tucker Kraft TEprojected: 5.8 tgt · 37 rec yds78th pct production among the position&#x27;s starter pool · 49 yds/g over 10.0 wtd games5.9 tgt/g · 0.2 car/g"><span class="dot">78</span><span class="nm">T. Kraft <small>TE</small></span></div><div class="gm-fp off r5" style="left: 93%; top: 63%" title="Christian Watson WRon report – Ankleprojected: 6.9 tgt · 67 rec yds90th pct production among the position&#x27;s starter pool · 77 yds/g over 11.0 wtd games6.9 tgt/g · 0.0 car/g"><span class="dot">90<em>?</em></span><span class="nm">C. Watson <small>WR</small></span></div><div class="gm-fp off r4" style="left: 50%; top: 75%" title="Jordan Love QBon report – Backprojected: 36 att · 264 pass yds66th pct production among the position&#x27;s starter pool · 258 yds/g over 13.5 wtd games33.0 att/g"><span class="dot">66<em>?</em></span><span class="nm">J. Love <small>QB</small></span></div><div class="gm-fp off thin" style="left: 39%; top: 76%" title="MarShawn Lloyd RBprojected: 8.8 car · 29 rush · 2.4 tgt · 11 rec6th pct production among the position&#x27;s starter pool (outside the pool) · 30 yds/g over 6.0 wtd games2.3 tgt/g · 8.0 car/g"><span class="dot">6</span><span class="nm">M. Lloyd <small>RB</small></span></div><div class="gm-fp off ol" style="left: 31%; top: 62%" title="Jordan Morgan Tlast game 96% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LT</span></div><div class="gm-fp off ol" style="left: 40.5%; top: 62%" title="Laken Tomlinson Glast game 96% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LG</span></div><div class="gm-fp off ol" style="left: 50%; top: 62%" title="Sean Rhyan Clast game 96% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">C</span></div><div class="gm-fp off ol" style="left: 59.5%; top: 62%" title="Travis Glover Glast game 96% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RG</span></div><div class="gm-fp off ol" style="left: 69%; top: 62%" title="Anthony Belton Glast game 96% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RT</span></div>
       </div>
     </div>
     
@@ -2383,7 +2962,7 @@
         <div class="gm-ftag top">GB defense</div>
         <div class="gm-los"></div>
         <div class="gm-ftag bot">DET offense</div>
-        <div class="gm-fp def r5" style="left: 26%; top: 51%" title="Lukas Van Ness DEon report – Illnesslast game 55% of snapsEdge · 82nd pct of group · 406 wtd snaps2026 wks 1-6 + ½·2025Pressure rate4.2% lg 3.5%Sack rate1.0% lg 0.9%TFL rate1.5% lg 1.2%Missed tackle %8% lg 9%context (not rated): 4 tgt · 3.1 yds/tgt · 86% comp · aDOT -1.7 · 18 prs · 4.2 sk · 36 tkl / 3 miss"><span class="dot">82<em>?</em></span><span class="nm">L. Van Ness <small>EDGE</small></span></div><div class="gm-fp def r1" style="left: 44%; top: 51%" title="Karl Brooks DTlast game 60% of snapsInterior DL · 1st pct of group · 560 wtd snaps2026 wks 1-6 + ½·2025Pressure rate0.9% lg 1.8%Sack rate0.1% lg 0.5%TFL rate0.5% lg 0.8%Missed tackle %17% lg 11%context (not rated): 2 tgt · 5.3 yds/tgt · 67% comp · aDOT -3.0 · 4 prs · 0.2 sk · 11 tkl / 4 miss · 0 INT · 0 PD"><span class="dot">1</span><span class="nm">K. Brooks <small>DI</small></span></div><div class="gm-fp def r4" style="left: 56%; top: 51%" title="Devonte Wyatt DTlast game 59% of snapsInterior DL · 71st pct of group · 404 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.7% lg 1.8%Sack rate0.8% lg 0.5%TFL rate1.1% lg 0.8%Missed tackle %10% lg 11%context (not rated): 2 tgt · 2.0 yds/tgt · 25% comp · aDOT 1.8 · 6 prs · 4.0 sk · 14 tkl / 2 miss · 0 INT · 1 PD"><span class="dot">71</span><span class="nm">D. Wyatt <small>DI</small></span></div><div class="gm-fp def r2" style="left: 75%; top: 51%" title="Barryn Sorrell DElast game 51% of snapsEdge · 35th pct of group · 293 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.2% lg 3.5%Sack rate0.6% lg 0.9%TFL rate0.8% lg 1.2%Missed tackle %6% lg 9%context (not rated): 0 tgt · 14.0 yds/tgt · 100% comp · aDOT 9.0 · 9 prs · 1.2 sk · 19 tkl / 0 miss"><span class="dot">35</span><span class="nm">B. Sorrell <small>EDGE</small></span></div><div class="gm-fp def r5" style="left: 41%; top: 37%" title="Isaiah McDuffie LBlast game 55% of snapsLinebacker · 83rd pct of group · 372 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.30 lg 0.38Targets drawn5.9% lg 5.6%Missed tackle %7% lg 8%Tackle rate13.6% lg 11.7%TFL rate0.7% lg 0.8%context (not rated): 22 tgt · 4.6 yds/tgt · 67% comp · aDOT 2.1 · 2 prs · 0.5 sk · 54 tkl / 4 miss · 0 INT · 0 PD"><span class="dot">83</span><span class="nm">I. McDuffie <small>LB</small></span></div><div class="gm-fp def thin" style="left: 59%; top: 37%" title="Ty&amp;#x27;Ron Hopper LBlast game 42% of snapsLinebacker · 3rd pct of group · thin sample · 141 wtd snaps2026 wks 1-6 + ½·2025Missed tackle %12% lg 8%Tackle rate10.0% lg 11.7%TFL rate0.6% lg 0.8%context (not rated): 6 tgt · 3.5 yds/tgt · 50% comp · aDOT 5.3 · 0 prs · 12 tkl / 2 miss · 1 INT · 2 PD"><span class="dot">3</span><span class="nm">T. Hopper <small>LB</small></span></div><div class="gm-fp def r3" style="left: 7%; top: 42%" title="Keisean Nixon CBlast game 100% of snapsCornerback · 55th pct of group · 918 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.61 lg 0.66Targets drawn9.9% lg 9.1%Missed tackle %7% lg 10%context (not rated): 92 tgt · 6.0 yds/tgt · 65% comp · aDOT 8.5 · 2 prs · 0.5 sk · 71 tkl / 5 miss · 2 INT · 12 PD"><span class="dot">55</span><span class="nm">K. Nixon <small>CB</small></span></div><div class="gm-fp def r4" style="left: 93%; top: 42%" title="Brandon Cisse CBon report – Shoulderlast game 69% of snapsCornerback · 67th pct of group · 370 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.62 lg 0.66Targets drawn7.2% lg 9.1%Missed tackle %12% lg 10%context (not rated): 24 tgt · 9.3 yds/tgt · 58% comp · aDOT 10.1 · 2 prs · 1.5 sk · 25 tkl / 4 miss · 1 INT · 4 PD"><span class="dot">67<em>?</em></span><span class="nm">B. Cisse <small>CB</small></span></div><div class="gm-fp def r3" style="left: 18%; top: 44%" title="Carrington Valentine CBlast game 33% of snapsCornerback · 44th pct of group · 452 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.60 lg 0.66Targets drawn8.8% lg 9.1%Missed tackle %14% lg 10%context (not rated): 40 tgt · 6.7 yds/tgt · 59% comp · aDOT 9.6 · 0 prs · 20 tkl / 4 miss · 0 INT · 3 PD"><span class="dot">44</span><span class="nm">C. Valentine <small>NB</small></span></div><div class="gm-fp def r5" style="left: 34%; top: 19%" title="Evan Williams Slast game 100% of snapsSafety · 96th pct of group · 872 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.36 lg 0.47Targets drawn5.1% lg 5.6%Missed tackle %5% lg 9%context (not rated): 44 tgt · 6.8 yds/tgt · 57% comp · aDOT 11.8 · 6 prs · 1.0 sk · 89 tkl / 4 miss · 4 INT · 8 PD"><span class="dot">96</span><span class="nm">E. Williams <small>S</small></span></div><div class="gm-fp def r5" style="left: 66%; top: 19%" title="Xavier McKinney Slast game 100% of snapsSafety · 98th pct of group · 938 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.31 lg 0.47Targets drawn3.9% lg 5.6%Missed tackle %7% lg 9%context (not rated): 34 tgt · 7.6 yds/tgt · 58% comp · aDOT 11.5 · 2 prs · 1.5 sk · 68 tkl / 4 miss · 4 INT · 8 PD"><span class="dot">98</span><span class="nm">X. McKinney <small>S</small></span></div>
+        <div class="gm-fp def r5" style="left: 26%; top: 51%" title="Lukas Van Ness DEon report – Illnesslast game 55% of snapsEdge · 83rd pct of group · 406 wtd snaps2026 wks 1-6 + ½·2025Pressure rate4.2% lg 3.5%Sack rate1.0% lg 0.9%TFL rate1.5% lg 1.2%Missed tackle %8% lg 9%context (not rated): 4 tgt · 3.1 yds/tgt · 86% comp · aDOT -1.7 · 18 prs · 4.2 sk · 36 tkl / 3 miss"><span class="dot">83<em>?</em></span><span class="nm">L. Van Ness <small>EDGE</small></span></div><div class="gm-fp def r1" style="left: 44%; top: 51%" title="Karl Brooks DTlast game 60% of snapsInterior DL · 1st pct of group · 560 wtd snaps2026 wks 1-6 + ½·2025Pressure rate0.9% lg 1.8%Sack rate0.1% lg 0.5%TFL rate0.5% lg 0.8%Missed tackle %17% lg 11%context (not rated): 2 tgt · 5.3 yds/tgt · 67% comp · aDOT -3.0 · 4 prs · 0.2 sk · 11 tkl / 4 miss · 0 INT · 0 PD"><span class="dot">1</span><span class="nm">K. Brooks <small>DI</small></span></div><div class="gm-fp def r4" style="left: 56%; top: 51%" title="Devonte Wyatt DTlast game 59% of snapsInterior DL · 71st pct of group · 404 wtd snaps2026 wks 1-6 + ½·2025Pressure rate1.7% lg 1.8%Sack rate0.8% lg 0.5%TFL rate1.1% lg 0.8%Missed tackle %10% lg 11%context (not rated): 2 tgt · 2.0 yds/tgt · 25% comp · aDOT 1.8 · 6 prs · 4.0 sk · 14 tkl / 2 miss · 0 INT · 1 PD"><span class="dot">71</span><span class="nm">D. Wyatt <small>DI</small></span></div><div class="gm-fp def r2" style="left: 75%; top: 51%" title="Barryn Sorrell DElast game 51% of snapsEdge · 36th pct of group · 293 wtd snaps2026 wks 1-6 + ½·2025Pressure rate3.2% lg 3.5%Sack rate0.6% lg 0.9%TFL rate0.8% lg 1.2%Missed tackle %6% lg 9%context (not rated): 0 tgt · 14.0 yds/tgt · 100% comp · aDOT 9.0 · 9 prs · 1.2 sk · 19 tkl / 0 miss"><span class="dot">36</span><span class="nm">B. Sorrell <small>EDGE</small></span></div><div class="gm-fp def r5" style="left: 41%; top: 37%" title="Isaiah McDuffie LBlast game 55% of snapsLinebacker · 82nd pct of group · 372 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.31 lg 0.38Targets drawn5.9% lg 5.6%Missed tackle %7% lg 8%Tackle rate13.7% lg 11.8%TFL rate0.7% lg 0.8%context (not rated): 22 tgt · 4.6 yds/tgt · 67% comp · aDOT 2.1 · 2 prs · 0.5 sk · 54 tkl / 4 miss · 0 INT · 0 PD"><span class="dot">82</span><span class="nm">I. McDuffie <small>LB</small></span></div><div class="gm-fp def thin" style="left: 59%; top: 37%" title="Ty&amp;#x27;Ron Hopper LBlast game 42% of snapsLinebacker · 3rd pct of group · thin sample · 141 wtd snaps2026 wks 1-6 + ½·2025Missed tackle %12% lg 8%Tackle rate10.0% lg 11.8%TFL rate0.6% lg 0.8%context (not rated): 6 tgt · 3.5 yds/tgt · 50% comp · aDOT 5.3 · 0 prs · 12 tkl / 2 miss · 1 INT · 2 PD"><span class="dot">3</span><span class="nm">T. Hopper <small>LB</small></span></div><div class="gm-fp def r3" style="left: 7%; top: 42%" title="Keisean Nixon CBlast game 100% of snapsCornerback · 55th pct of group · 918 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.61 lg 0.66Targets drawn9.9% lg 9.1%Missed tackle %7% lg 10%context (not rated): 92 tgt · 6.0 yds/tgt · 65% comp · aDOT 8.5 · 2 prs · 0.5 sk · 71 tkl / 5 miss · 2 INT · 12 PD"><span class="dot">55</span><span class="nm">K. Nixon <small>CB</small></span></div><div class="gm-fp def r4" style="left: 93%; top: 42%" title="Brandon Cisse CBon report – Shoulderlast game 69% of snapsCornerback · 67th pct of group · 370 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.62 lg 0.66Targets drawn7.2% lg 9.1%Missed tackle %12% lg 10%context (not rated): 24 tgt · 9.3 yds/tgt · 58% comp · aDOT 10.1 · 2 prs · 1.5 sk · 25 tkl / 4 miss · 1 INT · 4 PD"><span class="dot">67<em>?</em></span><span class="nm">B. Cisse <small>CB</small></span></div><div class="gm-fp def r3" style="left: 18%; top: 44%" title="Carrington Valentine CBlast game 33% of snapsCornerback · 44th pct of group · 452 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.60 lg 0.66Targets drawn8.8% lg 9.1%Missed tackle %14% lg 10%context (not rated): 40 tgt · 6.7 yds/tgt · 59% comp · aDOT 9.6 · 0 prs · 20 tkl / 4 miss · 0 INT · 3 PD"><span class="dot">44</span><span class="nm">C. Valentine <small>NB</small></span></div><div class="gm-fp def r5" style="left: 34%; top: 19%" title="Evan Williams Slast game 100% of snapsSafety · 96th pct of group · 872 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.36 lg 0.47Targets drawn5.1% lg 5.6%Missed tackle %5% lg 9%context (not rated): 44 tgt · 6.8 yds/tgt · 57% comp · aDOT 11.8 · 6 prs · 1.0 sk · 89 tkl / 4 miss · 4 INT · 8 PD"><span class="dot">96</span><span class="nm">E. Williams <small>S</small></span></div><div class="gm-fp def r5" style="left: 66%; top: 19%" title="Xavier McKinney Slast game 100% of snapsSafety · 98th pct of group · 938 wtd snaps2026 wks 1-6 + ½·2025Yards allowed / snap0.31 lg 0.47Targets drawn3.9% lg 5.6%Missed tackle %7% lg 9%context (not rated): 34 tgt · 7.6 yds/tgt · 58% comp · aDOT 11.5 · 2 prs · 1.5 sk · 68 tkl / 4 miss · 4 INT · 8 PD"><span class="dot">98</span><span class="nm">X. McKinney <small>S</small></span></div>
         <div class="gm-fp off r5" style="left: 7%; top: 63%" title="Amon-Ra St. Brown WRprojected: 8.8 tgt · 50 rec yds93rd pct production among the position&#x27;s starter pool · 79 yds/g over 13.5 wtd games10.6 tgt/g · 0.1 car/g"><span class="dot">93</span><span class="nm">A. St. Brown <small>WR</small></span></div><div class="gm-fp off r1" style="left: 18%; top: 65%" title="Isaac TeSlaa WRprojected: 3.4 tgt · 25 rec yds9th pct production among the position&#x27;s starter pool · 26 yds/g over 12.0 wtd games2.7 tgt/g · 0.0 car/g"><span class="dot">9</span><span class="nm">I. TeSlaa <small>WR</small></span></div><div class="gm-fp off r5" style="left: 80%; top: 62%" title="Sam LaPorta TEprojected: 5.8 tgt · 40 rec yds91st pct production among the position&#x27;s starter pool · 59 yds/g over 9.5 wtd games6.5 tgt/g · 0.0 car/g"><span class="dot">91</span><span class="nm">S. LaPorta <small>TE</small></span></div><div class="gm-fp off r4" style="left: 93%; top: 63%" title="Jameson Williams WRprojected: 5.0 tgt · 42 rec yds79th pct production among the position&#x27;s starter pool · 62 yds/g over 13.5 wtd games5.9 tgt/g · 0.2 car/g"><span class="dot">79</span><span class="nm">J. Williams <small>WR</small></span></div><div class="gm-fp off r5" style="left: 50%; top: 75%" title="Jared Goff QBprojected: 34 att · 237 pass yds94th pct production among the position&#x27;s starter pool · 282 yds/g over 13.5 wtd games35.6 att/g"><span class="dot">94</span><span class="nm">J. Goff <small>QB</small></span></div><div class="gm-fp off r5" style="left: 39%; top: 76%" title="Jahmyr Gibbs RBprojected: 22.4 car · 99 rush · 6.3 tgt · 38 rec97th pct production among the position&#x27;s starter pool · 123 yds/g over 13.5 wtd games6.0 tgt/g · 16.8 car/g"><span class="dot">97</span><span class="nm">J. Gibbs <small>RB</small></span></div><div class="gm-fp off ol" style="left: 31%; top: 62%" title="Blake Miller Tlast game 90% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LT</span></div><div class="gm-fp off ol" style="left: 40.5%; top: 62%" title="Christian Mahogany OLlast game 90% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">LG</span></div><div class="gm-fp off ol" style="left: 50%; top: 62%" title="Seth McLaughlin Clast game 4% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">C</span></div><div class="gm-fp off ol" style="left: 59.5%; top: 62%" title="Penei Sewell Tlast game 86% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RG</span></div><div class="gm-fp off ol" style="left: 69%; top: 62%" title="Juice Scruggs OLlast game 86% of snaps · linemen are not rated (no line factor survived the O-line study)"><span class="dot">RT</span></div>
       </div>
     </div>
@@ -2394,7 +2973,7 @@
 
 
 
-<details class="hfa-card hfa-sec gm-injuries pp-sec" id="injuries" data-sec="injuries" open>
+<details class="hfa-card hfa-sec gm-injuries pp-sec" id="injuries" data-sec="injuries">
   <summary class="hfa-head pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <div class="hfa-eyebrow">Injury report</div>
@@ -2531,7 +3110,7 @@
           <div><div class="gm-irside off">DET &middot; RB / TE</div><div class="gm-irempty">none listed</div></div>
           <div><div class="gm-irside def">GB &middot; LB</div>
 <div class="gm-ir ">
-  <span class="gm-rate r1" title="19th percentile in the Linebacker group, 2026 wks 1-6 + ½·2025">19</span>
+  <span class="gm-rate r2" title="20th percentile in the Linebacker group, 2026 wks 1-6 + ½·2025">20</span>
   <div class="gm-irm">
     <div class="top"><b>Zaire Franklin</b><span class="flat">LB</span><span class="badge out">Out</span></div>
     <div class="meta">Shin &middot; Did Not Participate In Practice &middot; 100% of snaps last game</div>
@@ -2555,7 +3134,7 @@
 </div>
           <div><div class="gm-irside def">GB &middot; DL</div>
 <div class="gm-ir dim">
-  <span class="gm-rate r5" title="82nd percentile in the Edge group, 2026 wks 1-6 + ½·2025">82</span>
+  <span class="gm-rate r5" title="83rd percentile in the Edge group, 2026 wks 1-6 + ½·2025">83</span>
   <div class="gm-irm">
     <div class="top"><b>Lukas Van Ness</b><span class="flat">LB</span><span class="badge mute">Full practice</span></div>
     <div class="meta">Illness &middot; 55% of snaps last game</div>
@@ -2588,19 +3167,198 @@
 </details>
 
 
-<details class="hfa-card hfa-sec pp-sec pp-unknowns" id="before" data-sec="before" open>
+
+<details class="hfa-card hfa-sec pp-sec rv-grade" id="grade" data-sec="grade" open>
   <summary class="pp-head">
     <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    <span class="pp-headtext"><span class="hfa-eyebrow">Before you bet it</span><span class="pp-h2">Check these first</span></span>
-    <span class="pp-headchips"><span class="badge warn">6 to check</span><span class="pp-open">open</span></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">The grade</span><span class="pp-h2">The projection against the box score</span></span>
+    <span class="pp-headchips"><span class="badge good">projection B &middot; 77</span><span class="pp-open">open</span></span>
   </summary>
   <div class="pp-body">
-    <div class="pp-checks">
-      <div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Kalshi is the market and its player rungs are thin — several of these lines (Lloyd&#x27;s rushing rung in particular) may have little volume behind them; check depth before sizing.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">No market mean is published for any player here, so every gap is read against the model&#x27;s own number plus the exchange&#x27;s over probability.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Aaron Banks is questionable (knee/toe) at left guard after four missed games; if he sits again, Green Bay&#x27;s protection against the league&#x27;s sack leader is worse than the projection assumes, which tempers the Love calls.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Brian Branch was activated Saturday for his first game since last December (Rotowire, Saturday) — his snap count and conditioning are unknown and he is the one piece that could firm up Detroit&#x27;s secondary.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">The Green Bay backfield split: Strong took it over in week 6 (11 carries, 6 targets) ahead of Lloyd, and our week-6 review flagged pre-game committee splits here as unusable.</p><details class="pp-more"><summary>more</summary><p>Confirm inactives.</p></details></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><p class="pp-lead">Bo Melton (back) is questionable; if he sits, Savion Williams absorbs WR3 and return work, a marginal shift away from Kraft&#x27;s underneath targets.</p></div></div>
+    <div class="rv-gradehead">
+      <div class="rv-letter good"><b>B</b><span>77 of 100</span></div>
+      <div class="rv-gradeparts">
+        <div class="rv-part"><span>Team volume &amp; yards</span><div class="rv-bar"><i style="width: 66%"></i></div><b>66</b></div>
+        <div class="rv-part"><span>Player lines <small>23/34 in range</small></span><div class="rv-bar"><i style="width: 78%"></i></div><b>78</b></div>
+        <div class="rv-mkts"><span class="badge good">Winner: DET &#10003;</span><span class="badge good">Spread: GB +3.5 &#10003;</span><span class="badge good">Total: Under 55.5 (proj 55.5) &#10003;</span></div>
+      </div>
     </div>
-    <p class="pp-disclaimer">The plan is a read written from the data as of Sun Oct 25, 1:06 PM Denver; lines, designations and the model's inputs move after that. Nothing here changes a projection or a price, and nothing on this site is betting advice.</p>
+    <div class="pp-card wide"><p class="pp-lead">A B (0.769) that was carried by a perfect market card — DET to win, GB +3.5, Under 55.5 all three hit — and dragged down by team totals that were each about 9-10 points high. The shape of both offenses was close to right (GB 274 pass yards on a 264.5 projection, DET 119 rush yards on 110.1, Gibbs 29 carries against 22.4 projected) and the misses were almost entirely at the goal line: GB took four red-zone trips into one touchdown and zero field goals, Detroit six trips into two touchdowns and two field goals.</p><details class="pp-more"><summary>more</summary><p>The one structural miss was volume shape: GB threw 45 times against 36.1 projected (the only &#x27;big&#x27; flag) because it trailed for 55 of 67 snaps and had no run game, while Detroit threw only 32 times and still got 303 yards on 6-of-9 deep. The player grade (0.78, 23 of 34) was hurt by the same thing in reverse — St. Brown 153 on a 50.4 line, Jameson Williams 91 and two scores on a 41.7 line, both from a passing game the blend had pegged as a low-volume complement.</p></details></div>
+    <div class="rv-teams">
+      
+      <div class="rv-team" style="--pp-team: #203731">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy"><b>Packers</b><span class="flat">projected &rarr; actual</span></div>
+        
+        <div class="rv-trow ">
+          <span>Points</span>
+          <em>26.0</em><i>&#8594;</i><b>17</b>
+          <small class="flat">-9</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 55%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Pass yds</span>
+          <em>264.5</em><i>&#8594;</i><b>274</b>
+          <small class="flat">+9.5</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 94%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Rush yds</span>
+          <em>90.7</em><i>&#8594;</i><b>60</b>
+          <small class="flat">-30.7</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 66%"></i></div>
+        </div>
+        
+        <div class="rv-trow big">
+          <span>Pass att</span>
+          <em>36.1</em><i>&#8594;</i><b>45</b>
+          <small class="up">+8.9</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 44%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Carries</span>
+          <em>24.6</em><i>&#8594;</i><b>19</b>
+          <small class="flat">-5.6</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 60%"></i></div>
+        </div>
+        
+      </div>
+      
+      <div class="rv-team" style="--pp-team: #0076B6">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy"><b>Lions</b><span class="flat">projected &rarr; actual</span></div>
+        
+        <div class="rv-trow ">
+          <span>Points</span>
+          <em>29.5</em><i>&#8594;</i><b>20</b>
+          <small class="flat">-9.5</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 53%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Pass yds</span>
+          <em>237.0</em><i>&#8594;</i><b>303</b>
+          <small class="flat">+66</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 56%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Rush yds</span>
+          <em>110.1</em><i>&#8594;</i><b>119</b>
+          <small class="flat">+8.9</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 90%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Pass att</span>
+          <em>34.3</em><i>&#8594;</i><b>32</b>
+          <small class="flat">-2.3</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 86%"></i></div>
+        </div>
+        
+        <div class="rv-trow ">
+          <span>Carries</span>
+          <em>27.2</em><i>&#8594;</i><b>33</b>
+          <small class="flat">+5.8</small>
+          <div class="rv-bar" title="How close: a full bar is dead on"><i style="width: 59%"></i></div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <div class="rv-two">
+      <div class="rv-list good"><div class="pp-k">Nailed it</div><div class="rv-li"><b>Tucker Kraft</b> <span class="flat">GB &middot; rec</span><span class="rv-nums">4.1 &#8594; <b>4</b></span></div><div class="rv-li"><b>Tucker Kraft</b> <span class="flat">GB &middot; targets</span><span class="rv-nums">5.8 &#8594; <b>6</b></span></div><div class="rv-li"><b>Jahmyr Gibbs</b> <span class="flat">DET &middot; rec</span><span class="rv-nums">4.8 &#8594; <b>5</b></span></div><div class="rv-li"><b>Jordan Love</b> <span class="flat">GB &middot; pass yds</span><span class="rv-nums">264.5 &#8594; <b>274</b></span></div></div>
+      <div class="rv-list bad"><div class="pp-k">Missed most</div><div class="rv-li"><b>Amon-Ra St. Brown</b> <span class="flat">DET &middot; rec yds</span><span class="rv-nums">50.4 &#8594; <b>153</b></span></div><div class="rv-li"><b>Jameson Williams</b> <span class="flat">DET &middot; rec yds</span><span class="rv-nums">41.7 &#8594; <b>91</b></span></div><div class="rv-li"><b>Matthew Golden</b> <span class="flat">GB &middot; rec yds</span><span class="rv-nums">71.1 &#8594; <b>39</b></span></div><div class="rv-li"><b>Sam LaPorta</b> <span class="flat">DET &middot; rec yds</span><span class="rv-nums">40.3 &#8594; <b>18</b></span></div></div>
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">Why it missed</div>
+    <div class="rv-decided">
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy">mixed</span>
+        <p class="pp-lead">26.0 projected points, 17 actual; 45 pass attempts against 36.1</p>
+        <p class="pp-sub">Game script plus finishing.</p>
+        <details class="pp-more"><summary>more</summary><p>GB trailed on 55 of 67 snaps (69.1% pass when trailing) and converted three fourth downs for +4.39, +4.51 and +4.42 EPA to keep drives alive, but the red zone produced -0.629 EPA/play on 11 snaps: 4th-and-4 incomplete at the DET 7 (Q2 4:20, -3.01), a 26-yard miss after a delay of game (Q1 10:26) and a blocked 35-yarder (Q4 3:25).</p></details>
+      </div>
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy">mixed</span>
+        <p class="pp-lead">29.5 projected points, 20 actual, with 303 pass yards against 237 projected</p>
+        <p class="pp-sub">Efficiency up, finishing down.</p>
+        <details class="pp-more"><summary>more</summary><p>Goff posted 0.279 EPA/dropback and 9.5 yards per attempt on 32 throws, but Detroit gave the ball away twice inside scoring range (Gibbs fumble at the GB 6, Q2 0:30, -4.50; Goff aborted snap at his own 41, Q3 14:16, -5.87) and failed on 4th-and-5 at the 6 (Q3 1:09) and 4th-and-1 at its own 24 (Q4 4:53, -3.58).</p></details>
+      </div>
+      
+      <div class="rv-dcard tell">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy">signal</span>
+        <p class="pp-lead">Backfield entirely mis-cast: Strong, Johnson and Brooks projected for 11.8 carries, none played; Josh Jacobs went unprojected for 11 carries, 7 targets, 91 yards and a touchdown</p>
+        <p class="pp-sub">Roster/availability, not modeling.</p>
+        <details class="pp-more"><summary>more</summary><p>Jacobs took 52.2% of snaps and the receiving-back role the projection had split three ways.</p></details>
+      </div>
+      
+      <div class="rv-dcard ">
+        <span class="rv-flag"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy">mixed</span>
+        <p class="pp-lead">LaPorta 2 targets on a 5.8 projection at a 97.1% snap share</p>
+        <p class="pp-sub">Target distribution: St. Brown (11) and Jameson Williams (9) took 56% and 35.9% of the air yards in a 32-attempt game; there was nothing left underneath.</p>
+        
+      </div>
+      
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">What it got right</div>
+    <div class="rv-right"><span><i>&#10003;</i>All three market calls: DET winner, GB +3.5, Under 55.5 (projected total 55.5 exactly, actual 37).</span><span><i>&#10003;</i>Love&#x27;s passing volume and yardage (264.5 proj / 274 actual) and his two touchdowns.</span><span><i>&#10003;</i>Gibbs&#x27; receiving role: 6 targets, 5 catches against 6.3/4.8 projected.</span><span><i>&#10003;</i>Kraft&#x27;s underneath usage: 6 targets, 4 catches against 5.8/4.1.</span><span><i>&#10003;</i>DET rush yards (110.1 proj / 119) and pass attempts (34.3 / 32) — the run-leaning favorite shape was right.</span></div>
+    
   </div>
 </details>
+
+
+
+<details class="hfa-card hfa-sec pp-sec rv-next" id="next" data-sec="next" open>
+  <summary class="pp-head">
+    <span class="pp-chev" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <span class="pp-headtext"><span class="hfa-eyebrow">Next time</span><span class="pp-h2">What carries into the next plan</span></span>
+    <span class="pp-headchips"><span class="badge acc">4 lessons</span><span class="pp-open">open</span></span>
+  </summary>
+  <div class="pp-body">
+    
+    <div class="pp-k">For the next plan on these clubs</div>
+    <div class="pp-checks">
+      <div class="pp-check rv-lesson"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="DET" loading="lazy"><div><p class="pp-lead">Stop tying Goff&#x27;s and St. Brown&#x27;s yardage to attempt volume.</p><details class="pp-more"><summary>more</summary><p>He produced 303 yards and 9.5 Y/A on 32 throws because 9 of them went deep (6 completions, 156 yards); against a defense that concedes chunks, a run-leaning favorite script lowers his attempts without lowering his yards.</p></details></div></div><div class="pp-check rv-lesson"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="GB" loading="lazy"><div><p class="pp-lead">The backfield must be resolved before any line is published — three projected backs did not play and the actual lead back (Jacobs, 52% snaps, 16 touches, a touchdown) had no projection at all.</p></div></div><div class="pp-check rv-lesson"><div><p class="pp-lead">Do not react to the red-zone collapse as a trait.</p><details class="pp-more"><summary>more</summary><p>GB going 1-of-4 and DET 2-of-6 against season rates of 56% and 77%, alongside a missed 26-yarder and a blocked 35-yarder, is 10 trips of noise; the field-EPA figures (GB +0.164, DET +0.089) are the signal to carry forward.</p></details></div></div><div class="pp-check rv-lesson"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="GB" loading="lazy"><div><p class="pp-lead">Downgrade the &#x27;Detroit pass rush ruins Love&#x27; input: one sack and six hits on 46 dropbacks, a 13.0% pressure rate below league.</p><details class="pp-more"><summary>more</summary><p>The plan&#x27;s protection worry cost it nothing here, but it should not be the default caveat on Love volume calls.</p></details></div></div>
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">How each club gets beaten <span class="flat">&middot; this game read with its season so far</span></div>
+    <div class="rv-blueprints">
+      
+      <div class="rv-bp" style="--pp-team: #203731">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/gb.png" alt="" loading="lazy"><b>Packers</b><span class="flat">4-2 entering</span><span class="badge mute">medium confidence</span></div>
+        <div class="rv-recur"><span class="badge bad">third down &times;3</span><span class="badge bad">penalties &times;3</span><span class="badge bad">pre-snap penalties &times;3</span><span class="badge bad">turnovers &times;2</span><span class="badge bad">defensive penalties &times;2</span><span class="badge bad">red zone defense &times;2</span></div>
+        <div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Its own finishing inside the 20</b><p class="pp-sub">Week 1 1-of-4 trips (-1.031 EPA/play), week 3 2-of-4 (-0.486), week 6 2-of-4 with two field goals, this week 1-of-4 (-0.629).</p><details class="pp-more"><summary>more</summary><p>Season red-zone EPA -0.100 against a league constant near zero.</p></details></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>No run game to lean on, forcing one-dimensional volume</b><p class="pp-sub">Season 2.87 YPC and 1.70 yards before contact (league 4.36 / 2.54); negative rush EPA in all six prior weeks; this week 19 carries for 60 (-0.238 EPA/rush, 31.6% success) and a 68.7% pass rate.</p></div></div><div class="rv-facet"><span class="rv-side defense">defense</span><div><b>Explosive passes allowed when the front gets no push</b><p class="pp-sub">Week 3 ATL: 0.338 EPA/dropback allowed, 3 explosives, zero sacks, &#x27;no pass rush&#x27; tagged.</p><details class="pp-more"><summary>more</summary><p>This week: 1 sack, 1 QB hit, 6.1% pressure allowed against Goff, 4 explosive passes and 303 yards.</p></details></div></div><div class="rv-facet"><span class="rv-side both">both</span><div><b>Flags, with the damaging ones in the roughing/interference family</b><p class="pp-sub">12-98 in week 1, 14-133 in week 2, 11-96 in week 6, 8-81 here; &#x27;penalties&#x27; and &#x27;pre-snap penalties&#x27; each recur three times.</p><details class="pp-more"><summary>more</summary><p>The three biggest here (12, 15, 15 yards) were contact fouls on Detroit&#x27;s drives.</p></details></div></div>
+        <div class="pp-expect"><span class="pp-k">What an opponent needs</span><p class="pp-lead">A quarterback who can win from a clean pocket on 9-plus-yard aDOT throws (GB generated one sack and one hit on 33 dropbacks) and a defense that can stand up at its own goal line; a power run game is optional and, on this evidence, not the way in.</p></div>
+      </div>
+      
+      <div class="rv-bp" style="--pp-team: #0076B6">
+        <div class="rv-teamhead"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/det.png" alt="" loading="lazy"><b>Lions</b><span class="flat">3-2 entering</span><span class="badge mute">medium confidence</span></div>
+        <div class="rv-recur"><span class="badge bad">explosive passing &times;4</span><span class="badge bad">red zone defense &times;4</span><span class="badge bad">pre-snap penalties &times;2</span></div>
+        <div class="rv-facet"><span class="rv-side defense">defense</span><div><b>Explosive passes allowed</b><p class="pp-sub">Tagged in weeks 1, 2, 3 and 4 — six 20-plus to NO, five to BUF, six to NYJ, four to CAR; this week GB hit six, including 27 on 4th-and-5 (Q1 12:35) and 28 on 4th-and-3 (Q2 5:56).</p></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Giveaways in scoring position</b><p class="pp-sub">Two here worth -10.4 EPA combined: Gibbs fumbling at the GB 6 (Q2 0:30) and the aborted Goff snap at the DET 41 (Q3 14:16) that produced GB&#x27;s only lead.</p></div></div><div class="rv-facet"><span class="rv-side defense">defense</span><div><b>The run against its front when the opponent can actually run</b><p class="pp-sub">&#x27;Run game&#x27; tagged in week 2 (BUF, +0.330 EPA/rush, 5 explosive runs) and week 4 (CAR, 4 explosive runs).</p><details class="pp-more"><summary>more</summary><p>Green Bay had no such weapon (1 explosive run, -0.238 EPA/rush).</p></details></div></div><div class="rv-facet"><span class="rv-side offense">offense</span><div><b>Going conservative with a lead</b><p class="pp-sub">Leading 34 snaps at 55.9% pass for -0.384 EPA/play; second half 38.5% pass, -0.144 EPA/play after +0.150 in the first.</p><details class="pp-more"><summary>more</summary><p>Two failed fourth downs and two field goals from six red-zone trips.</p></details></div></div>
+        <div class="pp-expect"><span class="pp-k">What an opponent needs</span><p class="pp-lead">A passing offense with aDOT around 10 and the ability to hit 4-plus 20-yard throws (GB had 12 deep attempts, completing 4), plus a kicker and a goal-line package — Detroit will concede the field and make you earn the last 20 yards.</p></div>
+      </div>
+      
+    </div>
+    
+    
+    <div class="pp-k pp-k-sec">Traps <span class="flat">&middot; where a line can fool you next time</span></div>
+    <div class="pp-checks">
+      <div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Totals</span><p class="pp-lead">A high total plus a fast pace is not a scoring environment when both offenses are red-zone negative. 131 combined plays, both teams positive in field EPA, and 37 points total against a 55.5 line — the yardage all showed up, the points did not.</p><p class="pp-sub"><b>Trigger:</b> Both offenses entering with red-zone EPA/play at or below zero (GB -0.100) or sub-60% RZ TD rate, in a dome with a total of 54 or more.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Props</span><p class="pp-lead">Air-yards hogs are not yardage locks. Golden drew 12 targets and 165 air yards (36% share) and finished 6-39 with zero YAC and -8.01 receiving EPA.</p><p class="pp-sub"><b>Trigger:</b> A receiver whose projected yardage comes from deep target share on a QB with negative CPOE (Love -0.5, 4-of-12 deep) — buy the targets prop, fade the yards prop.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Props</span><p class="pp-lead">Quarterback yardage unders built on volume suppression fail when the opponent concedes chunks. Goff threw 32 times — under the plan&#x27;s own range — and still cleared 300 on 9.5 Y/A with 6-of-9 deep completions.</p><p class="pp-sub"><b>Trigger:</b> An under on QB passing yards where the mechanism is attempts, facing a defense that has allowed 4-plus explosive passes in multiple weeks.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Props</span><p class="pp-lead">Verify the backfield before pricing one. The projection split 11.8 carries across three backs who did not play and carried no line at all for Josh Jacobs, who took 52% of snaps and 16 touches for 91 yards and a score.</p><p class="pp-sub"><b>Trigger:</b> Any committee where the dossier&#x27;s projected backs have sub-40% prior snap shares — treat the entire RB slate as unpriced until inactives are confirmed.</p></div></div><div class="pp-check"><i class="pp-ic flag" aria-hidden="true"></i><div><span class="badge mute">Sides</span><p class="pp-lead">A three-point side decided by two roughing-the-passer flags and two missed kicks is not evidence about either team. GB&#x27;s recurring penalty tag is pre-snap (2.33/game); the fouls that cost it the game were contact fouls, which the study says do not persist.</p><p class="pp-sub"><b>Trigger:</b> Before adjusting a team rating after a one-score loss, check whether the decisive penalty yards were pre-snap (keep) or roughness/DPI (discard).</p></div></div>
+    </div>
+    
+    <p class="pp-disclaimer">The plan was a read written before kickoff; the report reads the game after it, from the play-by-play and the box score. Nothing here changes a projection or a price, and nothing on this site is betting advice.</p>
+  </div>
+</details>
+
 
 <div class="pl-modal" id="pl-modal" hidden data-src="/nfl/w/7/g/2026_07_GB_DET/players.html">
   <div class="pl-back"></div>
@@ -2612,7 +3370,7 @@
 </main>
   <footer class="hfa-foot">
     <p><strong>Huffalytics</strong> publishes NFL stats, game projections, team EPA rankings and graded player prop plans priced against Kalshi, rebuilt every week from play-by-play data. <a href="/about/">How the engine works</a>.</p>
-    <p>Data as of Tue Oct 27, 4:04 PM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/nfl/data/week.json">week.json</a> · <a href="/nfl/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
+    <p>Data as of Wed Oct 28, 8:02 AM Denver time. Scores, lines and play-by-play from nflverse; market prices from Kalshi; projections, rankings and grades from the Huffalytics engine. Nothing here is betting advice. <a href="/nfl/data/week.json">week.json</a> · <a href="/nfl/data/rankings.json">rankings.json</a> · <a href="/about/#privacy">Privacy</a> · <a href="/about/#terms">Terms</a> · <a href="mailto:info@huffalytics.com">info@huffalytics.com</a></p>
   </footer>
 </div>
 <script>
