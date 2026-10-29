@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-28T08:02:07.098629-06:00",
+ "as_of": "2026-10-29T07:40:43.466687-06:00",
  "season": 2026,
  "week": 9,
  "slate": {
@@ -305,6 +305,34 @@
    "plan": null
   },
   {
+   "game_id": "2026_09_JAX_BAL",
+   "page": "/nfl/w/9/g/2026_09_JAX_BAL/",
+   "fav": "BAL",
+   "opp": "JAX",
+   "sep": "vs",
+   "status": "tight spread",
+   "is_leg": false,
+   "gameday": "2026-11-05",
+   "kickoff": {
+    "label": "TNF",
+    "title": "Thu Nov 5, 6:15 PM Denver",
+    "sort": "2026-11-05T20:15:00-05:00"
+   },
+   "line": "-3",
+   "total": "48.5",
+   "total_score": null,
+   "total_result": null,
+   "model_margin": "+1.5",
+   "adj_margin": "+1.5",
+   "proj_score": "26–23",
+   "score": null,
+   "played": false,
+   "hit": null,
+   "qb_notes": [],
+   "grade": null,
+   "plan": null
+  },
+  {
    "game_id": "2026_09_BUF_MIN",
    "page": "/nfl/w/9/g/2026_09_BUF_MIN/",
    "fav": "BUF",
@@ -347,12 +375,12 @@
     "sort": "2026-11-08T13:00:00-05:00"
    },
    "line": "-2.5",
-   "total": "43.5",
+   "total": "42.5",
    "total_score": null,
    "total_result": null,
    "model_margin": "-0.8",
    "adj_margin": "-0.8",
-   "proj_score": "23–20",
+   "proj_score": "22–20",
    "score": null,
    "played": false,
    "hit": null,
@@ -381,34 +409,6 @@
    "model_margin": "+0.8",
    "adj_margin": "+0.8",
    "proj_score": "24–21",
-   "score": null,
-   "played": false,
-   "hit": null,
-   "qb_notes": [],
-   "grade": null,
-   "plan": null
-  },
-  {
-   "game_id": "2026_09_JAX_BAL",
-   "page": "/nfl/w/9/g/2026_09_JAX_BAL/",
-   "fav": "BAL",
-   "opp": "JAX",
-   "sep": "vs",
-   "status": "tight spread",
-   "is_leg": false,
-   "gameday": "2026-11-05",
-   "kickoff": {
-    "label": "TNF",
-    "title": "Thu Nov 5, 6:15 PM Denver",
-    "sort": "2026-11-05T20:15:00-05:00"
-   },
-   "line": "-2.5",
-   "total": "48.5",
-   "total_score": null,
-   "total_result": null,
-   "model_margin": "+1.5",
-   "adj_margin": "+1.5",
-   "proj_score": "26–23",
    "score": null,
    "played": false,
    "hit": null,
@@ -494,7 +494,7 @@
     "team": "BAL",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
     "game_id": "2026_09_JAX_BAL",
-    "proj": "17.9",
+    "proj": "18.0",
     "bar": "93",
     "act": null,
     "cls": null,
@@ -502,19 +502,6 @@
    },
    {
     "rank": 5,
-    "pid": "00-0033537",
-    "name": "Deshaun Watson",
-    "team": "CLE",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
-    "game_id": "2026_09_CLE_NO",
-    "proj": "17.6",
-    "bar": "91",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 6,
     "pid": "00-0035228",
     "name": "Kyler Murray",
     "team": "MIN",
@@ -527,7 +514,7 @@
     "inj": null
    },
    {
-    "rank": 7,
+    "rank": 6,
     "pid": "00-0039910",
     "name": "Jayden Daniels",
     "team": "WAS",
@@ -540,11 +527,11 @@
     "inj": null
    },
    {
-    "rank": 8,
-    "pid": "00-0040743",
-    "name": "Tyler Shough",
-    "team": "NO",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
+    "rank": 7,
+    "pid": "00-0033537",
+    "name": "Deshaun Watson",
+    "team": "CLE",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
     "game_id": "2026_09_CLE_NO",
     "proj": "17.4",
     "bar": "90",
@@ -553,7 +540,7 @@
     "inj": null
    },
    {
-    "rank": 9,
+    "rank": 8,
     "pid": "00-0034869",
     "name": "Sam Darnold",
     "team": "SEA",
@@ -566,7 +553,33 @@
     "inj": null
    },
    {
+    "rank": 9,
+    "pid": "00-0040743",
+    "name": "Tyler Shough",
+    "team": "NO",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
+    "game_id": "2026_09_CLE_NO",
+    "proj": "17.2",
+    "bar": "89",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
     "rank": 10,
+    "pid": "00-0033077",
+    "name": "Dak Prescott",
+    "team": "DAL",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
+    "game_id": "2026_09_DAL_IND",
+    "proj": "17.1",
+    "bar": "88",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 11,
     "pid": "00-0038128",
     "name": "Malik Willis",
     "team": "MIA",
@@ -579,7 +592,7 @@
     "inj": null
    },
    {
-    "rank": 11,
+    "rank": 12,
     "pid": "00-0036355",
     "name": "Justin Herbert",
     "team": "LAC",
@@ -592,25 +605,12 @@
     "inj": null
    },
    {
-    "rank": 12,
-    "pid": "00-0033077",
-    "name": "Dak Prescott",
-    "team": "DAL",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
-    "game_id": "2026_09_DAL_IND",
-    "proj": "16.6",
-    "bar": "86",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
     "rank": 13,
-    "pid": "00-0036971",
-    "name": "Trevor Lawrence",
-    "team": "JAX",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
-    "game_id": "2026_09_JAX_BAL",
+    "pid": "00-0033873",
+    "name": "Patrick Mahomes",
+    "team": "KC",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
+    "game_id": "2026_09_NYJ_KC",
     "proj": "16.6",
     "bar": "86",
     "act": null,
@@ -619,12 +619,12 @@
    },
    {
     "rank": 14,
-    "pid": "00-0033873",
-    "name": "Patrick Mahomes",
-    "team": "KC",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
-    "game_id": "2026_09_NYJ_KC",
-    "proj": "16.6",
+    "pid": "00-0036971",
+    "name": "Trevor Lawrence",
+    "team": "JAX",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
+    "game_id": "2026_09_JAX_BAL",
+    "proj": "16.5",
     "bar": "86",
     "act": null,
     "cls": null,
@@ -684,24 +684,24 @@
    },
    {
     "rank": 19,
-    "pid": "00-0039163",
-    "name": "C.J. Stroud",
-    "team": "HOU",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-    "game_id": "2026_09_HOU_LAC",
-    "proj": "15.7",
-    "bar": "81",
+    "pid": "00-0039732",
+    "name": "Bo Nix",
+    "team": "DEN",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/den.png",
+    "game_id": "2026_09_DEN_CAR",
+    "proj": "15.4",
+    "bar": "80",
     "act": null,
     "cls": null,
     "inj": null
    },
    {
     "rank": 20,
-    "pid": "00-0039732",
-    "name": "Bo Nix",
-    "team": "DEN",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/den.png",
-    "game_id": "2026_09_DEN_CAR",
+    "pid": "00-0039163",
+    "name": "C.J. Stroud",
+    "team": "HOU",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+    "game_id": "2026_09_HOU_LAC",
     "proj": "15.4",
     "bar": "80",
     "act": null,
@@ -933,6 +933,19 @@
    },
    {
     "rank": 8,
+    "pid": "00-0036997",
+    "name": "Javonte Williams",
+    "team": "DAL",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
+    "game_id": "2026_09_DAL_IND",
+    "proj": "16.6",
+    "bar": "64",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 9,
     "pid": "00-0036555",
     "name": "Chuba Hubbard",
     "team": "CAR",
@@ -945,7 +958,7 @@
     "inj": null
    },
    {
-    "rank": 9,
+    "rank": 10,
     "pid": "00-0040122",
     "name": "Ashton Jeanty",
     "team": "LV",
@@ -958,7 +971,7 @@
     "inj": null
    },
    {
-    "rank": 10,
+    "rank": 11,
     "pid": "00-0038597",
     "name": "Chase Brown",
     "team": "CIN",
@@ -966,19 +979,6 @@
     "game_id": "2026_09_CIN_ATL",
     "proj": "14.7",
     "bar": "57",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 11,
-    "pid": "00-0036997",
-    "name": "Javonte Williams",
-    "team": "DAL",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
-    "game_id": "2026_09_DAL_IND",
-    "proj": "13.5",
-    "bar": "52",
     "act": null,
     "cls": null,
     "inj": null
@@ -1107,7 +1107,7 @@
     "team": "BAL",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
     "game_id": "2026_09_JAX_BAL",
-    "proj": "10.9",
+    "proj": "11.0",
     "bar": "42",
     "act": null,
     "cls": null,
@@ -1115,32 +1115,19 @@
    },
    {
     "rank": 22,
-    "pid": "00-0040583",
-    "name": "Woody Marks",
-    "team": "HOU",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-    "game_id": "2026_09_HOU_LAC",
-    "proj": "10.8",
-    "bar": "42",
+    "pid": "00-0040784",
+    "name": "Quinshon Judkins",
+    "team": "CLE",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
+    "game_id": "2026_09_CLE_NO",
+    "proj": "10.1",
+    "bar": "39",
     "act": null,
     "cls": null,
     "inj": null
    },
    {
     "rank": 23,
-    "pid": "00-0040784",
-    "name": "Quinshon Judkins",
-    "team": "CLE",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
-    "game_id": "2026_09_CLE_NO",
-    "proj": "10.2",
-    "bar": "40",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 24,
     "pid": "00-0036158",
     "name": "J.K. Dobbins",
     "team": "DEN",
@@ -1153,20 +1140,20 @@
     "inj": null
    },
    {
-    "rank": 25,
+    "rank": 24,
     "pid": "00-0033906",
     "name": "Alvin Kamara",
     "team": "NO",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
     "game_id": "2026_09_CLE_NO",
-    "proj": "9.9",
+    "proj": "9.8",
     "bar": "38",
     "act": null,
     "cls": null,
     "inj": null
    },
    {
-    "rank": 26,
+    "rank": 25,
     "pid": "00-0040198",
     "name": "Ollie Gordon II",
     "team": "MIA",
@@ -1174,6 +1161,19 @@
     "game_id": "2026_09_DET_MIA",
     "proj": "9.8",
     "bar": "38",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 26,
+    "pid": "00-0040583",
+    "name": "Woody Marks",
+    "team": "HOU",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+    "game_id": "2026_09_HOU_LAC",
+    "proj": "9.2",
+    "bar": "36",
     "act": null,
     "cls": null,
     "inj": null
@@ -1276,7 +1276,7 @@
     "team": "NO",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
     "game_id": "2026_09_CLE_NO",
-    "proj": "6.8",
+    "proj": "6.7",
     "bar": "26",
     "act": null,
     "cls": null,
@@ -1284,19 +1284,6 @@
    },
    {
     "rank": 35,
-    "pid": "00-0038705",
-    "name": "Emari Demercado",
-    "team": "DAL",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
-    "game_id": "2026_09_DAL_IND",
-    "proj": "6.6",
-    "bar": "26",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 36,
     "pid": "00-0038454",
     "name": "Keaton Mitchell",
     "team": "LAC",
@@ -1309,20 +1296,7 @@
     "inj": null
    },
    {
-    "rank": 37,
-    "pid": "00-0035685",
-    "name": "David Montgomery",
-    "team": "HOU",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-    "game_id": "2026_09_HOU_LAC",
-    "proj": "6.4",
-    "bar": "25",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 38,
+    "rank": 36,
     "pid": "00-0035537",
     "name": "Ty Johnson",
     "team": "BUF",
@@ -1335,7 +1309,7 @@
     "inj": null
    },
    {
-    "rank": 39,
+    "rank": 37,
     "pid": "00-0037258",
     "name": "Dameon Pierce",
     "team": "PHI",
@@ -1348,7 +1322,7 @@
     "inj": null
    },
    {
-    "rank": 40,
+    "rank": 38,
     "pid": "00-0033526",
     "name": "Samaje Perine",
     "team": "CIN",
@@ -1361,7 +1335,7 @@
     "inj": null
    },
    {
-    "rank": 41,
+    "rank": 39,
     "pid": "00-0040242",
     "name": "Jacory Croskey-Merritt",
     "team": "WAS",
@@ -1374,7 +1348,7 @@
     "inj": null
    },
    {
-    "rank": 42,
+    "rank": 40,
     "pid": "00-0038120",
     "name": "Breece Hall",
     "team": "NYJ",
@@ -1387,7 +1361,7 @@
     "inj": null
    },
    {
-    "rank": 43,
+    "rank": 41,
     "pid": "00-0041052",
     "name": "Kaelon Black",
     "team": "SF",
@@ -1400,7 +1374,7 @@
     "inj": null
    },
    {
-    "rank": 44,
+    "rank": 42,
     "pid": "00-0039391",
     "name": "Kimani Vidal",
     "team": "LAC",
@@ -1413,7 +1387,7 @@
     "inj": null
    },
    {
-    "rank": 45,
+    "rank": 43,
     "pid": "00-0040878",
     "name": "Mike Washington Jr.",
     "team": "LV",
@@ -1426,7 +1400,7 @@
     "inj": null
    },
    {
-    "rank": 46,
+    "rank": 44,
     "pid": "00-0040734",
     "name": "TreVeyon Henderson",
     "team": "NE",
@@ -1439,7 +1413,7 @@
     "inj": null
    },
    {
-    "rank": 47,
+    "rank": 45,
     "pid": "00-0037263",
     "name": "Tyler Allgeier",
     "team": "ARI",
@@ -1447,6 +1421,32 @@
     "game_id": "2026_09_ARI_SEA",
     "proj": "5.6",
     "bar": "22",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 46,
+    "pid": "00-0038705",
+    "name": "Emari Demercado",
+    "team": "HOU",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+    "game_id": "2026_09_HOU_LAC",
+    "proj": "5.5",
+    "bar": "21",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 47,
+    "pid": "00-0035685",
+    "name": "David Montgomery",
+    "team": "HOU",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+    "game_id": "2026_09_HOU_LAC",
+    "proj": "5.5",
+    "bar": "21",
     "act": null,
     "cls": null,
     "inj": null
@@ -1546,6 +1546,19 @@
    },
    {
     "rank": 5,
+    "pid": "00-0036358",
+    "name": "CeeDee Lamb",
+    "team": "DAL",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
+    "game_id": "2026_09_DAL_IND",
+    "proj": "16.1",
+    "bar": "69",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 6,
     "pid": "00-0036963",
     "name": "Amon-Ra St. Brown",
     "team": "DET",
@@ -1558,26 +1571,13 @@
     "inj": null
    },
    {
-    "rank": 6,
+    "rank": 7,
     "pid": "00-0039064",
     "name": "Zay Flowers",
     "team": "BAL",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
     "game_id": "2026_09_JAX_BAL",
-    "proj": "15.9",
-    "bar": "69",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 7,
-    "pid": "00-0039337",
-    "name": "Malik Nabers",
-    "team": "NYG",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
-    "game_id": "2026_09_NYG_PHI",
-    "proj": "15.9",
+    "proj": "16.0",
     "bar": "69",
     "act": null,
     "cls": null,
@@ -1585,13 +1585,13 @@
    },
    {
     "rank": 8,
-    "pid": "00-0036358",
-    "name": "CeeDee Lamb",
-    "team": "DAL",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
-    "game_id": "2026_09_DAL_IND",
-    "proj": "15.3",
-    "bar": "66",
+    "pid": "00-0039337",
+    "name": "Malik Nabers",
+    "team": "NYG",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png",
+    "game_id": "2026_09_NYG_PHI",
+    "proj": "15.9",
+    "bar": "69",
     "act": null,
     "cls": null,
     "inj": null
@@ -1655,7 +1655,7 @@
     "team": "NO",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
     "game_id": "2026_09_CLE_NO",
-    "proj": "13.7",
+    "proj": "13.6",
     "bar": "59",
     "act": null,
     "cls": null,
@@ -1663,6 +1663,19 @@
    },
    {
     "rank": 14,
+    "pid": "00-0037247",
+    "name": "George Pickens",
+    "team": "DAL",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
+    "game_id": "2026_09_DAL_IND",
+    "proj": "13.3",
+    "bar": "57",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 15,
     "pid": "00-0040667",
     "name": "Matthew Golden",
     "team": "GB",
@@ -1675,7 +1688,7 @@
     "inj": null
    },
    {
-    "rank": 15,
+    "rank": 16,
     "pid": "00-0040735",
     "name": "Luther Burden III",
     "team": "CHI",
@@ -1688,27 +1701,14 @@
     "inj": null
    },
    {
-    "rank": 16,
+    "rank": 17,
     "pid": "00-0038606",
     "name": "Parker Washington",
     "team": "JAX",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
     "game_id": "2026_09_JAX_BAL",
-    "proj": "12.9",
+    "proj": "12.8",
     "bar": "55",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 17,
-    "pid": "00-0037247",
-    "name": "George Pickens",
-    "team": "DAL",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
-    "game_id": "2026_09_DAL_IND",
-    "proj": "12.6",
-    "bar": "54",
     "act": null,
     "cls": null,
     "inj": null
@@ -1845,11 +1845,11 @@
    },
    {
     "rank": 28,
-    "pid": "00-0034960",
-    "name": "Jakobi Meyers",
-    "team": "JAX",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
-    "game_id": "2026_09_JAX_BAL",
+    "pid": "00-0037740",
+    "name": "Garrett Wilson",
+    "team": "NYJ",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png",
+    "game_id": "2026_09_NYJ_KC",
     "proj": "10.5",
     "bar": "45",
     "act": null,
@@ -1858,11 +1858,11 @@
    },
    {
     "rank": 29,
-    "pid": "00-0037740",
-    "name": "Garrett Wilson",
-    "team": "NYJ",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png",
-    "game_id": "2026_09_NYJ_KC",
+    "pid": "00-0034960",
+    "name": "Jakobi Meyers",
+    "team": "JAX",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
+    "game_id": "2026_09_JAX_BAL",
     "proj": "10.5",
     "bar": "45",
     "act": null,
@@ -1884,11 +1884,11 @@
    },
    {
     "rank": 31,
-    "pid": "00-0041037",
-    "name": "Denzel Boston",
-    "team": "CLE",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
-    "game_id": "2026_09_CLE_NO",
+    "pid": "00-0039410",
+    "name": "Ryan Flournoy",
+    "team": "DAL",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
+    "game_id": "2026_09_DAL_IND",
     "proj": "10.2",
     "bar": "44",
     "act": null,
@@ -1897,6 +1897,19 @@
    },
    {
     "rank": 32,
+    "pid": "00-0041037",
+    "name": "Denzel Boston",
+    "team": "CLE",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
+    "game_id": "2026_09_CLE_NO",
+    "proj": "10.1",
+    "bar": "44",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 33,
     "pid": "00-0040129",
     "name": "Emeka Egbuka",
     "team": "TB",
@@ -1909,7 +1922,7 @@
     "inj": null
    },
    {
-    "rank": 33,
+    "rank": 34,
     "pid": "00-0037261",
     "name": "Khalil Shakir",
     "team": "BUF",
@@ -1922,25 +1935,12 @@
     "inj": null
    },
    {
-    "rank": 34,
+    "rank": 35,
     "pid": "00-0039919",
     "name": "Rome Odunze",
     "team": "CHI",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
     "game_id": "2026_09_TB_CHI",
-    "proj": "9.7",
-    "bar": "42",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 35,
-    "pid": "00-0039410",
-    "name": "Ryan Flournoy",
-    "team": "DAL",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
-    "game_id": "2026_09_DAL_IND",
     "proj": "9.7",
     "bar": "42",
     "act": null,
@@ -1962,24 +1962,24 @@
    },
    {
     "rank": 37,
-    "pid": "00-0036554",
-    "name": "Nico Collins",
-    "team": "HOU",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-    "game_id": "2026_09_HOU_LAC",
-    "proj": "9.4",
-    "bar": "41",
+    "pid": "00-0038997",
+    "name": "Josh Downs",
+    "team": "IND",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
+    "game_id": "2026_09_DAL_IND",
+    "proj": "9.0",
+    "bar": "39",
     "act": null,
     "cls": null,
     "inj": null
    },
    {
     "rank": 38,
-    "pid": "00-0038997",
-    "name": "Josh Downs",
-    "team": "IND",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
-    "game_id": "2026_09_DAL_IND",
+    "pid": "00-0036554",
+    "name": "Nico Collins",
+    "team": "HOU",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+    "game_id": "2026_09_HOU_LAC",
     "proj": "9.0",
     "bar": "39",
     "act": null,
@@ -2157,19 +2157,6 @@
    },
    {
     "rank": 52,
-    "pid": "00-0038618",
-    "name": "Xavier Hutchinson",
-    "team": "HOU",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-    "game_id": "2026_09_HOU_LAC",
-    "proj": "7.7",
-    "bar": "33",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 53,
     "pid": "00-0034348",
     "name": "Courtland Sutton",
     "team": "DEN",
@@ -2182,7 +2169,7 @@
     "inj": null
    },
    {
-    "rank": 54,
+    "rank": 53,
     "pid": "00-0040867",
     "name": "Makai Lemon",
     "team": "PHI",
@@ -2195,7 +2182,7 @@
     "inj": null
    },
    {
-    "rank": 55,
+    "rank": 54,
     "pid": "00-0038544",
     "name": "Quentin Johnston",
     "team": "LAC",
@@ -2208,20 +2195,20 @@
     "inj": null
    },
    {
-    "rank": 56,
-    "pid": "00-0040138",
-    "name": "Jaylin Noel",
+    "rank": 55,
+    "pid": "00-0038618",
+    "name": "Xavier Hutchinson",
     "team": "HOU",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
     "game_id": "2026_09_HOU_LAC",
-    "proj": "7.2",
+    "proj": "7.3",
     "bar": "31",
     "act": null,
     "cls": null,
     "inj": null
    },
    {
-    "rank": 57,
+    "rank": 56,
     "pid": "00-0035659",
     "name": "Terry McLaurin",
     "team": "WAS",
@@ -2234,7 +2221,7 @@
     "inj": null
    },
    {
-    "rank": 58,
+    "rank": 57,
     "pid": "00-0038393",
     "name": "Dontayvion Wicks",
     "team": "PHI",
@@ -2247,20 +2234,20 @@
     "inj": null
    },
    {
-    "rank": 59,
+    "rank": 58,
     "pid": "00-0036407",
     "name": "Jerry Jeudy",
     "team": "CLE",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
     "game_id": "2026_09_CLE_NO",
-    "proj": "6.9",
-    "bar": "30",
+    "proj": "6.8",
+    "bar": "29",
     "act": null,
     "cls": null,
     "inj": null
    },
    {
-    "rank": 60,
+    "rank": 59,
     "pid": "00-0037545",
     "name": "Rashid Shaheed",
     "team": "SEA",
@@ -2273,12 +2260,25 @@
     "inj": null
    },
    {
-    "rank": 61,
+    "rank": 60,
     "pid": "00-0036550",
     "name": "Rashod Bateman",
     "team": "BAL",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
     "game_id": "2026_09_JAX_BAL",
+    "proj": "6.8",
+    "bar": "29",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 61,
+    "pid": "00-0040138",
+    "name": "Jaylin Noel",
+    "team": "HOU",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+    "game_id": "2026_09_HOU_LAC",
     "proj": "6.8",
     "bar": "29",
     "act": null,
@@ -2378,19 +2378,6 @@
    },
    {
     "rank": 69,
-    "pid": "00-0038608",
-    "name": "Kayshon Boutte",
-    "team": "HOU",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-    "game_id": "2026_09_HOU_LAC",
-    "proj": "5.7",
-    "bar": "24",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 70,
     "pid": "00-0032464",
     "name": "Kalif Raymond",
     "team": "CHI",
@@ -2403,7 +2390,7 @@
     "inj": null
    },
    {
-    "rank": 71,
+    "rank": 70,
     "pid": "00-0037742",
     "name": "Treylon Burks",
     "team": "WAS",
@@ -2416,7 +2403,7 @@
     "inj": null
    },
    {
-    "rank": 72,
+    "rank": 71,
     "pid": "00-0041525",
     "name": "Chris Bell",
     "team": "MIA",
@@ -2424,6 +2411,19 @@
     "game_id": "2026_09_DET_MIA",
     "proj": "5.5",
     "bar": "24",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 72,
+    "pid": "00-0038608",
+    "name": "Kayshon Boutte",
+    "team": "HOU",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+    "game_id": "2026_09_HOU_LAC",
+    "proj": "5.4",
+    "bar": "23",
     "act": null,
     "cls": null,
     "inj": null
@@ -2617,7 +2617,7 @@
     "team": "BAL",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
     "game_id": "2026_09_JAX_BAL",
-    "proj": "4.1",
+    "proj": "4.2",
     "bar": "18",
     "act": null,
     "cls": null,
@@ -2690,19 +2690,6 @@
    },
    {
     "rank": 93,
-    "pid": "00-0038977",
-    "name": "Tank Dell",
-    "team": "HOU",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-    "game_id": "2026_09_HOU_LAC",
-    "proj": "3.8",
-    "bar": "16",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 94,
     "pid": "00-0039893",
     "name": "Brian Thomas Jr.",
     "team": "JAX",
@@ -2715,7 +2702,7 @@
     "inj": null
    },
    {
-    "rank": 95,
+    "rank": 94,
     "pid": "00-0039890",
     "name": "Adonai Mitchell",
     "team": "NYJ",
@@ -2728,7 +2715,7 @@
     "inj": null
    },
    {
-    "rank": 96,
+    "rank": 95,
     "pid": "00-0040590",
     "name": "Konata Mumpfield",
     "team": "LA",
@@ -2741,7 +2728,7 @@
     "inj": null
    },
    {
-    "rank": 97,
+    "rank": 96,
     "pid": "00-0040563",
     "name": "Efton Chism III",
     "team": "NE",
@@ -2754,12 +2741,25 @@
     "inj": null
    },
    {
-    "rank": 98,
+    "rank": 97,
     "pid": "00-0040870",
     "name": "Ja'Kobi Lane",
     "team": "BAL",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
     "game_id": "2026_09_JAX_BAL",
+    "proj": "3.6",
+    "bar": "16",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 98,
+    "pid": "00-0038977",
+    "name": "Tank Dell",
+    "team": "HOU",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+    "game_id": "2026_09_HOU_LAC",
     "proj": "3.6",
     "bar": "16",
     "act": null,
@@ -2827,7 +2827,7 @@
     "team": "JAX",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
     "game_id": "2026_09_JAX_BAL",
-    "proj": "10.5",
+    "proj": "10.4",
     "bar": "78",
     "act": null,
     "cls": null,
@@ -2965,19 +2965,6 @@
    },
    {
     "rank": 14,
-    "pid": "00-0034383",
-    "name": "Dalton Schultz",
-    "team": "HOU",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
-    "game_id": "2026_09_HOU_LAC",
-    "proj": "8.1",
-    "bar": "60",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 15,
     "pid": "00-0037809",
     "name": "Chig Okonkwo",
     "team": "WAS",
@@ -2985,6 +2972,19 @@
     "game_id": "2026_09_LA_WAS",
     "proj": "7.9",
     "bar": "59",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 15,
+    "pid": "00-0034383",
+    "name": "Dalton Schultz",
+    "team": "HOU",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/hou.png",
+    "game_id": "2026_09_HOU_LAC",
+    "proj": "7.7",
+    "bar": "58",
     "act": null,
     "cls": null,
     "inj": null
@@ -3113,22 +3113,22 @@
    },
    {
     "rank": 6,
-    "name": "DET",
+    "name": "NO",
     "team": "",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png",
-    "game_id": "2026_09_DET_MIA",
-    "proj": "20.2",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
+    "game_id": "2026_09_CLE_NO",
+    "proj": "20.0",
     "bar": null,
     "act": null,
     "cls": null
    },
    {
     "rank": 7,
-    "name": "NO",
+    "name": "DET",
     "team": "",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/no.png",
-    "game_id": "2026_09_CLE_NO",
-    "proj": "20.5",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png",
+    "game_id": "2026_09_DET_MIA",
+    "proj": "20.2",
     "bar": null,
     "act": null,
     "cls": null
@@ -3201,6 +3201,17 @@
    },
    {
     "rank": 14,
+    "name": "CLE",
+    "team": "",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
+    "game_id": "2026_09_CLE_NO",
+    "proj": "22.5",
+    "bar": null,
+    "act": null,
+    "cls": null
+   },
+   {
+    "rank": 15,
     "name": "LAC",
     "team": "",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lac.png",
@@ -3211,23 +3222,12 @@
     "cls": null
    },
    {
-    "rank": 15,
-    "name": "CLE",
-    "team": "",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
-    "game_id": "2026_09_CLE_NO",
-    "proj": "23.0",
-    "bar": null,
-    "act": null,
-    "cls": null
-   },
-   {
     "rank": 16,
     "name": "BAL",
     "team": "",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
     "game_id": "2026_09_JAX_BAL",
-    "proj": "23.0",
+    "proj": "22.8",
     "bar": null,
     "act": null,
     "cls": null
@@ -3293,7 +3293,7 @@
     "team": "",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
     "game_id": "2026_09_JAX_BAL",
-    "proj": "25.5",
+    "proj": "25.8",
     "bar": null,
     "act": null,
     "cls": null
