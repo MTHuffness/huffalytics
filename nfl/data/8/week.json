@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-29T16:47:22.404948-06:00",
+ "as_of": "2026-10-29T17:01:01.497383-06:00",
  "season": 2026,
  "week": 8,
  "slate": {
@@ -246,7 +246,16 @@
    "hit": null,
    "qb_notes": [],
    "grade": null,
-   "plan": null
+   "plan": {
+    "calls": 12,
+    "calls_by_dir": {
+     "over": 6,
+     "under": 6
+    },
+    "records": null,
+    "records_by_dir": null,
+    "verdict": ""
+   }
   },
   {
    "game_id": "2026_08_CHI_SEA",
@@ -417,7 +426,124 @@
    "plan": null
   }
  ],
- "plan_summary": null,
+ "plan_summary": {
+  "plans": 1,
+  "calls": 12,
+  "graded": 0,
+  "all": [
+   {
+    "key": "normal",
+    "label": "Normal",
+    "note": "the line the plan called",
+    "hits": 0,
+    "misses": 0,
+    "voids": 0,
+    "games": 0,
+    "graded": false,
+    "pct": null
+   },
+   {
+    "key": "edge",
+    "label": "Edge",
+    "note": "the Kalshi rung nearest halfway between the plan's line and the ladder's last rung",
+    "hits": 0,
+    "misses": 0,
+    "voids": 0,
+    "games": 0,
+    "graded": false,
+    "pct": null
+   },
+   {
+    "key": "edge_plus",
+    "label": "Edge+",
+    "note": "the last rung of the Kalshi ladder on the easy side",
+    "hits": 0,
+    "misses": 0,
+    "voids": 0,
+    "games": 0,
+    "graded": false,
+    "pct": null
+   }
+  ],
+  "sides": {
+   "over": {
+    "calls": 6,
+    "levels": [
+     {
+      "key": "normal",
+      "label": "Normal",
+      "note": "the line the plan called",
+      "hits": 0,
+      "misses": 0,
+      "voids": 0,
+      "games": 0,
+      "graded": false,
+      "pct": null
+     },
+     {
+      "key": "edge",
+      "label": "Edge",
+      "note": "the Kalshi rung nearest halfway between the plan's line and the ladder's last rung",
+      "hits": 0,
+      "misses": 0,
+      "voids": 0,
+      "games": 0,
+      "graded": false,
+      "pct": null
+     },
+     {
+      "key": "edge_plus",
+      "label": "Edge+",
+      "note": "the last rung of the Kalshi ladder on the easy side",
+      "hits": 0,
+      "misses": 0,
+      "voids": 0,
+      "games": 0,
+      "graded": false,
+      "pct": null
+     }
+    ]
+   },
+   "under": {
+    "calls": 6,
+    "levels": [
+     {
+      "key": "normal",
+      "label": "Normal",
+      "note": "the line the plan called",
+      "hits": 0,
+      "misses": 0,
+      "voids": 0,
+      "games": 0,
+      "graded": false,
+      "pct": null
+     },
+     {
+      "key": "edge",
+      "label": "Edge",
+      "note": "the Kalshi rung nearest halfway between the plan's line and the ladder's last rung",
+      "hits": 0,
+      "misses": 0,
+      "voids": 0,
+      "games": 0,
+      "graded": false,
+      "pct": null
+     },
+     {
+      "key": "edge_plus",
+      "label": "Edge+",
+      "note": "the last rung of the Kalshi ladder on the easy side",
+      "hits": 0,
+      "misses": 0,
+      "voids": 0,
+      "games": 0,
+      "graded": false,
+      "pct": null
+     }
+    ]
+   }
+  }
+ },
  "leaders": {
   "QB": [
    {
