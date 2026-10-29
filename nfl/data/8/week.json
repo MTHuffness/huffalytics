@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-29T07:40:43.466687-06:00",
+ "as_of": "2026-10-29T16:47:22.404948-06:00",
  "season": 2026,
  "week": 8,
  "slate": {
@@ -24,6 +24,34 @@
   }
  },
  "games": [
+  {
+   "game_id": "2026_08_TEN_CIN",
+   "page": "/nfl/w/8/g/2026_08_TEN_CIN/",
+   "fav": "CIN",
+   "opp": "TEN",
+   "sep": "vs",
+   "status": "leg",
+   "is_leg": true,
+   "gameday": "2026-11-01",
+   "kickoff": {
+    "label": "11:00am",
+    "title": "Sun Nov 1, 11:00 AM Denver",
+    "sort": "2026-11-01T13:00:00-05:00"
+   },
+   "line": "-11.5",
+   "total": "46.5",
+   "total_score": null,
+   "total_result": null,
+   "model_margin": "+14.1",
+   "adj_margin": "+14.8",
+   "proj_score": "29–18",
+   "score": null,
+   "played": false,
+   "hit": null,
+   "qb_notes": [],
+   "grade": null,
+   "plan": null
+  },
   {
    "game_id": "2026_08_IND_JAX",
    "page": "/nfl/w/8/g/2026_08_IND_JAX/",
@@ -53,34 +81,6 @@
    "plan": null
   },
   {
-   "game_id": "2026_08_TEN_CIN",
-   "page": "/nfl/w/8/g/2026_08_TEN_CIN/",
-   "fav": "CIN",
-   "opp": "TEN",
-   "sep": "vs",
-   "status": "leg",
-   "is_leg": true,
-   "gameday": "2026-11-01",
-   "kickoff": {
-    "label": "11:00am",
-    "title": "Sun Nov 1, 11:00 AM Denver",
-    "sort": "2026-11-01T13:00:00-05:00"
-   },
-   "line": "-10",
-   "total": "46.5",
-   "total_score": null,
-   "total_result": null,
-   "model_margin": "+14.1",
-   "adj_margin": "+14.1",
-   "proj_score": "28–18",
-   "score": null,
-   "played": false,
-   "hit": null,
-   "qb_notes": [],
-   "grade": null,
-   "plan": null
-  },
-  {
    "game_id": "2026_08_NE_MIA",
    "page": "/nfl/w/8/g/2026_08_NE_MIA/",
    "fav": "NE",
@@ -99,7 +99,7 @@
    "total_score": null,
    "total_result": null,
    "model_margin": "+4.9",
-   "adj_margin": "+5.4",
+   "adj_margin": "+5.1",
    "proj_score": "25–18",
    "score": null,
    "played": false,
@@ -127,7 +127,7 @@
    "total_score": null,
    "total_result": null,
    "model_margin": "+4.8",
-   "adj_margin": "+6.3",
+   "adj_margin": "+6.2",
    "proj_score": "31–24",
    "score": null,
    "played": false,
@@ -183,7 +183,7 @@
    "total_score": null,
    "total_result": null,
    "model_margin": "+2.9",
-   "adj_margin": "+3.2",
+   "adj_margin": "+3.7",
    "proj_score": "23–17",
    "score": null,
    "played": false,
@@ -211,7 +211,7 @@
    "total_score": null,
    "total_result": null,
    "model_margin": "+2.9",
-   "adj_margin": "+2.9",
+   "adj_margin": "+2.6",
    "proj_score": "22–18",
    "score": null,
    "played": false,
@@ -235,12 +235,12 @@
     "sort": "2026-10-29T20:15:00-04:00"
    },
    "line": "-3.5",
-   "total": "47.5",
+   "total": "46.5",
    "total_score": null,
    "total_result": null,
    "model_margin": "+4.3",
    "adj_margin": "+3.3",
-   "proj_score": "26–22",
+   "proj_score": "25–22",
    "score": null,
    "played": false,
    "hit": null,
@@ -295,7 +295,7 @@
    "total_score": null,
    "total_result": null,
    "model_margin": "-0.7",
-   "adj_margin": "-1.6",
+   "adj_margin": "-0.1",
    "proj_score": "25–22",
    "score": null,
    "played": false,
@@ -323,7 +323,7 @@
    "total_score": null,
    "total_result": null,
    "model_margin": "+2.4",
-   "adj_margin": "+1.4",
+   "adj_margin": "+1.2",
    "proj_score": "29–26",
    "score": null,
    "played": false,
@@ -407,7 +407,7 @@
    "total_score": null,
    "total_result": null,
    "model_margin": "+1.1",
-   "adj_margin": "+1.2",
+   "adj_margin": "+1.0",
    "proj_score": "24–22",
    "score": null,
    "played": false,
@@ -444,8 +444,8 @@
     "team": "CIN",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
     "game_id": "2026_08_TEN_CIN",
-    "proj": "19.8",
-    "bar": "95",
+    "proj": "20.0",
+    "bar": "96",
     "act": null,
     "cls": null,
     "inj": null
@@ -457,8 +457,8 @@
     "team": "NE",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
     "game_id": "2026_08_NE_MIA",
-    "proj": "19.4",
-    "bar": "93",
+    "proj": "19.5",
+    "bar": "94",
     "act": null,
     "cls": null,
     "inj": {
@@ -481,7 +481,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Full Participation in Practice · Ankle · via Sleeper · as of Thu 10/29 7:20 AM"
+     "title": "Questionable · Full Participation in Practice · Ankle · via Sleeper · as of Thu 10/29 4:20 PM"
     }
    },
    {
@@ -504,7 +504,7 @@
     "team": "JAX",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
     "game_id": "2026_08_IND_JAX",
-    "proj": "18.1",
+    "proj": "18.2",
     "bar": "87",
     "act": null,
     "cls": null,
@@ -551,19 +551,6 @@
    },
    {
     "rank": 10,
-    "pid": "00-0036264",
-    "name": "Jordan Love",
-    "team": "GB",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
-    "game_id": "2026_08_CAR_GB",
-    "proj": "16.6",
-    "bar": "80",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 11,
     "pid": "00-0034869",
     "name": "Sam Darnold",
     "team": "SEA",
@@ -576,13 +563,26 @@
     "inj": null
    },
    {
+    "rank": 11,
+    "pid": "00-0036264",
+    "name": "Jordan Love",
+    "team": "GB",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
+    "game_id": "2026_08_CAR_GB",
+    "proj": "16.4",
+    "bar": "79",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
     "rank": 12,
     "pid": "00-0038128",
     "name": "Malik Willis",
     "team": "MIA",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
     "game_id": "2026_08_NE_MIA",
-    "proj": "16.1",
+    "proj": "16.2",
     "bar": "78",
     "act": null,
     "cls": null,
@@ -659,12 +659,12 @@
    },
    {
     "rank": 18,
-    "pid": "00-0039150",
-    "name": "Bryce Young",
-    "team": "CAR",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/car.png",
-    "game_id": "2026_08_CAR_GB",
-    "proj": "15.2",
+    "pid": "00-0033873",
+    "name": "Patrick Mahomes",
+    "team": "KC",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
+    "game_id": "2026_08_KC_DEN",
+    "proj": "15.1",
     "bar": "73",
     "act": null,
     "cls": null,
@@ -676,13 +676,13 @@
    },
    {
     "rank": 19,
-    "pid": "00-0033873",
-    "name": "Patrick Mahomes",
-    "team": "KC",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
-    "game_id": "2026_08_KC_DEN",
+    "pid": "00-0039150",
+    "name": "Bryce Young",
+    "team": "CAR",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/car.png",
+    "game_id": "2026_08_CAR_GB",
     "proj": "15.1",
-    "bar": "73",
+    "bar": "72",
     "act": null,
     "cls": null,
     "inj": {
@@ -754,8 +754,8 @@
     "team": "TEN",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
     "game_id": "2026_08_TEN_CIN",
-    "proj": "12.8",
-    "bar": "62",
+    "proj": "12.6",
+    "bar": "61",
     "act": null,
     "cls": null,
     "inj": null
@@ -793,7 +793,7 @@
     "team": "ATL",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
     "game_id": "2026_08_ATL_TB",
-    "proj": "12.3",
+    "proj": "12.4",
     "bar": "59",
     "act": null,
     "cls": null,
@@ -806,7 +806,7 @@
     "team": "IND",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
     "game_id": "2026_08_IND_JAX",
-    "proj": "11.8",
+    "proj": "11.9",
     "bar": "57",
     "act": null,
     "cls": null,
@@ -856,9 +856,9 @@
     "act": null,
     "cls": null,
     "inj": {
-     "label": "Q",
+     "label": "DNP",
      "cls": "text-bg-warning",
-     "title": "Questionable · Did Not Participate In Practice · Shoulder · via Sleeper · as of Wed 10/28 3:05 PM"
+     "title": "Did not practice · Shoulder"
     }
    },
    {
@@ -902,12 +902,12 @@
    },
    {
     "rank": 5,
-    "pid": "00-0037840",
-    "name": "Kyren Williams",
-    "team": "LA",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png",
-    "game_id": "2026_08_LAC_LA",
-    "proj": "19.1",
+    "pid": "00-0038542",
+    "name": "Bijan Robinson",
+    "team": "ATL",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
+    "game_id": "2026_08_ATL_TB",
+    "proj": "19.2",
     "bar": "83",
     "act": null,
     "cls": null,
@@ -915,13 +915,13 @@
    },
    {
     "rank": 6,
-    "pid": "00-0038542",
-    "name": "Bijan Robinson",
-    "team": "ATL",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
-    "game_id": "2026_08_ATL_TB",
+    "pid": "00-0037840",
+    "name": "Kyren Williams",
+    "team": "LA",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lar.png",
+    "game_id": "2026_08_LAC_LA",
     "proj": "19.1",
-    "bar": "82",
+    "bar": "83",
     "act": null,
     "cls": null,
     "inj": null
@@ -946,7 +946,7 @@
     "team": "IND",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
     "game_id": "2026_08_IND_JAX",
-    "proj": "17.1",
+    "proj": "17.2",
     "bar": "74",
     "act": null,
     "cls": null,
@@ -959,7 +959,7 @@
     "team": "CAR",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/car.png",
     "game_id": "2026_08_CAR_GB",
-    "proj": "17.0",
+    "proj": "16.9",
     "bar": "73",
     "act": null,
     "cls": null,
@@ -985,7 +985,7 @@
     "team": "CIN",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
     "game_id": "2026_08_TEN_CIN",
-    "proj": "16.2",
+    "proj": "16.3",
     "bar": "70",
     "act": null,
     "cls": null,
@@ -998,8 +998,8 @@
     "team": "TEN",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
     "game_id": "2026_08_TEN_CIN",
-    "proj": "16.0",
-    "bar": "69",
+    "proj": "15.8",
+    "bar": "68",
     "act": null,
     "cls": null,
     "inj": null
@@ -1018,7 +1018,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Back · via Sleeper · as of Wed 10/28 7:35 PM"
+     "title": "Questionable · Did Not Participate In Practice · Hamstring · via Sleeper · as of Thu 10/29 3:55 PM"
     }
    },
    {
@@ -1033,9 +1033,9 @@
     "act": null,
     "cls": null,
     "inj": {
-     "label": "Q",
-     "cls": "text-bg-warning",
-     "title": "Questionable · Limited Participation in Practice · Ankle · via Sleeper · as of Wed 10/28 11:25 AM"
+     "label": "LP",
+     "cls": "text-bg-secondary",
+     "title": "Limited practice · Ankle"
     }
    },
    {
@@ -1046,7 +1046,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
     "game_id": "2026_08_IND_JAX",
     "proj": "14.0",
-    "bar": "60",
+    "bar": "61",
     "act": null,
     "cls": null,
     "inj": null
@@ -1091,7 +1091,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Did Not Participate In Practice · Knee · via Sleeper · as of Wed 10/28 12:25 PM"
+     "title": "Questionable · Did Not Participate In Practice · Knee · via Sleeper · as of Thu 10/29 4:05 PM"
     }
    },
    {
@@ -1131,7 +1131,11 @@
     "bar": "51",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Knee · via Sleeper · as of Thu 10/29 3:35 PM"
+    }
    },
    {
     "rank": 22,
@@ -1249,7 +1253,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
     "game_id": "2026_08_CAR_GB",
     "proj": "8.7",
-    "bar": "38",
+    "bar": "37",
     "act": null,
     "cls": null,
     "inj": null
@@ -1281,7 +1285,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Toe · via Sleeper · as of Wed 10/28 4:10 PM"
+     "title": "Questionable · Toe · via Sleeper · as of Thu 10/29 3:50 PM"
     }
    },
    {
@@ -1315,7 +1319,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Limited Participation in Practice · Quadricep · via Sleeper · as of Wed 10/28 11:25 AM"
+     "title": "Questionable · Limited Participation in Practice · Quadricep · via Sleeper · as of Thu 10/29 4:35 PM"
     }
    },
    {
@@ -1325,8 +1329,8 @@
     "team": "CIN",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
     "game_id": "2026_08_TEN_CIN",
-    "proj": "6.8",
-    "bar": "29",
+    "proj": "6.9",
+    "bar": "30",
     "act": null,
     "cls": null,
     "inj": null
@@ -1394,7 +1398,11 @@
     "bar": "26",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Ankle · via Sleeper · as of Thu 10/29 4:15 PM"
+    }
    },
    {
     "rank": 41,
@@ -1449,7 +1457,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Did Not Participate In Practice · Hip · via Sleeper · as of Wed 10/28 3:35 PM"
+     "title": "Questionable · Did Not Participate In Practice · Hip · via Sleeper · as of Thu 10/29 3:05 PM"
     }
    },
    {
@@ -1518,7 +1526,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Did Not Participate In Practice · Knee · via Sleeper · as of Wed 10/28 3:25 PM"
+     "title": "Questionable · Did Not Participate In Practice · Knee · via Sleeper · as of Thu 10/29 12:05 PM"
     }
    },
    {
@@ -1569,8 +1577,8 @@
     "team": "CIN",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
     "game_id": "2026_08_TEN_CIN",
-    "proj": "17.6",
-    "bar": "76",
+    "proj": "17.7",
+    "bar": "77",
     "act": null,
     "cls": null,
     "inj": null
@@ -1608,8 +1616,8 @@
     "team": "ATL",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
     "game_id": "2026_08_ATL_TB",
-    "proj": "15.7",
-    "bar": "68",
+    "proj": "15.8",
+    "bar": "69",
     "act": null,
     "cls": null,
     "inj": null
@@ -1634,35 +1642,18 @@
     "team": "CIN",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
     "game_id": "2026_08_TEN_CIN",
-    "proj": "15.5",
-    "bar": "67",
+    "proj": "15.6",
+    "bar": "68",
     "act": null,
     "cls": null,
     "inj": {
-     "label": "Q",
+     "label": "DNP",
      "cls": "text-bg-warning",
-     "title": "Questionable · Did Not Participate In Practice · Not injury related - resting player · via Sleeper · as of Wed 10/28 3:55 PM"
+     "title": "Did not practice · Not injury related - resting player"
     }
    },
    {
     "rank": 9,
-    "pid": "00-0041438",
-    "name": "Carnell Tate",
-    "team": "TEN",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
-    "game_id": "2026_08_TEN_CIN",
-    "proj": "15.4",
-    "bar": "67",
-    "act": null,
-    "cls": null,
-    "inj": {
-     "label": "Q",
-     "cls": "text-bg-warning",
-     "title": "Questionable · Did Not Participate In Practice · Shoulder · via Sleeper · as of Wed 10/28 11:30 AM"
-    }
-   },
-   {
-    "rank": 10,
     "pid": "00-0036963",
     "name": "Amon-Ra St. Brown",
     "team": "DET",
@@ -1673,9 +1664,26 @@
     "act": null,
     "cls": null,
     "inj": {
+     "label": "DNP",
+     "cls": "text-bg-warning",
+     "title": "Did not practice · Ankle"
+    }
+   },
+   {
+    "rank": 10,
+    "pid": "00-0041438",
+    "name": "Carnell Tate",
+    "team": "TEN",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
+    "game_id": "2026_08_TEN_CIN",
+    "proj": "15.3",
+    "bar": "66",
+    "act": null,
+    "cls": null,
+    "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Did Not Participate In Practice · Ankle · via Sleeper · as of Wed 10/28 3:15 PM"
+     "title": "Questionable · Did Not Participate In Practice · Shoulder · via Sleeper · as of Thu 10/29 11:45 AM"
     }
    },
    {
@@ -1692,7 +1700,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Limited Participation in Practice · Ribs · via Sleeper · as of Wed 10/28 9:15 PM"
+     "title": "Questionable · Limited Participation in Practice · Ribs · via Sleeper · as of Thu 10/29 4:30 PM"
     }
    },
    {
@@ -1715,14 +1723,14 @@
     "team": "GB",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
     "game_id": "2026_08_CAR_GB",
-    "proj": "14.3",
+    "proj": "14.2",
     "bar": "62",
     "act": null,
     "cls": null,
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Limited Participation in Practice · Shoulder · via Sleeper · as of Thu 10/29 7:25 AM"
+     "title": "Questionable · Limited Participation in Practice · Shoulder · via Sleeper · as of Thu 10/29 11:20 AM"
     }
    },
    {
@@ -1739,38 +1747,38 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Limited Participation in Practice · Shoulder · via Sleeper · as of Wed 10/28 8:20 PM"
+     "title": "Questionable · Limited Participation in Practice · Shoulder · via Sleeper · as of Thu 10/29 3:20 PM"
     }
    },
    {
     "rank": 15,
-    "pid": "00-0038124",
-    "name": "Christian Watson",
-    "team": "GB",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
-    "game_id": "2026_08_CAR_GB",
-    "proj": "13.4",
-    "bar": "58",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 16,
     "pid": "00-0039880",
     "name": "Malik Washington",
     "team": "MIA",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
     "game_id": "2026_08_NE_MIA",
-    "proj": "13.3",
+    "proj": "13.4",
     "bar": "58",
     "act": null,
     "cls": null,
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Limited Participation in Practice · Knee · via Sleeper · as of Wed 10/28 3:05 PM"
+     "title": "Questionable · Limited Participation in Practice · Knee · via Sleeper · as of Thu 10/29 2:25 PM"
     }
+   },
+   {
+    "rank": 16,
+    "pid": "00-0038124",
+    "name": "Christian Watson",
+    "team": "GB",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
+    "game_id": "2026_08_CAR_GB",
+    "proj": "13.3",
+    "bar": "58",
+    "act": null,
+    "cls": null,
+    "inj": null
    },
    {
     "rank": 17,
@@ -1779,7 +1787,7 @@
     "team": "JAX",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
     "game_id": "2026_08_IND_JAX",
-    "proj": "13.1",
+    "proj": "13.2",
     "bar": "57",
     "act": null,
     "cls": null,
@@ -1799,7 +1807,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Hamstring · via Sleeper · as of Wed 10/28 7:40 PM"
+     "title": "Questionable · Did Not Participate In Practice · Hamstring · via Sleeper · as of Thu 10/29 4:00 PM"
     }
    },
    {
@@ -1809,8 +1817,8 @@
     "team": "TB",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/tb.png",
     "game_id": "2026_08_ATL_TB",
-    "proj": "12.7",
-    "bar": "55",
+    "proj": "12.8",
+    "bar": "56",
     "act": null,
     "cls": null,
     "inj": null
@@ -1853,9 +1861,9 @@
     "act": null,
     "cls": null,
     "inj": {
-     "label": "Q",
+     "label": "DNP",
      "cls": "text-bg-warning",
-     "title": "Questionable · Did Not Participate In Practice · Hand · via Sleeper · as of Wed 10/28 9:00 PM"
+     "title": "Did not practice · Hand"
     }
    },
    {
@@ -1872,7 +1880,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Did Not Participate In Practice · Chest · via Sleeper · as of Wed 10/28 7:45 PM"
+     "title": "Questionable · Did Not Participate In Practice · Chest · via Sleeper · as of Thu 10/29 4:10 PM"
     }
    },
    {
@@ -1922,17 +1930,34 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
     "game_id": "2026_08_IND_JAX",
     "proj": "10.7",
+    "bar": "47",
+    "act": null,
+    "cls": null,
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Limited Participation in Practice · Hamstring · via Sleeper · as of Thu 10/29 2:15 PM"
+    }
+   },
+   {
+    "rank": 28,
+    "pid": "00-0040129",
+    "name": "Emeka Egbuka",
+    "team": "TB",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/tb.png",
+    "game_id": "2026_08_ATL_TB",
+    "proj": "10.6",
     "bar": "46",
     "act": null,
     "cls": null,
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Limited Participation in Practice · Hamstring · via Sleeper · as of Wed 10/28 2:35 PM"
+     "title": "Questionable · Limited Participation in Practice · Concussion · via Sleeper · as of Thu 10/29 3:40 PM"
     }
    },
    {
-    "rank": 28,
+    "rank": 29,
     "pid": "00-0037261",
     "name": "Khalil Shakir",
     "team": "BUF",
@@ -1945,29 +1970,12 @@
     "inj": null
    },
    {
-    "rank": 29,
-    "pid": "00-0040129",
-    "name": "Emeka Egbuka",
-    "team": "TB",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/tb.png",
-    "game_id": "2026_08_ATL_TB",
-    "proj": "10.5",
-    "bar": "46",
-    "act": null,
-    "cls": null,
-    "inj": {
-     "label": "Q",
-     "cls": "text-bg-warning",
-     "title": "Questionable · Limited Participation in Practice · Concussion · via Sleeper · as of Wed 10/28 2:45 PM"
-    }
-   },
-   {
     "rank": 30,
-    "pid": "00-0039410",
-    "name": "Ryan Flournoy",
-    "team": "DAL",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
-    "game_id": "2026_08_ARI_DAL",
+    "pid": "00-0038621",
+    "name": "DeMario Douglas",
+    "team": "NE",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
+    "game_id": "2026_08_NE_MIA",
     "proj": "10.5",
     "bar": "46",
     "act": null,
@@ -1976,13 +1984,13 @@
    },
    {
     "rank": 31,
-    "pid": "00-0038621",
-    "name": "DeMario Douglas",
-    "team": "NE",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
-    "game_id": "2026_08_NE_MIA",
+    "pid": "00-0039410",
+    "name": "Ryan Flournoy",
+    "team": "DAL",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png",
+    "game_id": "2026_08_ARI_DAL",
     "proj": "10.5",
-    "bar": "45",
+    "bar": "46",
     "act": null,
     "cls": null,
     "inj": null
@@ -2015,11 +2023,11 @@
    },
    {
     "rank": 34,
-    "pid": "00-0041489",
-    "name": "Germie Bernard",
-    "team": "PIT",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
-    "game_id": "2026_08_CLE_PIT",
+    "pid": "00-0041523",
+    "name": "Caleb Douglas",
+    "team": "MIA",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
+    "game_id": "2026_08_NE_MIA",
     "proj": "10.1",
     "bar": "44",
     "act": null,
@@ -2028,11 +2036,11 @@
    },
    {
     "rank": 35,
-    "pid": "00-0041523",
-    "name": "Caleb Douglas",
-    "team": "MIA",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
-    "game_id": "2026_08_NE_MIA",
+    "pid": "00-0041489",
+    "name": "Germie Bernard",
+    "team": "PIT",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
+    "game_id": "2026_08_CLE_PIT",
     "proj": "10.1",
     "bar": "44",
     "act": null,
@@ -2053,7 +2061,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Hamstring · via Sleeper · as of Wed 10/28 5:20 PM"
+     "title": "Questionable · Limited Participation in Practice · Hamstring · via Sleeper · as of Wed 10/28 5:20 PM"
     }
    },
    {
@@ -2097,13 +2105,26 @@
    },
    {
     "rank": 40,
+    "pid": "00-0038997",
+    "name": "Josh Downs",
+    "team": "IND",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
+    "game_id": "2026_08_IND_JAX",
+    "proj": "9.1",
+    "bar": "40",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 41,
     "pid": "00-0039491",
     "name": "Jalen Coker",
     "team": "CAR",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/car.png",
     "game_id": "2026_08_CAR_GB",
     "proj": "9.1",
-    "bar": "40",
+    "bar": "39",
     "act": null,
     "cls": null,
     "inj": {
@@ -2113,25 +2134,12 @@
     }
    },
    {
-    "rank": 41,
+    "rank": 42,
     "pid": "00-0038117",
     "name": "Wan'Dale Robinson",
     "team": "TEN",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
     "game_id": "2026_08_TEN_CIN",
-    "proj": "9.1",
-    "bar": "39",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 42,
-    "pid": "00-0038997",
-    "name": "Josh Downs",
-    "team": "IND",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
-    "game_id": "2026_08_IND_JAX",
     "proj": "9.1",
     "bar": "39",
     "act": null,
@@ -2165,16 +2173,16 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Limited Participation in Practice · Hamstring · via Sleeper · as of Wed 10/28 4:20 PM"
+     "title": "Questionable · Limited Participation in Practice · Hamstring · via Sleeper · as of Thu 10/29 3:10 PM"
     }
    },
    {
     "rank": 45,
-    "pid": "00-0038994",
-    "name": "Jordan Addison",
-    "team": "MIN",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png",
-    "game_id": "2026_08_MIN_DET",
+    "pid": "00-0040237",
+    "name": "Tez Johnson",
+    "team": "TB",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/tb.png",
+    "game_id": "2026_08_ATL_TB",
     "proj": "8.6",
     "bar": "37",
     "act": null,
@@ -2183,11 +2191,11 @@
    },
    {
     "rank": 46,
-    "pid": "00-0040237",
-    "name": "Tez Johnson",
-    "team": "TB",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/tb.png",
-    "game_id": "2026_08_ATL_TB",
+    "pid": "00-0038994",
+    "name": "Jordan Addison",
+    "team": "MIN",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png",
+    "game_id": "2026_08_MIN_DET",
     "proj": "8.6",
     "bar": "37",
     "act": null,
@@ -2201,7 +2209,7 @@
     "team": "IND",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
     "game_id": "2026_08_IND_JAX",
-    "proj": "8.4",
+    "proj": "8.5",
     "bar": "37",
     "act": null,
     "cls": null,
@@ -2260,7 +2268,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Ankle · via Sleeper · as of Wed 10/28 7:50 PM"
+     "title": "Questionable · Did Not Participate In Practice · Ankle · via Sleeper · as of Thu 10/29 1:50 PM"
     }
    },
    {
@@ -2277,7 +2285,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Limited Participation in Practice · Foot · via Sleeper · as of Wed 10/28 7:25 PM"
+     "title": "Questionable · Limited Participation in Practice · Foot · via Sleeper · as of Thu 10/29 4:20 PM"
     }
    },
    {
@@ -2288,7 +2296,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
     "game_id": "2026_08_ATL_TB",
     "proj": "7.3",
-    "bar": "31",
+    "bar": "32",
     "act": null,
     "cls": null,
     "inj": null
@@ -2359,17 +2367,17 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Knee · via Sleeper · as of Mon 10/26 11:40 AM"
+     "title": "Questionable · Knee · via Sleeper · as of Thu 10/29 1:40 PM"
     }
    },
    {
     "rank": 59,
-    "pid": "00-0033908",
-    "name": "Cooper Kupp",
-    "team": "SEA",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
-    "game_id": "2026_08_CHI_SEA",
-    "proj": "6.6",
+    "pid": "00-0032951",
+    "name": "Laquon Treadwell",
+    "team": "IND",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
+    "game_id": "2026_08_IND_JAX",
+    "proj": "6.7",
     "bar": "29",
     "act": null,
     "cls": null,
@@ -2377,11 +2385,11 @@
    },
    {
     "rank": 60,
-    "pid": "00-0032951",
-    "name": "Laquon Treadwell",
-    "team": "IND",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
-    "game_id": "2026_08_IND_JAX",
+    "pid": "00-0033908",
+    "name": "Cooper Kupp",
+    "team": "SEA",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
+    "game_id": "2026_08_CHI_SEA",
     "proj": "6.6",
     "bar": "29",
     "act": null,
@@ -2415,7 +2423,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Limited Participation in Practice · Ankle · via Sleeper · as of Wed 10/28 3:00 PM"
+     "title": "Questionable · Limited Participation in Practice · Ankle · via Sleeper · as of Thu 10/29 2:30 PM"
     }
    },
    {
@@ -2443,9 +2451,9 @@
     "act": null,
     "cls": null,
     "inj": {
-     "label": "Q",
-     "cls": "text-bg-warning",
-     "title": "Questionable · Limited Participation in Practice · Ankle · via Sleeper · as of Wed 10/28 7:10 PM"
+     "label": "LP",
+     "cls": "text-bg-secondary",
+     "title": "Limited practice · Ankle"
     }
    },
    {
@@ -2456,7 +2464,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
     "game_id": "2026_08_NE_MIA",
     "proj": "5.2",
-    "bar": "22",
+    "bar": "23",
     "act": null,
     "cls": null,
     "inj": null
@@ -2468,7 +2476,7 @@
     "team": "TB",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/tb.png",
     "game_id": "2026_08_ATL_TB",
-    "proj": "5.1",
+    "proj": "5.2",
     "bar": "22",
     "act": null,
     "cls": null,
@@ -2489,11 +2497,11 @@
    },
    {
     "rank": 68,
-    "pid": "00-0040009",
-    "name": "Savion Williams",
-    "team": "GB",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
-    "game_id": "2026_08_CAR_GB",
+    "pid": "00-0040785",
+    "name": "Dohnte Meyers",
+    "team": "CIN",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+    "game_id": "2026_08_TEN_CIN",
     "proj": "5.1",
     "bar": "22",
     "act": null,
@@ -2502,12 +2510,12 @@
    },
    {
     "rank": 69,
-    "pid": "00-0040785",
-    "name": "Dohnte Meyers",
-    "team": "CIN",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
-    "game_id": "2026_08_TEN_CIN",
-    "proj": "5.1",
+    "pid": "00-0040009",
+    "name": "Savion Williams",
+    "team": "GB",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
+    "game_id": "2026_08_CAR_GB",
+    "proj": "5.0",
     "bar": "22",
     "act": null,
     "cls": null,
@@ -2572,7 +2580,7 @@
     "team": "NE",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
     "game_id": "2026_08_NE_MIA",
-    "proj": "4.4",
+    "proj": "4.5",
     "bar": "19",
     "act": null,
     "cls": null,
@@ -2645,40 +2653,6 @@
    },
    {
     "rank": 80,
-    "pid": "00-0039915",
-    "name": "Ladd McConkey",
-    "team": "LAC",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lac.png",
-    "game_id": "2026_08_LAC_LA",
-    "proj": "4.2",
-    "bar": "18",
-    "act": null,
-    "cls": null,
-    "inj": {
-     "label": "Q",
-     "cls": "text-bg-warning",
-     "title": "Questionable · Concussion · via Sleeper · as of Wed 10/28 8:40 PM"
-    }
-   },
-   {
-    "rank": 81,
-    "pid": "00-0034827",
-    "name": "DJ Moore",
-    "team": "BUF",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
-    "game_id": "2026_08_BAL_BUF",
-    "proj": "4.2",
-    "bar": "18",
-    "act": null,
-    "cls": null,
-    "inj": {
-     "label": "Q",
-     "cls": "text-bg-warning",
-     "title": "Questionable · Limited Participation in Practice · Shoulder · via Sleeper · as of Wed 10/28 3:40 PM"
-    }
-   },
-   {
-    "rank": 82,
     "pid": "00-0040131",
     "name": "Kyle Williams",
     "team": "NE",
@@ -2691,13 +2665,47 @@
     "inj": null
    },
    {
+    "rank": 81,
+    "pid": "00-0039915",
+    "name": "Ladd McConkey",
+    "team": "LAC",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lac.png",
+    "game_id": "2026_08_LAC_LA",
+    "proj": "4.2",
+    "bar": "18",
+    "act": null,
+    "cls": null,
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Full Participation in Practice · Concussion · via Sleeper · as of Thu 10/29 4:05 PM"
+    }
+   },
+   {
+    "rank": 82,
+    "pid": "00-0034827",
+    "name": "DJ Moore",
+    "team": "BUF",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
+    "game_id": "2026_08_BAL_BUF",
+    "proj": "4.2",
+    "bar": "18",
+    "act": null,
+    "cls": null,
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Limited Participation in Practice · Shoulder · via Sleeper · as of Thu 10/29 3:00 PM"
+    }
+   },
+   {
     "rank": 83,
     "pid": "00-0041100",
     "name": "Josh Cameron",
     "team": "JAX",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
     "game_id": "2026_08_IND_JAX",
-    "proj": "4.1",
+    "proj": "4.2",
     "bar": "18",
     "act": null,
     "cls": null,
@@ -2724,7 +2732,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
     "game_id": "2026_08_IND_JAX",
     "proj": "3.8",
-    "bar": "16",
+    "bar": "17",
     "act": null,
     "cls": null,
     "inj": null
@@ -2814,7 +2822,7 @@
     "team": "CAR",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/car.png",
     "game_id": "2026_08_CAR_GB",
-    "proj": "3.2",
+    "proj": "3.1",
     "bar": "14",
     "act": null,
     "cls": null,
@@ -2886,7 +2894,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Limited Participation in Practice · Hip · via Sleeper · as of Wed 10/28 3:25 PM"
+     "title": "Questionable · Limited Participation in Practice · Hip · via Sleeper · as of Thu 10/29 4:15 PM"
     }
    },
    {
@@ -2955,9 +2963,9 @@
     "act": null,
     "cls": null,
     "inj": {
-     "label": "Q",
-     "cls": "text-bg-warning",
-     "title": "Questionable · Limited Participation in Practice · Calf · via Sleeper · as of Wed 10/28 3:35 PM"
+     "label": "LP",
+     "cls": "text-bg-secondary",
+     "title": "Limited practice · Calf"
     }
    },
    {
@@ -2967,7 +2975,7 @@
     "team": "NE",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
     "game_id": "2026_08_NE_MIA",
-    "proj": "11.1",
+    "proj": "11.2",
     "bar": "66",
     "act": null,
     "cls": null,
@@ -2985,9 +2993,9 @@
     "act": null,
     "cls": null,
     "inj": {
-     "label": "FP",
-     "cls": "bg-secondary-subtle text-secondary",
-     "title": "Full practice · Ankle"
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Full Participation in Practice · Ankle · via Sleeper · as of Thu 10/29 3:05 PM"
     }
    },
    {
@@ -2997,7 +3005,7 @@
     "team": "JAX",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
     "game_id": "2026_08_IND_JAX",
-    "proj": "10.8",
+    "proj": "10.9",
     "bar": "64",
     "act": null,
     "cls": null,
@@ -3040,8 +3048,8 @@
     "team": "GB",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
     "game_id": "2026_08_CAR_GB",
-    "proj": "9.6",
-    "bar": "57",
+    "proj": "9.5",
+    "bar": "56",
     "act": null,
     "cls": null,
     "inj": null
@@ -3070,7 +3078,11 @@
     "bar": "50",
     "act": null,
     "cls": null,
-    "inj": null
+    "inj": {
+     "label": "FP",
+     "cls": "bg-secondary-subtle text-secondary",
+     "title": "Full practice · Knee"
+    }
    },
    {
     "rank": 11,
@@ -3112,7 +3124,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Limited Participation in Practice · Chest · via Sleeper · as of Wed 10/28 11:25 PM"
+     "title": "Questionable · Limited Participation in Practice · Chest · via Sleeper · as of Thu 10/29 3:05 PM"
     }
    },
    {
@@ -3129,7 +3141,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Limited Participation in Practice · Ankle · via Sleeper · as of Wed 10/28 3:05 PM"
+     "title": "Questionable · Limited Participation in Practice · Ankle · via Sleeper · as of Thu 10/29 4:10 PM"
     }
    },
    {
@@ -3165,14 +3177,14 @@
     "team": "IND",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
     "game_id": "2026_08_IND_JAX",
-    "proj": "7.2",
+    "proj": "7.3",
     "bar": "43",
     "act": null,
     "cls": null,
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Limited Participation in Practice · Groin · via Sleeper · as of Wed 10/28 9:00 PM"
+     "title": "Questionable · Limited Participation in Practice · Groin · via Sleeper · as of Thu 10/29 2:20 PM"
     }
    },
    {
@@ -3203,11 +3215,11 @@
    },
    {
     "rank": 20,
-    "pid": "00-0038046",
-    "name": "Charlie Kolar",
-    "team": "LAC",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lac.png",
-    "game_id": "2026_08_LAC_LA",
+    "pid": "00-0036970",
+    "name": "Kyle Pitts",
+    "team": "ATL",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/atl.png",
+    "game_id": "2026_08_ATL_TB",
     "proj": "6.9",
     "bar": "41",
     "act": null,
@@ -3229,6 +3241,17 @@
    },
    {
     "rank": 2,
+    "name": "CIN",
+    "team": "",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
+    "game_id": "2026_08_TEN_CIN",
+    "proj": "17.5",
+    "bar": null,
+    "act": null,
+    "cls": null
+   },
+   {
+    "rank": 3,
     "name": "PIT",
     "team": "",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/pit.png",
@@ -3239,22 +3262,11 @@
     "cls": null
    },
    {
-    "rank": 3,
+    "rank": 4,
     "name": "JAX",
     "team": "",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
     "game_id": "2026_08_IND_JAX",
-    "proj": "18.2",
-    "bar": null,
-    "act": null,
-    "cls": null
-   },
-   {
-    "rank": 4,
-    "name": "CIN",
-    "team": "",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cin.png",
-    "game_id": "2026_08_TEN_CIN",
     "proj": "18.2",
     "bar": null,
     "act": null,
@@ -3328,6 +3340,17 @@
    },
    {
     "rank": 11,
+    "name": "GB",
+    "team": "",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
+    "game_id": "2026_08_CAR_GB",
+    "proj": "21.5",
+    "bar": null,
+    "act": null,
+    "cls": null
+   },
+   {
+    "rank": 12,
     "name": "SEA",
     "team": "",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
@@ -3338,23 +3361,12 @@
     "cls": null
    },
    {
-    "rank": 12,
+    "rank": 13,
     "name": "DET",
     "team": "",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/det.png",
     "game_id": "2026_08_MIN_DET",
     "proj": "21.8",
-    "bar": null,
-    "act": null,
-    "cls": null
-   },
-   {
-    "rank": 13,
-    "name": "GB",
-    "team": "",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
-    "game_id": "2026_08_CAR_GB",
-    "proj": "22.0",
     "bar": null,
     "act": null,
     "cls": null
@@ -3438,22 +3450,22 @@
    },
    {
     "rank": 21,
-    "name": "MIA",
+    "name": "CAR",
     "team": "",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
-    "game_id": "2026_08_NE_MIA",
-    "proj": "25.2",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/car.png",
+    "game_id": "2026_08_CAR_GB",
+    "proj": "25.0",
     "bar": null,
     "act": null,
     "cls": null
    },
    {
     "rank": 22,
-    "name": "CAR",
+    "name": "MIA",
     "team": "",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/car.png",
-    "game_id": "2026_08_CAR_GB",
-    "proj": "25.5",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/mia.png",
+    "game_id": "2026_08_NE_MIA",
+    "proj": "25.2",
     "bar": null,
     "act": null,
     "cls": null
@@ -3493,22 +3505,22 @@
    },
    {
     "rank": 26,
-    "name": "TEN",
+    "name": "BAL",
     "team": "",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
-    "game_id": "2026_08_TEN_CIN",
-    "proj": "28.2",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+    "game_id": "2026_08_BAL_BUF",
+    "proj": "28.8",
     "bar": null,
     "act": null,
     "cls": null
    },
    {
     "rank": 27,
-    "name": "BAL",
+    "name": "TEN",
     "team": "",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-    "game_id": "2026_08_BAL_BUF",
-    "proj": "28.8",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
+    "game_id": "2026_08_TEN_CIN",
+    "proj": "29.0",
     "bar": null,
     "act": null,
     "cls": null
