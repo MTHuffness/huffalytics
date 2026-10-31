@@ -1,11 +1,11 @@
 {
- "as_of": "2026-10-29T17:01:01.497383-06:00",
+ "as_of": "2026-10-31T10:56:58.662677-06:00",
  "season": 2026,
  "week": 1,
  "slate": {
   "n_legs": 5,
   "p_leg": "87.3%",
-  "combined": "50.6%",
+  "combined": "50.7%",
   "fair_price": "-103",
   "played": true,
   "all_hit": false,
@@ -14,7 +14,7 @@
   "rr": {
    "n": 5,
    "tickets": 5,
-   "p_all": "50.6%",
+   "p_all": "50.7%",
    "p_one_miss": "36.9%",
    "p_survive": "87.6%",
    "p_bust": "12.4%",
@@ -1248,6 +1248,19 @@
    },
    {
     "rank": 25,
+    "pid": "00-0039165",
+    "name": "Zach Charbonnet",
+    "team": "SEA",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
+    "game_id": "2026_01_NE_SEA",
+    "proj": "10.5",
+    "bar": "44",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 26,
     "pid": "00-0040715",
     "name": "Cam Skattebo",
     "team": "NYG",
@@ -1260,7 +1273,7 @@
     "inj": null
    },
    {
-    "rank": 26,
+    "rank": 27,
     "pid": "00-0039384",
     "name": "Tyrone Tracy Jr.",
     "team": "NYG",
@@ -1270,19 +1283,6 @@
     "bar": "41",
     "act": "-0.6",
     "cls": "text-danger",
-    "inj": null
-   },
-   {
-    "rank": 27,
-    "pid": "00-0039165",
-    "name": "Zach Charbonnet",
-    "team": "SEA",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
-    "game_id": "2026_01_NE_SEA",
-    "proj": "9.5",
-    "bar": "40",
-    "act": null,
-    "cls": null,
     "inj": null
    },
    {
@@ -1447,23 +1447,6 @@
    },
    {
     "rank": 40,
-    "pid": "00-0038797",
-    "name": "Emanuel Wilson",
-    "team": "SEA",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
-    "game_id": "2026_01_NE_SEA",
-    "proj": "7.1",
-    "bar": "30",
-    "act": "0.3",
-    "cls": "text-danger",
-    "inj": {
-     "label": "FP",
-     "cls": "bg-secondary-subtle text-secondary",
-     "title": "Full practice · Hamstring"
-    }
-   },
-   {
-    "rank": 41,
     "pid": "00-0033699",
     "name": "Austin Ekeler",
     "team": "WAS",
@@ -1476,7 +1459,7 @@
     "inj": null
    },
    {
-    "rank": 42,
+    "rank": 41,
     "pid": "00-0037256",
     "name": "Rachaad White",
     "team": "WAS",
@@ -1489,7 +1472,7 @@
     "inj": null
    },
    {
-    "rank": 43,
+    "rank": 42,
     "pid": "00-0033526",
     "name": "Samaje Perine",
     "team": "CIN",
@@ -1502,7 +1485,7 @@
     "inj": null
    },
    {
-    "rank": 44,
+    "rank": 43,
     "pid": "00-0038738",
     "name": "Hunter Luepke",
     "team": "DAL",
@@ -1515,7 +1498,7 @@
     "inj": null
    },
    {
-    "rank": 45,
+    "rank": 44,
     "pid": "00-0036924",
     "name": "Michael Carter",
     "team": "TEN",
@@ -1526,6 +1509,23 @@
     "act": null,
     "cls": null,
     "inj": null
+   },
+   {
+    "rank": 45,
+    "pid": "00-0038797",
+    "name": "Emanuel Wilson",
+    "team": "SEA",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
+    "game_id": "2026_01_NE_SEA",
+    "proj": "6.1",
+    "bar": "26",
+    "act": "0.3",
+    "cls": "text-danger",
+    "inj": {
+     "label": "FP",
+     "cls": "bg-secondary-subtle text-secondary",
+     "title": "Full practice · Hamstring"
+    }
    },
    {
     "rank": 46,
@@ -1747,8 +1747,8 @@
     "team": "GB",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
     "game_id": "2026_01_GB_MIN",
-    "proj": "12.9",
-    "bar": "56",
+    "proj": "13.0",
+    "bar": "57",
     "act": "32.7",
     "cls": "text-success",
     "inj": null
@@ -1907,7 +1907,7 @@
     "team": "CHI",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
     "game_id": "2026_01_CHI_CAR",
-    "proj": "10.3",
+    "proj": "10.2",
     "bar": "45",
     "act": "7.2",
     "cls": "text-danger",
@@ -2377,6 +2377,19 @@
    },
    {
     "rank": 58,
+    "pid": "00-0040667",
+    "name": "Matthew Golden",
+    "team": "GB",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
+    "game_id": "2026_01_GB_MIN",
+    "proj": "5.9",
+    "bar": "26",
+    "act": "15.5",
+    "cls": "text-success",
+    "inj": null
+   },
+   {
+    "rank": 59,
     "pid": "00-0041037",
     "name": "Denzel Boston",
     "team": "CLE",
@@ -2389,7 +2402,7 @@
     "inj": null
    },
    {
-    "rank": 59,
+    "rank": 60,
     "pid": "00-0039893",
     "name": "Brian Thomas Jr.",
     "team": "JAX",
@@ -2398,19 +2411,6 @@
     "proj": "5.9",
     "bar": "26",
     "act": "7.0",
-    "cls": "text-success",
-    "inj": null
-   },
-   {
-    "rank": 60,
-    "pid": "00-0040667",
-    "name": "Matthew Golden",
-    "team": "GB",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
-    "game_id": "2026_01_GB_MIN",
-    "proj": "5.9",
-    "bar": "26",
-    "act": "15.5",
     "cls": "text-success",
     "inj": null
    },
@@ -2956,7 +2956,7 @@
     "team": "CHI",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
     "game_id": "2026_01_CHI_CAR",
-    "proj": "13.0",
+    "proj": "12.9",
     "bar": "83",
     "act": "0.0",
     "cls": "text-danger",
@@ -3020,6 +3020,19 @@
    },
    {
     "rank": 7,
+    "pid": "00-0038996",
+    "name": "Tucker Kraft",
+    "team": "GB",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
+    "game_id": "2026_01_GB_MIN",
+    "proj": "11.1",
+    "bar": "72",
+    "act": "9.5",
+    "cls": "text-danger",
+    "inj": null
+   },
+   {
+    "rank": 8,
     "pid": "00-0038129",
     "name": "Cade Otton",
     "team": "TB",
@@ -3028,19 +3041,6 @@
     "proj": "11.1",
     "bar": "71",
     "act": "5.6",
-    "cls": "text-danger",
-    "inj": null
-   },
-   {
-    "rank": 8,
-    "pid": "00-0038996",
-    "name": "Tucker Kraft",
-    "team": "GB",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/gb.png",
-    "game_id": "2026_01_GB_MIN",
-    "proj": "11.1",
-    "bar": "71",
-    "act": "9.5",
     "cls": "text-danger",
     "inj": null
    },
