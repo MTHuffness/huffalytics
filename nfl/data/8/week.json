@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-01T13:09:08.598452-07:00",
+ "as_of": "2026-11-01T13:15:54.580960-07:00",
  "season": 2026,
  "week": 8,
  "slate": {
@@ -117,7 +117,7 @@
    "total_score": null,
    "total_result": null,
    "model_margin": "+4.9",
-   "adj_margin": "+2.7",
+   "adj_margin": "+3.0",
    "proj_score": "24–17",
    "score": null,
    "played": false,
@@ -189,7 +189,16 @@
    "hit": null,
    "qb_notes": [],
    "grade": null,
-   "plan": null
+   "plan": {
+    "calls": 10,
+    "calls_by_dir": {
+     "over": 5,
+     "under": 5
+    },
+    "records": null,
+    "records_by_dir": null,
+    "verdict": ""
+   }
   },
   {
    "game_id": "2026_08_PHI_WAS",
@@ -428,7 +437,7 @@
    "total_score": null,
    "total_result": null,
    "model_margin": "+2.4",
-   "adj_margin": "+1.2",
+   "adj_margin": "+5.5",
    "proj_score": "29–26",
    "score": null,
    "played": false,
@@ -550,8 +559,8 @@
   }
  ],
  "plan_summary": {
-  "plans": 9,
-  "calls": 97,
+  "plans": 10,
+  "calls": 107,
   "graded": 1,
   "all": [
    {
@@ -590,7 +599,7 @@
   ],
   "sides": {
    "over": {
-    "calls": 47,
+    "calls": 52,
     "levels": [
      {
       "key": "normal",
@@ -628,7 +637,7 @@
     ]
    },
    "under": {
-    "calls": 50,
+    "calls": 55,
     "levels": [
      {
       "key": "normal",
@@ -770,23 +779,6 @@
    },
    {
     "rank": 8,
-    "pid": "00-0035993",
-    "name": "Tyler Huntley",
-    "team": "BAL",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-    "game_id": "2026_08_BAL_BUF",
-    "proj": "17.2",
-    "bar": "83",
-    "act": null,
-    "cls": null,
-    "inj": {
-     "label": "Q",
-     "cls": "text-bg-warning",
-     "title": "Questionable · Toe · via Sleeper · as of Sun 11/1 12:30 PM"
-    }
-   },
-   {
-    "rank": 9,
     "pid": "00-0033119",
     "name": "Jacoby Brissett",
     "team": "ARI",
@@ -799,7 +791,7 @@
     "inj": null
    },
    {
-    "rank": 10,
+    "rank": 9,
     "pid": "00-0036264",
     "name": "Jordan Love",
     "team": "GB",
@@ -812,7 +804,7 @@
     "inj": null
    },
    {
-    "rank": 11,
+    "rank": 10,
     "pid": "00-0034869",
     "name": "Sam Darnold",
     "team": "SEA",
@@ -825,7 +817,7 @@
     "inj": null
    },
    {
-    "rank": 12,
+    "rank": 11,
     "pid": "00-0036355",
     "name": "Justin Herbert",
     "team": "LAC",
@@ -838,7 +830,7 @@
     "inj": null
    },
    {
-    "rank": 13,
+    "rank": 12,
     "pid": "00-0038128",
     "name": "Malik Willis",
     "team": "MIA",
@@ -855,7 +847,7 @@
     }
    },
    {
-    "rank": 14,
+    "rank": 13,
     "pid": "00-0033537",
     "name": "Deshaun Watson",
     "team": "CLE",
@@ -868,7 +860,7 @@
     "inj": null
    },
    {
-    "rank": 15,
+    "rank": 14,
     "pid": "00-0029604",
     "name": "Kirk Cousins",
     "team": "LV",
@@ -881,7 +873,7 @@
     "inj": null
    },
    {
-    "rank": 16,
+    "rank": 15,
     "pid": "00-0030565",
     "name": "Geno Smith",
     "team": "NYJ",
@@ -894,7 +886,7 @@
     "inj": null
    },
    {
-    "rank": 17,
+    "rank": 16,
     "pid": "00-0026498",
     "name": "Matthew Stafford",
     "team": "LA",
@@ -907,7 +899,7 @@
     "inj": null
    },
    {
-    "rank": 18,
+    "rank": 17,
     "pid": "00-0039150",
     "name": "Bryce Young",
     "team": "CAR",
@@ -924,7 +916,7 @@
     }
    },
    {
-    "rank": 19,
+    "rank": 18,
     "pid": "00-0033873",
     "name": "Patrick Mahomes",
     "team": "KC",
@@ -941,7 +933,7 @@
     }
    },
    {
-    "rank": 20,
+    "rank": 19,
     "pid": "00-0023459",
     "name": "Aaron Rodgers",
     "team": "PIT",
@@ -954,7 +946,7 @@
     "inj": null
    },
    {
-    "rank": 21,
+    "rank": 20,
     "pid": "00-0039732",
     "name": "Bo Nix",
     "team": "DEN",
@@ -967,7 +959,7 @@
     "inj": null
    },
    {
-    "rank": 22,
+    "rank": 21,
     "pid": "00-0033106",
     "name": "Jared Goff",
     "team": "DET",
@@ -980,7 +972,7 @@
     "inj": null
    },
    {
-    "rank": 23,
+    "rank": 22,
     "pid": "00-0034855",
     "name": "Baker Mayfield",
     "team": "TB",
@@ -997,7 +989,7 @@
     }
    },
    {
-    "rank": 24,
+    "rank": 23,
     "pid": "00-0039918",
     "name": "Caleb Williams",
     "team": "CHI",
@@ -1010,7 +1002,7 @@
     "inj": null
    },
    {
-    "rank": 25,
+    "rank": 24,
     "pid": "00-0038400",
     "name": "Tanner McKee",
     "team": "PHI",
@@ -1023,7 +1015,7 @@
     "inj": null
    },
    {
-    "rank": 26,
+    "rank": 25,
     "pid": "00-0039917",
     "name": "Michael Penix Jr.",
     "team": "ATL",
@@ -1036,7 +1028,7 @@
     "inj": null
    },
    {
-    "rank": 27,
+    "rank": 26,
     "pid": "00-0040676",
     "name": "Cam Ward",
     "team": "TEN",
@@ -1049,7 +1041,7 @@
     "inj": null
    },
    {
-    "rank": 28,
+    "rank": 27,
     "pid": "00-0035710",
     "name": "Daniel Jones",
     "team": "IND",
@@ -1062,7 +1054,7 @@
     "inj": null
    },
    {
-    "rank": 29,
+    "rank": 28,
     "pid": "00-0041251",
     "name": "Jalon Daniels",
     "team": "TB",
@@ -1075,7 +1067,7 @@
     "inj": null
    },
    {
-    "rank": 30,
+    "rank": 29,
     "pid": "00-0032268",
     "name": "Marcus Mariota",
     "team": "WAS",
@@ -1090,6 +1082,19 @@
      "cls": "bg-secondary-subtle text-secondary",
      "title": "Full practice · Knee"
     }
+   },
+   {
+    "rank": 30,
+    "pid": "00-0038102",
+    "name": "Kenny Pickett",
+    "team": "CAR",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/car.png",
+    "game_id": "2026_08_CAR_GB",
+    "proj": "1.2",
+    "bar": "6",
+    "act": null,
+    "cls": null,
+    "inj": null
    }
   ],
   "RB": [
@@ -1319,6 +1324,19 @@
    },
    {
     "rank": 17,
+    "pid": "00-0032764",
+    "name": "Derrick Henry",
+    "team": "BAL",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+    "game_id": "2026_08_BAL_BUF",
+    "proj": "16.2",
+    "bar": "70",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 18,
     "pid": "00-0039361",
     "name": "Bucky Irving",
     "team": "TB",
@@ -1333,19 +1351,6 @@
      "cls": "bg-secondary-subtle text-secondary",
      "title": "Full practice · Not injury related - resting player"
     }
-   },
-   {
-    "rank": 18,
-    "pid": "00-0032764",
-    "name": "Derrick Henry",
-    "team": "BAL",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-    "game_id": "2026_08_BAL_BUF",
-    "proj": "14.1",
-    "bar": "61",
-    "act": null,
-    "cls": null,
-    "inj": null
    },
    {
     "rank": 19,
@@ -1586,6 +1591,19 @@
    },
    {
     "rank": 36,
+    "pid": "00-0034975",
+    "name": "Justice Hill",
+    "team": "BAL",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
+    "game_id": "2026_08_BAL_BUF",
+    "proj": "6.5",
+    "bar": "28",
+    "act": null,
+    "cls": null,
+    "inj": null
+   },
+   {
+    "rank": 37,
     "pid": "00-0036919",
     "name": "Kenny Gainwell",
     "team": "TB",
@@ -1602,7 +1620,7 @@
     }
    },
    {
-    "rank": 37,
+    "rank": 38,
     "pid": "00-0035700",
     "name": "Josh Jacobs",
     "team": "GB",
@@ -1615,7 +1633,7 @@
     "inj": null
    },
    {
-    "rank": 38,
+    "rank": 39,
     "pid": "00-0040878",
     "name": "Mike Washington Jr.",
     "team": "LV",
@@ -1623,19 +1641,6 @@
     "game_id": "2026_08_LV_NYJ",
     "proj": "6.3",
     "bar": "27",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 39,
-    "pid": "00-0034975",
-    "name": "Justice Hill",
-    "team": "BAL",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
-    "game_id": "2026_08_BAL_BUF",
-    "proj": "6.1",
-    "bar": "26",
     "act": null,
     "cls": null,
     "inj": null
@@ -1903,7 +1908,7 @@
     "team": "BAL",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
     "game_id": "2026_08_BAL_BUF",
-    "proj": "16.6",
+    "proj": "16.7",
     "bar": "64",
     "act": null,
     "cls": null,
@@ -2043,7 +2048,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Limited Participation in Practice · Chest · via Sleeper · as of Sun 11/1 7:10 AM"
+     "title": "Questionable · Limited Participation in Practice · Chest"
     }
    },
    {
