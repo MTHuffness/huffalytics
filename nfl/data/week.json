@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-02T09:44:32.672230-07:00",
+ "as_of": "2026-11-02T14:21:10.768453-07:00",
  "season": 2026,
  "week": 8,
  "slate": {
@@ -493,6 +493,34 @@
    "plan": null
   },
   {
+   "game_id": "2026_08_CHI_SEA",
+   "page": "/nfl/w/8/g/2026_08_CHI_SEA/",
+   "fav": "SEA",
+   "opp": "CHI",
+   "sep": "vs",
+   "status": "below cutoff",
+   "is_leg": false,
+   "gameday": "2026-11-02",
+   "kickoff": {
+    "label": "MNF",
+    "title": "Mon Nov 2, 6:15 PM Denver",
+    "sort": "2026-11-02T20:15:00-05:00"
+   },
+   "line": "-3.5",
+   "total": "46.5",
+   "total_score": null,
+   "total_result": null,
+   "model_margin": "+2.0",
+   "adj_margin": "+1.4",
+   "proj_score": "25–22",
+   "score": null,
+   "played": false,
+   "hit": null,
+   "qb_notes": [],
+   "grade": null,
+   "plan": null
+  },
+  {
    "game_id": "2026_08_CLE_PIT",
    "page": "/nfl/w/8/g/2026_08_CLE_PIT/",
    "fav": "PIT",
@@ -667,34 +695,6 @@
     },
     "verdict": ""
    }
-  },
-  {
-   "game_id": "2026_08_CHI_SEA",
-   "page": "/nfl/w/8/g/2026_08_CHI_SEA/",
-   "fav": "SEA",
-   "opp": "CHI",
-   "sep": "vs",
-   "status": "tight spread",
-   "is_leg": false,
-   "gameday": "2026-11-02",
-   "kickoff": {
-    "label": "MNF",
-    "title": "Mon Nov 2, 6:15 PM Denver",
-    "sort": "2026-11-02T20:15:00-05:00"
-   },
-   "line": "-3",
-   "total": "46.5",
-   "total_score": null,
-   "total_result": null,
-   "model_margin": "+2.0",
-   "adj_margin": "+1.4",
-   "proj_score": "25–22",
-   "score": null,
-   "played": false,
-   "hit": null,
-   "qb_notes": [],
-   "grade": null,
-   "plan": null
   },
   {
    "game_id": "2026_08_MIN_DET",
@@ -1357,7 +1357,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Hamstring · via Sleeper · as of Sun 11/1 5:55 PM"
+     "title": "Questionable · Hamstring · via Sleeper · as of Mon 11/2 1:40 PM"
     }
    },
    {
@@ -1381,7 +1381,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
     "game_id": "2026_08_CHI_SEA",
     "proj": "16.7",
-    "bar": "79",
+    "bar": "80",
     "act": null,
     "cls": null,
     "inj": null
@@ -1578,7 +1578,7 @@
     "team": "CHI",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
     "game_id": "2026_08_CHI_SEA",
-    "proj": "13.4",
+    "proj": "13.3",
     "bar": "64",
     "act": null,
     "cls": null,
@@ -1898,19 +1898,6 @@
    },
    {
     "rank": 16,
-    "pid": "00-0036275",
-    "name": "D'Andre Swift",
-    "team": "CHI",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
-    "game_id": "2026_08_CHI_SEA",
-    "proj": "16.3",
-    "bar": "70",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 17,
     "pid": "00-0032764",
     "name": "Derrick Henry",
     "team": "BAL",
@@ -1920,6 +1907,19 @@
     "bar": "70",
     "act": "14.0",
     "cls": "text-danger",
+    "inj": null
+   },
+   {
+    "rank": 17,
+    "pid": "00-0036275",
+    "name": "D'Andre Swift",
+    "team": "CHI",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
+    "game_id": "2026_08_CHI_SEA",
+    "proj": "16.2",
+    "bar": "70",
+    "act": null,
+    "cls": null,
     "inj": null
    },
    {
@@ -2200,10 +2200,10 @@
    },
    {
     "rank": 38,
-    "pid": "00-0039021",
-    "name": "Roschon Johnson",
-    "team": "CHI",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
+    "pid": "00-0039299",
+    "name": "George Holani",
+    "team": "SEA",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
     "game_id": "2026_08_CHI_SEA",
     "proj": "6.0",
     "bar": "26",
@@ -2213,10 +2213,10 @@
    },
    {
     "rank": 39,
-    "pid": "00-0039299",
-    "name": "George Holani",
-    "team": "SEA",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
+    "pid": "00-0039021",
+    "name": "Roschon Johnson",
+    "team": "CHI",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
     "game_id": "2026_08_CHI_SEA",
     "proj": "6.0",
     "bar": "26",
@@ -2376,7 +2376,7 @@
     "team": "SEA",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
     "game_id": "2026_08_CHI_SEA",
-    "proj": "26.1",
+    "proj": "26.2",
     "bar": "100",
     "act": null,
     "cls": null,
@@ -2471,7 +2471,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/tb.png",
     "game_id": "2026_08_ATL_TB",
     "proj": "16.9",
-    "bar": "65",
+    "bar": "64",
     "act": "0.0",
     "cls": "text-danger",
     "inj": {
@@ -2578,7 +2578,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ten.png",
     "game_id": "2026_08_TEN_CIN",
     "proj": "15.0",
-    "bar": "58",
+    "bar": "57",
     "act": "15.7",
     "cls": "text-success",
     "inj": null
@@ -2657,7 +2657,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Undisclosed · via Sleeper · as of Fri 10/30 7:40 AM"
+     "title": "Questionable · Undisclosed · via Sleeper · as of Mon 11/2 1:45 PM"
     }
    },
    {
@@ -2697,7 +2697,7 @@
     "team": "CHI",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
     "game_id": "2026_08_CHI_SEA",
-    "proj": "13.2",
+    "proj": "13.1",
     "bar": "50",
     "act": null,
     "cls": null,
@@ -2793,7 +2793,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
     "game_id": "2026_08_CLE_PIT",
     "proj": "11.4",
-    "bar": "44",
+    "bar": "43",
     "act": "6.7",
     "cls": "text-danger",
     "inj": null
@@ -2819,7 +2819,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/jax.png",
     "game_id": "2026_08_IND_JAX",
     "proj": "10.8",
-    "bar": "42",
+    "bar": "41",
     "act": "4.4",
     "cls": "text-danger",
     "inj": {
@@ -2849,7 +2849,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/den.png",
     "game_id": "2026_08_KC_DEN",
     "proj": "10.3",
-    "bar": "40",
+    "bar": "39",
     "act": "9.3",
     "cls": "text-danger",
     "inj": null
@@ -2944,7 +2944,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
     "game_id": "2026_08_CHI_SEA",
     "proj": "9.5",
-    "bar": "37",
+    "bar": "36",
     "act": null,
     "cls": null,
     "inj": null
@@ -3082,7 +3082,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png",
     "game_id": "2026_08_LV_NYJ",
     "proj": "7.7",
-    "bar": "30",
+    "bar": "29",
     "act": null,
     "cls": null,
     "inj": null
@@ -3164,7 +3164,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/cle.png",
     "game_id": "2026_08_CLE_PIT",
     "proj": "6.9",
-    "bar": "27",
+    "bar": "26",
     "act": "0.0",
     "cls": "text-danger",
     "inj": null
@@ -3397,7 +3397,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png",
     "game_id": "2026_08_LV_NYJ",
     "proj": "4.3",
-    "bar": "17",
+    "bar": "16",
     "act": "27.2",
     "cls": "text-success",
     "inj": null
@@ -3410,7 +3410,7 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/bal.png",
     "game_id": "2026_08_BAL_BUF",
     "proj": "4.3",
-    "bar": "17",
+    "bar": "16",
     "act": null,
     "cls": null,
     "inj": null
@@ -4150,6 +4150,17 @@
    },
    {
     "rank": 10,
+    "name": "SEA",
+    "team": "",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
+    "game_id": "2026_08_CHI_SEA",
+    "proj": "21.5",
+    "bar": null,
+    "act": null,
+    "cls": null
+   },
+   {
+    "rank": 11,
     "name": "KC",
     "team": "",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/kc.png",
@@ -4158,17 +4169,6 @@
     "bar": null,
     "act": "28",
     "cls": "text-danger"
-   },
-   {
-    "rank": 11,
-    "name": "SEA",
-    "team": "",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
-    "game_id": "2026_08_CHI_SEA",
-    "proj": "21.8",
-    "bar": null,
-    "act": null,
-    "cls": null
    },
    {
     "rank": 12,
@@ -4260,17 +4260,6 @@
    },
    {
     "rank": 20,
-    "name": "CHI",
-    "team": "",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
-    "game_id": "2026_08_CHI_SEA",
-    "proj": "24.8",
-    "bar": null,
-    "act": null,
-    "cls": null
-   },
-   {
-    "rank": 21,
     "name": "MIN",
     "team": "",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/min.png",
@@ -4279,6 +4268,17 @@
     "bar": null,
     "act": "19",
     "cls": "text-success"
+   },
+   {
+    "rank": 21,
+    "name": "CHI",
+    "team": "",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
+    "game_id": "2026_08_CHI_SEA",
+    "proj": "25.0",
+    "bar": null,
+    "act": null,
+    "cls": null
    },
    {
     "rank": 22,
