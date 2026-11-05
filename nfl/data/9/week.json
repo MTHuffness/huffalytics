@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-05T15:19:00.943330-07:00",
+ "as_of": "2026-11-05T15:25:31.206068-07:00",
  "season": 2026,
  "week": 9,
  "slate": {
@@ -108,7 +108,16 @@
     "BAL: Tyler Huntley Out"
    ],
    "grade": null,
-   "plan": null
+   "plan": {
+    "calls": 12,
+    "calls_by_dir": {
+     "over": 6,
+     "under": 6
+    },
+    "records": null,
+    "records_by_dir": null,
+    "verdict": ""
+   }
   },
   {
    "game_id": "2026_09_ARI_SEA",
@@ -447,7 +456,124 @@
    "plan": null
   }
  ],
- "plan_summary": null,
+ "plan_summary": {
+  "plans": 1,
+  "calls": 12,
+  "graded": 0,
+  "all": [
+   {
+    "key": "normal",
+    "label": "Normal",
+    "note": "the line the plan called",
+    "hits": 0,
+    "misses": 0,
+    "voids": 0,
+    "games": 0,
+    "graded": false,
+    "pct": null
+   },
+   {
+    "key": "edge",
+    "label": "Edge",
+    "note": "the Kalshi rung nearest halfway between the plan's line and the ladder's last rung",
+    "hits": 0,
+    "misses": 0,
+    "voids": 0,
+    "games": 0,
+    "graded": false,
+    "pct": null
+   },
+   {
+    "key": "edge_plus",
+    "label": "Edge+",
+    "note": "the last rung of the Kalshi ladder on the easy side",
+    "hits": 0,
+    "misses": 0,
+    "voids": 0,
+    "games": 0,
+    "graded": false,
+    "pct": null
+   }
+  ],
+  "sides": {
+   "over": {
+    "calls": 6,
+    "levels": [
+     {
+      "key": "normal",
+      "label": "Normal",
+      "note": "the line the plan called",
+      "hits": 0,
+      "misses": 0,
+      "voids": 0,
+      "games": 0,
+      "graded": false,
+      "pct": null
+     },
+     {
+      "key": "edge",
+      "label": "Edge",
+      "note": "the Kalshi rung nearest halfway between the plan's line and the ladder's last rung",
+      "hits": 0,
+      "misses": 0,
+      "voids": 0,
+      "games": 0,
+      "graded": false,
+      "pct": null
+     },
+     {
+      "key": "edge_plus",
+      "label": "Edge+",
+      "note": "the last rung of the Kalshi ladder on the easy side",
+      "hits": 0,
+      "misses": 0,
+      "voids": 0,
+      "games": 0,
+      "graded": false,
+      "pct": null
+     }
+    ]
+   },
+   "under": {
+    "calls": 6,
+    "levels": [
+     {
+      "key": "normal",
+      "label": "Normal",
+      "note": "the line the plan called",
+      "hits": 0,
+      "misses": 0,
+      "voids": 0,
+      "games": 0,
+      "graded": false,
+      "pct": null
+     },
+     {
+      "key": "edge",
+      "label": "Edge",
+      "note": "the Kalshi rung nearest halfway between the plan's line and the ladder's last rung",
+      "hits": 0,
+      "misses": 0,
+      "voids": 0,
+      "games": 0,
+      "graded": false,
+      "pct": null
+     },
+     {
+      "key": "edge_plus",
+      "label": "Edge+",
+      "note": "the last rung of the Kalshi ladder on the easy side",
+      "hits": 0,
+      "misses": 0,
+      "voids": 0,
+      "games": 0,
+      "graded": false,
+      "pct": null
+     }
+    ]
+   }
+  }
+ },
  "leaders": {
   "QB": [
    {
@@ -1901,7 +2027,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Did Not Participate In Practice · Ribs · via Sleeper · as of Thu 11/5 2:15 PM"
+     "title": "Questionable · Did Not Participate In Practice · Ribs · via Sleeper · as of Thu 11/5 3:15 PM"
     }
    },
    {
@@ -2957,7 +3083,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Hamstring · via Sleeper · as of Sun 11/1 1:45 PM"
+     "title": "Questionable · Hamstring · via Sleeper · as of Thu 11/5 3:15 PM"
     }
    },
    {
@@ -3235,7 +3361,7 @@
     "inj": {
      "label": "Q",
      "cls": "text-bg-warning",
-     "title": "Questionable · Chest · via Sleeper · as of Sun 11/1 7:45 PM"
+     "title": "Questionable · Chest · via Sleeper · as of Thu 11/5 3:15 PM"
     }
    },
    {
