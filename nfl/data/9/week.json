@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-09T15:50:02.194997-07:00",
+ "as_of": "2026-11-09T16:04:29.380502-07:00",
  "season": 2026,
  "week": 9,
  "slate": {
@@ -303,7 +303,7 @@
    "total_score": 33,
    "total_result": "under",
    "model_margin": "+6.6",
-   "adj_margin": "+7.0",
+   "adj_margin": "+7.4",
    "proj_score": "26–22",
    "score": "20–13",
    "played": true,
@@ -398,7 +398,16 @@
     "MIN: Kyler Murray Out"
    ],
    "grade": null,
-   "plan": null
+   "plan": {
+    "calls": 11,
+    "calls_by_dir": {
+     "over": 5,
+     "under": 6
+    },
+    "records": null,
+    "records_by_dir": null,
+    "verdict": ""
+   }
   },
   {
    "game_id": "2026_09_GB_NE",
@@ -516,8 +525,8 @@
   }
  ],
  "plan_summary": {
-  "plans": 1,
-  "calls": 12,
+  "plans": 2,
+  "calls": 23,
   "graded": 1,
   "all": [
    {
@@ -556,7 +565,7 @@
   ],
   "sides": {
    "over": {
-    "calls": 6,
+    "calls": 11,
     "levels": [
      {
       "key": "normal",
@@ -594,7 +603,7 @@
     ]
    },
    "under": {
-    "calls": 6,
+    "calls": 12,
     "levels": [
      {
       "key": "normal",
@@ -3236,7 +3245,11 @@
     "bar": "46",
     "act": "11.6",
     "cls": "text-danger",
-    "inj": null
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Hip · via Sleeper · as of Mon 11/9 10:05 AM"
+    }
    },
    {
     "rank": 6,
