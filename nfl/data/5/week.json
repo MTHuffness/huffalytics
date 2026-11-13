@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-10T13:20:26.484830-07:00",
+ "as_of": "2026-11-12T17:22:47.049213-07:00",
  "season": 2026,
  "week": 5,
  "slate": {
@@ -2012,8 +2012,8 @@
     "team": "SF",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
     "game_id": "2026_05_SF_SEA",
-    "proj": "14.3",
-    "bar": "55",
+    "proj": "14.0",
+    "bar": "54",
     "act": "17.3",
     "cls": "text-success",
     "inj": {
@@ -2024,23 +2024,6 @@
    },
    {
     "rank": 15,
-    "pid": "00-0036875",
-    "name": "Rhamondre Stevenson",
-    "team": "NE",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
-    "game_id": "2026_05_LV_NE",
-    "proj": "12.7",
-    "bar": "49",
-    "act": "17.5",
-    "cls": "text-success",
-    "inj": {
-     "label": "Q",
-     "cls": "text-bg-warning",
-     "title": "Questionable · Limited Participation in Practice · Knee"
-    }
-   },
-   {
-    "rank": 16,
     "pid": "00-0041027",
     "name": "Jeremiyah Love",
     "team": "ARI",
@@ -2054,6 +2037,23 @@
      "label": "FP",
      "cls": "bg-secondary-subtle text-secondary",
      "title": "Full practice · Ankle"
+    }
+   },
+   {
+    "rank": 16,
+    "pid": "00-0036875",
+    "name": "Rhamondre Stevenson",
+    "team": "NE",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ne.png",
+    "game_id": "2026_05_LV_NE",
+    "proj": "12.7",
+    "bar": "49",
+    "act": "17.5",
+    "cls": "text-success",
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Limited Participation in Practice · Knee"
     }
    },
    {
@@ -2300,7 +2300,7 @@
     "team": "ARI",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ari.png",
     "game_id": "2026_05_DET_ARI",
-    "proj": "7.2",
+    "proj": "7.3",
     "bar": "28",
     "act": "3.6",
     "cls": "text-danger",
@@ -2498,6 +2498,19 @@
    },
    {
     "rank": 49,
+    "pid": "00-0035537",
+    "name": "Ty Johnson",
+    "team": "BUF",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
+    "game_id": "2026_05_BUF_LA",
+    "proj": "4.5",
+    "bar": "18",
+    "act": "11.2",
+    "cls": "text-success",
+    "inj": null
+   },
+   {
+    "rank": 50,
     "pid": "00-0039746",
     "name": "Will Shipley",
     "team": "PHI",
@@ -2506,19 +2519,6 @@
     "proj": "4.5",
     "bar": "17",
     "act": "8.3",
-    "cls": "text-success",
-    "inj": null
-   },
-   {
-    "rank": 50,
-    "pid": "00-0035537",
-    "name": "Ty Johnson",
-    "team": "BUF",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
-    "game_id": "2026_05_BUF_LA",
-    "proj": "4.5",
-    "bar": "17",
-    "act": "11.2",
     "cls": "text-success",
     "inj": null
    }
@@ -2994,19 +2994,6 @@
    },
    {
     "rank": 33,
-    "pid": "00-0035719",
-    "name": "Deebo Samuel Sr.",
-    "team": "SF",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
-    "game_id": "2026_05_SF_SEA",
-    "proj": "10.1",
-    "bar": "50",
-    "act": "2.5",
-    "cls": "text-danger",
-    "inj": null
-   },
-   {
-    "rank": 34,
     "pid": "00-0034960",
     "name": "Jakobi Meyers",
     "team": "JAX",
@@ -3023,7 +3010,7 @@
     }
    },
    {
-    "rank": 35,
+    "rank": 34,
     "pid": "00-0038994",
     "name": "Jordan Addison",
     "team": "MIN",
@@ -3040,7 +3027,33 @@
     }
    },
    {
+    "rank": 35,
+    "pid": "00-0035719",
+    "name": "Deebo Samuel Sr.",
+    "team": "SF",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
+    "game_id": "2026_05_SF_SEA",
+    "proj": "9.8",
+    "bar": "49",
+    "act": "2.5",
+    "cls": "text-danger",
+    "inj": null
+   },
+   {
     "rank": 36,
+    "pid": "00-0037261",
+    "name": "Khalil Shakir",
+    "team": "BUF",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
+    "game_id": "2026_05_BUF_LA",
+    "proj": "9.8",
+    "bar": "49",
+    "act": "11.0",
+    "cls": "text-success",
+    "inj": null
+   },
+   {
+    "rank": 37,
     "pid": "00-0036613",
     "name": "Jaylen Waddle",
     "team": "DEN",
@@ -3053,7 +3066,7 @@
     "inj": null
    },
    {
-    "rank": 37,
+    "rank": 38,
     "pid": "00-0040867",
     "name": "Makai Lemon",
     "team": "PHI",
@@ -3066,33 +3079,7 @@
     "inj": null
    },
    {
-    "rank": 38,
-    "pid": "00-0037261",
-    "name": "Khalil Shakir",
-    "team": "BUF",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
-    "game_id": "2026_05_BUF_LA",
-    "proj": "9.7",
-    "bar": "48",
-    "act": "11.0",
-    "cls": "text-success",
-    "inj": null
-   },
-   {
     "rank": 39,
-    "pid": "00-0038563",
-    "name": "Tre Tucker",
-    "team": "LV",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lv.png",
-    "game_id": "2026_05_LV_NE",
-    "proj": "9.6",
-    "bar": "48",
-    "act": "7.5",
-    "cls": "text-danger",
-    "inj": null
-   },
-   {
-    "rank": 40,
     "pid": "00-0039901",
     "name": "Keon Coleman",
     "team": "BUF",
@@ -3107,6 +3094,19 @@
      "cls": "bg-secondary-subtle text-secondary",
      "title": "Full practice · Ankle"
     }
+   },
+   {
+    "rank": 40,
+    "pid": "00-0038563",
+    "name": "Tre Tucker",
+    "team": "LV",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/lv.png",
+    "game_id": "2026_05_LV_NE",
+    "proj": "9.6",
+    "bar": "48",
+    "act": "7.5",
+    "cls": "text-danger",
+    "inj": null
    },
    {
     "rank": 41,
@@ -3149,23 +3149,6 @@
    },
    {
     "rank": 44,
-    "pid": "00-0031408",
-    "name": "Mike Evans",
-    "team": "SF",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
-    "game_id": "2026_05_SF_SEA",
-    "proj": "9.2",
-    "bar": "46",
-    "act": "26.3",
-    "cls": "text-success",
-    "inj": {
-     "label": "LP",
-     "cls": "text-bg-secondary",
-     "title": "Limited practice · Ribs"
-    }
-   },
-   {
-    "rank": 45,
     "pid": "00-0039739",
     "name": "Roman Wilson",
     "team": "PIT",
@@ -3176,6 +3159,23 @@
     "act": "0.0",
     "cls": "text-danger",
     "inj": null
+   },
+   {
+    "rank": 45,
+    "pid": "00-0031408",
+    "name": "Mike Evans",
+    "team": "SF",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
+    "game_id": "2026_05_SF_SEA",
+    "proj": "8.9",
+    "bar": "44",
+    "act": "26.3",
+    "cls": "text-success",
+    "inj": {
+     "label": "LP",
+     "cls": "text-bg-secondary",
+     "title": "Limited practice · Ribs"
+    }
    },
    {
     "rank": 46,
@@ -3265,19 +3265,6 @@
    },
    {
     "rank": 52,
-    "pid": "00-0040129",
-    "name": "Emeka Egbuka",
-    "team": "TB",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/tb.png",
-    "game_id": "2026_05_TB_DAL",
-    "proj": "7.8",
-    "bar": "39",
-    "act": "17.2",
-    "cls": "text-success",
-    "inj": null
-   },
-   {
-    "rank": 53,
     "pid": "00-0034827",
     "name": "DJ Moore",
     "team": "BUF",
@@ -3292,6 +3279,19 @@
      "cls": "text-bg-warning",
      "title": "Questionable · Limited Participation in Practice · Shoulder"
     }
+   },
+   {
+    "rank": 53,
+    "pid": "00-0040129",
+    "name": "Emeka Egbuka",
+    "team": "TB",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/tb.png",
+    "game_id": "2026_05_TB_DAL",
+    "proj": "7.8",
+    "bar": "39",
+    "act": "17.2",
+    "cls": "text-success",
+    "inj": null
    },
    {
     "rank": 54,
@@ -3619,19 +3619,6 @@
    },
    {
     "rank": 78,
-    "pid": "00-0038359",
-    "name": "Xavier Smith",
-    "team": "SF",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
-    "game_id": "2026_05_SF_SEA",
-    "proj": "4.8",
-    "bar": "24",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 79,
     "pid": "00-0038608",
     "name": "Kayshon Boutte",
     "team": "HOU",
@@ -3641,6 +3628,19 @@
     "bar": "24",
     "act": "6.8",
     "cls": "text-success",
+    "inj": null
+   },
+   {
+    "rank": 79,
+    "pid": "00-0038359",
+    "name": "Xavier Smith",
+    "team": "SF",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
+    "game_id": "2026_05_SF_SEA",
+    "proj": "4.7",
+    "bar": "23",
+    "act": null,
+    "cls": null,
     "inj": null
    },
    {
@@ -3731,19 +3731,6 @@
    },
    {
     "rank": 86,
-    "pid": "00-0032775",
-    "name": "Demarcus Robinson",
-    "team": "SF",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
-    "game_id": "2026_05_SF_SEA",
-    "proj": "4.0",
-    "bar": "20",
-    "act": null,
-    "cls": null,
-    "inj": null
-   },
-   {
-    "rank": 87,
     "pid": "00-0040590",
     "name": "Konata Mumpfield",
     "team": "LA",
@@ -3758,6 +3745,19 @@
      "cls": "bg-secondary-subtle text-secondary",
      "title": "Full practice · Shoulder"
     }
+   },
+   {
+    "rank": 87,
+    "pid": "00-0032775",
+    "name": "Demarcus Robinson",
+    "team": "SF",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
+    "game_id": "2026_05_SF_SEA",
+    "proj": "3.8",
+    "bar": "19",
+    "act": null,
+    "cls": null,
+    "inj": null
    },
    {
     "rank": 88,
@@ -3979,19 +3979,6 @@
    },
    {
     "rank": 4,
-    "pid": "00-0033288",
-    "name": "George Kittle",
-    "team": "SF",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
-    "game_id": "2026_05_SF_SEA",
-    "proj": "10.5",
-    "bar": "60",
-    "act": "7.4",
-    "cls": "text-danger",
-    "inj": null
-   },
-   {
-    "rank": 5,
     "pid": "00-0037838",
     "name": "Isaiah Likely",
     "team": "NYG",
@@ -4008,7 +3995,7 @@
     }
    },
    {
-    "rank": 6,
+    "rank": 5,
     "pid": "00-0035229",
     "name": "T.J. Hockenson",
     "team": "MIN",
@@ -4017,6 +4004,19 @@
     "proj": "10.3",
     "bar": "59",
     "act": "1.7",
+    "cls": "text-danger",
+    "inj": null
+   },
+   {
+    "rank": 6,
+    "pid": "00-0033288",
+    "name": "George Kittle",
+    "team": "SF",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sf.png",
+    "game_id": "2026_05_SF_SEA",
+    "proj": "10.2",
+    "bar": "58",
+    "act": "7.4",
     "cls": "text-danger",
     "inj": null
    },
