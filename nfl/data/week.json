@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-15T10:43:04.827420-07:00",
+ "as_of": "2026-11-15T11:10:10.182397-07:00",
  "season": 2026,
  "week": 10,
  "slate": {
@@ -50,7 +50,16 @@
    "hit": null,
    "qb_notes": [],
    "grade": null,
-   "plan": null
+   "plan": {
+    "calls": 11,
+    "calls_by_dir": {
+     "over": 6,
+     "under": 5
+    },
+    "records": null,
+    "records_by_dir": null,
+    "verdict": ""
+   }
   },
   {
    "game_id": "2026_10_LA_ARI",
@@ -348,14 +357,14 @@
    },
    "line": "-2.5",
    "total": "50.5",
-   "total_score": null,
-   "total_result": null,
+   "total_score": 45,
+   "total_result": "under",
    "model_margin": "+1.6",
    "adj_margin": "+5.9",
    "proj_score": "26–24",
-   "score": null,
-   "played": false,
-   "hit": null,
+   "score": "35–10",
+   "played": true,
+   "hit": true,
    "qb_notes": [],
    "grade": null,
    "plan": null
@@ -478,8 +487,8 @@
   }
  ],
  "plan_summary": {
-  "plans": 1,
-  "calls": 10,
+  "plans": 2,
+  "calls": 21,
   "graded": 1,
   "all": [
    {
@@ -518,7 +527,7 @@
   ],
   "sides": {
    "over": {
-    "calls": 5,
+    "calls": 11,
     "levels": [
      {
       "key": "normal",
@@ -556,7 +565,7 @@
     ]
    },
    "under": {
-    "calls": 5,
+    "calls": 10,
     "levels": [
      {
       "key": "normal",
@@ -3610,8 +3619,8 @@
     "game_id": "2026_10_NE_DET",
     "proj": "24.0",
     "bar": null,
-    "act": null,
-    "cls": null
+    "act": "10",
+    "cls": "text-success"
    },
    {
     "rank": 21,
@@ -3665,8 +3674,8 @@
     "game_id": "2026_10_NE_DET",
     "proj": "26.5",
     "bar": null,
-    "act": null,
-    "cls": null
+    "act": "35",
+    "cls": "text-danger"
    },
    {
     "rank": 26,
