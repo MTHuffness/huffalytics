@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-18T10:26:12.150664-07:00",
+ "as_of": "2026-11-21T09:02:16.178468-07:00",
  "season": 2026,
  "week": 5,
  "slate": {
@@ -781,7 +781,7 @@
    "total": "45.5",
    "total_score": 62,
    "total_result": "over",
-   "model_margin": "+2.0",
+   "model_margin": "+2.1",
    "adj_margin": "+1.4",
    "proj_score": "24–21",
    "score": "45–17",
@@ -870,7 +870,7 @@
    "total_score": 61,
    "total_result": "over",
    "model_margin": "+0.8",
-   "adj_margin": "+1.0",
+   "adj_margin": "+1.1",
    "proj_score": "25–22",
    "score": "29–32",
    "played": true,
@@ -1866,8 +1866,8 @@
     "team": "IND",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
     "game_id": "2026_05_IND_PIT",
-    "proj": "18.1",
-    "bar": "70",
+    "proj": "18.3",
+    "bar": "71",
     "act": "11.2",
     "cls": "text-danger",
     "inj": {
@@ -1930,7 +1930,7 @@
     "team": "BUF",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
     "game_id": "2026_05_BUF_LA",
-    "proj": "17.4",
+    "proj": "17.3",
     "bar": "67",
     "act": "22.8",
     "cls": "text-success",
@@ -2511,16 +2511,20 @@
    },
    {
     "rank": 50,
-    "pid": "00-0035537",
-    "name": "Ty Johnson",
-    "team": "BUF",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
-    "game_id": "2026_05_BUF_LA",
-    "proj": "4.5",
-    "bar": "18",
-    "act": "11.2",
+    "pid": "00-0039299",
+    "name": "George Holani",
+    "team": "SEA",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/sea.png",
+    "game_id": "2026_05_SF_SEA",
+    "proj": "4.4",
+    "bar": "17",
+    "act": "5.1",
     "cls": "text-success",
-    "inj": null
+    "inj": {
+     "label": "Q",
+     "cls": "text-bg-warning",
+     "title": "Questionable · Limited Participation in Practice · Ribs"
+    }
    }
   ],
   "WR": [
@@ -3054,19 +3058,6 @@
    },
    {
     "rank": 37,
-    "pid": "00-0037261",
-    "name": "Khalil Shakir",
-    "team": "BUF",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
-    "game_id": "2026_05_BUF_LA",
-    "proj": "9.8",
-    "bar": "48",
-    "act": "11.0",
-    "cls": "text-success",
-    "inj": null
-   },
-   {
-    "rank": 38,
     "pid": "00-0036613",
     "name": "Jaylen Waddle",
     "team": "DEN",
@@ -3079,24 +3070,7 @@
     "inj": null
    },
    {
-    "rank": 39,
-    "pid": "00-0039901",
-    "name": "Keon Coleman",
-    "team": "BUF",
-    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
-    "game_id": "2026_05_BUF_LA",
-    "proj": "9.6",
-    "bar": "48",
-    "act": "7.7",
-    "cls": "text-danger",
-    "inj": {
-     "label": "FP",
-     "cls": "bg-secondary-subtle text-secondary",
-     "title": "Full practice · Ankle"
-    }
-   },
-   {
-    "rank": 40,
+    "rank": 38,
     "pid": "00-0038563",
     "name": "Tre Tucker",
     "team": "LV",
@@ -3109,7 +3083,20 @@
     "inj": null
    },
    {
-    "rank": 41,
+    "rank": 39,
+    "pid": "00-0037261",
+    "name": "Khalil Shakir",
+    "team": "BUF",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
+    "game_id": "2026_05_BUF_LA",
+    "proj": "9.5",
+    "bar": "47",
+    "act": "11.0",
+    "cls": "text-success",
+    "inj": null
+   },
+   {
+    "rank": 40,
     "pid": "00-0038117",
     "name": "Wan'Dale Robinson",
     "team": "TEN",
@@ -3122,7 +3109,7 @@
     "inj": null
    },
    {
-    "rank": 42,
+    "rank": 41,
     "pid": "00-0033921",
     "name": "Chris Godwin Jr.",
     "team": "TB",
@@ -3133,6 +3120,23 @@
     "act": "7.0",
     "cls": "text-danger",
     "inj": null
+   },
+   {
+    "rank": 42,
+    "pid": "00-0039901",
+    "name": "Keon Coleman",
+    "team": "BUF",
+    "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
+    "game_id": "2026_05_BUF_LA",
+    "proj": "9.4",
+    "bar": "47",
+    "act": "7.7",
+    "cls": "text-danger",
+    "inj": {
+     "label": "FP",
+     "cls": "bg-secondary-subtle text-secondary",
+     "title": "Full practice · Ankle"
+    }
    },
    {
     "rank": 43,
@@ -3283,8 +3287,8 @@
     "team": "BUF",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
     "game_id": "2026_05_BUF_LA",
-    "proj": "7.8",
-    "bar": "39",
+    "proj": "7.6",
+    "bar": "38",
     "act": null,
     "cls": null,
     "inj": {
@@ -4191,8 +4195,8 @@
     "team": "BUF",
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/buf.png",
     "game_id": "2026_05_BUF_LA",
-    "proj": "7.7",
-    "bar": "44",
+    "proj": "7.5",
+    "bar": "43",
     "act": "3.7",
     "cls": "text-danger",
     "inj": null
